@@ -1,2 +1,8 @@
 **/run*/
+**/latest
 **/latest/
+**/*autocheck_top_tb.v
+**/fabric_bitstream.bit
+**/fabric_independent_bitstream.xml
+
+
