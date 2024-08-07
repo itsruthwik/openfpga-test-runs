@@ -1,0 +1,25 @@
+* * * * * * * * * * * * * * * * * * * * 
+RunDirectory : /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/run007
+python3 /home/ruthwik/OpenFPGA/openfpga_flow/scripts/run_fpga_flow.py /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/arch/vpr_arch.xml /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/verilog-files/router_bench.v --top_module router_bench --run_dir /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/run007/vpr_arch/router_bench/MIN_ROUTE_CHAN_WIDTH --fpga_flow yosys_vpr --openfpga_shell_template /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/config/fix_heterogeneous_device_example_script.openfpga --openfpga_arch_file /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/arch/openfpga_arch.xml --openfpga_sim_setting_file /home/ruthwik/OpenFPGA/openfpga_flow/openfpga_simulation_settings/fixed_sim_openfpga.xml --openfpga_vpr_device_layout auto --yosys_tmpl /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/yosys_scripts/ys_tmpl_yosys_vpr_dsp_flow.ys --ys_rewrite_tmpl /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/yosys_scripts/ys_tmpl_yosys_vpr_flow_with_rewrite.ys;/home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/yosys_scripts/ys_tmpl_rewrite_flow.ys --vpr_fpga_verilog --vpr_fpga_verilog_dir /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/run007/vpr_arch/router_bench/MIN_ROUTE_CHAN_WIDTH --vpr_fpga_x2p_rename_illegal_port --flow_config /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/config/task.conf --default_tool_path /home/ruthwik/OpenFPGA/openfpga_flow/scripts/../misc/fpgaflow_default_tool_path.conf --TOP router_bench --YOSYS_CELL_SIM_VERILOG /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/verilog-files/dummy_router3-rtl.v
+* * * * * * * * * * * * * * * * * * * * 
+INFO - Validating command line arguments
+INFO - Run directory : /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/run007/vpr_arch/router_bench/MIN_ROUTE_CHAN_WIDTH
+INFO - Running "yosys_vpr" Flow
+INFO - Extracted lut_size size from arch XML = 6
+INFO - Running Yosys with lut_size = 6
+INFO - Launching Run yosys 
+INFO - Run yosys is written in file yosys_output.log
+INFO - Extracted lut_size size from arch XML = 6
+INFO - Running Yosys with lut_size = 6
+INFO - Yosys rewrite iteration: 0
+INFO - Launching Run yosys 
+INFO - Run yosys is written in file yosys_rewrite_output_0.log
+INFO - Yosys rewrite iteration: 1
+INFO - Launching Run yosys 
+INFO - Run yosys is written in file yosys_rewrite_output_1.log
+INFO - Running OpenFPGA Shell Engine 
+INFO - Launching OpenFPGA Shell Run 
+INFO - OpenFPGAShell Revision: v8.0.0-10118-gec85a468b Compiled: 2024-08-05T21:11:41
+INFO - OpenFPGA Shell Run is written in file openfpgashell.log
+INFO - vpr result extracted in file vpr_stat.result
+INFO - Openfpga_flow completed, Total Time Taken 20 seconds VPR Time 20 seconds 

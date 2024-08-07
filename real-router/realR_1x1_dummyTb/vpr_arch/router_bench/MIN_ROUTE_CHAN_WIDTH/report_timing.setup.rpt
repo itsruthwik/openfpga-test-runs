@@ -1,0 +1,2805 @@
+#Timing report of worst 100 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[32].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[32] (router)                                   2.140     3.530
+out:odata_4[32].outpad[0] (.output)                              3.308     6.838
+data arrival time                                                          6.838
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.838
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.838
+
+
+#Path 2
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:oack_1[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OACK_1[1] (router)                                     2.140     3.530
+out:oack_1[1].outpad[0] (.output)                                3.283     6.813
+data arrival time                                                          6.813
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.813
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.813
+
+
+#Path 3
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[1] (router)                                    2.140     3.530
+out:odata_4[1].outpad[0] (.output)                               3.257     6.787
+data arrival time                                                          6.787
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.787
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.787
+
+
+#Path 4
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[25].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[25] (router)                                   2.140     3.530
+out:odata_1[25].outpad[0] (.output)                              3.247     6.777
+data arrival time                                                          6.777
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.777
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.777
+
+
+#Path 5
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[30].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[30] (router)                                   2.140     3.530
+out:odata_2[30].outpad[0] (.output)                              3.220     6.750
+data arrival time                                                          6.750
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.750
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.750
+
+
+#Path 6
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[12].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[12] (router)                                   2.140     3.530
+out:odata_2[12].outpad[0] (.output)                              3.213     6.743
+data arrival time                                                          6.743
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.743
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.743
+
+
+#Path 7
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[2].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[2] (router)                                    2.140     3.530
+out:odata_3[2].outpad[0] (.output)                               3.178     6.708
+data arrival time                                                          6.708
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.708
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.708
+
+
+#Path 8
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[23].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[23] (router)                                   2.140     3.530
+out:odata_3[23].outpad[0] (.output)                              3.168     6.698
+data arrival time                                                          6.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.698
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.698
+
+
+#Path 9
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ordy_3[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ORDY_3[0] (router)                                     2.140     3.530
+out:ordy_3[0].outpad[0] (.output)                                3.166     6.696
+data arrival time                                                          6.696
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.696
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.696
+
+
+#Path 10
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[34].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[34] (router)                                   2.140     3.530
+out:odata_2[34].outpad[0] (.output)                              3.157     6.687
+data arrival time                                                          6.687
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.687
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.687
+
+
+#Path 11
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[21].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[21] (router)                                   2.140     3.530
+out:odata_4[21].outpad[0] (.output)                              3.150     6.680
+data arrival time                                                          6.680
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.680
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.680
+
+
+#Path 12
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[15].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[15] (router)                                   2.140     3.530
+out:odata_2[15].outpad[0] (.output)                              3.139     6.669
+data arrival time                                                          6.669
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.669
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.669
+
+
+#Path 13
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[30].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[30] (router)                                   2.140     3.530
+out:odata_1[30].outpad[0] (.output)                              3.127     6.657
+data arrival time                                                          6.657
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.657
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.657
+
+
+#Path 14
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[20].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[20] (router)                                   2.140     3.530
+out:odata_0[20].outpad[0] (.output)                              3.123     6.653
+data arrival time                                                          6.653
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.653
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.653
+
+
+#Path 15
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[19].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[19] (router)                                   2.140     3.530
+out:odata_2[19].outpad[0] (.output)                              3.121     6.651
+data arrival time                                                          6.651
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.651
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.651
+
+
+#Path 16
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[30].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[30] (router)                                   2.140     3.530
+out:odata_4[30].outpad[0] (.output)                              3.118     6.648
+data arrival time                                                          6.648
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.648
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.648
+
+
+#Path 17
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[9].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[9] (router)                                    2.140     3.530
+out:odata_1[9].outpad[0] (.output)                               3.115     6.645
+data arrival time                                                          6.645
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.645
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.645
+
+
+#Path 18
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:oack_4[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OACK_4[0] (router)                                     2.140     3.530
+out:oack_4[0].outpad[0] (.output)                                3.110     6.640
+data arrival time                                                          6.640
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.640
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.640
+
+
+#Path 19
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[32].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[32] (router)                                   2.140     3.530
+out:odata_1[32].outpad[0] (.output)                              3.110     6.640
+data arrival time                                                          6.640
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.640
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.640
+
+
+#Path 20
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ovalid_2.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OVALID_2[0] (router)                                   2.140     3.530
+out:ovalid_2.outpad[0] (.output)                                 3.108     6.638
+data arrival time                                                          6.638
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.638
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.638
+
+
+#Path 21
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[2].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[2] (router)                                    2.140     3.530
+out:odata_4[2].outpad[0] (.output)                               3.107     6.637
+data arrival time                                                          6.637
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.637
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.637
+
+
+#Path 22
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[20].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[20] (router)                                   2.140     3.530
+out:odata_4[20].outpad[0] (.output)                              3.106     6.636
+data arrival time                                                          6.636
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.636
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.636
+
+
+#Path 23
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:olck_1[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OLCK_1[1] (router)                                     2.140     3.530
+out:olck_1[1].outpad[0] (.output)                                3.104     6.634
+data arrival time                                                          6.634
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.634
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.634
+
+
+#Path 24
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[11].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[11] (router)                                   2.140     3.530
+out:odata_3[11].outpad[0] (.output)                              3.104     6.634
+data arrival time                                                          6.634
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.634
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.634
+
+
+#Path 25
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[29].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[29] (router)                                   2.140     3.530
+out:odata_0[29].outpad[0] (.output)                              3.104     6.634
+data arrival time                                                          6.634
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.634
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.634
+
+
+#Path 26
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[4].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[4] (router)                                    2.140     3.530
+out:odata_2[4].outpad[0] (.output)                               3.099     6.630
+data arrival time                                                          6.630
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.630
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.630
+
+
+#Path 27
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[0] (router)                                    2.140     3.530
+out:odata_4[0].outpad[0] (.output)                               3.098     6.628
+data arrival time                                                          6.628
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.628
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.628
+
+
+#Path 28
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[2].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[2] (router)                                    2.140     3.530
+out:odata_0[2].outpad[0] (.output)                               3.093     6.623
+data arrival time                                                          6.623
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.623
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.623
+
+
+#Path 29
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[5].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[5] (router)                                    2.140     3.530
+out:odata_2[5].outpad[0] (.output)                               3.084     6.614
+data arrival time                                                          6.614
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.614
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.614
+
+
+#Path 30
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ovch_0.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OVCH_0[0] (router)                                     2.140     3.530
+out:ovch_0.outpad[0] (.output)                                   3.084     6.614
+data arrival time                                                          6.614
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.614
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.614
+
+
+#Path 31
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[8].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[8] (router)                                    2.140     3.530
+out:odata_4[8].outpad[0] (.output)                               3.082     6.612
+data arrival time                                                          6.612
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.612
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.612
+
+
+#Path 32
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[18].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[18] (router)                                   2.140     3.530
+out:odata_2[18].outpad[0] (.output)                              3.069     6.600
+data arrival time                                                          6.600
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.600
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.600
+
+
+#Path 33
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[16].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[16] (router)                                   2.140     3.530
+out:odata_0[16].outpad[0] (.output)                              3.068     6.598
+data arrival time                                                          6.598
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.598
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.598
+
+
+#Path 34
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[5].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[5] (router)                                    2.140     3.530
+out:odata_4[5].outpad[0] (.output)                               3.065     6.595
+data arrival time                                                          6.595
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.595
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.595
+
+
+#Path 35
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[30].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[30] (router)                                   2.140     3.530
+out:odata_0[30].outpad[0] (.output)                              3.064     6.594
+data arrival time                                                          6.594
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.594
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.594
+
+
+#Path 36
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[26].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[26] (router)                                   2.140     3.530
+out:odata_2[26].outpad[0] (.output)                              3.049     6.579
+data arrival time                                                          6.579
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.579
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.579
+
+
+#Path 37
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[6].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[6] (router)                                    2.140     3.530
+out:odata_0[6].outpad[0] (.output)                               3.047     6.577
+data arrival time                                                          6.577
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.577
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.577
+
+
+#Path 38
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[29].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[29] (router)                                   2.140     3.530
+out:odata_3[29].outpad[0] (.output)                              3.046     6.576
+data arrival time                                                          6.576
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.576
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.576
+
+
+#Path 39
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[9].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[9] (router)                                    2.140     3.530
+out:odata_2[9].outpad[0] (.output)                               3.045     6.575
+data arrival time                                                          6.575
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.575
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.575
+
+
+#Path 40
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[5].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[5] (router)                                    2.140     3.530
+out:odata_1[5].outpad[0] (.output)                               3.042     6.572
+data arrival time                                                          6.572
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.572
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.572
+
+
+#Path 41
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[3].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[3] (router)                                    2.140     3.530
+out:odata_0[3].outpad[0] (.output)                               3.040     6.570
+data arrival time                                                          6.570
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.570
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.570
+
+
+#Path 42
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[33].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[33] (router)                                   2.140     3.530
+out:odata_1[33].outpad[0] (.output)                              3.036     6.566
+data arrival time                                                          6.566
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.566
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.566
+
+
+#Path 43
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[26].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[26] (router)                                   2.140     3.530
+out:odata_4[26].outpad[0] (.output)                              3.034     6.564
+data arrival time                                                          6.564
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.564
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.564
+
+
+#Path 44
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[24].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[24] (router)                                   2.140     3.530
+out:odata_2[24].outpad[0] (.output)                              3.034     6.564
+data arrival time                                                          6.564
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.564
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.564
+
+
+#Path 45
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[27].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[27] (router)                                   2.140     3.530
+out:odata_2[27].outpad[0] (.output)                              3.034     6.564
+data arrival time                                                          6.564
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.564
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.564
+
+
+#Path 46
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[23].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[23] (router)                                   2.140     3.530
+out:odata_4[23].outpad[0] (.output)                              3.032     6.562
+data arrival time                                                          6.562
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.562
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.562
+
+
+#Path 47
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[29].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[29] (router)                                   2.140     3.530
+out:odata_4[29].outpad[0] (.output)                              3.031     6.561
+data arrival time                                                          6.561
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.561
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.561
+
+
+#Path 48
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[4].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[4] (router)                                    2.140     3.530
+out:odata_1[4].outpad[0] (.output)                               3.029     6.559
+data arrival time                                                          6.559
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.559
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.559
+
+
+#Path 49
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[10].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[10] (router)                                   2.140     3.530
+out:odata_0[10].outpad[0] (.output)                              3.028     6.559
+data arrival time                                                          6.559
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.559
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.559
+
+
+#Path 50
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[6].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[6] (router)                                    2.140     3.530
+out:odata_1[6].outpad[0] (.output)                               3.027     6.557
+data arrival time                                                          6.557
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.557
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.557
+
+
+#Path 51
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[31].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[31] (router)                                   2.140     3.530
+out:odata_2[31].outpad[0] (.output)                              3.027     6.557
+data arrival time                                                          6.557
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.557
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.557
+
+
+#Path 52
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:oack_2[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OACK_2[0] (router)                                     2.140     3.530
+out:oack_2[0].outpad[0] (.output)                                3.025     6.555
+data arrival time                                                          6.555
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.555
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.555
+
+
+#Path 53
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[0] (router)                                    2.140     3.530
+out:odata_2[0].outpad[0] (.output)                               3.025     6.555
+data arrival time                                                          6.555
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.555
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.555
+
+
+#Path 54
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[19].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[19] (router)                                   2.140     3.530
+out:odata_1[19].outpad[0] (.output)                              3.023     6.553
+data arrival time                                                          6.553
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.553
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.553
+
+
+#Path 55
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[28].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[28] (router)                                   2.140     3.530
+out:odata_4[28].outpad[0] (.output)                              3.022     6.552
+data arrival time                                                          6.552
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.552
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.552
+
+
+#Path 56
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[1] (router)                                    2.140     3.530
+out:odata_0[1].outpad[0] (.output)                               3.021     6.551
+data arrival time                                                          6.551
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.551
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.551
+
+
+#Path 57
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[9].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[9] (router)                                    2.140     3.530
+out:odata_0[9].outpad[0] (.output)                               3.019     6.549
+data arrival time                                                          6.549
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.549
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.549
+
+
+#Path 58
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[0] (router)                                    2.140     3.530
+out:odata_1[0].outpad[0] (.output)                               3.019     6.549
+data arrival time                                                          6.549
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.549
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.549
+
+
+#Path 59
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ovch_1.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OVCH_1[0] (router)                                     2.140     3.530
+out:ovch_1.outpad[0] (.output)                                   3.014     6.545
+data arrival time                                                          6.545
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.545
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.545
+
+
+#Path 60
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[22].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[22] (router)                                   2.140     3.530
+out:odata_2[22].outpad[0] (.output)                              3.008     6.538
+data arrival time                                                          6.538
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.538
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.538
+
+
+#Path 61
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:oack_3[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OACK_3[0] (router)                                     2.140     3.530
+out:oack_3[0].outpad[0] (.output)                                3.008     6.538
+data arrival time                                                          6.538
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.538
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.538
+
+
+#Path 62
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:olck_1[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OLCK_1[0] (router)                                     2.140     3.530
+out:olck_1[0].outpad[0] (.output)                                3.005     6.535
+data arrival time                                                          6.535
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.535
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.535
+
+
+#Path 63
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[4].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[4] (router)                                    2.140     3.530
+out:odata_4[4].outpad[0] (.output)                               3.003     6.533
+data arrival time                                                          6.533
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.533
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.533
+
+
+#Path 64
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[33].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[33] (router)                                   2.140     3.530
+out:odata_3[33].outpad[0] (.output)                              3.002     6.532
+data arrival time                                                          6.532
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.532
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.532
+
+
+#Path 65
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[3].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[3] (router)                                    2.140     3.530
+out:odata_3[3].outpad[0] (.output)                               3.001     6.531
+data arrival time                                                          6.531
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.531
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.531
+
+
+#Path 66
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[25].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[25] (router)                                   2.140     3.530
+out:odata_4[25].outpad[0] (.output)                              2.996     6.526
+data arrival time                                                          6.526
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.526
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.526
+
+
+#Path 67
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[17].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[17] (router)                                   2.140     3.530
+out:odata_0[17].outpad[0] (.output)                              2.996     6.526
+data arrival time                                                          6.526
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.526
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.526
+
+
+#Path 68
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[0] (router)                                    2.140     3.530
+out:odata_3[0].outpad[0] (.output)                               2.995     6.525
+data arrival time                                                          6.525
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.525
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.525
+
+
+#Path 69
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[19].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[19] (router)                                   2.140     3.530
+out:odata_0[19].outpad[0] (.output)                              2.993     6.523
+data arrival time                                                          6.523
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.523
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.523
+
+
+#Path 70
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[34].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[34] (router)                                   2.140     3.530
+out:odata_3[34].outpad[0] (.output)                              2.991     6.521
+data arrival time                                                          6.521
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.521
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.521
+
+
+#Path 71
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[21].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[21] (router)                                   2.140     3.530
+out:odata_2[21].outpad[0] (.output)                              2.991     6.521
+data arrival time                                                          6.521
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.521
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.521
+
+
+#Path 72
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[3].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[3] (router)                                    2.140     3.530
+out:odata_4[3].outpad[0] (.output)                               2.989     6.519
+data arrival time                                                          6.519
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.519
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.519
+
+
+#Path 73
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[6].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[6] (router)                                    2.140     3.530
+out:odata_3[6].outpad[0] (.output)                               2.987     6.517
+data arrival time                                                          6.517
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.517
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.517
+
+
+#Path 74
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[17].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[17] (router)                                   2.140     3.530
+out:odata_2[17].outpad[0] (.output)                              2.979     6.509
+data arrival time                                                          6.509
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.509
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.509
+
+
+#Path 75
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[5].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[5] (router)                                    2.140     3.530
+out:odata_0[5].outpad[0] (.output)                               2.977     6.507
+data arrival time                                                          6.507
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.507
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.507
+
+
+#Path 76
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[18].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[18] (router)                                   2.140     3.530
+out:odata_1[18].outpad[0] (.output)                              2.975     6.506
+data arrival time                                                          6.506
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.506
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.506
+
+
+#Path 77
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[32].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[32] (router)                                   2.140     3.530
+out:odata_0[32].outpad[0] (.output)                              2.975     6.505
+data arrival time                                                          6.505
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.505
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.505
+
+
+#Path 78
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[24].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[24] (router)                                   2.140     3.530
+out:odata_1[24].outpad[0] (.output)                              2.971     6.501
+data arrival time                                                          6.501
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.501
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.501
+
+
+#Path 79
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[28].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[28] (router)                                   2.140     3.530
+out:odata_3[28].outpad[0] (.output)                              2.970     6.500
+data arrival time                                                          6.500
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.500
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.500
+
+
+#Path 80
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[8].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[8] (router)                                    2.140     3.530
+out:odata_0[8].outpad[0] (.output)                               2.970     6.500
+data arrival time                                                          6.500
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.500
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.500
+
+
+#Path 81
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ovalid_4.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OVALID_4[0] (router)                                   2.140     3.530
+out:ovalid_4.outpad[0] (.output)                                 2.969     6.499
+data arrival time                                                          6.499
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.499
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.499
+
+
+#Path 82
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[26].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[26] (router)                                   2.140     3.530
+out:odata_3[26].outpad[0] (.output)                              2.964     6.494
+data arrival time                                                          6.494
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.494
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.494
+
+
+#Path 83
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_4[24].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_4[24] (router)                                   2.140     3.530
+out:odata_4[24].outpad[0] (.output)                              2.964     6.494
+data arrival time                                                          6.494
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.494
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.494
+
+
+#Path 84
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:olck_0[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OLCK_0[1] (router)                                     2.140     3.530
+out:olck_0[1].outpad[0] (.output)                                2.960     6.490
+data arrival time                                                          6.490
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.490
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.490
+
+
+#Path 85
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[10].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[10] (router)                                   2.140     3.530
+out:odata_3[10].outpad[0] (.output)                              2.958     6.489
+data arrival time                                                          6.489
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.489
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.489
+
+
+#Path 86
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ordy_0[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ORDY_0[0] (router)                                     2.140     3.530
+out:ordy_0[0].outpad[0] (.output)                                2.956     6.486
+data arrival time                                                          6.486
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.486
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.486
+
+
+#Path 87
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[16].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[16] (router)                                   2.140     3.530
+out:odata_2[16].outpad[0] (.output)                              2.954     6.484
+data arrival time                                                          6.484
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.484
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.484
+
+
+#Path 88
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ordy_3[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ORDY_3[1] (router)                                     2.140     3.530
+out:ordy_3[1].outpad[0] (.output)                                2.954     6.484
+data arrival time                                                          6.484
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.484
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.484
+
+
+#Path 89
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:oack_2[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OACK_2[1] (router)                                     2.140     3.530
+out:oack_2[1].outpad[0] (.output)                                2.954     6.484
+data arrival time                                                          6.484
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.484
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.484
+
+
+#Path 90
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[6].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[6] (router)                                    2.140     3.530
+out:odata_2[6].outpad[0] (.output)                               2.953     6.483
+data arrival time                                                          6.483
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.483
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.483
+
+
+#Path 91
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ovch_4.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OVCH_4[0] (router)                                     2.140     3.530
+out:ovch_4.outpad[0] (.output)                                   2.948     6.478
+data arrival time                                                          6.478
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.478
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.478
+
+
+#Path 92
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ordy_2[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ORDY_2[1] (router)                                     2.140     3.530
+out:ordy_2[1].outpad[0] (.output)                                2.947     6.477
+data arrival time                                                          6.477
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.477
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.477
+
+
+#Path 93
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_3[17].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_3[17] (router)                                   2.140     3.530
+out:odata_3[17].outpad[0] (.output)                              2.943     6.473
+data arrival time                                                          6.473
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.473
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.473
+
+
+#Path 94
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[33].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[33] (router)                                   2.140     3.530
+out:odata_0[33].outpad[0] (.output)                              2.934     6.464
+data arrival time                                                          6.464
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.464
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.464
+
+
+#Path 95
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ovalid_1.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].OVALID_1[0] (router)                                   2.140     3.530
+out:ovalid_1.outpad[0] (.output)                                 2.928     6.458
+data arrival time                                                          6.458
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.458
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.458
+
+
+#Path 96
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[20].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[20] (router)                                   2.140     3.530
+out:odata_2[20].outpad[0] (.output)                              2.920     6.450
+data arrival time                                                          6.450
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.450
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.450
+
+
+#Path 97
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_2[32].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_2[32] (router)                                   2.140     3.530
+out:odata_2[32].outpad[0] (.output)                              2.919     6.449
+data arrival time                                                          6.449
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.449
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.449
+
+
+#Path 98
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:ordy_2[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ORDY_2[0] (router)                                     2.140     3.530
+out:ordy_2[0].outpad[0] (.output)                                2.916     6.446
+data arrival time                                                          6.446
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.446
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.446
+
+
+#Path 99
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_1[27].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_1[27] (router)                                   2.140     3.530
+out:odata_1[27].outpad[0] (.output)                              2.915     6.445
+data arrival time                                                          6.445
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.445
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.445
+
+
+#Path 100
+Startpoint: idata_0[14].inpad[0] (.input clocked by clk)
+Endpoint  : out:odata_0[11].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+idata_0[14].inpad[0] (.input)                                    0.000     0.000
+oack_0[0].IDATA_0[14] (router)                                   1.390     1.390
+oack_0[0].ODATA_0[11] (router)                                   2.140     3.530
+out:odata_0[11].outpad[0] (.output)                              2.914     6.444
+data arrival time                                                          6.444
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -6.444
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.444
+
+
+#End of timing report
