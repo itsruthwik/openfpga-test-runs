@@ -8,7 +8,8 @@ read_verilog ${VERILOG_FILES}
 # Read technology library
 read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
 
-read_verilog -lib -specify /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/*v
+read_verilog -lib -specify /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/*v
+
 
 #########################
 # Prepare for synthesis
@@ -16,7 +17,7 @@ read_verilog -lib -specify /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-fil
 # Identify top module from hierarchy
 hierarchy -check -top ${TOP_MODULE}
 
-techmap -map /home/rsunketa/OpenFPGA/openfpga-test-runs/real-router/verilog-files/router2router_slice.v -max_iter 5
+techmap -map /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/verilog-files/router2router_slice.v -max_iter 5
 
 # - Convert process blocks to AST
 proc
