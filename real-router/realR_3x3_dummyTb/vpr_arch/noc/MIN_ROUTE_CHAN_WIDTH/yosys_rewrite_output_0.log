@@ -1,0 +1,491 @@
+/home/ruthwik/OpenFPGA/build/yosys/bin/yosys yosys_rewrite_0.ys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.41+101 (git sha1 c71262f66, g++ 12.2.0-14 -fPIC -Os)
+
+-- Executing script file `yosys_rewrite_0.ys' --
+
+1. Executing Verilog-2005 frontend: ./benchmark/noc_bench.v
+Parsing Verilog input from `./benchmark/noc_bench.v' to AST representation.
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:307)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:359)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:416)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:468)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:525)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:587)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:644)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:696)
+Warning: Literal has a width of 2 bit, but value requires 8 bit. (./benchmark/noc_bench.v:753)
+Generating RTLIL representation for module `\noc'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/verilog-files/dummy_router3-rtl.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/real-router/verilog-files/dummy_router3-rtl.v' to AST representation.
+Generating RTLIL representation for module `\router'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/arb.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/arb.v' to AST representation.
+Generating RTLIL representation for module `\arb'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/cb.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/cb.v' to AST representation.
+Generating RTLIL representation for module `\cb'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/fifo.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/fifo.v' to AST representation.
+Generating RTLIL representation for module `\fifo'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/inputc.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/inputc.v' to AST representation.
+Generating RTLIL representation for module `\inputc'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/mux.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/mux.v' to AST representation.
+Generating RTLIL representation for module `\mux'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/muxcont.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/muxcont.v' to AST representation.
+Generating RTLIL representation for module `\muxcont'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/outputc.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/outputc.v' to AST representation.
+Generating RTLIL representation for module `\outputc'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/router2.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/router2.v' to AST representation.
+Generating RTLIL representation for module `\router2'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/rtcomp.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/rtcomp.v' to AST representation.
+Generating RTLIL representation for module `\rtcomp'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/vc.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/vc.v' to AST representation.
+Generating RTLIL representation for module `\vc'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/vcmux.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/vcmux.v' to AST representation.
+Generating RTLIL representation for module `\vcmux'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \noc
+
+14.2. Analyzing design hierarchy..
+Top module:  \noc
+Removed 0 unused modules.
+Warning: Resizing cell port noc.n8.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n8.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n7.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n7.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n6.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n6.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n5.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n5.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n4.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n4.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n3.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n3.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n2.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n2.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n1.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n1.MY_XPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n0.MY_YPOS from 32 bits to 2 bits.
+Warning: Resizing cell port noc.n0.MY_XPOS from 32 bits to 2 bits.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+15.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+15.4. Executing PROC_INIT pass (extract init attributes).
+
+15.5. Executing PROC_ARST pass (detect async resets in processes).
+
+15.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+15.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+15.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+15.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+15.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+15.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+16. Executing TECHMAP pass (map to technology primitives).
+
+16.1. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v' to AST representation.
+Generating RTLIL representation for module `\adff2dff'.
+Successfully finished Verilog frontend.
+
+16.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+17. Executing FLATTEN pass (flatten design).
+Deleting now unused module router2.
+Deleting now unused module router.
+<suppressed ~10 debug messages>
+
+18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+20. Executing CHECK pass (checking for obvious problems).
+Checking module noc...
+Found and reported 0 problems.
+
+21. Executing OPT pass (performing simple optimizations).
+
+21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \noc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \noc.
+Performed a total of 0 changes.
+
+21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+21.9. Finished OPT passes. (There is nothing left to do.)
+
+22. Executing FSM pass (extract and optimize FSM).
+
+22.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+22.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+22.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+22.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+22.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+22.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+22.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \noc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \noc.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+23.9. Finished OPT passes. (There is nothing left to do.)
+
+24. Executing WREDUCE pass (reducing word size of cells).
+
+25. Executing PEEPOPT pass (run peephole optimizers).
+
+26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+27. Executing OPT pass (performing simple optimizations).
+
+27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+27.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \noc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+27.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \noc.
+Performed a total of 0 changes.
+
+27.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+27.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+27.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+27.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+27.9. Finished OPT passes. (There is nothing left to do.)
+
+28. Executing MEMORY pass.
+
+28.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+28.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+28.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+28.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+28.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+28.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+28.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+28.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+28.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+28.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+30. Executing OPT pass (performing simple optimizations).
+
+30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+30.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+30.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+30.5. Finished fast OPT passes.
+
+31. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+32. Executing OPT pass (performing simple optimizations).
+
+32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \noc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \noc.
+Performed a total of 0 changes.
+
+32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+32.6. Executing OPT_SHARE pass.
+
+32.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+32.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+32.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+32.10. Finished OPT passes. (There is nothing left to do.)
+
+33. Executing TECHMAP pass (map to technology primitives).
+
+33.1. Executing Verilog-2005 frontend: /home/ruthwik/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/ruthwik/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+33.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+34. Executing OPT pass (performing simple optimizations).
+
+34.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module noc.
+
+34.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\noc'.
+Removed a total of 0 cells.
+
+34.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+34.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+
+34.5. Finished fast OPT passes.
+
+35. Executing ABC pass (technology mapping using ABC).
+
+35.1. Extracting gate netlist of module `\noc' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+36. Executing SYNTH pass.
+
+36.1. Executing HIERARCHY pass (managing design hierarchy).
+
+36.1.1. Analyzing design hierarchy..
+Top module:  \noc
+
+36.1.2. Analyzing design hierarchy..
+Top module:  \noc
+Removed 0 unused modules.
+
+36.2. Printing statistics.
+
+=== noc ===
+
+   Number of wires:               2255
+   Number of wire bits:          17069
+   Number of public wires:        2255
+   Number of public wire bits:   17069
+   Number of ports:                 56
+   Number of port bits:            677
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                117
+     $scopeinfo                     18
+     cb                              9
+     inputc                         45
+     outputc                        45
+
+36.3. Executing CHECK pass (checking for obvious problems).
+Checking module noc...
+Found and reported 0 problems.
+
+37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \noc..
+Removed 18 unused cells and 1461 unused wires.
+<suppressed ~1479 debug messages>
+
+38. Executing Verilog backend.
+
+38.1. Executing BMUXMAP pass.
+
+38.2. Executing DEMUXMAP pass.
+Dumping module `\noc'.
+
+39. Executing BLIF backend.
+
+Warnings: 27 unique messages, 27 total
+End of script. Logfile hash: 5a9023a56b, CPU: user 0.41s system 0.00s, MEM: 28.25 MB peak
+Yosys 0.41+101 (git sha1 c71262f66, g++ 12.2.0-14 -fPIC -Os)
+Time spent: 50% 13x opt_clean (0 sec), 8% 2x clean (0 sec), ...
+0
