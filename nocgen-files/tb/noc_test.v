@@ -1,6 +1,7 @@
 /* test module for noc.v */ 
 // `include "/home/rsunketa/OpenFPGA/test_runs/nocgen/src/define.h"     
-`include "/mnt/vault1/rsunketa/router-verification-files/nocgen_router/common-files/src/define.h" 
+// `include "/mnt/vault1/rsunketa/router-verification-files/nocgen_router/common-files/src/define.h" 
+`include "define.h" 
 
 `timescale 1ns/10ps 
 

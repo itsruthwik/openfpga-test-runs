@@ -1,5 +1,6 @@
 // `include "/home/rsunketa/OpenFPGA/test_runs/nocgen/src/define.h" 
-`include "/mnt/vault1/rsunketa/router-verification-files/nocgen_router/common-files/src/define.h" 
+// `include "/mnt/vault1/rsunketa/router-verification-files/nocgen_router/common-files/src/define.h" 
+`include "define.h" 
 
 module outputc (
         idata,
