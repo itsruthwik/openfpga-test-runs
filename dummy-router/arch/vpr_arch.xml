@@ -181,12 +181,12 @@
          <perimeter type="io" priority="100"/>
          <corners type="EMPTY" priority="101"/>
          <!--Fill with 'clb'-->
-         <!-- <fill type="clb" priority="10"/> -->
+         <!-- <fill type="io" priority="10"/> -->
       <row type="clb" starty="((H/2) - (H/4))" priority="30"/>
 
       <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
-      <!-- <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
-      <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
+      <!-- <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
 
       <single type="router" x="((1*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
       <single type="router" x="((2*W-3)/3)" y="((2*H-3)/3)" priority="50"/>

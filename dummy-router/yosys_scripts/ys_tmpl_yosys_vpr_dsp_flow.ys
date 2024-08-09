@@ -16,7 +16,7 @@ read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
 # Identify top module from hierarchy
 hierarchy -check -top ${TOP_MODULE}
 
-techmap -map /home/ruthwik/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/router2router_slice.v -max_iter 5
+techmap -map /home/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/router2router_slice.v -max_iter 5
 
 # - Convert process blocks to AST
 proc

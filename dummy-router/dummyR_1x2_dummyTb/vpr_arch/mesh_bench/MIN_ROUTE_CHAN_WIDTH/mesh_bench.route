@@ -1,0 +1,3669 @@
+Placement_File: mesh_bench.place Placement_ID: SHA256:c80d1701436b1244f402a7df40f0edc57cef163156205c165a76a150da733893
+Array size: 9 x 9 logic blocks.
+
+Routing:
+
+Net 0 (rst_)
+
+Node:	71	SOURCE (0,3,0)  Pad: 15  Switch: 0
+Node:	87	  OPIN (0,3,0)  Pad: 15  Switch: 2
+Node:	3279	 CHANX (0,3,0) to (6,0)  Track: 56  Switch: 2
+Node:	5463	 CHANY (0,5,1) to (5,2)  Track: 20  Switch: 2
+Node:	3677	 CHANX (0,6,2) to (7,2)  Track: 40  Switch: 2
+Node:	5887	 CHANY (0,7,3) to (7,6)  Track: 48  Switch: 2
+Node:	3990	 CHANX (0,4,4) to (7,4)  Track: 47  Switch: 2
+Node:	5450	 CHANY (0,5,1) to (5,4)  Track: 7  Switch: 2
+Node:	3666	 CHANX (0,5,2)  Track: 65  Switch: 2
+Node:	5352	 CHANY (0,4,2)  Track: 65  Switch: 2
+Node:	3370	 CHANX (0,1,1) to (4,1)  Track: 15  Switch: 1
+Node:	897	  IPIN (0,1,1)  Pin: 0   router.rst_[0] Switch: 0
+Node:	471	  SINK (0,1,1)  Class: 0  Switch: -1 Net_pin_index: 2
+Node:	5887	 CHANY (0,7,3) to (7,6)  Track: 48  Switch: 2
+Node:	4182	 CHANX (0,5,5) to (7,5)  Track: 47  Switch: 2
+Node:	5684	 CHANY (0,6,2) to (6,5)  Track: 7  Switch: 2
+Node:	3440	 CHANX (0,3,1) to (6,1)  Track: 7  Switch: 1
+Node:	1749	  IPIN (0,5,1)  Pin: 0   router.rst_[0] Switch: 0
+Node:	1323	  SINK (0,5,1)  Class: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 1 ($false)
+
+Node:	2033	SOURCE (0,1,2)  Class: 10  Switch: 0
+Node:	2053	  OPIN (0,1,2)  Pin: 49   clb.O[9] Switch: 2
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 2
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 1
+Node:	1026	  IPIN (0,1,1)  Pin: 90   router.idata_2[15] Switch: 0
+Node:	561	  SINK (0,1,1)  Class: 90  Switch: -1 Net_pin_index: 251
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 1
+Node:	1008	  IPIN (0,1,1)  Pin: 18   router.idata_0[13] Switch: 0
+Node:	489	  SINK (0,1,1)  Class: 18  Switch: -1 Net_pin_index: 179
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 2
+Node:	4627	 CHANY (0,0,1)  Track: 54  Switch: 1
+Node:	1059	  IPIN (0,1,1)  Pin: 15   router.idata_0[10] Switch: 0
+Node:	486	  SINK (0,1,1)  Class: 15  Switch: -1 Net_pin_index: 176
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 1
+Node:	1032	  IPIN (0,1,1)  Pin: 114   router.idata_3[4] Switch: 0
+Node:	585	  SINK (0,1,1)  Class: 114  Switch: -1 Net_pin_index: 274
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 1
+Node:	1020	  IPIN (0,1,1)  Pin: 66   router.idata_1[26] Switch: 0
+Node:	537	  SINK (0,1,1)  Class: 66  Switch: -1 Net_pin_index: 227
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 1
+Node:	1014	  IPIN (0,1,1)  Pin: 42   router.idata_1[2] Switch: 0
+Node:	513	  SINK (0,1,1)  Class: 42  Switch: -1 Net_pin_index: 203
+Node:	3238	 CHANX (0,1,0)  Track: 57  Switch: 1
+Node:	1035	  IPIN (0,1,1)  Pin: 126   router.idata_3[16] Switch: 0
+Node:	597	  SINK (0,1,1)  Class: 126  Switch: -1 Net_pin_index: 286
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	979	  IPIN (0,1,1)  Pin: 117   router.idata_3[7] Switch: 0
+Node:	588	  SINK (0,1,1)  Class: 117  Switch: -1 Net_pin_index: 277
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	973	  IPIN (0,1,1)  Pin: 93   router.idata_2[18] Switch: 0
+Node:	564	  SINK (0,1,1)  Class: 93  Switch: -1 Net_pin_index: 254
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	1000	  IPIN (0,1,1)  Pin: 201   router.ilck_0[1] Switch: 0
+Node:	672	  SINK (0,1,1)  Class: 201  Switch: -1 Net_pin_index: 319
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	982	  IPIN (0,1,1)  Pin: 129   router.idata_3[19] Switch: 0
+Node:	600	  SINK (0,1,1)  Class: 129  Switch: -1 Net_pin_index: 289
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	955	  IPIN (0,1,1)  Pin: 21   router.idata_0[16] Switch: 0
+Node:	492	  SINK (0,1,1)  Class: 21  Switch: -1 Net_pin_index: 182
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	967	  IPIN (0,1,1)  Pin: 69   router.idata_1[29] Switch: 0
+Node:	540	  SINK (0,1,1)  Class: 69  Switch: -1 Net_pin_index: 230
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 1
+Node:	961	  IPIN (0,1,1)  Pin: 45   router.idata_1[5] Switch: 0
+Node:	516	  SINK (0,1,1)  Class: 45  Switch: -1 Net_pin_index: 206
+Node:	4806	 CHANY (0,1,1) to (1,2)  Track: 59  Switch: 2
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 2
+Node:	4999	 CHANY (0,2,2) to (2,5)  Track: 48  Switch: 2
+Node:	3971	 CHANX (0,3,4) to (6,4)  Track: 40  Switch: 2
+Node:	5142	 CHANY (0,3,1) to (3,4)  Track: 47  Switch: 2
+Node:	3457	 CHANX (0,4,1) to (7,1)  Track: 0  Switch: 2
+Node:	5334	 CHANY (0,4,1)  Track: 65  Switch: 1
+Node:	1934	  IPIN (0,5,1)  Pin: 107   router.idata_2[32] Switch: 0
+Node:	1430	  SINK (0,5,1)  Class: 107  Switch: -1 Net_pin_index: 105
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1779	  IPIN (0,5,1)  Pin: 120   router.idata_3[10] Switch: 0
+Node:	1443	  SINK (0,5,1)  Class: 120  Switch: -1 Net_pin_index: 118
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1773	  IPIN (0,5,1)  Pin: 96   router.idata_2[21] Switch: 0
+Node:	1419	  SINK (0,5,1)  Class: 96  Switch: -1 Net_pin_index: 94
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1800	  IPIN (0,5,1)  Pin: 204   router.ilck_2[0] Switch: 0
+Node:	1527	  SINK (0,5,1)  Class: 204  Switch: -1 Net_pin_index: 159
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1794	  IPIN (0,5,1)  Pin: 180   router.ivalid_0[0] Switch: 0
+Node:	1503	  SINK (0,5,1)  Class: 180  Switch: -1 Net_pin_index: 143
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1758	  IPIN (0,5,1)  Pin: 36   router.idata_0[31] Switch: 0
+Node:	1359	  SINK (0,5,1)  Class: 36  Switch: -1 Net_pin_index: 35
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1752	  IPIN (0,5,1)  Pin: 12   router.idata_0[7] Switch: 0
+Node:	1335	  SINK (0,5,1)  Class: 12  Switch: -1 Net_pin_index: 11
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1767	  IPIN (0,5,1)  Pin: 72   router.idata_1[32] Switch: 0
+Node:	1395	  SINK (0,5,1)  Class: 72  Switch: -1 Net_pin_index: 70
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 2
+Node:	4938	 CHANY (0,2,1)  Track: 17  Switch: 2
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 1
+Node:	1873	  IPIN (0,5,1)  Pin: 70   router.idata_1[30] Switch: 0
+Node:	1393	  SINK (0,5,1)  Class: 70  Switch: -1 Net_pin_index: 68
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 2
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1803	  IPIN (0,5,1)  Pin: 5   router.idata_0[0] Switch: 0
+Node:	1328	  SINK (0,5,1)  Class: 5  Switch: -1 Net_pin_index: 4
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1848	  IPIN (0,5,1)  Pin: 185   router.ivch_0[0] Switch: 0
+Node:	1508	  SINK (0,5,1)  Class: 185  Switch: -1 Net_pin_index: 146
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1836	  IPIN (0,5,1)  Pin: 137   router.idata_3[27] Switch: 0
+Node:	1460	  SINK (0,5,1)  Class: 137  Switch: -1 Net_pin_index: 135
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1815	  IPIN (0,5,1)  Pin: 53   router.idata_1[13] Switch: 0
+Node:	1376	  SINK (0,5,1)  Class: 53  Switch: -1 Net_pin_index: 51
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1809	  IPIN (0,5,1)  Pin: 29   router.idata_0[24] Switch: 0
+Node:	1352	  SINK (0,5,1)  Class: 29  Switch: -1 Net_pin_index: 28
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1833	  IPIN (0,5,1)  Pin: 125   router.idata_3[15] Switch: 0
+Node:	1448	  SINK (0,5,1)  Class: 125  Switch: -1 Net_pin_index: 123
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1827	  IPIN (0,5,1)  Pin: 101   router.idata_2[26] Switch: 0
+Node:	1424	  SINK (0,5,1)  Class: 101  Switch: -1 Net_pin_index: 99
+Node:	5505	 CHANY (0,5,1)  Track: 62  Switch: 1
+Node:	1821	  IPIN (0,5,1)  Pin: 77   router.idata_2[2] Switch: 0
+Node:	1400	  SINK (0,5,1)  Class: 77  Switch: -1 Net_pin_index: 75
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 1
+Node:	1885	  IPIN (0,5,1)  Pin: 118   router.idata_3[8] Switch: 0
+Node:	1441	  SINK (0,5,1)  Class: 118  Switch: -1 Net_pin_index: 116
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 1
+Node:	1879	  IPIN (0,5,1)  Pin: 94   router.idata_2[19] Switch: 0
+Node:	1417	  SINK (0,5,1)  Class: 94  Switch: -1 Net_pin_index: 92
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 1
+Node:	1891	  IPIN (0,5,1)  Pin: 142   router.idata_3[32] Switch: 0
+Node:	1465	  SINK (0,5,1)  Class: 142  Switch: -1 Net_pin_index: 140
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 1
+Node:	1858	  IPIN (0,5,1)  Pin: 10   router.idata_0[5] Switch: 0
+Node:	1333	  SINK (0,5,1)  Class: 10  Switch: -1 Net_pin_index: 9
+Node:	3265	 CHANX (0,3,0) to (6,0)  Track: 0  Switch: 1
+Node:	1867	  IPIN (0,5,1)  Pin: 46   router.idata_1[6] Switch: 0
+Node:	1369	  SINK (0,5,1)  Class: 46  Switch: -1 Net_pin_index: 44
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 1
+Node:	1761	  IPIN (0,5,1)  Pin: 48   router.idata_1[8] Switch: 0
+Node:	1371	  SINK (0,5,1)  Class: 48  Switch: -1 Net_pin_index: 46
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 2
+Node:	5519	 CHANY (0,5,2) to (5,5)  Track: 40  Switch: 2
+Node:	3610	 CHANX (0,2,2) to (5,2)  Track: 63  Switch: 2
+Node:	4843	 CHANY (0,1,3) to (1,6)  Track: 48  Switch: 2
+Node:	3955	 CHANX (0,2,4) to (5,4)  Track: 48  Switch: 2
+Node:	5284	 CHANY (0,4,1) to (4,4)  Track: 15  Switch: 1
+Node:	1924	  IPIN (0,5,1)  Pin: 67   router.idata_1[27] Switch: 0
+Node:	1390	  SINK (0,5,1)  Class: 67  Switch: -1 Net_pin_index: 65
+Node:	5284	 CHANY (0,4,1) to (4,4)  Track: 15  Switch: 1
+Node:	1918	  IPIN (0,5,1)  Pin: 43   router.idata_1[3] Switch: 0
+Node:	1366	  SINK (0,5,1)  Class: 43  Switch: -1 Net_pin_index: 41
+Node:	3610	 CHANX (0,2,2) to (5,2)  Track: 63  Switch: 2
+Node:	4940	 CHANY (0,2,1) to (2,2)  Track: 19  Switch: 2
+Node:	3453	 CHANX (0,3,1) to (6,1)  Track: 56  Switch: 1
+Node:	1784	  IPIN (0,5,1)  Pin: 140   router.idata_3[30] Switch: 0
+Node:	1463	  SINK (0,5,1)  Class: 140  Switch: -1 Net_pin_index: 138
+Node:	3453	 CHANX (0,3,1) to (6,1)  Track: 56  Switch: 1
+Node:	1796	  IPIN (0,5,1)  Pin: 188   router.ivch_3[0] Switch: 0
+Node:	1511	  SINK (0,5,1)  Class: 188  Switch: -1 Net_pin_index: 148
+Node:	3453	 CHANX (0,3,1) to (6,1)  Track: 56  Switch: 1
+Node:	1769	  IPIN (0,5,1)  Pin: 80   router.idata_2[5] Switch: 0
+Node:	1403	  SINK (0,5,1)  Class: 80  Switch: -1 Net_pin_index: 78
+Node:	4940	 CHANY (0,2,1) to (2,2)  Track: 19  Switch: 2
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 2
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 2
+Node:	3207	 CHANX (0,1,0) to (3,0)  Track: 26  Switch: 1
+Node:	1038	  IPIN (0,1,1)  Pin: 138   router.idata_3[28] Switch: 0
+Node:	609	  SINK (0,1,1)  Class: 138  Switch: -1 Net_pin_index: 298
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1083	  IPIN (0,1,1)  Pin: 111   router.idata_3[1] Switch: 0
+Node:	582	  SINK (0,1,1)  Class: 111  Switch: -1 Net_pin_index: 271
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1077	  IPIN (0,1,1)  Pin: 87   router.idata_2[12] Switch: 0
+Node:	558	  SINK (0,1,1)  Class: 87  Switch: -1 Net_pin_index: 248
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1104	  IPIN (0,1,1)  Pin: 195   router.iack_2[1] Switch: 0
+Node:	666	  SINK (0,1,1)  Class: 195  Switch: -1 Net_pin_index: 316
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1089	  IPIN (0,1,1)  Pin: 135   router.idata_3[25] Switch: 0
+Node:	606	  SINK (0,1,1)  Class: 135  Switch: -1 Net_pin_index: 295
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1068	  IPIN (0,1,1)  Pin: 51   router.idata_1[11] Switch: 0
+Node:	522	  SINK (0,1,1)  Class: 51  Switch: -1 Net_pin_index: 212
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1062	  IPIN (0,1,1)  Pin: 27   router.idata_0[22] Switch: 0
+Node:	498	  SINK (0,1,1)  Class: 27  Switch: -1 Net_pin_index: 188
+Node:	4598	 CHANY (0,0,1)  Track: 25  Switch: 1
+Node:	1071	  IPIN (0,1,1)  Pin: 63   router.idata_1[23] Switch: 0
+Node:	534	  SINK (0,1,1)  Class: 63  Switch: -1 Net_pin_index: 224
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 1
+Node:	903	  IPIN (0,1,1)  Pin: 24   router.idata_0[19] Switch: 0
+Node:	495	  SINK (0,1,1)  Class: 24  Switch: -1 Net_pin_index: 185
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 1
+Node:	900	  IPIN (0,1,1)  Pin: 12   router.idata_0[7] Switch: 0
+Node:	483	  SINK (0,1,1)  Class: 12  Switch: -1 Net_pin_index: 173
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 2
+Node:	4645	 CHANY (0,0,2) to (0,5)  Track: 24  Switch: 2
+Node:	3917	 CHANX (0,1,4) to (4,4)  Track: 40  Switch: 2
+Node:	5308	 CHANY (0,4,1) to (4,4)  Track: 39  Switch: 1
+Node:	1954	  IPIN (0,5,1)  Pin: 187   router.ivch_2[0] Switch: 0
+Node:	1510	  SINK (0,5,1)  Class: 187  Switch: -1 Net_pin_index: 147
+Node:	5308	 CHANY (0,4,1) to (4,4)  Track: 39  Switch: 1
+Node:	1921	  IPIN (0,5,1)  Pin: 55   router.idata_1[15] Switch: 0
+Node:	1378	  SINK (0,5,1)  Class: 55  Switch: -1 Net_pin_index: 53
+Node:	5308	 CHANY (0,4,1) to (4,4)  Track: 39  Switch: 1
+Node:	1915	  IPIN (0,5,1)  Pin: 31   router.idata_0[26] Switch: 0
+Node:	1354	  SINK (0,5,1)  Class: 31  Switch: -1 Net_pin_index: 30
+Node:	5308	 CHANY (0,4,1) to (4,4)  Track: 39  Switch: 1
+Node:	1909	  IPIN (0,5,1)  Pin: 7   router.idata_0[2] Switch: 0
+Node:	1330	  SINK (0,5,1)  Class: 7  Switch: -1 Net_pin_index: 6
+Node:	5308	 CHANY (0,4,1) to (4,4)  Track: 39  Switch: 1
+Node:	1936	  IPIN (0,5,1)  Pin: 115   router.idata_3[5] Switch: 0
+Node:	1438	  SINK (0,5,1)  Class: 115  Switch: -1 Net_pin_index: 113
+Node:	5308	 CHANY (0,4,1) to (4,4)  Track: 39  Switch: 1
+Node:	1930	  IPIN (0,5,1)  Pin: 91   router.idata_2[16] Switch: 0
+Node:	1414	  SINK (0,5,1)  Class: 91  Switch: -1 Net_pin_index: 89
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 1
+Node:	927	  IPIN (0,1,1)  Pin: 120   router.idata_3[10] Switch: 0
+Node:	591	  SINK (0,1,1)  Class: 120  Switch: -1 Net_pin_index: 280
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 1
+Node:	933	  IPIN (0,1,1)  Pin: 144   router.idata_3[34] Switch: 0
+Node:	615	  SINK (0,1,1)  Class: 144  Switch: -1 Net_pin_index: 304
+Node:	3382	 CHANX (0,1,1) to (2,1)  Track: 27  Switch: 2
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 1
+Node:	954	  IPIN (0,1,1)  Pin: 17   router.idata_0[12] Switch: 0
+Node:	488	  SINK (0,1,1)  Class: 17  Switch: -1 Net_pin_index: 178
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 2
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 2
+Node:	5319	 CHANY (0,4,1) to (4,3)  Track: 50  Switch: 1
+Node:	1942	  IPIN (0,5,1)  Pin: 139   router.idata_3[29] Switch: 0
+Node:	1462	  SINK (0,5,1)  Class: 139  Switch: -1 Net_pin_index: 137
+Node:	5319	 CHANY (0,4,1) to (4,3)  Track: 50  Switch: 1
+Node:	1933	  IPIN (0,5,1)  Pin: 103   router.idata_2[28] Switch: 0
+Node:	1426	  SINK (0,5,1)  Class: 103  Switch: -1 Net_pin_index: 101
+Node:	5319	 CHANY (0,4,1) to (4,3)  Track: 50  Switch: 1
+Node:	1927	  IPIN (0,5,1)  Pin: 79   router.idata_2[4] Switch: 0
+Node:	1402	  SINK (0,5,1)  Class: 79  Switch: -1 Net_pin_index: 77
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 1
+Node:	1870	  IPIN (0,5,1)  Pin: 58   router.idata_1[18] Switch: 0
+Node:	1381	  SINK (0,5,1)  Class: 58  Switch: -1 Net_pin_index: 56
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 1
+Node:	1876	  IPIN (0,5,1)  Pin: 82   router.idata_2[7] Switch: 0
+Node:	1405	  SINK (0,5,1)  Class: 82  Switch: -1 Net_pin_index: 80
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 1
+Node:	1882	  IPIN (0,5,1)  Pin: 106   router.idata_2[31] Switch: 0
+Node:	1429	  SINK (0,5,1)  Class: 106  Switch: -1 Net_pin_index: 104
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 1
+Node:	1888	  IPIN (0,5,1)  Pin: 130   router.idata_3[20] Switch: 0
+Node:	1453	  SINK (0,5,1)  Class: 130  Switch: -1 Net_pin_index: 128
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 1
+Node:	1861	  IPIN (0,5,1)  Pin: 22   router.idata_0[17] Switch: 0
+Node:	1345	  SINK (0,5,1)  Class: 22  Switch: -1 Net_pin_index: 21
+Node:	3251	 CHANX (0,2,0) to (5,0)  Track: 16  Switch: 1
+Node:	1903	  IPIN (0,5,1)  Pin: 190   router.iack_0[0] Switch: 0
+Node:	1513	  SINK (0,5,1)  Class: 190  Switch: -1 Net_pin_index: 149
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 1
+Node:	960	  IPIN (0,1,1)  Pin: 41   router.idata_1[1] Switch: 0
+Node:	512	  SINK (0,1,1)  Class: 41  Switch: -1 Net_pin_index: 202
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 1
+Node:	978	  IPIN (0,1,1)  Pin: 113   router.idata_3[3] Switch: 0
+Node:	584	  SINK (0,1,1)  Class: 113  Switch: -1 Net_pin_index: 273
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 1
+Node:	999	  IPIN (0,1,1)  Pin: 197   router.iack_3[1] Switch: 0
+Node:	668	  SINK (0,1,1)  Class: 197  Switch: -1 Net_pin_index: 317
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 1
+Node:	966	  IPIN (0,1,1)  Pin: 65   router.idata_1[25] Switch: 0
+Node:	536	  SINK (0,1,1)  Class: 65  Switch: -1 Net_pin_index: 226
+Node:	4804	 CHANY (0,1,1)  Track: 57  Switch: 1
+Node:	972	  IPIN (0,1,1)  Pin: 89   router.idata_2[14] Switch: 0
+Node:	560	  SINK (0,1,1)  Class: 89  Switch: -1 Net_pin_index: 250
+Node:	5519	 CHANY (0,5,2) to (5,5)  Track: 40  Switch: 2
+Node:	4130	 CHANX (0,2,5) to (5,5)  Track: 55  Switch: 2
+Node:	4816	 CHANY (0,1,2) to (1,5)  Track: 15  Switch: 2
+Node:	3607	 CHANX (0,2,2) to (5,2)  Track: 48  Switch: 2
+Node:	5280	 CHANY (0,4,1) to (4,2)  Track: 11  Switch: 1
+Node:	1955	  IPIN (0,5,1)  Pin: 191   router.iack_0[1] Switch: 0
+Node:	1514	  SINK (0,5,1)  Class: 191  Switch: -1 Net_pin_index: 150
+Node:	5280	 CHANY (0,4,1) to (4,2)  Track: 11  Switch: 1
+Node:	1940	  IPIN (0,5,1)  Pin: 131   router.idata_3[21] Switch: 0
+Node:	1454	  SINK (0,5,1)  Class: 131  Switch: -1 Net_pin_index: 129
+Node:	5280	 CHANY (0,4,1) to (4,2)  Track: 11  Switch: 1
+Node:	1916	  IPIN (0,5,1)  Pin: 35   router.idata_0[30] Switch: 0
+Node:	1358	  SINK (0,5,1)  Class: 35  Switch: -1 Net_pin_index: 34
+Node:	5280	 CHANY (0,4,1) to (4,2)  Track: 11  Switch: 1
+Node:	1922	  IPIN (0,5,1)  Pin: 59   router.idata_1[19] Switch: 0
+Node:	1382	  SINK (0,5,1)  Class: 59  Switch: -1 Net_pin_index: 57
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 2
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 1
+Node:	1802	  IPIN (0,5,1)  Pin: 1   router.my_xpos[0] Switch: 0
+Node:	1324	  SINK (0,5,1)  Class: 1  Switch: -1 Net_pin_index: 1
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 1
+Node:	1823	  IPIN (0,5,1)  Pin: 85   router.idata_2[10] Switch: 0
+Node:	1408	  SINK (0,5,1)  Class: 85  Switch: -1 Net_pin_index: 83
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 1
+Node:	1835	  IPIN (0,5,1)  Pin: 133   router.idata_3[23] Switch: 0
+Node:	1456	  SINK (0,5,1)  Class: 133  Switch: -1 Net_pin_index: 131
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 2
+Node:	3327	 CHANX (0,6,0) to (7,0)  Track: 32  Switch: 2
+Node:	5823	 CHANY (0,7,1) to (7,4)  Track: 32  Switch: 2
+Node:	3482	 CHANX (0,5,1) to (7,1)  Track: 31  Switch: 2
+Node:	5666	 CHANY (0,6,1)  Track: 49  Switch: 2
+Node:	3272	 CHANX (0,3,0) to (6,0)  Track: 31  Switch: 1
+Node:	1857	  IPIN (0,5,1)  Pin: 6   router.idata_0[1] Switch: 0
+Node:	1329	  SINK (0,5,1)  Class: 6  Switch: -1 Net_pin_index: 5
+Node:	3272	 CHANX (0,3,0) to (6,0)  Track: 31  Switch: 1
+Node:	1869	  IPIN (0,5,1)  Pin: 54   router.idata_1[14] Switch: 0
+Node:	1377	  SINK (0,5,1)  Class: 54  Switch: -1 Net_pin_index: 52
+Node:	3272	 CHANX (0,3,0) to (6,0)  Track: 31  Switch: 1
+Node:	1872	  IPIN (0,5,1)  Pin: 66   router.idata_1[26] Switch: 0
+Node:	1389	  SINK (0,5,1)  Class: 66  Switch: -1 Net_pin_index: 64
+Node:	3272	 CHANX (0,3,0) to (6,0)  Track: 31  Switch: 1
+Node:	1878	  IPIN (0,5,1)  Pin: 90   router.idata_2[15] Switch: 0
+Node:	1413	  SINK (0,5,1)  Class: 90  Switch: -1 Net_pin_index: 88
+Node:	3272	 CHANX (0,3,0) to (6,0)  Track: 31  Switch: 1
+Node:	1884	  IPIN (0,5,1)  Pin: 114   router.idata_3[4] Switch: 0
+Node:	1437	  SINK (0,5,1)  Class: 114  Switch: -1 Net_pin_index: 112
+Node:	3272	 CHANX (0,3,0) to (6,0)  Track: 31  Switch: 1
+Node:	1890	  IPIN (0,5,1)  Pin: 138   router.idata_3[28] Switch: 0
+Node:	1461	  SINK (0,5,1)  Class: 138  Switch: -1 Net_pin_index: 136
+Node:	3482	 CHANX (0,5,1) to (7,1)  Track: 31  Switch: 2
+Node:	5339	 CHANY (0,4,2) to (4,5)  Track: 16  Switch: 2
+Node:	4181	 CHANX (0,5,5) to (7,5)  Track: 40  Switch: 2
+Node:	5520	 CHANY (0,5,2) to (5,5)  Track: 47  Switch: 2
+Node:	3857	 CHANX (0,6,3)  Track: 64  Switch: 2
+Node:	5721	 CHANY (0,6,4) to (6,7)  Track: 8  Switch: 2
+Node:	3970	 CHANX (0,3,4) to (6,4)  Track: 39  Switch: 2
+Node:	4952	 CHANY (0,2,1) to (2,4)  Track: 31  Switch: 2
+Node:	3445	 CHANX (0,3,1) to (6,1)  Track: 24  Switch: 1
+Node:	1753	  IPIN (0,5,1)  Pin: 16   router.idata_0[11] Switch: 0
+Node:	1339	  SINK (0,5,1)  Class: 16  Switch: -1 Net_pin_index: 15
+Node:	5339	 CHANY (0,4,2) to (4,5)  Track: 16  Switch: 2
+Node:	4013	 CHANX (0,5,4)  Track: 64  Switch: 2
+Node:	5565	 CHANY (0,5,5) to (5,7)  Track: 8  Switch: 2
+Node:	4480	 CHANX (0,2,7) to (5,7)  Track: 63  Switch: 2
+Node:	4862	 CHANY (0,1,4) to (1,7)  Track: 55  Switch: 2
+Node:	3783	 CHANX (0,2,3) to (5,3)  Track: 56  Switch: 2
+Node:	5306	 CHANY (0,4,1) to (4,3)  Track: 37  Switch: 1
+Node:	1941	  IPIN (0,5,1)  Pin: 135   router.idata_3[25] Switch: 0
+Node:	1458	  SINK (0,5,1)  Class: 135  Switch: -1 Net_pin_index: 133
+Node:	3482	 CHANX (0,5,1) to (7,1)  Track: 31  Switch: 2
+Node:	5302	 CHANY (0,4,1)  Track: 33  Switch: 1
+Node:	1912	  IPIN (0,5,1)  Pin: 19   router.idata_0[14] Switch: 0
+Node:	1342	  SINK (0,5,1)  Class: 19  Switch: -1 Net_pin_index: 18
+Node:	3482	 CHANX (0,5,1) to (7,1)  Track: 31  Switch: 1
+Node:	1763	  IPIN (0,5,1)  Pin: 56   router.idata_1[16] Switch: 0
+Node:	1379	  SINK (0,5,1)  Class: 56  Switch: -1 Net_pin_index: 54
+Node:	3482	 CHANX (0,5,1) to (7,1)  Track: 31  Switch: 1
+Node:	1757	  IPIN (0,5,1)  Pin: 32   router.idata_0[27] Switch: 0
+Node:	1355	  SINK (0,5,1)  Class: 32  Switch: -1 Net_pin_index: 31
+Node:	3482	 CHANX (0,5,1) to (7,1)  Track: 31  Switch: 1
+Node:	1775	  IPIN (0,5,1)  Pin: 104   router.idata_2[29] Switch: 0
+Node:	1427	  SINK (0,5,1)  Class: 104  Switch: -1 Net_pin_index: 102
+Node:	5823	 CHANY (0,7,1) to (7,4)  Track: 32  Switch: 2
+Node:	4000	 CHANX (0,5,4) to (7,4)  Track: 15  Switch: 2
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 2
+Node:	3600	 CHANX (0,2,2) to (5,2)  Track: 23  Switch: 2
+Node:	5363	 CHANY (0,4,3) to (4,6)  Track: 40  Switch: 2
+Node:	3766	 CHANX (0,1,3) to (4,3)  Track: 63  Switch: 2
+Node:	4950	 CHANY (0,2,1) to (2,3)  Track: 29  Switch: 2
+Node:	3443	 CHANX (0,3,1) to (6,1)  Track: 16  Switch: 1
+Node:	1776	  IPIN (0,5,1)  Pin: 108   router.idata_2[33] Switch: 0
+Node:	1431	  SINK (0,5,1)  Class: 108  Switch: -1 Net_pin_index: 106
+Node:	3443	 CHANX (0,3,1) to (6,1)  Track: 16  Switch: 1
+Node:	1770	  IPIN (0,5,1)  Pin: 84   router.idata_2[9] Switch: 0
+Node:	1407	  SINK (0,5,1)  Class: 84  Switch: -1 Net_pin_index: 82
+Node:	3443	 CHANX (0,3,1) to (6,1)  Track: 16  Switch: 1
+Node:	1782	  IPIN (0,5,1)  Pin: 132   router.idata_3[22] Switch: 0
+Node:	1455	  SINK (0,5,1)  Class: 132  Switch: -1 Net_pin_index: 130
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 1
+Node:	1828	  IPIN (0,5,1)  Pin: 105   router.idata_2[30] Switch: 0
+Node:	1428	  SINK (0,5,1)  Class: 105  Switch: -1 Net_pin_index: 103
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 1
+Node:	1834	  IPIN (0,5,1)  Pin: 129   router.idata_3[19] Switch: 0
+Node:	1452	  SINK (0,5,1)  Class: 129  Switch: -1 Net_pin_index: 127
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 1
+Node:	1807	  IPIN (0,5,1)  Pin: 21   router.idata_0[16] Switch: 0
+Node:	1344	  SINK (0,5,1)  Class: 21  Switch: -1 Net_pin_index: 20
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 1
+Node:	1822	  IPIN (0,5,1)  Pin: 81   router.idata_2[6] Switch: 0
+Node:	1404	  SINK (0,5,1)  Class: 81  Switch: -1 Net_pin_index: 79
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 1
+Node:	1813	  IPIN (0,5,1)  Pin: 45   router.idata_1[5] Switch: 0
+Node:	1368	  SINK (0,5,1)  Class: 45  Switch: -1 Net_pin_index: 43
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 2
+Node:	3493	 CHANX (0,6,1) to (7,1)  Track: 0  Switch: 2
+Node:	5683	 CHANY (0,6,2) to (6,5)  Track: 0  Switch: 2
+Node:	3792	 CHANX (0,3,3) to (6,3)  Track: 23  Switch: 2
+Node:	4966	 CHANY (0,2,1) to (2,3)  Track: 45  Switch: 2
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 2
+Node:	4630	 CHANY (0,0,1)  Track: 57  Switch: 1
+Node:	1078	  IPIN (0,1,1)  Pin: 91   router.idata_2[16] Switch: 0
+Node:	562	  SINK (0,1,1)  Class: 91  Switch: -1 Net_pin_index: 252
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 2
+Node:	4655	 CHANY (0,0,2)  Track: 64  Switch: 2
+Node:	3575	 CHANX (0,1,2)  Track: 46  Switch: 2
+Node:	4782	 CHANY (0,1,1) to (1,2)  Track: 35  Switch: 1
+Node:	970	  IPIN (0,1,1)  Pin: 81   router.idata_2[6] Switch: 0
+Node:	552	  SINK (0,1,1)  Class: 81  Switch: -1 Net_pin_index: 242
+Node:	4782	 CHANY (0,1,1) to (1,2)  Track: 35  Switch: 1
+Node:	976	  IPIN (0,1,1)  Pin: 105   router.idata_2[30] Switch: 0
+Node:	576	  SINK (0,1,1)  Class: 105  Switch: -1 Net_pin_index: 266
+Node:	4782	 CHANY (0,1,1) to (1,2)  Track: 35  Switch: 2
+Node:	3190	 CHANX (0,1,0)  Track: 9  Switch: 1
+Node:	1050	  IPIN (0,1,1)  Pin: 186   router.ivch_1[0] Switch: 0
+Node:	657	  SINK (0,1,1)  Class: 186  Switch: -1 Net_pin_index: 309
+Node:	3190	 CHANX (0,1,0)  Track: 9  Switch: 1
+Node:	1017	  IPIN (0,1,1)  Pin: 54   router.idata_1[14] Switch: 0
+Node:	525	  SINK (0,1,1)  Class: 54  Switch: -1 Net_pin_index: 215
+Node:	3190	 CHANX (0,1,0)  Track: 9  Switch: 1
+Node:	1011	  IPIN (0,1,1)  Pin: 30   router.idata_0[25] Switch: 0
+Node:	501	  SINK (0,1,1)  Class: 30  Switch: -1 Net_pin_index: 191
+Node:	3190	 CHANX (0,1,0)  Track: 9  Switch: 1
+Node:	1029	  IPIN (0,1,1)  Pin: 102   router.idata_2[27] Switch: 0
+Node:	573	  SINK (0,1,1)  Class: 102  Switch: -1 Net_pin_index: 263
+Node:	4782	 CHANY (0,1,1) to (1,2)  Track: 35  Switch: 2
+Node:	3247	 CHANX (0,2,0) to (5,0)  Track: 0  Switch: 1
+Node:	1859	  IPIN (0,5,1)  Pin: 14   router.idata_0[9] Switch: 0
+Node:	1337	  SINK (0,5,1)  Class: 14  Switch: -1 Net_pin_index: 13
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	911	  IPIN (0,1,1)  Pin: 56   router.idata_1[16] Switch: 0
+Node:	527	  SINK (0,1,1)  Class: 56  Switch: -1 Net_pin_index: 217
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	899	  IPIN (0,1,1)  Pin: 8   router.idata_0[3] Switch: 0
+Node:	479	  SINK (0,1,1)  Class: 8  Switch: -1 Net_pin_index: 169
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	917	  IPIN (0,1,1)  Pin: 80   router.idata_2[5] Switch: 0
+Node:	551	  SINK (0,1,1)  Class: 80  Switch: -1 Net_pin_index: 241
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	905	  IPIN (0,1,1)  Pin: 32   router.idata_0[27] Switch: 0
+Node:	503	  SINK (0,1,1)  Class: 32  Switch: -1 Net_pin_index: 193
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	932	  IPIN (0,1,1)  Pin: 140   router.idata_3[30] Switch: 0
+Node:	611	  SINK (0,1,1)  Class: 140  Switch: -1 Net_pin_index: 300
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	923	  IPIN (0,1,1)  Pin: 104   router.idata_2[29] Switch: 0
+Node:	575	  SINK (0,1,1)  Class: 104  Switch: -1 Net_pin_index: 265
+Node:	3374	 CHANX (0,1,1) to (2,1)  Track: 19  Switch: 1
+Node:	929	  IPIN (0,1,1)  Pin: 128   router.idata_3[18] Switch: 0
+Node:	599	  SINK (0,1,1)  Class: 128  Switch: -1 Net_pin_index: 288
+Node:	3792	 CHANX (0,3,3) to (6,3)  Track: 23  Switch: 2
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1913	  IPIN (0,5,1)  Pin: 23   router.idata_0[18] Switch: 0
+Node:	1346	  SINK (0,5,1)  Class: 23  Switch: -1 Net_pin_index: 22
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1919	  IPIN (0,5,1)  Pin: 47   router.idata_1[7] Switch: 0
+Node:	1370	  SINK (0,5,1)  Class: 47  Switch: -1 Net_pin_index: 45
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1943	  IPIN (0,5,1)  Pin: 143   router.idata_3[33] Switch: 0
+Node:	1466	  SINK (0,5,1)  Class: 143  Switch: -1 Net_pin_index: 141
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 2
+Node:	3536	 CHANX (0,1,2) to (4,2)  Track: 7  Switch: 2
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	971	  IPIN (0,1,1)  Pin: 85   router.idata_2[10] Switch: 0
+Node:	556	  SINK (0,1,1)  Class: 85  Switch: -1 Net_pin_index: 246
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	959	  IPIN (0,1,1)  Pin: 37   router.idata_0[32] Switch: 0
+Node:	508	  SINK (0,1,1)  Class: 37  Switch: -1 Net_pin_index: 198
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	953	  IPIN (0,1,1)  Pin: 13   router.idata_0[8] Switch: 0
+Node:	484	  SINK (0,1,1)  Class: 13  Switch: -1 Net_pin_index: 174
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	980	  IPIN (0,1,1)  Pin: 121   router.idata_3[11] Switch: 0
+Node:	592	  SINK (0,1,1)  Class: 121  Switch: -1 Net_pin_index: 281
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	998	  IPIN (0,1,1)  Pin: 193   router.iack_1[1] Switch: 0
+Node:	664	  SINK (0,1,1)  Class: 193  Switch: -1 Net_pin_index: 314
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	965	  IPIN (0,1,1)  Pin: 61   router.idata_1[21] Switch: 0
+Node:	532	  SINK (0,1,1)  Class: 61  Switch: -1 Net_pin_index: 222
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 1
+Node:	974	  IPIN (0,1,1)  Pin: 97   router.idata_2[22] Switch: 0
+Node:	568	  SINK (0,1,1)  Class: 97  Switch: -1 Net_pin_index: 258
+Node:	4790	 CHANY (0,1,1) to (1,2)  Track: 43  Switch: 2
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 2
+Node:	4643	 CHANY (0,0,2) to (0,5)  Track: 16  Switch: 2
+Node:	3751	 CHANX (0,1,3) to (4,3)  Track: 48  Switch: 2
+Node:	5108	 CHANY (0,3,1) to (3,3)  Track: 13  Switch: 2
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1027	  IPIN (0,1,1)  Pin: 94   router.idata_2[19] Switch: 0
+Node:	565	  SINK (0,1,1)  Class: 94  Switch: -1 Net_pin_index: 255
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1021	  IPIN (0,1,1)  Pin: 70   router.idata_1[30] Switch: 0
+Node:	541	  SINK (0,1,1)  Class: 70  Switch: -1 Net_pin_index: 231
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1054	  IPIN (0,1,1)  Pin: 202   router.ilck_1[0] Switch: 0
+Node:	673	  SINK (0,1,1)  Class: 202  Switch: -1 Net_pin_index: 320
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1039	  IPIN (0,1,1)  Pin: 142   router.idata_3[32] Switch: 0
+Node:	613	  SINK (0,1,1)  Class: 142  Switch: -1 Net_pin_index: 302
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1051	  IPIN (0,1,1)  Pin: 190   router.iack_0[0] Switch: 0
+Node:	661	  SINK (0,1,1)  Class: 190  Switch: -1 Net_pin_index: 311
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1006	  IPIN (0,1,1)  Pin: 10   router.idata_0[5] Switch: 0
+Node:	481	  SINK (0,1,1)  Class: 10  Switch: -1 Net_pin_index: 171
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1012	  IPIN (0,1,1)  Pin: 34   router.idata_0[29] Switch: 0
+Node:	505	  SINK (0,1,1)  Class: 34  Switch: -1 Net_pin_index: 195
+Node:	3210	 CHANX (0,1,0) to (3,0)  Track: 29  Switch: 1
+Node:	1018	  IPIN (0,1,1)  Pin: 58   router.idata_1[18] Switch: 0
+Node:	529	  SINK (0,1,1)  Class: 58  Switch: -1 Net_pin_index: 219
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 1
+Node:	920	  IPIN (0,1,1)  Pin: 92   router.idata_2[17] Switch: 0
+Node:	563	  SINK (0,1,1)  Class: 92  Switch: -1 Net_pin_index: 253
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 1
+Node:	926	  IPIN (0,1,1)  Pin: 116   router.idata_3[6] Switch: 0
+Node:	587	  SINK (0,1,1)  Class: 116  Switch: -1 Net_pin_index: 276
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 1
+Node:	914	  IPIN (0,1,1)  Pin: 68   router.idata_1[28] Switch: 0
+Node:	539	  SINK (0,1,1)  Class: 68  Switch: -1 Net_pin_index: 229
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 1
+Node:	947	  IPIN (0,1,1)  Pin: 200   router.ilck_0[0] Switch: 0
+Node:	671	  SINK (0,1,1)  Class: 200  Switch: -1 Net_pin_index: 318
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 1
+Node:	902	  IPIN (0,1,1)  Pin: 20   router.idata_0[15] Switch: 0
+Node:	491	  SINK (0,1,1)  Class: 20  Switch: -1 Net_pin_index: 181
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 1
+Node:	908	  IPIN (0,1,1)  Pin: 44   router.idata_1[4] Switch: 0
+Node:	515	  SINK (0,1,1)  Class: 44  Switch: -1 Net_pin_index: 205
+Node:	3380	 CHANX (0,1,1)  Track: 25  Switch: 2
+Node:	4606	 CHANY (0,0,1)  Track: 33  Switch: 2
+Node:	3215	 CHANX (0,1,0) to (3,0)  Track: 34  Switch: 1
+Node:	1022	  IPIN (0,1,1)  Pin: 74   router.idata_1[34] Switch: 0
+Node:	545	  SINK (0,1,1)  Class: 74  Switch: -1 Net_pin_index: 235
+Node:	4606	 CHANY (0,0,1)  Track: 33  Switch: 1
+Node:	1066	  IPIN (0,1,1)  Pin: 43   router.idata_1[3] Switch: 0
+Node:	514	  SINK (0,1,1)  Class: 43  Switch: -1 Net_pin_index: 204
+Node:	4606	 CHANY (0,0,1)  Track: 33  Switch: 1
+Node:	1072	  IPIN (0,1,1)  Pin: 67   router.idata_1[27] Switch: 0
+Node:	538	  SINK (0,1,1)  Class: 67  Switch: -1 Net_pin_index: 228
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1925	  IPIN (0,5,1)  Pin: 71   router.idata_1[31] Switch: 0
+Node:	1394	  SINK (0,5,1)  Class: 71  Switch: -1 Net_pin_index: 69
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1910	  IPIN (0,5,1)  Pin: 11   router.idata_0[6] Switch: 0
+Node:	1334	  SINK (0,5,1)  Class: 11  Switch: -1 Net_pin_index: 10
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1958	  IPIN (0,5,1)  Pin: 203   router.ilck_1[1] Switch: 0
+Node:	1526	  SINK (0,5,1)  Class: 203  Switch: -1 Net_pin_index: 158
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1931	  IPIN (0,5,1)  Pin: 95   router.idata_2[20] Switch: 0
+Node:	1418	  SINK (0,5,1)  Class: 95  Switch: -1 Net_pin_index: 93
+Node:	5274	 CHANY (0,4,1) to (4,3)  Track: 5  Switch: 1
+Node:	1937	  IPIN (0,5,1)  Pin: 119   router.idata_3[9] Switch: 0
+Node:	1442	  SINK (0,5,1)  Class: 119  Switch: -1 Net_pin_index: 117
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 2
+Node:	3683	 CHANX (0,6,2)  Track: 64  Switch: 2
+Node:	5703	 CHANY (0,6,3) to (6,6)  Track: 8  Switch: 2
+Node:	3796	 CHANX (0,3,3) to (6,3)  Track: 39  Switch: 2
+Node:	5480	 CHANY (0,5,1) to (5,3)  Track: 37  Switch: 2
+Node:	3503	 CHANX (0,6,1) to (7,1)  Track: 40  Switch: 2
+Node:	5689	 CHANY (0,6,2) to (6,5)  Track: 24  Switch: 2
+Node:	3968	 CHANX (0,3,4) to (6,4)  Track: 31  Switch: 2
+Node:	5579	 CHANY (0,5,5)  Track: 64  Switch: 2
+Node:	4118	 CHANX (0,2,5) to (5,5)  Track: 7  Switch: 2
+Node:	5174	 CHANY (0,3,2) to (3,5)  Track: 55  Switch: 2
+Node:	3981	 CHANX (0,4,4) to (7,4)  Track: 8  Switch: 2
+Node:	5292	 CHANY (0,4,1) to (4,4)  Track: 23  Switch: 1
+Node:	1928	  IPIN (0,5,1)  Pin: 83   router.idata_2[8] Switch: 0
+Node:	1406	  SINK (0,5,1)  Class: 83  Switch: -1 Net_pin_index: 81
+Node:	5480	 CHANY (0,5,1) to (5,3)  Track: 37  Switch: 1
+Node:	1853	  IPIN (0,5,1)  Pin: 205   router.ilck_2[1] Switch: 0
+Node:	1528	  SINK (0,5,1)  Class: 205  Switch: -1 Net_pin_index: 160
+Node:	5480	 CHANY (0,5,1) to (5,3)  Track: 37  Switch: 1
+Node:	1820	  IPIN (0,5,1)  Pin: 73   router.idata_1[33] Switch: 0
+Node:	1396	  SINK (0,5,1)  Class: 73  Switch: -1 Net_pin_index: 71
+Node:	5480	 CHANY (0,5,1) to (5,3)  Track: 37  Switch: 2
+Node:	3675	 CHANX (0,6,2) to (7,2)  Track: 32  Switch: 2
+Node:	5877	 CHANY (0,7,3) to (7,6)  Track: 8  Switch: 2
+Node:	3808	 CHANX (0,4,3) to (7,3)  Track: 15  Switch: 2
+Node:	5551	 CHANY (0,5,4) to (5,7)  Track: 24  Switch: 2
+Node:	3946	 CHANX (0,2,4) to (5,4)  Track: 15  Switch: 2
+Node:	5126	 CHANY (0,3,1) to (3,4)  Track: 31  Switch: 2
+Node:	3635	 CHANX (0,4,2) to (7,2)  Track: 16  Switch: 2
+Node:	5312	 CHANY (0,4,1) to (4,2)  Track: 43  Switch: 1
+Node:	1956	  IPIN (0,5,1)  Pin: 195   router.iack_2[1] Switch: 0
+Node:	1518	  SINK (0,5,1)  Class: 195  Switch: -1 Net_pin_index: 153
+Node:	5312	 CHANY (0,4,1) to (4,2)  Track: 43  Switch: 1
+Node:	1929	  IPIN (0,5,1)  Pin: 87   router.idata_2[12] Switch: 0
+Node:	1410	  SINK (0,5,1)  Class: 87  Switch: -1 Net_pin_index: 85
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 2
+Node:	3855	 CHANX (0,6,3) to (7,3)  Track: 56  Switch: 2
+Node:	5907	 CHANY (0,7,4) to (7,7)  Track: 56  Switch: 2
+Node:	4340	 CHANX (0,4,6) to (7,6)  Track: 55  Switch: 2
+Node:	5182	 CHANY (0,3,3) to (3,6)  Track: 15  Switch: 2
+Node:	3989	 CHANX (0,4,4) to (7,4)  Track: 40  Switch: 2
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 2
+Node:	3843	 CHANX (0,6,3) to (7,3)  Track: 8  Switch: 2
+Node:	5638	 CHANY (0,6,1) to (6,3)  Track: 21  Switch: 2
+Node:	3620	 CHANX (0,3,2) to (6,2)  Track: 31  Switch: 2
+Node:	5320	 CHANY (0,4,1) to (4,2)  Track: 51  Switch: 1
+Node:	1917	  IPIN (0,5,1)  Pin: 39   router.idata_0[34] Switch: 0
+Node:	1362	  SINK (0,5,1)  Class: 39  Switch: -1 Net_pin_index: 38
+Node:	3843	 CHANX (0,6,3) to (7,3)  Track: 8  Switch: 2
+Node:	5731	 CHANY (0,6,4) to (6,7)  Track: 48  Switch: 2
+Node:	3964	 CHANX (0,3,4) to (6,4)  Track: 15  Switch: 2
+Node:	5223	 CHANY (0,3,5) to (3,7)  Track: 32  Switch: 2
+Node:	4333	 CHANX (0,4,6) to (7,6)  Track: 24  Switch: 2
+Node:	5528	 CHANY (0,5,3) to (5,6)  Track: 7  Switch: 2
+Node:	3784	 CHANX (0,2,3) to (5,3)  Track: 63  Switch: 2
+Node:	5124	 CHANY (0,3,1) to (3,3)  Track: 29  Switch: 2
+Node:	3295	 CHANX (0,4,0) to (7,0)  Track: 48  Switch: 2
+Node:	5299	 CHANY (0,4,1)  Track: 30  Switch: 1
+Node:	1959	  IPIN (0,5,1)  Pin: 207   router.ilck_3[1] Switch: 0
+Node:	1530	  SINK (0,5,1)  Class: 207  Switch: -1 Net_pin_index: 162
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 2
+Node:	3770	 CHANX (0,2,3) to (5,3)  Track: 7  Switch: 2
+Node:	5025	 CHANY (0,2,4) to (2,7)  Track: 8  Switch: 2
+Node:	4313	 CHANX (0,3,6) to (6,6)  Track: 16  Switch: 2
+Node:	5704	 CHANY (0,6,3) to (6,6)  Track: 15  Switch: 2
+Node:	3689	 CHANX (0,7,2)  Track: 16  Switch: 2
+Node:	5850	 CHANY (0,7,1) to (7,2)  Track: 59  Switch: 2
+Node:	3286	 CHANX (0,4,0) to (7,0)  Track: 15  Switch: 1
+Node:	1883	  IPIN (0,5,1)  Pin: 110   router.idata_3[0] Switch: 0
+Node:	1433	  SINK (0,5,1)  Class: 110  Switch: -1 Net_pin_index: 108
+Node:	3286	 CHANX (0,4,0) to (7,0)  Track: 15  Switch: 1
+Node:	1877	  IPIN (0,5,1)  Pin: 86   router.idata_2[11] Switch: 0
+Node:	1409	  SINK (0,5,1)  Class: 86  Switch: -1 Net_pin_index: 84
+Node:	3286	 CHANX (0,4,0) to (7,0)  Track: 15  Switch: 1
+Node:	1889	  IPIN (0,5,1)  Pin: 134   router.idata_3[24] Switch: 0
+Node:	1457	  SINK (0,5,1)  Class: 134  Switch: -1 Net_pin_index: 132
+Node:	3286	 CHANX (0,4,0) to (7,0)  Track: 15  Switch: 1
+Node:	1856	  IPIN (0,5,1)  Pin: 2   router.my_xpos[1] Switch: 0
+Node:	1325	  SINK (0,5,1)  Class: 2  Switch: -1 Net_pin_index: 2
+Node:	3286	 CHANX (0,4,0) to (7,0)  Track: 15  Switch: 1
+Node:	1904	  IPIN (0,5,1)  Pin: 194   router.iack_2[0] Switch: 0
+Node:	1517	  SINK (0,5,1)  Class: 194  Switch: -1 Net_pin_index: 152
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 1
+Node:	1829	  IPIN (0,5,1)  Pin: 109   router.idata_2[34] Switch: 0
+Node:	1432	  SINK (0,5,1)  Class: 109  Switch: -1 Net_pin_index: 107
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 1
+Node:	1832	  IPIN (0,5,1)  Pin: 121   router.idata_3[11] Switch: 0
+Node:	1444	  SINK (0,5,1)  Class: 121  Switch: -1 Net_pin_index: 119
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 1
+Node:	1850	  IPIN (0,5,1)  Pin: 193   router.iack_1[1] Switch: 0
+Node:	1516	  SINK (0,5,1)  Class: 193  Switch: -1 Net_pin_index: 151
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 1
+Node:	1811	  IPIN (0,5,1)  Pin: 37   router.idata_0[32] Switch: 0
+Node:	1360	  SINK (0,5,1)  Class: 37  Switch: -1 Net_pin_index: 36
+Node:	5498	 CHANY (0,5,1) to (5,4)  Track: 55  Switch: 1
+Node:	1805	  IPIN (0,5,1)  Pin: 13   router.idata_0[8] Switch: 0
+Node:	1336	  SINK (0,5,1)  Class: 13  Switch: -1 Net_pin_index: 12
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 1
+Node:	1816	  IPIN (0,5,1)  Pin: 57   router.idata_1[17] Switch: 0
+Node:	1380	  SINK (0,5,1)  Class: 57  Switch: -1 Net_pin_index: 55
+Node:	5466	 CHANY (0,5,1) to (5,4)  Track: 23  Switch: 2
+Node:	3776	 CHANX (0,2,3) to (5,3)  Track: 31  Switch: 2
+Node:	5197	 CHANY (0,3,4) to (3,7)  Track: 0  Switch: 2
+Node:	4072	 CHANX (0,1,5) to (3,5)  Track: 21  Switch: 2
+Node:	4652	 CHANY (0,0,2) to (0,5)  Track: 55  Switch: 2
+Node:	3915	 CHANX (0,1,4)  Track: 38  Switch: 2
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 1
+Node:	1001	  IPIN (0,1,1)  Pin: 205   router.ilck_2[1] Switch: 0
+Node:	676	  SINK (0,1,1)  Class: 205  Switch: -1 Net_pin_index: 323
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 1
+Node:	968	  IPIN (0,1,1)  Pin: 73   router.idata_1[33] Switch: 0
+Node:	544	  SINK (0,1,1)  Class: 73  Switch: -1 Net_pin_index: 234
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 2
+Node:	3704	 CHANX (0,1,3)  Track: 1  Switch: 2
+Node:	4634	 CHANY (0,0,1) to (0,3)  Track: 61  Switch: 1
+Node:	1080	  IPIN (0,1,1)  Pin: 99   router.idata_2[24] Switch: 0
+Node:	570	  SINK (0,1,1)  Class: 99  Switch: -1 Net_pin_index: 260
+Node:	4634	 CHANY (0,0,1) to (0,3)  Track: 61  Switch: 1
+Node:	1086	  IPIN (0,1,1)  Pin: 123   router.idata_3[13] Switch: 0
+Node:	594	  SINK (0,1,1)  Class: 123  Switch: -1 Net_pin_index: 283
+Node:	4634	 CHANY (0,0,1) to (0,3)  Track: 61  Switch: 1
+Node:	1107	  IPIN (0,1,1)  Pin: 207   router.ilck_3[1] Switch: 0
+Node:	678	  SINK (0,1,1)  Class: 207  Switch: -1 Net_pin_index: 324
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 2
+Node:	3771	 CHANX (0,2,3) to (5,3)  Track: 8  Switch: 2
+Node:	5035	 CHANY (0,2,4) to (2,7)  Track: 48  Switch: 2
+Node:	4319	 CHANX (0,3,6) to (6,6)  Track: 40  Switch: 2
+Node:	5710	 CHANY (0,6,3) to (6,6)  Track: 39  Switch: 2
+Node:	3624	 CHANX (0,3,2) to (6,2)  Track: 47  Switch: 2
+Node:	5178	 CHANY (0,3,2)  Track: 65  Switch: 2
+Node:	3368	 CHANX (0,1,1) to (3,1)  Track: 13  Switch: 2
+Node:	4819	 CHANY (0,1,2) to (1,5)  Track: 24  Switch: 2
+Node:	4084	 CHANX (0,1,5)  Track: 33  Switch: 2
+Node:	4723	 CHANY (0,0,6) to (0,7)  Track: 48  Switch: 2
+Node:	4251	 CHANX (0,1,6) to (3,6)  Track: 26  Switch: 2
+Node:	5008	 CHANY (0,2,3) to (2,6)  Track: 15  Switch: 2
+Node:	3738	 CHANX (0,1,3) to (2,3)  Track: 35  Switch: 2
+Node:	4784	 CHANY (0,1,1) to (1,3)  Track: 37  Switch: 1
+Node:	995	  IPIN (0,1,1)  Pin: 181   router.ivalid_1[0] Switch: 0
+Node:	652	  SINK (0,1,1)  Class: 181  Switch: -1 Net_pin_index: 306
+Node:	4784	 CHANY (0,1,1) to (1,3)  Track: 37  Switch: 1
+Node:	983	  IPIN (0,1,1)  Pin: 133   router.idata_3[23] Switch: 0
+Node:	604	  SINK (0,1,1)  Class: 133  Switch: -1 Net_pin_index: 293
+Node:	4784	 CHANY (0,1,1) to (1,3)  Track: 37  Switch: 1
+Node:	962	  IPIN (0,1,1)  Pin: 49   router.idata_1[9] Switch: 0
+Node:	520	  SINK (0,1,1)  Class: 49  Switch: -1 Net_pin_index: 210
+Node:	4784	 CHANY (0,1,1) to (1,3)  Track: 37  Switch: 1
+Node:	956	  IPIN (0,1,1)  Pin: 25   router.idata_0[20] Switch: 0
+Node:	496	  SINK (0,1,1)  Class: 25  Switch: -1 Net_pin_index: 186
+Node:	4784	 CHANY (0,1,1) to (1,3)  Track: 37  Switch: 1
+Node:	950	  IPIN (0,1,1)  Pin: 1   router.my_xpos[0] Switch: 0
+Node:	472	  SINK (0,1,1)  Class: 1  Switch: -1 Net_pin_index: 163
+Node:	3368	 CHANX (0,1,1) to (3,1)  Track: 13  Switch: 2
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 2
+Node:	3191	 CHANX (0,1,0) to (3,0)  Track: 10  Switch: 1
+Node:	1036	  IPIN (0,1,1)  Pin: 130   router.idata_3[20] Switch: 0
+Node:	601	  SINK (0,1,1)  Class: 130  Switch: -1 Net_pin_index: 290
+Node:	3191	 CHANX (0,1,0) to (3,0)  Track: 10  Switch: 1
+Node:	1009	  IPIN (0,1,1)  Pin: 22   router.idata_0[17] Switch: 0
+Node:	493	  SINK (0,1,1)  Class: 22  Switch: -1 Net_pin_index: 183
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1087	  IPIN (0,1,1)  Pin: 127   router.idata_3[17] Switch: 0
+Node:	598	  SINK (0,1,1)  Class: 127  Switch: -1 Net_pin_index: 287
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1075	  IPIN (0,1,1)  Pin: 79   router.idata_2[4] Switch: 0
+Node:	550	  SINK (0,1,1)  Class: 79  Switch: -1 Net_pin_index: 240
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1081	  IPIN (0,1,1)  Pin: 103   router.idata_2[28] Switch: 0
+Node:	574	  SINK (0,1,1)  Class: 103  Switch: -1 Net_pin_index: 264
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1102	  IPIN (0,1,1)  Pin: 187   router.ivch_2[0] Switch: 0
+Node:	658	  SINK (0,1,1)  Class: 187  Switch: -1 Net_pin_index: 310
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1063	  IPIN (0,1,1)  Pin: 31   router.idata_0[26] Switch: 0
+Node:	502	  SINK (0,1,1)  Class: 31  Switch: -1 Net_pin_index: 192
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1069	  IPIN (0,1,1)  Pin: 55   router.idata_1[15] Switch: 0
+Node:	526	  SINK (0,1,1)  Class: 55  Switch: -1 Net_pin_index: 216
+Node:	4582	 CHANY (0,0,1)  Track: 9  Switch: 1
+Node:	1060	  IPIN (0,1,1)  Pin: 19   router.idata_0[14] Switch: 0
+Node:	490	  SINK (0,1,1)  Class: 19  Switch: -1 Net_pin_index: 180
+Node:	3368	 CHANX (0,1,1) to (3,1)  Track: 13  Switch: 2
+Node:	4991	 CHANY (0,2,2) to (2,5)  Track: 16  Switch: 2
+Node:	3787	 CHANX (0,3,3) to (6,3)  Track: 0  Switch: 2
+Node:	5196	 CHANY (0,3,3)  Track: 65  Switch: 2
+Node:	3542	 CHANX (0,1,2) to (3,2)  Track: 13  Switch: 2
+Node:	5009	 CHANY (0,2,3) to (2,6)  Track: 16  Switch: 2
+Node:	4151	 CHANX (0,3,5)  Track: 64  Switch: 2
+Node:	5176	 CHANY (0,3,2) to (3,5)  Track: 63  Switch: 2
+Node:	3566	 CHANX (0,1,2) to (3,2)  Track: 37  Switch: 2
+Node:	4632	 CHANY (0,0,1) to (0,2)  Track: 59  Switch: 1
+Node:	1061	  IPIN (0,1,1)  Pin: 23   router.idata_0[18] Switch: 0
+Node:	494	  SINK (0,1,1)  Class: 23  Switch: -1 Net_pin_index: 184
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 2
+Node:	3206	 CHANX (0,1,0)  Track: 25  Switch: 1
+Node:	1049	  IPIN (0,1,1)  Pin: 182   router.ivalid_2[0] Switch: 0
+Node:	653	  SINK (0,1,1)  Class: 182  Switch: -1 Net_pin_index: 307
+Node:	3206	 CHANX (0,1,0)  Track: 25  Switch: 1
+Node:	1016	  IPIN (0,1,1)  Pin: 50   router.idata_1[10] Switch: 0
+Node:	521	  SINK (0,1,1)  Class: 50  Switch: -1 Net_pin_index: 211
+Node:	3206	 CHANX (0,1,0)  Track: 25  Switch: 1
+Node:	1004	  IPIN (0,1,1)  Pin: 2   router.my_xpos[1] Switch: 0
+Node:	473	  SINK (0,1,1)  Class: 2  Switch: -1 Net_pin_index: 164
+Node:	3206	 CHANX (0,1,0)  Track: 25  Switch: 1
+Node:	1037	  IPIN (0,1,1)  Pin: 134   router.idata_3[24] Switch: 0
+Node:	605	  SINK (0,1,1)  Class: 134  Switch: -1 Net_pin_index: 294
+Node:	3206	 CHANX (0,1,0)  Track: 25  Switch: 1
+Node:	1025	  IPIN (0,1,1)  Pin: 86   router.idata_2[11] Switch: 0
+Node:	557	  SINK (0,1,1)  Class: 86  Switch: -1 Net_pin_index: 247
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 2
+Node:	3427	 CHANX (0,2,1) to (5,1)  Track: 24  Switch: 2
+Node:	5521	 CHANY (0,5,2) to (5,5)  Track: 48  Switch: 2
+Node:	3853	 CHANX (0,6,3) to (7,3)  Track: 48  Switch: 2
+Node:	5897	 CHANY (0,7,4) to (7,7)  Track: 16  Switch: 2
+Node:	4158	 CHANX (0,4,5) to (7,5)  Track: 23  Switch: 2
+Node:	5510	 CHANY (0,5,2) to (5,5)  Track: 7  Switch: 2
+Node:	3495	 CHANX (0,6,1) to (7,1)  Track: 8  Switch: 2
+Node:	5824	 CHANY (0,7,1)  Track: 33  Switch: 2
+Node:	3310	 CHANX (0,5,0) to (7,0)  Track: 39  Switch: 1
+Node:	1863	  IPIN (0,5,1)  Pin: 30   router.idata_0[25] Switch: 0
+Node:	1353	  SINK (0,5,1)  Class: 30  Switch: -1 Net_pin_index: 29
+Node:	3310	 CHANX (0,5,0) to (7,0)  Track: 39  Switch: 1
+Node:	1875	  IPIN (0,5,1)  Pin: 78   router.idata_2[3] Switch: 0
+Node:	1401	  SINK (0,5,1)  Class: 78  Switch: -1 Net_pin_index: 76
+Node:	3427	 CHANX (0,2,1) to (5,1)  Track: 24  Switch: 2
+Node:	5278	 CHANY (0,4,1)  Track: 9  Switch: 2
+Node:	3228	 CHANX (0,1,0) to (4,0)  Track: 47  Switch: 1
+Node:	1015	  IPIN (0,1,1)  Pin: 46   router.idata_1[6] Switch: 0
+Node:	517	  SINK (0,1,1)  Class: 46  Switch: -1 Net_pin_index: 207
+Node:	4778	 CHANY (0,1,1) to (1,4)  Track: 31  Switch: 2
+Node:	3599	 CHANX (0,2,2) to (5,2)  Track: 16  Switch: 2
+Node:	5355	 CHANY (0,4,3) to (4,6)  Track: 8  Switch: 2
+Node:	4003	 CHANX (0,5,4) to (7,4)  Track: 24  Switch: 2
+Node:	5562	 CHANY (0,5,4)  Track: 65  Switch: 2
+Node:	3772	 CHANX (0,2,3) to (5,3)  Track: 15  Switch: 2
+Node:	4849	 CHANY (0,1,4) to (1,7)  Track: 0  Switch: 2
+Node:	3886	 CHANX (0,1,4)  Track: 9  Switch: 2
+Node:	4604	 CHANY (0,0,1) to (0,4)  Track: 31  Switch: 1
+Node:	1074	  IPIN (0,1,1)  Pin: 75   router.idata_2[0] Switch: 0
+Node:	546	  SINK (0,1,1)  Class: 75  Switch: -1 Net_pin_index: 236
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 1
+Node:	1817	  IPIN (0,5,1)  Pin: 61   router.idata_1[21] Switch: 0
+Node:	1384	  SINK (0,5,1)  Class: 61  Switch: -1 Net_pin_index: 59
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 1
+Node:	1814	  IPIN (0,5,1)  Pin: 49   router.idata_1[9] Switch: 0
+Node:	1372	  SINK (0,5,1)  Class: 49  Switch: -1 Net_pin_index: 47
+Node:	5468	 CHANY (0,5,1)  Track: 25  Switch: 1
+Node:	1808	  IPIN (0,5,1)  Pin: 25   router.idata_0[20] Switch: 0
+Node:	1348	  SINK (0,5,1)  Class: 25  Switch: -1 Net_pin_index: 24
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 2
+Node:	5171	 CHANY (0,3,2) to (3,5)  Track: 40  Switch: 2
+Node:	4157	 CHANX (0,4,5) to (7,5)  Track: 16  Switch: 2
+Node:	5346	 CHANY (0,4,2) to (4,5)  Track: 47  Switch: 2
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 2
+Node:	4946	 CHANY (0,2,1)  Track: 25  Switch: 2
+Node:	3232	 CHANX (0,1,0) to (2,0)  Track: 51  Switch: 1
+Node:	1005	  IPIN (0,1,1)  Pin: 6   router.idata_0[1] Switch: 0
+Node:	477	  SINK (0,1,1)  Class: 6  Switch: -1 Net_pin_index: 167
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 2
+Node:	4764	 CHANY (0,1,1)  Track: 17  Switch: 1
+Node:	985	  IPIN (0,1,1)  Pin: 141   router.idata_3[31] Switch: 0
+Node:	612	  SINK (0,1,1)  Class: 141  Switch: -1 Net_pin_index: 301
+Node:	4764	 CHANY (0,1,1)  Track: 17  Switch: 1
+Node:	958	  IPIN (0,1,1)  Pin: 33   router.idata_0[28] Switch: 0
+Node:	504	  SINK (0,1,1)  Class: 33  Switch: -1 Net_pin_index: 194
+Node:	4764	 CHANY (0,1,1)  Track: 17  Switch: 1
+Node:	952	  IPIN (0,1,1)  Pin: 9   router.idata_0[4] Switch: 0
+Node:	480	  SINK (0,1,1)  Class: 9  Switch: -1 Net_pin_index: 170
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 1
+Node:	948	  IPIN (0,1,1)  Pin: 204   router.ilck_2[0] Switch: 0
+Node:	675	  SINK (0,1,1)  Class: 204  Switch: -1 Net_pin_index: 322
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 1
+Node:	942	  IPIN (0,1,1)  Pin: 180   router.ivalid_0[0] Switch: 0
+Node:	651	  SINK (0,1,1)  Class: 180  Switch: -1 Net_pin_index: 305
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 1
+Node:	909	  IPIN (0,1,1)  Pin: 48   router.idata_1[8] Switch: 0
+Node:	519	  SINK (0,1,1)  Class: 48  Switch: -1 Net_pin_index: 209
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 1
+Node:	921	  IPIN (0,1,1)  Pin: 96   router.idata_2[21] Switch: 0
+Node:	567	  SINK (0,1,1)  Class: 96  Switch: -1 Net_pin_index: 257
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 1
+Node:	915	  IPIN (0,1,1)  Pin: 72   router.idata_1[32] Switch: 0
+Node:	543	  SINK (0,1,1)  Class: 72  Switch: -1 Net_pin_index: 233
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 1
+Node:	906	  IPIN (0,1,1)  Pin: 36   router.idata_0[31] Switch: 0
+Node:	507	  SINK (0,1,1)  Class: 36  Switch: -1 Net_pin_index: 197
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 2
+Node:	4639	 CHANY (0,0,2) to (0,5)  Track: 0  Switch: 2
+Node:	3763	 CHANX (0,1,3) to (2,3)  Track: 60  Switch: 2
+Node:	5027	 CHANY (0,2,4) to (2,7)  Track: 16  Switch: 2
+Node:	3963	 CHANX (0,3,4) to (6,4)  Track: 8  Switch: 2
+Node:	5300	 CHANY (0,4,1) to (4,4)  Track: 31  Switch: 1
+Node:	1938	  IPIN (0,5,1)  Pin: 123   router.idata_3[13] Switch: 0
+Node:	1446	  SINK (0,5,1)  Class: 123  Switch: -1 Net_pin_index: 121
+Node:	5300	 CHANY (0,4,1) to (4,4)  Track: 31  Switch: 2
+Node:	3212	 CHANX (0,1,0) to (4,0)  Track: 31  Switch: 1
+Node:	1028	  IPIN (0,1,1)  Pin: 98   router.idata_2[23] Switch: 0
+Node:	569	  SINK (0,1,1)  Class: 98  Switch: -1 Net_pin_index: 259
+Node:	3212	 CHANX (0,1,0) to (4,0)  Track: 31  Switch: 1
+Node:	1019	  IPIN (0,1,1)  Pin: 62   router.idata_1[22] Switch: 0
+Node:	533	  SINK (0,1,1)  Class: 62  Switch: -1 Net_pin_index: 223
+Node:	3212	 CHANX (0,1,0) to (4,0)  Track: 31  Switch: 1
+Node:	1034	  IPIN (0,1,1)  Pin: 122   router.idata_3[12] Switch: 0
+Node:	593	  SINK (0,1,1)  Class: 122  Switch: -1 Net_pin_index: 282
+Node:	3212	 CHANX (0,1,0) to (4,0)  Track: 31  Switch: 1
+Node:	1052	  IPIN (0,1,1)  Pin: 194   router.iack_2[0] Switch: 0
+Node:	665	  SINK (0,1,1)  Class: 194  Switch: -1 Net_pin_index: 315
+Node:	3212	 CHANX (0,1,0) to (4,0)  Track: 31  Switch: 1
+Node:	1007	  IPIN (0,1,1)  Pin: 14   router.idata_0[9] Switch: 0
+Node:	485	  SINK (0,1,1)  Class: 14  Switch: -1 Net_pin_index: 175
+Node:	3212	 CHANX (0,1,0) to (4,0)  Track: 31  Switch: 1
+Node:	1013	  IPIN (0,1,1)  Pin: 38   router.idata_0[33] Switch: 0
+Node:	509	  SINK (0,1,1)  Class: 38  Switch: -1 Net_pin_index: 199
+Node:	5300	 CHANY (0,4,1) to (4,4)  Track: 31  Switch: 1
+Node:	1932	  IPIN (0,5,1)  Pin: 99   router.idata_2[24] Switch: 0
+Node:	1422	  SINK (0,5,1)  Class: 99  Switch: -1 Net_pin_index: 97
+Node:	5300	 CHANY (0,4,1) to (4,4)  Track: 31  Switch: 1
+Node:	1926	  IPIN (0,5,1)  Pin: 75   router.idata_2[0] Switch: 0
+Node:	1398	  SINK (0,5,1)  Class: 75  Switch: -1 Net_pin_index: 73
+Node:	5300	 CHANY (0,4,1) to (4,4)  Track: 31  Switch: 1
+Node:	1923	  IPIN (0,5,1)  Pin: 63   router.idata_1[23] Switch: 0
+Node:	1386	  SINK (0,5,1)  Class: 63  Switch: -1 Net_pin_index: 61
+Node:	5300	 CHANY (0,4,1) to (4,4)  Track: 31  Switch: 1
+Node:	1911	  IPIN (0,5,1)  Pin: 15   router.idata_0[10] Switch: 0
+Node:	1338	  SINK (0,5,1)  Class: 15  Switch: -1 Net_pin_index: 14
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 2
+Node:	5165	 CHANY (0,3,2) to (3,5)  Track: 16  Switch: 2
+Node:	3804	 CHANX (0,3,3)  Track: 65  Switch: 2
+Node:	5037	 CHANY (0,2,4) to (2,7)  Track: 56  Switch: 2
+Node:	3969	 CHANX (0,3,4) to (6,4)  Track: 32  Switch: 2
+Node:	5482	 CHANY (0,5,1) to (5,4)  Track: 39  Switch: 1
+Node:	1830	  IPIN (0,5,1)  Pin: 113   router.idata_3[3] Switch: 0
+Node:	1436	  SINK (0,5,1)  Class: 113  Switch: -1 Net_pin_index: 111
+Node:	5165	 CHANY (0,3,2) to (3,5)  Track: 16  Switch: 2
+Node:	3995	 CHANX (0,4,4)  Track: 64  Switch: 2
+Node:	5391	 CHANY (0,4,5) to (4,7)  Track: 8  Switch: 2
+Node:	4090	 CHANX (0,1,5) to (4,5)  Track: 39  Switch: 2
+Node:	5170	 CHANY (0,3,2) to (3,5)  Track: 39  Switch: 2
+Node:	3467	 CHANX (0,4,1) to (7,1)  Track: 40  Switch: 1
+Node:	1785	  IPIN (0,5,1)  Pin: 144   router.idata_3[34] Switch: 0
+Node:	1467	  SINK (0,5,1)  Class: 144  Switch: -1 Net_pin_index: 142
+Node:	5165	 CHANY (0,3,2) to (3,5)  Track: 16  Switch: 2
+Node:	3633	 CHANX (0,4,2) to (7,2)  Track: 8  Switch: 2
+Node:	5365	 CHANY (0,4,3) to (4,6)  Track: 48  Switch: 2
+Node:	3718	 CHANX (0,1,3) to (4,3)  Track: 15  Switch: 2
+Node:	4768	 CHANY (0,1,1) to (1,3)  Track: 21  Switch: 2
+Node:	3609	 CHANX (0,2,2) to (5,2)  Track: 56  Switch: 2
+Node:	5189	 CHANY (0,3,3) to (3,6)  Track: 40  Switch: 2
+Node:	4169	 CHANX (0,4,5)  Track: 64  Switch: 2
+Node:	5350	 CHANY (0,4,2) to (4,5)  Track: 63  Switch: 2
+Node:	3378	 CHANX (0,1,1) to (4,1)  Track: 23  Switch: 1
+Node:	907	  IPIN (0,1,1)  Pin: 40   router.idata_1[0] Switch: 0
+Node:	511	  SINK (0,1,1)  Class: 40  Switch: -1 Net_pin_index: 201
+Node:	3378	 CHANX (0,1,1) to (4,1)  Track: 23  Switch: 1
+Node:	898	  IPIN (0,1,1)  Pin: 4   router.my_ypos[1] Switch: 0
+Node:	475	  SINK (0,1,1)  Class: 4  Switch: -1 Net_pin_index: 165
+Node:	3378	 CHANX (0,1,1) to (4,1)  Track: 23  Switch: 2
+Node:	4614	 CHANY (0,0,1)  Track: 41  Switch: 1
+Node:	1058	  IPIN (0,1,1)  Pin: 11   router.idata_0[6] Switch: 0
+Node:	482	  SINK (0,1,1)  Class: 11  Switch: -1 Net_pin_index: 172
+Node:	4768	 CHANY (0,1,1) to (1,3)  Track: 21  Switch: 2
+Node:	3246	 CHANX (0,1,0)  Track: 65  Switch: 1
+Node:	1024	  IPIN (0,1,1)  Pin: 82   router.idata_2[7] Switch: 0
+Node:	553	  SINK (0,1,1)  Class: 82  Switch: -1 Net_pin_index: 243
+Node:	3246	 CHANX (0,1,0)  Track: 65  Switch: 1
+Node:	1030	  IPIN (0,1,1)  Pin: 106   router.idata_2[31] Switch: 0
+Node:	577	  SINK (0,1,1)  Class: 106  Switch: -1 Net_pin_index: 267
+Node:	4768	 CHANY (0,1,1) to (1,3)  Track: 21  Switch: 1
+Node:	977	  IPIN (0,1,1)  Pin: 109   router.idata_2[34] Switch: 0
+Node:	580	  SINK (0,1,1)  Class: 109  Switch: -1 Net_pin_index: 270
+Node:	3394	 CHANX (0,1,1) to (4,1)  Track: 39  Switch: 2
+Node:	4993	 CHANY (0,2,2) to (2,5)  Track: 24  Switch: 2
+Node:	4143	 CHANX (0,3,5) to (6,5)  Track: 32  Switch: 2
+Node:	5690	 CHANY (0,6,2) to (6,5)  Track: 31  Switch: 2
+Node:	3863	 CHANX (0,7,3)  Track: 16  Switch: 2
+Node:	5852	 CHANY (0,7,1) to (7,3)  Track: 61  Switch: 2
+Node:	3638	 CHANX (0,4,2) to (7,2)  Track: 31  Switch: 2
+Node:	5130	 CHANY (0,3,1) to (3,2)  Track: 35  Switch: 2
+Node:	3194	 CHANX (0,1,0) to (3,0)  Track: 13  Switch: 1
+Node:	1010	  IPIN (0,1,1)  Pin: 26   router.idata_0[21] Switch: 0
+Node:	497	  SINK (0,1,1)  Class: 26  Switch: -1 Net_pin_index: 187
+Node:	5171	 CHANY (0,3,2) to (3,5)  Track: 40  Switch: 2
+Node:	3805	 CHANX (0,4,3) to (7,3)  Track: 0  Switch: 2
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 2
+Node:	3669	 CHANX (0,6,2) to (7,2)  Track: 8  Switch: 2
+Node:	5883	 CHANY (0,7,3) to (7,6)  Track: 32  Switch: 2
+Node:	3830	 CHANX (0,5,3) to (7,3)  Track: 31  Switch: 2
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 2
+Node:	3509	 CHANX (0,6,1)  Track: 64  Switch: 2
+Node:	5685	 CHANY (0,6,2) to (6,5)  Track: 8  Switch: 2
+Node:	3974	 CHANX (0,3,4) to (6,4)  Track: 55  Switch: 2
+Node:	5051	 CHANY (0,2,5) to (2,7)  Track: 40  Switch: 2
+Node:	4110	 CHANX (0,1,5) to (2,5)  Track: 59  Switch: 2
+Node:	4822	 CHANY (0,1,2) to (1,5)  Track: 39  Switch: 2
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1777	  IPIN (0,5,1)  Pin: 112   router.idata_3[2] Switch: 0
+Node:	1435	  SINK (0,5,1)  Class: 112  Switch: -1 Net_pin_index: 110
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1771	  IPIN (0,5,1)  Pin: 88   router.idata_2[13] Switch: 0
+Node:	1411	  SINK (0,5,1)  Class: 88  Switch: -1 Net_pin_index: 86
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1762	  IPIN (0,5,1)  Pin: 52   router.idata_1[12] Switch: 0
+Node:	1375	  SINK (0,5,1)  Class: 52  Switch: -1 Net_pin_index: 50
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1756	  IPIN (0,5,1)  Pin: 28   router.idata_0[23] Switch: 0
+Node:	1351	  SINK (0,5,1)  Class: 28  Switch: -1 Net_pin_index: 27
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1750	  IPIN (0,5,1)  Pin: 4   router.my_ypos[1] Switch: 0
+Node:	1327	  SINK (0,5,1)  Class: 4  Switch: -1 Net_pin_index: 3
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1765	  IPIN (0,5,1)  Pin: 64   router.idata_1[24] Switch: 0
+Node:	1387	  SINK (0,5,1)  Class: 64  Switch: -1 Net_pin_index: 62
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1798	  IPIN (0,5,1)  Pin: 196   router.iack_3[0] Switch: 0
+Node:	1519	  SINK (0,5,1)  Class: 196  Switch: -1 Net_pin_index: 154
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 2
+Node:	5337	 CHANY (0,4,2) to (4,5)  Track: 8  Switch: 2
+Node:	4074	 CHANX (0,1,5) to (4,5)  Track: 23  Switch: 2
+Node:	5164	 CHANY (0,3,2) to (3,5)  Track: 15  Switch: 2
+Node:	3815	 CHANX (0,4,3) to (7,3)  Track: 40  Switch: 2
+Node:	5314	 CHANY (0,4,1) to (4,3)  Track: 45  Switch: 1
+Node:	1939	  IPIN (0,5,1)  Pin: 127   router.idata_3[17] Switch: 0
+Node:	1450	  SINK (0,5,1)  Class: 127  Switch: -1 Net_pin_index: 125
+Node:	3431	 CHANX (0,2,1) to (5,1)  Track: 40  Switch: 1
+Node:	1783	  IPIN (0,5,1)  Pin: 136   router.idata_3[26] Switch: 0
+Node:	1459	  SINK (0,5,1)  Class: 136  Switch: -1 Net_pin_index: 134
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 1
+Node:	1824	  IPIN (0,5,1)  Pin: 89   router.idata_2[14] Switch: 0
+Node:	1412	  SINK (0,5,1)  Class: 89  Switch: -1 Net_pin_index: 87
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 1
+Node:	1806	  IPIN (0,5,1)  Pin: 17   router.idata_0[12] Switch: 0
+Node:	1340	  SINK (0,5,1)  Class: 17  Switch: -1 Net_pin_index: 16
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 1
+Node:	1818	  IPIN (0,5,1)  Pin: 65   router.idata_1[25] Switch: 0
+Node:	1388	  SINK (0,5,1)  Class: 65  Switch: -1 Net_pin_index: 63
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 1
+Node:	1812	  IPIN (0,5,1)  Pin: 41   router.idata_1[1] Switch: 0
+Node:	1364	  SINK (0,5,1)  Class: 41  Switch: -1 Net_pin_index: 39
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 2
+Node:	3602	 CHANX (0,2,2) to (5,2)  Track: 31  Switch: 2
+Node:	5369	 CHANY (0,4,3)  Track: 64  Switch: 2
+Node:	3710	 CHANX (0,1,3) to (4,3)  Track: 7  Switch: 2
+Node:	4851	 CHANY (0,1,4) to (1,7)  Track: 8  Switch: 2
+Node:	3951	 CHANX (0,2,4) to (5,4)  Track: 32  Switch: 2
+Node:	5474	 CHANY (0,5,1) to (5,4)  Track: 31  Switch: 1
+Node:	1826	  IPIN (0,5,1)  Pin: 97   router.idata_2[22] Switch: 0
+Node:	1420	  SINK (0,5,1)  Class: 97  Switch: -1 Net_pin_index: 95
+Node:	3602	 CHANX (0,2,2) to (5,2)  Track: 31  Switch: 2
+Node:	5007	 CHANY (0,2,3) to (2,6)  Track: 8  Switch: 2
+Node:	4321	 CHANX (0,3,6) to (6,6)  Track: 48  Switch: 2
+Node:	5530	 CHANY (0,5,3) to (5,6)  Track: 15  Switch: 2
+Node:	3954	 CHANX (0,2,4) to (5,4)  Track: 47  Switch: 2
+Node:	5102	 CHANY (0,3,1) to (3,4)  Track: 7  Switch: 2
+Node:	3463	 CHANX (0,4,1) to (7,1)  Track: 24  Switch: 1
+Node:	1755	  IPIN (0,5,1)  Pin: 24   router.idata_0[19] Switch: 0
+Node:	1347	  SINK (0,5,1)  Class: 24  Switch: -1 Net_pin_index: 23
+Node:	5488	 CHANY (0,5,1) to (5,3)  Track: 45  Switch: 1
+Node:	1851	  IPIN (0,5,1)  Pin: 197   router.iack_3[1] Switch: 0
+Node:	1520	  SINK (0,5,1)  Class: 197  Switch: -1 Net_pin_index: 155
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 1
+Node:	1852	  IPIN (0,5,1)  Pin: 201   router.ilck_0[1] Switch: 0
+Node:	1524	  SINK (0,5,1)  Class: 201  Switch: -1 Net_pin_index: 157
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 1
+Node:	1837	  IPIN (0,5,1)  Pin: 141   router.idata_3[31] Switch: 0
+Node:	1464	  SINK (0,5,1)  Class: 141  Switch: -1 Net_pin_index: 139
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 1
+Node:	1804	  IPIN (0,5,1)  Pin: 9   router.idata_0[4] Switch: 0
+Node:	1332	  SINK (0,5,1)  Class: 9  Switch: -1 Net_pin_index: 8
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 1
+Node:	1831	  IPIN (0,5,1)  Pin: 117   router.idata_3[7] Switch: 0
+Node:	1440	  SINK (0,5,1)  Class: 117  Switch: -1 Net_pin_index: 115
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 1
+Node:	1825	  IPIN (0,5,1)  Pin: 93   router.idata_2[18] Switch: 0
+Node:	1416	  SINK (0,5,1)  Class: 93  Switch: -1 Net_pin_index: 91
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 1
+Node:	1819	  IPIN (0,5,1)  Pin: 69   router.idata_1[29] Switch: 0
+Node:	1392	  SINK (0,5,1)  Class: 69  Switch: -1 Net_pin_index: 67
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 2
+Node:	3596	 CHANX (0,2,2) to (5,2)  Track: 7  Switch: 2
+Node:	4847	 CHANY (0,1,3)  Track: 64  Switch: 2
+Node:	3785	 CHANX (0,2,3)  Track: 64  Switch: 2
+Node:	4982	 CHANY (0,2,1) to (2,3)  Track: 61  Switch: 2
+Node:	3449	 CHANX (0,3,1) to (6,1)  Track: 40  Switch: 1
+Node:	1764	  IPIN (0,5,1)  Pin: 60   router.idata_1[20] Switch: 0
+Node:	1383	  SINK (0,5,1)  Class: 60  Switch: -1 Net_pin_index: 58
+Node:	3449	 CHANX (0,3,1) to (6,1)  Track: 40  Switch: 2
+Node:	5318	 CHANY (0,4,1)  Track: 49  Switch: 1
+Node:	1953	  IPIN (0,5,1)  Pin: 183   router.ivalid_3[0] Switch: 0
+Node:	1506	  SINK (0,5,1)  Class: 183  Switch: -1 Net_pin_index: 145
+Node:	5318	 CHANY (0,4,1)  Track: 49  Switch: 1
+Node:	1920	  IPIN (0,5,1)  Pin: 51   router.idata_1[11] Switch: 0
+Node:	1374	  SINK (0,5,1)  Class: 51  Switch: -1 Net_pin_index: 49
+Node:	5318	 CHANY (0,4,1)  Track: 49  Switch: 1
+Node:	1914	  IPIN (0,5,1)  Pin: 27   router.idata_0[22] Switch: 0
+Node:	1350	  SINK (0,5,1)  Class: 27  Switch: -1 Net_pin_index: 26
+Node:	5318	 CHANY (0,4,1)  Track: 49  Switch: 1
+Node:	1935	  IPIN (0,5,1)  Pin: 111   router.idata_3[1] Switch: 0
+Node:	1434	  SINK (0,5,1)  Class: 111  Switch: -1 Net_pin_index: 109
+Node:	5448	 CHANY (0,5,1) to (5,3)  Track: 5  Switch: 2
+Node:	3497	 CHANX (0,6,1) to (7,1)  Track: 16  Switch: 2
+Node:	5856	 CHANY (0,7,1)  Track: 65  Switch: 2
+Node:	3302	 CHANX (0,5,0) to (7,0)  Track: 7  Switch: 1
+Node:	1862	  IPIN (0,5,1)  Pin: 26   router.idata_0[21] Switch: 0
+Node:	1349	  SINK (0,5,1)  Class: 26  Switch: -1 Net_pin_index: 25
+Node:	3302	 CHANX (0,5,0) to (7,0)  Track: 7  Switch: 1
+Node:	1901	  IPIN (0,5,1)  Pin: 182   router.ivalid_2[0] Switch: 0
+Node:	1505	  SINK (0,5,1)  Class: 182  Switch: -1 Net_pin_index: 144
+Node:	5171	 CHANY (0,3,2) to (3,5)  Track: 40  Switch: 2
+Node:	4104	 CHANX (0,1,5) to (3,5)  Track: 53  Switch: 2
+Node:	5002	 CHANY (0,2,2) to (2,5)  Track: 63  Switch: 2
+Node:	3455	 CHANX (0,3,1)  Track: 64  Switch: 2
+Node:	5152	 CHANY (0,3,1)  Track: 57  Switch: 2
+Node:	3287	 CHANX (0,4,0) to (7,0)  Track: 16  Switch: 1
+Node:	1907	  IPIN (0,5,1)  Pin: 206   router.ilck_3[0] Switch: 0
+Node:	1529	  SINK (0,5,1)  Class: 206  Switch: -1 Net_pin_index: 161
+Node:	3287	 CHANX (0,4,0) to (7,0)  Track: 16  Switch: 1
+Node:	1865	  IPIN (0,5,1)  Pin: 38   router.idata_0[33] Switch: 0
+Node:	1361	  SINK (0,5,1)  Class: 38  Switch: -1 Net_pin_index: 37
+Node:	3287	 CHANX (0,4,0) to (7,0)  Track: 16  Switch: 1
+Node:	1880	  IPIN (0,5,1)  Pin: 98   router.idata_2[23] Switch: 0
+Node:	1421	  SINK (0,5,1)  Class: 98  Switch: -1 Net_pin_index: 96
+Node:	3287	 CHANX (0,4,0) to (7,0)  Track: 16  Switch: 1
+Node:	1886	  IPIN (0,5,1)  Pin: 122   router.idata_3[12] Switch: 0
+Node:	1445	  SINK (0,5,1)  Class: 122  Switch: -1 Net_pin_index: 120
+Node:	3287	 CHANX (0,4,0) to (7,0)  Track: 16  Switch: 1
+Node:	1874	  IPIN (0,5,1)  Pin: 74   router.idata_1[34] Switch: 0
+Node:	1397	  SINK (0,5,1)  Class: 74  Switch: -1 Net_pin_index: 72
+Node:	3287	 CHANX (0,4,0) to (7,0)  Track: 16  Switch: 1
+Node:	1868	  IPIN (0,5,1)  Pin: 50   router.idata_1[10] Switch: 0
+Node:	1373	  SINK (0,5,1)  Class: 50  Switch: -1 Net_pin_index: 48
+Node:	3429	 CHANX (0,2,1) to (5,1)  Track: 32  Switch: 2
+Node:	5343	 CHANY (0,4,2) to (4,5)  Track: 32  Switch: 2
+Node:	3568	 CHANX (0,1,2) to (4,2)  Track: 39  Switch: 2
+Node:	5011	 CHANY (0,2,3) to (2,6)  Track: 24  Switch: 2
+Node:	3801	 CHANX (0,3,3) to (6,3)  Track: 56  Switch: 2
+Node:	5116	 CHANY (0,3,1) to (3,3)  Track: 21  Switch: 2
+Node:	3282	 CHANX (0,3,0)  Track: 65  Switch: 2
+Node:	4935	 CHANY (0,2,1)  Track: 14  Switch: 2
+Node:	3451	 CHANX (0,3,1) to (6,1)  Track: 48  Switch: 1
+Node:	1774	  IPIN (0,5,1)  Pin: 100   router.idata_2[25] Switch: 0
+Node:	1423	  SINK (0,5,1)  Class: 100  Switch: -1 Net_pin_index: 98
+Node:	3451	 CHANX (0,3,1) to (6,1)  Track: 48  Switch: 1
+Node:	1768	  IPIN (0,5,1)  Pin: 76   router.idata_2[1] Switch: 0
+Node:	1399	  SINK (0,5,1)  Class: 76  Switch: -1 Net_pin_index: 74
+Node:	3451	 CHANX (0,3,1) to (6,1)  Track: 48  Switch: 1
+Node:	1780	  IPIN (0,5,1)  Pin: 124   router.idata_3[14] Switch: 0
+Node:	1447	  SINK (0,5,1)  Class: 124  Switch: -1 Net_pin_index: 122
+Node:	5343	 CHANY (0,4,2) to (4,5)  Track: 32  Switch: 2
+Node:	4098	 CHANX (0,1,5) to (4,5)  Track: 47  Switch: 2
+Node:	4988	 CHANY (0,2,2) to (2,5)  Track: 7  Switch: 2
+Node:	3619	 CHANX (0,3,2) to (6,2)  Track: 24  Switch: 2
+Node:	5454	 CHANY (0,5,1) to (5,2)  Track: 11  Switch: 2
+Node:	3434	 CHANX (0,2,1) to (5,1)  Track: 55  Switch: 1
+Node:	1751	  IPIN (0,5,1)  Pin: 8   router.idata_0[3] Switch: 0
+Node:	1331	  SINK (0,5,1)  Class: 8  Switch: -1 Net_pin_index: 7
+Node:	3434	 CHANX (0,2,1) to (5,1)  Track: 55  Switch: 1
+Node:	1778	  IPIN (0,5,1)  Pin: 116   router.idata_3[6] Switch: 0
+Node:	1439	  SINK (0,5,1)  Class: 116  Switch: -1 Net_pin_index: 114
+Node:	3434	 CHANX (0,2,1) to (5,1)  Track: 55  Switch: 1
+Node:	1772	  IPIN (0,5,1)  Pin: 92   router.idata_2[17] Switch: 0
+Node:	1415	  SINK (0,5,1)  Class: 92  Switch: -1 Net_pin_index: 90
+Node:	3434	 CHANX (0,2,1) to (5,1)  Track: 55  Switch: 1
+Node:	1766	  IPIN (0,5,1)  Pin: 68   router.idata_1[28] Switch: 0
+Node:	1391	  SINK (0,5,1)  Class: 68  Switch: -1 Net_pin_index: 66
+Node:	3434	 CHANX (0,2,1) to (5,1)  Track: 55  Switch: 1
+Node:	1799	  IPIN (0,5,1)  Pin: 200   router.ilck_0[0] Switch: 0
+Node:	1523	  SINK (0,5,1)  Class: 200  Switch: -1 Net_pin_index: 156
+Node:	3434	 CHANX (0,2,1) to (5,1)  Track: 55  Switch: 2
+Node:	5351	 CHANY (0,4,2)  Track: 64  Switch: 2
+Node:	3665	 CHANX (0,5,2)  Track: 64  Switch: 2
+Node:	5529	 CHANY (0,5,3) to (5,6)  Track: 8  Switch: 2
+Node:	3778	 CHANX (0,2,3) to (5,3)  Track: 39  Switch: 2
+Node:	4942	 CHANY (0,2,1) to (2,3)  Track: 21  Switch: 2
+Node:	3269	 CHANX (0,3,0) to (6,0)  Track: 16  Switch: 1
+Node:	1860	  IPIN (0,5,1)  Pin: 18   router.idata_0[13] Switch: 0
+Node:	1341	  SINK (0,5,1)  Class: 18  Switch: -1 Net_pin_index: 17
+Node:	5454	 CHANY (0,5,1) to (5,2)  Track: 11  Switch: 1
+Node:	1810	  IPIN (0,5,1)  Pin: 33   router.idata_0[28] Switch: 0
+Node:	1356	  SINK (0,5,1)  Class: 33  Switch: -1 Net_pin_index: 32
+Node:	4988	 CHANY (0,2,2) to (2,5)  Track: 7  Switch: 2
+Node:	3880	 CHANX (0,1,4) to (2,4)  Track: 3  Switch: 2
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 2
+Node:	3388	 CHANX (0,1,1)  Track: 33  Switch: 1
+Node:	912	  IPIN (0,1,1)  Pin: 60   router.idata_1[20] Switch: 0
+Node:	531	  SINK (0,1,1)  Class: 60  Switch: -1 Net_pin_index: 221
+Node:	3388	 CHANX (0,1,1)  Track: 33  Switch: 1
+Node:	918	  IPIN (0,1,1)  Pin: 84   router.idata_2[9] Switch: 0
+Node:	555	  SINK (0,1,1)  Class: 84  Switch: -1 Net_pin_index: 245
+Node:	3388	 CHANX (0,1,1)  Track: 33  Switch: 1
+Node:	924	  IPIN (0,1,1)  Pin: 108   router.idata_2[33] Switch: 0
+Node:	579	  SINK (0,1,1)  Class: 108  Switch: -1 Net_pin_index: 269
+Node:	3388	 CHANX (0,1,1)  Track: 33  Switch: 1
+Node:	930	  IPIN (0,1,1)  Pin: 132   router.idata_3[22] Switch: 0
+Node:	603	  SINK (0,1,1)  Class: 132  Switch: -1 Net_pin_index: 292
+Node:	3388	 CHANX (0,1,1)  Track: 33  Switch: 1
+Node:	945	  IPIN (0,1,1)  Pin: 192   router.iack_1[0] Switch: 0
+Node:	663	  SINK (0,1,1)  Class: 192  Switch: -1 Net_pin_index: 313
+Node:	3388	 CHANX (0,1,1)  Track: 33  Switch: 2
+Node:	4651	 CHANY (0,0,2) to (0,5)  Track: 48  Switch: 2
+Node:	3555	 CHANX (0,1,2) to (3,2)  Track: 26  Switch: 2
+Node:	5191	 CHANY (0,3,3) to (3,6)  Track: 48  Switch: 2
+Node:	4286	 CHANX (0,1,6) to (3,6)  Track: 61  Switch: 2
+Node:	5014	 CHANY (0,2,3) to (2,6)  Track: 39  Switch: 2
+Node:	3623	 CHANX (0,3,2) to (6,2)  Track: 40  Switch: 2
+Node:	5138	 CHANY (0,3,1) to (3,2)  Track: 43  Switch: 2
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 1
+Node:	901	  IPIN (0,1,1)  Pin: 16   router.idata_0[11] Switch: 0
+Node:	487	  SINK (0,1,1)  Class: 16  Switch: -1 Net_pin_index: 177
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 1
+Node:	928	  IPIN (0,1,1)  Pin: 124   router.idata_3[14] Switch: 0
+Node:	595	  SINK (0,1,1)  Class: 124  Switch: -1 Net_pin_index: 284
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 1
+Node:	922	  IPIN (0,1,1)  Pin: 100   router.idata_2[25] Switch: 0
+Node:	571	  SINK (0,1,1)  Class: 100  Switch: -1 Net_pin_index: 261
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 2
+Node:	4590	 CHANY (0,0,1)  Track: 17  Switch: 1
+Node:	1085	  IPIN (0,1,1)  Pin: 119   router.idata_3[9] Switch: 0
+Node:	590	  SINK (0,1,1)  Class: 119  Switch: -1 Net_pin_index: 279
+Node:	4590	 CHANY (0,0,1)  Track: 17  Switch: 1
+Node:	1079	  IPIN (0,1,1)  Pin: 95   router.idata_2[20] Switch: 0
+Node:	566	  SINK (0,1,1)  Class: 95  Switch: -1 Net_pin_index: 256
+Node:	4590	 CHANY (0,0,1)  Track: 17  Switch: 1
+Node:	1106	  IPIN (0,1,1)  Pin: 203   router.ilck_1[1] Switch: 0
+Node:	674	  SINK (0,1,1)  Class: 203  Switch: -1 Net_pin_index: 321
+Node:	4590	 CHANY (0,0,1)  Track: 17  Switch: 1
+Node:	1067	  IPIN (0,1,1)  Pin: 47   router.idata_1[7] Switch: 0
+Node:	518	  SINK (0,1,1)  Class: 47  Switch: -1 Net_pin_index: 208
+Node:	4590	 CHANY (0,0,1)  Track: 17  Switch: 1
+Node:	1073	  IPIN (0,1,1)  Pin: 71   router.idata_1[31] Switch: 0
+Node:	542	  SINK (0,1,1)  Class: 71  Switch: -1 Net_pin_index: 232
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 2
+Node:	5003	 CHANY (0,2,2)  Track: 64  Switch: 2
+Node:	3532	 CHANX (0,1,2) to (2,2)  Track: 3  Switch: 2
+Node:	4624	 CHANY (0,0,1) to (0,2)  Track: 51  Switch: 1
+Node:	1090	  IPIN (0,1,1)  Pin: 139   router.idata_3[29] Switch: 0
+Node:	610	  SINK (0,1,1)  Class: 139  Switch: -1 Net_pin_index: 299
+Node:	4624	 CHANY (0,0,1) to (0,2)  Track: 51  Switch: 1
+Node:	1084	  IPIN (0,1,1)  Pin: 115   router.idata_3[5] Switch: 0
+Node:	586	  SINK (0,1,1)  Class: 115  Switch: -1 Net_pin_index: 275
+Node:	4624	 CHANY (0,0,1) to (0,2)  Track: 51  Switch: 2
+Node:	3233	 CHANX (0,1,0) to (2,0)  Track: 52  Switch: 1
+Node:	1033	  IPIN (0,1,1)  Pin: 118   router.idata_3[8] Switch: 0
+Node:	589	  SINK (0,1,1)  Class: 118  Switch: -1 Net_pin_index: 278
+Node:	4624	 CHANY (0,0,1) to (0,2)  Track: 51  Switch: 1
+Node:	1065	  IPIN (0,1,1)  Pin: 39   router.idata_0[34] Switch: 0
+Node:	510	  SINK (0,1,1)  Class: 39  Switch: -1 Net_pin_index: 200
+Node:	4624	 CHANY (0,0,1) to (0,2)  Track: 51  Switch: 1
+Node:	1057	  IPIN (0,1,1)  Pin: 7   router.idata_0[2] Switch: 0
+Node:	478	  SINK (0,1,1)  Class: 7  Switch: -1 Net_pin_index: 168
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 2
+Node:	4813	 CHANY (0,1,2) to (1,5)  Track: 0  Switch: 2
+Node:	4131	 CHANX (0,2,5) to (5,5)  Track: 56  Switch: 2
+Node:	5344	 CHANY (0,4,2) to (4,5)  Track: 39  Switch: 2
+Node:	3402	 CHANX (0,1,1) to (4,1)  Track: 47  Switch: 1
+Node:	931	  IPIN (0,1,1)  Pin: 136   router.idata_3[26] Switch: 0
+Node:	607	  SINK (0,1,1)  Class: 136  Switch: -1 Net_pin_index: 296
+Node:	3402	 CHANX (0,1,1) to (4,1)  Track: 47  Switch: 1
+Node:	913	  IPIN (0,1,1)  Pin: 64   router.idata_1[24] Switch: 0
+Node:	535	  SINK (0,1,1)  Class: 64  Switch: -1 Net_pin_index: 225
+Node:	3402	 CHANX (0,1,1) to (4,1)  Track: 47  Switch: 1
+Node:	919	  IPIN (0,1,1)  Pin: 88   router.idata_2[13] Switch: 0
+Node:	559	  SINK (0,1,1)  Class: 88  Switch: -1 Net_pin_index: 249
+Node:	3402	 CHANX (0,1,1) to (4,1)  Track: 47  Switch: 1
+Node:	925	  IPIN (0,1,1)  Pin: 112   router.idata_3[2] Switch: 0
+Node:	583	  SINK (0,1,1)  Class: 112  Switch: -1 Net_pin_index: 272
+Node:	3402	 CHANX (0,1,1) to (4,1)  Track: 47  Switch: 2
+Node:	4812	 CHANY (0,1,1)  Track: 65  Switch: 2
+Node:	3214	 CHANX (0,1,0)  Track: 33  Switch: 1
+Node:	1023	  IPIN (0,1,1)  Pin: 78   router.idata_2[3] Switch: 0
+Node:	549	  SINK (0,1,1)  Class: 78  Switch: -1 Net_pin_index: 239
+Node:	4812	 CHANY (0,1,1)  Track: 65  Switch: 1
+Node:	964	  IPIN (0,1,1)  Pin: 57   router.idata_1[17] Switch: 0
+Node:	528	  SINK (0,1,1)  Class: 57  Switch: -1 Net_pin_index: 218
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 1
+Node:	904	  IPIN (0,1,1)  Pin: 28   router.idata_0[23] Switch: 0
+Node:	499	  SINK (0,1,1)  Class: 28  Switch: -1 Net_pin_index: 189
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 1
+Node:	910	  IPIN (0,1,1)  Pin: 52   router.idata_1[12] Switch: 0
+Node:	523	  SINK (0,1,1)  Class: 52  Switch: -1 Net_pin_index: 213
+Node:	3384	 CHANX (0,1,1) to (3,1)  Track: 29  Switch: 1
+Node:	916	  IPIN (0,1,1)  Pin: 76   router.idata_2[1] Switch: 0
+Node:	547	  SINK (0,1,1)  Class: 76  Switch: -1 Net_pin_index: 237
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	951	  IPIN (0,1,1)  Pin: 5   router.idata_0[0] Switch: 0
+Node:	476	  SINK (0,1,1)  Class: 5  Switch: -1 Net_pin_index: 166
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	957	  IPIN (0,1,1)  Pin: 29   router.idata_0[24] Switch: 0
+Node:	500	  SINK (0,1,1)  Class: 29  Switch: -1 Net_pin_index: 190
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	981	  IPIN (0,1,1)  Pin: 125   router.idata_3[15] Switch: 0
+Node:	596	  SINK (0,1,1)  Class: 125  Switch: -1 Net_pin_index: 285
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	984	  IPIN (0,1,1)  Pin: 137   router.idata_3[27] Switch: 0
+Node:	608	  SINK (0,1,1)  Class: 137  Switch: -1 Net_pin_index: 297
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	996	  IPIN (0,1,1)  Pin: 185   router.ivch_0[0] Switch: 0
+Node:	656	  SINK (0,1,1)  Class: 185  Switch: -1 Net_pin_index: 308
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	963	  IPIN (0,1,1)  Pin: 53   router.idata_1[13] Switch: 0
+Node:	524	  SINK (0,1,1)  Class: 53  Switch: -1 Net_pin_index: 214
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	969	  IPIN (0,1,1)  Pin: 77   router.idata_2[2] Switch: 0
+Node:	548	  SINK (0,1,1)  Class: 77  Switch: -1 Net_pin_index: 238
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 1
+Node:	975	  IPIN (0,1,1)  Pin: 101   router.idata_2[26] Switch: 0
+Node:	572	  SINK (0,1,1)  Class: 101  Switch: -1 Net_pin_index: 262
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 2
+Node:	3433	 CHANX (0,2,1) to (5,1)  Track: 48  Switch: 2
+Node:	5515	 CHANY (0,5,2) to (5,5)  Track: 24  Switch: 2
+Node:	3598	 CHANX (0,2,2) to (5,2)  Track: 15  Switch: 2
+Node:	5122	 CHANY (0,3,1) to (3,2)  Track: 27  Switch: 2
+Node:	3293	 CHANX (0,4,0) to (7,0)  Track: 40  Switch: 1
+Node:	1871	  IPIN (0,5,1)  Pin: 62   router.idata_1[22] Switch: 0
+Node:	1385	  SINK (0,5,1)  Class: 62  Switch: -1 Net_pin_index: 60
+Node:	3433	 CHANX (0,2,1) to (5,1)  Track: 48  Switch: 2
+Node:	4987	 CHANY (0,2,2) to (2,5)  Track: 0  Switch: 2
+Node:	4149	 CHANX (0,3,5) to (6,5)  Track: 56  Switch: 2
+Node:	5518	 CHANY (0,5,2) to (5,5)  Track: 39  Switch: 2
+Node:	3679	 CHANX (0,6,2) to (7,2)  Track: 48  Switch: 2
+Node:	5842	 CHANY (0,7,1) to (7,2)  Track: 51  Switch: 2
+Node:	3288	 CHANX (0,4,0) to (7,0)  Track: 23  Switch: 1
+Node:	1887	  IPIN (0,5,1)  Pin: 126   router.idata_3[16] Switch: 0
+Node:	1449	  SINK (0,5,1)  Class: 126  Switch: -1 Net_pin_index: 124
+Node:	3288	 CHANX (0,4,0) to (7,0)  Track: 23  Switch: 1
+Node:	1866	  IPIN (0,5,1)  Pin: 42   router.idata_1[2] Switch: 0
+Node:	1365	  SINK (0,5,1)  Class: 42  Switch: -1 Net_pin_index: 40
+Node:	3288	 CHANX (0,4,0) to (7,0)  Track: 23  Switch: 1
+Node:	1881	  IPIN (0,5,1)  Pin: 102   router.idata_2[27] Switch: 0
+Node:	1425	  SINK (0,5,1)  Class: 102  Switch: -1 Net_pin_index: 100
+Node:	3433	 CHANX (0,2,1) to (5,1)  Track: 48  Switch: 2
+Node:	5096	 CHANY (0,3,1)  Track: 1  Switch: 2
+Node:	3285	 CHANX (0,4,0) to (7,0)  Track: 8  Switch: 1
+Node:	1864	  IPIN (0,5,1)  Pin: 34   router.idata_0[29] Switch: 0
+Node:	1357	  SINK (0,5,1)  Class: 34  Switch: -1 Net_pin_index: 33
+Node:	4810	 CHANY (0,1,1) to (1,4)  Track: 63  Switch: 2
+Node:	3777	 CHANX (0,2,3) to (5,3)  Track: 32  Switch: 2
+Node:	5379	 CHANY (0,4,4) to (4,7)  Track: 32  Switch: 2
+Node:	4005	 CHANX (0,5,4) to (7,4)  Track: 32  Switch: 2
+Node:	5575	 CHANY (0,5,5) to (5,7)  Track: 48  Switch: 2
+Node:	4120	 CHANX (0,2,5) to (5,5)  Track: 15  Switch: 2
+Node:	5168	 CHANY (0,3,2) to (3,5)  Track: 31  Switch: 2
+Node:	3408	 CHANX (0,1,1) to (3,1)  Track: 53  Switch: 2
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1064	  IPIN (0,1,1)  Pin: 35   router.idata_0[30] Switch: 0
+Node:	506	  SINK (0,1,1)  Class: 35  Switch: -1 Net_pin_index: 196
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1070	  IPIN (0,1,1)  Pin: 59   router.idata_1[19] Switch: 0
+Node:	530	  SINK (0,1,1)  Class: 59  Switch: -1 Net_pin_index: 220
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1076	  IPIN (0,1,1)  Pin: 83   router.idata_2[8] Switch: 0
+Node:	554	  SINK (0,1,1)  Class: 83  Switch: -1 Net_pin_index: 244
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1082	  IPIN (0,1,1)  Pin: 107   router.idata_2[32] Switch: 0
+Node:	578	  SINK (0,1,1)  Class: 107  Switch: -1 Net_pin_index: 268
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1088	  IPIN (0,1,1)  Pin: 131   router.idata_3[21] Switch: 0
+Node:	602	  SINK (0,1,1)  Class: 131  Switch: -1 Net_pin_index: 291
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1091	  IPIN (0,1,1)  Pin: 143   router.idata_3[33] Switch: 0
+Node:	614	  SINK (0,1,1)  Class: 143  Switch: -1 Net_pin_index: 303
+Node:	4638	 CHANY (0,0,1)  Track: 65  Switch: 1
+Node:	1103	  IPIN (0,1,1)  Pin: 191   router.iack_0[1] Switch: 0
+Node:	662	  SINK (0,1,1)  Class: 191  Switch: -1 Net_pin_index: 312
+Node:	4988	 CHANY (0,2,2) to (2,5)  Track: 7  Switch: 2
+Node:	3441	 CHANX (0,3,1) to (6,1)  Track: 8  Switch: 1
+Node:	1760	  IPIN (0,5,1)  Pin: 44   router.idata_1[4] Switch: 0
+Node:	1367	  SINK (0,5,1)  Class: 44  Switch: -1 Net_pin_index: 42
+Node:	3441	 CHANX (0,3,1) to (6,1)  Track: 8  Switch: 1
+Node:	1754	  IPIN (0,5,1)  Pin: 20   router.idata_0[15] Switch: 0
+Node:	1343	  SINK (0,5,1)  Class: 20  Switch: -1 Net_pin_index: 19
+Node:	3441	 CHANX (0,3,1) to (6,1)  Track: 8  Switch: 1
+Node:	1781	  IPIN (0,5,1)  Pin: 128   router.idata_3[18] Switch: 0
+Node:	1451	  SINK (0,5,1)  Class: 128  Switch: -1 Net_pin_index: 126
+
+
+Net 2 ($true)
+
+Node:	2365	SOURCE (0,5,2)  Class: 10  Switch: 0
+Node:	2385	  OPIN (0,5,2)  Pin: 49   clb.O[9] Switch: 2
+Node:	5513	 CHANY (0,5,2) to (5,5)  Track: 16  Switch: 2
+Node:	3944	 CHANX (0,2,4) to (5,4)  Track: 7  Switch: 2
+Node:	5215	 CHANY (0,3,5) to (3,7)  Track: 0  Switch: 2
+Node:	4339	 CHANX (0,4,6) to (7,6)  Track: 48  Switch: 2
+Node:	5787	 CHANY (0,6,7)  Track: 56  Switch: 2
+Node:	4488	 CHANX (0,3,7) to (6,7)  Track: 23  Switch: 2
+Node:	5384	 CHANY (0,4,4) to (4,7)  Track: 55  Switch: 2
+Node:	3734	 CHANX (0,1,3) to (4,3)  Track: 31  Switch: 2
+Node:	4586	 CHANY (0,0,1) to (0,3)  Track: 13  Switch: 1
+Node:	1056	  IPIN (0,1,1)  Pin: 3   router.my_ypos[0] Switch: 0
+Node:	474	  SINK (0,1,1)  Class: 3  Switch: -1 Net_pin_index: 2
+Node:	5513	 CHANY (0,5,2) to (5,5)  Track: 16  Switch: 2
+Node:	4031	 CHANX (0,6,4)  Track: 64  Switch: 2
+Node:	5680	 CHANY (0,6,1) to (6,4)  Track: 63  Switch: 2
+Node:	3448	 CHANX (0,3,1) to (6,1)  Track: 39  Switch: 2
+Node:	5294	 CHANY (0,4,1)  Track: 25  Switch: 1
+Node:	1908	  IPIN (0,5,1)  Pin: 3   router.my_ypos[0] Switch: 0
+Node:	1326	  SINK (0,5,1)  Class: 3  Switch: -1 Net_pin_index: 1
+
+
+Net 3 (odata_3_rtr1[0])
+
+Node:	361	SOURCE (0,1,1)  Class: 315  Switch: 0
+Node:	869	  OPIN (0,1,1)  Pin: 315   router.odata_3[0] Switch: 2
+Node:	4575	 CHANY (0,0,1) to (0,3)  Track: 2  Switch: 2
+Node:	3765	 CHANX (0,1,3)  Track: 62  Switch: 2
+Node:	4800	 CHANY (0,1,1) to (1,3)  Track: 53  Switch: 2
+Node:	3425	 CHANX (0,2,1) to (5,1)  Track: 16  Switch: 1
+Node:	1759	  IPIN (0,5,1)  Pin: 40   router.idata_1[0] Switch: 0
+Node:	1363	  SINK (0,5,1)  Class: 40  Switch: -1 Net_pin_index: 1
+
+
+Net 4 (i_data_0[0])
+
+Node:	2612	SOURCE (0,8,2)  Pad: 15  Switch: 0
+Node:	2628	  OPIN (0,8,2)  Pad: 15  Switch: 2
+Node:	5863	 CHANY (0,7,2) to (7,5)  Track: 24  Switch: 2
+Node:	3672	 CHANX (0,6,2) to (7,2)  Track: 23  Switch: 2
+Node:	5486	 CHANY (0,5,1) to (5,2)  Track: 43  Switch: 1
+Node:	1838	  IPIN (0,5,1)  Pin: 145   router.idata_4[0] Switch: 0
+Node:	1468	  SINK (0,5,1)  Class: 145  Switch: -1 Net_pin_index: 1
+
+
+Net 5 (i_data_0[1])
+
+Node:	2611	SOURCE (0,8,2)  Pad: 13  Switch: 0
+Node:	2627	  OPIN (0,8,2)  Pad: 13  Switch: 2
+Node:	5869	 CHANY (0,7,2) to (7,5)  Track: 48  Switch: 2
+Node:	3694	 CHANX (0,7,2)  Track: 39  Switch: 2
+Node:	5644	 CHANY (0,6,1) to (6,2)  Track: 27  Switch: 2
+Node:	3276	 CHANX (0,3,0) to (6,0)  Track: 47  Switch: 1
+Node:	1892	  IPIN (0,5,1)  Pin: 146   router.idata_4[1] Switch: 0
+Node:	1469	  SINK (0,5,1)  Class: 146  Switch: -1 Net_pin_index: 1
+
+
+Net 6 (i_data_0[2])
+
+Node:	2674	SOURCE (0,8,3)  Pad: 11  Switch: 0
+Node:	2690	  OPIN (0,8,3)  Pad: 11  Switch: 2
+Node:	5828	 CHANY (0,7,1) to (7,3)  Track: 37  Switch: 2
+Node:	3660	 CHANX (0,5,2) to (7,2)  Track: 47  Switch: 2
+Node:	5288	 CHANY (0,4,1) to (4,2)  Track: 19  Switch: 1
+Node:	1944	  IPIN (0,5,1)  Pin: 147   router.idata_4[2] Switch: 0
+Node:	1470	  SINK (0,5,1)  Class: 147  Switch: -1 Net_pin_index: 1
+
+
+Net 7 (i_data_0[3])
+
+Node:	164	SOURCE (0,6,0)  Pad: 9  Switch: 0
+Node:	180	  OPIN (0,6,0)  Pad: 9  Switch: 2
+Node:	3325	 CHANX (0,6,0) to (7,0)  Track: 24  Switch: 2
+Node:	5665	 CHANY (0,6,1) to (6,4)  Track: 48  Switch: 2
+Node:	3442	 CHANX (0,3,1) to (6,1)  Track: 15  Switch: 1
+Node:	1786	  IPIN (0,5,1)  Pin: 148   router.idata_4[3] Switch: 0
+Node:	1471	  SINK (0,5,1)  Class: 148  Switch: -1 Net_pin_index: 1
+
+
+Net 8 (i_data_0[4])
+
+Node:	2862	SOURCE (0,8,6)  Pad: 3  Switch: 0
+Node:	2878	  OPIN (0,8,6)  Pad: 3  Switch: 2
+Node:	5886	 CHANY (0,7,3) to (7,6)  Track: 47  Switch: 2
+Node:	3646	 CHANX (0,4,2) to (7,2)  Track: 63  Switch: 2
+Node:	5652	 CHANY (0,6,1) to (6,2)  Track: 35  Switch: 2
+Node:	3452	 CHANX (0,3,1) to (6,1)  Track: 55  Switch: 2
+Node:	5500	 CHANY (0,5,1)  Track: 57  Switch: 1
+Node:	1839	  IPIN (0,5,1)  Pin: 149   router.idata_4[4] Switch: 0
+Node:	1472	  SINK (0,5,1)  Class: 149  Switch: -1 Net_pin_index: 1
+
+
+Net 9 (i_data_0[5])
+
+Node:	2863	SOURCE (0,8,6)  Pad: 5  Switch: 0
+Node:	2879	  OPIN (0,8,6)  Pad: 5  Switch: 2
+Node:	5888	 CHANY (0,7,3) to (7,6)  Track: 55  Switch: 2
+Node:	4214	 CHANX (0,7,5)  Track: 31  Switch: 2
+Node:	5692	 CHANY (0,6,2) to (6,5)  Track: 39  Switch: 2
+Node:	3622	 CHANX (0,3,2) to (6,2)  Track: 39  Switch: 2
+Node:	4948	 CHANY (0,2,1) to (2,2)  Track: 27  Switch: 2
+Node:	3275	 CHANX (0,3,0) to (6,0)  Track: 40  Switch: 1
+Node:	1893	  IPIN (0,5,1)  Pin: 150   router.idata_4[5] Switch: 0
+Node:	1473	  SINK (0,5,1)  Class: 150  Switch: -1 Net_pin_index: 1
+
+
+Net 10 (i_data_0[6])
+
+Node:	66	SOURCE (0,3,0)  Pad: 5  Switch: 0
+Node:	82	  OPIN (0,3,0)  Pad: 5  Switch: 2
+Node:	3267	 CHANX (0,3,0) to (6,0)  Track: 8  Switch: 2
+Node:	5499	 CHANY (0,5,1) to (5,4)  Track: 56  Switch: 2
+Node:	3673	 CHANX (0,6,2) to (7,2)  Track: 24  Switch: 2
+Node:	5885	 CHANY (0,7,3) to (7,6)  Track: 40  Switch: 2
+Node:	3814	 CHANX (0,4,3) to (7,3)  Track: 39  Switch: 2
+Node:	5290	 CHANY (0,4,1) to (4,3)  Track: 21  Switch: 1
+Node:	1945	  IPIN (0,5,1)  Pin: 151   router.idata_4[6] Switch: 0
+Node:	1474	  SINK (0,5,1)  Class: 151  Switch: -1 Net_pin_index: 1
+
+
+Net 11 (i_data_0[7])
+
+Node:	2798	SOURCE (0,8,5)  Pad: 3  Switch: 0
+Node:	2814	  OPIN (0,8,5)  Pad: 3  Switch: 2
+Node:	5921	 CHANY (0,7,5) to (7,7)  Track: 40  Switch: 2
+Node:	4354	 CHANX (0,5,6) to (7,6)  Track: 39  Switch: 2
+Node:	5360	 CHANY (0,4,3) to (4,6)  Track: 31  Switch: 2
+Node:	3657	 CHANX (0,5,2) to (7,2)  Track: 32  Switch: 2
+Node:	5874	 CHANY (0,7,2)  Track: 65  Switch: 2
+Node:	3488	 CHANX (0,5,1) to (7,1)  Track: 55  Switch: 1
+Node:	1787	  IPIN (0,5,1)  Pin: 152   router.idata_4[7] Switch: 0
+Node:	1475	  SINK (0,5,1)  Class: 152  Switch: -1 Net_pin_index: 1
+
+
+Net 12 (i_data_0[8])
+
+Node:	165	SOURCE (0,6,0)  Pad: 11  Switch: 0
+Node:	181	  OPIN (0,6,0)  Pad: 11  Switch: 2
+Node:	3274	 CHANX (0,3,0) to (6,0)  Track: 39  Switch: 2
+Node:	5465	 CHANY (0,5,1)  Track: 22  Switch: 1
+Node:	1840	  IPIN (0,5,1)  Pin: 153   router.idata_4[8] Switch: 0
+Node:	1476	  SINK (0,5,1)  Class: 153  Switch: -1 Net_pin_index: 1
+
+
+Net 13 (i_data_0[9])
+
+Node:	2925	SOURCE (0,8,7)  Pad: 1  Switch: 0
+Node:	2941	  OPIN (0,8,7)  Pad: 1  Switch: 2
+Node:	5894	 CHANY (0,7,4) to (7,7)  Track: 7  Switch: 2
+Node:	3806	 CHANX (0,4,3) to (7,3)  Track: 7  Switch: 2
+Node:	5156	 CHANY (0,3,1) to (3,3)  Track: 61  Switch: 2
+Node:	3291	 CHANX (0,4,0) to (7,0)  Track: 32  Switch: 1
+Node:	1894	  IPIN (0,5,1)  Pin: 154   router.idata_4[9] Switch: 0
+Node:	1477	  SINK (0,5,1)  Class: 154  Switch: -1 Net_pin_index: 1
+
+
+Net 14 (i_data_0[10])
+
+Node:	130	SOURCE (0,5,0)  Pad: 5  Switch: 0
+Node:	146	  OPIN (0,5,0)  Pad: 5  Switch: 2
+Node:	3250	 CHANX (0,2,0) to (5,0)  Track: 15  Switch: 2
+Node:	5273	 CHANY (0,4,1) to (4,2)  Track: 4  Switch: 1
+Node:	1946	  IPIN (0,5,1)  Pin: 155   router.idata_4[10] Switch: 0
+Node:	1478	  SINK (0,5,1)  Class: 155  Switch: -1 Net_pin_index: 1
+
+
+Net 15 (i_data_0[11])
+
+Node:	2802	SOURCE (0,8,5)  Pad: 11  Switch: 0
+Node:	2818	  OPIN (0,8,5)  Pad: 11  Switch: 2
+Node:	5919	 CHANY (0,7,5) to (7,7)  Track: 32  Switch: 2
+Node:	4178	 CHANX (0,5,5) to (7,5)  Track: 31  Switch: 2
+Node:	5696	 CHANY (0,6,2) to (6,5)  Track: 55  Switch: 2
+Node:	3446	 CHANX (0,3,1) to (6,1)  Track: 31  Switch: 1
+Node:	1788	  IPIN (0,5,1)  Pin: 156   router.idata_4[11] Switch: 0
+Node:	1479	  SINK (0,5,1)  Class: 156  Switch: -1 Net_pin_index: 1
+
+
+Net 16 (i_data_0[12])
+
+Node:	192	SOURCE (0,7,0)  Pad: 1  Switch: 0
+Node:	208	  OPIN (0,7,0)  Pad: 1  Switch: 2
+Node:	3353	 CHANX (0,7,0)  Track: 64  Switch: 2
+Node:	5793	 CHANY (0,7,1) to (7,3)  Track: 2  Switch: 2
+Node:	3686	 CHANX (0,7,2)  Track: 7  Switch: 2
+Node:	5717	 CHANY (0,6,3)  Track: 64  Switch: 2
+Node:	3788	 CHANX (0,3,3) to (6,3)  Track: 7  Switch: 2
+Node:	5504	 CHANY (0,5,1) to (5,3)  Track: 61  Switch: 1
+Node:	1841	  IPIN (0,5,1)  Pin: 157   router.idata_4[12] Switch: 0
+Node:	1480	  SINK (0,5,1)  Class: 157  Switch: -1 Net_pin_index: 1
+
+
+Net 17 (i_data_0[13])
+
+Node:	2799	SOURCE (0,8,5)  Pad: 5  Switch: 0
+Node:	2815	  OPIN (0,8,5)  Pad: 5  Switch: 2
+Node:	5860	 CHANY (0,7,2) to (7,5)  Track: 15  Switch: 2
+Node:	4030	 CHANX (0,6,4) to (7,4)  Track: 63  Switch: 2
+Node:	5640	 CHANY (0,6,1) to (6,4)  Track: 23  Switch: 2
+Node:	3618	 CHANX (0,3,2) to (6,2)  Track: 23  Switch: 2
+Node:	4964	 CHANY (0,2,1) to (2,2)  Track: 43  Switch: 2
+Node:	3273	 CHANX (0,3,0) to (6,0)  Track: 32  Switch: 1
+Node:	1895	  IPIN (0,5,1)  Pin: 158   router.idata_4[13] Switch: 0
+Node:	1481	  SINK (0,5,1)  Class: 158  Switch: -1 Net_pin_index: 1
+
+
+Net 18 (i_data_0[14])
+
+Node:	100	SOURCE (0,4,0)  Pad: 9  Switch: 0
+Node:	116	  OPIN (0,4,0)  Pad: 9  Switch: 2
+Node:	3300	 CHANX (0,4,0)  Track: 65  Switch: 2
+Node:	5109	 CHANY (0,3,1)  Track: 14  Switch: 2
+Node:	3469	 CHANX (0,4,1) to (7,1)  Track: 48  Switch: 2
+Node:	5335	 CHANY (0,4,2) to (4,5)  Track: 0  Switch: 2
+Node:	3726	 CHANX (0,1,3) to (4,3)  Track: 23  Switch: 2
+Node:	5207	 CHANY (0,3,4) to (3,7)  Track: 40  Switch: 2
+Node:	4152	 CHANX (0,3,5)  Track: 65  Switch: 2
+Node:	5058	 CHANY (0,2,5)  Track: 65  Switch: 2
+Node:	3961	 CHANX (0,3,4) to (6,4)  Track: 0  Switch: 2
+Node:	5276	 CHANY (0,4,1) to (4,4)  Track: 7  Switch: 1
+Node:	1947	  IPIN (0,5,1)  Pin: 159   router.idata_4[14] Switch: 0
+Node:	1482	  SINK (0,5,1)  Class: 159  Switch: -1 Net_pin_index: 1
+
+
+Net 19 (i_data_0[15])
+
+Node:	133	SOURCE (0,5,0)  Pad: 11  Switch: 0
+Node:	149	  OPIN (0,5,0)  Pad: 11  Switch: 2
+Node:	3258	 CHANX (0,2,0) to (5,0)  Track: 47  Switch: 2
+Node:	5125	 CHANY (0,3,1)  Track: 30  Switch: 2
+Node:	3465	 CHANX (0,4,1) to (7,1)  Track: 32  Switch: 1
+Node:	1789	  IPIN (0,5,1)  Pin: 160   router.idata_4[15] Switch: 0
+Node:	1483	  SINK (0,5,1)  Class: 160  Switch: -1 Net_pin_index: 1
+
+
+Net 20 (i_data_0[16])
+
+Node:	1962	SOURCE (0,8,1)  Pad: 5  Switch: 0
+Node:	1978	  OPIN (0,8,1)  Pad: 5  Switch: 2
+Node:	5840	 CHANY (0,7,1)  Track: 49  Switch: 2
+Node:	3306	 CHANX (0,5,0) to (7,0)  Track: 23  Switch: 2
+Node:	5457	 CHANY (0,5,1)  Track: 14  Switch: 1
+Node:	1842	  IPIN (0,5,1)  Pin: 161   router.idata_4[16] Switch: 0
+Node:	1484	  SINK (0,5,1)  Class: 161  Switch: -1 Net_pin_index: 1
+
+
+Net 21 (i_data_0[17])
+
+Node:	2739	SOURCE (0,8,4)  Pad: 13  Switch: 0
+Node:	2755	  OPIN (0,8,4)  Pad: 13  Switch: 2
+Node:	5846	 CHANY (0,7,1) to (7,4)  Track: 55  Switch: 2
+Node:	3674	 CHANX (0,6,2) to (7,2)  Track: 31  Switch: 2
+Node:	5660	 CHANY (0,6,1) to (6,2)  Track: 43  Switch: 2
+Node:	3278	 CHANX (0,3,0) to (6,0)  Track: 55  Switch: 1
+Node:	1896	  IPIN (0,5,1)  Pin: 162   router.idata_4[17] Switch: 0
+Node:	1485	  SINK (0,5,1)  Class: 162  Switch: -1 Net_pin_index: 1
+
+
+Net 22 (i_data_0[18])
+
+Node:	135	SOURCE (0,5,0)  Pad: 15  Switch: 0
+Node:	151	  OPIN (0,5,0)  Pad: 15  Switch: 2
+Node:	3305	 CHANX (0,5,0) to (7,0)  Track: 16  Switch: 2
+Node:	5669	 CHANY (0,6,1) to (6,2)  Track: 52  Switch: 2
+Node:	3628	 CHANX (0,3,2) to (6,2)  Track: 63  Switch: 2
+Node:	5296	 CHANY (0,4,1) to (4,2)  Track: 27  Switch: 1
+Node:	1948	  IPIN (0,5,1)  Pin: 163   router.idata_4[18] Switch: 0
+Node:	1486	  SINK (0,5,1)  Class: 163  Switch: -1 Net_pin_index: 1
+
+
+Net 23 (i_data_0[19])
+
+Node:	2800	SOURCE (0,8,5)  Pad: 7  Switch: 0
+Node:	2816	  OPIN (0,8,5)  Pad: 7  Switch: 2
+Node:	5872	 CHANY (0,7,2) to (7,5)  Track: 63  Switch: 2
+Node:	3864	 CHANX (0,7,3)  Track: 23  Switch: 2
+Node:	5662	 CHANY (0,6,1) to (6,3)  Track: 45  Switch: 2
+Node:	3444	 CHANX (0,3,1) to (6,1)  Track: 23  Switch: 1
+Node:	1790	  IPIN (0,5,1)  Pin: 164   router.idata_4[19] Switch: 0
+Node:	1487	  SINK (0,5,1)  Class: 164  Switch: -1 Net_pin_index: 1
+
+
+Net 24 (i_data_0[20])
+
+Node:	128	SOURCE (0,5,0)  Pad: 1  Switch: 0
+Node:	144	  OPIN (0,5,0)  Pad: 1  Switch: 2
+Node:	3318	 CHANX (0,5,0)  Track: 65  Switch: 2
+Node:	5283	 CHANY (0,4,1)  Track: 14  Switch: 2
+Node:	3487	 CHANX (0,5,1) to (7,1)  Track: 48  Switch: 2
+Node:	5508	 CHANY (0,5,1)  Track: 65  Switch: 1
+Node:	1843	  IPIN (0,5,1)  Pin: 165   router.idata_4[20] Switch: 0
+Node:	1488	  SINK (0,5,1)  Class: 165  Switch: -1 Net_pin_index: 1
+
+
+Net 25 (i_data_0[21])
+
+Node:	198	SOURCE (0,7,0)  Pad: 13  Switch: 0
+Node:	214	  OPIN (0,7,0)  Pad: 13  Switch: 2
+Node:	3330	 CHANX (0,6,0) to (7,0)  Track: 47  Switch: 2
+Node:	5649	 CHANY (0,6,1) to (6,4)  Track: 32  Switch: 2
+Node:	3800	 CHANX (0,3,3) to (6,3)  Track: 55  Switch: 2
+Node:	5322	 CHANY (0,4,1) to (4,3)  Track: 53  Switch: 2
+Node:	3651	 CHANX (0,5,2) to (7,2)  Track: 8  Switch: 2
+Node:	5834	 CHANY (0,7,1) to (7,2)  Track: 43  Switch: 2
+Node:	3290	 CHANX (0,4,0) to (7,0)  Track: 31  Switch: 1
+Node:	1897	  IPIN (0,5,1)  Pin: 166   router.idata_4[21] Switch: 0
+Node:	1489	  SINK (0,5,1)  Class: 166  Switch: -1 Net_pin_index: 1
+
+
+Net 26 (i_data_0[22])
+
+Node:	2733	SOURCE (0,8,4)  Pad: 1  Switch: 0
+Node:	2749	  OPIN (0,8,4)  Pad: 1  Switch: 2
+Node:	5901	 CHANY (0,7,4) to (7,7)  Track: 32  Switch: 2
+Node:	4512	 CHANX (0,4,7) to (7,7)  Track: 47  Switch: 2
+Node:	5414	 CHANY (0,4,6) to (4,7)  Track: 31  Switch: 2
+Node:	4351	 CHANX (0,5,6) to (7,6)  Track: 24  Switch: 2
+Node:	5702	 CHANY (0,6,3) to (6,6)  Track: 7  Switch: 2
+Node:	3802	 CHANX (0,3,3) to (6,3)  Track: 63  Switch: 2
+Node:	5298	 CHANY (0,4,1) to (4,3)  Track: 29  Switch: 1
+Node:	1949	  IPIN (0,5,1)  Pin: 167   router.idata_4[22] Switch: 0
+Node:	1490	  SINK (0,5,1)  Class: 167  Switch: -1 Net_pin_index: 1
+
+
+Net 27 (i_data_0[23])
+
+Node:	196	SOURCE (0,7,0)  Pad: 9  Switch: 0
+Node:	212	  OPIN (0,7,0)  Pad: 9  Switch: 2
+Node:	3343	 CHANX (0,7,0)  Track: 24  Switch: 2
+Node:	5833	 CHANY (0,7,1) to (7,3)  Track: 42  Switch: 2
+Node:	3484	 CHANX (0,5,1) to (7,1)  Track: 39  Switch: 1
+Node:	1791	  IPIN (0,5,1)  Pin: 168   router.idata_4[23] Switch: 0
+Node:	1491	  SINK (0,5,1)  Class: 168  Switch: -1 Net_pin_index: 1
+
+
+Net 28 (i_data_0[24])
+
+Node:	194	SOURCE (0,7,0)  Pad: 5  Switch: 0
+Node:	210	  OPIN (0,7,0)  Pad: 5  Switch: 2
+Node:	3349	 CHANX (0,7,0)  Track: 48  Switch: 2
+Node:	5809	 CHANY (0,7,1) to (7,3)  Track: 18  Switch: 2
+Node:	3462	 CHANX (0,4,1) to (7,1)  Track: 23  Switch: 2
+Node:	5444	 CHANY (0,5,1)  Track: 1  Switch: 1
+Node:	1844	  IPIN (0,5,1)  Pin: 169   router.idata_4[24] Switch: 0
+Node:	1492	  SINK (0,5,1)  Class: 169  Switch: -1 Net_pin_index: 1
+
+
+Net 29 (i_data_0[25])
+
+Node:	2676	SOURCE (0,8,3)  Pad: 15  Switch: 0
+Node:	2692	  OPIN (0,8,3)  Pad: 15  Switch: 2
+Node:	5879	 CHANY (0,7,3) to (7,6)  Track: 16  Switch: 2
+Node:	3984	 CHANX (0,4,4) to (7,4)  Track: 23  Switch: 2
+Node:	5632	 CHANY (0,6,1) to (6,4)  Track: 15  Switch: 2
+Node:	3270	 CHANX (0,3,0) to (6,0)  Track: 23  Switch: 1
+Node:	1898	  IPIN (0,5,1)  Pin: 170   router.idata_4[25] Switch: 0
+Node:	1493	  SINK (0,5,1)  Class: 170  Switch: -1 Net_pin_index: 1
+
+
+Net 30 (i_data_0[26])
+
+Node:	2801	SOURCE (0,8,5)  Pad: 9  Switch: 0
+Node:	2817	  OPIN (0,8,5)  Pad: 9  Switch: 2
+Node:	5866	 CHANY (0,7,2) to (7,5)  Track: 39  Switch: 2
+Node:	3490	 CHANX (0,5,1) to (7,1)  Track: 63  Switch: 2
+Node:	5270	 CHANY (0,4,1)  Track: 1  Switch: 1
+Node:	1950	  IPIN (0,5,1)  Pin: 171   router.idata_4[26] Switch: 0
+Node:	1494	  SINK (0,5,1)  Class: 171  Switch: -1 Net_pin_index: 1
+
+
+Net 31 (i_data_0[27])
+
+Node:	2868	SOURCE (0,8,6)  Pad: 15  Switch: 0
+Node:	2884	  OPIN (0,8,6)  Pad: 15  Switch: 2
+Node:	5880	 CHANY (0,7,3) to (7,6)  Track: 23  Switch: 2
+Node:	3836	 CHANX (0,5,3) to (7,3)  Track: 55  Switch: 2
+Node:	5282	 CHANY (0,4,1) to (4,3)  Track: 13  Switch: 2
+Node:	3485	 CHANX (0,5,1) to (7,1)  Track: 40  Switch: 1
+Node:	1792	  IPIN (0,5,1)  Pin: 172   router.idata_4[27] Switch: 0
+Node:	1495	  SINK (0,5,1)  Class: 172  Switch: -1 Net_pin_index: 1
+
+
+Net 32 (i_data_0[28])
+
+Node:	129	SOURCE (0,5,0)  Pad: 3  Switch: 0
+Node:	145	  OPIN (0,5,0)  Pad: 3  Switch: 2
+Node:	3248	 CHANX (0,2,0) to (5,0)  Track: 7  Switch: 2
+Node:	5095	 CHANY (0,3,1) to (3,4)  Track: 0  Switch: 2
+Node:	3643	 CHANX (0,4,2) to (7,2)  Track: 48  Switch: 2
+Node:	5446	 CHANY (0,5,1) to (5,2)  Track: 3  Switch: 1
+Node:	1845	  IPIN (0,5,1)  Pin: 173   router.idata_4[28] Switch: 0
+Node:	1496	  SINK (0,5,1)  Class: 173  Switch: -1 Net_pin_index: 1
+
+
+Net 33 (i_data_0[29])
+
+Node:	1961	SOURCE (0,8,1)  Pad: 3  Switch: 0
+Node:	1977	  OPIN (0,8,1)  Pad: 3  Switch: 2
+Node:	5841	 CHANY (0,7,1) to (7,3)  Track: 50  Switch: 2
+Node:	3862	 CHANX (0,7,3)  Track: 15  Switch: 2
+Node:	5670	 CHANY (0,6,1) to (6,3)  Track: 53  Switch: 2
+Node:	3614	 CHANX (0,3,2) to (6,2)  Track: 7  Switch: 2
+Node:	5181	 CHANY (0,3,3) to (3,6)  Track: 8  Switch: 2
+Node:	3813	 CHANX (0,4,3) to (7,3)  Track: 32  Switch: 2
+Node:	5654	 CHANY (0,6,1) to (6,3)  Track: 37  Switch: 2
+Node:	3266	 CHANX (0,3,0) to (6,0)  Track: 7  Switch: 1
+Node:	1899	  IPIN (0,5,1)  Pin: 174   router.idata_4[29] Switch: 0
+Node:	1497	  SINK (0,5,1)  Class: 174  Switch: -1 Net_pin_index: 1
+
+
+Net 34 (i_data_0[30])
+
+Node:	1963	SOURCE (0,8,1)  Pad: 7  Switch: 0
+Node:	1979	  OPIN (0,8,1)  Pad: 7  Switch: 2
+Node:	5797	 CHANY (0,7,1)  Track: 6  Switch: 2
+Node:	3476	 CHANX (0,5,1) to (7,1)  Track: 7  Switch: 2
+Node:	5326	 CHANY (0,4,1)  Track: 57  Switch: 1
+Node:	1951	  IPIN (0,5,1)  Pin: 175   router.idata_4[30] Switch: 0
+Node:	1498	  SINK (0,5,1)  Class: 175  Switch: -1 Net_pin_index: 1
+
+
+Net 35 (i_data_0[31])
+
+Node:	101	SOURCE (0,4,0)  Pad: 11  Switch: 0
+Node:	117	  OPIN (0,4,0)  Pad: 11  Switch: 2
+Node:	3283	 CHANX (0,4,0) to (7,0)  Track: 0  Switch: 2
+Node:	5679	 CHANY (0,6,1)  Track: 62  Switch: 2
+Node:	3510	 CHANX (0,6,1)  Track: 65  Switch: 2
+Node:	5523	 CHANY (0,5,2) to (5,5)  Track: 56  Switch: 2
+Node:	3780	 CHANX (0,2,3) to (5,3)  Track: 47  Switch: 2
+Node:	5381	 CHANY (0,4,4) to (4,7)  Track: 40  Switch: 2
+Node:	3999	 CHANX (0,5,4) to (7,4)  Track: 8  Switch: 2
+Node:	5838	 CHANY (0,7,1) to (7,4)  Track: 47  Switch: 2
+Node:	3466	 CHANX (0,4,1) to (7,1)  Track: 39  Switch: 1
+Node:	1793	  IPIN (0,5,1)  Pin: 176   router.idata_4[31] Switch: 0
+Node:	1499	  SINK (0,5,1)  Class: 176  Switch: -1 Net_pin_index: 1
+
+
+Net 36 (i_data_0[32])
+
+Node:	2931	SOURCE (0,8,7)  Pad: 13  Switch: 0
+Node:	2947	  OPIN (0,8,7)  Pad: 13  Switch: 2
+Node:	5936	 CHANY (0,7,6) to (7,7)  Track: 31  Switch: 2
+Node:	4204	 CHANX (0,6,5) to (7,5)  Track: 63  Switch: 2
+Node:	5688	 CHANY (0,6,2) to (6,5)  Track: 23  Switch: 2
+Node:	3616	 CHANX (0,3,2) to (6,2)  Track: 15  Switch: 2
+Node:	5478	 CHANY (0,5,1) to (5,2)  Track: 35  Switch: 1
+Node:	1846	  IPIN (0,5,1)  Pin: 177   router.idata_4[32] Switch: 0
+Node:	1500	  SINK (0,5,1)  Class: 177  Switch: -1 Net_pin_index: 1
+
+
+Net 37 (i_data_0[33])
+
+Node:	161	SOURCE (0,6,0)  Pad: 3  Switch: 0
+Node:	177	  OPIN (0,6,0)  Pad: 3  Switch: 2
+Node:	3321	 CHANX (0,6,0) to (7,0)  Track: 8  Switch: 2
+Node:	5847	 CHANY (0,7,1) to (7,4)  Track: 56  Switch: 2
+Node:	3696	 CHANX (0,7,2)  Track: 47  Switch: 2
+Node:	5636	 CHANY (0,6,1) to (6,2)  Track: 19  Switch: 2
+Node:	3525	 CHANX (0,7,1)  Track: 56  Switch: 2
+Node:	5792	 CHANY (0,7,1)  Track: 1  Switch: 2
+Node:	3284	 CHANX (0,4,0) to (7,0)  Track: 7  Switch: 1
+Node:	1900	  IPIN (0,5,1)  Pin: 178   router.idata_4[33] Switch: 0
+Node:	1501	  SINK (0,5,1)  Class: 178  Switch: -1 Net_pin_index: 1
+
+
+Net 38 (i_data_0[34])
+
+Node:	2607	SOURCE (0,8,2)  Pad: 5  Switch: 0
+Node:	2623	  OPIN (0,8,2)  Pad: 5  Switch: 2
+Node:	5810	 CHANY (0,7,1) to (7,2)  Track: 19  Switch: 2
+Node:	3296	 CHANX (0,4,0) to (7,0)  Track: 55  Switch: 2
+Node:	5307	 CHANY (0,4,1)  Track: 38  Switch: 1
+Node:	1952	  IPIN (0,5,1)  Pin: 179   router.idata_4[34] Switch: 0
+Node:	1502	  SINK (0,5,1)  Class: 179  Switch: -1 Net_pin_index: 1
+
+
+Net 39 (ivalid_1_rtr0)
+
+Node:	434	SOURCE (0,1,1)  Class: 388  Switch: 0
+Node:	726	  OPIN (0,1,1)  Pin: 388   router.ovalid_3[0] Switch: 2
+Node:	3403	 CHANX (0,1,1) to (4,1)  Track: 48  Switch: 2
+Node:	5341	 CHANY (0,4,2) to (4,5)  Track: 24  Switch: 2
+Node:	3663	 CHANX (0,5,2) to (7,2)  Track: 56  Switch: 2
+Node:	5462	 CHANY (0,5,1) to (5,2)  Track: 19  Switch: 1
+Node:	1847	  IPIN (0,5,1)  Pin: 181   router.ivalid_1[0] Switch: 0
+Node:	1504	  SINK (0,5,1)  Class: 181  Switch: -1 Net_pin_index: 1
+
+
+Net 40 (i_valid_0)
+
+Node:	2797	SOURCE (0,8,5)  Pad: 1  Switch: 0
+Node:	2813	  OPIN (0,8,5)  Pad: 1  Switch: 2
+Node:	5858	 CHANY (0,7,2) to (7,5)  Track: 7  Switch: 2
+Node:	3458	 CHANX (0,4,1) to (7,1)  Track: 7  Switch: 1
+Node:	1795	  IPIN (0,5,1)  Pin: 184   router.ivalid_4[0] Switch: 0
+Node:	1507	  SINK (0,5,1)  Class: 184  Switch: -1 Net_pin_index: 1
+
+
+Net 41 (ivch_1_rtr0)
+
+Node:	439	SOURCE (0,1,1)  Class: 393  Switch: 0
+Node:	781	  OPIN (0,1,1)  Pin: 393   router.ovch_3[0] Switch: 2
+Node:	4771	 CHANY (0,1,1) to (1,4)  Track: 24  Switch: 2
+Node:	3779	 CHANX (0,2,3) to (5,3)  Track: 40  Switch: 2
+Node:	5148	 CHANY (0,3,1) to (3,3)  Track: 53  Switch: 2
+Node:	3461	 CHANX (0,4,1) to (7,1)  Track: 16  Switch: 2
+Node:	5800	 CHANY (0,7,1)  Track: 9  Switch: 2
+Node:	3316	 CHANX (0,5,0) to (7,0)  Track: 63  Switch: 1
+Node:	1902	  IPIN (0,5,1)  Pin: 186   router.ivch_1[0] Switch: 0
+Node:	1509	  SINK (0,5,1)  Class: 186  Switch: -1 Net_pin_index: 1
+
+
+Net 42 (i_vch_0)
+
+Node:	131	SOURCE (0,5,0)  Pad: 7  Switch: 0
+Node:	147	  OPIN (0,5,0)  Pad: 7  Switch: 2
+Node:	3262	 CHANX (0,2,0) to (5,0)  Track: 63  Switch: 2
+Node:	5137	 CHANY (0,3,1) to (3,3)  Track: 42  Switch: 2
+Node:	3809	 CHANX (0,4,3) to (7,3)  Track: 16  Switch: 2
+Node:	5496	 CHANY (0,5,1) to (5,3)  Track: 53  Switch: 1
+Node:	1849	  IPIN (0,5,1)  Pin: 189   router.ivch_4[0] Switch: 0
+Node:	1512	  SINK (0,5,1)  Class: 189  Switch: -1 Net_pin_index: 1
+
+
+Net 43 (oack_3_rtr1[0])
+
+Node:	447	SOURCE (0,1,1)  Class: 401  Switch: 0
+Node:	783	  OPIN (0,1,1)  Pin: 401   router.oack_3[0] Switch: 2
+Node:	4807	 CHANY (0,1,1) to (1,2)  Track: 60  Switch: 2
+Node:	3595	 CHANX (0,2,2) to (5,2)  Track: 0  Switch: 2
+Node:	5526	 CHANY (0,5,2)  Track: 65  Switch: 2
+Node:	3424	 CHANX (0,2,1) to (5,1)  Track: 15  Switch: 1
+Node:	1797	  IPIN (0,5,1)  Pin: 192   router.iack_1[0] Switch: 0
+Node:	1515	  SINK (0,5,1)  Class: 192  Switch: -1 Net_pin_index: 1
+
+
+Net 44 (i_ack_0[0])
+
+Node:	166	SOURCE (0,6,0)  Pad: 13  Switch: 0
+Node:	182	  OPIN (0,6,0)  Pad: 13  Switch: 2
+Node:	3329	 CHANX (0,6,0) to (7,0)  Track: 40  Switch: 2
+Node:	5653	 CHANY (0,6,1) to (6,2)  Track: 36  Switch: 2
+Node:	3515	 CHANX (0,7,1)  Track: 16  Switch: 2
+Node:	5848	 CHANY (0,7,1)  Track: 57  Switch: 2
+Node:	3304	 CHANX (0,5,0) to (7,0)  Track: 15  Switch: 1
+Node:	1905	  IPIN (0,5,1)  Pin: 198   router.iack_4[0] Switch: 0
+Node:	1521	  SINK (0,5,1)  Class: 198  Switch: -1 Net_pin_index: 1
+
+
+Net 45 (i_ack_0[1])
+
+Node:	99	SOURCE (0,4,0)  Pad: 7  Switch: 0
+Node:	115	  OPIN (0,4,0)  Pad: 7  Switch: 2
+Node:	3204	 CHANX (0,1,0) to (4,0)  Track: 23  Switch: 2
+Node:	4933	 CHANY (0,2,1) to (2,2)  Track: 12  Switch: 2
+Node:	3625	 CHANX (0,3,2) to (6,2)  Track: 48  Switch: 2
+Node:	5272	 CHANY (0,4,1) to (4,2)  Track: 3  Switch: 1
+Node:	1957	  IPIN (0,5,1)  Pin: 199   router.iack_4[1] Switch: 0
+Node:	1522	  SINK (0,5,1)  Class: 199  Switch: -1 Net_pin_index: 1
+
+
+Net 46 (olck_3_rtr1[0])
+
+Node:	467	SOURCE (0,1,1)  Class: 421  Switch: 0
+Node:	788	  OPIN (0,1,1)  Pin: 421   router.olck_3[0] Switch: 2
+Node:	4796	 CHANY (0,1,1)  Track: 49  Switch: 2
+Node:	3261	 CHANX (0,2,0) to (5,0)  Track: 56  Switch: 2
+Node:	4945	 CHANY (0,2,1) to (2,4)  Track: 24  Switch: 2
+Node:	3730	 CHANX (0,1,3) to (2,3)  Track: 27  Switch: 2
+Node:	4602	 CHANY (0,0,1) to (0,3)  Track: 29  Switch: 2
+Node:	3211	 CHANX (0,1,0)  Track: 30  Switch: 1
+Node:	1055	  IPIN (0,1,1)  Pin: 206   router.ilck_3[0] Switch: 0
+Node:	677	  SINK (0,1,1)  Class: 206  Switch: -1 Net_pin_index: 2
+Node:	3261	 CHANX (0,2,0) to (5,0)  Track: 56  Switch: 2
+Node:	5495	 CHANY (0,5,1) to (5,2)  Track: 52  Switch: 2
+Node:	3428	 CHANX (0,2,1) to (5,1)  Track: 31  Switch: 2
+Node:	5144	 CHANY (0,3,1)  Track: 49  Switch: 2
+Node:	3297	 CHANX (0,4,0) to (7,0)  Track: 56  Switch: 1
+Node:	1906	  IPIN (0,5,1)  Pin: 202   router.ilck_1[0] Switch: 0
+Node:	1525	  SINK (0,5,1)  Class: 202  Switch: -1 Net_pin_index: 1
+
+
+Net 47 (i_lck_0[0])
+
+Node:	195	SOURCE (0,7,0)  Pad: 7  Switch: 0
+Node:	211	  OPIN (0,7,0)  Pad: 7  Switch: 2
+Node:	3342	 CHANX (0,7,0)  Track: 23  Switch: 2
+Node:	5619	 CHANY (0,6,1) to (6,3)  Track: 2  Switch: 2
+Node:	3790	 CHANX (0,3,3) to (6,3)  Track: 15  Switch: 2
+Node:	5377	 CHANY (0,4,4) to (4,7)  Track: 24  Switch: 2
+Node:	4011	 CHANX (0,5,4) to (7,4)  Track: 56  Switch: 2
+Node:	5648	 CHANY (0,6,1) to (6,4)  Track: 31  Switch: 2
+Node:	3454	 CHANX (0,3,1) to (6,1)  Track: 63  Switch: 1
+Node:	1801	  IPIN (0,5,1)  Pin: 208   router.ilck_4[0] Switch: 0
+Node:	1531	  SINK (0,5,1)  Class: 208  Switch: -1 Net_pin_index: 1
+
+
+Net 48 (i_lck_0[1])
+
+Node:	1960	SOURCE (0,8,1)  Pad: 1  Switch: 0
+Node:	1976	  OPIN (0,8,1)  Pad: 1  Switch: 2
+Node:	5791	 CHANY (0,7,1) to (7,4)  Track: 0  Switch: 2
+Node:	3860	 CHANX (0,7,3)  Track: 7  Switch: 2
+Node:	5678	 CHANY (0,6,1) to (6,3)  Track: 61  Switch: 2
+Node:	3450	 CHANX (0,3,1) to (6,1)  Track: 47  Switch: 2
+Node:	5452	 CHANY (0,5,1)  Track: 9  Switch: 1
+Node:	1854	  IPIN (0,5,1)  Pin: 209   router.ilck_4[1] Switch: 0
+Node:	1532	  SINK (0,5,1)  Class: 209  Switch: -1 Net_pin_index: 1
+
+
+Net 49 (idata_3_rtr1[0])
+
+Node:	1143	SOURCE (0,5,1)  Class: 245  Switch: 0
+Node:	1596	  OPIN (0,5,1)  Pin: 245   router.odata_1[0] Switch: 2
+Node:	5491	 CHANY (0,5,1) to (5,4)  Track: 48  Switch: 2
+Node:	3958	 CHANX (0,2,4) to (5,4)  Track: 63  Switch: 2
+Node:	4754	 CHANY (0,1,1) to (1,4)  Track: 7  Switch: 2
+Node:	3230	 CHANX (0,1,0)  Track: 49  Switch: 1
+Node:	1031	  IPIN (0,1,1)  Pin: 110   router.idata_3[0] Switch: 0
+Node:	581	  SINK (0,1,1)  Class: 110  Switch: -1 Net_pin_index: 1
+
+
+Net 50 (o_data_0[0])
+
+Node:	1248	SOURCE (0,5,1)  Class: 350  Switch: 0
+Node:	1676	  OPIN (0,5,1)  Pin: 350   router.odata_4[0] Switch: 2
+Node:	3317	 CHANX (0,5,0)  Track: 64  Switch: 2
+Node:	5493	 CHANY (0,5,1) to (5,3)  Track: 50  Switch: 2
+Node:	3426	 CHANX (0,2,1) to (5,1)  Track: 23  Switch: 2
+Node:	4815	 CHANY (0,1,2) to (1,5)  Track: 8  Switch: 2
+Node:	3947	 CHANX (0,2,4) to (5,4)  Track: 16  Switch: 2
+Node:	5150	 CHANY (0,3,1) to (3,4)  Track: 55  Switch: 2
+Node:	3807	 CHANX (0,4,3) to (7,3)  Track: 8  Switch: 2
+Node:	5844	 CHANY (0,7,1) to (7,3)  Track: 53  Switch: 2
+Node:	3340	 CHANX (0,7,0)  Track: 15  Switch: 1
+Node:	217	  IPIN (0,7,0)  Pad: 2  Switch: 0
+Node:	201	  SINK (0,7,0)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 51 (o_data_0[1])
+
+Node:	1249	SOURCE (0,5,1)  Class: 351  Switch: 0
+Node:	1730	  OPIN (0,5,1)  Pin: 351   router.odata_4[1] Switch: 2
+Node:	5289	 CHANY (0,4,1) to (4,2)  Track: 20  Switch: 2
+Node:	3659	 CHANX (0,5,2) to (7,2)  Track: 40  Switch: 2
+Node:	5818	 CHANY (0,7,1) to (7,2)  Track: 27  Switch: 1
+Node:	1991	  IPIN (0,8,1)  Pad: 14  Switch: 0
+Node:	1975	  SINK (0,8,1)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 52 (o_data_0[2])
+
+Node:	1250	SOURCE (0,5,1)  Class: 352  Switch: 0
+Node:	1569	  OPIN (0,5,1)  Pin: 352   router.odata_4[2] Switch: 2
+Node:	3430	 CHANX (0,2,1) to (5,1)  Track: 39  Switch: 2
+Node:	4772	 CHANY (0,1,1)  Track: 25  Switch: 2
+Node:	3255	 CHANX (0,2,0) to (5,0)  Track: 32  Switch: 1
+Node:	120	  IPIN (0,4,0)  Pad: 0  Switch: 0
+Node:	104	  SINK (0,4,0)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 53 (o_data_0[3])
+
+Node:	1251	SOURCE (0,5,1)  Class: 353  Switch: 0
+Node:	1623	  OPIN (0,5,1)  Pin: 353   router.odata_4[3] Switch: 2
+Node:	5447	 CHANY (0,5,1) to (5,2)  Track: 4  Switch: 2
+Node:	3681	 CHANX (0,6,2) to (7,2)  Track: 56  Switch: 2
+Node:	5713	 CHANY (0,6,3) to (6,6)  Track: 48  Switch: 2
+Node:	4217	 CHANX (0,7,5)  Track: 40  Switch: 2
+Node:	5943	 CHANY (0,7,6) to (7,7)  Track: 56  Switch: 1
+Node:	2889	  IPIN (0,8,6)  Pad: 8  Switch: 0
+Node:	2873	  SINK (0,8,6)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 54 (o_data_0[4])
+
+Node:	1252	SOURCE (0,5,1)  Class: 354  Switch: 0
+Node:	1677	  OPIN (0,5,1)  Pin: 354   router.odata_4[4] Switch: 2
+Node:	3256	 CHANX (0,2,0) to (5,0)  Track: 39  Switch: 2
+Node:	5119	 CHANY (0,3,1) to (3,4)  Track: 24  Switch: 2
+Node:	3471	 CHANX (0,4,1) to (7,1)  Track: 56  Switch: 2
+Node:	5691	 CHANY (0,6,2) to (6,5)  Track: 32  Switch: 2
+Node:	4037	 CHANX (0,7,4)  Track: 16  Switch: 2
+Node:	5913	 CHANY (0,7,5) to (7,7)  Track: 8  Switch: 1
+Node:	2828	  IPIN (0,8,5)  Pad: 14  Switch: 0
+Node:	2812	  SINK (0,8,5)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 55 (o_data_0[5])
+
+Node:	1253	SOURCE (0,5,1)  Class: 355  Switch: 0
+Node:	1731	  OPIN (0,5,1)  Pin: 355   router.odata_4[5] Switch: 2
+Node:	5275	 CHANY (0,4,1)  Track: 6  Switch: 2
+Node:	3489	 CHANX (0,5,1) to (7,1)  Track: 56  Switch: 2
+Node:	5808	 CHANY (0,7,1)  Track: 17  Switch: 2
+Node:	3314	 CHANX (0,5,0) to (7,0)  Track: 55  Switch: 1
+Node:	186	  IPIN (0,6,0)  Pad: 4  Switch: 0
+Node:	170	  SINK (0,6,0)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 56 (o_data_0[6])
+
+Node:	1254	SOURCE (0,5,1)  Class: 356  Switch: 0
+Node:	1570	  OPIN (0,5,1)  Pin: 356   router.odata_4[6] Switch: 2
+Node:	3475	 CHANX (0,5,1) to (7,1)  Track: 0  Switch: 2
+Node:	5618	 CHANY (0,6,1)  Track: 1  Switch: 2
+Node:	3339	 CHANX (0,7,0)  Track: 8  Switch: 2
+Node:	5849	 CHANY (0,7,1) to (7,3)  Track: 58  Switch: 1
+Node:	2694	  IPIN (0,8,3)  Pad: 2  Switch: 0
+Node:	2678	  SINK (0,8,3)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 57 (o_data_0[7])
+
+Node:	1255	SOURCE (0,5,1)  Class: 357  Switch: 0
+Node:	1624	  OPIN (0,5,1)  Pin: 357   router.odata_4[7] Switch: 2
+Node:	5476	 CHANY (0,5,1)  Track: 33  Switch: 2
+Node:	3335	 CHANX (0,6,0)  Track: 64  Switch: 2
+Node:	5667	 CHANY (0,6,1) to (6,3)  Track: 50  Switch: 2
+Node:	3861	 CHANX (0,7,3)  Track: 8  Switch: 2
+Node:	5820	 CHANY (0,7,1) to (7,3)  Track: 29  Switch: 1
+Node:	2699	  IPIN (0,8,3)  Pad: 12  Switch: 0
+Node:	2683	  SINK (0,8,3)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 58 (o_data_0[8])
+
+Node:	1256	SOURCE (0,5,1)  Class: 358  Switch: 0
+Node:	1678	  OPIN (0,5,1)  Pin: 358   router.odata_4[8] Switch: 2
+Node:	3303	 CHANX (0,5,0) to (7,0)  Track: 8  Switch: 1
+Node:	158	  IPIN (0,5,0)  Pad: 12  Switch: 0
+Node:	142	  SINK (0,5,0)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 59 (o_data_0[9])
+
+Node:	1257	SOURCE (0,5,1)  Class: 359  Switch: 0
+Node:	1732	  OPIN (0,5,1)  Pin: 359   router.odata_4[9] Switch: 2
+Node:	5277	 CHANY (0,4,1) to (4,4)  Track: 8  Switch: 2
+Node:	4009	 CHANX (0,5,4) to (7,4)  Track: 48  Switch: 2
+Node:	5624	 CHANY (0,6,1) to (6,4)  Track: 7  Switch: 2
+Node:	3345	 CHANX (0,7,0)  Track: 32  Switch: 2
+Node:	5825	 CHANY (0,7,1) to (7,3)  Track: 34  Switch: 1
+Node:	1989	  IPIN (0,8,1)  Pad: 10  Switch: 0
+Node:	1973	  SINK (0,8,1)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 60 (o_data_0[10])
+
+Node:	1258	SOURCE (0,5,1)  Class: 360  Switch: 0
+Node:	1571	  OPIN (0,5,1)  Pin: 360   router.odata_4[10] Switch: 2
+Node:	3432	 CHANX (0,2,1) to (5,1)  Track: 47  Switch: 2
+Node:	5345	 CHANY (0,4,2) to (4,5)  Track: 40  Switch: 2
+Node:	3823	 CHANX (0,5,3) to (7,3)  Track: 0  Switch: 2
+Node:	5735	 CHANY (0,6,4)  Track: 64  Switch: 2
+Node:	4049	 CHANX (0,7,4)  Track: 64  Switch: 2
+Node:	5830	 CHANY (0,7,1) to (7,4)  Track: 39  Switch: 1
+Node:	2629	  IPIN (0,8,2)  Pad: 0  Switch: 0
+Node:	2613	  SINK (0,8,2)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 61 (o_data_0[11])
+
+Node:	1259	SOURCE (0,5,1)  Class: 361  Switch: 0
+Node:	1625	  OPIN (0,5,1)  Pin: 361   router.odata_4[11] Switch: 2
+Node:	5473	 CHANY (0,5,1)  Track: 30  Switch: 2
+Node:	3501	 CHANX (0,6,1) to (7,1)  Track: 32  Switch: 2
+Node:	5695	 CHANY (0,6,2) to (6,5)  Track: 48  Switch: 2
+Node:	4043	 CHANX (0,7,4)  Track: 40  Switch: 2
+Node:	5806	 CHANY (0,7,1) to (7,4)  Track: 15  Switch: 1
+Node:	2761	  IPIN (0,8,4)  Pad: 8  Switch: 0
+Node:	2745	  SINK (0,8,4)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 62 (o_data_0[12])
+
+Node:	1260	SOURCE (0,5,1)  Class: 362  Switch: 0
+Node:	1679	  OPIN (0,5,1)  Pin: 362   router.odata_4[12] Switch: 2
+Node:	3252	 CHANX (0,2,0) to (5,0)  Track: 23  Switch: 2
+Node:	5279	 CHANY (0,4,1) to (4,3)  Track: 10  Switch: 2
+Node:	3653	 CHANX (0,5,2) to (7,2)  Track: 16  Switch: 2
+Node:	5533	 CHANY (0,5,3) to (5,6)  Track: 24  Switch: 2
+Node:	4199	 CHANX (0,6,5) to (7,5)  Track: 40  Switch: 2
+Node:	5694	 CHANY (0,6,2) to (6,5)  Track: 47  Switch: 2
+Node:	3685	 CHANX (0,7,2)  Track: 0  Switch: 2
+Node:	5875	 CHANY (0,7,3) to (7,6)  Track: 0  Switch: 1
+Node:	2696	  IPIN (0,8,3)  Pad: 6  Switch: 0
+Node:	2680	  SINK (0,8,3)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 63 (o_data_0[13])
+
+Node:	1261	SOURCE (0,5,1)  Class: 363  Switch: 0
+Node:	1733	  OPIN (0,5,1)  Pin: 363   router.odata_4[13] Switch: 2
+Node:	5301	 CHANY (0,4,1) to (4,4)  Track: 32  Switch: 2
+Node:	3827	 CHANX (0,5,3) to (7,3)  Track: 16  Switch: 2
+Node:	5796	 CHANY (0,7,1) to (7,3)  Track: 5  Switch: 1
+Node:	2693	  IPIN (0,8,3)  Pad: 0  Switch: 0
+Node:	2677	  SINK (0,8,3)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 64 (o_data_0[14])
+
+Node:	1262	SOURCE (0,5,1)  Class: 364  Switch: 0
+Node:	1572	  OPIN (0,5,1)  Pin: 364   router.odata_4[14] Switch: 2
+Node:	3436	 CHANX (0,2,1) to (5,1)  Track: 63  Switch: 2
+Node:	4995	 CHANY (0,2,2) to (2,5)  Track: 32  Switch: 2
+Node:	4094	 CHANX (0,1,5) to (2,5)  Track: 43  Switch: 2
+Node:	4895	 CHANY (0,1,6) to (1,7)  Track: 40  Switch: 2
+Node:	4293	 CHANX (0,2,6) to (5,6)  Track: 8  Switch: 2
+Node:	5186	 CHANY (0,3,3) to (3,6)  Track: 31  Switch: 2
+Node:	3639	 CHANX (0,4,2) to (7,2)  Track: 32  Switch: 2
+Node:	5794	 CHANY (0,7,1) to (7,2)  Track: 3  Switch: 1
+Node:	2632	  IPIN (0,8,2)  Pad: 6  Switch: 0
+Node:	2616	  SINK (0,8,2)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 65 (o_data_0[15])
+
+Node:	1263	SOURCE (0,5,1)  Class: 365  Switch: 0
+Node:	1626	  OPIN (0,5,1)  Pin: 365   router.odata_4[15] Switch: 2
+Node:	5453	 CHANY (0,5,1) to (5,3)  Track: 10  Switch: 2
+Node:	3671	 CHANX (0,6,2) to (7,2)  Track: 16  Switch: 2
+Node:	5707	 CHANY (0,6,3) to (6,6)  Track: 24  Switch: 2
+Node:	4045	 CHANX (0,7,4)  Track: 48  Switch: 2
+Node:	5917	 CHANY (0,7,5) to (7,7)  Track: 24  Switch: 1
+Node:	2827	  IPIN (0,8,5)  Pad: 12  Switch: 0
+Node:	2811	  SINK (0,8,5)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 66 (o_data_0[16])
+
+Node:	1264	SOURCE (0,5,1)  Class: 366  Switch: 0
+Node:	1680	  OPIN (0,5,1)  Pin: 366   router.odata_4[16] Switch: 2
+Node:	3307	 CHANX (0,5,0) to (7,0)  Track: 24  Switch: 2
+Node:	5829	 CHANY (0,7,1)  Track: 38  Switch: 2
+Node:	3478	 CHANX (0,5,1) to (7,1)  Track: 15  Switch: 2
+Node:	5460	 CHANY (0,5,1)  Track: 17  Switch: 2
+Node:	3319	 CHANX (0,6,0) to (7,0)  Track: 0  Switch: 1
+Node:	187	  IPIN (0,6,0)  Pad: 6  Switch: 0
+Node:	171	  SINK (0,6,0)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 67 (o_data_0[17])
+
+Node:	1265	SOURCE (0,5,1)  Class: 367  Switch: 0
+Node:	1734	  OPIN (0,5,1)  Pin: 367   router.odata_4[17] Switch: 2
+Node:	5281	 CHANY (0,4,1) to (4,2)  Track: 12  Switch: 2
+Node:	3661	 CHANX (0,5,2) to (7,2)  Track: 48  Switch: 2
+Node:	5527	 CHANY (0,5,3) to (5,6)  Track: 0  Switch: 2
+Node:	4027	 CHANX (0,6,4) to (7,4)  Track: 48  Switch: 2
+Node:	5915	 CHANY (0,7,5) to (7,7)  Track: 16  Switch: 1
+Node:	2888	  IPIN (0,8,6)  Pad: 6  Switch: 0
+Node:	2872	  SINK (0,8,6)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 68 (o_data_0[18])
+
+Node:	1266	SOURCE (0,5,1)  Class: 368  Switch: 0
+Node:	1573	  OPIN (0,5,1)  Pin: 368   router.odata_4[18] Switch: 2
+Node:	3491	 CHANX (0,5,1)  Track: 64  Switch: 2
+Node:	5511	 CHANY (0,5,2) to (5,5)  Track: 8  Switch: 2
+Node:	3847	 CHANX (0,6,3) to (7,3)  Track: 24  Switch: 2
+Node:	5719	 CHANY (0,6,4) to (6,7)  Track: 0  Switch: 2
+Node:	4219	 CHANX (0,7,5)  Track: 48  Switch: 2
+Node:	5935	 CHANY (0,7,6) to (7,7)  Track: 24  Switch: 1
+Node:	2891	  IPIN (0,8,6)  Pad: 12  Switch: 0
+Node:	2875	  SINK (0,8,6)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 69 (o_data_0[19])
+
+Node:	1267	SOURCE (0,5,1)  Class: 369  Switch: 0
+Node:	1627	  OPIN (0,5,1)  Pin: 369   router.odata_4[19] Switch: 2
+Node:	5477	 CHANY (0,5,1) to (5,3)  Track: 34  Switch: 2
+Node:	3608	 CHANX (0,2,2) to (5,2)  Track: 55  Switch: 2
+Node:	5146	 CHANY (0,3,1) to (3,2)  Track: 51  Switch: 2
+Node:	3299	 CHANX (0,4,0)  Track: 64  Switch: 1
+Node:	122	  IPIN (0,4,0)  Pad: 4  Switch: 0
+Node:	106	  SINK (0,4,0)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 70 (o_data_0[20])
+
+Node:	1268	SOURCE (0,5,1)  Class: 370  Switch: 0
+Node:	1681	  OPIN (0,5,1)  Pin: 370   router.odata_4[20] Switch: 2
+Node:	3309	 CHANX (0,5,0) to (7,0)  Track: 32  Switch: 2
+Node:	5657	 CHANY (0,6,1) to (6,4)  Track: 40  Switch: 2
+Node:	3684	 CHANX (0,6,2)  Track: 65  Switch: 2
+Node:	5541	 CHANY (0,5,3) to (5,6)  Track: 56  Switch: 2
+Node:	3849	 CHANX (0,6,3) to (7,3)  Track: 32  Switch: 2
+Node:	5895	 CHANY (0,7,4) to (7,7)  Track: 8  Switch: 1
+Node:	2764	  IPIN (0,8,4)  Pad: 14  Switch: 0
+Node:	2748	  SINK (0,8,4)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 71 (o_data_0[21])
+
+Node:	1269	SOURCE (0,5,1)  Class: 371  Switch: 0
+Node:	1735	  OPIN (0,5,1)  Pin: 371   router.odata_4[21] Switch: 2
+Node:	5327	 CHANY (0,4,1) to (4,3)  Track: 58  Switch: 2
+Node:	3822	 CHANX (0,4,3)  Track: 65  Switch: 2
+Node:	5211	 CHANY (0,3,4) to (3,7)  Track: 56  Switch: 2
+Node:	3987	 CHANX (0,4,4) to (7,4)  Track: 32  Switch: 2
+Node:	5656	 CHANY (0,6,1) to (6,4)  Track: 39  Switch: 2
+Node:	3695	 CHANX (0,7,2)  Track: 40  Switch: 2
+Node:	5889	 CHANY (0,7,3) to (7,6)  Track: 56  Switch: 1
+Node:	2762	  IPIN (0,8,4)  Pad: 10  Switch: 0
+Node:	2746	  SINK (0,8,4)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 72 (o_data_0[22])
+
+Node:	1270	SOURCE (0,5,1)  Class: 372  Switch: 0
+Node:	1574	  OPIN (0,5,1)  Pin: 372   router.odata_4[22] Switch: 2
+Node:	3422	 CHANX (0,2,1) to (5,1)  Track: 7  Switch: 2
+Node:	5161	 CHANY (0,3,2) to (3,5)  Track: 0  Switch: 2
+Node:	4167	 CHANX (0,4,5) to (7,5)  Track: 56  Switch: 2
+Node:	5864	 CHANY (0,7,2) to (7,5)  Track: 31  Switch: 1
+Node:	2758	  IPIN (0,8,4)  Pad: 2  Switch: 0
+Node:	2742	  SINK (0,8,4)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 73 (o_data_0[23])
+
+Node:	1271	SOURCE (0,5,1)  Class: 373  Switch: 0
+Node:	1628	  OPIN (0,5,1)  Pin: 373   router.odata_4[23] Switch: 2
+Node:	5501	 CHANY (0,5,1) to (5,3)  Track: 58  Switch: 2
+Node:	3840	 CHANX (0,5,3)  Track: 65  Switch: 2
+Node:	5385	 CHANY (0,4,4) to (4,7)  Track: 56  Switch: 2
+Node:	4349	 CHANX (0,5,6) to (7,6)  Track: 16  Switch: 2
+Node:	5876	 CHANY (0,7,3) to (7,6)  Track: 7  Switch: 1
+Node:	2885	  IPIN (0,8,6)  Pad: 0  Switch: 0
+Node:	2869	  SINK (0,8,6)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 74 (o_data_0[24])
+
+Node:	1272	SOURCE (0,5,1)  Class: 374  Switch: 0
+Node:	1682	  OPIN (0,5,1)  Pin: 374   router.odata_4[24] Switch: 2
+Node:	3311	 CHANX (0,5,0) to (7,0)  Track: 40  Switch: 2
+Node:	5651	 CHANY (0,6,1) to (6,3)  Track: 34  Switch: 2
+Node:	3798	 CHANX (0,3,3) to (6,3)  Track: 47  Switch: 2
+Node:	5456	 CHANY (0,5,1) to (5,3)  Track: 13  Switch: 2
+Node:	3333	 CHANX (0,6,0) to (7,0)  Track: 56  Switch: 2
+Node:	5799	 CHANY (0,7,1) to (7,4)  Track: 8  Switch: 1
+Node:	2634	  IPIN (0,8,2)  Pad: 10  Switch: 0
+Node:	2618	  SINK (0,8,2)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 75 (o_data_0[25])
+
+Node:	1273	SOURCE (0,5,1)  Class: 375  Switch: 0
+Node:	1736	  OPIN (0,5,1)  Pin: 375   router.odata_4[25] Switch: 2
+Node:	5329	 CHANY (0,4,1) to (4,2)  Track: 60  Switch: 2
+Node:	3649	 CHANX (0,5,2) to (7,2)  Track: 0  Switch: 2
+Node:	5802	 CHANY (0,7,1) to (7,2)  Track: 11  Switch: 2
+Node:	3298	 CHANX (0,4,0) to (7,0)  Track: 63  Switch: 1
+Node:	127	  IPIN (0,4,0)  Pad: 14  Switch: 0
+Node:	111	  SINK (0,4,0)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 76 (o_data_0[26])
+
+Node:	1274	SOURCE (0,5,1)  Class: 376  Switch: 0
+Node:	1575	  OPIN (0,5,1)  Pin: 376   router.odata_4[26] Switch: 2
+Node:	3477	 CHANX (0,5,1) to (7,1)  Track: 8  Switch: 2
+Node:	5832	 CHANY (0,7,1)  Track: 41  Switch: 2
+Node:	3308	 CHANX (0,5,0) to (7,0)  Track: 31  Switch: 1
+Node:	223	  IPIN (0,7,0)  Pad: 14  Switch: 0
+Node:	207	  SINK (0,7,0)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 77 (o_data_0[27])
+
+Node:	1275	SOURCE (0,5,1)  Class: 377  Switch: 0
+Node:	1629	  OPIN (0,5,1)  Pin: 377   router.odata_4[27] Switch: 2
+Node:	5503	 CHANY (0,5,1) to (5,2)  Track: 60  Switch: 2
+Node:	3667	 CHANX (0,6,2) to (7,2)  Track: 0  Switch: 2
+Node:	5700	 CHANY (0,6,2)  Track: 65  Switch: 2
+Node:	3511	 CHANX (0,7,1)  Track: 0  Switch: 2
+Node:	5857	 CHANY (0,7,2) to (7,5)  Track: 0  Switch: 1
+Node:	2697	  IPIN (0,8,3)  Pad: 8  Switch: 0
+Node:	2681	  SINK (0,8,3)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 78 (o_data_0[28])
+
+Node:	1276	SOURCE (0,5,1)  Class: 378  Switch: 0
+Node:	1683	  OPIN (0,5,1)  Pin: 378   router.odata_4[28] Switch: 2
+Node:	3313	 CHANX (0,5,0) to (7,0)  Track: 48  Switch: 2
+Node:	5805	 CHANY (0,7,1)  Track: 14  Switch: 2
+Node:	3494	 CHANX (0,6,1) to (7,1)  Track: 7  Switch: 2
+Node:	5658	 CHANY (0,6,1)  Track: 41  Switch: 2
+Node:	3280	 CHANX (0,3,0) to (6,0)  Track: 63  Switch: 1
+Node:	156	  IPIN (0,5,0)  Pad: 8  Switch: 0
+Node:	140	  SINK (0,5,0)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 79 (o_data_0[29])
+
+Node:	1277	SOURCE (0,5,1)  Class: 379  Switch: 0
+Node:	1737	  OPIN (0,5,1)  Pin: 379   router.odata_4[29] Switch: 2
+Node:	5287	 CHANY (0,4,1) to (4,3)  Track: 18  Switch: 2
+Node:	3833	 CHANX (0,5,3) to (7,3)  Track: 40  Switch: 2
+Node:	5903	 CHANY (0,7,4) to (7,7)  Track: 40  Switch: 2
+Node:	4180	 CHANX (0,5,5) to (7,5)  Track: 39  Switch: 2
+Node:	5514	 CHANY (0,5,2) to (5,5)  Track: 23  Switch: 2
+Node:	3774	 CHANX (0,2,3) to (5,3)  Track: 23  Switch: 2
+Node:	5100	 CHANY (0,3,1) to (3,3)  Track: 5  Switch: 2
+Node:	3289	 CHANX (0,4,0) to (7,0)  Track: 24  Switch: 1
+Node:	126	  IPIN (0,4,0)  Pad: 12  Switch: 0
+Node:	110	  SINK (0,4,0)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 80 (o_data_0[30])
+
+Node:	1278	SOURCE (0,5,1)  Class: 380  Switch: 0
+Node:	1576	  OPIN (0,5,1)  Pin: 380   router.odata_4[30] Switch: 2
+Node:	3479	 CHANX (0,5,1) to (7,1)  Track: 16  Switch: 2
+Node:	5687	 CHANY (0,6,2) to (6,5)  Track: 16  Switch: 2
+Node:	4142	 CHANX (0,3,5) to (6,5)  Track: 31  Switch: 2
+Node:	5524	 CHANY (0,5,2) to (5,5)  Track: 63  Switch: 2
+Node:	3851	 CHANX (0,6,3) to (7,3)  Track: 40  Switch: 2
+Node:	5812	 CHANY (0,7,1) to (7,3)  Track: 21  Switch: 2
+Node:	3348	 CHANX (0,7,0)  Track: 47  Switch: 1
+Node:	221	  IPIN (0,7,0)  Pad: 10  Switch: 0
+Node:	205	  SINK (0,7,0)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 81 (o_data_0[31])
+
+Node:	1279	SOURCE (0,5,1)  Class: 381  Switch: 0
+Node:	1630	  OPIN (0,5,1)  Pin: 381   router.odata_4[31] Switch: 2
+Node:	5483	 CHANY (0,5,1) to (5,4)  Track: 40  Switch: 2
+Node:	4019	 CHANX (0,6,4) to (7,4)  Track: 16  Switch: 2
+Node:	5664	 CHANY (0,6,1) to (6,4)  Track: 47  Switch: 2
+Node:	3701	 CHANX (0,7,2)  Track: 64  Switch: 2
+Node:	5826	 CHANY (0,7,1) to (7,2)  Track: 35  Switch: 2
+Node:	3292	 CHANX (0,4,0) to (7,0)  Track: 39  Switch: 1
+Node:	121	  IPIN (0,4,0)  Pad: 2  Switch: 0
+Node:	105	  SINK (0,4,0)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 82 (o_data_0[32])
+
+Node:	1280	SOURCE (0,5,1)  Class: 382  Switch: 0
+Node:	1684	  OPIN (0,5,1)  Pin: 382   router.odata_4[32] Switch: 2
+Node:	3315	 CHANX (0,5,0) to (7,0)  Track: 56  Switch: 2
+Node:	5467	 CHANY (0,5,1) to (5,4)  Track: 24  Switch: 2
+Node:	3952	 CHANX (0,2,4) to (5,4)  Track: 39  Switch: 2
+Node:	5393	 CHANY (0,4,5) to (4,7)  Track: 16  Switch: 2
+Node:	4531	 CHANX (0,5,7) to (7,7)  Track: 48  Switch: 1
+Node:	3109	  IPIN (0,5,8)  Pad: 0  Switch: 0
+Node:	3093	  SINK (0,5,8)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 83 (o_data_0[33])
+
+Node:	1281	SOURCE (0,5,1)  Class: 383  Switch: 0
+Node:	1738	  OPIN (0,5,1)  Pin: 383   router.odata_4[33] Switch: 2
+Node:	5311	 CHANY (0,4,1) to (4,3)  Track: 42  Switch: 2
+Node:	3758	 CHANX (0,1,3) to (4,3)  Track: 55  Switch: 2
+Node:	4974	 CHANY (0,2,1) to (2,3)  Track: 53  Switch: 2
+Node:	3615	 CHANX (0,3,2) to (6,2)  Track: 8  Switch: 2
+Node:	5535	 CHANY (0,5,3) to (5,6)  Track: 32  Switch: 2
+Node:	4021	 CHANX (0,6,4) to (7,4)  Track: 24  Switch: 2
+Node:	5822	 CHANY (0,7,1) to (7,4)  Track: 31  Switch: 2
+Node:	3328	 CHANX (0,6,0) to (7,0)  Track: 39  Switch: 1
+Node:	191	  IPIN (0,6,0)  Pad: 14  Switch: 0
+Node:	175	  SINK (0,6,0)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 84 (o_data_0[34])
+
+Node:	1282	SOURCE (0,5,1)  Class: 384  Switch: 0
+Node:	1577	  OPIN (0,5,1)  Pin: 384   router.odata_4[34] Switch: 2
+Node:	3481	 CHANX (0,5,1) to (7,1)  Track: 24  Switch: 2
+Node:	5509	 CHANY (0,5,2) to (5,5)  Track: 0  Switch: 2
+Node:	3950	 CHANX (0,2,4) to (5,4)  Track: 31  Switch: 2
+Node:	5405	 CHANY (0,4,5)  Track: 64  Switch: 2
+Node:	4058	 CHANX (0,1,5) to (4,5)  Track: 7  Switch: 2
+Node:	5000	 CHANY (0,2,2) to (2,5)  Track: 55  Switch: 2
+Node:	3791	 CHANX (0,3,3) to (6,3)  Track: 16  Switch: 2
+Node:	5630	 CHANY (0,6,1) to (6,3)  Track: 13  Switch: 2
+Node:	3521	 CHANX (0,7,1)  Track: 40  Switch: 2
+Node:	5871	 CHANY (0,7,2) to (7,5)  Track: 56  Switch: 1
+Node:	2633	  IPIN (0,8,2)  Pad: 8  Switch: 0
+Node:	2617	  SINK (0,8,2)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 85 (ivalid_3_rtr1)
+
+Node:	1284	SOURCE (0,5,1)  Class: 386  Switch: 0
+Node:	1685	  OPIN (0,5,1)  Pin: 386   router.ovalid_1[0] Switch: 2
+Node:	3254	 CHANX (0,2,0) to (5,0)  Track: 31  Switch: 2
+Node:	4941	 CHANY (0,2,1) to (2,2)  Track: 20  Switch: 2
+Node:	3358	 CHANX (0,1,1) to (2,1)  Track: 3  Switch: 2
+Node:	4622	 CHANY (0,0,1)  Track: 49  Switch: 1
+Node:	1101	  IPIN (0,1,1)  Pin: 183   router.ivalid_3[0] Switch: 0
+Node:	654	  SINK (0,1,1)  Class: 183  Switch: -1 Net_pin_index: 1
+
+
+Net 86 (o_valid_0)
+
+Node:	1287	SOURCE (0,5,1)  Class: 389  Switch: 0
+Node:	1632	  OPIN (0,5,1)  Pin: 389   router.ovalid_4[0] Switch: 2
+Node:	5481	 CHANY (0,5,1)  Track: 38  Switch: 2
+Node:	3499	 CHANX (0,6,1) to (7,1)  Track: 24  Switch: 2
+Node:	5867	 CHANY (0,7,2) to (7,5)  Track: 40  Switch: 2
+Node:	4192	 CHANX (0,6,5) to (7,5)  Track: 15  Switch: 2
+Node:	5581	 CHANY (0,5,6) to (5,7)  Track: 0  Switch: 2
+Node:	4470	 CHANX (0,2,7) to (5,7)  Track: 23  Switch: 1
+Node:	3111	  IPIN (0,5,8)  Pad: 4  Switch: 0
+Node:	3095	  SINK (0,5,8)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 87 (ivch_3_rtr1)
+
+Node:	1289	SOURCE (0,5,1)  Class: 391  Switch: 0
+Node:	1740	  OPIN (0,5,1)  Pin: 391   router.ovch_1[0] Switch: 2
+Node:	5291	 CHANY (0,4,1)  Track: 22  Switch: 2
+Node:	3386	 CHANX (0,1,1) to (4,1)  Track: 31  Switch: 1
+Node:	944	  IPIN (0,1,1)  Pin: 188   router.ivch_3[0] Switch: 0
+Node:	659	  SINK (0,1,1)  Class: 188  Switch: -1 Net_pin_index: 1
+
+
+Net 88 (o_vch_0)
+
+Node:	1292	SOURCE (0,5,1)  Class: 394  Switch: 0
+Node:	1687	  OPIN (0,5,1)  Pin: 394   router.ovch_4[0] Switch: 2
+Node:	3301	 CHANX (0,5,0) to (7,0)  Track: 0  Switch: 2
+Node:	5681	 CHANY (0,6,1)  Track: 64  Switch: 2
+Node:	3527	 CHANX (0,7,1)  Track: 64  Switch: 2
+Node:	5865	 CHANY (0,7,2) to (7,5)  Track: 32  Switch: 2
+Node:	3656	 CHANX (0,5,2) to (7,2)  Track: 31  Switch: 2
+Node:	5357	 CHANY (0,4,3) to (4,6)  Track: 16  Switch: 2
+Node:	3825	 CHANX (0,5,3) to (7,3)  Track: 8  Switch: 2
+Node:	5899	 CHANY (0,7,4) to (7,7)  Track: 24  Switch: 2
+Node:	4020	 CHANX (0,6,4) to (7,4)  Track: 23  Switch: 2
+Node:	5490	 CHANY (0,5,1) to (5,4)  Track: 47  Switch: 2
+Node:	3331	 CHANX (0,6,0) to (7,0)  Track: 48  Switch: 1
+Node:	184	  IPIN (0,6,0)  Pad: 0  Switch: 0
+Node:	168	  SINK (0,6,0)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 89 (iack_3_rtr1[0])
+
+Node:	1295	SOURCE (0,5,1)  Class: 397  Switch: 0
+Node:	1634	  OPIN (0,5,1)  Pin: 397   router.oack_1[0] Switch: 2
+Node:	5451	 CHANY (0,5,1) to (5,4)  Track: 8  Switch: 2
+Node:	3606	 CHANX (0,2,2) to (5,2)  Track: 47  Switch: 2
+Node:	5004	 CHANY (0,2,2)  Track: 65  Switch: 2
+Node:	3366	 CHANX (0,1,1) to (2,1)  Track: 11  Switch: 1
+Node:	946	  IPIN (0,1,1)  Pin: 196   router.iack_3[0] Switch: 0
+Node:	667	  SINK (0,1,1)  Class: 196  Switch: -1 Net_pin_index: 1
+
+
+Net 90 (o_ack_0[0])
+
+Node:	1301	SOURCE (0,5,1)  Class: 403  Switch: 0
+Node:	1743	  OPIN (0,5,1)  Pin: 403   router.oack_4[0] Switch: 2
+Node:	5331	 CHANY (0,4,1)  Track: 62  Switch: 2
+Node:	3474	 CHANX (0,4,1)  Track: 65  Switch: 2
+Node:	5175	 CHANY (0,3,2) to (3,5)  Track: 56  Switch: 2
+Node:	3811	 CHANX (0,4,3) to (7,3)  Track: 24  Switch: 2
+Node:	5836	 CHANY (0,7,1) to (7,3)  Track: 45  Switch: 1
+Node:	1988	  IPIN (0,8,1)  Pad: 8  Switch: 0
+Node:	1972	  SINK (0,8,1)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 91 (o_ack_0[1])
+
+Node:	1302	SOURCE (0,5,1)  Class: 404  Switch: 0
+Node:	1582	  OPIN (0,5,1)  Pin: 404   router.oack_4[1] Switch: 2
+Node:	3492	 CHANX (0,5,1)  Track: 65  Switch: 2
+Node:	5349	 CHANY (0,4,2) to (4,5)  Track: 56  Switch: 2
+Node:	4001	 CHANX (0,5,4) to (7,4)  Track: 16  Switch: 2
+Node:	5798	 CHANY (0,7,1) to (7,4)  Track: 7  Switch: 1
+Node:	2760	  IPIN (0,8,4)  Pad: 6  Switch: 0
+Node:	2744	  SINK (0,8,4)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 92 (o_rdy_0[0])
+
+Node:	1311	SOURCE (0,5,1)  Class: 413  Switch: 0
+Node:	1638	  OPIN (0,5,1)  Pin: 413   router.ordy_4[0] Switch: 2
+Node:	5459	 CHANY (0,5,1) to (5,4)  Track: 16  Switch: 2
+Node:	4025	 CHANX (0,6,4) to (7,4)  Track: 40  Switch: 2
+Node:	5814	 CHANY (0,7,1) to (7,4)  Track: 23  Switch: 1
+Node:	2759	  IPIN (0,8,4)  Pad: 4  Switch: 0
+Node:	2743	  SINK (0,8,4)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 93 (o_rdy_0[1])
+
+Node:	1312	SOURCE (0,5,1)  Class: 414  Switch: 0
+Node:	1692	  OPIN (0,5,1)  Pin: 414   router.ordy_4[1] Switch: 2
+Node:	3260	 CHANX (0,2,0) to (5,0)  Track: 55  Switch: 2
+Node:	5131	 CHANY (0,3,1) to (3,2)  Track: 36  Switch: 2
+Node:	3637	 CHANX (0,4,2) to (7,2)  Track: 24  Switch: 2
+Node:	5353	 CHANY (0,4,3) to (4,6)  Track: 0  Switch: 2
+Node:	3837	 CHANX (0,5,3) to (7,3)  Track: 56  Switch: 2
+Node:	5464	 CHANY (0,5,1) to (5,3)  Track: 21  Switch: 2
+Node:	3323	 CHANX (0,6,0) to (7,0)  Track: 16  Switch: 2
+Node:	5839	 CHANY (0,7,1) to (7,4)  Track: 48  Switch: 1
+Node:	2630	  IPIN (0,8,2)  Pad: 2  Switch: 0
+Node:	2614	  SINK (0,8,2)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 94 (o_lck_0[0])
+
+Node:	1321	SOURCE (0,5,1)  Class: 423  Switch: 0
+Node:	1748	  OPIN (0,5,1)  Pin: 423   router.olck_4[0] Switch: 2
+Node:	5325	 CHANY (0,4,1) to (4,4)  Track: 56  Switch: 2
+Node:	3655	 CHANX (0,5,2) to (7,2)  Track: 24  Switch: 2
+Node:	5620	 CHANY (0,6,1) to (6,2)  Track: 3  Switch: 2
+Node:	3513	 CHANX (0,7,1)  Track: 8  Switch: 2
+Node:	5816	 CHANY (0,7,1)  Track: 25  Switch: 1
+Node:	1990	  IPIN (0,8,1)  Pad: 12  Switch: 0
+Node:	1974	  SINK (0,8,1)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 95 (o_lck_0[1])
+
+Node:	1322	SOURCE (0,5,1)  Class: 424  Switch: 0
+Node:	1587	  OPIN (0,5,1)  Pin: 424   router.olck_4[1] Switch: 2
+Node:	3483	 CHANX (0,5,1) to (7,1)  Track: 32  Switch: 2
+Node:	5693	 CHANY (0,6,2) to (6,5)  Track: 40  Switch: 2
+Node:	3859	 CHANX (0,7,3)  Track: 0  Switch: 2
+Node:	5892	 CHANY (0,7,3)  Track: 65  Switch: 1
+Node:	2695	  IPIN (0,8,3)  Pad: 4  Switch: 0
+Node:	2679	  SINK (0,8,3)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 96 (clk): global net connecting:
+
+Block clk (#172) at (2,8), Pin class 13.
+Block $techmap7\rtr0.OACK_0[0] (#0) at (5,1), Pin class 425.
+Block $techmap6\rtr1.OACK_0[0] (#1) at (1,1), Pin class 425.
+
+
+Net 97 (i_data_1[0])
+
+Node:	2898	SOURCE (0,0,7)  Pad: 11  Switch: 0
+Node:	2914	  OPIN (0,0,7)  Pad: 11  Switch: 2
+Node:	4700	 CHANY (0,0,5) to (0,7)  Track: 31  Switch: 2
+Node:	4075	 CHANX (0,1,5) to (4,5)  Track: 24  Switch: 2
+Node:	5340	 CHANY (0,4,2) to (4,5)  Track: 23  Switch: 2
+Node:	3544	 CHANX (0,1,2) to (4,2)  Track: 15  Switch: 2
+Node:	4766	 CHANY (0,1,1) to (1,2)  Track: 19  Switch: 1
+Node:	986	  IPIN (0,1,1)  Pin: 145   router.idata_4[0] Switch: 0
+Node:	616	  SINK (0,1,1)  Class: 145  Switch: -1 Net_pin_index: 1
+
+
+Net 98 (i_data_1[1])
+
+Node:	2831	SOURCE (0,0,6)  Pad: 5  Switch: 0
+Node:	2847	  OPIN (0,0,6)  Pad: 5  Switch: 2
+Node:	4713	 CHANY (0,0,6) to (0,7)  Track: 8  Switch: 2
+Node:	4281	 CHANX (0,1,6) to (4,6)  Track: 56  Switch: 2
+Node:	5366	 CHANY (0,4,3) to (4,6)  Track: 55  Switch: 2
+Node:	3560	 CHANX (0,1,2) to (4,2)  Track: 31  Switch: 2
+Node:	4972	 CHANY (0,2,1) to (2,2)  Track: 51  Switch: 2
+Node:	3200	 CHANX (0,1,0) to (2,0)  Track: 19  Switch: 1
+Node:	1040	  IPIN (0,1,1)  Pin: 146   router.idata_4[1] Switch: 0
+Node:	617	  SINK (0,1,1)  Class: 146  Switch: -1 Net_pin_index: 1
+
+
+Net 99 (i_data_1[2])
+
+Node:	2701	SOURCE (0,0,4)  Pad: 1  Switch: 0
+Node:	2717	  OPIN (0,0,4)  Pad: 1  Switch: 2
+Node:	4683	 CHANY (0,0,4) to (0,7)  Track: 32  Switch: 2
+Node:	4087	 CHANX (0,1,5) to (2,5)  Track: 36  Switch: 2
+Node:	4994	 CHANY (0,2,2) to (2,5)  Track: 31  Switch: 2
+Node:	3406	 CHANX (0,1,1) to (2,1)  Track: 51  Switch: 2
+Node:	4574	 CHANY (0,0,1)  Track: 1  Switch: 1
+Node:	1092	  IPIN (0,1,1)  Pin: 147   router.idata_4[2] Switch: 0
+Node:	618	  SINK (0,1,1)  Class: 147  Switch: -1 Net_pin_index: 1
+
+
+Net 100 (i_data_1[3])
+
+Node:	2961	SOURCE (0,1,8)  Pad: 9  Switch: 0
+Node:	2977	  OPIN (0,1,8)  Pad: 9  Switch: 2
+Node:	4423	 CHANX (0,1,7) to (4,7)  Track: 24  Switch: 2
+Node:	5238	 CHANY (0,3,6) to (3,7)  Track: 23  Switch: 2
+Node:	4112	 CHANX (0,1,5) to (3,5)  Track: 61  Switch: 2
+Node:	4648	 CHANY (0,0,2) to (0,5)  Track: 39  Switch: 2
+Node:	3365	 CHANX (0,1,1) to (3,1)  Track: 10  Switch: 1
+Node:	934	  IPIN (0,1,1)  Pin: 148   router.idata_4[3] Switch: 0
+Node:	619	  SINK (0,1,1)  Class: 148  Switch: -1 Net_pin_index: 1
+
+
+Net 101 (i_data_1[4])
+
+Node:	2708	SOURCE (0,0,4)  Pad: 15  Switch: 0
+Node:	2724	  OPIN (0,0,4)  Pad: 15  Switch: 2
+Node:	4687	 CHANY (0,0,4) to (0,7)  Track: 48  Switch: 2
+Node:	3903	 CHANX (0,1,4) to (3,4)  Track: 26  Switch: 2
+Node:	5118	 CHANY (0,3,1) to (3,4)  Track: 23  Switch: 2
+Node:	3550	 CHANX (0,1,2) to (3,2)  Track: 21  Switch: 2
+Node:	4750	 CHANY (0,1,1) to (1,2)  Track: 3  Switch: 1
+Node:	987	  IPIN (0,1,1)  Pin: 149   router.idata_4[4] Switch: 0
+Node:	620	  SINK (0,1,1)  Class: 149  Switch: -1 Net_pin_index: 1
+
+
+Net 102 (i_data_1[5])
+
+Node:	3024	SOURCE (0,3,8)  Pad: 7  Switch: 0
+Node:	3040	  OPIN (0,3,8)  Pad: 7  Switch: 2
+Node:	4497	 CHANX (0,3,7) to (6,7)  Track: 56  Switch: 2
+Node:	5208	 CHANY (0,3,4) to (3,7)  Track: 47  Switch: 2
+Node:	3740	 CHANX (0,1,3) to (3,3)  Track: 37  Switch: 2
+Node:	4958	 CHANY (0,2,1) to (2,3)  Track: 37  Switch: 2
+Node:	3184	 CHANX (0,1,0) to (2,0)  Track: 3  Switch: 1
+Node:	1041	  IPIN (0,1,1)  Pin: 150   router.idata_4[5] Switch: 0
+Node:	621	  SINK (0,1,1)  Class: 150  Switch: -1 Net_pin_index: 1
+
+
+Net 103 (i_data_1[6])
+
+Node:	2769	SOURCE (0,0,5)  Pad: 9  Switch: 0
+Node:	2785	  OPIN (0,0,5)  Pad: 9  Switch: 2
+Node:	4710	 CHANY (0,0,5)  Track: 65  Switch: 2
+Node:	3895	 CHANX (0,1,4) to (3,4)  Track: 18  Switch: 2
+Node:	5229	 CHANY (0,3,5) to (3,7)  Track: 56  Switch: 2
+Node:	4509	 CHANX (0,4,7) to (7,7)  Track: 32  Switch: 2
+Node:	5430	 CHANY (0,4,7)  Track: 23  Switch: 2
+Node:	4288	 CHANX (0,1,6) to (4,6)  Track: 63  Switch: 2
+Node:	5012	 CHANY (0,2,3) to (2,6)  Track: 31  Switch: 2
+Node:	3580	 CHANX (0,1,2) to (2,2)  Track: 51  Switch: 2
+Node:	4576	 CHANY (0,0,1) to (0,2)  Track: 3  Switch: 1
+Node:	1093	  IPIN (0,1,1)  Pin: 151   router.idata_4[6] Switch: 0
+Node:	622	  SINK (0,1,1)  Class: 151  Switch: -1 Net_pin_index: 1
+
+
+Net 104 (i_data_1[7])
+
+Node:	2960	SOURCE (0,1,8)  Pad: 7  Switch: 0
+Node:	2976	  OPIN (0,1,8)  Pad: 7  Switch: 2
+Node:	4416	 CHANX (0,1,7)  Track: 17  Switch: 2
+Node:	4740	 CHANY (0,0,7)  Track: 47  Switch: 2
+Node:	4237	 CHANX (0,1,6) to (2,6)  Track: 12  Switch: 2
+Node:	5006	 CHANY (0,2,3) to (2,6)  Track: 7  Switch: 2
+Node:	4137	 CHANX (0,3,5) to (6,5)  Track: 8  Switch: 2
+Node:	5342	 CHANY (0,4,2) to (4,5)  Track: 31  Switch: 2
+Node:	3410	 CHANX (0,1,1) to (4,1)  Track: 55  Switch: 1
+Node:	935	  IPIN (0,1,1)  Pin: 152   router.idata_4[7] Switch: 0
+Node:	623	  SINK (0,1,1)  Class: 152  Switch: -1 Net_pin_index: 1
+
+
+Net 105 (i_data_1[8])
+
+Node:	2768	SOURCE (0,0,5)  Pad: 7  Switch: 0
+Node:	2784	  OPIN (0,0,5)  Pad: 7  Switch: 2
+Node:	4699	 CHANY (0,0,5) to (0,7)  Track: 24  Switch: 2
+Node:	4267	 CHANX (0,1,6) to (3,6)  Track: 42  Switch: 2
+Node:	5188	 CHANY (0,3,3) to (3,6)  Track: 39  Switch: 2
+Node:	3922	 CHANX (0,1,4) to (3,4)  Track: 45  Switch: 2
+Node:	4936	 CHANY (0,2,1) to (2,4)  Track: 15  Switch: 2
+Node:	3572	 CHANX (0,1,2) to (2,2)  Track: 43  Switch: 2
+Node:	4758	 CHANY (0,1,1) to (1,2)  Track: 11  Switch: 1
+Node:	988	  IPIN (0,1,1)  Pin: 153   router.idata_4[8] Switch: 0
+Node:	624	  SINK (0,1,1)  Class: 153  Switch: -1 Net_pin_index: 1
+
+
+Net 106 (i_data_1[9])
+
+Node:	2703	SOURCE (0,0,4)  Pad: 5  Switch: 0
+Node:	2719	  OPIN (0,0,4)  Pad: 5  Switch: 2
+Node:	4677	 CHANY (0,0,4) to (0,7)  Track: 8  Switch: 2
+Node:	4277	 CHANX (0,1,6) to (2,6)  Track: 52  Switch: 2
+Node:	5083	 CHANY (0,2,7)  Track: 24  Switch: 2
+Node:	4491	 CHANX (0,3,7) to (6,7)  Track: 32  Switch: 2
+Node:	5570	 CHANY (0,5,5) to (5,7)  Track: 31  Switch: 2
+Node:	3956	 CHANX (0,2,4) to (5,4)  Track: 55  Switch: 2
+Node:	4968	 CHANY (0,2,1) to (2,4)  Track: 47  Switch: 2
+Node:	3216	 CHANX (0,1,0) to (2,0)  Track: 35  Switch: 1
+Node:	1042	  IPIN (0,1,1)  Pin: 154   router.idata_4[9] Switch: 0
+Node:	625	  SINK (0,1,1)  Class: 154  Switch: -1 Net_pin_index: 1
+
+
+Net 107 (i_data_1[10])
+
+Node:	3	SOURCE (0,1,0)  Pad: 7  Switch: 0
+Node:	19	  OPIN (0,1,0)  Pad: 7  Switch: 2
+Node:	3227	 CHANX (0,1,0)  Track: 46  Switch: 2
+Node:	4803	 CHANY (0,1,1) to (1,4)  Track: 56  Switch: 2
+Node:	3942	 CHANX (0,1,4)  Track: 65  Switch: 2
+Node:	4596	 CHANY (0,0,1) to (0,4)  Track: 23  Switch: 1
+Node:	1094	  IPIN (0,1,1)  Pin: 155   router.idata_4[10] Switch: 0
+Node:	626	  SINK (0,1,1)  Class: 155  Switch: -1 Net_pin_index: 1
+
+
+Net 108 (i_data_1[11])
+
+Node:	2702	SOURCE (0,0,4)  Pad: 3  Switch: 0
+Node:	2718	  OPIN (0,0,4)  Pad: 3  Switch: 2
+Node:	4675	 CHANY (0,0,4) to (0,7)  Track: 0  Switch: 2
+Node:	3939	 CHANX (0,1,4)  Track: 62  Switch: 2
+Node:	4802	 CHANY (0,1,1) to (1,4)  Track: 55  Switch: 2
+Node:	3412	 CHANX (0,1,1)  Track: 57  Switch: 1
+Node:	936	  IPIN (0,1,1)  Pin: 156   router.idata_4[11] Switch: 0
+Node:	627	  SINK (0,1,1)  Class: 156  Switch: -1 Net_pin_index: 1
+
+
+Net 109 (i_data_1[12])
+
+Node:	2959	SOURCE (0,1,8)  Pad: 5  Switch: 0
+Node:	2975	  OPIN (0,1,8)  Pad: 5  Switch: 2
+Node:	4435	 CHANX (0,1,7) to (2,7)  Track: 36  Switch: 2
+Node:	5078	 CHANY (0,2,7)  Track: 7  Switch: 2
+Node:	4228	 CHANX (0,1,6) to (2,6)  Track: 3  Switch: 2
+Node:	4846	 CHANY (0,1,3) to (1,6)  Track: 63  Switch: 2
+Node:	3546	 CHANX (0,1,2)  Track: 17  Switch: 2
+Node:	4671	 CHANY (0,0,3) to (0,6)  Track: 56  Switch: 2
+Node:	3723	 CHANX (0,1,3) to (2,3)  Track: 20  Switch: 2
+Node:	4808	 CHANY (0,1,1) to (1,3)  Track: 61  Switch: 1
+Node:	989	  IPIN (0,1,1)  Pin: 157   router.idata_4[12] Switch: 0
+Node:	628	  SINK (0,1,1)  Class: 157  Switch: -1 Net_pin_index: 1
+
+
+Net 110 (i_data_1[13])
+
+Node:	2707	SOURCE (0,0,4)  Pad: 13  Switch: 0
+Node:	2723	  OPIN (0,0,4)  Pad: 13  Switch: 2
+Node:	4685	 CHANY (0,0,4) to (0,7)  Track: 40  Switch: 2
+Node:	4253	 CHANX (0,1,6) to (2,6)  Track: 28  Switch: 2
+Node:	4834	 CHANY (0,1,3) to (1,6)  Track: 15  Switch: 2
+Node:	3736	 CHANX (0,1,3)  Track: 33  Switch: 2
+Node:	4578	 CHANY (0,0,1) to (0,3)  Track: 5  Switch: 2
+Node:	3187	 CHANX (0,1,0)  Track: 6  Switch: 1
+Node:	1043	  IPIN (0,1,1)  Pin: 158   router.idata_4[13] Switch: 0
+Node:	629	  SINK (0,1,1)  Class: 158  Switch: -1 Net_pin_index: 1
+
+
+Net 111 (i_data_1[14])
+
+Node:	2705	SOURCE (0,0,4)  Pad: 9  Switch: 0
+Node:	2721	  OPIN (0,0,4)  Pad: 9  Switch: 2
+Node:	4681	 CHANY (0,0,4) to (0,7)  Track: 24  Switch: 2
+Node:	4265	 CHANX (0,1,6) to (4,6)  Track: 40  Switch: 2
+Node:	5194	 CHANY (0,3,3) to (3,6)  Track: 63  Switch: 2
+Node:	3647	 CHANX (0,4,2)  Track: 64  Switch: 2
+Node:	5328	 CHANY (0,4,1) to (4,2)  Track: 59  Switch: 2
+Node:	3244	 CHANX (0,1,0) to (4,0)  Track: 63  Switch: 2
+Node:	4633	 CHANY (0,0,1) to (0,2)  Track: 60  Switch: 1
+Node:	1095	  IPIN (0,1,1)  Pin: 159   router.idata_4[14] Switch: 0
+Node:	630	  SINK (0,1,1)  Class: 159  Switch: -1 Net_pin_index: 1
+
+
+Net 112 (i_data_1[15])
+
+Node:	2834	SOURCE (0,0,6)  Pad: 11  Switch: 0
+Node:	2850	  OPIN (0,0,6)  Pad: 11  Switch: 2
+Node:	4719	 CHANY (0,0,6) to (0,7)  Track: 32  Switch: 2
+Node:	4427	 CHANX (0,1,7) to (2,7)  Track: 28  Switch: 2
+Node:	4890	 CHANY (0,1,6) to (1,7)  Track: 23  Switch: 2
+Node:	4123	 CHANX (0,2,5) to (5,5)  Track: 24  Switch: 2
+Node:	5162	 CHANY (0,3,2) to (3,5)  Track: 7  Switch: 2
+Node:	3360	 CHANX (0,1,1) to (3,1)  Track: 5  Switch: 1
+Node:	937	  IPIN (0,1,1)  Pin: 160   router.idata_4[15] Switch: 0
+Node:	631	  SINK (0,1,1)  Class: 160  Switch: -1 Net_pin_index: 1
+
+
+Net 113 (i_data_1[16])
+
+Node:	2836	SOURCE (0,0,6)  Pad: 15  Switch: 0
+Node:	2852	  OPIN (0,0,6)  Pad: 15  Switch: 2
+Node:	4672	 CHANY (0,0,3) to (0,6)  Track: 63  Switch: 2
+Node:	3923	 CHANX (0,1,4)  Track: 46  Switch: 2
+Node:	4786	 CHANY (0,1,1) to (1,4)  Track: 39  Switch: 1
+Node:	990	  IPIN (0,1,1)  Pin: 161   router.idata_4[16] Switch: 0
+Node:	632	  SINK (0,1,1)  Class: 161  Switch: -1 Net_pin_index: 1
+
+
+Net 114 (i_data_1[17])
+
+Node:	2893	SOURCE (0,0,7)  Pad: 1  Switch: 0
+Node:	2909	  OPIN (0,0,7)  Pad: 1  Switch: 2
+Node:	4745	 CHANY (0,0,7)  Track: 64  Switch: 2
+Node:	4463	 CHANX (0,1,7)  Track: 64  Switch: 2
+Node:	4906	 CHANY (0,1,7)  Track: 15  Switch: 2
+Node:	4295	 CHANX (0,2,6) to (5,6)  Track: 16  Switch: 2
+Node:	5192	 CHANY (0,3,3) to (3,6)  Track: 55  Switch: 2
+Node:	3983	 CHANX (0,4,4) to (7,4)  Track: 16  Switch: 2
+Node:	5316	 CHANY (0,4,1) to (4,4)  Track: 47  Switch: 2
+Node:	3220	 CHANX (0,1,0) to (4,0)  Track: 39  Switch: 1
+Node:	1044	  IPIN (0,1,1)  Pin: 162   router.idata_4[17] Switch: 0
+Node:	633	  SINK (0,1,1)  Class: 162  Switch: -1 Net_pin_index: 1
+
+
+Net 115 (i_data_1[18])
+
+Node:	2770	SOURCE (0,0,5)  Pad: 11  Switch: 0
+Node:	2786	  OPIN (0,0,5)  Pad: 11  Switch: 2
+Node:	4693	 CHANY (0,0,5) to (0,7)  Track: 0  Switch: 2
+Node:	4113	 CHANX (0,1,5)  Track: 62  Switch: 2
+Node:	4826	 CHANY (0,1,2) to (1,5)  Track: 55  Switch: 2
+Node:	3878	 CHANX (0,1,4)  Track: 1  Switch: 2
+Node:	4636	 CHANY (0,0,1) to (0,4)  Track: 63  Switch: 1
+Node:	1096	  IPIN (0,1,1)  Pin: 163   router.idata_4[18] Switch: 0
+Node:	634	  SINK (0,1,1)  Class: 163  Switch: -1 Net_pin_index: 1
+
+
+Net 116 (i_data_1[19])
+
+Node:	2766	SOURCE (0,0,5)  Pad: 3  Switch: 0
+Node:	2782	  OPIN (0,0,5)  Pad: 3  Switch: 2
+Node:	4650	 CHANY (0,0,2) to (0,5)  Track: 47  Switch: 2
+Node:	3909	 CHANX (0,1,4) to (4,4)  Track: 32  Switch: 2
+Node:	5134	 CHANY (0,3,1) to (3,4)  Track: 39  Switch: 2
+Node:	3392	 CHANX (0,1,1) to (3,1)  Track: 37  Switch: 1
+Node:	938	  IPIN (0,1,1)  Pin: 164   router.idata_4[19] Switch: 0
+Node:	635	  SINK (0,1,1)  Class: 164  Switch: -1 Net_pin_index: 1
+
+
+Net 117 (i_data_1[20])
+
+Node:	2829	SOURCE (0,0,6)  Pad: 1  Switch: 0
+Node:	2845	  OPIN (0,0,6)  Pad: 1  Switch: 2
+Node:	4658	 CHANY (0,0,3) to (0,6)  Track: 7  Switch: 2
+Node:	3531	 CHANX (0,1,2) to (3,2)  Track: 2  Switch: 2
+Node:	5179	 CHANY (0,3,3) to (3,6)  Track: 0  Switch: 2
+Node:	3716	 CHANX (0,1,3) to (3,3)  Track: 13  Switch: 2
+Node:	4776	 CHANY (0,1,1) to (1,3)  Track: 29  Switch: 1
+Node:	991	  IPIN (0,1,1)  Pin: 165   router.idata_4[20] Switch: 0
+Node:	636	  SINK (0,1,1)  Class: 165  Switch: -1 Net_pin_index: 1
+
+
+Net 118 (i_data_1[21])
+
+Node:	2772	SOURCE (0,0,5)  Pad: 15  Switch: 0
+Node:	2788	  OPIN (0,0,5)  Pad: 15  Switch: 2
+Node:	4697	 CHANY (0,0,5) to (0,7)  Track: 16  Switch: 2
+Node:	4273	 CHANX (0,1,6) to (4,6)  Track: 48  Switch: 2
+Node:	5093	 CHANY (0,2,7)  Track: 64  Switch: 2
+Node:	4450	 CHANX (0,1,7) to (2,7)  Track: 51  Switch: 2
+Node:	4874	 CHANY (0,1,5) to (1,7)  Track: 31  Switch: 2
+Node:	3926	 CHANX (0,1,4)  Track: 49  Switch: 2
+Node:	4588	 CHANY (0,0,1) to (0,4)  Track: 15  Switch: 2
+Node:	3197	 CHANX (0,1,0) to (4,0)  Track: 16  Switch: 1
+Node:	1045	  IPIN (0,1,1)  Pin: 166   router.idata_4[21] Switch: 0
+Node:	637	  SINK (0,1,1)  Class: 166  Switch: -1 Net_pin_index: 1
+
+
+Net 119 (i_data_1[22])
+
+Node:	2900	SOURCE (0,0,7)  Pad: 15  Switch: 0
+Node:	2916	  OPIN (0,0,7)  Pad: 15  Switch: 2
+Node:	4744	 CHANY (0,0,7)  Track: 63  Switch: 2
+Node:	4241	 CHANX (0,1,6) to (4,6)  Track: 16  Switch: 2
+Node:	5356	 CHANY (0,4,3) to (4,6)  Track: 15  Switch: 2
+Node:	3742	 CHANX (0,1,3) to (4,3)  Track: 39  Switch: 2
+Node:	4626	 CHANY (0,0,1) to (0,3)  Track: 53  Switch: 1
+Node:	1097	  IPIN (0,1,1)  Pin: 167   router.idata_4[22] Switch: 0
+Node:	638	  SINK (0,1,1)  Class: 167  Switch: -1 Net_pin_index: 1
+
+
+Net 120 (i_data_1[23])
+
+Node:	2765	SOURCE (0,0,5)  Pad: 1  Switch: 0
+Node:	2781	  OPIN (0,0,5)  Pad: 1  Switch: 2
+Node:	4640	 CHANY (0,0,2) to (0,5)  Track: 7  Switch: 2
+Node:	3535	 CHANX (0,1,2)  Track: 6  Switch: 2
+Node:	4830	 CHANY (0,1,2)  Track: 65  Switch: 2
+Node:	3364	 CHANX (0,1,1)  Track: 9  Switch: 1
+Node:	939	  IPIN (0,1,1)  Pin: 168   router.idata_4[23] Switch: 0
+Node:	639	  SINK (0,1,1)  Class: 168  Switch: -1 Net_pin_index: 1
+
+
+Net 121 (i_data_1[24])
+
+Node:	2895	SOURCE (0,0,7)  Pad: 5  Switch: 0
+Node:	2911	  OPIN (0,0,7)  Pad: 5  Switch: 2
+Node:	4720	 CHANY (0,0,6) to (0,7)  Track: 39  Switch: 2
+Node:	4061	 CHANX (0,1,5) to (3,5)  Track: 10  Switch: 2
+Node:	4996	 CHANY (0,2,2) to (2,5)  Track: 39  Switch: 2
+Node:	3746	 CHANX (0,1,3) to (2,3)  Track: 43  Switch: 2
+Node:	4760	 CHANY (0,1,1) to (1,3)  Track: 13  Switch: 1
+Node:	992	  IPIN (0,1,1)  Pin: 169   router.idata_4[24] Switch: 0
+Node:	640	  SINK (0,1,1)  Class: 169  Switch: -1 Net_pin_index: 1
+
+
+Net 122 (i_data_1[25])
+
+Node:	2771	SOURCE (0,0,5)  Pad: 13  Switch: 0
+Node:	2787	  OPIN (0,0,5)  Pad: 13  Switch: 2
+Node:	4705	 CHANY (0,0,5) to (0,7)  Track: 48  Switch: 2
+Node:	4077	 CHANX (0,1,5) to (3,5)  Track: 26  Switch: 2
+Node:	4814	 CHANY (0,1,2) to (1,5)  Track: 7  Switch: 2
+Node:	3773	 CHANX (0,2,3) to (5,3)  Track: 16  Switch: 2
+Node:	5330	 CHANY (0,4,1) to (4,3)  Track: 61  Switch: 2
+Node:	3236	 CHANX (0,1,0) to (4,0)  Track: 55  Switch: 1
+Node:	1046	  IPIN (0,1,1)  Pin: 170   router.idata_4[25] Switch: 0
+Node:	641	  SINK (0,1,1)  Class: 170  Switch: -1 Net_pin_index: 1
+
+
+Net 123 (i_data_1[26])
+
+Node:	2964	SOURCE (0,1,8)  Pad: 15  Switch: 0
+Node:	2980	  OPIN (0,1,8)  Pad: 15  Switch: 2
+Node:	4413	 CHANX (0,1,7)  Track: 14  Switch: 2
+Node:	4850	 CHANY (0,1,4) to (1,7)  Track: 7  Switch: 2
+Node:	3934	 CHANX (0,1,4)  Track: 57  Switch: 2
+Node:	4628	 CHANY (0,0,1) to (0,4)  Track: 55  Switch: 1
+Node:	1098	  IPIN (0,1,1)  Pin: 171   router.idata_4[26] Switch: 0
+Node:	642	  SINK (0,1,1)  Class: 171  Switch: -1 Net_pin_index: 1
+
+
+Net 124 (i_data_1[27])
+
+Node:	0	SOURCE (0,1,0)  Pad: 1  Switch: 0
+Node:	16	  OPIN (0,1,0)  Pad: 1  Switch: 2
+Node:	3205	 CHANX (0,1,0) to (4,0)  Track: 24  Switch: 2
+Node:	5139	 CHANY (0,3,1) to (3,2)  Track: 44  Switch: 2
+Node:	3582	 CHANX (0,1,2) to (3,2)  Track: 53  Switch: 2
+Node:	4831	 CHANY (0,1,3) to (1,6)  Track: 0  Switch: 2
+Node:	4127	 CHANX (0,2,5) to (5,5)  Track: 40  Switch: 2
+Node:	4998	 CHANY (0,2,2) to (2,5)  Track: 47  Switch: 2
+Node:	3390	 CHANX (0,1,1) to (2,1)  Track: 35  Switch: 1
+Node:	940	  IPIN (0,1,1)  Pin: 172   router.idata_4[27] Switch: 0
+Node:	643	  SINK (0,1,1)  Class: 172  Switch: -1 Net_pin_index: 1
+
+
+Net 125 (i_data_1[28])
+
+Node:	2963	SOURCE (0,1,8)  Pad: 13  Switch: 0
+Node:	2979	  OPIN (0,1,8)  Pad: 13  Switch: 2
+Node:	4409	 CHANX (0,1,7) to (3,7)  Track: 10  Switch: 2
+Node:	5198	 CHANY (0,3,4) to (3,7)  Track: 7  Switch: 2
+Node:	3938	 CHANX (0,1,4) to (3,4)  Track: 61  Switch: 2
+Node:	4960	 CHANY (0,2,1) to (2,4)  Track: 39  Switch: 2
+Node:	3264	 CHANX (0,2,0)  Track: 65  Switch: 2
+Node:	4761	 CHANY (0,1,1)  Track: 14  Switch: 1
+Node:	993	  IPIN (0,1,1)  Pin: 173   router.idata_4[28] Switch: 0
+Node:	644	  SINK (0,1,1)  Class: 173  Switch: -1 Net_pin_index: 1
+
+
+Net 126 (i_data_1[29])
+
+Node:	2833	SOURCE (0,0,6)  Pad: 9  Switch: 0
+Node:	2849	  OPIN (0,0,6)  Pad: 9  Switch: 2
+Node:	4664	 CHANY (0,0,3) to (0,6)  Track: 31  Switch: 2
+Node:	3727	 CHANX (0,1,3) to (4,3)  Track: 24  Switch: 2
+Node:	5039	 CHANY (0,2,4)  Track: 64  Switch: 2
+Node:	3977	 CHANX (0,3,4)  Track: 64  Switch: 2
+Node:	5158	 CHANY (0,3,1) to (3,4)  Track: 63  Switch: 2
+Node:	3226	 CHANX (0,1,0) to (3,0)  Track: 45  Switch: 1
+Node:	1047	  IPIN (0,1,1)  Pin: 174   router.idata_4[29] Switch: 0
+Node:	645	  SINK (0,1,1)  Class: 174  Switch: -1 Net_pin_index: 1
+
+
+Net 127 (i_data_1[30])
+
+Node:	1	SOURCE (0,1,0)  Pad: 3  Switch: 0
+Node:	17	  OPIN (0,1,0)  Pad: 3  Switch: 2
+Node:	3225	 CHANX (0,1,0) to (2,0)  Track: 44  Switch: 2
+Node:	4779	 CHANY (0,1,1) to (1,4)  Track: 32  Switch: 2
+Node:	3601	 CHANX (0,2,2) to (5,2)  Track: 24  Switch: 2
+Node:	5195	 CHANY (0,3,3)  Track: 64  Switch: 2
+Node:	3708	 CHANX (0,1,3) to (3,3)  Track: 5  Switch: 2
+Node:	4618	 CHANY (0,0,1) to (0,3)  Track: 45  Switch: 1
+Node:	1099	  IPIN (0,1,1)  Pin: 175   router.idata_4[30] Switch: 0
+Node:	646	  SINK (0,1,1)  Class: 175  Switch: -1 Net_pin_index: 1
+
+
+Net 128 (i_data_1[31])
+
+Node:	2767	SOURCE (0,0,5)  Pad: 5  Switch: 0
+Node:	2783	  OPIN (0,0,5)  Pad: 5  Switch: 2
+Node:	4644	 CHANY (0,0,2) to (0,5)  Track: 23  Switch: 2
+Node:	3547	 CHANX (0,1,2) to (3,2)  Track: 18  Switch: 2
+Node:	4798	 CHANY (0,1,1) to (1,2)  Track: 51  Switch: 2
+Node:	3356	 CHANX (0,1,1)  Track: 1  Switch: 1
+Node:	941	  IPIN (0,1,1)  Pin: 176   router.idata_4[31] Switch: 0
+Node:	647	  SINK (0,1,1)  Class: 176  Switch: -1 Net_pin_index: 1
+
+
+Net 129 (i_data_1[32])
+
+Node:	2894	SOURCE (0,0,7)  Pad: 3  Switch: 0
+Node:	2910	  OPIN (0,0,7)  Pad: 3  Switch: 2
+Node:	4676	 CHANY (0,0,4) to (0,7)  Track: 7  Switch: 2
+Node:	3705	 CHANX (0,1,3) to (3,3)  Track: 2  Switch: 2
+Node:	4752	 CHANY (0,1,1) to (1,3)  Track: 5  Switch: 1
+Node:	994	  IPIN (0,1,1)  Pin: 177   router.idata_4[32] Switch: 0
+Node:	648	  SINK (0,1,1)  Class: 177  Switch: -1 Net_pin_index: 1
+
+
+Net 130 (i_data_1[33])
+
+Node:	2896	SOURCE (0,0,7)  Pad: 7  Switch: 0
+Node:	2912	  OPIN (0,0,7)  Pad: 7  Switch: 2
+Node:	4738	 CHANY (0,0,7)  Track: 39  Switch: 2
+Node:	4235	 CHANX (0,1,6) to (3,6)  Track: 10  Switch: 2
+Node:	5180	 CHANY (0,3,3) to (3,6)  Track: 7  Switch: 2
+Node:	3534	 CHANX (0,1,2) to (3,2)  Track: 5  Switch: 2
+Node:	4659	 CHANY (0,0,3) to (0,6)  Track: 8  Switch: 2
+Node:	3759	 CHANX (0,1,3) to (4,3)  Track: 56  Switch: 2
+Node:	5132	 CHANY (0,3,1) to (3,3)  Track: 37  Switch: 2
+Node:	3186	 CHANX (0,1,0) to (3,0)  Track: 5  Switch: 1
+Node:	1048	  IPIN (0,1,1)  Pin: 178   router.idata_4[33] Switch: 0
+Node:	649	  SINK (0,1,1)  Class: 178  Switch: -1 Net_pin_index: 1
+
+
+Net 131 (i_data_1[34])
+
+Node:	2897	SOURCE (0,0,7)  Pad: 9  Switch: 0
+Node:	2913	  OPIN (0,0,7)  Pad: 9  Switch: 2
+Node:	4682	 CHANY (0,0,4) to (0,7)  Track: 31  Switch: 2
+Node:	4073	 CHANX (0,1,5)  Track: 22  Switch: 2
+Node:	4899	 CHANY (0,1,6) to (1,7)  Track: 56  Switch: 2
+Node:	4475	 CHANX (0,2,7) to (5,7)  Track: 40  Switch: 2
+Node:	5380	 CHANY (0,4,4) to (4,7)  Track: 39  Switch: 2
+Node:	3750	 CHANX (0,1,3) to (4,3)  Track: 47  Switch: 2
+Node:	4594	 CHANY (0,0,1) to (0,3)  Track: 21  Switch: 1
+Node:	1100	  IPIN (0,1,1)  Pin: 179   router.idata_4[34] Switch: 0
+Node:	650	  SINK (0,1,1)  Class: 179  Switch: -1 Net_pin_index: 1
+
+
+Net 132 (i_valid_1)
+
+Node:	2830	SOURCE (0,0,6)  Pad: 3  Switch: 0
+Node:	2846	  OPIN (0,0,6)  Pad: 3  Switch: 2
+Node:	4711	 CHANY (0,0,6) to (0,7)  Track: 0  Switch: 2
+Node:	4287	 CHANX (0,1,6)  Track: 62  Switch: 2
+Node:	4844	 CHANY (0,1,3) to (1,6)  Track: 55  Switch: 2
+Node:	4052	 CHANX (0,1,5)  Track: 1  Switch: 2
+Node:	4654	 CHANY (0,0,2) to (0,5)  Track: 63  Switch: 2
+Node:	3371	 CHANX (0,1,1) to (4,1)  Track: 16  Switch: 1
+Node:	943	  IPIN (0,1,1)  Pin: 184   router.ivalid_4[0] Switch: 0
+Node:	655	  SINK (0,1,1)  Class: 184  Switch: -1 Net_pin_index: 1
+
+
+Net 133 (i_vch_1)
+
+Node:	2832	SOURCE (0,0,6)  Pad: 7  Switch: 0
+Node:	2848	  OPIN (0,0,6)  Pad: 7  Switch: 2
+Node:	4717	 CHANY (0,0,6) to (0,7)  Track: 24  Switch: 2
+Node:	4269	 CHANX (0,1,6) to (2,6)  Track: 44  Switch: 2
+Node:	5085	 CHANY (0,2,7)  Track: 32  Switch: 2
+Node:	4483	 CHANX (0,3,7) to (6,7)  Track: 0  Switch: 2
+Node:	5372	 CHANY (0,4,4) to (4,7)  Track: 7  Switch: 2
+Node:	3940	 CHANX (0,1,4) to (4,4)  Track: 63  Switch: 2
+Node:	4770	 CHANY (0,1,1) to (1,4)  Track: 23  Switch: 1
+Node:	997	  IPIN (0,1,1)  Pin: 189   router.ivch_4[0] Switch: 0
+Node:	660	  SINK (0,1,1)  Class: 189  Switch: -1 Net_pin_index: 1
+
+
+Net 134 (i_ack_1[0])
+
+Node:	2704	SOURCE (0,0,4)  Pad: 7  Switch: 0
+Node:	2720	  OPIN (0,0,4)  Pad: 7  Switch: 2
+Node:	4679	 CHANY (0,0,4) to (0,7)  Track: 16  Switch: 2
+Node:	4439	 CHANX (0,1,7) to (4,7)  Track: 40  Switch: 2
+Node:	5206	 CHANY (0,3,4) to (3,7)  Track: 39  Switch: 2
+Node:	3748	 CHANX (0,1,3) to (3,3)  Track: 45  Switch: 2
+Node:	4934	 CHANY (0,2,1) to (2,3)  Track: 13  Switch: 2
+Node:	3208	 CHANX (0,1,0) to (2,0)  Track: 27  Switch: 1
+Node:	1053	  IPIN (0,1,1)  Pin: 198   router.iack_4[0] Switch: 0
+Node:	669	  SINK (0,1,1)  Class: 198  Switch: -1 Net_pin_index: 1
+
+
+Net 135 (i_ack_1[1])
+
+Node:	2835	SOURCE (0,0,6)  Pad: 13  Switch: 0
+Node:	2851	  OPIN (0,0,6)  Pad: 13  Switch: 2
+Node:	4670	 CHANY (0,0,3) to (0,6)  Track: 55  Switch: 2
+Node:	4089	 CHANX (0,1,5)  Track: 38  Switch: 2
+Node:	4820	 CHANY (0,1,2) to (1,5)  Track: 31  Switch: 2
+Node:	3945	 CHANX (0,2,4) to (5,4)  Track: 8  Switch: 2
+Node:	4944	 CHANY (0,2,1) to (2,4)  Track: 23  Switch: 2
+Node:	3240	 CHANX (0,1,0) to (2,0)  Track: 59  Switch: 2
+Node:	4629	 CHANY (0,0,1) to (0,4)  Track: 56  Switch: 1
+Node:	1105	  IPIN (0,1,1)  Pin: 199   router.iack_4[1] Switch: 0
+Node:	670	  SINK (0,1,1)  Class: 199  Switch: -1 Net_pin_index: 1
+
+
+Net 136 (i_lck_1[0])
+
+Node:	2899	SOURCE (0,0,7)  Pad: 13  Switch: 0
+Node:	2915	  OPIN (0,0,7)  Pad: 13  Switch: 2
+Node:	4722	 CHANY (0,0,6) to (0,7)  Track: 47  Switch: 2
+Node:	4261	 CHANX (0,1,6) to (2,6)  Track: 36  Switch: 2
+Node:	4840	 CHANY (0,1,3) to (1,6)  Track: 39  Switch: 2
+Node:	4125	 CHANX (0,2,5) to (5,5)  Track: 32  Switch: 2
+Node:	4992	 CHANY (0,2,2) to (2,5)  Track: 23  Switch: 2
+Node:	3414	 CHANX (0,1,1) to (2,1)  Track: 59  Switch: 1
+Node:	949	  IPIN (0,1,1)  Pin: 208   router.ilck_4[0] Switch: 0
+Node:	679	  SINK (0,1,1)  Class: 208  Switch: -1 Net_pin_index: 1
+
+
+Net 137 (i_lck_1[1])
+
+Node:	7	SOURCE (0,1,0)  Pad: 15  Switch: 0
+Node:	23	  OPIN (0,1,0)  Pad: 15  Switch: 2
+Node:	3203	 CHANX (0,1,0)  Track: 22  Switch: 2
+Node:	4809	 CHANY (0,1,1)  Track: 62  Switch: 1
+Node:	1002	  IPIN (0,1,1)  Pin: 209   router.ilck_4[1] Switch: 0
+Node:	680	  SINK (0,1,1)  Class: 209  Switch: -1 Net_pin_index: 1
+
+
+Net 138 (o_data_1[0])
+
+Node:	396	SOURCE (0,1,1)  Class: 350  Switch: 0
+Node:	824	  OPIN (0,1,1)  Pin: 350   router.odata_4[0] Switch: 2
+Node:	3185	 CHANX (0,1,0) to (2,0)  Track: 4  Switch: 2
+Node:	4921	 CHANY (0,2,1) to (2,4)  Track: 0  Switch: 2
+Node:	3548	 CHANX (0,1,2) to (2,2)  Track: 19  Switch: 2
+Node:	4673	 CHANY (0,0,3)  Track: 64  Switch: 1
+Node:	2663	  IPIN (0,0,3)  Pad: 4  Switch: 0
+Node:	2647	  SINK (0,0,3)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 139 (o_data_1[1])
+
+Node:	397	SOURCE (0,1,1)  Class: 351  Switch: 0
+Node:	878	  OPIN (0,1,1)  Pin: 351   router.odata_4[1] Switch: 2
+Node:	4625	 CHANY (0,0,1) to (0,2)  Track: 52  Switch: 2
+Node:	3579	 CHANX (0,1,2) to (3,2)  Track: 50  Switch: 2
+Node:	5185	 CHANY (0,3,3) to (3,6)  Track: 24  Switch: 2
+Node:	4163	 CHANX (0,4,5) to (7,5)  Track: 40  Switch: 2
+Node:	5522	 CHANY (0,5,2) to (5,5)  Track: 55  Switch: 2
+Node:	3507	 CHANX (0,6,1) to (7,1)  Track: 56  Switch: 2
+Node:	5634	 CHANY (0,6,1)  Track: 17  Switch: 2
+Node:	3268	 CHANX (0,3,0) to (6,0)  Track: 15  Switch: 1
+Node:	89	  IPIN (0,3,0)  Pad: 2  Switch: 0
+Node:	73	  SINK (0,3,0)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 140 (o_data_1[2])
+
+Node:	398	SOURCE (0,1,1)  Class: 352  Switch: 0
+Node:	717	  OPIN (0,1,1)  Pin: 352   router.odata_4[2] Switch: 2
+Node:	3385	 CHANX (0,1,1)  Track: 30  Switch: 2
+Node:	4825	 CHANY (0,1,2) to (1,5)  Track: 48  Switch: 2
+Node:	3781	 CHANX (0,2,3) to (5,3)  Track: 48  Switch: 2
+Node:	5022	 CHANY (0,2,3)  Track: 65  Switch: 2
+Node:	3540	 CHANX (0,1,2) to (2,2)  Track: 11  Switch: 2
+Node:	4665	 CHANY (0,0,3) to (0,6)  Track: 32  Switch: 1
+Node:	2665	  IPIN (0,0,3)  Pad: 8  Switch: 0
+Node:	2649	  SINK (0,0,3)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 141 (o_data_1[3])
+
+Node:	399	SOURCE (0,1,1)  Class: 353  Switch: 0
+Node:	771	  OPIN (0,1,1)  Pin: 353   router.odata_4[3] Switch: 2
+Node:	4749	 CHANY (0,1,1) to (1,3)  Track: 2  Switch: 2
+Node:	3605	 CHANX (0,2,2) to (5,2)  Track: 40  Switch: 2
+Node:	5183	 CHANY (0,3,3) to (3,6)  Track: 16  Switch: 2
+Node:	4254	 CHANX (0,1,6) to (3,6)  Track: 29  Switch: 2
+Node:	4662	 CHANY (0,0,3) to (0,6)  Track: 23  Switch: 2
+Node:	3893	 CHANX (0,1,4) to (4,4)  Track: 16  Switch: 2
+Node:	4794	 CHANY (0,1,1) to (1,4)  Track: 47  Switch: 2
+Node:	3259	 CHANX (0,2,0) to (5,0)  Track: 48  Switch: 1
+Node:	56	  IPIN (0,2,0)  Pad: 0  Switch: 0
+Node:	40	  SINK (0,2,0)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 142 (o_data_1[4])
+
+Node:	400	SOURCE (0,1,1)  Class: 354  Switch: 0
+Node:	825	  OPIN (0,1,1)  Pin: 354   router.odata_4[4] Switch: 2
+Node:	3182	 CHANX (0,1,0)  Track: 1  Switch: 2
+Node:	4637	 CHANY (0,0,1)  Track: 64  Switch: 1
+Node:	249	  IPIN (0,0,1)  Pad: 2  Switch: 0
+Node:	233	  SINK (0,0,1)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 143 (o_data_1[5])
+
+Node:	401	SOURCE (0,1,1)  Class: 355  Switch: 0
+Node:	879	  OPIN (0,1,1)  Pin: 355   router.odata_4[5] Switch: 2
+Node:	4593	 CHANY (0,0,1) to (0,2)  Track: 20  Switch: 2
+Node:	3401	 CHANX (0,1,1)  Track: 46  Switch: 2
+Node:	4821	 CHANY (0,1,2) to (1,5)  Track: 32  Switch: 2
+Node:	3603	 CHANX (0,2,2) to (5,2)  Track: 32  Switch: 2
+Node:	5017	 CHANY (0,2,3) to (2,6)  Track: 48  Switch: 2
+Node:	4078	 CHANX (0,1,5) to (2,5)  Track: 27  Switch: 2
+Node:	4646	 CHANY (0,0,2) to (0,5)  Track: 31  Switch: 1
+Node:	2021	  IPIN (0,0,2)  Pad: 10  Switch: 0
+Node:	2005	  SINK (0,0,2)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 144 (o_data_1[6])
+
+Node:	402	SOURCE (0,1,1)  Class: 356  Switch: 0
+Node:	718	  OPIN (0,1,1)  Pin: 356   router.odata_4[6] Switch: 2
+Node:	3387	 CHANX (0,1,1) to (4,1)  Track: 32  Switch: 2
+Node:	5169	 CHANY (0,3,2) to (3,5)  Track: 32  Switch: 2
+Node:	3930	 CHANX (0,1,4) to (3,4)  Track: 53  Switch: 2
+Node:	5057	 CHANY (0,2,5)  Track: 64  Switch: 2
+Node:	4054	 CHANX (0,1,5) to (2,5)  Track: 3  Switch: 2
+Node:	4828	 CHANY (0,1,2) to (1,5)  Track: 63  Switch: 2
+Node:	3372	 CHANX (0,1,1)  Track: 17  Switch: 2
+Node:	4653	 CHANY (0,0,2) to (0,5)  Track: 56  Switch: 1
+Node:	2016	  IPIN (0,0,2)  Pad: 0  Switch: 0
+Node:	2000	  SINK (0,0,2)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 145 (o_data_1[7])
+
+Node:	403	SOURCE (0,1,1)  Class: 357  Switch: 0
+Node:	772	  OPIN (0,1,1)  Pin: 357   router.odata_4[7] Switch: 2
+Node:	4780	 CHANY (0,1,1)  Track: 33  Switch: 2
+Node:	3198	 CHANX (0,1,0)  Track: 17  Switch: 1
+Node:	28	  IPIN (0,1,0)  Pad: 8  Switch: 0
+Node:	12	  SINK (0,1,0)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 146 (o_data_1[8])
+
+Node:	404	SOURCE (0,1,1)  Class: 358  Switch: 0
+Node:	826	  OPIN (0,1,1)  Pin: 358   router.odata_4[8] Switch: 2
+Node:	3221	 CHANX (0,1,0) to (4,0)  Track: 40  Switch: 1
+Node:	92	  IPIN (0,3,0)  Pad: 8  Switch: 0
+Node:	76	  SINK (0,3,0)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 147 (o_data_1[9])
+
+Node:	405	SOURCE (0,1,1)  Class: 359  Switch: 0
+Node:	880	  OPIN (0,1,1)  Pin: 359   router.odata_4[9] Switch: 2
+Node:	4613	 CHANY (0,0,1) to (0,4)  Track: 40  Switch: 1
+Node:	252	  IPIN (0,0,1)  Pad: 8  Switch: 0
+Node:	236	  SINK (0,0,1)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 148 (o_data_1[10])
+
+Node:	406	SOURCE (0,1,1)  Class: 360  Switch: 0
+Node:	719	  OPIN (0,1,1)  Pin: 360   router.odata_4[10] Switch: 2
+Node:	3396	 CHANX (0,1,1)  Track: 41  Switch: 2
+Node:	4641	 CHANY (0,0,2) to (0,5)  Track: 8  Switch: 1
+Node:	2019	  IPIN (0,0,2)  Pad: 6  Switch: 0
+Node:	2003	  SINK (0,0,2)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 149 (o_data_1[11])
+
+Node:	407	SOURCE (0,1,1)  Class: 361  Switch: 0
+Node:	773	  OPIN (0,1,1)  Pin: 361   router.odata_4[11] Switch: 2
+Node:	4799	 CHANY (0,1,1) to (1,2)  Track: 52  Switch: 2
+Node:	3597	 CHANX (0,2,2) to (5,2)  Track: 8  Switch: 2
+Node:	5304	 CHANY (0,4,1) to (4,2)  Track: 35  Switch: 2
+Node:	3196	 CHANX (0,1,0) to (4,0)  Track: 15  Switch: 1
+Node:	93	  IPIN (0,3,0)  Pad: 10  Switch: 0
+Node:	77	  SINK (0,3,0)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 150 (o_data_1[12])
+
+Node:	408	SOURCE (0,1,1)  Class: 362  Switch: 0
+Node:	827	  OPIN (0,1,1)  Pin: 362   router.odata_4[12] Switch: 2
+Node:	3213	 CHANX (0,1,0) to (4,0)  Track: 32  Switch: 2
+Node:	4961	 CHANY (0,2,1) to (2,4)  Track: 40  Switch: 2
+Node:	3928	 CHANX (0,1,4) to (2,4)  Track: 51  Switch: 2
+Node:	4580	 CHANY (0,0,1) to (0,4)  Track: 7  Switch: 1
+Node:	2017	  IPIN (0,0,2)  Pad: 2  Switch: 0
+Node:	2001	  SINK (0,0,2)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 151 (o_data_1[13])
+
+Node:	409	SOURCE (0,1,1)  Class: 363  Switch: 0
+Node:	881	  OPIN (0,1,1)  Pin: 363   router.odata_4[13] Switch: 2
+Node:	4599	 CHANY (0,0,1) to (0,3)  Track: 26  Switch: 2
+Node:	3569	 CHANX (0,1,2) to (4,2)  Track: 40  Switch: 2
+Node:	5154	 CHANY (0,3,1) to (3,2)  Track: 59  Switch: 2
+Node:	3242	 CHANX (0,1,0) to (3,0)  Track: 61  Switch: 1
+Node:	29	  IPIN (0,1,0)  Pad: 10  Switch: 0
+Node:	13	  SINK (0,1,0)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 152 (o_data_1[14])
+
+Node:	410	SOURCE (0,1,1)  Class: 364  Switch: 0
+Node:	720	  OPIN (0,1,1)  Pin: 364   router.odata_4[14] Switch: 2
+Node:	3375	 CHANX (0,1,1) to (2,1)  Track: 20  Switch: 2
+Node:	5001	 CHANY (0,2,2) to (2,5)  Track: 56  Switch: 2
+Node:	3965	 CHANX (0,3,4) to (6,4)  Track: 16  Switch: 2
+Node:	5324	 CHANY (0,4,1) to (4,4)  Track: 55  Switch: 2
+Node:	3188	 CHANX (0,1,0) to (4,0)  Track: 7  Switch: 1
+Node:	61	  IPIN (0,2,0)  Pad: 10  Switch: 0
+Node:	45	  SINK (0,2,0)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 153 (o_data_1[15])
+
+Node:	411	SOURCE (0,1,1)  Class: 365  Switch: 0
+Node:	774	  OPIN (0,1,1)  Pin: 365   router.odata_4[15] Switch: 2
+Node:	4801	 CHANY (0,1,1)  Track: 54  Switch: 2
+Node:	3423	 CHANX (0,2,1) to (5,1)  Track: 8  Switch: 2
+Node:	5120	 CHANY (0,3,1)  Track: 25  Switch: 2
+Node:	3234	 CHANX (0,1,0) to (3,0)  Track: 53  Switch: 2
+Node:	4623	 CHANY (0,0,1) to (0,3)  Track: 50  Switch: 1
+Node:	254	  IPIN (0,0,1)  Pad: 12  Switch: 0
+Node:	238	  SINK (0,0,1)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 154 (o_data_1[16])
+
+Node:	412	SOURCE (0,1,1)  Class: 366  Switch: 0
+Node:	828	  OPIN (0,1,1)  Pin: 366   router.odata_4[16] Switch: 2
+Node:	3237	 CHANX (0,1,0) to (4,0)  Track: 56  Switch: 2
+Node:	5115	 CHANY (0,3,1) to (3,2)  Track: 20  Switch: 2
+Node:	3558	 CHANX (0,1,2) to (3,2)  Track: 29  Switch: 2
+Node:	4592	 CHANY (0,0,1) to (0,2)  Track: 19  Switch: 1
+Node:	253	  IPIN (0,0,1)  Pad: 10  Switch: 0
+Node:	237	  SINK (0,0,1)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 155 (o_data_1[17])
+
+Node:	413	SOURCE (0,1,1)  Class: 367  Switch: 0
+Node:	882	  OPIN (0,1,1)  Pin: 367   router.odata_4[17] Switch: 2
+Node:	4601	 CHANY (0,0,1) to (0,2)  Track: 28  Switch: 2
+Node:	3395	 CHANX (0,1,1) to (4,1)  Track: 40  Switch: 2
+Node:	4788	 CHANY (0,1,1)  Track: 41  Switch: 2
+Node:	3253	 CHANX (0,2,0) to (5,0)  Track: 24  Switch: 1
+Node:	62	  IPIN (0,2,0)  Pad: 12  Switch: 0
+Node:	46	  SINK (0,2,0)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 156 (o_data_1[18])
+
+Node:	414	SOURCE (0,1,1)  Class: 368  Switch: 0
+Node:	721	  OPIN (0,1,1)  Pin: 368   router.odata_4[18] Switch: 2
+Node:	3377	 CHANX (0,1,1)  Track: 22  Switch: 2
+Node:	4827	 CHANY (0,1,2) to (1,5)  Track: 56  Switch: 2
+Node:	3775	 CHANX (0,2,3) to (5,3)  Track: 24  Switch: 2
+Node:	5213	 CHANY (0,3,4)  Track: 64  Switch: 2
+Node:	3882	 CHANX (0,1,4) to (3,4)  Track: 5  Switch: 2
+Node:	4620	 CHANY (0,0,1) to (0,4)  Track: 47  Switch: 1
+Node:	255	  IPIN (0,0,1)  Pad: 14  Switch: 0
+Node:	239	  SINK (0,0,1)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 157 (o_data_1[19])
+
+Node:	415	SOURCE (0,1,1)  Class: 369  Switch: 0
+Node:	775	  OPIN (0,1,1)  Pin: 369   router.odata_4[19] Switch: 2
+Node:	4781	 CHANY (0,1,1) to (1,3)  Track: 34  Switch: 2
+Node:	3578	 CHANX (0,1,2)  Track: 49  Switch: 2
+Node:	4584	 CHANY (0,0,1) to (0,2)  Track: 11  Switch: 2
+Node:	3193	 CHANX (0,1,0) to (2,0)  Track: 12  Switch: 1
+Node:	57	  IPIN (0,2,0)  Pad: 2  Switch: 0
+Node:	41	  SINK (0,2,0)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 158 (o_data_1[20])
+
+Node:	416	SOURCE (0,1,1)  Class: 370  Switch: 0
+Node:	829	  OPIN (0,1,1)  Pin: 370   router.odata_4[20] Switch: 2
+Node:	3217	 CHANX (0,1,0) to (2,0)  Track: 36  Switch: 2
+Node:	4979	 CHANY (0,2,1) to (2,3)  Track: 58  Switch: 2
+Node:	3786	 CHANX (0,2,3)  Track: 65  Switch: 2
+Node:	4863	 CHANY (0,1,4) to (1,7)  Track: 56  Switch: 2
+Node:	4274	 CHANX (0,1,6)  Track: 49  Switch: 2
+Node:	4660	 CHANY (0,0,3) to (0,6)  Track: 15  Switch: 1
+Node:	2668	  IPIN (0,0,3)  Pad: 14  Switch: 0
+Node:	2652	  SINK (0,0,3)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 159 (o_data_1[21])
+
+Node:	417	SOURCE (0,1,1)  Class: 371  Switch: 0
+Node:	883	  OPIN (0,1,1)  Pin: 371   router.odata_4[21] Switch: 2
+Node:	4603	 CHANY (0,0,1)  Track: 30  Switch: 2
+Node:	3411	 CHANX (0,1,1) to (4,1)  Track: 56  Switch: 2
+Node:	5128	 CHANY (0,3,1)  Track: 33  Switch: 2
+Node:	3202	 CHANX (0,1,0) to (3,0)  Track: 21  Switch: 1
+Node:	59	  IPIN (0,2,0)  Pad: 6  Switch: 0
+Node:	43	  SINK (0,2,0)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 160 (o_data_1[22])
+
+Node:	418	SOURCE (0,1,1)  Class: 372  Switch: 0
+Node:	722	  OPIN (0,1,1)  Pin: 372   router.odata_4[22] Switch: 2
+Node:	3357	 CHANX (0,1,1) to (3,1)  Track: 2  Switch: 2
+Node:	4930	 CHANY (0,2,1)  Track: 9  Switch: 2
+Node:	3224	 CHANX (0,1,0) to (2,0)  Track: 43  Switch: 1
+Node:	58	  IPIN (0,2,0)  Pad: 4  Switch: 0
+Node:	42	  SINK (0,2,0)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 161 (o_data_1[23])
+
+Node:	419	SOURCE (0,1,1)  Class: 373  Switch: 0
+Node:	776	  OPIN (0,1,1)  Pin: 373   router.odata_4[23] Switch: 2
+Node:	4783	 CHANY (0,1,1) to (1,2)  Track: 36  Switch: 2
+Node:	3404	 CHANX (0,1,1)  Track: 49  Switch: 2
+Node:	4649	 CHANY (0,0,2) to (0,5)  Track: 40  Switch: 1
+Node:	2020	  IPIN (0,0,2)  Pad: 8  Switch: 0
+Node:	2004	  SINK (0,0,2)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 162 (o_data_1[24])
+
+Node:	420	SOURCE (0,1,1)  Class: 374  Switch: 0
+Node:	830	  OPIN (0,1,1)  Pin: 374   router.odata_4[24] Switch: 2
+Node:	3241	 CHANX (0,1,0) to (2,0)  Track: 60  Switch: 2
+Node:	4767	 CHANY (0,1,1) to (1,2)  Track: 20  Switch: 2
+Node:	3554	 CHANX (0,1,2)  Track: 25  Switch: 2
+Node:	4608	 CHANY (0,0,1) to (0,2)  Track: 35  Switch: 1
+Node:	2022	  IPIN (0,0,2)  Pad: 12  Switch: 0
+Node:	2006	  SINK (0,0,2)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 163 (o_data_1[25])
+
+Node:	421	SOURCE (0,1,1)  Class: 375  Switch: 0
+Node:	884	  OPIN (0,1,1)  Pin: 375   router.odata_4[25] Switch: 2
+Node:	4605	 CHANY (0,0,1) to (0,4)  Track: 32  Switch: 1
+Node:	2661	  IPIN (0,0,3)  Pad: 0  Switch: 0
+Node:	2645	  SINK (0,0,3)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 164 (o_data_1[26])
+
+Node:	422	SOURCE (0,1,1)  Class: 376  Switch: 0
+Node:	723	  OPIN (0,1,1)  Pin: 376   router.odata_4[26] Switch: 2
+Node:	3359	 CHANX (0,1,1) to (2,1)  Track: 4  Switch: 2
+Node:	4986	 CHANY (0,2,1)  Track: 65  Switch: 2
+Node:	3277	 CHANX (0,3,0) to (6,0)  Track: 48  Switch: 1
+Node:	88	  IPIN (0,3,0)  Pad: 0  Switch: 0
+Node:	72	  SINK (0,3,0)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 165 (o_data_1[27])
+
+Node:	423	SOURCE (0,1,1)  Class: 377  Switch: 0
+Node:	777	  OPIN (0,1,1)  Pin: 377   router.odata_4[27] Switch: 2
+Node:	4763	 CHANY (0,1,1) to (1,4)  Track: 16  Switch: 2
+Node:	3953	 CHANX (0,2,4) to (5,4)  Track: 40  Switch: 2
+Node:	5332	 CHANY (0,4,1) to (4,4)  Track: 63  Switch: 2
+Node:	3576	 CHANX (0,1,2) to (4,2)  Track: 47  Switch: 2
+Node:	5106	 CHANY (0,3,1) to (3,2)  Track: 11  Switch: 2
+Node:	3218	 CHANX (0,1,0) to (3,0)  Track: 37  Switch: 1
+Node:	26	  IPIN (0,1,0)  Pad: 4  Switch: 0
+Node:	10	  SINK (0,1,0)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 166 (o_data_1[28])
+
+Node:	424	SOURCE (0,1,1)  Class: 378  Switch: 0
+Node:	831	  OPIN (0,1,1)  Pin: 378   router.odata_4[28] Switch: 2
+Node:	3199	 CHANX (0,1,0) to (3,0)  Track: 18  Switch: 2
+Node:	4971	 CHANY (0,2,1) to (2,3)  Track: 50  Switch: 2
+Node:	3556	 CHANX (0,1,2) to (2,2)  Track: 27  Switch: 2
+Node:	4663	 CHANY (0,0,3) to (0,6)  Track: 24  Switch: 1
+Node:	2667	  IPIN (0,0,3)  Pad: 12  Switch: 0
+Node:	2651	  SINK (0,0,3)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 167 (o_data_1[29])
+
+Node:	425	SOURCE (0,1,1)  Class: 379  Switch: 0
+Node:	885	  OPIN (0,1,1)  Pin: 379   router.odata_4[29] Switch: 2
+Node:	4607	 CHANY (0,0,1) to (0,3)  Track: 34  Switch: 2
+Node:	3563	 CHANX (0,1,2) to (3,2)  Track: 34  Switch: 2
+Node:	4956	 CHANY (0,2,1) to (2,2)  Track: 35  Switch: 2
+Node:	3192	 CHANX (0,1,0) to (2,0)  Track: 11  Switch: 1
+Node:	63	  IPIN (0,2,0)  Pad: 14  Switch: 0
+Node:	47	  SINK (0,2,0)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 168 (o_data_1[30])
+
+Node:	426	SOURCE (0,1,1)  Class: 380  Switch: 0
+Node:	724	  OPIN (0,1,1)  Pin: 380   router.odata_4[30] Switch: 2
+Node:	3405	 CHANX (0,1,1) to (3,1)  Track: 50  Switch: 2
+Node:	4748	 CHANY (0,1,1)  Track: 1  Switch: 2
+Node:	3249	 CHANX (0,2,0) to (5,0)  Track: 8  Switch: 1
+Node:	60	  IPIN (0,2,0)  Pad: 8  Switch: 0
+Node:	44	  SINK (0,2,0)  Pad: 8  Switch: -1 Net_pin_index: 1
+
+
+Net 169 (o_data_1[31])
+
+Node:	427	SOURCE (0,1,1)  Class: 381  Switch: 0
+Node:	778	  OPIN (0,1,1)  Pin: 381   router.odata_4[31] Switch: 2
+Node:	4765	 CHANY (0,1,1) to (1,3)  Track: 18  Switch: 2
+Node:	3611	 CHANX (0,2,2)  Track: 64  Switch: 2
+Node:	4980	 CHANY (0,2,1) to (2,2)  Track: 59  Switch: 2
+Node:	3271	 CHANX (0,3,0) to (6,0)  Track: 24  Switch: 1
+Node:	94	  IPIN (0,3,0)  Pad: 12  Switch: 0
+Node:	78	  SINK (0,3,0)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 170 (o_data_1[32])
+
+Node:	428	SOURCE (0,1,1)  Class: 382  Switch: 0
+Node:	832	  OPIN (0,1,1)  Pin: 382   router.odata_4[32] Switch: 2
+Node:	3223	 CHANX (0,1,0) to (3,0)  Track: 42  Switch: 2
+Node:	4953	 CHANY (0,2,1) to (2,4)  Track: 32  Switch: 2
+Node:	3920	 CHANX (0,1,4) to (2,4)  Track: 43  Switch: 2
+Node:	4612	 CHANY (0,0,1) to (0,4)  Track: 39  Switch: 1
+Node:	248	  IPIN (0,0,1)  Pad: 0  Switch: 0
+Node:	232	  SINK (0,0,1)  Pad: 0  Switch: -1 Net_pin_index: 1
+
+
+Net 171 (o_data_1[33])
+
+Node:	429	SOURCE (0,1,1)  Class: 383  Switch: 0
+Node:	886	  OPIN (0,1,1)  Pin: 383   router.odata_4[33] Switch: 2
+Node:	4609	 CHANY (0,0,1) to (0,2)  Track: 36  Switch: 2
+Node:	3389	 CHANX (0,1,1) to (3,1)  Track: 34  Switch: 2
+Node:	4823	 CHANY (0,1,2) to (1,5)  Track: 40  Switch: 2
+Node:	3586	 CHANX (0,1,2)  Track: 57  Switch: 2
+Node:	4657	 CHANY (0,0,3) to (0,6)  Track: 0  Switch: 1
+Node:	2664	  IPIN (0,0,3)  Pad: 6  Switch: 0
+Node:	2648	  SINK (0,0,3)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 172 (o_data_1[34])
+
+Node:	430	SOURCE (0,1,1)  Class: 384  Switch: 0
+Node:	725	  OPIN (0,1,1)  Pin: 384   router.odata_4[34] Switch: 2
+Node:	3363	 CHANX (0,1,1) to (4,1)  Track: 8  Switch: 2
+Node:	4997	 CHANY (0,2,2) to (2,5)  Track: 40  Switch: 2
+Node:	3588	 CHANX (0,1,2) to (2,2)  Track: 59  Switch: 2
+Node:	4616	 CHANY (0,0,1) to (0,2)  Track: 43  Switch: 1
+Node:	250	  IPIN (0,0,1)  Pad: 4  Switch: 0
+Node:	234	  SINK (0,0,1)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 173 (o_valid_1)
+
+Node:	435	SOURCE (0,1,1)  Class: 389  Switch: 0
+Node:	780	  OPIN (0,1,1)  Pin: 389   router.ovalid_4[0] Switch: 2
+Node:	4751	 CHANY (0,1,1) to (1,2)  Track: 4  Switch: 2
+Node:	3538	 CHANX (0,1,2)  Track: 9  Switch: 2
+Node:	4600	 CHANY (0,0,1) to (0,2)  Track: 27  Switch: 1
+Node:	2018	  IPIN (0,0,2)  Pad: 4  Switch: 0
+Node:	2002	  SINK (0,0,2)  Pad: 4  Switch: -1 Net_pin_index: 1
+
+
+Net 174 (o_vch_1)
+
+Node:	440	SOURCE (0,1,1)  Class: 394  Switch: 0
+Node:	835	  OPIN (0,1,1)  Pin: 394   router.ovch_4[0] Switch: 2
+Node:	3189	 CHANX (0,1,0) to (4,0)  Track: 8  Switch: 1
+Node:	30	  IPIN (0,1,0)  Pad: 12  Switch: 0
+Node:	14	  SINK (0,1,0)  Pad: 12  Switch: -1 Net_pin_index: 1
+
+
+Net 175 (o_ack_1[0])
+
+Node:	449	SOURCE (0,1,1)  Class: 403  Switch: 0
+Node:	891	  OPIN (0,1,1)  Pin: 403   router.oack_4[0] Switch: 2
+Node:	4617	 CHANY (0,0,1) to (0,2)  Track: 44  Switch: 2
+Node:	3581	 CHANX (0,1,2) to (2,2)  Track: 52  Switch: 2
+Node:	4845	 CHANY (0,1,3) to (1,6)  Track: 56  Switch: 2
+Node:	4100	 CHANX (0,1,5)  Track: 49  Switch: 2
+Node:	4642	 CHANY (0,0,2) to (0,5)  Track: 15  Switch: 1
+Node:	2730	  IPIN (0,0,4)  Pad: 10  Switch: 0
+Node:	2714	  SINK (0,0,4)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 176 (o_ack_1[1])
+
+Node:	450	SOURCE (0,1,1)  Class: 404  Switch: 0
+Node:	730	  OPIN (0,1,1)  Pin: 404   router.oack_4[1] Switch: 2
+Node:	3420	 CHANX (0,1,1)  Track: 65  Switch: 2
+Node:	4647	 CHANY (0,0,2) to (0,5)  Track: 32  Switch: 2
+Node:	3567	 CHANX (0,1,2)  Track: 38  Switch: 2
+Node:	4774	 CHANY (0,1,1) to (1,2)  Track: 27  Switch: 2
+Node:	3257	 CHANX (0,2,0) to (5,0)  Track: 40  Switch: 1
+Node:	91	  IPIN (0,3,0)  Pad: 6  Switch: 0
+Node:	75	  SINK (0,3,0)  Pad: 6  Switch: -1 Net_pin_index: 1
+
+
+Net 177 (o_rdy_1[0])
+
+Node:	459	SOURCE (0,1,1)  Class: 413  Switch: 0
+Node:	786	  OPIN (0,1,1)  Pin: 413   router.ordy_4[0] Switch: 2
+Node:	4747	 CHANY (0,1,1) to (1,4)  Track: 0  Switch: 2
+Node:	3728	 CHANX (0,1,3)  Track: 25  Switch: 2
+Node:	4610	 CHANY (0,0,1) to (0,3)  Track: 37  Switch: 1
+Node:	2023	  IPIN (0,0,2)  Pad: 14  Switch: 0
+Node:	2007	  SINK (0,0,2)  Pad: 14  Switch: -1 Net_pin_index: 1
+
+
+Net 178 (o_rdy_1[1])
+
+Node:	460	SOURCE (0,1,1)  Class: 414  Switch: 0
+Node:	840	  OPIN (0,1,1)  Pin: 414   router.ordy_4[1] Switch: 2
+Node:	3195	 CHANX (0,1,0)  Track: 14  Switch: 2
+Node:	4811	 CHANY (0,1,1)  Track: 64  Switch: 2
+Node:	3437	 CHANX (0,2,1)  Track: 64  Switch: 2
+Node:	4989	 CHANY (0,2,2) to (2,5)  Track: 8  Switch: 2
+Node:	3564	 CHANX (0,1,2) to (2,2)  Track: 35  Switch: 2
+Node:	4835	 CHANY (0,1,3) to (1,6)  Track: 16  Switch: 2
+Node:	4250	 CHANX (0,1,6)  Track: 25  Switch: 2
+Node:	4666	 CHANY (0,0,3) to (0,6)  Track: 39  Switch: 1
+Node:	2662	  IPIN (0,0,3)  Pad: 2  Switch: 0
+Node:	2646	  SINK (0,0,3)  Pad: 2  Switch: -1 Net_pin_index: 1
+
+
+Net 179 (o_lck_1[0])
+
+Node:	469	SOURCE (0,1,1)  Class: 423  Switch: 0
+Node:	896	  OPIN (0,1,1)  Pin: 423   router.olck_4[0] Switch: 2
+Node:	4579	 CHANY (0,0,1)  Track: 6  Switch: 2
+Node:	3417	 CHANX (0,1,1)  Track: 62  Switch: 2
+Node:	4817	 CHANY (0,1,2) to (1,5)  Track: 16  Switch: 2
+Node:	3769	 CHANX (0,2,3) to (5,3)  Track: 0  Switch: 2
+Node:	5023	 CHANY (0,2,4) to (2,7)  Track: 0  Switch: 2
+Node:	4434	 CHANX (0,1,7) to (2,7)  Track: 35  Switch: 2
+Node:	4912	 CHANY (0,1,7)  Track: 39  Switch: 2
+Node:	4266	 CHANX (0,1,6)  Track: 41  Switch: 2
+Node:	4668	 CHANY (0,0,3) to (0,6)  Track: 47  Switch: 1
+Node:	2666	  IPIN (0,0,3)  Pad: 10  Switch: 0
+Node:	2650	  SINK (0,0,3)  Pad: 10  Switch: -1 Net_pin_index: 1
+
+
+Net 180 (o_lck_1[1])
+
+Node:	470	SOURCE (0,1,1)  Class: 424  Switch: 0
+Node:	735	  OPIN (0,1,1)  Pin: 424   router.olck_4[1] Switch: 2
+Node:	3383	 CHANX (0,1,1) to (2,1)  Track: 28  Switch: 2
+Node:	4756	 CHANY (0,1,1)  Track: 9  Switch: 2
+Node:	3222	 CHANX (0,1,0)  Track: 41  Switch: 2
+Node:	4611	 CHANY (0,0,1)  Track: 38  Switch: 1
+Node:	251	  IPIN (0,0,1)  Pad: 6  Switch: 0
+Node:	235	  SINK (0,0,1)  Pad: 6  Switch: -1 Net_pin_index: 1
