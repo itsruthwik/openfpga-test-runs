@@ -1,0 +1,492 @@
+/home/rsunketa/OpenFPGA/build/yosys/bin/yosys yosys.ys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.41+101 (git sha1 c71262f66, g++ 13.3.1 -fPIC -Os)
+
+-- Executing script file `yosys.ys' --
+
+1. Executing Verilog-2005 frontend: ./benchmark/mesh_bench.v
+Parsing Verilog input from `./benchmark/mesh_bench.v' to AST representation.
+Generating RTLIL representation for module `\mesh_bench'.
+./benchmark/mesh_bench.v:95: Warning: Identifier `\oack_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:96: Warning: Identifier `\ordy_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:97: Warning: Identifier `\olck_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:110: Warning: Identifier `\odata_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:111: Warning: Identifier `\ovalid_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:112: Warning: Identifier `\ovch_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:125: Warning: Identifier `\idata_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:126: Warning: Identifier `\ivalid_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:127: Warning: Identifier `\ivch_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:139: Warning: Identifier `\iack_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:140: Warning: Identifier `\ilck_1_rtr0' is implicitly declared.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/real-router/verilog-files/dummy_router3-rtl.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/real-router/verilog-files/dummy_router3-rtl.v' to AST representation.
+Generating RTLIL representation for module `\router'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/arb.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/arb.v' to AST representation.
+Generating RTLIL representation for module `\arb'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/cb.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/cb.v' to AST representation.
+Generating RTLIL representation for module `\cb'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/fifo.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/fifo.v' to AST representation.
+Generating RTLIL representation for module `\fifo'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/inputc.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/inputc.v' to AST representation.
+Generating RTLIL representation for module `\inputc'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/mux.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/mux.v' to AST representation.
+Generating RTLIL representation for module `\mux'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/muxcont.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/muxcont.v' to AST representation.
+Generating RTLIL representation for module `\muxcont'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/outputc.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/outputc.v' to AST representation.
+Generating RTLIL representation for module `\outputc'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/router2.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/router2.v' to AST representation.
+Generating RTLIL representation for module `\router2'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/rtcomp.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/rtcomp.v' to AST representation.
+Generating RTLIL representation for module `\rtcomp'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/vc.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/vc.v' to AST representation.
+Generating RTLIL representation for module `\vc'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/vcmux.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/vcmux.v' to AST representation.
+Generating RTLIL representation for module `\vcmux'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \mesh_bench
+
+14.2. Analyzing design hierarchy..
+Top module:  \mesh_bench
+Removed 0 unused modules.
+Warning: Resizing cell port mesh_bench.rtr0.ILCK_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.IACK_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.IDATA_1 from 1 bits to 35 bits.
+Warning: Resizing cell port mesh_bench.rtr0.ODATA_1 from 1 bits to 35 bits.
+Warning: Resizing cell port mesh_bench.rtr0.OLCK_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.ORDY_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.OACK_1 from 1 bits to 2 bits.
+
+15. Executing TECHMAP pass (map to technology primitives).
+
+15.1. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/openfpga-test-runs/real-router/verilog-files/router2router_slice.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/openfpga-test-runs/real-router/verilog-files/router2router_slice.v' to AST representation.
+Generating RTLIL representation for module `\router'.
+Successfully finished Verilog frontend.
+
+15.2. Continuing TECHMAP pass.
+Using template router for cells of type router.
+No more expansions possible.
+<suppressed ~14 debug messages>
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+17. Executing FLATTEN pass (flatten design).
+
+18. Executing TRIBUF pass.
+
+19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+20. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+Removed 0 unused cells and 565 unused wires.
+<suppressed ~12 debug messages>
+
+21. Executing DEMINOUT pass (demote inout ports to input or output).
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+22.9. Finished OPT passes. (There is nothing left to do.)
+
+23. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+25. Executing CHECK pass (checking for obvious problems).
+Checking module mesh_bench...
+Found and reported 0 problems.
+
+26. Executing OPT pass (performing simple optimizations).
+
+26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+26.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+26.9. Finished OPT passes. (There is nothing left to do.)
+
+27. Executing WREDUCE pass (reducing word size of cells).
+
+28. Executing PEEPOPT pass (run peephole optimizers).
+
+29. Executing PMUXTREE pass.
+
+30. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+31. Executing TECHMAP pass (map to technology primitives).
+
+31.1. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+31.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+32. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module mesh_bench:
+  created 0 $alu and 0 $macc cells.
+
+33. Executing SHARE pass (SAT-based resource sharing).
+
+34. Executing OPT pass (performing simple optimizations).
+
+34.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+34.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+34.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+34.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+34.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+34.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+34.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+34.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+34.9. Finished OPT passes. (There is nothing left to do.)
+
+35. Executing FSM pass (extract and optimize FSM).
+
+35.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+35.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+35.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+35.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+35.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+35.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+35.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+35.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+36. Executing OPT pass (performing simple optimizations).
+
+36.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+36.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+36.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+36.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+36.5. Finished fast OPT passes.
+
+37. Executing MEMORY pass.
+
+37.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+37.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+37.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+37.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+37.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+37.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+37.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+37.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+37.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+37.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+38. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+39. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+40. Executing TECHMAP pass (map to technology primitives).
+
+40.1. Executing Verilog-2005 frontend: /home/rsunketa/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v
+Parsing Verilog input from `/home/rsunketa/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v' to AST representation.
+Generating RTLIL representation for module `\adff2dff'.
+Successfully finished Verilog frontend.
+
+40.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+41. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+42. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+45. Executing OPT_DFF pass (perform DFF optimizations).
+
+46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+47. Executing OPT pass (performing simple optimizations).
+
+47.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+47.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+47.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+47.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+47.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+47.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+47.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+47.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+47.9. Finished OPT passes. (There is nothing left to do.)
+
+48. Executing ABC pass (technology mapping using ABC).
+
+48.1. Extracting gate netlist of module `\mesh_bench' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+49. Executing HIERARCHY pass (managing design hierarchy).
+
+49.1. Analyzing design hierarchy..
+Top module:  \mesh_bench
+
+49.2. Analyzing design hierarchy..
+Top module:  \mesh_bench
+Removed 0 unused modules.
+
+50. Printing statistics.
+
+=== mesh_bench ===
+
+   Number of wires:                108
+   Number of wire bits:            728
+   Number of public wires:          68
+   Number of public wire bits:     433
+   Number of ports:                 24
+   Number of port bits:            170
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     router                          2
+
+51. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~32 debug messages>
+
+52. Executing BLIF backend.
+
+Warnings: 18 unique messages, 18 total
+End of script. Logfile hash: cc1ce049c1, CPU: user 0.08s system 0.00s, MEM: 25.43 MB peak
+Yosys 0.41+101 (git sha1 c71262f66, g++ 13.3.1 -fPIC -Os)
+Time spent: 39% 19x read_verilog (0 sec), 22% 14x opt_clean (0 sec), ...
+0

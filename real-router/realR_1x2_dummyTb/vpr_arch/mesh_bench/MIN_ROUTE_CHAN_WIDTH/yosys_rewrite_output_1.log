@@ -1,0 +1,24 @@
+/home/rsunketa/OpenFPGA/build/yosys/bin/yosys yosys_rewrite_1.ys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.41+101 (git sha1 c71262f66, g++ 13.3.1 -fPIC -Os)
+
+-- Executing script file `yosys_rewrite_1.ys' --
+
+1. Executing BLIF frontend.
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\mesh_bench'.
+
+End of script. Logfile hash: 036bb9e99c, CPU: user 0.01s system 0.00s, MEM: 25.43 MB peak
+Yosys 0.41+101 (git sha1 c71262f66, g++ 13.3.1 -fPIC -Os)
+Time spent: 64% 2x write_verilog (0 sec), 29% 2x read_blif (0 sec), ...
+0
