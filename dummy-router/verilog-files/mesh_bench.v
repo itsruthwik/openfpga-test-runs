@@ -33,6 +33,8 @@ output [1:0] o_ack_1 ,
 output [1:0] o_lck_1 ,
 output [1:0] o_rdy_1 ,
 
+output [35:0] extra_outputs ,
+
 input clk ,
 input rst_ 
 

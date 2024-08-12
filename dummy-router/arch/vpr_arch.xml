@@ -186,7 +186,7 @@
 
       <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
       <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
-      <!-- <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
 
       <single type="router" x="((1*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
       <single type="router" x="((2*W-3)/3)" y="((2*H-3)/3)" priority="50"/>
@@ -194,7 +194,7 @@
 
       <single type="router" x="((1*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
       <single type="router" x="((2*W-3)/3)" y="((5*H-3)/6)" priority="50"/>
-      <single type="router" x="((5*W-3)/6)" y="((5*H-3)/6)" priority="50"/> -->
+      <single type="router" x="((5*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
 
       </auto_layout>
 
