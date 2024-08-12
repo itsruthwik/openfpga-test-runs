@@ -1,4 +1,5 @@
 module router_wrap(
+// module router(
 
 input   [34:0] IDATA_0,
 input              IVALID_0, 
@@ -62,9 +63,10 @@ input    clk ,
 input    RST_    );
 
 
+
   always @(posedge clk ) begin
 
-    ODATA_0 <=  IDATA_0 ;
+    ODATA_0 <=  IDATA_0 + MY_XPOS + MY_YPOS ;
     OVALID_0 <=  IVALID_0 ;
     OVCH_0 <=  IVCH_0 ;
 
@@ -97,17 +99,21 @@ input    RST_    );
     OLCK_2 <= ILCK_2 ;
 
     OACK_3 <= IACK_3 ;
-    // ORDY_3 <= ILCK_3 ;
-    ORDY_3 <= MY_XPOS ;
+    ORDY_3 <= ILCK_3 ;
+    // ORDY_3 <= MY_XPOS ;
 
     OLCK_3 <= ILCK_3 ;
 
     OACK_4 <= IACK_4 ;
 
-    ORDY_4 <= MY_YPOS ;
+    ORDY_4 <= IACK_4 ;
     
     OLCK_4 <= ILCK_4 ;
 
   end
 
 endmodule
+
+ 
+
+

@@ -1,4 +1,5 @@
-`include "/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/define.h"
+// `include "/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/define.h"
+`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/define.h"
 
 module noc ( 
         /* n0 */ 
