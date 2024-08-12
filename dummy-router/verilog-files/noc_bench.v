@@ -1,4 +1,4 @@
-`include "/home/ruthwik/OpenFPGA/openfpga-test-runs/nocgen-files/src/define.h"
+`include "/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/define.h"
 
 module noc ( 
         /* n0 */ 
@@ -75,7 +75,12 @@ module noc (
 
         clk, 
         rst_ 
+
+        // extra_outputs
 );   
+
+
+// output [34:0] extra_outputs ;
 
 /* n0 */ 
 input   [`DATAW:0]      n0_idata_p0;  
@@ -296,6 +301,135 @@ wire    [`VCH:0]        n7_oack_1;
 wire    [`VCH:0]        n7_olck_1;   
 wire    [`VCHW:0]       n7_ovch_1;   
 
+//extras
+wire [`VCHW:0]   OVCH_4_x_n0 ;
+wire [`VCHW:0]   OVCH_3_x_n0 ;
+wire             OVALID_3_x_n0 ;
+wire [`DATAW:0]  ODATA_3_x_n0 ;
+wire [`VCHW:0]   OVCH_0_x_n0 ;
+wire             OVALID_0_x_n0 ;
+wire [`DATAW:0]  ODATA_0_x_n0 ;
+wire [`VCH:0]    OLCK_4_x_n0 ;
+wire [`VCH:0]    OACK_4_x_n0 ;
+wire [`VCH:0]    OLCK_3_x_n0 ;
+wire [`VCH:0]    ORDY_3_x_n0 ;
+wire [`VCH:0]    OACK_3_x_n0 ;
+wire [`VCH:0]    ORDY_2_x_n0 ;
+wire [`VCH:0]    ORDY_1_x_n0 ;
+wire [`VCH:0]    OLCK_0_x_n0 ;
+wire [`VCH:0]    ORDY_0_x_n0 ;
+wire [`VCH:0]    OACK_0_x_n0 ;
+wire [`VCHW:0]   OVCH_4_x_n1 ;
+wire [`VCHW:0]   OVCH_0_x_n1 ;
+wire             OVALID_0_x_n1 ;
+wire [`DATAW:0]  ODATA_0_x_n1 ;
+wire [`VCH:0]    OLCK_4_x_n1 ;
+wire [`VCH:0]    OACK_4_x_n1 ;
+wire [`VCH:0]    ORDY_3_x_n1 ;
+wire [`VCH:0]    ORDY_2_x_n1 ;
+wire [`VCH:0]    ORDY_1_x_n1 ;
+wire [`VCH:0]    OLCK_0_x_n1 ;
+wire [`VCH:0]    ORDY_0_x_n1 ;
+wire [`VCH:0]    OACK_0_x_n1 ;
+wire [`VCHW:0]   OVCH_4_x_n2 ;
+wire [`VCHW:0]   OVCH_1_x_n2 ;
+wire             OVALID_1_x_n2 ;
+wire [`DATAW:0]  ODATA_1_x_n2 ;
+wire [`VCHW:0]   OVCH_0_x_n2 ;
+wire             OVALID_0_x_n2 ;
+wire [`DATAW:0]  ODATA_0_x_n2 ;
+wire [`VCH:0]    OLCK_4_x_n2 ;
+wire [`VCH:0]    OACK_4_x_n2 ;
+wire [`VCH:0]    ORDY_3_x_n2 ;
+wire [`VCH:0]    ORDY_2_x_n2 ;
+wire [`VCH:0]    OLCK_1_x_n2 ;
+wire [`VCH:0]    ORDY_1_x_n2 ;
+wire [`VCH:0]    OACK_1_x_n2 ;
+wire [`VCH:0]    OLCK_0_x_n2 ;
+wire [`VCH:0]    ORDY_0_x_n2 ;
+wire [`VCH:0]    OACK_0_x_n2 ;
+wire [`VCHW:0]   OVCH_4_x_n3 ;
+wire [`VCHW:0]   OVCH_3_x_n3 ;
+wire             OVALID_3_x_n3 ;
+wire [`DATAW:0]  ODATA_3_x_n3 ;
+wire [`VCH:0]    OLCK_4_x_n3 ;
+wire [`VCH:0]    OACK_4_x_n3 ;
+wire [`VCH:0]    OLCK_3_x_n3 ;
+wire [`VCH:0]    ORDY_3_x_n3 ;
+wire [`VCH:0]    OACK_3_x_n3 ;
+wire [`VCH:0]    ORDY_2_x_n3 ;
+wire [`VCH:0]    ORDY_1_x_n3 ;
+wire [`VCH:0]    ORDY_0_x_n3 ;
+wire [`VCHW:0]   OVCH_4_x_n4 ;
+wire [`VCH:0]    OLCK_4_x_n4 ;
+wire [`VCH:0]    OACK_4_x_n4 ;
+wire [`VCH:0]    ORDY_3_x_n4 ;
+wire [`VCH:0]    ORDY_2_x_n4 ;
+wire [`VCH:0]    ORDY_1_x_n4 ;
+wire [`VCH:0]    ORDY_0_x_n4 ;
+wire [`VCHW:0]   OVCH_4_x_n5 ;
+wire [`VCHW:0]   OVCH_1_x_n5 ;
+wire             OVALID_1_x_n5 ;
+wire [`DATAW:0]  ODATA_1_x_n5 ;
+wire [`VCH:0]    OLCK_4_x_n5 ;
+wire [`VCH:0]    OACK_4_x_n5 ;
+wire [`VCH:0]    ORDY_3_x_n5 ;
+wire [`VCH:0]    ORDY_2_x_n5 ;
+wire [`VCH:0]    OLCK_1_x_n5 ;
+wire [`VCH:0]    ORDY_1_x_n5 ;
+wire [`VCH:0]    OACK_1_x_n5 ;
+wire [`VCH:0]    ORDY_0_x_n5 ;
+wire [`VCHW:0]   OVCH_4_x_n6 ;
+wire [`VCHW:0]   OVCH_3_x_n6 ;
+wire             OVALID_3_x_n6 ;
+wire [`DATAW:0]  ODATA_3_x_n6 ;
+wire [`VCHW:0]   OVCH_2_x_n6 ;
+wire             OVALID_2_x_n6 ;
+wire [`DATAW:0]  ODATA_2_x_n6 ;
+wire [`VCH:0]    OLCK_4_x_n6 ;
+wire [`VCH:0]    OACK_4_x_n6 ;
+wire [`VCH:0]    OLCK_3_x_n6 ;
+wire [`VCH:0]    ORDY_3_x_n6 ;
+wire [`VCH:0]    OACK_3_x_n6 ;
+wire [`VCH:0]    OLCK_2_x_n6 ;
+wire [`VCH:0]    ORDY_2_x_n6 ;
+wire [`VCH:0]    OACK_2_x_n6 ;
+wire [`VCH:0]    ORDY_1_x_n6 ;
+wire [`VCH:0]    ORDY_0_x_n6 ;
+wire [`VCHW:0]   OVCH_4_x_n7 ;
+wire [`VCHW:0]   OVCH_2_x_n7 ;
+wire             OVALID_2_x_n7 ;
+wire [`DATAW:0]  ODATA_2_x_n7 ;
+wire [`VCH:0]    OLCK_4_x_n7 ;
+wire [`VCH:0]    OACK_4_x_n7 ;
+wire [`VCH:0]    ORDY_3_x_n7 ;
+wire [`VCH:0]    OLCK_2_x_n7 ;
+wire [`VCH:0]    ORDY_2_x_n7 ;
+wire [`VCH:0]    OACK_2_x_n7 ;
+wire [`VCH:0]    ORDY_1_x_n7 ;
+wire [`VCH:0]    ORDY_0_x_n7 ;
+wire [`VCHW:0]   OVCH_4_x_n8 ;
+wire [`VCHW:0]   OVCH_2_x_n8 ;
+wire             OVALID_2_x_n8 ;
+wire [`DATAW:0]  ODATA_2_x_n8 ;
+wire [`VCHW:0]   OVCH_1_x_n8 ;
+wire             OVALID_1_x_n8 ;
+wire [`DATAW:0]  ODATA_1_x_n8 ;
+wire [`VCH:0]    OLCK_4_x_n8 ;
+wire [`VCH:0]    OACK_4_x_n8 ;
+wire [`VCH:0]    ORDY_3_x_n8 ;
+wire [`VCH:0]    OLCK_2_x_n8 ;
+wire [`VCH:0]    ORDY_2_x_n8 ;
+wire [`VCH:0]    OACK_2_x_n8 ;
+wire [`VCH:0]    OLCK_1_x_n8 ;
+wire [`VCH:0]    ORDY_1_x_n8 ;
+wire [`VCH:0]    OACK_1_x_n8 ;
+wire [`VCH:0]    ORDY_0_x_n8 ;
+
+
+
+// assign extra_outputs =  OVCH_4_x_n0 + OVCH_3_x_n0 + OVALID_3_x_n0 + ODATA_3_x_n0 + OVCH_0_x_n0 + OVALID_0_x_n0 + ODATA_0_x_n0 + OLCK_4_x_n0 + OACK_4_x_n0 + OLCK_3_x_n0 + ORDY_3_x_n0 + OACK_3_x_n0 + ORDY_2_x_n0 + ORDY_1_x_n0 + OLCK_0_x_n0 + ORDY_0_x_n0 + OACK_0_x_n0 + OVCH_4_x_n1 + OVCH_0_x_n1 + OVALID_0_x_n1 + ODATA_0_x_n1 + OLCK_4_x_n1 + OACK_4_x_n1 + ORDY_3_x_n1 + ORDY_2_x_n1 + ORDY_1_x_n1 + OLCK_0_x_n1 + ORDY_0_x_n1 + OACK_0_x_n1 + OVCH_4_x_n2 + OVCH_1_x_n2 + OVALID_1_x_n2 + ODATA_1_x_n2 + OVCH_0_x_n2 + OVALID_0_x_n2 + ODATA_0_x_n2 + OLCK_4_x_n2 + OACK_4_x_n2 + ORDY_3_x_n2 + ORDY_2_x_n2 + OLCK_1_x_n2 + ORDY_1_x_n2 + OACK_1_x_n2 + OLCK_0_x_n2 + ORDY_0_x_n2 + OACK_0_x_n2 + OVCH_4_x_n3 + OVCH_3_x_n3 + OVALID_3_x_n3 + ODATA_3_x_n3 + OLCK_4_x_n3 + OACK_4_x_n3 + OLCK_3_x_n3 + ORDY_3_x_n3 + OACK_3_x_n3 + ORDY_2_x_n3 + ORDY_1_x_n3 + ORDY_0_x_n3 + OVCH_4_x_n4 + OLCK_4_x_n4 + OACK_4_x_n4 + ORDY_3_x_n4 + ORDY_2_x_n4 + ORDY_1_x_n4 + ORDY_0_x_n4 + OVCH_4_x_n5 + OVCH_1_x_n5 + OVALID_1_x_n5 + ODATA_1_x_n5 + OLCK_4_x_n5 + OACK_4_x_n5 + ORDY_3_x_n5 + ORDY_2_x_n5 + OLCK_1_x_n5 + ORDY_1_x_n5 + OACK_1_x_n5 + ORDY_0_x_n5 + OVCH_4_x_n6 + OVCH_3_x_n6 + OVALID_3_x_n6 + ODATA_3_x_n6 + OVCH_2_x_n6 + OVALID_2_x_n6 + ODATA_2_x_n6 + OLCK_4_x_n6 + OACK_4_x_n6 + OLCK_3_x_n6 + ORDY_3_x_n6 + OACK_3_x_n6 + OLCK_2_x_n6 + ORDY_2_x_n6 + OACK_2_x_n6 + ORDY_1_x_n6 + ORDY_0_x_n6 + OVCH_4_x_n7 + OVCH_2_x_n7 + OVALID_2_x_n7 + ODATA_2_x_n7 + OLCK_4_x_n7 + OACK_4_x_n7 + ORDY_3_x_n7 + OLCK_2_x_n7 + ORDY_2_x_n7 + OACK_2_x_n7 + ORDY_1_x_n7 + ORDY_0_x_n7 + OVCH_4_x_n8 + OVCH_2_x_n8 + OVALID_2_x_n8 + ODATA_2_x_n8 + OVCH_1_x_n8 + OVALID_1_x_n8 + ODATA_1_x_n8 + OLCK_4_x_n8 + OACK_4_x_n8 + ORDY_3_x_n8 + OLCK_2_x_n8 + ORDY_2_x_n8 + OACK_2_x_n8 + OLCK_1_x_n8 + ORDY_1_x_n8 + OACK_1_x_n8 + ORDY_0_x_n8 ;
+
 router n0 ( 
         // .ROUTERID (32'b0),
         .IDATA_4 ( n0_idata_p0  ), 
@@ -341,11 +475,29 @@ router n0 (
         .IACK_3  ( `VCH_P1'b0   ),  
         .ILCK_3  ( `VCH_P1'b0   ),  
 
-        .MY_XPOS ( 0 ), 
-        .MY_YPOS ( 0 ), 
+        .MY_XPOS ( 2'b00 ), 
+        .MY_YPOS ( 2'b00 ), 
 
         .clk ( clk  ), 
-        .RST_( rst_ )  
+        .RST_( rst_ )  ,
+
+        .OVCH_4(OVCH_4_x_n0) ,
+        .OVCH_3(OVCH_3_x_n0) ,
+        .OVALID_3(OVALID_3_x_n0) ,
+        .ODATA_3(ODATA_3_x_n0) ,
+        .OVCH_0(OVCH_0_x_n0) ,
+        .OVALID_0(OVALID_0_x_n0) ,
+        .ODATA_0(ODATA_0_x_n0) ,
+        .OLCK_4(OLCK_4_x_n0) ,
+        .OACK_4(OACK_4_x_n0) ,
+        .OLCK_3(OLCK_3_x_n0) ,
+        .ORDY_3(ORDY_3_x_n0) ,
+        .OACK_3(OACK_3_x_n0) ,
+        .ORDY_2(ORDY_2_x_n0) ,
+        .ORDY_1(ORDY_1_x_n0) ,
+        .OLCK_0(OLCK_0_x_n0) ,
+        .ORDY_0(ORDY_0_x_n0) ,
+        .OACK_0(OACK_0_x_n0) 
 ); 
 
 router  n1 ( 
@@ -398,8 +550,21 @@ router  n1 (
         .IACK_3  ( n0_oack_1    ), 
         .ILCK_3  ( n0_olck_1    ), 
 
-        .MY_XPOS ( 1 ), 
-        .MY_YPOS ( 0 ), 
+        .MY_XPOS ( 2'b01 ), 
+        .MY_YPOS ( 2'b00 ), 
+
+        .OVCH_4(OVCH_4_x_n1) ,
+        .OVCH_0(OVCH_0_x_n1) ,
+        .OVALID_0(OVALID_0_x_n1) ,
+        .ODATA_0(ODATA_0_x_n1) ,
+        .OLCK_4(OLCK_4_x_n1) ,
+        .OACK_4(OACK_4_x_n1) ,
+        .ORDY_3(ORDY_3_x_n1) ,
+        .ORDY_2(ORDY_2_x_n1) ,
+        .ORDY_1(ORDY_1_x_n1) ,
+        .OLCK_0(OLCK_0_x_n1) ,
+        .ORDY_0(ORDY_0_x_n1) ,
+        .OACK_0(OACK_0_x_n1) ,        
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -450,8 +615,26 @@ router  n2 (
         .IACK_3  ( n1_oack_1    ), 
         .ILCK_3  ( n1_olck_1    ), 
 
-        .MY_XPOS ( 2 ), 
-        .MY_YPOS ( 0 ), 
+        .MY_XPOS ( 2'b10 ), 
+        .MY_YPOS ( 2'b00 ), 
+
+        .OVCH_4(OVCH_4_x_n2) ,
+        .OVCH_1(OVCH_1_x_n2) ,
+        .OVALID_1(OVALID_1_x_n2) ,
+        .ODATA_1(ODATA_1_x_n2) ,
+        .OVCH_0(OVCH_0_x_n2) ,
+        .OVALID_0(OVALID_0_x_n2) ,
+        .ODATA_0(ODATA_0_x_n2) ,
+        .OLCK_4(OLCK_4_x_n2) ,
+        .OACK_4(OACK_4_x_n2) ,
+        .ORDY_3(ORDY_3_x_n2) ,
+        .ORDY_2(ORDY_2_x_n2) ,
+        .OLCK_1(OLCK_1_x_n2) ,
+        .ORDY_1(ORDY_1_x_n2) ,
+        .OACK_1(OACK_1_x_n2) ,
+        .OLCK_0(OLCK_0_x_n2) ,
+        .ORDY_0(ORDY_0_x_n2) ,
+        .OACK_0(OACK_0_x_n2) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -507,8 +690,21 @@ router n3 (
         .IACK_3  ( `VCH_P1'b0   ),  
         .ILCK_3  ( `VCH_P1'b0   ),  
 
-        .MY_XPOS ( 0 ), 
-        .MY_YPOS ( 1 ), 
+        .MY_XPOS ( 2'b00 ), 
+        .MY_YPOS ( 2'b01 ), 
+
+        .OVCH_4(OVCH_4_x_n3) ,
+        .OVCH_3(OVCH_3_x_n3) ,
+        .OVALID_3(OVALID_3_x_n3) ,
+        .ODATA_3(ODATA_3_x_n3) ,
+        .OLCK_4(OLCK_4_x_n3) ,
+        .OACK_4(OACK_4_x_n3) ,
+        .OLCK_3(OLCK_3_x_n3) ,
+        .ORDY_3(ORDY_3_x_n3) ,
+        .OACK_3(OACK_3_x_n3) ,
+        .ORDY_2(ORDY_2_x_n3) ,
+        .ORDY_1(ORDY_1_x_n3) ,
+        .ORDY_0(ORDY_0_x_n3) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -569,8 +765,16 @@ router n4 (
         .IACK_3  ( n3_oack_1    ), 
         .ILCK_3  ( n3_olck_1    ), 
 
-        .MY_XPOS ( 1 ), 
-        .MY_YPOS ( 1 ), 
+        .MY_XPOS ( 2'b01 ), 
+        .MY_YPOS ( 2'b01 ), 
+
+        .OVCH_4(OVCH_4_x_n4) ,
+        .OLCK_4(OLCK_4_x_n4) ,
+        .OACK_4(OACK_4_x_n4) ,
+        .ORDY_3(ORDY_3_x_n4) ,
+        .ORDY_2(ORDY_2_x_n4) ,
+        .ORDY_1(ORDY_1_x_n4) ,
+        .ORDY_0(ORDY_0_x_n4) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -626,8 +830,21 @@ router  n5 (
         .IACK_3  ( n4_oack_1    ), 
         .ILCK_3  ( n4_olck_1    ), 
 
-        .MY_XPOS ( 2 ), 
-        .MY_YPOS ( 1 ), 
+        .MY_XPOS ( 2'b10 ), 
+        .MY_YPOS ( 2'b01 ), 
+
+        .OVCH_4(OVCH_4_x_n5) ,
+        .OVCH_1(OVCH_1_x_n5) ,
+        .OVALID_1(OVALID_1_x_n5) ,
+        .ODATA_1(ODATA_1_x_n5) ,
+        .OLCK_4(OLCK_4_x_n5) ,
+        .OACK_4(OACK_4_x_n5) ,
+        .ORDY_3(ORDY_3_x_n5) ,
+        .ORDY_2(ORDY_2_x_n5) ,
+        .OLCK_1(OLCK_1_x_n5) ,
+        .ORDY_1(ORDY_1_x_n5) ,
+        .OACK_1(OACK_1_x_n5) ,
+        .ORDY_0(ORDY_0_x_n5) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -678,8 +895,26 @@ router  n6 (
         .IACK_3  ( `VCH_P1'b0   ),  
         .ILCK_3  ( `VCH_P1'b0   ),  
 
-        .MY_XPOS ( 0 ), 
-        .MY_YPOS ( 2 ), 
+        .MY_XPOS ( 2'b00 ), 
+        .MY_YPOS ( 2'b10 ), 
+
+        .OVCH_4(OVCH_4_x_n6) ,
+        .OVCH_3(OVCH_3_x_n6) ,
+        .OVALID_3(OVALID_3_x_n6) ,
+        .ODATA_3(ODATA_3_x_n6) ,
+        .OVCH_2(OVCH_2_x_n6) ,
+        .OVALID_2(OVALID_2_x_n6) ,
+        .ODATA_2(ODATA_2_x_n6) ,
+        .OLCK_4(OLCK_4_x_n6) ,
+        .OACK_4(OACK_4_x_n6) ,
+        .OLCK_3(OLCK_3_x_n6) ,
+        .ORDY_3(ORDY_3_x_n6) ,
+        .OACK_3(OACK_3_x_n6) ,
+        .OLCK_2(OLCK_2_x_n6) ,
+        .ORDY_2(ORDY_2_x_n6) ,
+        .OACK_2(OACK_2_x_n6) ,
+        .ORDY_1(ORDY_1_x_n6) ,
+        .ORDY_0(ORDY_0_x_n6) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -735,8 +970,21 @@ router  n7 (
         .IACK_3  ( n6_oack_1    ), 
         .ILCK_3  ( n6_olck_1    ), 
 
-        .MY_XPOS ( 1 ), 
-        .MY_YPOS ( 2 ), 
+        .MY_XPOS ( 2'b01 ), 
+        .MY_YPOS ( 2'b10 ), 
+
+        .OVCH_4(OVCH_4_x_n7) ,
+        .OVCH_2(OVCH_2_x_n7) ,
+        .OVALID_2(OVALID_2_x_n7) ,
+        .ODATA_2(ODATA_2_x_n7) ,
+        .OLCK_4(OLCK_4_x_n7) ,
+        .OACK_4(OACK_4_x_n7) ,
+        .ORDY_3(ORDY_3_x_n7) ,
+        .OLCK_2(OLCK_2_x_n7) ,
+        .ORDY_2(ORDY_2_x_n7) ,
+        .OACK_2(OACK_2_x_n7) ,
+        .ORDY_1(ORDY_1_x_n7) ,
+        .ORDY_0(ORDY_0_x_n7) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
@@ -787,8 +1035,26 @@ router  n8 (
         .IACK_3  ( n7_oack_1    ), 
         .ILCK_3  ( n7_olck_1    ), 
 
-        .MY_XPOS ( 2 ), 
-        .MY_YPOS ( 2 ), 
+        .MY_XPOS ( 2'b10 ), 
+        .MY_YPOS ( 2'b10 ), 
+
+        .OVCH_4(OVCH_4_x_n8) ,
+        .OVCH_2(OVCH_2_x_n8) ,
+        .OVALID_2(OVALID_2_x_n8) ,
+        .ODATA_2(ODATA_2_x_n8) ,
+        .OVCH_1(OVCH_1_x_n8) ,
+        .OVALID_1(OVALID_1_x_n8) ,
+        .ODATA_1(ODATA_1_x_n8) ,
+        .OLCK_4(OLCK_4_x_n8) ,
+        .OACK_4(OACK_4_x_n8) ,
+        .ORDY_3(ORDY_3_x_n8) ,
+        .OLCK_2(OLCK_2_x_n8) ,
+        .ORDY_2(ORDY_2_x_n8) ,
+        .OACK_2(OACK_2_x_n8) ,
+        .OLCK_1(OLCK_1_x_n8) ,
+        .ORDY_1(ORDY_1_x_n8) ,
+        .OACK_1(OACK_1_x_n8) ,
+        .ORDY_0(ORDY_0_x_n8) ,
 
         .clk ( clk  ), 
         .RST_( rst_ )  
