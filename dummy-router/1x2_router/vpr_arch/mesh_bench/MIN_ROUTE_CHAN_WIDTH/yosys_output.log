@@ -1,0 +1,535 @@
+/opt/openfpga/build/yosys/bin/yosys yosys.ys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.44+16 (git sha1 1eaf4e079, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `yosys.ys' --
+
+1. Executing Verilog-2005 frontend: ./benchmark/mesh_bench.v
+Parsing Verilog input from `./benchmark/mesh_bench.v' to AST representation.
+Generating RTLIL representation for module `\mesh_bench'.
+./benchmark/mesh_bench.v:97: Warning: Identifier `\oack_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:98: Warning: Identifier `\ordy_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:99: Warning: Identifier `\olck_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:112: Warning: Identifier `\odata_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:113: Warning: Identifier `\ovalid_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:114: Warning: Identifier `\ovch_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:127: Warning: Identifier `\idata_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:128: Warning: Identifier `\ivalid_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:129: Warning: Identifier `\ivch_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:141: Warning: Identifier `\iack_1_rtr0' is implicitly declared.
+./benchmark/mesh_bench.v:142: Warning: Identifier `\ilck_1_rtr0' is implicitly declared.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v
+Parsing Verilog input from `/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v' to AST representation.
+Generating RTLIL representation for module `\router'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \mesh_bench
+
+3.2. Analyzing design hierarchy..
+Top module:  \mesh_bench
+Removed 0 unused modules.
+Warning: Resizing cell port mesh_bench.rtr0.ILCK_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.IACK_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.IDATA_1 from 1 bits to 35 bits.
+Warning: Resizing cell port mesh_bench.rtr0.ODATA_1 from 1 bits to 35 bits.
+Warning: Resizing cell port mesh_bench.rtr0.OLCK_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.ORDY_1 from 1 bits to 2 bits.
+Warning: Resizing cell port mesh_bench.rtr0.OACK_1 from 1 bits to 2 bits.
+
+4. Executing TECHMAP pass (map to technology primitives).
+
+4.1. Executing Verilog-2005 frontend: /opt/openfpga/test-runs/dummy-router/verilog-files/router2router_slice.v
+Parsing Verilog input from `/opt/openfpga/test-runs/dummy-router/verilog-files/router2router_slice.v' to AST representation.
+Generating RTLIL representation for module `\router'.
+Successfully finished Verilog frontend.
+
+4.2. Continuing TECHMAP pass.
+Using template router for cells of type router.
+No more expansions possible.
+<suppressed ~14 debug messages>
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 30 assignments to connections.
+
+5.4. Executing PROC_INIT pass (extract init attributes).
+
+5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+
+5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\router.\OACK_1' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$18' with positive edge clock.
+Creating register for signal `\router.\ORDY_1' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$19' with positive edge clock.
+Creating register for signal `\router.\OLCK_1' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$20' with positive edge clock.
+Creating register for signal `\router.\OACK_4' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$21' with positive edge clock.
+Creating register for signal `\router.\ORDY_4' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$22' with positive edge clock.
+Creating register for signal `\router.\OLCK_4' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$23' with positive edge clock.
+Creating register for signal `\router.\ODATA_1' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$24' with positive edge clock.
+Creating register for signal `\router.\OVALID_1' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$25' with positive edge clock.
+Creating register for signal `\router.\OVCH_1' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$26' with positive edge clock.
+Creating register for signal `\router.\ODATA_4' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$27' with positive edge clock.
+Creating register for signal `\router.\OVALID_4' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$28' with positive edge clock.
+Creating register for signal `\router.\OVCH_4' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$29' with positive edge clock.
+Creating register for signal `\router.\OACK_3' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$30' with positive edge clock.
+Creating register for signal `\router.\ORDY_3' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$31' with positive edge clock.
+Creating register for signal `\router.\OLCK_3' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$32' with positive edge clock.
+Creating register for signal `\router.\ODATA_3' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$33' with positive edge clock.
+Creating register for signal `\router.\OVALID_3' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$34' with positive edge clock.
+Creating register for signal `\router.\OVCH_3' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$35' with positive edge clock.
+Creating register for signal `\router.\OACK_0' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$36' with positive edge clock.
+Creating register for signal `\router.\ORDY_0' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$37' with positive edge clock.
+Creating register for signal `\router.\OLCK_0' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$38' with positive edge clock.
+Creating register for signal `\router.\OACK_2' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$39' with positive edge clock.
+Creating register for signal `\router.\ORDY_2' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$40' with positive edge clock.
+Creating register for signal `\router.\OLCK_2' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$41' with positive edge clock.
+Creating register for signal `\router.\ODATA_0' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$42' with positive edge clock.
+Creating register for signal `\router.\OVALID_0' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$43' with positive edge clock.
+Creating register for signal `\router.\OVCH_0' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$44' with positive edge clock.
+Creating register for signal `\router.\ODATA_2' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$45' with positive edge clock.
+Creating register for signal `\router.\OVALID_2' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$46' with positive edge clock.
+Creating register for signal `\router.\OVCH_2' using process `\router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+  created $dff cell `$procdff$47' with positive edge clock.
+
+5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `router.$proc$/opt/openfpga/test-runs/dummy-router/verilog-files/dummy_router3.v:67$1'.
+Cleaned up 0 empty switches.
+
+5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+6. Executing FLATTEN pass (flatten design).
+
+7. Executing TRIBUF pass.
+
+8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+Removed 0 unused cells and 565 unused wires.
+<suppressed ~12 debug messages>
+
+10. Executing DEMINOUT pass (demote inout ports to input or output).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+11.9. Finished OPT passes. (There is nothing left to do.)
+
+12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+14. Executing CHECK pass (checking for obvious problems).
+Checking module mesh_bench...
+Warning: Wire mesh_bench.\extra_outputs [35] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [34] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [33] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [32] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [31] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [30] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [29] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [28] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [27] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [26] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [25] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [24] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [23] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [22] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [21] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [20] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [19] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [18] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [17] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [16] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [15] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [14] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [13] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [12] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [11] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [10] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [9] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [8] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [7] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [6] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [5] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [4] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [3] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [2] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [1] is used but has no driver.
+Warning: Wire mesh_bench.\extra_outputs [0] is used but has no driver.
+Found and reported 36 problems.
+
+15. Executing OPT pass (performing simple optimizations).
+
+15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+15.9. Finished OPT passes. (There is nothing left to do.)
+
+16. Executing WREDUCE pass (reducing word size of cells).
+
+17. Executing PEEPOPT pass (run peephole optimizers).
+
+18. Executing PMUXTREE pass.
+
+19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+20. Executing TECHMAP pass (map to technology primitives).
+
+20.1. Executing Verilog-2005 frontend: /opt/openfpga/build/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/openfpga/build/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+21. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module mesh_bench:
+  created 0 $alu and 0 $macc cells.
+
+22. Executing SHARE pass (SAT-based resource sharing).
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+23.9. Finished OPT passes. (There is nothing left to do.)
+
+24. Executing FSM pass (extract and optimize FSM).
+
+24.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+24.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+24.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+24.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+24.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+24.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+24.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+25. Executing OPT pass (performing simple optimizations).
+
+25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+25.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+25.5. Finished fast OPT passes.
+
+26. Executing MEMORY pass.
+
+26.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+26.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+26.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+26.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+26.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+26.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+26.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+26.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+26.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+26.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+28. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+29. Executing TECHMAP pass (map to technology primitives).
+
+29.1. Executing Verilog-2005 frontend: /opt/openfpga/build/yosys/bin/../share/yosys/adff2dff.v
+Parsing Verilog input from `/opt/openfpga/build/yosys/bin/../share/yosys/adff2dff.v' to AST representation.
+Generating RTLIL representation for module `\adff2dff'.
+Successfully finished Verilog frontend.
+
+29.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+31. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+34. Executing OPT_DFF pass (perform DFF optimizations).
+
+35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+36. Executing OPT pass (performing simple optimizations).
+
+36.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+36.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+36.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mesh_bench..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+36.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mesh_bench.
+Performed a total of 0 changes.
+
+36.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mesh_bench'.
+Removed a total of 0 cells.
+
+36.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+36.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+
+36.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mesh_bench.
+
+36.9. Finished OPT passes. (There is nothing left to do.)
+
+37. Executing ABC pass (technology mapping using ABC).
+
+37.1. Extracting gate netlist of module `\mesh_bench' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+38. Executing HIERARCHY pass (managing design hierarchy).
+
+38.1. Analyzing design hierarchy..
+Top module:  \mesh_bench
+
+38.2. Analyzing design hierarchy..
+Top module:  \mesh_bench
+Removed 0 unused modules.
+
+39. Printing statistics.
+
+=== mesh_bench ===
+
+   Number of wires:                109
+   Number of wire bits:            764
+   Number of public wires:          69
+   Number of public wire bits:     469
+   Number of ports:                 25
+   Number of port bits:            206
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     router                          2
+
+40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mesh_bench..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~32 debug messages>
+
+41. Executing BLIF backend.
+
+Warnings: 54 unique messages, 54 total
+End of script. Logfile hash: e9e46d7c02, CPU: user 0.05s system 0.01s, MEM: 23.00 MB peak
+Yosys 0.44+16 (git sha1 1eaf4e079, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 26% 14x opt_clean (0 sec), 22% 7x read_verilog (0 sec), ...
+0

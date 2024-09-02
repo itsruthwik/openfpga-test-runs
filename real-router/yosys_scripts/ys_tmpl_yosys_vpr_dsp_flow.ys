@@ -8,7 +8,7 @@ read_verilog ${VERILOG_FILES}
 # Read technology library
 read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
 
-read_verilog -lib -specify /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/*v
+#read_verilog -lib -specify /home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/*v
 
 
 #########################

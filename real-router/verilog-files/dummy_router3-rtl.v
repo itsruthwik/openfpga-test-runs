@@ -1,4 +1,4 @@
-(* whitebox *)
+// (* whitebox *)
 module router(
 
 input   [34:0] IDATA_0,

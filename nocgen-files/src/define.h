@@ -66,4 +66,3 @@
 `define DSTY_LSB        2         
 `define DSTY_MSB        3         
 `define ARRAY_DIV2      1         
-
