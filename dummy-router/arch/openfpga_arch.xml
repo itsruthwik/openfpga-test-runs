@@ -2,13 +2,13 @@
     <technology_library>
         <device_library>
             <device_model name="logic" type="transistor">
-                <lib type="industry" corner="TOP_TT" ref="M" path="${OPENFPGA_PATH}/openfpga_flow/tech/PTM_45nm/45nm.pm"/>
+                <lib type="industry" corner="TOP_TT" ref="M" path="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/tech/PTM_45nm/45nm.pm"/>
                 <design vdd="0.9" pn_ratio="2"/>
                 <pmos name="pch" chan_length="40e-9" min_width="140e-9" variation="logic_transistor_var"/>
                 <nmos name="nch" chan_length="40e-9" min_width="140e-9" variation="logic_transistor_var"/>
             </device_model>
             <device_model name="io" type="transistor">
-                <lib type="academia" ref="M" path="${OPENFPGA_PATH}/openfpga_flow/tech/PTM_45nm/45nm.pm"/>
+                <lib type="academia" ref="M" path="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/tech/PTM_45nm/45nm.pm"/>
                 <design vdd="2.5" pn_ratio="3"/>
                 <pmos name="pch_25" chan_length="270e-9" min_width="320e-9" variation="io_transistor_var"/>
                 <nmos name="nch_25" chan_length="270e-9" min_width="320e-9" variation="io_transistor_var"/>
@@ -93,7 +93,7 @@
             <port type="sram" prefix="sram" size="1"/>
         </circuit_model>
         <!--DFF subckt ports should be defined as <D> <Q> <CLK> <RESET> <SET>  -->
-        <circuit_model type="ff" name="DFFSRQ" prefix="DFFSRQ" spice_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/spice/dff.sp" verilog_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/verilog/dff.v">
+        <circuit_model type="ff" name="DFFSRQ" prefix="DFFSRQ" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/dff.sp" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/verilog/dff.v">
             <design_technology type="cmos"/>
             <input_buffer exist="true" circuit_model_name="INVTX1"/>
             <output_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -116,7 +116,7 @@
             <port type="sram" prefix="sram" size="64"/>
         </circuit_model>
         <!--Scan-chain DFF subckt ports should be defined as <D> <Q> <Qb> <CLK> <RESET> <SET>  -->
-        <circuit_model type="ccff" name="DFFR" prefix="DFFR" spice_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/spice/dff.sp" verilog_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/verilog/dff.v">
+        <circuit_model type="ccff" name="DFFR" prefix="DFFR" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/dff.sp" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/verilog/dff.v">
             <design_technology type="cmos"/>
             <input_buffer exist="true" circuit_model_name="INVTX1"/>
             <output_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -126,7 +126,7 @@
             <port type="output" prefix="QN" size="1"/>
             <port type="clock" prefix="prog_clk" lib_name="CK" size="1" is_global="true" default_val="0" is_prog="true"/>
         </circuit_model>
-        <circuit_model type="iopad" name="GPIO" prefix="GPIO" spice_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/spice/gpio.sp" verilog_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/verilog/gpio.v">
+        <circuit_model type="iopad" name="GPIO" prefix="GPIO" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/gpio.sp" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/verilog/gpio.v">
             <design_technology type="cmos"/>
             <input_buffer exist="true" circuit_model_name="INVTX1"/>
             <output_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -135,68 +135,68 @@
             <port type="input" prefix="outpad" lib_name="A" size="1"/>
             <port type="output" prefix="inpad" lib_name="Y" size="1"/>
         </circuit_model>
-        <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="true" spice_netlist="${OPENFPGA_PATH}/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/home/ruthwik/OpenFPGA/openfpga-test_runs/nocgen/dummy-router/verilog-files/dummy_router_wrap.v">
+        <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="true" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/dummy_router_wrap.v">
           <design_technology type="cmos"/>
           <input_buffer exist="true" circuit_model_name="INVTX1"/>
           <output_buffer exist="true" circuit_model_name="INVTX1"/>
-          <port type="input" prefix="RST_" lib_name="RST_" size="1"/>  
-          <port type="input" prefix="MY_XPOS" lib_name="MY_XPOS" size="2"/>  
-          <port type="input" prefix="MY_YPOS" lib_name="MY_YPOS" size="2"/>  
-          <port type="input" prefix="IDATA_0" lib_name="IDATA_0" size="35"/>   
-          <port type="input" prefix="IDATA_1" lib_name="IDATA_1" size="35"/>   
-          <port type="input" prefix="IDATA_2" lib_name="IDATA_2" size="35"/>   
-          <port type="input" prefix="IDATA_3" lib_name="IDATA_3" size="35"/>   
-          <port type="input" prefix="IDATA_4" lib_name="IDATA_4" size="35"/>   
-          <port type="input" prefix="IVALID_0" lib_name="IVALID_0" size="1"/>  
-          <port type="input" prefix="IVALID_1" lib_name="IVALID_1" size="1"/>  
-          <port type="input" prefix="IVALID_2" lib_name="IVALID_2" size="1"/>  
-          <port type="input" prefix="IVALID_3" lib_name="IVALID_3" size="1"/>  
-          <port type="input" prefix="IVALID_4" lib_name="IVALID_4" size="1"/>  
-          <port type="input" prefix="IVCH_0" lib_name="IVCH_0" size="1"/>   
-          <port type="input" prefix="IVCH_1" lib_name="IVCH_1" size="1"/>    
-          <port type="input" prefix="IVCH_2" lib_name="IVCH_2" size="1"/>    
-          <port type="input" prefix="IVCH_3" lib_name="IVCH_3" size="1"/>    
-          <port type="input" prefix="IVCH_4" lib_name="IVCH_4" size="1"/>    
-          <port type="input" prefix="IACK_0" lib_name="IACK_0" size="2"/>    
-          <port type="input" prefix="IACK_1" lib_name="IACK_1" size="2"/>    
-          <port type="input" prefix="IACK_2" lib_name="IACK_2" size="2"/>    
-          <port type="input" prefix="IACK_3" lib_name="IACK_3" size="2"/>    
-          <port type="input" prefix="IACK_4" lib_name="IACK_4" size="2"/>    
-          <port type="input" prefix="ILCK_0" lib_name="ILCK_0" size="2"/>    
-          <port type="input" prefix="ILCK_1" lib_name="ILCK_1" size="2"/>    
-          <port type="input" prefix="ILCK_2" lib_name="ILCK_2" size="2"/>    
-          <port type="input" prefix="ILCK_3" lib_name="ILCK_3" size="2"/>    
-          <port type="input" prefix="ILCK_4" lib_name="ILCK_4" size="2"/>
-          <port type="output" prefix="ODATA_0" lib_name="ODATA_0" size="35"/>   
-          <port type="output" prefix="ODATA_1" lib_name="ODATA_1" size="35"/>   
-          <port type="output" prefix="ODATA_2" lib_name="ODATA_2" size="35"/>   
-          <port type="output" prefix="ODATA_3" lib_name="ODATA_3" size="35"/>   
-          <port type="output" prefix="ODATA_4" lib_name="ODATA_4" size="35"/>   
-          <port type="output" prefix="OVALID_0" lib_name="OVALID_0" size="1"/>   
-          <port type="output" prefix="OVALID_1" lib_name="OVALID_1" size="1"/>   
-          <port type="output" prefix="OVALID_2" lib_name="OVALID_2" size="1"/>   
-          <port type="output" prefix="OVALID_3" lib_name="OVALID_3" size="1"/>   
-          <port type="output" prefix="OVALID_4" lib_name="OVALID_4" size="1"/>   
-          <port type="output" prefix="OVCH_0" lib_name="OVCH_0" size="1"/>   
-          <port type="output" prefix="OVCH_1" lib_name="OVCH_1" size="1"/>   
-          <port type="output" prefix="OVCH_2" lib_name="OVCH_2" size="1"/>   
-          <port type="output" prefix="OVCH_3" lib_name="OVCH_3" size="1"/>   
-          <port type="output" prefix="OVCH_4" lib_name="OVCH_4" size="1"/>   
-          <port type="output" prefix="OACK_0" lib_name="OACK_0" size="2"/>   
-          <port type="output" prefix="OACK_1" lib_name="OACK_1" size="2"/>   
-          <port type="output" prefix="OACK_2" lib_name="OACK_2" size="2"/>   
-          <port type="output" prefix="OACK_3" lib_name="OACK_3" size="2"/>   
-          <port type="output" prefix="OACK_4" lib_name="OACK_4" size="2"/>   
-          <port type="output" prefix="ORDY_0" lib_name="ORDY_0" size="2"/>   
-          <port type="output" prefix="ORDY_1" lib_name="ORDY_1" size="2"/>   
-          <port type="output" prefix="ORDY_2" lib_name="ORDY_2" size="2"/>   
-          <port type="output" prefix="ORDY_3" lib_name="ORDY_3" size="2"/>   
-          <port type="output" prefix="ORDY_4" lib_name="ORDY_4" size="2"/>   
-          <port type="output" prefix="OLCK_0" lib_name="OLCK_0" size="2"/>   
-          <port type="output" prefix="OLCK_1" lib_name="OLCK_1" size="2"/>   
-          <port type="output" prefix="OLCK_2" lib_name="OLCK_2" size="2"/>   
-          <port type="output" prefix="OLCK_3" lib_name="OLCK_3" size="2"/>   
-          <port type="output" prefix="OLCK_4" lib_name="OLCK_4" size="2"/>    
+          <port type="input" prefix="rst_" lib_name="rst_" size="1"/>  
+          <port type="input" prefix="my_xpos" lib_name="my_xpos" size="2"/>  
+          <port type="input" prefix="my_ypos" lib_name="my_ypos" size="2"/>  
+          <port type="input" prefix="idata_0" lib_name="idata_0" size="35"/>   
+          <port type="input" prefix="idata_1" lib_name="idata_1" size="35"/>   
+          <port type="input" prefix="idata_2" lib_name="idata_2" size="35"/>   
+          <port type="input" prefix="idata_3" lib_name="idata_3" size="35"/>   
+          <port type="input" prefix="idata_4" lib_name="idata_4" size="35"/>   
+          <port type="input" prefix="ivalid_0" lib_name="ivalid_0" size="1"/>  
+          <port type="input" prefix="ivalid_1" lib_name="ivalid_1" size="1"/>  
+          <port type="input" prefix="ivalid_2" lib_name="ivalid_2" size="1"/>  
+          <port type="input" prefix="ivalid_3" lib_name="ivalid_3" size="1"/>  
+          <port type="input" prefix="ivalid_4" lib_name="ivalid_4" size="1"/>  
+          <port type="input" prefix="ivch_0" lib_name="ivch_0" size="1"/>   
+          <port type="input" prefix="ivch_1" lib_name="ivch_1" size="1"/>    
+          <port type="input" prefix="ivch_2" lib_name="ivch_2" size="1"/>    
+          <port type="input" prefix="ivch_3" lib_name="ivch_3" size="1"/>    
+          <port type="input" prefix="ivch_4" lib_name="ivch_4" size="1"/>    
+          <port type="input" prefix="iack_0" lib_name="iack_0" size="2"/>    
+          <port type="input" prefix="iack_1" lib_name="iack_1" size="2"/>    
+          <port type="input" prefix="iack_2" lib_name="iack_2" size="2"/>    
+          <port type="input" prefix="iack_3" lib_name="iack_3" size="2"/>    
+          <port type="input" prefix="iack_4" lib_name="iack_4" size="2"/>    
+          <port type="input" prefix="ilck_0" lib_name="ilck_0" size="2"/>    
+          <port type="input" prefix="ilck_1" lib_name="ilck_1" size="2"/>    
+          <port type="input" prefix="ilck_2" lib_name="ilck_2" size="2"/>    
+          <port type="input" prefix="ilck_3" lib_name="ilck_3" size="2"/>    
+          <port type="input" prefix="ilck_4" lib_name="ilck_4" size="2"/>
+          <port type="output" prefix="odata_0" lib_name="odata_0" size="35"/>   
+          <port type="output" prefix="odata_1" lib_name="odata_1" size="35"/>   
+          <port type="output" prefix="odata_2" lib_name="odata_2" size="35"/>   
+          <port type="output" prefix="odata_3" lib_name="odata_3" size="35"/>   
+          <port type="output" prefix="odata_4" lib_name="odata_4" size="35"/>   
+          <port type="output" prefix="ovalid_0" lib_name="ovalid_0" size="1"/>   
+          <port type="output" prefix="ovalid_1" lib_name="ovalid_1" size="1"/>   
+          <port type="output" prefix="ovalid_2" lib_name="ovalid_2" size="1"/>   
+          <port type="output" prefix="ovalid_3" lib_name="ovalid_3" size="1"/>   
+          <port type="output" prefix="ovalid_4" lib_name="ovalid_4" size="1"/>   
+          <port type="output" prefix="ovch_0" lib_name="ovch_0" size="1"/>   
+          <port type="output" prefix="ovch_1" lib_name="ovch_1" size="1"/>   
+          <port type="output" prefix="ovch_2" lib_name="ovch_2" size="1"/>   
+          <port type="output" prefix="ovch_3" lib_name="ovch_3" size="1"/>   
+          <port type="output" prefix="ovch_4" lib_name="ovch_4" size="1"/>   
+          <port type="output" prefix="oack_0" lib_name="oack_0" size="2"/>   
+          <port type="output" prefix="oack_1" lib_name="oack_1" size="2"/>   
+          <port type="output" prefix="oack_2" lib_name="oack_2" size="2"/>   
+          <port type="output" prefix="oack_3" lib_name="oack_3" size="2"/>   
+          <port type="output" prefix="oack_4" lib_name="oack_4" size="2"/>   
+          <port type="output" prefix="ordy_0" lib_name="ordy_0" size="2"/>   
+          <port type="output" prefix="ordy_1" lib_name="ordy_1" size="2"/>   
+          <port type="output" prefix="ordy_2" lib_name="ordy_2" size="2"/>   
+          <port type="output" prefix="ordy_3" lib_name="ordy_3" size="2"/>   
+          <port type="output" prefix="ordy_4" lib_name="ordy_4" size="2"/>   
+          <port type="output" prefix="olck_0" lib_name="olck_0" size="2"/>   
+          <port type="output" prefix="olck_1" lib_name="olck_1" size="2"/>   
+          <port type="output" prefix="olck_2" lib_name="olck_2" size="2"/>   
+          <port type="output" prefix="olck_3" lib_name="olck_3" size="2"/>   
+          <port type="output" prefix="olck_4" lib_name="olck_4" size="2"/>    
           <port type="clock" prefix="clk" size="1" is_global="true" default_val="0" is_clock="true"/>
         </circuit_model>
     </circuit_library>

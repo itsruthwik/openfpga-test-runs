@@ -1,117 +1,109 @@
 module router_wrap(
 // module router(
 
-input   [34:0] IDATA_0,
-input              IVALID_0, 
-input      IVCH_0,   
-output reg  [1:0]   OACK_0 ,   
-output reg  [1:0]   ORDY_0 ,   
-output reg  [1:0]   OLCK_0 ,   
-input   [34:0] IDATA_1 ,
-input              IVALID_1 ,
-input      IVCH_1 ,
-output reg  [1:0]   OACK_1 ,
-output reg  [1:0]   ORDY_1 ,
-output reg  [1:0]   OLCK_1 ,
-input   [34:0] IDATA_2 ,
-input              IVALID_2 , 
-input      IVCH_2 ,
-output reg  [1:0]   OACK_2 ,  
-output reg  [1:0]   ORDY_2 ,  
-output reg  [1:0]   OLCK_2 ,  
-input   [34:0] IDATA_3 ,  
-input              IVALID_3 , 
-input      IVCH_3 ,   
-output reg  [1:0]   OACK_3 ,   
-output reg  [1:0]   ORDY_3 ,   
-output reg  [1:0]   OLCK_3 ,   
-input   [34:0] IDATA_4 ,  
-input              IVALID_4 , 
-input      IVCH_4 ,   
-output reg  [1:0]   OACK_4 ,   
-output reg  [1:0]   ORDY_4 ,   
-output reg  [1:0]   OLCK_4 ,   
-output reg  [34:0] ODATA_0 , 
-output reg           OVALID_0 ,
-output reg     OVCH_0 ,   
-input   [1:0]   IACK_0 , 
-input   [1:0]   ILCK_0 ,
-output reg  [34:0] ODATA_1 ,
-output reg             OVALID_1 , 
-output reg     OVCH_1 ,
-input   [1:0]   IACK_1 ,   
-input   [1:0]   ILCK_1 ,   
-output reg  [34:0] ODATA_2 ,
-output reg             OVALID_2 ,
-output reg     OVCH_2 ,
-input   [1:0]   IACK_2 ,
-input   [1:0]   ILCK_2 ,
-output reg  [34:0] ODATA_3 ,
-output reg             OVALID_3 , 
-output reg     OVCH_3 ,   
-input   [1:0]   IACK_3 ,   
-input   [1:0]   ILCK_3 ,   
-output reg  [34:0] ODATA_4 , 
-output reg             OVALID_4 , 
-output reg     OVCH_4 ,   
-input   [1:0]   IACK_4 ,   
-input   [1:0]   ILCK_4 ,   
-input [1:0]  MY_XPOS ,
-input [1:0]  MY_YPOS ,
+input   [34:0] idata_0,
+input              ivalid_0, 
+input      ivch_0,   
+output reg  [1:0]   oack_0 ,   
+output reg  [1:0]   ordy_0 ,   
+output reg  [1:0]   olck_0 ,   
+input   [34:0] idata_1 ,
+input              ivalid_1 ,
+input      ivch_1 ,
+output reg  [1:0]   oack_1 ,
+output reg  [1:0]   ordy_1 ,
+output reg  [1:0]   olck_1 ,
+input   [34:0] idata_2 ,
+input              ivalid_2 , 
+input      ivch_2 ,
+output reg  [1:0]   oack_2 ,  
+output reg  [1:0]   ordy_2 ,  
+output reg  [1:0]   olck_2 ,  
+input   [34:0] idata_3 ,  
+input              ivalid_3 , 
+input      ivch_3 ,   
+output reg  [1:0]   oack_3 ,   
+output reg  [1:0]   ordy_3 ,   
+output reg  [1:0]   olck_3 ,   
+input   [34:0] idata_4 ,  
+input              ivalid_4 , 
+input      ivch_4 ,   
+output reg  [1:0]   oack_4 ,   
+output reg  [1:0]   ordy_4 ,   
+output reg  [1:0]   olck_4 ,   
+output reg  [34:0] odata_0 , 
+output reg           ovalid_0 ,
+output reg     ovch_0 ,   
+input   [1:0]   iack_0 , 
+input   [1:0]   ilck_0 ,
+output reg  [34:0] odata_1 ,
+output reg             ovalid_1 , 
+output reg     ovch_1 ,
+input   [1:0]   iack_1 ,   
+input   [1:0]   ilck_1 ,   
+output reg  [34:0] odata_2 ,
+output reg             ovalid_2 ,
+output reg     ovch_2 ,
+input   [1:0]   iack_2 ,
+input   [1:0]   ilck_2 ,
+output reg  [34:0] odata_3 ,
+output reg             ovalid_3 , 
+output reg     ovch_3 ,   
+input   [1:0]   iack_3 ,   
+input   [1:0]   ilck_3 ,   
+output reg  [34:0] odata_4 , 
+output reg             ovalid_4 , 
+output reg     ovch_4 ,   
+input   [1:0]   iack_4 ,   
+input   [1:0]   ilck_4 ,   
+input [1:0]  my_xpos ,
+input [1:0]  my_ypos ,
 
 input    clk ,
-input    RST_    );
+input    rst_    );
 
 
+always @(posedge clk ) begin
+    odata_0 <=  idata_0 ;
+    ovalid_0 <=  ivalid_0 ;
+    ovch_0 <=  ivch_0 ;
 
-  always @(posedge clk ) begin
+    odata_1 <=  idata_1 ;
+    ovalid_1 <=  ivalid_1 ;
+    ovch_1 <=  ivch_1 ;
 
-    ODATA_0 <=  IDATA_0 + MY_XPOS + MY_YPOS ;
-    OVALID_0 <=  IVALID_0 ;
-    OVCH_0 <=  IVCH_0 ;
+    odata_2 <=  idata_2 ;
+    ovalid_2 <=  ivalid_2 ;
+    ovch_2 <=  ivch_2 ;
 
-    ODATA_1 <=  IDATA_1 ;
-    OVALID_1 <=  IVALID_1 ;
-    OVCH_1 <=  IVCH_1 ;
+    odata_3 <=  idata_3 ;
+    ovalid_3 <=  ivalid_3 ;
+    ovch_3 <=  ivch_3 ;
 
-    ODATA_2 <=  IDATA_2 ;
-    OVALID_2 <=  IVALID_2 ;
-    OVCH_2 <=  IVCH_2 ;
+    odata_4 <=  idata_4 ;
+    ovalid_4 <=  ivalid_4 ;
+    ovch_4 <=  ivch_4 ;
 
-    ODATA_3 <=  IDATA_3 ;
-    OVALID_3 <=  IVALID_3 ;
-    OVCH_3 <=  IVCH_3 ;
+    oack_0 <= iack_0 ;
+    ordy_0 <= ilck_0 ;
+    olck_0 <= ilck_0 ;
 
-    ODATA_4 <=  IDATA_4 ;
-    OVALID_4 <=  IVALID_4 ;
-    OVCH_4 <=  IVCH_4 ;
+    oack_1 <= iack_1 ;
+    ordy_1 <= ilck_1 ;
+    olck_1 <= ilck_1 ;
 
-    OACK_0 <= IACK_0 ;
-    ORDY_0 <= ILCK_0 ;
-    OLCK_0 <= ILCK_0 ;
+    oack_2 <= iack_2 ;
+    ordy_2 <= my_ypos ;
+    olck_2 <= ilck_2 ;
 
-    OACK_1 <= IACK_1 ;
-    ORDY_1 <= ILCK_1 ;
-    OLCK_1 <= ILCK_1 ;
+    oack_3 <= iack_3 ;
+    ordy_3 <= my_xpos ;
+    olck_3 <= ilck_3 ;
 
-    OACK_2 <= IACK_2 ;
-    ORDY_2 <= ILCK_2 ;
-    OLCK_2 <= ILCK_2 ;
-
-    OACK_3 <= IACK_3 ;
-    ORDY_3 <= ILCK_3 ;
-    // ORDY_3 <= MY_XPOS ;
-
-    OLCK_3 <= ILCK_3 ;
-
-    OACK_4 <= IACK_4 ;
-
-    ORDY_4 <= IACK_4 ;
-    
-    OLCK_4 <= ILCK_4 ;
-
-  end
-
+    oack_4 <= iack_4 ;
+    ordy_4 <= {rst_, rst_} ;
+    olck_4 <= ilck_4 ;
+end
 endmodule
 
  
