@@ -1,0 +1,2805 @@
+#Timing report of worst 100 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: d_a[0].inpad[0] (.input clocked by clk)
+Endpoint  : out:d_o[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+d_a[0].inpad[0] (.input)                                         0.000     0.000
+d_o[1].in[2] (.names)                                            0.210     0.210
+d_o[1].out[0] (.names)                                           0.261     0.471
+out:d_o[1].outpad[0] (.output)                                   0.422     0.893
+data arrival time                                                          0.893
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          0.893
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.893
+
+
+#Path 2
+Startpoint: d_a[0].inpad[0] (.input clocked by clk)
+Endpoint  : out:d_o[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+d_a[0].inpad[0] (.input)                                         0.000     0.000
+d_o[0].in[0] (.names)                                            0.210     0.210
+d_o[0].out[0] (.names)                                           0.261     0.471
+out:d_o[0].outpad[0] (.output)                                   0.589     1.061
+data arrival time                                                          1.061
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.061
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.061
+
+
+#Path 3
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[5].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[5] (router)                        0.776     1.160
+out:n0_odata_p0[5].outpad[0] (.output)                             0.356     1.516
+data arrival time                                                            1.516
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.516
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.516
+
+
+#Path 4
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_ordy_p0[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].ordy_4[1] (router)                         0.776     1.160
+out:n0_ordy_p0[1].outpad[0] (.output)                              0.356     1.516
+data arrival time                                                            1.516
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.516
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.516
+
+
+#Path 5
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[9].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[9] (router)                        0.776     1.160
+out:n0_odata_p0[9].outpad[0] (.output)                             0.356     1.516
+data arrival time                                                            1.516
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.516
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.516
+
+
+#Path 6
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[17].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[17] (router)                       0.776     1.160
+out:n0_odata_p0[17].outpad[0] (.output)                            0.358     1.518
+data arrival time                                                            1.518
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.518
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.518
+
+
+#Path 7
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[34].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[34] (router)                       0.776     1.160
+out:n0_odata_p0[34].outpad[0] (.output)                            0.358     1.518
+data arrival time                                                            1.518
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.518
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.518
+
+
+#Path 8
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[27].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[27] (router)                       0.776     1.160
+out:n0_odata_p0[27].outpad[0] (.output)                            0.358     1.518
+data arrival time                                                            1.518
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.518
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.518
+
+
+#Path 9
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[11].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[11] (router)                       0.776     1.160
+out:n0_odata_p0[11].outpad[0] (.output)                            0.376     1.536
+data arrival time                                                            1.536
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.536
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.536
+
+
+#Path 10
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[24].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[24] (router)                       0.776     1.160
+out:n0_odata_p0[24].outpad[0] (.output)                            0.399     1.559
+data arrival time                                                            1.559
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.559
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.559
+
+
+#Path 11
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[14].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[14] (router)                                0.776     1.182
+out:n6_odata_p0[14].outpad[0] (.output)                          0.378     1.560
+data arrival time                                                          1.560
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.560
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.560
+
+
+#Path 12
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[9].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[9] (router)                                 0.776     1.182
+out:n6_odata_p0[9].outpad[0] (.output)                           0.378     1.560
+data arrival time                                                          1.560
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.560
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.560
+
+
+#Path 13
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_ordy_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].ordy_4[0] (router)                         0.776     1.160
+out:n0_ordy_p0[0].outpad[0] (.output)                              0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 14
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[2].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[2] (router)                        0.776     1.160
+out:n0_odata_p0[2].outpad[0] (.output)                             0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 15
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[4].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[4] (router)                        0.776     1.160
+out:n0_odata_p0[4].outpad[0] (.output)                             0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 16
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[0] (router)                        0.776     1.160
+out:n0_odata_p0[0].outpad[0] (.output)                             0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 17
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[20].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[20] (router)                       0.776     1.160
+out:n0_odata_p0[20].outpad[0] (.output)                            0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 18
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[25].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[25] (router)                       0.776     1.160
+out:n0_odata_p0[25].outpad[0] (.output)                            0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 19
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[31].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[31] (router)                       0.776     1.160
+out:n0_odata_p0[31].outpad[0] (.output)                            0.401     1.561
+data arrival time                                                            1.561
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.561
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.561
+
+
+#Path 20
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[31].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[31] (router)                                0.776     1.182
+out:n6_odata_p0[31].outpad[0] (.output)                          0.380     1.562
+data arrival time                                                          1.562
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.562
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.562
+
+
+#Path 21
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[3].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[3] (router)                                 0.776     1.182
+out:n6_odata_p0[3].outpad[0] (.output)                           0.380     1.562
+data arrival time                                                          1.562
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.562
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.562
+
+
+#Path 22
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[13].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                   0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                        0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[13] (router)                       0.776     1.183
+out:n2_odata_p0[13].outpad[0] (.output)                            0.399     1.582
+data arrival time                                                            1.582
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.582
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.582
+
+
+#Path 23
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[3].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                              Incr      Path
+---------------------------------------------------------------------------------
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+input external delay                                              0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                  0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                       0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[3] (router)                       0.776     1.183
+out:n2_odata_p0[3].outpad[0] (.output)                            0.399     1.582
+data arrival time                                                           1.582
+
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+clock uncertainty                                                 0.000     0.000
+output external delay                                             0.000     0.000
+data required time                                                          0.000
+---------------------------------------------------------------------------------
+data required time                                                         -0.000
+data arrival time                                                           1.582
+---------------------------------------------------------------------------------
+slack (MET)                                                                 1.582
+
+
+#Path 24
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[11].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                   0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                        0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[11] (router)                       0.776     1.183
+out:n2_odata_p0[11].outpad[0] (.output)                            0.399     1.582
+data arrival time                                                            1.582
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.582
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.582
+
+
+#Path 25
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                              Incr      Path
+---------------------------------------------------------------------------------
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+input external delay                                              0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                  0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                       0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[1] (router)                       0.776     1.183
+out:n2_odata_p0[1].outpad[0] (.output)                            0.401     1.584
+data arrival time                                                           1.584
+
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+clock uncertainty                                                 0.000     0.000
+output external delay                                             0.000     0.000
+data required time                                                          0.000
+---------------------------------------------------------------------------------
+data required time                                                         -0.000
+data arrival time                                                           1.584
+---------------------------------------------------------------------------------
+slack (MET)                                                                 1.584
+
+
+#Path 26
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[30].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                   0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                        0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[30] (router)                       0.776     1.183
+out:n2_odata_p0[30].outpad[0] (.output)                            0.401     1.584
+data arrival time                                                            1.584
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.584
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.584
+
+
+#Path 27
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_ordy_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                              Incr      Path
+---------------------------------------------------------------------------------
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+input external delay                                              0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                  0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                       0.407     0.407
+$techmap39\n2.oack_0[0].ordy_4[0] (router)                        0.776     1.183
+out:n2_ordy_p0[0].outpad[0] (.output)                             0.401     1.584
+data arrival time                                                           1.584
+
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+clock uncertainty                                                 0.000     0.000
+output external delay                                             0.000     0.000
+data required time                                                          0.000
+---------------------------------------------------------------------------------
+data required time                                                         -0.000
+data arrival time                                                           1.584
+---------------------------------------------------------------------------------
+slack (MET)                                                                 1.584
+
+
+#Path 28
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[24].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                   0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                        0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[24] (router)                       0.776     1.183
+out:n2_odata_p0[24].outpad[0] (.output)                            0.401     1.584
+data arrival time                                                            1.584
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.584
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.584
+
+
+#Path 29
+Startpoint: n2_idata_p0[8].inpad[0] (.input clocked by clk)
+Endpoint  : out:n2_odata_p0[9].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                              Incr      Path
+---------------------------------------------------------------------------------
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+input external delay                                              0.000     0.000
+n2_idata_p0[8].inpad[0] (.input)                                  0.000     0.000
+$techmap39\n2.oack_0[0].idata_4[8] (router)                       0.407     0.407
+$techmap39\n2.oack_0[0].odata_4[9] (router)                       0.776     1.183
+out:n2_odata_p0[9].outpad[0] (.output)                            0.401     1.584
+data arrival time                                                           1.584
+
+clock clk (rise edge)                                             0.000     0.000
+clock source latency                                              0.000     0.000
+clock uncertainty                                                 0.000     0.000
+output external delay                                             0.000     0.000
+data required time                                                          0.000
+---------------------------------------------------------------------------------
+data required time                                                         -0.000
+data arrival time                                                           1.584
+---------------------------------------------------------------------------------
+slack (MET)                                                                 1.584
+
+
+#Path 30
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[8].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[8] (router)                                 0.776     1.182
+out:n6_odata_p0[8].outpad[0] (.output)                           0.421     1.603
+data arrival time                                                          1.603
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.603
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.603
+
+
+#Path 31
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[18].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[18] (router)                                0.776     1.182
+out:n6_odata_p0[18].outpad[0] (.output)                          0.423     1.605
+data arrival time                                                          1.605
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.605
+
+
+#Path 32
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[0] (router)                                 0.776     1.182
+out:n6_odata_p0[0].outpad[0] (.output)                           0.423     1.605
+data arrival time                                                          1.605
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.605
+
+
+#Path 33
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[1] (router)                                 0.776     1.182
+out:n6_odata_p0[1].outpad[0] (.output)                           0.423     1.605
+data arrival time                                                          1.605
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.605
+
+
+#Path 34
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[30].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[30] (router)                                0.776     1.182
+out:n6_odata_p0[30].outpad[0] (.output)                          0.423     1.605
+data arrival time                                                          1.605
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.605
+
+
+#Path 35
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[1] (router)                        0.776     1.160
+out:n0_odata_p0[1].outpad[0] (.output)                             0.449     1.609
+data arrival time                                                            1.609
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.609
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.609
+
+
+#Path 36
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[10].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[10] (router)                       0.776     1.160
+out:n0_odata_p0[10].outpad[0] (.output)                            0.449     1.609
+data arrival time                                                            1.609
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.609
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.609
+
+
+#Path 37
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[20].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[20] (router)                                0.776     1.203
+out:n8_odata_p0[20].outpad[0] (.output)                          0.421     1.624
+data arrival time                                                          1.624
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.624
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.624
+
+
+#Path 38
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[31].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[31] (router)                                0.776     1.203
+out:n8_odata_p0[31].outpad[0] (.output)                          0.421     1.624
+data arrival time                                                          1.624
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.624
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.624
+
+
+#Path 39
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[32].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[32] (router)                                0.776     1.203
+out:n8_odata_p0[32].outpad[0] (.output)                          0.421     1.624
+data arrival time                                                          1.624
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.624
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.624
+
+
+#Path 40
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[7].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[7] (router)                                 0.776     1.203
+out:n8_odata_p0[7].outpad[0] (.output)                           0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 41
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_ordy_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].ordy_4[0] (router)                                  0.776     1.203
+out:n8_ordy_p0[0].outpad[0] (.output)                            0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 42
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[33].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[33] (router)                                0.776     1.203
+out:n8_odata_p0[33].outpad[0] (.output)                          0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 43
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[2].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[2] (router)                                 0.776     1.203
+out:n8_odata_p0[2].outpad[0] (.output)                           0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 44
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[27].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[27] (router)                                0.776     1.203
+out:n8_odata_p0[27].outpad[0] (.output)                          0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 45
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[4].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[4] (router)                                 0.776     1.203
+out:n8_odata_p0[4].outpad[0] (.output)                           0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 46
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[23].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[23] (router)                                0.776     1.203
+out:n8_odata_p0[23].outpad[0] (.output)                          0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 47
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[21].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[21] (router)                                0.776     1.203
+out:n8_odata_p0[21].outpad[0] (.output)                          0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 48
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[19].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[19] (router)                                0.776     1.203
+out:n8_odata_p0[19].outpad[0] (.output)                          0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 49
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[16].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[16] (router)                                0.776     1.203
+out:n8_odata_p0[16].outpad[0] (.output)                          0.423     1.627
+data arrival time                                                          1.627
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.627
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.627
+
+
+#Path 50
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_ordy_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].ordy_4[0] (router)                                  0.776     1.182
+out:n6_ordy_p0[0].outpad[0] (.output)                            0.452     1.635
+data arrival time                                                          1.635
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.635
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.635
+
+
+#Path 51
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[19].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[19] (router)                                0.776     1.182
+out:n6_odata_p0[19].outpad[0] (.output)                          0.452     1.635
+data arrival time                                                          1.635
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.635
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.635
+
+
+#Path 52
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[12].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[12] (router)                                0.776     1.182
+out:n6_odata_p0[12].outpad[0] (.output)                          0.452     1.635
+data arrival time                                                          1.635
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.635
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.635
+
+
+#Path 53
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[21].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[21] (router)                       0.776     1.160
+out:n0_odata_p0[21].outpad[0] (.output)                            0.490     1.650
+data arrival time                                                            1.650
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.650
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.650
+
+
+#Path 54
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[5].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[5] (router)                                 0.776     1.182
+out:n6_odata_p0[5].outpad[0] (.output)                           0.469     1.651
+data arrival time                                                          1.651
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.651
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.651
+
+
+#Path 55
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[20].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[20] (router)                                0.776     1.182
+out:n6_odata_p0[20].outpad[0] (.output)                          0.469     1.651
+data arrival time                                                          1.651
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.651
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.651
+
+
+#Path 56
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[29].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[29] (router)                       0.776     1.160
+out:n0_odata_p0[29].outpad[0] (.output)                            0.492     1.652
+data arrival time                                                            1.652
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.652
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.652
+
+
+#Path 57
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[7].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[7] (router)                        0.776     1.160
+out:n0_odata_p0[7].outpad[0] (.output)                             0.496     1.655
+data arrival time                                                            1.655
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.655
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.655
+
+
+#Path 58
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[26].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[26] (router)                       0.776     1.160
+out:n0_odata_p0[26].outpad[0] (.output)                            0.496     1.656
+data arrival time                                                            1.656
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.656
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.656
+
+
+#Path 59
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[15].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[15] (router)                       0.776     1.160
+out:n0_odata_p0[15].outpad[0] (.output)                            0.496     1.656
+data arrival time                                                            1.656
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.656
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.656
+
+
+#Path 60
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[29].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[29] (router)                                0.776     1.182
+out:n6_odata_p0[29].outpad[0] (.output)                          0.490     1.673
+data arrival time                                                          1.673
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.673
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.673
+
+
+#Path 61
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_ovalid_p0.outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].ovalid_4[0] (router)                       0.776     1.160
+out:n0_ovalid_p0.outpad[0] (.output)                               0.517     1.677
+data arrival time                                                            1.677
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.677
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.677
+
+
+#Path 62
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[13].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[13] (router)                       0.776     1.160
+out:n0_odata_p0[13].outpad[0] (.output)                            0.521     1.681
+data arrival time                                                            1.681
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.681
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.681
+
+
+#Path 63
+Startpoint: n0_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n0_odata_p0[14].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                               Incr      Path
+----------------------------------------------------------------------------------
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+input external delay                                               0.000     0.000
+n0_ivalid_p0.inpad[0] (.input)                                     0.000     0.000
+$techmap41\n0.oack_0[0].ivalid_4[0] (router)                       0.384     0.384
+$techmap41\n0.oack_0[0].odata_4[14] (router)                       0.776     1.160
+out:n0_odata_p0[14].outpad[0] (.output)                            0.521     1.681
+data arrival time                                                            1.681
+
+clock clk (rise edge)                                              0.000     0.000
+clock source latency                                               0.000     0.000
+clock uncertainty                                                  0.000     0.000
+output external delay                                              0.000     0.000
+data required time                                                           0.000
+----------------------------------------------------------------------------------
+data required time                                                          -0.000
+data arrival time                                                            1.681
+----------------------------------------------------------------------------------
+slack (MET)                                                                  1.681
+
+
+#Path 64
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[17].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[17] (router)                                0.776     1.182
+out:n6_odata_p0[17].outpad[0] (.output)                          0.512     1.694
+data arrival time                                                          1.694
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.694
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.694
+
+
+#Path 65
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[25].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[25] (router)                                0.776     1.182
+out:n6_odata_p0[25].outpad[0] (.output)                          0.512     1.694
+data arrival time                                                          1.694
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.694
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.694
+
+
+#Path 66
+Startpoint: n8_idata_p0[24].inpad[0] (.input clocked by clk)
+Endpoint  : out:n8_odata_p0[18].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n8_idata_p0[24].inpad[0] (.input)                                0.000     0.000
+n8_oack_0[0].idata_4[24] (router)                                0.427     0.427
+n8_oack_0[0].odata_4[18] (router)                                0.776     1.203
+out:n8_odata_p0[18].outpad[0] (.output)                          0.492     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 67
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[1] (router)                                 0.776     1.183
+out:n3_odata_p0[1].outpad[0] (.output)                           0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 68
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[7].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[7] (router)                                 0.776     1.183
+out:n3_odata_p0[7].outpad[0] (.output)                           0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 69
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[11].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[11] (router)                                0.776     1.183
+out:n3_odata_p0[11].outpad[0] (.output)                          0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 70
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[33].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[33] (router)                                0.776     1.183
+out:n3_odata_p0[33].outpad[0] (.output)                          0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 71
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[16].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[16] (router)                                0.776     1.183
+out:n3_odata_p0[16].outpad[0] (.output)                          0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 72
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[19].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[19] (router)                                0.776     1.183
+out:n3_odata_p0[19].outpad[0] (.output)                          0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 73
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[20].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[20] (router)                                0.776     1.183
+out:n3_odata_p0[20].outpad[0] (.output)                          0.512     1.695
+data arrival time                                                          1.695
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.695
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.695
+
+
+#Path 74
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[26].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[26] (router)                                0.776     1.182
+out:n6_odata_p0[26].outpad[0] (.output)                          0.514     1.696
+data arrival time                                                          1.696
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.696
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.696
+
+
+#Path 75
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[15].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[15] (router)                                0.776     1.182
+out:n6_odata_p0[15].outpad[0] (.output)                          0.514     1.696
+data arrival time                                                          1.696
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.696
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.696
+
+
+#Path 76
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[13].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[13] (router)                                0.776     1.182
+out:n6_odata_p0[13].outpad[0] (.output)                          0.514     1.696
+data arrival time                                                          1.696
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.696
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.696
+
+
+#Path 77
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[32].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[32] (router)                                0.776     1.182
+out:n6_odata_p0[32].outpad[0] (.output)                          0.514     1.696
+data arrival time                                                          1.696
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.696
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.696
+
+
+#Path 78
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[34].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[34] (router)                                0.776     1.183
+out:n3_odata_p0[34].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 79
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_ordy_p0[1].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].ordy_4[1] (router)                                  0.776     1.183
+out:n3_ordy_p0[1].outpad[0] (.output)                            0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 80
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[0] (router)                                 0.776     1.183
+out:n3_odata_p0[0].outpad[0] (.output)                           0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 81
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[3].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[3] (router)                                 0.776     1.183
+out:n3_odata_p0[3].outpad[0] (.output)                           0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 82
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[4].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[4] (router)                                 0.776     1.183
+out:n3_odata_p0[4].outpad[0] (.output)                           0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 83
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[5].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[5] (router)                                 0.776     1.183
+out:n3_odata_p0[5].outpad[0] (.output)                           0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 84
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_ordy_p0[0].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].ordy_4[0] (router)                                  0.776     1.183
+out:n3_ordy_p0[0].outpad[0] (.output)                            0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 85
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[8].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[8] (router)                                 0.776     1.183
+out:n3_odata_p0[8].outpad[0] (.output)                           0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 86
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[9].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[9] (router)                                 0.776     1.183
+out:n3_odata_p0[9].outpad[0] (.output)                           0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 87
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[10].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[10] (router)                                0.776     1.183
+out:n3_odata_p0[10].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 88
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[22].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[22] (router)                                0.776     1.183
+out:n3_odata_p0[22].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 89
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[12].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[12] (router)                                0.776     1.183
+out:n3_odata_p0[12].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 90
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[13].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[13] (router)                                0.776     1.183
+out:n3_odata_p0[13].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 91
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[14].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[14] (router)                                0.776     1.183
+out:n3_odata_p0[14].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 92
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[29].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[29] (router)                                0.776     1.183
+out:n3_odata_p0[29].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 93
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[28].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[28] (router)                                0.776     1.183
+out:n3_odata_p0[28].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 94
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[27].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[27] (router)                                0.776     1.183
+out:n3_odata_p0[27].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 95
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[25].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[25] (router)                                0.776     1.183
+out:n3_odata_p0[25].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 96
+Startpoint: n3_ivalid_p0.inpad[0] (.input clocked by clk)
+Endpoint  : out:n3_odata_p0[21].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n3_ivalid_p0.inpad[0] (.input)                                   0.000     0.000
+n3_oack_0[0].ivalid_4[0] (router)                                0.407     0.407
+n3_oack_0[0].odata_4[21] (router)                                0.776     1.183
+out:n3_odata_p0[21].outpad[0] (.output)                          0.514     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 97
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[22].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[22] (router)                                0.776     1.182
+out:n6_odata_p0[22].outpad[0] (.output)                          0.516     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 98
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[7].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[7] (router)                                 0.776     1.182
+out:n6_odata_p0[7].outpad[0] (.output)                           0.516     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 99
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[34].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[34] (router)                                0.776     1.182
+out:n6_odata_p0[34].outpad[0] (.output)                          0.516     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#Path 100
+Startpoint: n6_idata_p0[28].inpad[0] (.input clocked by clk)
+Endpoint  : out:n6_odata_p0[27].outpad[0] (.output clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+n6_idata_p0[28].inpad[0] (.input)                                0.000     0.000
+n6_oack_0[0].idata_4[28] (router)                                0.406     0.406
+n6_oack_0[0].odata_4[27] (router)                                0.776     1.182
+out:n6_odata_p0[27].outpad[0] (.output)                          0.516     1.698
+data arrival time                                                          1.698
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.698
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.698
+
+
+#End of timing report
