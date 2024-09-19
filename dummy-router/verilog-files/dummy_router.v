@@ -102,7 +102,7 @@ always @(posedge clk ) begin
     olck_3 <= ilck_3 ;
 
     oack_4 <= iack_4 ;
-    ordy_4 <= {rst_, rst_} ;
+    ordy_4 <= {1'b0, rst_} ;
     olck_4 <= ilck_4 ;
 end
 endmodule
