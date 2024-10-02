@@ -5,6 +5,7 @@
 **/fabric_bitstream.bit
 **/fabric_independent_bitstream.xml
 **/work/
+**/*.vcd
 **/transcript
 **/*.wlf
 **/3x3*/
