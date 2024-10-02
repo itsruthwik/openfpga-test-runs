@@ -135,7 +135,7 @@
             <port type="input" prefix="outpad" lib_name="A" size="1"/>
             <port type="output" prefix="inpad" lib_name="Y" size="1"/>
         </circuit_model>
-        <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="true" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/router_wrap1.v">
+        <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="true" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/router_wrap.v">
           <design_technology type="cmos"/>
           <input_buffer exist="true" circuit_model_name="INVTX1"/>
           <output_buffer exist="true" circuit_model_name="INVTX1"/>

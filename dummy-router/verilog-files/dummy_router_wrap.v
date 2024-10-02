@@ -1,4 +1,4 @@
-module router_wrap(
+module router(
 // module router(
 
 input   [0:34] idata_0,

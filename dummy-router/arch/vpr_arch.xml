@@ -244,40 +244,45 @@
 
       </auto_layout>
 
-    <fixed_layout name="large" width="14" height="14">
+    <fixed_layout name="large" width="24" height="24">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
-      <row type="io" starty="1" priority="30"/>
-      <row type="io" starty="12" priority="30"/>
-      <row type="io" starty="11" priority="30"/>
-      <row type="io" starty="10" priority="30"/>
 
       <!-- <fill type="clb" priority="10"/> -->
       <row type="clb" starty="5" priority="30"/>
-      <!-- <row type="clb" starty="7" priority="30"/> -->
 
-      <single type="router" x="2" y="2" priority="50"/>
-      <single type="router" x="2" y="4" priority="50"/>
-      <single type="router" x="2" y="6" priority="50"/>
-      <single type="router" x="2" y="8" priority="50"/>
+      <single type="router" x="3" y="3" priority="50"/>
+      <single type="router" x="3" y="6" priority="50"/>
+      <single type="router" x="3" y="9" priority="50"/>
+      <!-- <single type="router" x="3" y="12" priority="50"/> -->
 
-
-      <single type="router" x="4" y="2" priority="50"/>
-      <single type="router" x="4" y="4" priority="50"/>
-      <single type="router" x="4" y="6" priority="50"/>
-      <single type="router" x="4" y="8" priority="50"/>
-
-
-      <single type="router" x="6" y="2" priority="50"/>
-      <single type="router" x="6" y="4" priority="50"/>
+      <single type="router" x="6" y="3" priority="50"/>
       <single type="router" x="6" y="6" priority="50"/>
-      <single type="router" x="6" y="8" priority="50"/>
+      <single type="router" x="6" y="9" priority="50"/>
+      <!-- <single type="router" x="6" y="12" priority="50"/> -->
 
-      <single type="router" x="8" y="2" priority="50"/>
-      <single type="router" x="8" y="4" priority="50"/>
-      <single type="router" x="8" y="6" priority="50"/>
-      <single type="router" x="8" y="8" priority="50"/>
+      <single type="router" x="9" y="3" priority="50"/>
+      <single type="router" x="9" y="6" priority="50"/>
+      <single type="router" x="9" y="9" priority="50"/>
+      <!-- <single type="router" x="9" y="12" priority="50"/> -->
+
+      <!-- <single type="router" x="12" y="3" priority="50"/>
+      <single type="router" x="12" y="6" priority="50"/>
+      <single type="router" x="12" y="9" priority="50"/>
+      <single type="router" x="12" y="12" priority="50"/> -->
+
+      <!-- <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((5*H-3)/6)" priority="50"/> -->
 
     </fixed_layout>
    </layout>
@@ -324,6 +329,33 @@
     <direct name="3_to_1_oack_3"  from_pin="router.oack_3"  to_pin="router.iack_1"   x_offset="-2" y_offset="0" z_offset="0"/>
     <direct name="3_to_1_olck_3"  from_pin="router.olck_3"  to_pin="router.ilck_1"   x_offset="-2" y_offset="0" z_offset="0"/>
   </directlist> -->
+
+  <!-- <directlist> 
+    <direct name="2_to_0_odata_2"  from_pin="router.odata_2"  to_pin="router.idata_0"    y_offset="-2" />
+    <direct name="2_to_0_ovalid_2"  from_pin="router.ovalid_2"  to_pin="router.ivalid_0"    y_offset="-2" />
+    <direct name="2_to_0_ovch_2"  from_pin="router.ovch_2"  to_pin="router.ivch_0"    y_offset="-2" />
+    <direct name="2_to_0_oack_2"  from_pin="router.oack_2"  to_pin="router.iack_0"    y_offset="-2" />
+    <direct name="2_to_0_olck_2"  from_pin="router.olck_2"  to_pin="router.ilck_0"    y_offset="-2" />
+    
+    <direct name="0_to_2_odata_0"  from_pin="router.odata_0"  to_pin="router.idata_2"    y_offset="2" />
+    <direct name="0_to_2_ovalid_0"  from_pin="router.ovalid_0"  to_pin="router.ivalid_2"    y_offset="2" />
+    <direct name="0_to_2_ovch_0"  from_pin="router.ovch_0"  to_pin="router.ivch_2"    y_offset="2" />
+    <direct name="0_to_2_oack_0"  from_pin="router.oack_0"  to_pin="router.iack_2"    y_offset="2" />
+    <direct name="0_to_2_olck_0"  from_pin="router.olck_0"  to_pin="router.ilck_2"    y_offset="2" />
+    
+    <direct name="1_to_3_odata_1"  from_pin="router.odata_1"  to_pin="router.idata_3"   x_offset="2"  />
+    <direct name="1_to_3_ovalid_1"  from_pin="router.ovalid_1"  to_pin="router.ivalid_3"   x_offset="2"  />
+    <direct name="1_to_3_ovch_1"  from_pin="router.ovch_1"  to_pin="router.ivch_3"   x_offset="2"  />
+    <direct name="1_to_3_oack_1"  from_pin="router.oack_1"  to_pin="router.iack_3"   x_offset="2"  />
+    <direct name="1_to_3_olck_1"  from_pin="router.olck_1"  to_pin="router.ilck_3"   x_offset="2"  />
+    
+    <direct name="3_to_1_odata_3"  from_pin="router.odata_3"  to_pin="router.idata_1"   x_offset="-2"  />
+    <direct name="3_to_1_ovalid_3"  from_pin="router.ovalid_3"  to_pin="router.ivalid_1"   x_offset="-2"  />
+    <direct name="3_to_1_ovch_3"  from_pin="router.ovch_3"  to_pin="router.ivch_1"   x_offset="-2"  />
+    <direct name="3_to_1_oack_3"  from_pin="router.oack_3"  to_pin="router.iack_1"   x_offset="-2"  />
+    <direct name="3_to_1_olck_3"  from_pin="router.olck_3"  to_pin="router.ilck_1"   x_offset="-2"  />
+  </directlist> -->
+
    <complexblocklist>
       <pb_type name="io">
          <input name="outpad" num_pins="1"/>

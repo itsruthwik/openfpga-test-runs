@@ -8,7 +8,7 @@ read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
 # Technology mapping
 hierarchy -top ${TOP_MODULE}
 proc
-techmap -map /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/router2router_slice.v -max_iter 5
+#techmap -map /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/router2router_slice1.v -max_iter 5
 techmap -D NO_LUT -map +/adff2dff.v
 
 # Synthesis

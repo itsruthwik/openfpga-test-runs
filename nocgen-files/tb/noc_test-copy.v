@@ -3,7 +3,7 @@
 
 `timescale 1ns/10ps 
 
-module noc_test; 
+module noc_test;  
 
 parameter STEP  = 5.0; 
 parameter ARRAY = 3; 
@@ -4367,76 +4367,91 @@ initial begin
                 #(STEP); 
         end 
 
-        $write("*** send (src: 0 dst: 4 vch: 0 len: 3) *** \n");
-        send_packet_0(1, 0, 3);
+    //  $write("*** to 1 *** \n");
+    //     send_packet_0(1, 1, 1);
+    //     $write("*** to 2 *** \n");
+ 	// 	send_packet_0(2, 1, 2);
+    //     $write("*** to 3 *** \n");
+	// 	send_packet_0(3, 1, 3);
+    //     $write("*** to 4 *** \n");
+	// 	send_packet_0(4, 1, 4); 
+    //     $write("*** to 5 *** \n");
+	// 	send_packet_0(5, 1, 5);
+    //     $write("*** to 6 *** \n");
+	// 	send_packet_0(6, 1, 6);
+        // $write("*** to 7 *** \n");
+		// send_packet_0(7, 1, 7);
+        // $write("*** to 8 *** \n");
+		// send_packet_0(8, 1, 8);
+
         $write("*** send (src: 0 dst: 4 vch: 1 len: 1) *** \n");
         send_packet_0(4, 1, 1);
         $write("*** send (src: 0 dst: 4 vch: 1 len: 3) *** \n");
         send_packet_0(4, 1, 3);
         $write("*** send (src: 0 dst: 2 vch: 1 len: 3) *** \n");
         send_packet_0(2, 1, 3);
-        // $write("*** send (src: 0 dst: 8 vch: 0 len: 2) *** \n");
-        // send_packet_0(8, 0, 2);
-        // $write("*** send (src: 0 dst: 3 vch: 1 len: 1) *** \n");
-        // send_packet_0(3, 1, 1);
-        // $write("*** send (src: 0 dst: 6 vch: 0 len: 1) *** \n");
-        // send_packet_0(6, 0, 1);
-        // $write("*** send (src: 0 dst: 3 vch: 1 len: 1) *** \n");
-        // send_packet_0(3, 1, 1);
-        // $write("*** send (src: 0 dst: 5 vch: 0 len: 4) *** \n");
-        // send_packet_0(5, 0, 4);
-        // $write("*** send (src: 0 dst: 4 vch: 1 len: 4) *** \n");
-        // send_packet_0(4, 1, 4);
-        // $write("*** send (src: 0 dst: 1 vch: 0 len: 4) *** \n");
-        // send_packet_0(1, 0, 4);
-        // $write("*** send (src: 0 dst: 4 vch: 0 len: 2) *** \n");
-        // send_packet_0(4, 0, 2);
-        // $write("*** send (src: 0 dst: 6 vch: 1 len: 2) *** \n");
-        // send_packet_0(6, 1, 2);
-        // $write("*** send (src: 0 dst: 7 vch: 1 len: 3) *** \n");
-        // send_packet_0(7, 1, 3);
-        // $write("*** send (src: 0 dst: 6 vch: 1 len: 5) *** \n");
-        // send_packet_0(6, 1, 5);
-        // $write("*** send (src: 0 dst: 1 vch: 1 len: 3) *** \n");
-        // send_packet_0(1, 1, 3);
-        // $write("*** send (src: 0 dst: 4 vch: 0 len: 5) *** \n");
-        // send_packet_0(4, 0, 5);
-        // $write("*** send (src: 0 dst: 3 vch: 0 len: 1) *** \n");
-        // send_packet_0(3, 0, 1);
-        // $write("*** send (src: 0 dst: 6 vch: 0 len: 3) *** \n");
-        // send_packet_0(6, 0, 3);
-        // $write("*** send (src: 0 dst: 5 vch: 0 len: 4) *** \n");
-        // send_packet_0(5, 0, 4);
-        // $write("*** send (src: 0 dst: 8 vch: 1 len: 1) *** \n");
-        // send_packet_0(8, 1, 1);
-        // $write("*** send (src: 0 dst: 5 vch: 0 len: 5) *** \n");
-        // send_packet_0(5, 0, 5);
-        // $write("*** send (src: 0 dst: 1 vch: 0 len: 2) *** \n");
-        // send_packet_0(1, 0, 2);
-        // $write("*** send (src: 0 dst: 6 vch: 0 len: 1) *** \n");
-        // send_packet_0(6, 0, 1);
-        // $write("*** send (src: 0 dst: 1 vch: 1 len: 2) *** \n");
-        // send_packet_0(1, 1, 2);
-        // $write("*** send (src: 0 dst: 4 vch: 0 len: 1) *** \n");
-        // send_packet_0(4, 0, 1);
-        // $write("*** send (src: 0 dst: 1 vch: 1 len: 4) *** \n");
-        // send_packet_0(1, 1, 4);
-        // $write("*** send (src: 0 dst: 7 vch: 1 len: 2) *** \n");
-        // send_packet_0(7, 1, 2);
-        // $write("*** send (src: 0 dst: 6 vch: 0 len: 3) *** \n");
-        // send_packet_0(6, 0, 3);
-        // $write("*** send (src: 0 dst: 6 vch: 1 len: 3) *** \n");
-        // send_packet_0(6, 1, 3);
-        // $write("*** send (src: 0 dst: 2 vch: 1 len: 3) *** \n");
-        // send_packet_0(2, 1, 3);
-        // $write("*** send (src: 0 dst: 5 vch: 1 len: 4) *** \n");
-        // send_packet_0(5, 1, 4);
+        $write("*** send (src: 0 dst: 8 vch: 0 len: 2) *** \n");
+        send_packet_0(8, 0, 2);
+        $write("*** send (src: 0 dst: 3 vch: 1 len: 1) *** \n");
+        send_packet_0(3, 1, 1);
+        $write("*** send (src: 0 dst: 6 vch: 0 len: 1) *** \n");
+        send_packet_0(6, 0, 1);
+        $write("*** send (src: 0 dst: 3 vch: 1 len: 1) *** \n");
+        send_packet_0(3, 1, 1);
+        $write("*** send (src: 0 dst: 5 vch: 0 len: 4) *** \n");
+        send_packet_0(5, 0, 4);
+        $write("*** send (src: 0 dst: 4 vch: 1 len: 4) *** \n");
+        send_packet_0(4, 1, 4);
+        $write("*** send (src: 0 dst: 1 vch: 0 len: 4) *** \n");
+        send_packet_0(1, 0, 4);
+        $write("*** send (src: 0 dst: 4 vch: 0 len: 2) *** \n");
+        send_packet_0(4, 0, 2);
+        $write("*** send (src: 0 dst: 6 vch: 1 len: 2) *** \n");
+        send_packet_0(6, 1, 2);
+        $write("*** send (src: 0 dst: 7 vch: 1 len: 3) *** \n");
+        send_packet_0(7, 1, 3);
+        $write("*** send (src: 0 dst: 6 vch: 1 len: 5) *** \n");
+        send_packet_0(6, 1, 5);
+        $write("*** send (src: 0 dst: 1 vch: 1 len: 3) *** \n");
+        send_packet_0(1, 1, 3);
+        $write("*** send (src: 0 dst: 4 vch: 0 len: 5) *** \n");
+        send_packet_0(4, 0, 5);
+        $write("*** send (src: 0 dst: 3 vch: 0 len: 1) *** \n");
+        send_packet_0(3, 0, 1);
+        $write("*** send (src: 0 dst: 6 vch: 0 len: 3) *** \n");
+        send_packet_0(6, 0, 3);
+        $write("*** send (src: 0 dst: 5 vch: 0 len: 4) *** \n");
+        send_packet_0(5, 0, 4);
+        $write("*** send (src: 0 dst: 8 vch: 1 len: 1) *** \n");
+        send_packet_0(8, 1, 1);
+        $write("*** send (src: 0 dst: 5 vch: 0 len: 5) *** \n");
+        send_packet_0(5, 0, 5);
+        $write("*** send (src: 0 dst: 1 vch: 0 len: 2) *** \n");
+        send_packet_0(1, 0, 2);
+        $write("*** send (src: 0 dst: 6 vch: 0 len: 1) *** \n");
+        send_packet_0(6, 0, 1);
+        $write("*** send (src: 0 dst: 1 vch: 1 len: 2) *** \n");
+        send_packet_0(1, 1, 2);
+        $write("*** send (src: 0 dst: 4 vch: 0 len: 1) *** \n");
+        send_packet_0(4, 0, 1);
+        $write("*** send (src: 0 dst: 1 vch: 1 len: 4) *** \n");
+        send_packet_0(1, 1, 4);
+        $write("*** send (src: 0 dst: 7 vch: 1 len: 2) *** \n");
+        send_packet_0(7, 1, 2);
+        $write("*** send (src: 0 dst: 6 vch: 0 len: 3) *** \n");
+        send_packet_0(6, 0, 3);
+        $write("*** send (src: 0 dst: 6 vch: 1 len: 3) *** \n");
+        send_packet_0(6, 1, 3);
+        $write("*** send (src: 0 dst: 2 vch: 1 len: 3) *** \n");
+        send_packet_0(2, 1, 3);
+        $write("*** send (src: 0 dst: 5 vch: 1 len: 4) *** \n");
+        send_packet_0(5, 1, 4);
 end 
 
 // /* packet generator for n1 */ 
 // initial begin 
-        // #(STEP / 2); 
-        // #(STEP * 10); 
+//         #(STEP / 2); 
+//         #(STEP * 10); 
 //         while (~ready) begin 
 //                 #(STEP); 
 //         end 
@@ -4943,12 +4958,12 @@ end
 //         send_packet_7(3, 0, 1);
 //         $write("*** send (src: 7 dst: 1 vch: 0 len: 2) *** \n");
 //         send_packet_7(1, 0, 2);
-//         $write("*** send (src: 7 dst: 8 vch: 1 len: 2) *** \n");
-//         send_packet_7(8, 1, 2);
 //         $write("*** send (src: 7 dst: 2 vch: 1 len: 1) *** \n");
 //         send_packet_7(2, 1, 1);
 //         $write("*** send (src: 7 dst: 5 vch: 0 len: 3) *** \n");
 //         send_packet_7(5, 0, 3);
+// 		$write("*** send (src: 7 dst: 8 vch: 1 len: 2) *** \n");
+//         send_packet_7(8, 1, 2);
 // end 
 
 // /* packet generator for n8 */ 

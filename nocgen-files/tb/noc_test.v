@@ -1514,7 +1514,7 @@ integer                 n8_sent, n8_recv;
 	//         .rst_( rst_ )  
 // ); 
 
-    // noc REF_DUT(
+ // noc REF_DUT(
 	//         .n0_idata_p0({n0_idata_p0_34_, n0_idata_p0_33_, n0_idata_p0_32_, n0_idata_p0_31_, n0_idata_p0_30_, n0_idata_p0_29_, n0_idata_p0_28_, n0_idata_p0_27_, n0_idata_p0_26_, n0_idata_p0_25_, n0_idata_p0_24_, n0_idata_p0_23_, n0_idata_p0_22_, n0_idata_p0_21_, n0_idata_p0_20_, n0_idata_p0_19_, n0_idata_p0_18_, n0_idata_p0_17_, n0_idata_p0_16_, n0_idata_p0_15_, n0_idata_p0_14_, n0_idata_p0_13_, n0_idata_p0_12_, n0_idata_p0_11_, n0_idata_p0_10_, n0_idata_p0_9_, n0_idata_p0_8_, n0_idata_p0_7_, n0_idata_p0_6_, n0_idata_p0_5_, n0_idata_p0_4_, n0_idata_p0_3_, n0_idata_p0_2_, n0_idata_p0_1_, n0_idata_p0_0_ }),
 	//         .n0_ivalid_p0(n0_ivalid_p0),
 	//         .n0_ivch_p0(n0_ivch_p0),

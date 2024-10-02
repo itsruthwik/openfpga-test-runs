@@ -76,11 +76,18 @@ module noc (
         n8_ovalid_p0, 
 
         clk, 
-        rst_ 
+        rst_ ,
+        d_a ,
+        d_b ,
+        d_o
 
 );   
 
+input [1:0] d_a;
+input [1:0] d_b;
+output [1:0] d_o;
 
+assign d_o = d_a + d_b ;
 
 /* n0 */ 
 input   [`DATAW:0]      n0_idata_p0;  
