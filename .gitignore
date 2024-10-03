@@ -4,6 +4,7 @@
 **/*autocheck_top_tb.v
 **/fabric_bitstream.bit
 **/fabric_independent_bitstream.xml
+**/SDC_analysis/
 **/work/
 **/*.vcd
 **/transcript

@@ -212,28 +212,31 @@
     <routing_segment>
         <segment name="L4" circuit_model_name="chan_segment"/>
     </routing_segment>
-  <!-- <direct_connection>
-    <direct name="2_to_0_odata_2" circuit_model_name="direct_interc" type="inter_column" y_dir="negative"/>
-    <direct name="2_to_0_ovalid_2" circuit_model_name="direct_interc" type="inter_column" y_dir="negative"/>
-    <direct name="2_to_0_ovch_2" circuit_model_name="direct_interc" type="inter_column" y_dir="negative"/>
-    <direct name="2_to_0_oack_2" circuit_model_name="direct_interc" type="inter_column" y_dir="negative"/>
-    <direct name="2_to_0_olck_2" circuit_model_name="direct_interc" type="inter_column" y_dir="negative"/>
-    <direct name="0_to_2_odata_0" circuit_model_name="direct_interc" type="inter_column" y_dir="positive"/>
-    <direct name="0_to_2_ovalid_0" circuit_model_name="direct_interc" type="inter_column" y_dir="positive"/>
-    <direct name="0_to_2_ovch_0" circuit_model_name="direct_interc" type="inter_column" y_dir="positive"/>
-    <direct name="0_to_2_oack_0" circuit_model_name="direct_interc" type="inter_column" y_dir="positive"/>
-    <direct name="0_to_2_olck_0" circuit_model_name="direct_interc" type="inter_column" y_dir="positive"/>
-    <direct name="1_to_3_odata_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"/>
-    <direct name="1_to_3_ovalid_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"/>
-    <direct name="1_to_3_ovch_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"/>
-    <direct name="1_to_3_oack_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"/>
-    <direct name="1_to_3_olck_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"/>
-    <direct name="3_to_1_odata_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"/>
-    <direct name="3_to_1_ovalid_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"/>
-    <direct name="3_to_1_ovch_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"/>
-    <direct name="3_to_1_oack_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"/>
-    <direct name="3_to_1_olck_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"/>
-  </direct_connection> -->
+  <direct_connection>
+    <direct name="2_to_0_odata_2" circuit_model_name="direct_interc" type="inter_row" x_dir="positive"  y_dir="negative"/>
+    <direct name="2_to_0_ovalid_2" circuit_model_name="direct_interc" type="inter_row" x_dir="positive"  y_dir="negative"/>
+    <direct name="2_to_0_ovch_2" circuit_model_name="direct_interc" type="inter_row" x_dir="positive"  y_dir="negative"/>
+    <direct name="2_to_0_oack_2" circuit_model_name="direct_interc" type="inter_row" x_dir="positive"  y_dir="negative"/>
+    <direct name="2_to_0_olck_2" circuit_model_name="direct_interc" type="inter_row" x_dir="positive"  y_dir="negative"/>
+
+    <direct name="0_to_2_odata_0" circuit_model_name="direct_interc" type="inter_row"  x_dir="positive"  y_dir="positive"/>
+    <direct name="0_to_2_ovalid_0" circuit_model_name="direct_interc" type="inter_row"  x_dir="positive"  y_dir="positive"/>
+    <direct name="0_to_2_ovch_0" circuit_model_name="direct_interc" type="inter_row"  x_dir="positive"  y_dir="positive"/>
+    <direct name="0_to_2_oack_0" circuit_model_name="direct_interc" type="inter_row"  x_dir="positive"  y_dir="positive"/>
+    <direct name="0_to_2_olck_0" circuit_model_name="direct_interc" type="inter_row"  x_dir="positive"  y_dir="positive"/>
+
+    <direct name="1_to_3_odata_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"  y_dir="positive"/>
+    <direct name="1_to_3_ovalid_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"  y_dir="positive"/>
+    <direct name="1_to_3_ovch_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"  y_dir="positive"/>
+    <direct name="1_to_3_oack_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"  y_dir="positive"/>
+    <direct name="1_to_3_olck_1" circuit_model_name="direct_interc" type="inter_column" x_dir="positive"  y_dir="positive"/>
+
+    <direct name="3_to_1_odata_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"  y_dir="positive"/>
+    <direct name="3_to_1_ovalid_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"  y_dir="positive"/>
+    <direct name="3_to_1_ovch_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"  y_dir="positive"/>
+    <direct name="3_to_1_oack_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"  y_dir="positive"/>
+    <direct name="3_to_1_olck_3" circuit_model_name="direct_interc" type="inter_column" x_dir="negative"  y_dir="positive"/>
+  </direct_connection>
     <pb_type_annotations>
         <pb_type name="clb">
             <interconnect name="crossbar" circuit_model_name="mux_2level"/>
