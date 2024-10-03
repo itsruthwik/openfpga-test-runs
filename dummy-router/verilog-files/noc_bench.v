@@ -309,132 +309,6 @@ wire    [`VCH:0]        n7_olck_1;
 wire    [`VCHW:0]       n7_ovch_1;   
 
 
-
-//extras
-// wire [`VCHW:0]   OVCH_4_x_n0 ;
-// wire [`VCHW:0]   OVCH_3_x_n0 ;
-// wire             OVALID_3_x_n0 ;
-// wire [`DATAW:0]  ODATA_3_x_n0 ;
-// wire [`VCHW:0]   OVCH_0_x_n0 ;
-// wire             OVALID_0_x_n0 ;
-// wire [`DATAW:0]  ODATA_0_x_n0 ;
-// wire [`VCH:0]    OLCK_4_x_n0 ;
-// wire [`VCH:0]    OACK_4_x_n0 ;
-// wire [`VCH:0]    OLCK_3_x_n0 ;
-// wire [`VCH:0]    ORDY_3_x_n0 ;
-// wire [`VCH:0]    OACK_3_x_n0 ;
-// wire [`VCH:0]    ORDY_2_x_n0 ;
-// wire [`VCH:0]    ORDY_1_x_n0 ;
-// wire [`VCH:0]    OLCK_0_x_n0 ;
-// wire [`VCH:0]    ORDY_0_x_n0 ;
-// wire [`VCH:0]    OACK_0_x_n0 ;
-// wire [`VCHW:0]   OVCH_4_x_n1 ;
-// wire [`VCHW:0]   OVCH_0_x_n1 ;
-// wire             OVALID_0_x_n1 ;
-// wire [`DATAW:0]  ODATA_0_x_n1 ;
-// wire [`VCH:0]    OLCK_4_x_n1 ;
-// wire [`VCH:0]    OACK_4_x_n1 ;
-// wire [`VCH:0]    ORDY_3_x_n1 ;
-// wire [`VCH:0]    ORDY_2_x_n1 ;
-// wire [`VCH:0]    ORDY_1_x_n1 ;
-// wire [`VCH:0]    OLCK_0_x_n1 ;
-// wire [`VCH:0]    ORDY_0_x_n1 ;
-// wire [`VCH:0]    OACK_0_x_n1 ;
-// wire [`VCHW:0]   OVCH_4_x_n2 ;
-// wire [`VCHW:0]   OVCH_1_x_n2 ;
-// wire             OVALID_1_x_n2 ;
-// wire [`DATAW:0]  ODATA_1_x_n2 ;
-// wire [`VCHW:0]   OVCH_0_x_n2 ;
-// wire             OVALID_0_x_n2 ;
-// wire [`DATAW:0]  ODATA_0_x_n2 ;
-// wire [`VCH:0]    OLCK_4_x_n2 ;
-// wire [`VCH:0]    OACK_4_x_n2 ;
-// wire [`VCH:0]    ORDY_3_x_n2 ;
-// wire [`VCH:0]    ORDY_2_x_n2 ;
-// wire [`VCH:0]    OLCK_1_x_n2 ;
-// wire [`VCH:0]    ORDY_1_x_n2 ;
-// wire [`VCH:0]    OACK_1_x_n2 ;
-// wire [`VCH:0]    OLCK_0_x_n2 ;
-// wire [`VCH:0]    ORDY_0_x_n2 ;
-// wire [`VCH:0]    OACK_0_x_n2 ;
-// wire [`VCHW:0]   OVCH_4_x_n3 ;
-// wire [`VCHW:0]   OVCH_3_x_n3 ;
-// wire             OVALID_3_x_n3 ;
-// wire [`DATAW:0]  ODATA_3_x_n3 ;
-// wire [`VCH:0]    OLCK_4_x_n3 ;
-// wire [`VCH:0]    OACK_4_x_n3 ;
-// wire [`VCH:0]    OLCK_3_x_n3 ;
-// wire [`VCH:0]    ORDY_3_x_n3 ;
-// wire [`VCH:0]    OACK_3_x_n3 ;
-// wire [`VCH:0]    ORDY_2_x_n3 ;
-// wire [`VCH:0]    ORDY_1_x_n3 ;
-// wire [`VCH:0]    ORDY_0_x_n3 ;
-// wire [`VCHW:0]   OVCH_4_x_n4 ;
-// wire [`VCH:0]    OLCK_4_x_n4 ;
-// wire [`VCH:0]    OACK_4_x_n4 ;
-// wire [`VCH:0]    ORDY_3_x_n4 ;
-// wire [`VCH:0]    ORDY_2_x_n4 ;
-// wire [`VCH:0]    ORDY_1_x_n4 ;
-// wire [`VCH:0]    ORDY_0_x_n4 ;
-// wire [`VCHW:0]   OVCH_4_x_n5 ;
-// wire [`VCHW:0]   OVCH_1_x_n5 ;
-// wire             OVALID_1_x_n5 ;
-// wire [`DATAW:0]  ODATA_1_x_n5 ;
-// wire [`VCH:0]    OLCK_4_x_n5 ;
-// wire [`VCH:0]    OACK_4_x_n5 ;
-// wire [`VCH:0]    ORDY_3_x_n5 ;
-// wire [`VCH:0]    ORDY_2_x_n5 ;
-// wire [`VCH:0]    OLCK_1_x_n5 ;
-// wire [`VCH:0]    ORDY_1_x_n5 ;
-// wire [`VCH:0]    OACK_1_x_n5 ;
-// wire [`VCH:0]    ORDY_0_x_n5 ;
-// wire [`VCHW:0]   OVCH_4_x_n6 ;
-// wire [`VCHW:0]   OVCH_3_x_n6 ;
-// wire             OVALID_3_x_n6 ;
-// wire [`DATAW:0]  ODATA_3_x_n6 ;
-// wire [`VCHW:0]   OVCH_2_x_n6 ;
-// wire             OVALID_2_x_n6 ;
-// wire [`DATAW:0]  ODATA_2_x_n6 ;
-// wire [`VCH:0]    OLCK_4_x_n6 ;
-// wire [`VCH:0]    OACK_4_x_n6 ;
-// wire [`VCH:0]    OLCK_3_x_n6 ;
-// wire [`VCH:0]    ORDY_3_x_n6 ;
-// wire [`VCH:0]    OACK_3_x_n6 ;
-// wire [`VCH:0]    OLCK_2_x_n6 ;
-// wire [`VCH:0]    ORDY_2_x_n6 ;
-// wire [`VCH:0]    OACK_2_x_n6 ;
-// wire [`VCH:0]    ORDY_1_x_n6 ;
-// wire [`VCH:0]    ORDY_0_x_n6 ;
-// wire [`VCHW:0]   OVCH_4_x_n7 ;
-// wire [`VCHW:0]   OVCH_2_x_n7 ;
-// wire             OVALID_2_x_n7 ;
-// wire [`DATAW:0]  ODATA_2_x_n7 ;
-// wire [`VCH:0]    OLCK_4_x_n7 ;
-// wire [`VCH:0]    OACK_4_x_n7 ;
-// wire [`VCH:0]    ORDY_3_x_n7 ;
-// wire [`VCH:0]    OLCK_2_x_n7 ;
-// wire [`VCH:0]    ORDY_2_x_n7 ;
-// wire [`VCH:0]    OACK_2_x_n7 ;
-// wire [`VCH:0]    ORDY_1_x_n7 ;
-// wire [`VCH:0]    ORDY_0_x_n7 ;
-// wire [`VCHW:0]   OVCH_4_x_n8 ;
-// wire [`VCHW:0]   OVCH_2_x_n8 ;
-// wire             OVALID_2_x_n8 ;
-// wire [`DATAW:0]  ODATA_2_x_n8 ;
-// wire [`VCHW:0]   OVCH_1_x_n8 ;
-// wire             OVALID_1_x_n8 ;
-// wire [`DATAW:0]  ODATA_1_x_n8 ;
-// wire [`VCH:0]    OLCK_4_x_n8 ;
-// wire [`VCH:0]    OACK_4_x_n8 ;
-// wire [`VCH:0]    ORDY_3_x_n8 ;
-// wire [`VCH:0]    OLCK_2_x_n8 ;
-// wire [`VCH:0]    ORDY_2_x_n8 ;
-// wire [`VCH:0]    OACK_2_x_n8 ;
-// wire [`VCH:0]    OLCK_1_x_n8 ;
-// wire [`VCH:0]    ORDY_1_x_n8 ;
-// wire [`VCH:0]    OACK_1_x_n8 ;
-// wire [`VCH:0]    ORDY_0_x_n8 ;
-
 router n0 ( 
         // .ROUTERID (32'b0),
         .idata_4 ( n0_idata_p0  ), 
@@ -446,11 +320,11 @@ router n0 (
         .iack_4  ( `VCH_P1'hff  ),  
         .ilck_4  ( `VCH_P1'h00  ),  
 
-        .idata_0 ( `DATAW_P1'b0 ),  
-        .ivalid_0( 1'b0         ),  
-        .ivch_0  ( `VCHW_P1'b0  ),  
-        .iack_0  ( `VCH_P1'b0   ),  
-        .ilck_0  ( `VCH_P1'b0   ),  
+        // .idata_0 ( `DATAW_P1'b0 ),  
+        // .ivalid_0( 1'b0         ),  
+        // .ivch_0  ( `VCHW_P1'b0  ),  
+        // .iack_0  ( `VCH_P1'b0   ),  
+        // .ilck_0  ( `VCH_P1'b0   ),  
 
         .idata_1 ( n1_odata_3   ), 
         .ivalid_1( n1_ovalid_3  ), 
@@ -474,11 +348,11 @@ router n0 (
         .iack_2  ( n3_oack_0    ), 
         .ilck_2  ( n3_olck_0    ), 
 
-        .idata_3 ( `DATAW_P1'b0 ),  
-        .ivalid_3( 1'b0         ),  
-        .ivch_3  ( `VCHW_P1'b0  ),  
-        .iack_3  ( `VCH_P1'b0   ),  
-        .ilck_3  ( `VCH_P1'b0   ),  
+        // .idata_3 ( `DATAW_P1'b0 ),  
+        // .ivalid_3( 1'b0         ),  
+        // .ivch_3  ( `VCHW_P1'b0  ),  
+        // .iack_3  ( `VCH_P1'b0   ),  
+        // .ilck_3  ( `VCH_P1'b0   ),  
 
         .my_xpos ( 2'b00 ), 
         .my_ypos ( 2'b00 ), 
@@ -507,9 +381,6 @@ router n0 (
 ); 
 
 
-// assign extra_outputs =  OVCH_4_x_n0 + OVCH_3_x_n0 + OVALID_3_x_n0 + ODATA_3_x_n0 + OVCH_0_x_n0 + OVALID_0_x_n0 + ODATA_0_x_n0 + OLCK_4_x_n0 + OACK_4_x_n0 + OLCK_3_x_n0 + ORDY_3_x_n0 + OACK_3_x_n0 + ORDY_2_x_n0 + ORDY_1_x_n0 + OLCK_0_x_n0 + ORDY_0_x_n0 + OACK_0_x_n0 + OVCH_4_x_n1 + OVCH_0_x_n1 + OVALID_0_x_n1 + ODATA_0_x_n1 + OLCK_4_x_n1 + OACK_4_x_n1 + ORDY_3_x_n1 + ORDY_2_x_n1 + ORDY_1_x_n1 + OLCK_0_x_n1 + ORDY_0_x_n1 + OACK_0_x_n1 + OVCH_4_x_n2 + OVCH_1_x_n2 + OVALID_1_x_n2 + ODATA_1_x_n2 + OVCH_0_x_n2 + OVALID_0_x_n2 + ODATA_0_x_n2 + OLCK_4_x_n2 + OACK_4_x_n2 + ORDY_3_x_n2 + ORDY_2_x_n2 + OLCK_1_x_n2 + ORDY_1_x_n2 + OACK_1_x_n2 + OLCK_0_x_n2 + ORDY_0_x_n2 + OACK_0_x_n2 + OVCH_4_x_n3 + OVCH_3_x_n3 + OVALID_3_x_n3 + ODATA_3_x_n3 + OLCK_4_x_n3 + OACK_4_x_n3 + OLCK_3_x_n3 + ORDY_3_x_n3 + OACK_3_x_n3 + ORDY_2_x_n3 + ORDY_1_x_n3 + ORDY_0_x_n3 + OVCH_4_x_n4 + OLCK_4_x_n4 + OACK_4_x_n4 + ORDY_3_x_n4 + ORDY_2_x_n4 + ORDY_1_x_n4 + ORDY_0_x_n4 + OVCH_4_x_n5 + OVCH_1_x_n5 + OVALID_1_x_n5 + ODATA_1_x_n5 + OLCK_4_x_n5 + OACK_4_x_n5 + ORDY_3_x_n5 + ORDY_2_x_n5 + OLCK_1_x_n5 + ORDY_1_x_n5 + OACK_1_x_n5 + ORDY_0_x_n5 + OVCH_4_x_n6 + OVCH_3_x_n6 + OVALID_3_x_n6 + ODATA_3_x_n6 + OVCH_2_x_n6 + OVALID_2_x_n6 + ODATA_2_x_n6 + OLCK_4_x_n6 + OACK_4_x_n6 + OLCK_3_x_n6 + ORDY_3_x_n6 + OACK_3_x_n6 + OLCK_2_x_n6 + ORDY_2_x_n6 + OACK_2_x_n6 + ORDY_1_x_n6 + ORDY_0_x_n6 + OVCH_4_x_n7 + OVCH_2_x_n7 + OVALID_2_x_n7 + ODATA_2_x_n7 + OLCK_4_x_n7 + OACK_4_x_n7 + ORDY_3_x_n7 + OLCK_2_x_n7 + ORDY_2_x_n7 + OACK_2_x_n7 + ORDY_1_x_n7 + ORDY_0_x_n7 + OVCH_4_x_n8 + OVCH_2_x_n8 + OVALID_2_x_n8 + ODATA_2_x_n8 + OVCH_1_x_n8 + OVALID_1_x_n8 + ODATA_1_x_n8 + OLCK_4_x_n8 + OACK_4_x_n8 + ORDY_3_x_n8 + OLCK_2_x_n8 + ORDY_2_x_n8 + OACK_2_x_n8 + OLCK_1_x_n8 + ORDY_1_x_n8 + OACK_1_x_n8 + ORDY_0_x_n8 ;
-
-
 router  n1 ( 
         // .    ROUTERID (1),
         .idata_4 ( n1_idata_p0  ), 
@@ -521,11 +392,11 @@ router  n1 (
         .iack_4  ( `VCH_P1'hff  ),  
         .ilck_4  ( `VCH_P1'h00  ),  
 
-        .idata_0 ( `DATAW_P1'b0 ),  
-        .ivalid_0( 1'b0         ),  
-        .ivch_0  ( `VCHW_P1'b0  ),  
-        .iack_0  ( `VCH_P1'b0   ),  
-        .ilck_0  ( `VCH_P1'b0   ),  
+        // .idata_0 ( `DATAW_P1'b0 ),  
+        // .ivalid_0( 1'b0         ),  
+        // .ivch_0  ( `VCHW_P1'b0  ),  
+        // .iack_0  ( `VCH_P1'b0   ),  
+        // .ilck_0  ( `VCH_P1'b0   ),  
 
         .idata_1 ( n2_odata_3   ), 
         .ivalid_1( n2_ovalid_3  ), 
@@ -591,17 +462,17 @@ router  n2 (
         .iack_4  ( `VCH_P1'hff  ),  
         .ilck_4  ( `VCH_P1'h00  ),  
 
-        .idata_0 ( `DATAW_P1'b0 ),  
-        .ivalid_0( 1'b0         ),  
-        .ivch_0  ( `VCHW_P1'b0  ),  
-        .iack_0  ( `VCH_P1'b0   ),  
-        .ilck_0  ( `VCH_P1'b0   ),  
+        // .idata_0 ( `DATAW_P1'b0 ),  
+        // .ivalid_0( 1'b0         ),  
+        // .ivch_0  ( `VCHW_P1'b0  ),  
+        // .iack_0  ( `VCH_P1'b0   ),  
+        // .ilck_0  ( `VCH_P1'b0   ),  
 
-        .idata_1 ( `DATAW_P1'b0 ),  
-        .ivalid_1( 1'b0         ),  
-        .ivch_1  ( `VCHW_P1'b0  ),  
-        .iack_1  ( `VCH_P1'b0   ),  
-        .ilck_1  ( `VCH_P1'b0   ),  
+        // .idata_1 ( `DATAW_P1'b0 ),  
+        // .ivalid_1( 1'b0         ),  
+        // .ivch_1  ( `VCHW_P1'b0  ),  
+        // .iack_1  ( `VCH_P1'b0   ),  
+        // .ilck_1  ( `VCH_P1'b0   ),  
 
         .idata_2 ( n5_odata_0   ), 
         .ivalid_2( n5_ovalid_0  ), 
@@ -694,11 +565,11 @@ router n3 (
         .iack_2  ( n6_oack_0    ), 
         .ilck_2  ( n6_olck_0    ), 
 
-        .idata_3 ( `DATAW_P1'b0 ),  
-        .ivalid_3( 1'b0         ),  
-        .ivch_3  ( `VCHW_P1'b0  ),  
-        .iack_3  ( `VCH_P1'b0   ),  
-        .ilck_3  ( `VCH_P1'b0   ),  
+        // .idata_3 ( `DATAW_P1'b0 ),  
+        // .ivalid_3( 1'b0         ),  
+        // .ivch_3  ( `VCHW_P1'b0  ),  
+        // .iack_3  ( `VCH_P1'b0   ),  
+        // .ilck_3  ( `VCH_P1'b0   ),  
 
         .my_xpos ( 2'b00 ), 
         .my_ypos ( 2'b01 ), 
@@ -812,11 +683,11 @@ router  n5 (
         .iack_0  ( n2_oack_2    ), 
         .ilck_0  ( n2_olck_2    ), 
 
-        .idata_1 ( `DATAW_P1'b0 ),  
-        .ivalid_1( 1'b0         ),  
-        .ivch_1  ( `VCHW_P1'b0  ),  
-        .iack_1  ( `VCH_P1'b0   ),  
-        .ilck_1  ( `VCH_P1'b0   ),  
+        // .idata_1 ( `DATAW_P1'b0 ),  
+        // .ivalid_1( 1'b0         ),  
+        // .ivch_1  ( `VCHW_P1'b0  ),  
+        // .iack_1  ( `VCH_P1'b0   ),  
+        // .ilck_1  ( `VCH_P1'b0   ),  
 
         .idata_2 ( n8_odata_0   ), 
         .ivalid_2( n8_ovalid_0  ), 
@@ -893,17 +764,17 @@ router  n6 (
         .iack_1  ( n7_oack_3    ), 
         .ilck_1  ( n7_olck_3    ), 
 
-        .idata_2 ( `DATAW_P1'b0 ),  
-        .ivalid_2( 1'b0         ),  
-        .ivch_2  ( `VCHW_P1'b0  ),  
-        .iack_2  ( `VCH_P1'b0   ),  
-        .ilck_2  ( `VCH_P1'b0   ),  
+        // .idata_2 ( `DATAW_P1'b0 ),  
+        // .ivalid_2( 1'b0         ),  
+        // .ivch_2  ( `VCHW_P1'b0  ),  
+        // .iack_2  ( `VCH_P1'b0   ),  
+        // .ilck_2  ( `VCH_P1'b0   ),  
 
-        .idata_3 ( `DATAW_P1'b0 ),  
-        .ivalid_3( 1'b0         ),  
-        .ivch_3  ( `VCHW_P1'b0  ),  
-        .iack_3  ( `VCH_P1'b0   ),  
-        .ilck_3  ( `VCH_P1'b0   ),  
+        // .idata_3 ( `DATAW_P1'b0 ),  
+        // .ivalid_3( 1'b0         ),  
+        // .ivch_3  ( `VCHW_P1'b0  ),  
+        // .iack_3  ( `VCH_P1'b0   ),  
+        // .ilck_3  ( `VCH_P1'b0   ),  
 
         .my_xpos ( 2'b00 ), 
         .my_ypos ( 2'b10 ), 
@@ -963,11 +834,11 @@ router  n7 (
         .iack_1  ( n8_oack_3    ), 
         .ilck_1  ( n8_olck_3    ), 
 
-        .idata_2 ( `DATAW_P1'b0 ),  
-        .ivalid_2( 1'b0         ),  
-        .ivch_2  ( `VCHW_P1'b0  ),  
-        .iack_2  ( `VCH_P1'b0   ),  
-        .ilck_2  ( `VCH_P1'b0   ),  
+        // .idata_2 ( `DATAW_P1'b0 ),  
+        // .ivalid_2( 1'b0         ),  
+        // .ivch_2  ( `VCHW_P1'b0  ),  
+        // .iack_2  ( `VCH_P1'b0   ),  
+        // .ilck_2  ( `VCH_P1'b0   ),  
 
         .idata_3 ( n6_odata_1   ), 
         .ivalid_3( n6_ovalid_1  ), 
@@ -1022,17 +893,17 @@ router  n8 (
         .iack_0  ( n5_oack_2    ), 
         .ilck_0  ( n5_olck_2    ), 
 
-        .idata_1 ( `DATAW_P1'b0 ),  
-        .ivalid_1( 1'b0         ),  
-        .ivch_1  ( `VCHW_P1'b0  ),  
-        .iack_1  ( `VCH_P1'b0   ),  
-        .ilck_1  ( `VCH_P1'b0   ),  
+        // .idata_1 ( `DATAW_P1'b0 ),  
+        // .ivalid_1( 1'b0         ),  
+        // .ivch_1  ( `VCHW_P1'b0  ),  
+        // .iack_1  ( `VCH_P1'b0   ),  
+        // .ilck_1  ( `VCH_P1'b0   ),  
 
-        .idata_2 ( `DATAW_P1'b0 ),  
-        .ivalid_2( 1'b0         ),  
-        .ivch_2  ( `VCHW_P1'b0  ),  
-        .iack_2  ( `VCH_P1'b0   ),  
-        .ilck_2  ( `VCH_P1'b0   ),  
+        // .idata_2 ( `DATAW_P1'b0 ),  
+        // .ivalid_2( 1'b0         ),  
+        // .ivch_2  ( `VCHW_P1'b0  ),  
+        // .iack_2  ( `VCH_P1'b0   ),  
+        // .ilck_2  ( `VCH_P1'b0   ),  
 
         .idata_3 ( n7_odata_1   ), 
         .ivalid_3( n7_ovalid_1  ), 
