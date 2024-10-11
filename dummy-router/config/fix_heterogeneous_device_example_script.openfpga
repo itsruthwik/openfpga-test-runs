@@ -1,6 +1,6 @@
 # Run VPR for the 'and' design
 #--write_rr_graph example_rr_graph.xml
-vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --constant_net_method route 
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --constant_net_method route --fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/config/noc.place
 
 # Read OpenFPGA architecture definition
 read_openfpga_arch -f ${OPENFPGA_ARCH_FILE}
@@ -46,6 +46,9 @@ write_fabric_bitstream --file fabric_bitstream.bit --format plain_text
 #  - Enable the use of explicit port mapping in Verilog netlist
 write_fabric_verilog --file ./SRC --explicit_port_mapping --include_timing --print_user_defined_template --verbose
 
+# Generate a bus group file by calling an external python script
+#ext_exec --command "python3 ../../../../config/bus_group_gen.py --task ../../../../config/noc_bus_group_task.yaml"
+
 # Write the Verilog testbench for FPGA fabric
 #  - We suggest the use of same output directory as fabric Verilog netlists
 #  - Must specify the reference benchmark file if you want to output any testbenches
@@ -68,7 +71,7 @@ write_pnr_sdc --file ./SDC
 write_sdc_disable_timing_configure_ports --file ./SDC/disable_configure_ports.sdc
 #
 ## Write the SDC to run timing analysis for a mapped FPGA fabric
-write_analysis_sdc --file ./SDC_analysis
+#write_analysis_sdc --file ./SDC_analysis
 
 # Finish and exit OpenFPGA
 exit
