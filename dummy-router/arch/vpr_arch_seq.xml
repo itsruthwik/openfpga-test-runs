@@ -168,63 +168,61 @@
           <output name="olck_2"  num_pins="2"/>  
           <output name="olck_3"  num_pins="2"/>  
           <output name="olck_4"  num_pins="2"/>  
-        <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
-          <fc_override port_name="idata_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="idata_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="idata_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="idata_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="ivalid_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ivalid_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ivalid_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ivalid_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="ivch_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ivch_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ivch_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ivch_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="iack_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="iack_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="iack_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="iack_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="ilck_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ilck_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ilck_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ilck_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="odata_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="odata_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="odata_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="odata_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="ovalid_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ovalid_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ovalid_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ovalid_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="ovch_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ovch_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ovch_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="ovch_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="oack_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="oack_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="oack_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="oack_3" fc_type="frac" fc_val="0"/>
-
-          <fc_override port_name="olck_0" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="olck_1" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="olck_2" fc_type="frac" fc_val="0"/>
-          <fc_override port_name="olck_3" fc_type="frac" fc_val="0"/>
-        </fc>
-          <pinlocations pattern="perimeter">
-          <!-- <pinlocations pattern="custom"> -->
-                <!-- <loc side="left">router.idata_3 router.ivalid_3 router.ivch_3 router.iack_3 router.ilck_3 router.odata_3 router.ovalid_3 router.ovch_3 router.oack_3 router.ordy_3 router.olck_3 router.odata_4 router.ovalid_4 router.ovch_4 router.oack_4 router.ordy_4 router.olck_4</loc> -->
-                <!-- <loc side="top">router.idata_0 router.ivalid_0 router.ivch_0 router.iack_0 router.ilck_0 router.odata_0 router.ovalid_0 router.ovch_0 router.oack_0 router.ordy_0 router.olck_0 router.idata_4 router.ivalid_4 router.ivch_4 router.iack_4 router.ilck_4</loc> -->
-                <!-- <loc side="right">router.clk router.rst_ router.idata_1 router.ivalid_1 router.ivch_1 router.iack_1 router.ilck_1 router.odata_1 router.ovalid_1 router.ovch_1 router.oack_1 router.ordy_1 router.olck_1</loc> -->
-                <!-- <loc side="bottom">router.my_xpos router.my_ypos router.idata_2 router.ivalid_2 router.ivch_2 router.iack_2 router.ilck_2 router.odata_2 router.ovalid_2 router.ovch_2 router.oack_2 router.ordy_2 router.olck_2</loc> -->
+          <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
+            <fc_override port_name="idata_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivalid_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivch_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="iack_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ilck_0" fc_type="frac" fc_val="0"/>
+            
+            <fc_override port_name="idata_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivalid_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivch_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="iack_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ilck_1" fc_type="frac" fc_val="0"/>
+            
+            <fc_override port_name="idata_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivalid_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivch_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="iack_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ilck_2" fc_type="frac" fc_val="0"/>
+  
+            <fc_override port_name="idata_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivalid_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ivch_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="iack_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ilck_3" fc_type="frac" fc_val="0"/>
+  
+            <fc_override port_name="odata_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovalid_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovch_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="oack_0" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="olck_0" fc_type="frac" fc_val="0"/>
+  
+            <fc_override port_name="odata_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovalid_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovch_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="oack_1" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="olck_1" fc_type="frac" fc_val="0"/>
+          
+            <fc_override port_name="odata_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovalid_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovch_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="oack_2" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="olck_2" fc_type="frac" fc_val="0"/>   
+            
+            <fc_override port_name="odata_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovalid_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovch_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="oack_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="olck_3" fc_type="frac" fc_val="0"/>
+          </fc>
+          <!-- <pinlocations pattern="perimeter"> -->
+          <pinlocations pattern="custom">
+                <loc side="left">router.idata_3 router.ivalid_3 router.ivch_3 router.iack_3 router.ilck_3 router.odata_3 router.ovalid_3 router.ovch_3 router.oack_3 router.ordy_3 router.olck_3 router.odata_4 router.ovalid_4 router.ovch_4 router.oack_4 router.ordy_4 router.olck_4</loc>
+                <loc side="top">router.idata_2 router.ivalid_2 router.ivch_2 router.iack_2 router.ilck_2 router.odata_2 router.ovalid_2 router.ovch_2 router.oack_2 router.ordy_2 router.olck_2 router.idata_4 router.ivalid_4 router.ivch_4 router.iack_4 router.ilck_4</loc>
+                <loc side="right">router.clk router.rst_ router.idata_1 router.ivalid_1 router.ivch_1 router.iack_1 router.ilck_1 router.odata_1 router.ovalid_1 router.ovch_1 router.oack_1 router.ordy_1 router.olck_1</loc>
+                <loc side="bottom">router.my_xpos router.my_ypos router.idata_0 router.ivalid_0 router.ivch_0 router.iack_0 router.ilck_0 router.odata_0 router.ovalid_0 router.ovch_0 router.oack_0 router.ordy_0 router.olck_0</loc>
           </pinlocations>
         </sub_tile>
       </tile>
@@ -318,17 +316,17 @@
       </segment>
    </segmentlist>
   <directlist> 
-    <direct name="2_to_0_odata_2"  from_pin="router.odata_2"  to_pin="router.idata_0"   x_offset="0" y_offset="-2" z_offset="0"/>
-    <direct name="2_to_0_ovalid_2"  from_pin="router.ovalid_2"  to_pin="router.ivalid_0"   x_offset="0" y_offset="-2" z_offset="0"/>
-    <direct name="2_to_0_ovch_2"  from_pin="router.ovch_2"  to_pin="router.ivch_0"   x_offset="0" y_offset="-2" z_offset="0"/>
-    <direct name="2_to_0_oack_2"  from_pin="router.oack_2"  to_pin="router.iack_0"   x_offset="0" y_offset="-2" z_offset="0"/>
-    <direct name="2_to_0_olck_2"  from_pin="router.olck_2"  to_pin="router.ilck_0"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="2_to_0_odata_2"  from_pin="router.odata_2"  to_pin="router.idata_0"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_ovalid_2"  from_pin="router.ovalid_2"  to_pin="router.ivalid_0"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_ovch_2"  from_pin="router.ovch_2"  to_pin="router.ivch_0"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_oack_2"  from_pin="router.oack_2"  to_pin="router.iack_0"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_olck_2"  from_pin="router.olck_2"  to_pin="router.ilck_0"   x_offset="0" y_offset="2" z_offset="0"/>
 
-    <direct name="0_to_2_odata_0"  from_pin="router.odata_0"  to_pin="router.idata_2"   x_offset="0" y_offset="2" z_offset="0"/>
-    <direct name="0_to_2_ovalid_0"  from_pin="router.ovalid_0"  to_pin="router.ivalid_2"   x_offset="0" y_offset="2" z_offset="0"/>
-    <direct name="0_to_2_ovch_0"  from_pin="router.ovch_0"  to_pin="router.ivch_2"   x_offset="0" y_offset="2" z_offset="0"/>
-    <direct name="0_to_2_oack_0"  from_pin="router.oack_0"  to_pin="router.iack_2"   x_offset="0" y_offset="2" z_offset="0"/>
-    <direct name="0_to_2_olck_0"  from_pin="router.olck_0"  to_pin="router.ilck_2"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="0_to_2_odata_0"  from_pin="router.odata_0"  to_pin="router.idata_2"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_ovalid_0"  from_pin="router.ovalid_0"  to_pin="router.ivalid_2"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_ovch_0"  from_pin="router.ovch_0"  to_pin="router.ivch_2"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_oack_0"  from_pin="router.oack_0"  to_pin="router.iack_2"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_olck_0"  from_pin="router.olck_0"  to_pin="router.ilck_2"   x_offset="0" y_offset="-2" z_offset="0"/>
 
     <direct name="1_to_3_odata_1"  from_pin="router.odata_1"  to_pin="router.idata_3"   x_offset="2" y_offset="0" z_offset="0"/>
     <direct name="1_to_3_ovalid_1"  from_pin="router.ovalid_1"  to_pin="router.ivalid_3"   x_offset="2" y_offset="0" z_offset="0"/>
