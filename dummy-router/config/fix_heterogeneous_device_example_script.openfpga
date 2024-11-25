@@ -1,6 +1,7 @@
 # Run VPR for the 'and' design
 #--write_rr_graph example_rr_graph.xml
-vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --constant_net_method route --fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/noc.place  
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --constant_net_method route  --fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/router_2_bench.place
+# --fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/noc.place 
 
 # Read OpenFPGA architecture definition
 read_openfpga_arch -f ${OPENFPGA_ARCH_FILE}
@@ -10,7 +11,7 @@ read_openfpga_simulation_setting -f ${OPENFPGA_SIM_SETTING_FILE}
 
 # Annotate the OpenFPGA architecture to VPR data base
 # to debug use --verbose options
-link_openfpga_arch --sort_gsb_chan_node_in_edges
+link_openfpga_arch --sort_gsb_chan_node_in_edges  --verbose
 
 # Check and correct any naming conflicts in the BLIF netlist
 check_netlist_naming_conflict --fix --report ./netlist_renaming.xml
@@ -21,7 +22,7 @@ lut_truth_table_fixup
 # Build the module graph
 #  - Enabled compression on routing architecture modules
 #  - Enable pin duplication on grid modules
-build_fabric --compress_routing #--verbose
+build_fabric --compress_routing --verbose
 
 # Write the fabric hierarchy of module graph to a file
 # This is used by hierarchical PnR flows
@@ -44,7 +45,7 @@ write_fabric_bitstream --file fabric_bitstream.bit --format plain_text
 
 # Write the Verilog netlist for FPGA fabric
 #  - Enable the use of explicit port mapping in Verilog netlist
-write_fabric_verilog --file ./SRC --explicit_port_mapping --include_timing --print_user_defined_template --verbose
+write_fabric_verilog --file ./SRC --explicit_port_mapping --include_timing --print_user_defined_template --verbose --constant_undriven_inputs bus0
 
 # Generate a bus group file by calling an external python script
 #ext_exec --command "python3 ../../../../config/bus_group_gen.py --task ../../../../config/noc_bus_group_task.yaml"
@@ -61,7 +62,9 @@ write_fabric_verilog --file ./SRC --explicit_port_mapping --include_timing --pri
 
 
 write_preconfigured_fabric_wrapper --embed_bitstream iverilog --file ./SRC 
-write_preconfigured_testbench --file ./SRC --reference_benchmark_file_path ${REFERENCE_VERILOG_TESTBENCH} 
+#write_preconfigured_testbench --file ./SRC --reference_benchmark_file_path ${REFERENCE_VERILOG_TESTBENCH} 
+write_preconfigured_testbench --file ./SRC --reference_benchmark_file_path /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/tb/noc_test-copy.v
+
 
 # Write the SDC files for PnR backend
 #  - Turn on every options here

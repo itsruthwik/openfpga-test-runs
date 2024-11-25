@@ -1,5 +1,6 @@
 /* test module for noc.v */ 
 `include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/define.h" 
+`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/tb/noc.v"
 
 `timescale 1ns/10ps 
 
@@ -4371,14 +4372,14 @@ initial begin
     //     send_packet_0(1, 1, 1);
     //     $write("*** to 2 *** \n");
  	// 	send_packet_0(2, 1, 2);
-    //     $write("*** to 3 *** \n");
-	// 	send_packet_0(3, 1, 3);
-    //     $write("*** to 4 *** \n");
-	// 	send_packet_0(4, 1, 4); 
-    //     $write("*** to 5 *** \n");
-	// 	send_packet_0(5, 1, 5);
-    //     $write("*** to 6 *** \n");
-	// 	send_packet_0(6, 1, 6);
+        // $write("*** to 3 *** \n");
+		// send_packet_0(3, 1, 3);
+        // $write("*** to 4 *** \n");
+		// send_packet_0(4, 1, 4); 
+        // $write("*** to 5 *** \n");
+		// send_packet_0(5, 1, 5);
+        // $write("*** to 6 *** \n");
+		// send_packet_0(6, 1, 6);
         // $write("*** to 7 *** \n");
 		// send_packet_0(7, 1, 7);
         // $write("*** to 8 *** \n");
@@ -4450,8 +4451,8 @@ end
 
 // /* packet generator for n1 */ 
 // initial begin 
-//         #(STEP / 2); 
-//         #(STEP * 10); 
+        // #(STEP / 2); 
+        // #(STEP * 10); 
 //         while (~ready) begin 
 //                 #(STEP); 
 //         end 

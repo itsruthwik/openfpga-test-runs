@@ -1,7 +1,4 @@
-// `include "/home/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/define.h"
-// `include "/mnt/vault1/rsunketa/openfpga-test-runs/nocgen-files/define.h"
-`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/dummy-router/verilog-files/define.h"
-
+`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/define.h"
 module noc ( 
         /* n0 */ 
         n0_idata_p0,  

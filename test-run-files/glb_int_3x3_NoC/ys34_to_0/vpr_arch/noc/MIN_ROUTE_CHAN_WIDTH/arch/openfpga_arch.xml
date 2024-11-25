@@ -252,4 +252,6 @@
         <pb_type name="router" physical_mode_name="router_wrap" idle_mode_name="router_wrap"/>
         <pb_type name="router[router_wrap].router_wrap" circuit_model_name="router_wrap"/>
     </pb_type_annotations>
+    <noc>
+    </noc>
 </openfpga_architecture>

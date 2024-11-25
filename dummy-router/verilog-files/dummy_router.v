@@ -110,3 +110,25 @@ endmodule
  
 
 
+// module router(
+// input [34:0]  idata_0,     idata_1,     idata_2,     idata_3,     idata_4,
+// input         ivalid_0,    ivalid_1,    ivalid_2,    ivalid_3,    ivalid_4,
+// input         ivch_0,      ivch_1,      ivch_2,      ivch_3,      ivch_4,
+// output [1:0]  iack_0,      iack_1,      iack_2,      iack_3,      iack_4,
+// output [1:0]  ilck_0,      ilck_1,      ilck_2,      ilck_3,      ilck_4,
+
+// output [34:0] odata_0,     odata_1,     odata_2,     odata_3,     odata_4,
+// output        ovalid_0,    ovalid_1,    ovalid_2,    ovalid_3,    ovalid_4,
+// output        ovch_0,      ovch_1,      ovch_2,      ovch_3,      ovch_4,
+// output [1:0]  oack_0,      oack_1,      oack_2,      oack_3,      oack_4,
+// output [1:0]  olck_0,      olck_1,      olck_2,      olck_3,      olck_4,
+
+// output [1:0]  ordy_0,      ordy_1,      ordy_2,      ordy_3,      ordy_4,
+
+// input [1:0]   my_xpos,
+// input [1:0]   my_ypos,
+
+// input         clk,
+// input         rst_
+// );
+

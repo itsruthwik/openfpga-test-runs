@@ -1,0 +1,5 @@
+<traffic_flows>
+
+	<single_flow src=".*n0*." dst=".*n1*." bandwidth="400000" latency_cons="0.00000003" />
+
+</traffic_flows>

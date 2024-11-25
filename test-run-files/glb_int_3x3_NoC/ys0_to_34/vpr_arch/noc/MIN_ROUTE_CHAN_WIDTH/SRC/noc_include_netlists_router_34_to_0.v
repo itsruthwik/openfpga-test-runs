@@ -15,7 +15,7 @@
 
 // `include "noc_output_verilog.v"
 `include "./benchmark/noc_bench.v"
-`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/router.v"
+`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-files/src/router.v" 
 
 
 `include "./SRC/noc_top_formal_verification.v"
