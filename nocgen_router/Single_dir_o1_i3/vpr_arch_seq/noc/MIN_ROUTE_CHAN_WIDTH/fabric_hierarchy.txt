@@ -1,0 +1,1848 @@
+fpga_top:
+  grid_io_top:
+    logical_tile_io_mode_io_:
+      logical_tile_io_mode_physical__iopad:
+        GPIO:
+        GPIO_DFFR_mem:
+          - DFFR
+      direct_interc:
+  grid_io_right:
+    logical_tile_io_mode_io_:
+      logical_tile_io_mode_physical__iopad:
+        GPIO:
+        GPIO_DFFR_mem:
+          - DFFR
+      direct_interc:
+  grid_io_bottom:
+    logical_tile_io_mode_io_:
+      logical_tile_io_mode_physical__iopad:
+        GPIO:
+        GPIO_DFFR_mem:
+          - DFFR
+      direct_interc:
+  grid_io_left:
+    logical_tile_io_mode_io_:
+      logical_tile_io_mode_physical__iopad:
+        GPIO:
+        GPIO_DFFR_mem:
+          - DFFR
+      direct_interc:
+  grid_clb:
+    logical_tile_clb_mode_clb_:
+      logical_tile_clb_mode_default__fle:
+        logical_tile_clb_mode_default__fle_mode_physical__ble6:
+          logical_tile_clb_mode_default__fle_mode_physical__ble6_mode_default__lut6:
+            lut6:
+              INVTX1:
+              buf4:
+              lut6_mux:
+                INVTX1:
+                lut6_mux_basis_input2_mem1:
+                  - TGATE
+                buf4:
+            lut6_DFFR_mem:
+              - DFFR
+          logical_tile_clb_mode_default__fle_mode_physical__ble6_mode_default__ff:
+            - DFFSRQ
+          mux_1level_tapbuf_size2:
+            INVTX1:
+            const1:
+            tap_buf4:
+            mux_1level_tapbuf_basis_input3_mem3:
+              - TGATE
+          mux_1level_tapbuf_size2_mem:
+            - DFFR
+          direct_interc:
+        direct_interc:
+      direct_interc:
+      mux_2level_size50:
+        INVTX1:
+        const1:
+        mux_2level_basis_input8_mem8:
+          - TGATE
+        mux_2level_basis_input2_mem2:
+          - TGATE
+      mux_2level_size50_mem:
+        - DFFR
+  grid_router:
+    logical_tile_router_mode_router_:
+      logical_tile_router_mode_router_wrap__router_wrap:
+        - router_wrap
+      direct_interc:
+  sb_0__0_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size2:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size2_mem:
+      - DFFR
+  sb_0__1_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+  sb_0__2_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+  sb_0__3_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+  sb_0__4_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+  sb_0__28_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size2:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size2_mem:
+      - DFFR
+  sb_1__0_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__1_:
+    mux_2level_tapbuf_size46:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size46_mem:
+      - DFFR
+    mux_2level_tapbuf_size45:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size45_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size27:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size27_mem:
+      - DFFR
+    mux_2level_tapbuf_size26:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size26_mem:
+      - DFFR
+    mux_2level_tapbuf_size25:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+    mux_2level_tapbuf_size25_mem:
+      - DFFR
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__2_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size27:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size27_mem:
+      - DFFR
+    mux_2level_tapbuf_size26:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size26_mem:
+      - DFFR
+    mux_2level_tapbuf_size25:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+    mux_2level_tapbuf_size25_mem:
+      - DFFR
+    mux_2level_tapbuf_size46:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size46_mem:
+      - DFFR
+    mux_2level_tapbuf_size44:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size44_mem:
+      - DFFR
+    mux_2level_tapbuf_size43:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size43_mem:
+      - DFFR
+    mux_2level_tapbuf_size42:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size42_mem:
+      - DFFR
+  sb_1__3_:
+    mux_2level_tapbuf_size46:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size46_mem:
+      - DFFR
+    mux_2level_tapbuf_size45:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size45_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size27:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size27_mem:
+      - DFFR
+    mux_2level_tapbuf_size26:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size26_mem:
+      - DFFR
+    mux_2level_tapbuf_size25:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+    mux_2level_tapbuf_size25_mem:
+      - DFFR
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__4_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size27:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size27_mem:
+      - DFFR
+    mux_2level_tapbuf_size26:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size26_mem:
+      - DFFR
+    mux_2level_tapbuf_size25:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+    mux_2level_tapbuf_size25_mem:
+      - DFFR
+    mux_2level_tapbuf_size46:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size46_mem:
+      - DFFR
+    mux_2level_tapbuf_size44:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size44_mem:
+      - DFFR
+    mux_2level_tapbuf_size43:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size43_mem:
+      - DFFR
+    mux_2level_tapbuf_size42:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size42_mem:
+      - DFFR
+  sb_1__9_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__10_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__11_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__12_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_1__28_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_2__0_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_2__1_:
+    mux_2level_tapbuf_size15:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size15_mem:
+      - DFFR
+    mux_2level_tapbuf_size14:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size14_mem:
+      - DFFR
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size28:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size28_mem:
+      - DFFR
+  sb_2__2_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size15:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size15_mem:
+      - DFFR
+    mux_2level_tapbuf_size12:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size12_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size28:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size28_mem:
+      - DFFR
+  sb_2__3_:
+    mux_2level_tapbuf_size15:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size15_mem:
+      - DFFR
+    mux_2level_tapbuf_size14:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size14_mem:
+      - DFFR
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size28:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size28_mem:
+      - DFFR
+  sb_2__4_:
+    mux_2level_tapbuf_size13:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size13_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size15:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size15_mem:
+      - DFFR
+    mux_2level_tapbuf_size12:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size12_mem:
+      - DFFR
+    mux_2level_tapbuf_size29:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input5_mem5:
+        - TGATE
+    mux_2level_tapbuf_size29_mem:
+      - DFFR
+    mux_2level_tapbuf_size28:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input6_mem6:
+        - TGATE
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size28_mem:
+      - DFFR
+  sb_2__28_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_3__0_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_3__28_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_4__0_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_4__28_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size9:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+    mux_2level_tapbuf_size9_mem:
+      - DFFR
+    mux_2level_tapbuf_size8:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size8_mem:
+      - DFFR
+    mux_2level_tapbuf_size7:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size7_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+  sb_28__0_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size2:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size2_mem:
+      - DFFR
+  sb_28__1_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+  sb_28__2_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+  sb_28__3_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+  sb_28__4_:
+    mux_2level_tapbuf_size11:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input3_mem3:
+        - TGATE
+    mux_2level_tapbuf_size11_mem:
+      - DFFR
+    mux_2level_tapbuf_size10:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input4_mem4:
+        - TGATE
+      mux_2level_tapbuf_basis_input2_mem2:
+        - TGATE
+    mux_2level_tapbuf_size10_mem:
+      - DFFR
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+  sb_28__28_:
+    mux_2level_tapbuf_size3:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size3_mem:
+      - DFFR
+    mux_2level_tapbuf_size2:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input2_mem1:
+        - TGATE
+    mux_2level_tapbuf_size2_mem:
+      - DFFR
+  cbx_1__0_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_1__1_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_1__2_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_1__3_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_1__4_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_1__28_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_2__0_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_2__1_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_2__2_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_2__3_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_2__4_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_2__28_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_3__0_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_3__28_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_4__0_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cbx_4__28_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_0__1_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_0__2_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_0__3_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_0__4_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_1__1_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_1__2_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_1__3_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_1__4_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_1__10_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_1__12_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_2__2_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_2__4_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_28__1_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_28__2_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_28__3_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  cby_28__4_:
+    mux_2level_tapbuf_size48:
+      INVTX1:
+      const1:
+      tap_buf4:
+      mux_2level_tapbuf_basis_input7_mem7:
+        - TGATE
+    mux_2level_tapbuf_size48_mem:
+      - DFFR
+  direct_interc:

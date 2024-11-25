@@ -1,0 +1,5 @@
+# Rewrite the .blif to Verilog
+# so that the pin sequence matches
+read_blif rewritten_noc_yosys_out.blif
+#
+write_verilog noc_output_verilog.v
