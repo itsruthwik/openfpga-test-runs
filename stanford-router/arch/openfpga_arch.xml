@@ -149,73 +149,13 @@
           <design_technology type="cmos"/>
           <input_buffer exist="true" circuit_model_name="INVTX1"/>
           <output_buffer exist="true" circuit_model_name="INVTX1"/>
-          <port type="input" prefix="rst_" lib_name="rst_" size="1"/>  
-          <port type="input" prefix="my_xpos" lib_name="my_xpos" size="2"/>  
-          <!-- <port type="sram" prefix="my_xpos_0" size="1" mode_select="false" circuit_model_name="DFFR"/> -->
-          <!-- <port type="sram" prefix="my_xpos_1" size="1" mode_select="false" circuit_model_name="DFFR"/> -->
-          <!-- <port type="sram" prefix="my_xpos" size="2" /> -->
-
-
-          <port type="input" prefix="my_ypos" lib_name="my_ypos" size="2"/>  
-          <!-- <port type="sram" prefix="my_ypos_0" size="2" mode_select="false" circuit_model_name="RTR_FF"/> -->
-          <!-- <port type="sram" prefix="my_ypos_1" size="2" mode_select="false" circuit_model_name="RTR_FF"/> -->
-          <!-- <port type="sram" prefix="my_ypos" size="2" /> -->
-
-          <port type="input" prefix="idata_0" lib_name="idata_0" size="35"/>   
-          <port type="input" prefix="idata_1" lib_name="idata_1" size="35"/>   
-          <port type="input" prefix="idata_2" lib_name="idata_2" size="35"/>   
-          <port type="input" prefix="idata_3" lib_name="idata_3" size="35"/>   
-          <port type="input" prefix="idata_4" lib_name="idata_4" size="35"/>   
-          <port type="input" prefix="ivalid_0" lib_name="ivalid_0" size="1"/>  
-          <port type="input" prefix="ivalid_1" lib_name="ivalid_1" size="1"/>  
-          <port type="input" prefix="ivalid_2" lib_name="ivalid_2" size="1"/>  
-          <port type="input" prefix="ivalid_3" lib_name="ivalid_3" size="1"/>  
-          <port type="input" prefix="ivalid_4" lib_name="ivalid_4" size="1"/>  
-          <port type="input" prefix="ivch_0" lib_name="ivch_0" size="1"/>   
-          <port type="input" prefix="ivch_1" lib_name="ivch_1" size="1"/>    
-          <port type="input" prefix="ivch_2" lib_name="ivch_2" size="1"/>    
-          <port type="input" prefix="ivch_3" lib_name="ivch_3" size="1"/>    
-          <port type="input" prefix="ivch_4" lib_name="ivch_4" size="1"/>    
-          <port type="input" prefix="iack_0" lib_name="iack_0" size="2"/>    
-          <port type="input" prefix="iack_1" lib_name="iack_1" size="2"/>    
-          <port type="input" prefix="iack_2" lib_name="iack_2" size="2"/>    
-          <port type="input" prefix="iack_3" lib_name="iack_3" size="2"/>    
-          <port type="input" prefix="iack_4" lib_name="iack_4" size="2"/>    
-          <port type="input" prefix="ilck_0" lib_name="ilck_0" size="2"/>    
-          <port type="input" prefix="ilck_1" lib_name="ilck_1" size="2"/>    
-          <port type="input" prefix="ilck_2" lib_name="ilck_2" size="2"/>    
-          <port type="input" prefix="ilck_3" lib_name="ilck_3" size="2"/>    
-          <port type="input" prefix="ilck_4" lib_name="ilck_4" size="2"/>
-          <port type="output" prefix="odata_0" lib_name="odata_0" size="35"/>   
-          <port type="output" prefix="odata_1" lib_name="odata_1" size="35"/>   
-          <port type="output" prefix="odata_2" lib_name="odata_2" size="35"/>   
-          <port type="output" prefix="odata_3" lib_name="odata_3" size="35"/>   
-          <port type="output" prefix="odata_4" lib_name="odata_4" size="35"/>   
-          <port type="output" prefix="ovalid_0" lib_name="ovalid_0" size="1"/>   
-          <port type="output" prefix="ovalid_1" lib_name="ovalid_1" size="1"/>   
-          <port type="output" prefix="ovalid_2" lib_name="ovalid_2" size="1"/>   
-          <port type="output" prefix="ovalid_3" lib_name="ovalid_3" size="1"/>   
-          <port type="output" prefix="ovalid_4" lib_name="ovalid_4" size="1"/>   
-          <port type="output" prefix="ovch_0" lib_name="ovch_0" size="1"/>   
-          <port type="output" prefix="ovch_1" lib_name="ovch_1" size="1"/>   
-          <port type="output" prefix="ovch_2" lib_name="ovch_2" size="1"/>   
-          <port type="output" prefix="ovch_3" lib_name="ovch_3" size="1"/>   
-          <port type="output" prefix="ovch_4" lib_name="ovch_4" size="1"/>   
-          <port type="output" prefix="oack_0" lib_name="oack_0" size="2"/>   
-          <port type="output" prefix="oack_1" lib_name="oack_1" size="2"/>   
-          <port type="output" prefix="oack_2" lib_name="oack_2" size="2"/>   
-          <port type="output" prefix="oack_3" lib_name="oack_3" size="2"/>   
-          <port type="output" prefix="oack_4" lib_name="oack_4" size="2"/>   
-          <port type="output" prefix="ordy_0" lib_name="ordy_0" size="2"/>   
-          <port type="output" prefix="ordy_1" lib_name="ordy_1" size="2"/>   
-          <port type="output" prefix="ordy_2" lib_name="ordy_2" size="2"/>   
-          <port type="output" prefix="ordy_3" lib_name="ordy_3" size="2"/>   
-          <port type="output" prefix="ordy_4" lib_name="ordy_4" size="2"/>   
-          <port type="output" prefix="olck_0" lib_name="olck_0" size="2"/>   
-          <port type="output" prefix="olck_1" lib_name="olck_1" size="2"/>   
-          <port type="output" prefix="olck_2" lib_name="olck_2" size="2"/>   
-          <port type="output" prefix="olck_3" lib_name="olck_3" size="2"/>   
-          <port type="output" prefix="olck_4" lib_name="olck_4" size="2"/>    
+          <port type="input" prefix="reset" lib_name="reset" size="1"/>  
+          <port type="input" prefix="router_address" lib_name="router_address" size="4"/>  
+          <port type="input" prefix="channel_in_ip" lib_name="channel_in_ip" size="340"/>  
+          <port type="input" prefix="flow_ctrl_in_op" lib_name="flow_ctrl_in_op" size="10"/>   
+          <port type="output" prefix="error" lib_name="error" size="1"/>   
+          <port type="output" prefix="channel_out_op" lib_name="channel_out_op" size="340"/>   
+          <port type="output" prefix="flow_ctrl_out_ip" lib_name="flow_ctrl_out_ip" size="10"/>   
           <port type="clock" prefix="clk" size="1" is_global="true" default_val="0" is_clock="true"/>
         </circuit_model>
     </circuit_library>
@@ -231,7 +171,7 @@
     <routing_segment>
         <segment name="L4" circuit_model_name="chan_segment"/>
     </routing_segment>
-  <direct_connection>
+  <!-- <direct_connection>
     <direct name="2_to_0_odata_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
     <direct name="2_to_0_odata_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
     <direct name="2_to_0_odata_0_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
@@ -399,7 +339,7 @@
     <direct name="3_to_1_oack_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
     <direct name="3_to_1_olck_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
     <direct name="3_to_1_olck_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-  </direct_connection>
+  </direct_connection> -->
     <pb_type_annotations>
         <pb_type name="clb">
             <interconnect name="crossbar" circuit_model_name="mux_2level"/>
