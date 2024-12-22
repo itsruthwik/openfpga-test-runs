@@ -1,0 +1,2 @@
+'read_verilog -nowb -sv -noopt  /home/rsunketa/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v ;
+tee -o portlist.txt portlist router_slice'
