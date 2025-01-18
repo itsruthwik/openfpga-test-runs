@@ -10,6 +10,7 @@ def parse_arguments():
     parser.add_argument('--top', help='Top module name for the hardblock')
     parser.add_argument('--output_dir', required=False, help='Output directory for the generated architecture files')
     parser.add_argument('--vpr_arch', required=True, help='Path to the base VPR architecture template file')
+    
 
     return parser.parse_args()
 
@@ -29,6 +30,7 @@ def create_unique_directory(path):
         counter += 1
         path = f"{base_path}_{counter}"
     os.makedirs(path)
+    print(f"Created directory: {path}")
     return path
 
 def parse_size(size_str):
@@ -54,9 +56,13 @@ def indent_xml(elem, level=0):
 args = parse_arguments()
 
 if args.output_dir:
-    task_dir = args.output_dir  
+    task_dir = args.output_dir
+    print(f"Using output directory {args.output_dir}")  
 else:
+    print(f"Did not find output directory at: {args.output_dir}")
     task_dir = create_unique_directory("./task")
+    print(f"Using output directory {task_dir}")  
+
 
 #set yosys path
 if args.yosys_path:
@@ -67,8 +73,15 @@ else:
 
 # generate portlist.txt with yosys
 yosys_command = f"{yosys_path} -p 'read_verilog -nowb -sv -noopt  {args.verilog_file}; tee -o {task_dir}/portlist.txt portlist {args.top}'"
-execute_command(yosys_command)
-print("Generated portlist from Verilog file")
+
+try:
+    result = subprocess.run(yosys_command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    # print(result.stdout)
+    print(f"Generated portlist from Verilog file at {task_dir}/portlist.txt")
+except subprocess.CalledProcessError as e:
+    print(f"An error occurred: {e.stderr}")
+
+# execute_command(yosys_command)
 
 
 port_dict = {}
@@ -95,7 +108,7 @@ with open(f'{task_dir}/portlist.txt', 'r') as file:
             size = parse_size(size_str)
             port_dict[module_name]["outputs"].append({name: size})
 
-print(port_dict[args.top]["inputs"])
+# print(port_dict[args.top]["inputs"])
 
 # Check if there is a clock in inputs of port_dict
 has_clock = False
@@ -111,9 +124,9 @@ for input_port in port_dict[args.top]["inputs"]:
 if not has_clock:
     print("Does not have a clock signal")
 
-for input_port in port_dict[args.top]["inputs"]:
-    for name, size in input_port.items():
-        print(f"  {name}: {size}")
+# for input_port in port_dict[args.top]["inputs"]:
+#     for name, size in input_port.items():
+#         print(f"  {name}: {size}")
 ###########################################################
 from lxml import etree as ET
 
@@ -155,6 +168,7 @@ models_element = root.find('.//models')
 
 models_element.append(new_model)
 tree.write(f'{arch_dir}/vpr_arch.xml')
+print(f" - Added model '{args.top}' in VPR arch file at {arch_dir}/vpr_arch.xml")
 
 ###################################
 
@@ -183,6 +197,7 @@ models_element = root.find('.//tiles')
 models_element.append(new_tile)
 
 tree.write(f'{arch_dir}/vpr_arch.xml')
+print(f" - Added tile '{args.top}_tile' in VPR arch file at {arch_dir}/vpr_arch.xml")
 
 ########################################
 
@@ -241,3 +256,6 @@ models_element = root.find('.//complexblocklist')
 models_element.append(new_pb_type)
 
 tree.write(f'{arch_dir}/vpr_arch.xml')
+print(f" - Added pb_type '{args.top}_tile' in VPR arch file at {arch_dir}/vpr_arch.xml")
+
+print(f"Completed writing VPR arch file with '{args.top}' as a hard block at {arch_dir}/vpr_arch.xml")
