@@ -23,6 +23,38 @@
           <port name="flow_ctrl_out_ip" clock="clk"/> 
         </output_ports>
       </model>
+      <model name="noc_router_adapter_block">
+        <input_ports>
+          <!-- Master Interface-->
+          <port name="master_tready" clock="clk"/>
+          <!-- Slave Interface-->
+          <port name="slave_tvalid" clock="clk"/>
+          <port name="slave_tdata" clock="clk"/>
+          <port name="slave_tstrb" clock="clk"/>
+          <port name="slave_tkeep" clock="clk"/>
+          <port name="slave_tid" clock="clk"/>
+          <port name="slave_tdest" clock="clk"/>
+          <port name="slave_tuser" clock="clk"/>
+          <port name="slave_tlast" clock="clk"/>
+          <!-- clk signal-->
+          <port name="clk" is_clock="1"/>
+          <!-- reset signal-->
+          <port name="reset" clock="clk"/>
+        </input_ports>
+        <output_ports>
+          <!-- Master Interface-->
+          <port name="master_tvalid" clock="clk"/>
+          <port name="master_tdata" clock="clk"/>
+          <port name="master_tstrb" clock="clk"/>
+          <port name="master_tkeep" clock="clk"/>
+          <port name="master_tid" clock="clk"/>
+          <port name="master_tdest" clock="clk"/>
+          <port name="master_tuser" clock="clk"/>
+          <port name="master_tlast" clock="clk"/>
+          <!-- Slave Interface-->
+          <port name="slave_tready" clock="clk"/>
+        </output_ports>
+      </model>
    </models>
    <tiles>
       <tile name="io" area="0">

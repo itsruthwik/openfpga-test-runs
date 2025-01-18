@@ -4,14 +4,14 @@ module router_slice(
         input reset,
         input [0:3] router_address,
         input [0:349] channel_in_ip,
-        input [0:14] flow_ctrl_out_ip,
+        output [0:14] flow_ctrl_out_ip,
         output [0:349] channel_out_op,
-        output [0:14] flow_ctrl_in_op,
+        input [0:14] flow_ctrl_in_op,
         output error
     );
 
 reg [0:349] channel_out_op_1 ;
-reg [0:14] flow_ctrl_in_op_1 ;
+reg [0:14] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 
 //    router_wrap
@@ -65,11 +65,20 @@ reg error_1 ;
 //       .error(error) );
 		
 
-    always@(posedge clk or negedge reset) begin
-        channel_out_op_1 <= channel_in_ip;
-        flow_ctrl_in_op_1 <= flow_ctrl_out_ip;
+    always@(posedge clk ) begin
+        if(reset) begin
+        channel_out_op_1 <= 0;
+        flow_ctrl_out_ip_1 <= 0;
         error_1 <= 0;
+        end 
+        channel_out_op_1 <= channel_in_ip;
+        flow_ctrl_out_ip_1 <= flow_ctrl_in_op;
+        error_1 <= router_address[0]+router_address[1]+router_address[2]+router_address[3];
     end
+
+    assign channel_out_op = channel_out_op_1;
+    assign flow_ctrl_out_ip = flow_ctrl_out_ip_1;
+    assign error = error_1;
 
 endmodule
 
