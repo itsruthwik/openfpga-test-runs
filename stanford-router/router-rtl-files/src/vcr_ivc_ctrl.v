@@ -30,7 +30,7 @@
 //==============================================================================
 
 module vcr_ivc_ctrl
-  (clk, reset, router_address, flit_valid_in, flit_head_in, flit_tail_in, 
+  (mode_dim_order, clk, reset, router_address, flit_valid_in, flit_head_in, flit_tail_in, 
    flit_sel_in, header_info_in, fb_pop_tail, fb_pop_next_header_info, 
    almost_full_op_ovc, full_op_ovc, route_op, route_orc, vc_gnt, vc_sel_ovc, 
    sw_gnt, sw_sel, sw_gnt_op, flit_valid, flit_head, flit_tail, next_lar_info, 
@@ -165,7 +165,7 @@ module vcr_ivc_ctrl
        -1;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+   //parameter dim_order = `DIM_ORDER_ASCENDING;
    
    // select whether to exclude full or non-empty VCs from VC allocation
    parameter elig_mask = `ELIG_MASK_NONE;
@@ -589,11 +589,12 @@ module vcr_ivc_ctrl
        .restrict_turns(restrict_turns),
        .connectivity(connectivity),
        .routing_type(routing_type),
-       .dim_order(dim_order),
+//       .dim_order(dim_order),
        .port_id(port_id),
        .vc_id(vc_id))
    rf
-     (.clk(clk),
+     (.mode_dim_order(mode_dim_order),
+      .clk(clk),
       .route_valid(flit_valid),
       .route_in_op(route_unmasked_op),
       .route_in_orc(route_unmasked_orc),
@@ -652,9 +653,11 @@ module vcr_ivc_ctrl
        .num_nodes_per_router(num_nodes_per_router),
        .connectivity(connectivity),
        .routing_type(routing_type),
-       .dim_order(dim_order))
+//       .dim_order(dim_order)
+       )
    rtl
-     (.router_address(next_router_address),
+     (.mode_dim_order(mode_dim_order),
+      .router_address(next_router_address),
       .sel_mc(sel_mc),
       .sel_irc(route_orc),
       .dest_info(dest_info),

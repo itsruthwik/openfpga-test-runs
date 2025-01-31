@@ -30,7 +30,7 @@
 //==============================================================================
 
 module whr_top
-  (clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
+  (mode_dim_order, clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
    flow_ctrl_in_op, error);
    
 `include "c_functions.v"
@@ -198,6 +198,10 @@ module whr_top
    // internal error condition detected
    output 				  error;
    wire 				  error;
+
+   input [1:0] mode_dim_order;
+   wire [1:0] dim_order;
+   assign dim_order = mode_dim_order;
    
    
    //---------------------------------------------------------------------------
@@ -255,7 +259,7 @@ module whr_top
 	       .flit_data_width(flit_data_width),
 	       .restrict_turns(restrict_turns),
 	       .routing_type(routing_type),
-	       .dim_order(dim_order),
+//	       .dim_order(dim_order),
 	       .input_stage_can_hold(input_stage_can_hold),
 	       .fb_regfile_type(fb_regfile_type),
 	       .fb_fast_peek(fb_fast_peek),
@@ -265,7 +269,8 @@ module whr_top
 	       .port_id(ip),
 	       .reset_type(reset_type))
 	   ipc
-	     (.clk(clk),
+	     (.mode_dim_order(mode_dim_order),
+        .clk(clk),
 	      .reset(reset),
 	      .router_address(router_address),
 	      .channel_in(channel_in),

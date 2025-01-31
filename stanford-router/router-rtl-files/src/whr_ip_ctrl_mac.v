@@ -30,7 +30,7 @@
 //==============================================================================
 
 module whr_ip_ctrl_mac
-  (clk, reset, router_address, channel_in, route_op, req, req_head, req_tail, 
+  (mode_dim_order, clk, reset, router_address, channel_in, route_op, req, req_head, req_tail, 
    gnt, flit_data_out, flow_ctrl_out, error);
    
 `include "c_functions.v"
@@ -167,7 +167,7 @@ module whr_ip_ctrl_mac
        -1;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+   //parameter dim_order = `DIM_ORDER_ASCENDING;
    
    // use input register as part of the flit buffer
    parameter input_stage_can_hold = 0;
@@ -199,6 +199,10 @@ module whr_ip_ctrl_mac
       
    input clk;
    input reset;
+
+  input [1:0] mode_dim_order;
+   wire [1:0] dim_order;
+   assign dim_order = mode_dim_order;
    
    // current router's address
    input [0:router_addr_width-1] router_address;
@@ -236,6 +240,7 @@ module whr_ip_ctrl_mac
    // internal error condition detected
    output 			 error;
    wire 			 error;
+   
    
    
    //---------------------------------------------------------------------------
@@ -546,11 +551,12 @@ module whr_ip_ctrl_mac
        .restrict_turns(restrict_turns),
        .connectivity(connectivity),
        .routing_type(routing_type),
-       .dim_order(dim_order),
+//       .dim_order(dim_order),
        .port_id(port_id),
        .vc_id(0))
    rf
-     (.clk(clk),
+     (.mode_dim_order(mode_dim_order),
+      .clk(clk),
       .route_valid(flit_valid),
       .route_in_op(route_unmasked_op),
       .route_in_orc(1'b1),
@@ -598,10 +604,12 @@ module whr_ip_ctrl_mac
        .num_dimensions(num_dimensions),
        .num_nodes_per_router(num_nodes_per_router),
        .connectivity(connectivity),
-       .routing_type(routing_type),
-       .dim_order(dim_order))
+       .routing_type(routing_type)
+//       ,.dim_order(dim_order)
+       )
    rtl
-     (.router_address(next_router_address),
+     (.mode_dim_order(mode_dim_order),
+      .router_address(next_router_address),
       .sel_mc(1'b1),
       .sel_irc(1'b1),
       .dest_info(dest_info),

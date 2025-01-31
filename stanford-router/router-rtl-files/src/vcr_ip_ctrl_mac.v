@@ -30,7 +30,7 @@
 //==============================================================================
 
 module vcr_ip_ctrl_mac
-  (clk, reset, router_address, channel_in, route_ivc_op, route_ivc_orc, 
+  (mode_dim_order, clk, reset, router_address, channel_in, route_ivc_op, route_ivc_orc, 
    allocated_ivc, flit_valid_ivc, flit_head_ivc, flit_tail_ivc, 
    free_nonspec_ivc, vc_gnt_ivc, vc_sel_ivc_ovc, sw_gnt, sw_sel_ivc, sw_gnt_op, 
    almost_full_op_ovc, full_op_ovc, flit_data, flow_ctrl_out, error);
@@ -181,7 +181,7 @@ module vcr_ip_ctrl_mac
        -1;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+//   parameter dim_order = `DIM_ORDER_ASCENDING;
    
     // select implementation variant for flit buffer register file
    parameter fb_regfile_type = `REGFILE_TYPE_FF_2D;
@@ -446,7 +446,7 @@ module vcr_ip_ctrl_mac
 	       .min_payload_length(min_payload_length),
 	       .restrict_turns(restrict_turns),
 	       .routing_type(routing_type),
-	       .dim_order(dim_order),
+//	       .dim_order(dim_order),
 	       .elig_mask(elig_mask),
 	       .sw_alloc_spec(sw_alloc_spec),
 	       .fb_mgmt_type(fb_mgmt_type),
@@ -455,7 +455,8 @@ module vcr_ip_ctrl_mac
 	       .port_id(port_id),
 	       .reset_type(reset_type))
 	   ivcc
-	     (.clk(clk),
+	     (.mode_dim_order(mode_dim_order)
+        .clk(clk),
 	      .reset(reset),
 	      .router_address(router_address),
 	      .flit_valid_in(flit_valid_in),

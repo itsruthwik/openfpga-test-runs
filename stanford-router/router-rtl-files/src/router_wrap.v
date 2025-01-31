@@ -31,7 +31,7 @@
 //==============================================================================
 
 module router_wrap
-  (clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
+  (mode_dim_order, clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
    flow_ctrl_in_op, error);
    
 `include "c_functions.v"   
@@ -111,6 +111,7 @@ module router_wrap
    
    input clk;
    input reset;
+   input mode_dim_order;
    
    // current router's address
    input [0:router_addr_width-1] router_address;
@@ -156,7 +157,7 @@ module router_wrap
 		 .error_capture_mode(error_capture_mode),
 		 .restrict_turns(restrict_turns),
 		 .routing_type(routing_type),
-		 .dim_order(dim_order),
+		 //.dim_order(dim_order),
 		 .input_stage_can_hold(input_stage_can_hold),
 		 .fb_regfile_type(fb_regfile_type),
 		 .fb_fast_peek(fb_fast_peek),
@@ -167,7 +168,8 @@ module router_wrap
 		 .crossbar_type(crossbar_type),
 		 .reset_type(reset_type))
 	     whr
-	       (.clk(clk),
+	       (.mode_dim_order(mode_dim_order),
+		.clk(clk),
 		.reset(reset),
 		.router_address(router_address),
 		.channel_in_ip(channel_in_ip),
@@ -200,7 +202,7 @@ module router_wrap
 		 .error_capture_mode(error_capture_mode),
 		 .restrict_turns(restrict_turns),
 		 .routing_type(routing_type),
-		 .dim_order(dim_order),
+//		 .dim_order(dim_order),
 		 .fb_regfile_type(fb_regfile_type),
 		 .fb_mgmt_type(fb_mgmt_type),
 		 .fb_fast_peek(fb_fast_peek),
@@ -216,7 +218,8 @@ module router_wrap
 		 .crossbar_type(crossbar_type),
 		 .reset_type(reset_type))
 	     vcr
-	       (.clk(clk),
+	       (.mode_dim_order(mode_dim_order),
+			.clk(clk),
 		.reset(reset),
 		.router_address(router_address),
 		.channel_in_ip(channel_in_ip),
@@ -250,7 +253,7 @@ module router_wrap
 		 .restrict_turns(restrict_turns),
 		 .predecode_lar_info(predecode_lar_info),
 		 .routing_type(routing_type),
-		 .dim_order(dim_order),
+//		 .dim_order(dim_order),
 		 .fb_regfile_type(fb_regfile_type),
 		 .fb_mgmt_type(fb_mgmt_type),
 		 .fb_fast_peek(fb_fast_peek),
@@ -269,7 +272,8 @@ module router_wrap
 		 .crossbar_type(crossbar_type),
 		 .reset_type(reset_type))
 	     rtr
-	       (.clk(clk),
+	       (.mode_dim_order(mode_dim_order),
+			.clk(clk),
 		.reset(reset),
 		.router_address(router_address),
 		.channel_in_ip(channel_in_ip),

@@ -30,7 +30,7 @@
 //==============================================================================
 
 module vcr_top
-  (clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
+  (mode_dim_order, clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
    flow_ctrl_in_op, error);
    
 `include "c_functions.v"
@@ -148,7 +148,7 @@ module vcr_top
    parameter routing_type = `ROUTING_TYPE_PHASED_DOR;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+   //parameter dim_order = `DIM_ORDER_ASCENDING;
    
    // select implementation variant for flit buffer register file
    parameter fb_regfile_type = `REGFILE_TYPE_FF_2D;
@@ -219,6 +219,9 @@ module vcr_top
    output 				  error;
    wire 				  error;
    
+   input [1:0] mode_dim_order;
+   wire [1:0] dim_order;
+   assign dim_order = mode_dim_order;
    
    //---------------------------------------------------------------------------
    // input ports
@@ -302,7 +305,7 @@ module vcr_top
 	       .flit_data_width(flit_data_width),
 	       .restrict_turns(restrict_turns),
 	       .routing_type(routing_type),
-	       .dim_order(dim_order),
+//	       .dim_order(dim_order),
 	       .fb_regfile_type(fb_regfile_type),
 	       .fb_mgmt_type(fb_mgmt_type),
 	       .fb_fast_peek(fb_fast_peek),
@@ -314,7 +317,8 @@ module vcr_top
 	       .port_id(ip),
 	       .reset_type(reset_type))
 	   ipc
-	     (.clk(clk),
+	     (.mode_dim_order(mode_dim_order)
+        .clk(clk),
 	      .reset(reset),
 	      .router_address(router_address),
 	      .channel_in(channel_in),
