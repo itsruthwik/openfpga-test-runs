@@ -111,7 +111,7 @@ module router_wrap
    
    input clk;
    input reset;
-   input mode_dim_order;
+   input [1:0] mode_dim_order;
    
    // current router's address
    input [0:router_addr_width-1] router_address;
