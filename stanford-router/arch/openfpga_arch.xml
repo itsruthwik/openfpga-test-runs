@@ -126,7 +126,7 @@
             <port type="output" prefix="QN" size="1"/>
             <port type="clock" prefix="prog_clk" lib_name="CK" size="1" is_global="true" default_val="0" is_prog="true"/>
         </circuit_model>
-        <!-- <circuit_model type="ccff" name="RTR_FF" prefix="RTR_FF" spice_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/dff.sp" verilog_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/verilog/dff2.v">
+        <circuit_model type="ccff" name="RTR_FF" prefix="RTR_FF" spice_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/dff.sp" verilog_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/verilog/dff2.v">
             <design_technology type="cmos"/>
             <input_buffer exist="true" circuit_model_name="INVTX1"/>
             <output_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -135,7 +135,7 @@
             <port type="output" prefix="Q" size="2"/>
             <port type="output" prefix="QN" size="2"/>
             <port type="clock" prefix="prog_clk" lib_name="CK" size="1" is_global="true" default_val="0" is_prog="true"/>
-        </circuit_model> -->
+        </circuit_model>
         <circuit_model type="iopad" name="GPIO" prefix="GPIO" spice_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/gpio.sp" verilog_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/verilog/gpio.v">
             <design_technology type="cmos"/>
             <input_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -145,6 +145,7 @@
             <port type="input" prefix="outpad" lib_name="A" size="1"/>
             <port type="output" prefix="inpad" lib_name="Y" size="1"/>
         </circuit_model>
+        
         <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="true" spice_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/router-rtl-files/src/router_wrap.v">
           <design_technology type="cmos"/>
           <input_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -157,7 +158,7 @@
           <port type="output" prefix="channel_out_op" lib_name="channel_out_op" size="340"/>   
           <port type="output" prefix="flow_ctrl_out_ip" lib_name="flow_ctrl_out_ip" size="10"/>   
           <port type="clock" prefix="clk" size="1" is_global="true" default_val="0" is_clock="true"/>
-          <port type="sram" prefix="mode_dim_order" lib_name="mode" size="2" mode_select="true" circuit_model_name="DFF" default_val="0" />
+          <port type="sram" prefix="mode_dim_order" lib_name="mode" size="2" mode_select="true" circuit_model_name="DFFR" default_val="00"/>
         </circuit_model>
     </circuit_library>
     <configuration_protocol>
@@ -172,175 +173,7 @@
     <routing_segment>
         <segment name="L4" circuit_model_name="chan_segment"/>
     </routing_segment>
-  <!-- <direct_connection>
-    <direct name="2_to_0_odata_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_3" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_4" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_5" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_6" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_7" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_8" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_9" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_10" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_11" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_12" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_13" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_14" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_15" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_16" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_17" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_18" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_19" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_20" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_21" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_22" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_23" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_24" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_25" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_26" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_27" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_28" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_29" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_30" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_31" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_32" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_33" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_odata_0_34" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_ovalid_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_ovch_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_oack_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_oack_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_olck_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="2_to_0_olck_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
 
-    <direct name="0_to_2_odata_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_3" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_4" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_5" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_6" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_7" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_8" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_9" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_10" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_11" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_12" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_13" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_14" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_15" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_16" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_17" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_18" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_19" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_20" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_21" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_22" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_23" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_24" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_25" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_26" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_27" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_28" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_29" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_30" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_31" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_32" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_33" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_odata_0_34" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_ovalid_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_ovch_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_oack_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_oack_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_olck_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="0_to_2_olck_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    
-    <direct name="1_to_3_odata_1_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_3" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_4" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_5" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_6" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_7" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_8" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_9" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_10" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_11" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_12" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_13" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_14" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_15" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_16" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_17" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_18" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_19" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_20" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_21" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_22" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_23" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_24" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_25" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_26" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_27" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_28" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_29" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_30" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_31" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_32" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_33" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_odata_1_34" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_ovalid_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_ovch_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_oack_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_oack_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_olck_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="1_to_3_olck_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-
-    <direct name="3_to_1_odata_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_2" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_3" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_4" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_5" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_6" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_7" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_8" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_9" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_10" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_11" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_12" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_13" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_14" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_15" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_16" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_17" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_18" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_19" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_20" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_21" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_22" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_23" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_24" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_25" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_26" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_27" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_28" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_29" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_30" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_31" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_32" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_33" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_odata_0_34" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_ovalid_3" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_ovch_3" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_oack_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_oack_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_olck_0_0" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-    <direct name="3_to_1_olck_0_1" circuit_model_name="direct_interc" type="inner_column_or_row"/>
-  </direct_connection> -->
     <pb_type_annotations>
         <pb_type name="clb">
             <interconnect name="crossbar" circuit_model_name="mux_2level"/>
@@ -356,9 +189,10 @@
         <pb_type name="io[inpad].inpad" physical_pb_type_name="io[physical].iopad" mode_bits="1"/>
         <pb_type name="io[outpad].outpad" physical_pb_type_name="io[physical].iopad" mode_bits="0"/>
 
-        <pb_type name="router_wrap" physical_mode_name="router_wrap" idle_mode_name="router_wrap"/>
-        <pb_type name="router_wrap[router_asc].router_asc" circuit_model_name="router_wrap" mode_bits="00"/>
-        <pb_type name="router_wrap[router_desc].router_desc" circuit_model_name="router_wrap" mode_bits="01"/>
-        <pb_type name="router_wrap[router_class].router_class" circuit_model_name="router_wrap" mode_bits="10"/>
+        <pb_type name="router_wrap" physical_mode_name="router_phy"/>
+         <pb_type name="router_wrap[router_phy].router_phy" circuit_model_name="router_wrap" mode_bits="00"/>
+        <pb_type name="router_wrap[router_asc].router_asc" physical_pb_type_name="router_wrap[router_phy].router_phy" mode_bits="00"/>
+        <pb_type name="router_wrap[router_desc].router_desc" physical_pb_type_name="router_wrap[router_phy].router_phy" mode_bits="01"/>
+        <pb_type name="router_wrap[router_class].router_class" physical_pb_type_name="router_wrap[router_phy].router_phy" mode_bits="10"/>
     </pb_type_annotations>
 </openfpga_architecture>
