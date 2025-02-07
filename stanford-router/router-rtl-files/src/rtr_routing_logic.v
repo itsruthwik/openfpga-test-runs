@@ -30,7 +30,7 @@
 //==============================================================================
 
 module rtr_routing_logic
-  (router_address, sel_mc, sel_irc, dest_info, route_op, route_orc);
+  (mode_dim_order, router_address, sel_mc, sel_irc, dest_info, route_op, route_orc);
    
 `include "c_functions.v"
 `include "c_constants.v"
@@ -62,7 +62,7 @@ module rtr_routing_logic
    parameter routing_type = `ROUTING_TYPE_PHASED_DOR;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+   //parameter dim_order = `DIM_ORDER_ASCENDING;
    
    parameter reset_type = `RESET_TYPE_ASYNC;
    
@@ -132,6 +132,11 @@ module rtr_routing_logic
    // select outgoing resource class
    output [0:num_resource_classes-1] route_orc;
    wire [0:num_resource_classes-1]   route_orc;
+
+   input [1:0] mode_dim_order;
+   wire [1:0] dim_order;
+   assign dim_order = mode_dim_order;
+
    
    
    //---------------------------------------------------------------------------

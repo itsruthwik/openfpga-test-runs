@@ -93,13 +93,13 @@
 //------------------------------------------------------------------------------
 
 // traverse dimensions in ascending order
-`define DIM_ORDER_ASCENDING  0
+`define DIM_ORDER_ASCENDING  2'd0
 
 // traverse dimensions in descending order
-`define DIM_ORDER_DESCENDING 1
+`define DIM_ORDER_DESCENDING 2'd1
 
 // order of dimension traversal depends on message class
-`define DIM_ORDER_BY_CLASS   2
+`define DIM_ORDER_BY_CLASS   2'd2
 
 `define DIM_ORDER_LAST `DIM_ORDER_BY_CLASS
 

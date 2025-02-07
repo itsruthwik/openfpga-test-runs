@@ -9,13 +9,41 @@
             <port name="inpad"/>
          </output_ports>
       </model>
-      <model name="router_slice">
+      <model name="router_asc">
         <input_ports>
-          <port name="clk" is_clock="1"/>
-          <port name="reset"  clock="clk"/> 
+          <port name="reset" clock="clk"/> 
           <port name="router_address" clock="clk"/>
           <port name="channel_in_ip" clock="clk"/>
           <port name="flow_ctrl_in_op" clock="clk"/>
+          <port name="clk" is_clock="1"/>
+        </input_ports>
+        <output_ports>
+          <port name="error" clock="clk"/> 
+          <port name="channel_out_op" clock="clk"/> 
+          <port name="flow_ctrl_out_ip" clock="clk"/> 
+        </output_ports>
+      </model>
+      <model name="router_desc">
+        <input_ports>
+          <port name="reset" clock="clk"/> 
+          <port name="router_address" clock="clk"/>
+          <port name="channel_in_ip" clock="clk"/>
+          <port name="flow_ctrl_in_op" clock="clk"/>
+          <port name="clk" is_clock="1"/>
+        </input_ports>
+        <output_ports>
+          <port name="error" clock="clk"/> 
+          <port name="channel_out_op" clock="clk"/> 
+          <port name="flow_ctrl_out_ip" clock="clk"/> 
+        </output_ports>
+      </model>
+      <model name="router_class">
+        <input_ports>
+          <port name="reset" clock="clk"/> 
+          <port name="router_address" clock="clk"/>
+          <port name="channel_in_ip" clock="clk"/>
+          <port name="flow_ctrl_in_op" clock="clk"/>
+          <port name="clk" is_clock="1"/>
         </input_ports>
         <output_ports>
           <port name="error" clock="clk"/> 
@@ -56,16 +84,16 @@
       <tile name="router" height="1" area="1">
         <sub_tile name="router">
           <equivalent_sites>
-            <site pb_type="router" pin_mapping="direct"/>
+            <site pb_type="router_wrap" pin_mapping="direct"/>
           </equivalent_sites>
           <clock name="clk" num_pins="1"/>
-          <input name="reset"  num_pins="1"/>  
-          <input name="router_address"  num_pins="4"/>  
-          <input name="channel_in_ip"  num_pins="350"/>  
-          <input name="flow_ctrl_in_op"  num_pins="15"/>   
+          <input name="reset"  num_pins="1"/>
+          <input name="router_address"  num_pins="2"/>  
+          <input name="channel_in_ip"  num_pins="340"/>  
+          <input name="flow_ctrl_in_op"  num_pins="10"/>   
           <output name="error"  num_pins="1"/>  
-          <output name="channel_out_op"  num_pins="350"/>  
-          <output name="flow_ctrl_out_ip"  num_pins="15"/>  
+          <output name="channel_out_op"  num_pins="340"/>  
+          <output name="flow_ctrl_out_ip"  num_pins="10"/>  
           <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
             <!-- <fc_override port_name="odata_3" fc_type="frac" fc_val="0"/>
             <fc_override port_name="ovalid_3" fc_type="frac" fc_val="0"/>
@@ -73,13 +101,7 @@
             <fc_override port_name="oack_3" fc_type="frac" fc_val="0"/>
             <fc_override port_name="olck_3" fc_type="frac" fc_val="0"/> -->
           </fc>
-          <pinlocations pattern="spread">
-          <!-- <pinlocations pattern="custom"> -->
-            <!-- <loc side="left">router.idata_3[34:0] router.ivalid_3[0:0] router.ivch_3[0:0] router.iack_3[1:0] router.ilck_3[1:0] router.odata_3[34:0] router.ovalid_3[0:0] router.ovch_3[0:0] router.oack_3[1:0] router.ordy_3[1:0] router.olck_3[1:0] router.odata_4[34:0] router.ovalid_4[0:0] router.ovch_4[0:0] router.oack_4[1:0] router.ordy_4[1:0] router.olck_4[1:0]</loc> -->
-            <!-- <loc side="top">router.idata_2[34:0] router.ivalid_2[0:0] router.ivch_2[0:0] router.iack_2[1:0] router.ilck_2[1:0] router.odata_2[34:0] router.ovalid_2[0:0] router.ovch_2[0:0] router.oack_2[1:0] router.ordy_2[1:0] router.olck_2[1:0] router.idata_4[34:0] router.ivalid_4[0:0] router.ivch_4[0:0] router.iack_4[1:0] router.ilck_4[1:0]</loc> -->
-            <!-- <loc side="right">router.clk[0:0] router.rst_[0:0] router.idata_1[34:0] router.ivalid_1[0:0] router.ivch_1[0:0] router.iack_1[1:0] router.ilck_1[1:0] router.odata_1[34:0] router.ovalid_1[0:0] router.ovch_1[0:0] router.oack_1[1:0] router.ordy_1[1:0] router.olck_1[1:0]</loc> -->
-            <!-- <loc side="bottom">router.my_xpos[1:0] router.my_ypos[1:0] router.idata_0[34:0] router.ivalid_0[0:0] router.ivch_0[0:0] router.iack_0[1:0] router.ilck_0[1:0] router.odata_0[34:0] router.ovalid_0[0:0] router.ovch_0[0:0] router.oack_0[1:0] router.ordy_0[1:0] router.olck_0[1:0]</loc> -->
-          </pinlocations>
+          <pinlocations pattern="spread">     </pinlocations>
         </sub_tile>
       </tile>
    </tiles>
@@ -491,64 +513,133 @@
          </interconnect>
       </pb_type>
 
-    <pb_type name="router">
-      <!-- input output ports start   -->
-         <clock name="clk" num_pins="1"/>
-         <input name="reset"  num_pins="1"/>  
-         <input name="router_address"  num_pins="4"/>  
-         <input name="channel_in_ip"  num_pins="350"/>  
-         <input name="flow_ctrl_in_op"  num_pins="15"/>   
-         
-         <output name="error"  num_pins="1"/>  
-         <output name="channel_out_op"  num_pins="350"/>  
-         <output name="flow_ctrl_out_ip"  num_pins="15"/>  
-      <!-- input output ports end  -->
-      <mode name="router_wrap">
-         <pb_type name="router_wrap" blif_model=".subckt router_slice" num_pb="1">
-            <!-- input output ports  start   -->
-               <clock name="clk" num_pins="1"/>
-               <input name="reset"  num_pins="1"/>  
-               <input name="router_address"  num_pins="4"/>  
-               <input name="channel_in_ip"  num_pins="350"/>  
-               <input name="flow_ctrl_in_op"  num_pins="15"/>   
+<pb_type name="router_wrap">
+    <input name="reset" num_pins="1"/>
+    <input name="router_address" num_pins="2"/>
+    <input name="channel_in_ip" num_pins="340"/>
+    <input name="flow_ctrl_in_op" num_pins="10"/>
+    <output name="error" num_pins="1"/>
+    <output name="channel_out_op" num_pins="340"/>
+    <output name="flow_ctrl_out_ip" num_pins="10"/>
+    <clock name="clk" num_pins="1"/>
+    <mode name="router_asc">
+        <pb_type name="router_asc" blif_model=".subckt router_asc" num_pb="1">
+                <input name="reset" num_pins="1"/>
+    		<input name="router_address" num_pins="2"/>
+   		<input name="channel_in_ip" num_pins="340"/>
+    		<input name="flow_ctrl_in_op" num_pins="10"/>
+    		<output name="error" num_pins="1"/>
+   		<output name="channel_out_op" num_pins="340"/>
+   		<output name="flow_ctrl_out_ip" num_pins="10"/>
+    		<clock name="clk" num_pins="1"/>
+    		 <T_setup value="66e-12" port="router_asc.reset" clock="clk"/>  
+              <T_setup value="66e-12" port="router_asc.router_address" clock="clk"/>  
+              <T_setup value="66e-12" port="router_asc.channel_in_ip" clock="clk"/>  
+              <T_setup value="66e-12" port="router_asc.flow_ctrl_in_op" clock="clk"/>   
 
-               <output name="error"  num_pins="1"/>  
-               <output name="channel_out_op"  num_pins="350"/>  
-               <output name="flow_ctrl_out_ip"  num_pins="15"/>  
-            <!-- input output ports  end   -->
-            <!-- seq delay start -->
-              <T_setup value="66e-12" port="router_wrap.reset" clock="clk"/>  
-              <T_setup value="66e-12" port="router_wrap.router_address" clock="clk"/>  
-              <T_setup value="66e-12" port="router_wrap.channel_in_ip" clock="clk"/>  
-              <T_setup value="66e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>   
+              <T_setup value="66e-12" port="router_asc.error" clock="clk"/>  
+              <T_setup value="66e-12" port="router_asc.channel_out_op" clock="clk"/>  
+              <T_setup value="66e-12" port="router_asc.flow_ctrl_out_ip" clock="clk"/>  
 
-              <T_setup value="66e-12" port="router_wrap.error" clock="clk"/>  
-              <T_setup value="66e-12" port="router_wrap.channel_out_op" clock="clk"/>  
-              <T_setup value="66e-12" port="router_wrap.flow_ctrl_out_ip" clock="clk"/>  
-
-              <T_clock_to_Q max="124e-12" port="router_wrap.reset" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_wrap.router_address" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_wrap.channel_in_ip" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_asc.reset" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_asc.router_address" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_asc.channel_in_ip" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_asc.flow_ctrl_in_op" clock="clk"/>
 
               
-              <T_clock_to_Q max="124e-12" port="router_wrap.error" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_wrap.channel_out_op" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_wrap.flow_ctrl_out_ip" clock="clk"/>
-            <!-- Seq delay end -->
-         </pb_type>
+              <T_clock_to_Q max="124e-12" port="router_asc.error" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_asc.channel_out_op" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_asc.flow_ctrl_out_ip" clock="clk"/>
+        </pb_type>
         <interconnect>
-          <direct name="rst_2rst_" input="router.reset" output="router_wrap.reset"/>
-          <direct name="my_xpos2my_xpos" input="router.router_address" output="router_wrap.router_address"/>
-          <direct name="my_ypos2my_ypos" input="router.channel_in_ip" output="router_wrap.channel_in_ip"/>
-          <direct name="idata_02idata_0" input="router.flow_ctrl_in_op" output="router_wrap.flow_ctrl_in_op"/>
-          
-          <direct name="odata_22odata_2" input="router_wrap.error" output="router.error"/>
-          <direct name="odata_32odata_3" input="router_wrap.channel_out_op" output="router.channel_out_op"/>
-          <direct name="odata_42odata_4" input="router_wrap.flow_ctrl_out_ip" output="router.flow_ctrl_out_ip"/>
-          <direct name="clk" input="router.clk" output="router_wrap.clk"/>
+              	<direct name="adr2adr" input="router_wrap.router_address" output="router_asc.router_address"/>
+                <direct name="chan_in2chan_in" input="router_wrap.channel_in_ip" output="router_asc.channel_in_ip"/>
+                <direct name="ctrl_in2ctrl_in" input="router_wrap.flow_ctrl_in_op" output="router_asc.flow_ctrl_in_op"/>
+                <direct name="err2err" input="router_asc.error" output="router_wrap.error"/>
+                <direct name="rst2rst" input="router_wrap.reset" output="router_asc.reset"/>
+                <direct name="chan_out2chan_out" input="router_asc.channel_out_op" output="router_wrap.channel_out_op"/>
+                <direct name="ctrl_out2ctrl_out" input="router_asc.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
         </interconnect>
-      </mode>
+    </mode>
+   <mode name="router_desc">
+        <pb_type name="router_desc" blif_model=".subckt router_desc" num_pb="1">
+                <input name="reset" num_pins="1"/>
+    		<input name="router_address" num_pins="2"/>
+   		<input name="channel_in_ip" num_pins="340"/>
+    		<input name="flow_ctrl_in_op" num_pins="10"/>
+    		<output name="error" num_pins="1"/>
+   		<output name="channel_out_op" num_pins="340"/>
+   		<output name="flow_ctrl_out_ip" num_pins="10"/>
+    		<clock name="clk" num_pins="1"/>
+    		 <T_setup value="66e-12" port="router_desc.reset" clock="clk"/>  
+              <T_setup value="66e-12" port="router_desc.router_address" clock="clk"/>  
+              <T_setup value="66e-12" port="router_desc.channel_in_ip" clock="clk"/>  
+              <T_setup value="66e-12" port="router_desc.flow_ctrl_in_op" clock="clk"/>   
+
+              <T_setup value="66e-12" port="router_desc.error" clock="clk"/>  
+              <T_setup value="66e-12" port="router_desc.channel_out_op" clock="clk"/>  
+              <T_setup value="66e-12" port="router_desc.flow_ctrl_out_ip" clock="clk"/>  
+
+              <T_clock_to_Q max="124e-12" port="router_desc.reset" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_desc.router_address" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_desc.channel_in_ip" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_desc.flow_ctrl_in_op" clock="clk"/>
+
+              
+              <T_clock_to_Q max="124e-12" port="router_desc.error" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_desc.channel_out_op" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_desc.flow_ctrl_out_ip" clock="clk"/>
+        </pb_type>
+        <interconnect>
+              	<direct name="adr2adr" input="router_wrap.router_address" output="router_desc.router_address"/>
+                <direct name="chan_in2chan_in" input="router_wrap.channel_in_ip" output="router_desc.channel_in_ip"/>
+                <direct name="err2err" input="router_desc.error" output="router_wrap.error"/>
+                <direct name="rst2rst" input="router_wrap.reset" output="router_desc.reset"/>
+                <direct name="ctrl_in2ctrl_in" input="router_wrap.flow_ctrl_in_op" output="router_desc.flow_ctrl_in_op"/>
+                <direct name="chan_out2chan_out" input="router_desc.channel_out_op" output="router_wrap.channel_out_op"/>
+                <direct name="ctrl_out2ctrl_out" input="router_desc.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
+        </interconnect>
+    </mode>
+    <mode name="router_class">
+        <pb_type name="router_class" blif_model=".subckt router_class" num_pb="1">
+                <input name="reset" num_pins="1"/>
+    		<input name="router_address" num_pins="2"/>
+   		<input name="channel_in_ip" num_pins="340"/>
+    		<input name="flow_ctrl_in_op" num_pins="10"/>
+    		<output name="error" num_pins="1"/>
+   		<output name="channel_out_op" num_pins="340"/>
+   		<output name="flow_ctrl_out_ip" num_pins="10"/>
+    		<clock name="clk" num_pins="1"/>
+    		
+    		 <T_setup value="66e-12" port="router_class.reset" clock="clk"/>  
+              <T_setup value="66e-12" port="router_class.router_address" clock="clk"/>  
+              <T_setup value="66e-12" port="router_class.channel_in_ip" clock="clk"/>  
+              <T_setup value="66e-12" port="router_class.flow_ctrl_in_op" clock="clk"/>   
+
+              <T_setup value="66e-12" port="router_class.error" clock="clk"/>  
+              <T_setup value="66e-12" port="router_class.channel_out_op" clock="clk"/>  
+              <T_setup value="66e-12" port="router_class.flow_ctrl_out_ip" clock="clk"/>  
+
+              <T_clock_to_Q max="124e-12" port="router_class.reset" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_class.router_address" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_class.channel_in_ip" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_class.flow_ctrl_in_op" clock="clk"/>
+
+              
+              <T_clock_to_Q max="124e-12" port="router_class.error" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_class.channel_out_op" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_class.flow_ctrl_out_ip" clock="clk"/>
+        </pb_type>
+        <interconnect>
+              	<direct name="adr2adr" input="router_wrap.router_address" output="router_class.router_address"/>
+                <direct name="chan_in2chan_in" input="router_wrap.channel_in_ip" output="router_class.channel_in_ip"/>
+                <direct name="ctrl_in2ctrl_in" input="router_wrap.flow_ctrl_in_op" output="router_class.flow_ctrl_in_op"/>
+                <direct name="err2err" input="router_class.error" output="router_wrap.error"/>
+                <direct name="rst2rst" input="router_wrap.reset" output="router_class.reset"/>
+                <direct name="chan_out2chan_out" input="router_class.channel_out_op" output="router_wrap.channel_out_op"/>
+                <direct name="ctrl_out2ctrl_out" input="router_class.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
+        </interconnect>
+    </mode>
       <power method="sum-of-children"/>
     </pb_type>
     

@@ -30,7 +30,7 @@
 //==============================================================================
 
 module rtr_top
-  (clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
+  (mode_dim_order, clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
    flow_ctrl_in_op, error);
    
 `include "c_functions.v"
@@ -106,7 +106,7 @@ module rtr_top
    parameter routing_type = `ROUTING_TYPE_PHASED_DOR;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+   //parameter dim_order = `DIM_ORDER_ASCENDING;
    
    // select implementation variant for flit buffer register file
    parameter fb_regfile_type = `REGFILE_TYPE_FF_2D;
@@ -225,6 +225,7 @@ module rtr_top
    
    input clk;
    input reset;
+   input [1:0] mode_dim_order;
    
    // current router's address
    input [0:router_addr_width-1] router_address;
@@ -334,7 +335,7 @@ module rtr_top
 	       .restrict_turns(restrict_turns),
 	       .predecode_lar_info(predecode_lar_info),
 	       .routing_type(routing_type),
-	       .dim_order(dim_order),
+//	       .dim_order(dim_order),
 	       .fb_regfile_type(fb_regfile_type),
 	       .fb_mgmt_type(fb_mgmt_type),
 	       .fb_fast_peek(fb_fast_peek),
@@ -346,7 +347,8 @@ module rtr_top
 	       .port_id(ip),
 	       .reset_type(reset_type))
 	   ipc
-	     (.clk(clk),
+	     (.mode_dim_order(mode_dim_order),
+       .clk(clk),
 	      .reset(reset),
 	      .router_address(router_address),
 	      .channel_in(channel_in),
@@ -438,7 +440,7 @@ module rtr_top
        .flow_ctrl_type(flow_ctrl_type),
        .restrict_turns(restrict_turns),
        .routing_type(routing_type),
-       .dim_order(dim_order),
+       //.dim_order(dim_order),
        .precomp_ivc_sel(precomp_ivc_sel),
        .precomp_ip_sel(precomp_ip_sel),
        .fb_mgmt_type(fb_mgmt_type),
@@ -451,7 +453,8 @@ module rtr_top
        .dual_path_mask_on_ready(dual_path_mask_on_ready),
        .reset_type(reset_type))
    alo
-     (.clk(clk),
+     (.mode_dim_order(mode_dim_order),
+     .clk(clk),
       .reset(reset),
       .route_in_ip_ivc_op(ipc_route_ip_ivc_op),
       .route_in_ip_ivc_orc(ipc_route_ip_ivc_orc),

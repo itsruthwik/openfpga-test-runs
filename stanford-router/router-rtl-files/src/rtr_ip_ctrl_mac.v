@@ -30,7 +30,7 @@
 //==============================================================================
 
 module rtr_ip_ctrl_mac
-  (clk, reset, router_address, channel_in, route_out_ivc_op, route_out_ivc_orc, 
+  (mode_dim_order, clk, reset, router_address, channel_in, route_out_ivc_op, route_out_ivc_orc, 
    flit_valid_out_ivc, flit_last_out_ivc, flit_head_out_ivc, flit_tail_out_ivc, 
    route_fast_out_op, route_fast_out_orc, flit_valid_fast_out, 
    flit_head_fast_out, flit_tail_fast_out, flit_sel_fast_out_ivc, 
@@ -103,7 +103,7 @@ module rtr_ip_ctrl_mac
    parameter routing_type = `ROUTING_TYPE_PHASED_DOR;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+   //parameter dim_order = `DIM_ORDER_ASCENDING;
    
    // select implementation variant for flit buffer register file
    parameter fb_regfile_type = `REGFILE_TYPE_FF_2D;
@@ -369,6 +369,9 @@ module rtr_ip_ctrl_mac
    assign chi_dest_info = chi_route_info[lar_info_width:
 					 lar_info_width+dest_info_width-1];
    
+   input [1:0] mode_dim_order;
+   wire [1:0] dim_order;
+   assign dim_order = mode_dim_order;
    
    //---------------------------------------------------------------------------
    // global lookahead routing information decoder
@@ -462,9 +465,11 @@ module rtr_ip_ctrl_mac
 	     .num_nodes_per_router(num_nodes_per_router),
 	     .connectivity(connectivity),
 	     .routing_type(routing_type),
-	     .dim_order(dim_order))
+//	     .dim_order(dim_order)
+)
 	 rtl
-	   (.router_address(next_router_address),
+	   (.mode_dim_order(mode_dim_order),
+		.router_address(next_router_address),
 	    .sel_mc(sel_mc),
 	    .sel_irc(gld_route_orc),
 	    .dest_info(chi_dest_info),
@@ -942,11 +947,12 @@ module rtr_ip_ctrl_mac
 	       .restrict_turns(restrict_turns),
 	       .connectivity(connectivity),
 	       .routing_type(routing_type),
-	       .dim_order(dim_order),
+//	       .dim_order(dim_order),
 	       .port_id(port_id),
 	       .vc_id(ivc))
 	   rf
-	     (.clk(clk),
+	     (.mode_dim_order(mode_dim_order),
+		  .clk(clk),
 	      .route_valid(flit_valid_out),
 	      .route_in_op(route_unmasked_op),
 	      .route_in_orc(route_unmasked_orc),
@@ -1002,9 +1008,11 @@ module rtr_ip_ctrl_mac
 		  .num_nodes_per_router(num_nodes_per_router),
 		  .connectivity(connectivity),
 		  .routing_type(routing_type),
-		  .dim_order(dim_order))
+//		  .dim_order(dim_order)
+		  )
 	      rtl
-		(.router_address(next_router_address),
+		(.mode_dim_order(mode_dim_order),
+		 .router_address(next_router_address),
 		 .sel_mc(sel_mc),
 		 .sel_irc(hit_route_orc),
 		 .dest_info(hit_dest_info),

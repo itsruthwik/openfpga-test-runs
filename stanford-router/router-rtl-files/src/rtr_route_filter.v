@@ -31,7 +31,7 @@
 //==============================================================================
 
 module rtr_route_filter
-  (clk, route_valid, route_in_op, route_in_orc, route_out_op, route_out_orc, 
+  (mode_dim_order, clk, route_valid, route_in_op, route_in_orc, route_out_op, route_out_orc, 
    errors);
    
 `include "c_constants.v"
@@ -72,7 +72,7 @@ module rtr_route_filter
    parameter routing_type = `ROUTING_TYPE_PHASED_DOR;
    
    // select order of dimension traversal
-   parameter dim_order = `DIM_ORDER_ASCENDING;
+//   parameter dim_order = `DIM_ORDER_ASCENDING;
    
    // ID of current input port
    parameter port_id = 0;
@@ -103,6 +103,10 @@ module rtr_route_filter
    // route information is valid
    input route_valid;
    
+   input [1:0] mode_dim_order;
+   wire [1:0] dim_order;
+   assign dim_order = mode_dim_order;
+
    // raw output port
    input [0:num_ports-1] route_in_op;
    
