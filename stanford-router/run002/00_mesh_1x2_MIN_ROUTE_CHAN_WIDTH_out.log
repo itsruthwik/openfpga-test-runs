@@ -1,0 +1,16 @@
+* * * * * * * * * * * * * * * * * * * * 
+RunDirectory : /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/run002
+python3 /mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/scripts/run_fpga_flow.py /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/arch/vpr_arch.xml /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/mesh_1x2.v --top_module mesh_1x2 --run_dir /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/run002/vpr_arch/mesh_1x2/MIN_ROUTE_CHAN_WIDTH --fpga_flow yosys_vpr --openfpga_shell_template /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/config/fix_heterogeneous_device_example_script.openfpga --openfpga_arch_file /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/arch/openfpga_arch.xml --openfpga_sim_setting_file /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/config/fixed_sim_openfpga.xml --openfpga_vpr_device_layout large --yosys_tmpl /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/yosys-scripts/ys_tmpl_yosys_vpr_dsp_flow.ys --ys_rewrite_tmpl /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/yosys-scripts/ys_tmpl_yosys_vpr_flow_with_rewrite.ys;/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/yosys-scripts/ys_tmpl_rewrite_flow.ys --vpr_fpga_verilog --vpr_fpga_verilog_dir /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/run002/vpr_arch/mesh_1x2/MIN_ROUTE_CHAN_WIDTH --vpr_fpga_x2p_rename_illegal_port --flow_config /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/config/task.conf --default_tool_path /mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/scripts/../misc/fpgaflow_default_tool_path.conf --TOP mesh_1x2 --YOSYS_CELL_SIM_VERILOG /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v
+* * * * * * * * * * * * * * * * * * * * 
+INFO - Validating command line arguments
+INFO - Run directory : /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/run002/vpr_arch/mesh_1x2/MIN_ROUTE_CHAN_WIDTH
+INFO - Running "yosys_vpr" Flow
+INFO - Extracted lut_size size from arch XML = 6
+INFO - Running Yosys with lut_size = 6
+INFO - Launching Run yosys 
+ERROR - Run yosys run failed with returncode 1
+ERROR - command /mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/yosys yosys.ys
+ERROR - -->>ERROR: Module `\router_asc' referenced in module `\mesh_1x2' in cell `\rtr_0' is not part of the design.
+ERROR - Current working directory : /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/run002/vpr_arch/mesh_1x2/MIN_ROUTE_CHAN_WIDTH
+ERROR - Failed to run Run yosys task
+ERROR - Exiting . . . . . .

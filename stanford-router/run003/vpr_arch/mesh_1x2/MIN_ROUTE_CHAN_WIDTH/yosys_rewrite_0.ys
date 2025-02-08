@@ -1,0 +1,45 @@
+# Yosys synthesis script for mesh_1x2
+
+# Read verilog files
+read_verilog ./benchmark/mesh_1x2.v
+
+read_verilog -lib -specify  /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v
+
+# Technology mapping
+hierarchy -top mesh_1x2
+proc
+techmap -D NO_LUT -map +/adff2dff.v
+
+# Synthesis
+flatten
+opt_expr
+opt_clean
+check
+opt -nodffe -nosdff
+fsm
+opt -nodffe -nosdff
+wreduce
+peepopt
+opt_clean
+opt -nodffe -nosdff
+memory -nomap
+opt_clean
+opt -fast -full -nodffe -nosdff
+memory_map
+opt -full -nodffe -nosdff
+techmap
+opt -fast -nodffe -nosdff
+clean
+
+clean
+
+# LUT mapping
+abc -lut 6
+
+# Check
+synth -run check
+
+# Clean and output blif
+opt_clean -purge
+write_blif rewritten_mesh_1x2_yosys_out.blif
+write_verilog mesh_1x2_output_verilog.v

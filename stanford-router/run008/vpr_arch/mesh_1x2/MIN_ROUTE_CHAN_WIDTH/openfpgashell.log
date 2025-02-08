@@ -1,0 +1,2 @@
+/mnt/vault1/mfaroo19/OpenFPGA/build/openfpga/openfpga -batch -f mesh_1x2_run.openfpga
+-11

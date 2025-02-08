@@ -3,18 +3,18 @@ input clk,
 input reset,
 output  rtr_error,
 
-input [0:339]  channel_router_0_ip,
-input [0:9]    flow_ctrl_router_0_in,
+input [0:340]  channel_router_0_ip,
+input [0:10]    flow_ctrl_router_0_in,
 
-output [0:339]  channel_router_0_op,
-output [0:9]    flow_ctrl_out,
+output [0:340]  channel_router_0_op,
+output [0:10]    flow_ctrl_out,
 
 input a,
 input b,
 output c
 );
    
-   router_asc  rtr_0 (
+   router_slice   rtr_0 (
       .clk(clk),
       .reset(reset),
       .router_address(2'b00),

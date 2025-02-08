@@ -85,7 +85,9 @@
         <sub_tile name="router">
           <equivalent_sites>
             <site pb_type="router_wrap" pin_mapping="direct"/>
-
+            <site pb_type="router_asc" pin_mapping="direct"/>
+            <site pb_type="router_desc" pin_mapping="direct"/>
+            <site pb_type="router_class" pin_mapping="direct"/>
           </equivalent_sites>
           <clock name="clk" num_pins="1"/>
           <input name="reset"  num_pins="1"/>
