@@ -10,7 +10,7 @@ module router_asc(
         output error
     );
 parameter MODE = 2'b00;
-reg [0:349] channel_out_op_1 ;
+reg [0:339] channel_out_op_1 ;
 reg [0:14] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 
@@ -83,7 +83,7 @@ reg error_1 ;
 endmodule
 
 		
-module router_desc(
+module router_descend(
         input clk,
         input reset,
         input [0:1] router_address,
@@ -94,7 +94,7 @@ module router_desc(
         output error
     );
 parameter MODE = 2'b01;
-reg [0:349] channel_out_op_1 ;
+reg [0:339] channel_out_op_1 ;
 reg [0:14] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 
@@ -166,7 +166,7 @@ reg error_1 ;
 
 endmodule
 
-module router_class(
+module router_classy(
         input clk,
         input reset,
         input [0:1] router_address,
@@ -177,7 +177,7 @@ module router_class(
         output error
     );
 parameter MODE = 2'b10;
-reg [0:349] channel_out_op_1 ;
+reg [0:339] channel_out_op_1 ;
 reg [0:14] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 

@@ -85,6 +85,7 @@
         <sub_tile name="router">
           <equivalent_sites>
             <site pb_type="router_wrap" pin_mapping="direct"/>
+
           </equivalent_sites>
           <clock name="clk" num_pins="1"/>
           <input name="reset"  num_pins="1"/>
@@ -354,47 +355,7 @@
     <output name="channel_out_op" num_pins="340"/>
     <output name="flow_ctrl_out_ip" num_pins="10"/>
     <clock name="clk" num_pins="1"/>
-    <mode name="router_phy" disable_packing="true">
-        <pb_type name="router_phy"  blif_model=".subckt router_asc" num_pb="1">
-                <input name="reset" num_pins="1"/>
-    		<input name="router_address" num_pins="2"/>
-   		<input name="channel_in_ip" num_pins="340"/>
-    		<input name="flow_ctrl_in_op" num_pins="10"/>
-    		<output name="error" num_pins="1"/>
-   		<output name="channel_out_op" num_pins="340"/>
-   		<output name="flow_ctrl_out_ip" num_pins="10"/>
-    		<clock name="clk" num_pins="1"/>
-    		<T_setup value="66e-12" port="router_phy.reset" clock="clk"/>  
-              <T_setup value="66e-12" port="router_phy.router_address" clock="clk"/>  
-              <T_setup value="66e-12" port="router_phy.channel_in_ip" clock="clk"/>  
-              <T_setup value="66e-12" port="router_phy.flow_ctrl_in_op" clock="clk"/>   
 
-              <T_setup value="66e-12" port="router_phy.error" clock="clk"/>  
-              <T_setup value="66e-12" port="router_phy.channel_out_op" clock="clk"/>  
-              <T_setup value="66e-12" port="router_phy.flow_ctrl_out_ip" clock="clk"/>  
-
-              <T_clock_to_Q max="124e-12" port="router_phy.reset" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_phy.router_address" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_phy.channel_in_ip" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_phy.flow_ctrl_in_op" clock="clk"/>
-
-              
-              <T_clock_to_Q max="124e-12" port="router_phy.error" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_phy.channel_out_op" clock="clk"/>
-              <T_clock_to_Q max="124e-12" port="router_phy.flow_ctrl_out_ip" clock="clk"/>
-    		 
-        </pb_type>
-        
-        <interconnect>
-              	<direct name="adr2adr" input="router_wrap.router_address" output="router_phy.router_address"/>
-                <direct name="chan_in2chan_in" input="router_wrap.channel_in_ip" output="router_phy.channel_in_ip"/>
-                <direct name="ctrl_in2ctrl_in" input="router_wrap.flow_ctrl_in_op" output="router_phy.flow_ctrl_in_op"/>
-                <direct name="err2err" input="router_phy.error" output="router_wrap.error"/>
-                <direct name="rst2rst" input="router_wrap.reset" output="router_phy.reset"/>
-                <direct name="chan_out2chan_out" input="router_phy.channel_out_op" output="router_wrap.channel_out_op"/>
-                <direct name="ctrl_out2ctrl_out" input="router_phy.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
-        </interconnect>
-        </mode>
     <mode name="router_asc">
         <pb_type name="router_asc" blif_model=".subckt router_asc" num_pb="1">
                 <input name="reset" num_pins="1"/>
@@ -432,6 +393,7 @@
                 <direct name="rst2rst" input="router_wrap.reset" output="router_asc.reset"/>
                 <direct name="chan_out2chan_out" input="router_asc.channel_out_op" output="router_wrap.channel_out_op"/>
                 <direct name="ctrl_out2ctrl_out" input="router_asc.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
+                <direct name="ck2clk" input="router_wrap.clk" output="router_asc.clk" />
         </interconnect>
     </mode>
    <mode name="router_desc">

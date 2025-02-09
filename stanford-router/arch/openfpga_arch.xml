@@ -191,7 +191,7 @@
 
         <pb_type name="router_wrap" physical_mode_name="router_asc"/>
         <pb_type name="router_wrap[router_asc].router_asc" circuit_model_name="router_wrap" mode_bits="00"/>
-        <pb_type name="router_wrap[router_desc].router_desc" physical_pb_type_name="router_wrap[router_asc].router_asc" mode_bits="01"/>
-        <pb_type name="router_wrap[router_class].router_class" physical_pb_type_name="router_wrap[router_asc].router_asc" mode_bits="10"/>
+        <pb_type name="router_wrap[router_desc].router_desc" physical_pb_type_name="router_wrap[router_asc].router_asc" mode_bits="01" physical_pb_type_index_factor="0"/>
+        <pb_type name="router_wrap[router_class].router_class" physical_pb_type_name="router_wrap[router_asc].router_asc" mode_bits="10" physical_pb_type_index_factor="0"/>
     </pb_type_annotations>
 </openfpga_architecture>

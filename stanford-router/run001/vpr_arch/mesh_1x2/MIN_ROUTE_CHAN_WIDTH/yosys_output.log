@@ -16,7 +16,9 @@ Successfully finished Verilog frontend.
 
 2. Executing Verilog-2005 frontend: /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v
 Parsing Verilog input from `/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v' to AST representation.
-Generating RTLIL representation for module `\router_slice'.
+Generating RTLIL representation for module `\router_asc'.
+Generating RTLIL representation for module `\router_descend'.
+Generating RTLIL representation for module `\router_classy'.
 Successfully finished Verilog frontend.
 
 3. Executing HIERARCHY pass (managing design hierarchy).
@@ -27,15 +29,11 @@ Top module:  \mesh_1x2
 3.2. Analyzing design hierarchy..
 Top module:  \mesh_1x2
 Removed 0 unused modules.
-Warning: Resizing cell port mesh_1x2.rtr_0.flow_ctrl_in_op from 11 bits to 15 bits.
-Warning: Resizing cell port mesh_1x2.rtr_0.flow_ctrl_out_ip from 11 bits to 15 bits.
-Warning: Resizing cell port mesh_1x2.rtr_0.channel_out_op from 341 bits to 350 bits.
-Warning: Resizing cell port mesh_1x2.rtr_0.channel_in_ip from 341 bits to 350 bits.
 
 4. Executing PROC pass (convert processes to netlists).
 
 4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 1 empty switch in `\router_slice.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
+Found and cleaned up 1 empty switch in `\router_asc.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
 Cleaned up 1 empty switch.
 
 4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
@@ -53,22 +51,22 @@ Promoted 3 assignments to connections.
 Converted 0 switches.
 
 4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\router_slice.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
+Creating decoders for process `\router_asc.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
 
 4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\router_slice.\channel_out_op_1' using process `\router_slice.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
-  created $dff cell `$procdff$8' with positive edge clock.
-Creating register for signal `\router_slice.\flow_ctrl_out_ip_1' using process `\router_slice.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
-  created $dff cell `$procdff$9' with positive edge clock.
-Creating register for signal `\router_slice.\error_1' using process `\router_slice.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
-  created $dff cell `$procdff$10' with positive edge clock.
+Creating register for signal `\router_asc.\channel_out_op_1' using process `\router_asc.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
+  created $dff cell `$procdff$4' with positive edge clock.
+Creating register for signal `\router_asc.\flow_ctrl_out_ip_1' using process `\router_asc.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
+  created $dff cell `$procdff$5' with positive edge clock.
+Creating register for signal `\router_asc.\error_1' using process `\router_asc.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
+  created $dff cell `$procdff$6' with positive edge clock.
 
 4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `router_slice.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
+Removing empty process `router_asc.$proc$/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/dummy_router_slice.v:68$2'.
 Cleaned up 0 empty switches.
 
 4.12. Executing OPT_EXPR pass (perform const folding).
@@ -76,240 +74,253 @@ Optimizing module mesh_1x2.
 
 5. Executing TECHMAP pass (map to technology primitives).
 
-5.1. Executing Verilog-2005 frontend: /mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v
-Parsing Verilog input from `/mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v' to AST representation.
-Generating RTLIL representation for module `\adff2dff'.
+5.1. Executing Verilog-2005 frontend: /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/stanford_router_map.v
+Parsing Verilog input from `/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/stanford_router_map.v' to AST representation.
+Generating RTLIL representation for module `\router_ascend'.
+Generating RTLIL representation for module `\router_descend'.
+Generating RTLIL representation for module `\router_classy'.
 Successfully finished Verilog frontend.
 
 5.2. Continuing TECHMAP pass.
 No more expansions possible.
+<suppressed ~5 debug messages>
+
+6. Executing TECHMAP pass (map to technology primitives).
+
+6.1. Executing Verilog-2005 frontend: /mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v
+Parsing Verilog input from `/mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v' to AST representation.
+Generating RTLIL representation for module `\adff2dff'.
+Successfully finished Verilog frontend.
+
+6.2. Continuing TECHMAP pass.
+No more expansions possible.
 <suppressed ~3 debug messages>
 
-6. Executing FLATTEN pass (flatten design).
+7. Executing FLATTEN pass (flatten design).
 
-7. Executing OPT_EXPR pass (perform const folding).
+8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-8. Executing OPT_CLEAN pass (remove unused cells and wires).
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 Removed 0 unused cells and 1 unused wires.
 <suppressed ~1 debug messages>
 
-9. Executing CHECK pass (checking for obvious problems).
+10. Executing CHECK pass (checking for obvious problems).
 Checking module mesh_1x2...
 Found and reported 0 problems.
 
-10. Executing OPT pass (performing simple optimizations).
+11. Executing OPT pass (performing simple optimizations).
 
-10.1. Executing OPT_EXPR pass (perform const folding).
+11.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-10.2. Executing OPT_MERGE pass (detect identical cells).
+11.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \mesh_1x2..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \mesh_1x2.
 Performed a total of 0 changes.
 
-10.5. Executing OPT_MERGE pass (detect identical cells).
+11.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-10.6. Executing OPT_DFF pass (perform DFF optimizations).
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-10.8. Executing OPT_EXPR pass (perform const folding).
+11.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-10.9. Finished OPT passes. (There is nothing left to do.)
+11.9. Finished OPT passes. (There is nothing left to do.)
 
-11. Executing FSM pass (extract and optimize FSM).
+12. Executing FSM pass (extract and optimize FSM).
 
-11.1. Executing FSM_DETECT pass (finding FSMs in design).
+12.1. Executing FSM_DETECT pass (finding FSMs in design).
 
-11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
 
-11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
 
-11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
 
-11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
 
-11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
 
-11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
 
-12. Executing OPT pass (performing simple optimizations).
+13. Executing OPT pass (performing simple optimizations).
 
-12.1. Executing OPT_EXPR pass (perform const folding).
+13.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-12.2. Executing OPT_MERGE pass (detect identical cells).
+13.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \mesh_1x2..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \mesh_1x2.
 Performed a total of 0 changes.
 
-12.5. Executing OPT_MERGE pass (detect identical cells).
+13.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-12.6. Executing OPT_DFF pass (perform DFF optimizations).
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-12.8. Executing OPT_EXPR pass (perform const folding).
+13.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-12.9. Finished OPT passes. (There is nothing left to do.)
+13.9. Finished OPT passes. (There is nothing left to do.)
 
-13. Executing WREDUCE pass (reducing word size of cells).
+14. Executing WREDUCE pass (reducing word size of cells).
 
-14. Executing PEEPOPT pass (run peephole optimizers).
+15. Executing PEEPOPT pass (run peephole optimizers).
 
-15. Executing OPT_CLEAN pass (remove unused cells and wires).
+16. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-16. Executing OPT pass (performing simple optimizations).
+17. Executing OPT pass (performing simple optimizations).
 
-16.1. Executing OPT_EXPR pass (perform const folding).
+17.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-16.2. Executing OPT_MERGE pass (detect identical cells).
+17.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \mesh_1x2..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \mesh_1x2.
 Performed a total of 0 changes.
 
-16.5. Executing OPT_MERGE pass (detect identical cells).
+17.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-16.6. Executing OPT_DFF pass (perform DFF optimizations).
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-16.8. Executing OPT_EXPR pass (perform const folding).
+17.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-16.9. Finished OPT passes. (There is nothing left to do.)
+17.9. Finished OPT passes. (There is nothing left to do.)
 
-17. Executing MEMORY pass.
+18. Executing MEMORY pass.
 
-17.1. Executing OPT_MEM pass (optimize memories).
+18.1. Executing OPT_MEM pass (optimize memories).
 Performed a total of 0 transformations.
 
-17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
 Performed a total of 0 transformations.
 
-17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
 
-17.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+18.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
 
-17.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+18.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
 
-17.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+18.6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-17.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+18.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
 
-17.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+18.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
 Performed a total of 0 transformations.
 
-17.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-17.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+18.10. Executing MEMORY_COLLECT pass (generating $mem cells).
 
-18. Executing OPT_CLEAN pass (remove unused cells and wires).
+19. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-19. Executing OPT pass (performing simple optimizations).
+20. Executing OPT pass (performing simple optimizations).
 
-19.1. Executing OPT_EXPR pass (perform const folding).
+20.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-19.2. Executing OPT_MERGE pass (detect identical cells).
+20.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-19.3. Executing OPT_DFF pass (perform DFF optimizations).
+20.3. Executing OPT_DFF pass (perform DFF optimizations).
 
-19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+20.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-19.5. Finished fast OPT passes.
+20.5. Finished fast OPT passes.
 
-20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+21. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
 
-21. Executing OPT pass (performing simple optimizations).
+22. Executing OPT pass (performing simple optimizations).
 
-21.1. Executing OPT_EXPR pass (perform const folding).
+22.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-21.2. Executing OPT_MERGE pass (detect identical cells).
+22.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \mesh_1x2..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \mesh_1x2.
 Performed a total of 0 changes.
 
-21.5. Executing OPT_MERGE pass (detect identical cells).
+22.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-21.6. Executing OPT_SHARE pass.
+22.6. Executing OPT_SHARE pass.
 
-21.7. Executing OPT_DFF pass (perform DFF optimizations).
+22.7. Executing OPT_DFF pass (perform DFF optimizations).
 
-21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+22.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 
-21.9. Executing OPT_EXPR pass (perform const folding).
+22.9. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 
-21.10. Finished OPT passes. (There is nothing left to do.)
+22.10. Finished OPT passes. (There is nothing left to do.)
 
-22. Executing TECHMAP pass (map to technology primitives).
+23. Executing TECHMAP pass (map to technology primitives).
 
-22.1. Executing Verilog-2005 frontend: /mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v
+23.1. Executing Verilog-2005 frontend: /mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v
 Parsing Verilog input from `/mnt/vault1/mfaroo19/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
@@ -337,7 +348,7 @@ Generating RTLIL representation for module `\_90_demux'.
 Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
-22.2. Continuing TECHMAP pass.
+23.2. Continuing TECHMAP pass.
 Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=1:B_SIGNED=0:B_WIDTH=1:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
 Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=1:B_SIGNED=0:B_WIDTH=1:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=1:B_SIGNED=0:B_WIDTH=1:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
 Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
@@ -351,31 +362,31 @@ Using extmapper simplemap for cells of type $or.
 No more expansions possible.
 <suppressed ~225 debug messages>
 
-23. Executing OPT pass (performing simple optimizations).
+24. Executing OPT pass (performing simple optimizations).
 
-23.1. Executing OPT_EXPR pass (perform const folding).
+24.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module mesh_1x2.
 <suppressed ~5 debug messages>
 
-23.2. Executing OPT_MERGE pass (detect identical cells).
+24.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\mesh_1x2'.
 Removed a total of 0 cells.
 
-23.3. Executing OPT_DFF pass (perform DFF optimizations).
+24.3. Executing OPT_DFF pass (perform DFF optimizations).
 
-23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 Removed 2 unused cells and 30 unused wires.
 <suppressed ~3 debug messages>
 
-23.5. Finished fast OPT passes.
+24.5. Finished fast OPT passes.
 
-24. Executing ABC pass (technology mapping using ABC).
+25. Executing ABC pass (technology mapping using ABC).
 
-24.1. Extracting gate netlist of module `\mesh_1x2' to `<abc-temp-dir>/input.blif'..
+25.1. Extracting gate netlist of module `\mesh_1x2' to `<abc-temp-dir>/input.blif'..
 Extracted 1 gates and 3 wires to a netlist network with 2 inputs and 1 outputs.
 
-24.1.1. Executing ABC.
+25.1.1. Executing ABC.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
 ABC: ABC command line: "source <abc-temp-dir>/abc.script".
 ABC: 
@@ -396,54 +407,53 @@ ABC: + mfs2
 ABC: + lutpack -S 1 
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
-24.1.2. Re-integrating ABC results.
+25.1.2. Re-integrating ABC results.
 ABC RESULTS:              $lut cells:        1
 ABC RESULTS:        internal signals:        0
 ABC RESULTS:           input signals:        2
 ABC RESULTS:          output signals:        1
 Removing temp directory.
 
-25. Executing SYNTH pass.
+26. Executing SYNTH pass.
 
-25.1. Executing HIERARCHY pass (managing design hierarchy).
+26.1. Executing HIERARCHY pass (managing design hierarchy).
 
-25.1.1. Analyzing design hierarchy..
+26.1.1. Analyzing design hierarchy..
 Top module:  \mesh_1x2
 
-25.1.2. Analyzing design hierarchy..
+26.1.2. Analyzing design hierarchy..
 Top module:  \mesh_1x2
 Removed 0 unused modules.
 
-25.2. Printing statistics.
+26.2. Printing statistics.
 
 === mesh_1x2 ===
 
-   Number of wires:                 15
-   Number of wire bits:            726
+   Number of wires:                 13
+   Number of wire bits:            709
    Number of public wires:          10
-   Number of public wire bits:     710
+   Number of public wire bits:     706
    Number of ports:                 10
-   Number of port bits:            710
+   Number of port bits:            706
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
    Number of cells:                  2
      $lut                            1
-     router_slice                    1
+     router_asc                      1
 
-25.3. Executing CHECK pass (checking for obvious problems).
+26.3. Executing CHECK pass (checking for obvious problems).
 Checking module mesh_1x2...
 Found and reported 0 problems.
 
-26. Executing OPT_CLEAN pass (remove unused cells and wires).
+27. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \mesh_1x2..
 Removed 0 unused cells and 3 unused wires.
 <suppressed ~1 debug messages>
 
-27. Executing BLIF backend.
+28. Executing BLIF backend.
 
-Warnings: 4 unique messages, 4 total
-End of script. Logfile hash: cfab9f6b35, CPU: user 0.04s system 0.00s, MEM: 23.50 MB peak
+End of script. Logfile hash: 0144849e59, CPU: user 0.04s system 0.00s, MEM: 23.00 MB peak
 Yosys 0.46+11 (git sha1 0200a7680, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
-Time spent: 60% 1x abc (0 sec), 10% 14x opt_clean (0 sec), ...
+Time spent: 60% 1x abc (0 sec), 9% 14x opt_clean (0 sec), ...
 0

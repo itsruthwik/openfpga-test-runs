@@ -9,7 +9,7 @@
 	hierarchy -top ${TOP_MODULE}
 	proc
 	
-	#techmap -map ${YOSYS_DSP_MAP_VERILOG}  ${YOSYS_DSP_MAP_PARAMETERS}
+	techmap -map /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/stanford_router_map.v
 	#for mapping to router
 	
 	techmap -D NO_LUT -map +/adff2dff.v
@@ -44,3 +44,5 @@
 	# Clean and output blif
 	opt_clean -purge
 	write_blif ${OUTPUT_BLIF}
+	
+

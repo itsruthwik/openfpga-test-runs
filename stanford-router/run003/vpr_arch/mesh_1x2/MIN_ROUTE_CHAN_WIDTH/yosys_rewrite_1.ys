@@ -1,5 +1,0 @@
-# Rewrite the .blif to Verilog
-# so that the pin sequence matches
-read_blif rewritten_mesh_1x2_yosys_out.blif
-#
-write_verilog mesh_1x2_output_verilog.v

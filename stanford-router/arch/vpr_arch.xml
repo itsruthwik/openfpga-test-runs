@@ -393,6 +393,7 @@
                 <direct name="rst2rst" input="router_wrap.reset" output="router_asc.reset"/>
                 <direct name="chan_out2chan_out" input="router_asc.channel_out_op" output="router_wrap.channel_out_op"/>
                 <direct name="ctrl_out2ctrl_out" input="router_asc.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
+                <direct name="ck2clk" input="router_wrap.clk" output="router_asc.clk" />
         </interconnect>
     </mode>
    <mode name="router_desc">

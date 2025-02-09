@@ -1,4 +1,4 @@
-module router_asc(
+module router_ascend(
         input clk,
         input reset,
         input [0:1] router_address,
@@ -8,8 +8,8 @@ module router_asc(
         input [0:9] flow_ctrl_in_op,
         output error
     );
-	parameter MODE = 2'b00;
-	router_asc #(.MODE(2'b00)) _TECHMAP_REPLACE_(
+
+	router_asc #(.MODE(2'b00)) _TECHMAP_REPLACE_ (
 		.clk(clk),
         	.reset(reset),
         	.router_address(router_address),
@@ -21,7 +21,7 @@ module router_asc(
 
 endmodule
 
-module router_desc(
+module router_descend(
         input clk,
         input reset,
         input [0:1] router_address,
@@ -32,7 +32,7 @@ module router_desc(
         output error
     );
 
-	router_desc #(.MODE(2'b01)) _TECHMAP_REPLACE_(
+	router_desc #(.MODE(2'b01)) _TECHMAP_REPLACE_ (
 		.clk(clk),
         	.reset(reset),
         	.router_address(router_address),
@@ -44,7 +44,7 @@ module router_desc(
 
 endmodule
 
-module routerclass(
+module router_classy(
         input clk,
         input reset,
         input [0:1] router_address,
@@ -55,7 +55,7 @@ module routerclass(
         output error
     );
 
-	router_class #(.MODE(2'b10)) _TECHMAP_REPLACE_(
+	router_class #(.MODE(2'b10)) _TECHMAP_REPLACE_ (
 		.clk(clk),
         	.reset(reset),
         	.router_address(router_address),

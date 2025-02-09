@@ -1,0 +1,10 @@
+<openfpga_bitstream_setting>
+  <pb_type name="router_wrap[router_asc].router_asc" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
+  <pb_type name="router_wrap[router_desc].router_desc" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
+  <pb_type name="router_wrap[router_class].router_class" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
+  <non_fabric name="mult_16" file="dsp.json">
+    <pb name="router_wrap[router_asc].router_asc" content=".param MODE"/>
+    <pb name="router_wrap[router_desc].router_desc" content=".param MODE"/>
+    <pb name="router_wrap[router_class].router_class" content=".param MODE"/>
+  </non_fabric>
+</openfpga_bitstream_setting>
