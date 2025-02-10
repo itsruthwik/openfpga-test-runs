@@ -43,6 +43,6 @@
 
 	# Clean and output blif
 	opt_clean -purge
-	write_blif ${OUTPUT_BLIF
+	write_blif mesh_1x2_yosys_out.blif
 	
 
