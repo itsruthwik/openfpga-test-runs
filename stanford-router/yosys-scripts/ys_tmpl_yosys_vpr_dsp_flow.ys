@@ -9,9 +9,9 @@
 	hierarchy -top ${TOP_MODULE}
 	proc
 	
-	techmap -map /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/stanford_router_map.v
+	#debug techmap -map /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/benchmark-files/stanford_router_map.v
 	#for mapping to router
-	
+	hierarchy -top ${TOP_MODULE}
 	techmap -D NO_LUT -map +/adff2dff.v
 
 	# Synthesis

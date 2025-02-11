@@ -89,18 +89,13 @@
           </equivalent_sites>
           <clock name="clk" num_pins="1"/>
           <input name="reset"  num_pins="1"/>
-          <input name="router_address"  num_pins="2"/>  
-          <input name="channel_in_ip"  num_pins="340"/>  
+          <input name="router_address"  num_pins="4"/>  
+          <input name="channel_in_ip"  num_pins="345"/>  
           <input name="flow_ctrl_in_op"  num_pins="10"/>   
           <output name="error"  num_pins="1"/>  
-          <output name="channel_out_op"  num_pins="340"/>  
+          <output name="channel_out_op"  num_pins="345"/>  
           <output name="flow_ctrl_out_ip"  num_pins="10"/>  
           <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
-            <!-- <fc_override port_name="odata_3" fc_type="frac" fc_val="0"/>
-            <fc_override port_name="ovalid_3" fc_type="frac" fc_val="0"/>
-            <fc_override port_name="ovch_3" fc_type="frac" fc_val="0"/>
-            <fc_override port_name="oack_3" fc_type="frac" fc_val="0"/>
-            <fc_override port_name="olck_3" fc_type="frac" fc_val="0"/> -->
           </fc>
           <pinlocations pattern="spread">     </pinlocations>
         </sub_tile>
@@ -131,7 +126,7 @@
 
     </auto_layout>
 
-    <fixed_layout name="large" width="30" height="30">
+    <fixed_layout name="large" width="40" height="40">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
@@ -140,24 +135,27 @@
       <!-- <row type="clb" starty="5" priority="30"/> -->
 
       <single type="router" x="2" y="2" priority="50"/>
-      <single type="router" x="2" y="4" priority="50"/>
-      <single type="router" x="2" y="6" priority="50"/>
+      <single type="router" x="2" y="14" priority="50"/>
+      <single type="router" x="2" y="26" priority="50"/>
+      <single type="router" x="2" y="38" priority="50"/>
       <!-- <single type="router" x="2" y="8" priority="50"/> -->
 
-      <single type="router" x="4" y="2" priority="50"/>
-      <single type="router" x="4" y="4" priority="50"/>
-      <single type="router" x="4" y="6" priority="50"/>
+      <single type="router" x="14" y="2" priority="50"/>
+      <single type="router" x="14" y="14" priority="50"/>
+      <single type="router" x="14" y="26" priority="50"/>
+      <single type="router" x="14" y="38" priority="50"/>
       <!-- <single type="router" x="4" y="8" priority="50"/> -->
 
-      <single type="router" x="6" y="2" priority="50"/>
-      <single type="router" x="6" y="4" priority="50"/>
-      <single type="router" x="6" y="6" priority="50"/>
+      <single type="router" x="26" y="2" priority="50"/>
+      <single type="router" x="26" y="14" priority="50"/>
+      <single type="router" x="26" y="26" priority="50"/>
+      <single type="router" x="26" y="38" priority="50"/>
+      
       <!-- <single type="router" x="6" y="8" priority="50"/> -->
-
-      <!-- <single type="router" x="8" y="2" priority="50"/> -->
-      <!-- <single type="router" x="8" y="4" priority="50"/> -->
-      <!-- <single type="router" x="8" y="6" priority="50"/> -->
-      <!-- <single type="router" x="8" y="8" priority="50"/> -->
+      <single type="router" x="38" y="2" priority="50"/>
+      <single type="router" x="38" y="14" priority="50"/>
+      <single type="router" x="38" y="26" priority="50"/>
+      <single type="router" x="38" y="38" priority="50"/>
 
       <!-- <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
       <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
@@ -348,22 +346,22 @@
 
 <pb_type name="router_wrap">
     <input name="reset" num_pins="1"/>
-    <input name="router_address" num_pins="2"/>
-    <input name="channel_in_ip" num_pins="340"/>
+    <input name="router_address" num_pins="4"/>
+    <input name="channel_in_ip" num_pins="345"/>
     <input name="flow_ctrl_in_op" num_pins="10"/>
     <output name="error" num_pins="1"/>
-    <output name="channel_out_op" num_pins="340"/>
+    <output name="channel_out_op" num_pins="345"/>
     <output name="flow_ctrl_out_ip" num_pins="10"/>
     <clock name="clk" num_pins="1"/>
 
     <mode name="router_asc">
         <pb_type name="router_asc" blif_model=".subckt router_asc" num_pb="1">
-                <input name="reset" num_pins="1"/>
-    		<input name="router_address" num_pins="2"/>
-   		<input name="channel_in_ip" num_pins="340"/>
+         <input name="reset" num_pins="1"/>
+    		<input name="router_address" num_pins="4"/>
+   		<input name="channel_in_ip" num_pins="345"/>
     		<input name="flow_ctrl_in_op" num_pins="10"/>
     		<output name="error" num_pins="1"/>
-   		<output name="channel_out_op" num_pins="340"/>
+   		<output name="channel_out_op" num_pins="345"/>
    		<output name="flow_ctrl_out_ip" num_pins="10"/>
     		<clock name="clk" num_pins="1"/>
     		 <T_setup value="66e-12" port="router_asc.reset" clock="clk"/>  
@@ -396,14 +394,14 @@
                 <direct name="ck2clk" input="router_wrap.clk" output="router_asc.clk" />
         </interconnect>
     </mode>
-   <mode name="router_desc">
-        <pb_type name="router_desc" blif_model=".subckt router_desc" num_pb="1">
-                <input name="reset" num_pins="1"/>
-    		<input name="router_address" num_pins="2"/>
-   		<input name="channel_in_ip" num_pins="340"/>
+   <mode name="router_desc" disable_packing="false" >
+      <pb_type name="router_desc" blif_model=".subckt router_desc" num_pb="1">
+         <input name="reset" num_pins="1"/>
+    		<input name="router_address" num_pins="4"/>
+   		<input name="channel_in_ip" num_pins="345"/>
     		<input name="flow_ctrl_in_op" num_pins="10"/>
     		<output name="error" num_pins="1"/>
-   		<output name="channel_out_op" num_pins="340"/>
+   		<output name="channel_out_op" num_pins="345"/>
    		<output name="flow_ctrl_out_ip" num_pins="10"/>
     		<clock name="clk" num_pins="1"/>
     		 <T_setup value="66e-12" port="router_desc.reset" clock="clk"/>  
@@ -426,23 +424,25 @@
               <T_clock_to_Q max="124e-12" port="router_desc.flow_ctrl_out_ip" clock="clk"/>
         </pb_type>
         <interconnect>
-              	<direct name="adr2adr" input="router_wrap.router_address" output="router_desc.router_address"/>
+                <direct name="adr2adr" input="router_wrap.router_address" output="router_desc.router_address"/>
                 <direct name="chan_in2chan_in" input="router_wrap.channel_in_ip" output="router_desc.channel_in_ip"/>
                 <direct name="err2err" input="router_desc.error" output="router_wrap.error"/>
                 <direct name="rst2rst" input="router_wrap.reset" output="router_desc.reset"/>
                 <direct name="ctrl_in2ctrl_in" input="router_wrap.flow_ctrl_in_op" output="router_desc.flow_ctrl_in_op"/>
                 <direct name="chan_out2chan_out" input="router_desc.channel_out_op" output="router_wrap.channel_out_op"/>
                 <direct name="ctrl_out2ctrl_out" input="router_desc.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
+                <direct name="ck2clk" input="router_wrap.clk" output="router_desc.clk" />
+
         </interconnect>
     </mode>
-    <mode name="router_class">
-        <pb_type name="router_class" blif_model=".subckt router_class" num_pb="1">
-                <input name="reset" num_pins="1"/>
-    		<input name="router_address" num_pins="2"/>
-   		<input name="channel_in_ip" num_pins="340"/>
+    <mode name="router_class"  disable_packing="false">
+         <pb_type name="router_class" blif_model=".subckt router_class" num_pb="1">
+         <input name="reset" num_pins="1"/>
+    		<input name="router_address" num_pins="4"/>
+   		<input name="channel_in_ip" num_pins="345"/>
     		<input name="flow_ctrl_in_op" num_pins="10"/>
     		<output name="error" num_pins="1"/>
-   		<output name="channel_out_op" num_pins="340"/>
+   		<output name="channel_out_op" num_pins="345"/>
    		<output name="flow_ctrl_out_ip" num_pins="10"/>
     		<clock name="clk" num_pins="1"/>
     		
@@ -472,6 +472,7 @@
                 <direct name="err2err" input="router_class.error" output="router_wrap.error"/>
                 <direct name="rst2rst" input="router_wrap.reset" output="router_class.reset"/>
                 <direct name="chan_out2chan_out" input="router_class.channel_out_op" output="router_wrap.channel_out_op"/>
+                <direct name="ck2clk" input="router_wrap.clk" output="router_class.clk" />
                 <direct name="ctrl_out2ctrl_out" input="router_class.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
         </interconnect>
     </mode>
@@ -481,17 +482,28 @@
    </complexblocklist>
 
   <!-- The NoC routers were added to the FPGA device in the fixed layout section-->
-  <!-- <noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router">
+   <!--noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router">
     <topology>
-      <router id="0" positionx="2" positiony="2" connections="1 3"/>
-      <router id="1" positionx="4" positiony="2" connections="0 2 4"/>
-      <router id="2" positionx="6" positiony="2" connections="1 5"/>
-      <router id="3" positionx="2" positiony="4" connections="0 4 6"/>
-	   <router id="4" positionx="4" positiony="4" connections="1 3 5 7"/>
-      <router id="5" positionx="6" positiony="4" connections="2 4 8"/>
-      <router id="6" positionx="2" positiony="6" connections="3 7"/>
-      <router id="7" positionx="4" positiony="6" connections="4 6 8"/>
-      <router id="8" positionx="6" positiony="6" connections="5 7"/>
+        <router id="0" positionx="2" positiony="38" connections="1 4"/>
+        <router id="1" positionx="2" positiony="26" connections="0 2 5"/>
+        <router id="2" positionx="2" positiony="14" connections="1 3 6"/>
+        <router id="3" positionx="2" positiony="2" connections="2 7"/>
+        
+        <router id="4" positionx="14" positiony="38" connections="0 5 8"/>
+        <router id="5" positionx="14" positiony="26" connections="1 4 6 9"/>
+        <router id="6" positionx="14" positiony="14" connections="2 5 7 10"/>
+        <router id="7" positionx="14" positiony="2" connections="3 6 11"/>
+        
+        <router id="8" positionx="26" positiony="38" connections="4 9 12"/>
+        <router id="9" positionx="26" positiony="26" connections="5 8 10 13"/>
+        <router id="10" positionx="26" positiony="14" connections="6 9 11 14"/>
+        <router id="11" positionx="26" positiony="2" connections="7 10 15"/>
+        
+        <router id="12" positionx="38" positiony="38" connections="8 13"/>
+        <router id="13" positionx="38" positiony="26" connections="9 12 14"/>
+        <router id="14" positionx="38" positiony="14" connections="10 13 15"/>
+        <router id="15" positionx="38" positiony="2" connections="11 14"/>
     </topology>
-  </noc> -->
+</noc-->
+
 </architecture>

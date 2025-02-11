@@ -1,17 +1,19 @@
 (* whitebox *)
-module router_asc(
+module router_asc (
         input clk,
         input reset,
-        input [0:1] router_address,
-        input [0:339] channel_in_ip,
+        input [0:3] router_address,
+        input [0:344] channel_in_ip,
         output [0:9] flow_ctrl_out_ip,
-        output [0:339] channel_out_op,
+        output [0:344] channel_out_op,
         input [0:9] flow_ctrl_in_op,
         output error
     );
+//;
+
 parameter MODE = 2'b00;
-reg [0:339] channel_out_op_1 ;
-reg [0:14] flow_ctrl_out_ip_1 ;
+reg [0:344] channel_out_op_1 ;
+reg [0:9] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 
 //    router_wrap
@@ -83,19 +85,19 @@ reg error_1 ;
 endmodule
 
 		
-module router_descend(
+module router_desc(
         input clk,
         input reset,
-        input [0:1] router_address,
-        input [0:339] channel_in_ip,
+        input [0:3] router_address,
+        input [0:344] channel_in_ip,
         output [0:9] flow_ctrl_out_ip,
-        output [0:339] channel_out_op,
+        output [0:344] channel_out_op,
         input [0:9] flow_ctrl_in_op,
         output error
     );
 parameter MODE = 2'b01;
-reg [0:339] channel_out_op_1 ;
-reg [0:14] flow_ctrl_out_ip_1 ;
+reg [0:344] channel_out_op_1 ;
+reg [0:9] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 
 //    router_wrap
@@ -166,19 +168,19 @@ reg error_1 ;
 
 endmodule
 
-module router_classy(
+module router_class(
         input clk,
         input reset,
-        input [0:1] router_address,
-        input [0:339] channel_in_ip,
+        input [0:3] router_address,
+        input [0:344] channel_in_ip,
         output [0:9] flow_ctrl_out_ip,
-        output [0:339] channel_out_op,
+        output [0:344] channel_out_op,
         input [0:9] flow_ctrl_in_op,
         output error
     );
 parameter MODE = 2'b10;
-reg [0:339] channel_out_op_1 ;
-reg [0:14] flow_ctrl_out_ip_1 ;
+reg [0:344] channel_out_op_1 ;
+reg [0:9] flow_ctrl_out_ip_1 ;
 reg error_1 ;
 
 //    router_wrap

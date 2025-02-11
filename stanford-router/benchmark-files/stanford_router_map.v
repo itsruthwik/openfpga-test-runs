@@ -1,10 +1,11 @@
-module router_ascend(
+(* techmap_celltype = "router_asc" *)
+module router_ascend_map(
         input clk,
         input reset,
-        input [0:1] router_address,
-        input [0:339] channel_in_ip,
+        input [0:3] router_address,
+        input [0:344] channel_in_ip,
         output [0:9] flow_ctrl_out_ip,
-        output [0:339] channel_out_op,
+        output [0:344] channel_out_op,
         input [0:9] flow_ctrl_in_op,
         output error
     );
@@ -21,13 +22,15 @@ module router_ascend(
 
 endmodule
 
-module router_descend(
+
+(* techmap_celltype = "router_desc" *)
+module router_descend_map(
         input clk,
         input reset,
-        input [0:1] router_address,
-        input [0:339] channel_in_ip,
+        input [0:3] router_address,
+        input [0:344] channel_in_ip,
         output [0:9] flow_ctrl_out_ip,
-        output [0:339] channel_out_op,
+        output [0:344] channel_out_op,
         input [0:9] flow_ctrl_in_op,
         output error
     );
@@ -47,10 +50,10 @@ endmodule
 module router_classy(
         input clk,
         input reset,
-        input [0:1] router_address,
-        input [0:339] channel_in_ip,
+        input [0:3] router_address,
+        input [0:344] channel_in_ip,
         output [0:9] flow_ctrl_out_ip,
-        output [0:339] channel_out_op,
+        output [0:344] channel_out_op,
         input [0:9] flow_ctrl_in_op,
         output error
     );

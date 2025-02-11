@@ -151,11 +151,11 @@
           <input_buffer exist="true" circuit_model_name="INVTX1"/>
           <output_buffer exist="true" circuit_model_name="INVTX1"/>
           <port type="input" prefix="reset" lib_name="reset" size="1"/>  
-          <port type="input" prefix="router_address" lib_name="router_address" size="2"/>  
-          <port type="input" prefix="channel_in_ip" lib_name="channel_in_ip" size="340"/>  
+          <port type="input" prefix="router_address" lib_name="router_address" size="4"/>  
+          <port type="input" prefix="channel_in_ip" lib_name="channel_in_ip" size="345"/>  
           <port type="input" prefix="flow_ctrl_in_op" lib_name="flow_ctrl_in_op" size="10"/>   
           <port type="output" prefix="error" lib_name="error" size="1"/>   
-          <port type="output" prefix="channel_out_op" lib_name="channel_out_op" size="340"/>   
+          <port type="output" prefix="channel_out_op" lib_name="channel_out_op" size="345"/>   
           <port type="output" prefix="flow_ctrl_out_ip" lib_name="flow_ctrl_out_ip" size="10"/>   
           <port type="clock" prefix="clk" size="1" is_global="true" default_val="0" is_clock="true"/>
           <port type="sram" prefix="mode_dim_order" lib_name="mode" size="2" mode_select="true" circuit_model_name="DFFR" default_val="00"/>
