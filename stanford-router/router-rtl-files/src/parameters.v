@@ -45,7 +45,7 @@ parameter num_resource_classes = 1;
 parameter num_vcs_per_class = 1;
 
 // total number of nodes
-parameter num_nodes = 16;
+parameter num_nodes = 9;
 
 // number of dimensions in network
 parameter num_dimensions = 2;

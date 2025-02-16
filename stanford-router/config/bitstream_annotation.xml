@@ -1,11 +1,9 @@
 <openfpga_bitstream_setting>
-  <pb_type name="router_wrap[router_asc].router_asc" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
-  <pb_type name="router_wrap[router_desc].router_desc" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
-  <pb_type name="router_wrap[router_class].router_class" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
-  <non_fabric name="router_wrap" file="dsp.json">
-    <pb name="router_wrap[router_asc].router_asc" content=".param MODE"/>
-    <pb name="router_wrap[router_desc].router_desc" content=".param MODE"/>
-    <pb name="router_wrap[router_class].router_class" content=".param MODE"/>
-  </non_fabric>
- 
+<pb_type name="mult_36[mult_36x36].mult_36x36_slice.mult_36x36" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
+<pb_type name="mult_36[two_divisible_mult_18x18].divisible_mult_18x18[two_mult_9x9].mult_9x9_slice.mult_9x9" source="eblif" content=".param MODE" is_mode_select_bitstream="true"/>
+<pb_type name="mult_36[two_divisible_mult_18x18].divisible_mult_18x18[mult_18x18].mult_18x18_slice.mult_18x18" content=".param MODE" is_mode_select_bitstream="true"/>
+<non_fabric name="mult_36" file="dsp.json">
+<pb_type name="mult_36[two_divisible_mult_18x18].divisible_mult_18x18[two_mult_9x9].mult_9x9_slice.mult_9x9" source="eblif" content=".param MODE" />
+<pb_type name="mult_36[two_divisible_mult_18x18].divisible_mult_18x18[mult_18x18].mult_18x18_slice.mult_18x18" content=".param MODE" />
+</non_fabric>
 </openfpga_bitstream_setting>

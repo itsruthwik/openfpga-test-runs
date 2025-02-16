@@ -3,55 +3,55 @@ input clk,
 input reset,
 output [8:0] rtr_error,
 
-input [0:69]  channel_router_0_ip_0,
-input [0:69]  channel_router_1_ip_0,
-input [0:69]  channel_router_2_ip_0,
-input [0:69]  channel_router_3_ip_0,
-input [0:69]  channel_router_4_ip_0,
-input [0:69]  channel_router_5_ip_0,
-input [0:69]  channel_router_6_ip_0,
-input [0:69]  channel_router_7_ip_0,
-input [0:69]  channel_router_8_ip_0,
+input [0:68]  channel_router_0_ip_0,
+input [0:68]  channel_router_1_ip_0,
+input [0:68]  channel_router_2_ip_0,
+input [0:68]  channel_router_3_ip_0,
+input [0:68]  channel_router_4_ip_0,
+input [0:68]  channel_router_5_ip_0,
+input [0:68]  channel_router_6_ip_0,
+input [0:68]  channel_router_7_ip_0,
+input [0:68]  channel_router_8_ip_0,
 
-input [0:69]  channel_router_0_ip_1,
-input [0:69]  channel_router_1_ip_1,
-input [0:69]  channel_router_2_ip_1,
-input [0:69]  channel_router_3_ip_1,
-input [0:69]  channel_router_4_ip_1,
-input [0:69]  channel_router_5_ip_1,
-input [0:69]  channel_router_6_ip_1,
-input [0:69]  channel_router_7_ip_1,
-input [0:69]  channel_router_8_ip_1,
+input [0:68]  channel_router_0_ip_1,
+input [0:68]  channel_router_1_ip_1,
+input [0:68]  channel_router_2_ip_1,
+input [0:68]  channel_router_3_ip_1,
+input [0:68]  channel_router_4_ip_1,
+input [0:68]  channel_router_5_ip_1,
+input [0:68]  channel_router_6_ip_1,
+input [0:68]  channel_router_7_ip_1,
+input [0:68]  channel_router_8_ip_1,
 
-input [0:69]  channel_router_0_ip_2,
-input [0:69]  channel_router_1_ip_2,
-input [0:69]  channel_router_2_ip_2,
-input [0:69]  channel_router_3_ip_2,
-input [0:69]  channel_router_4_ip_2,
-input [0:69]  channel_router_5_ip_2,
-input [0:69]  channel_router_6_ip_2,
-input [0:69]  channel_router_7_ip_2,
-input [0:69]  channel_router_8_ip_2,
+input [0:68]  channel_router_0_ip_2,
+input [0:68]  channel_router_1_ip_2,
+input [0:68]  channel_router_2_ip_2,
+input [0:68]  channel_router_3_ip_2,
+input [0:68]  channel_router_4_ip_2,
+input [0:68]  channel_router_5_ip_2,
+input [0:68]  channel_router_6_ip_2,
+input [0:68]  channel_router_7_ip_2,
+input [0:68]  channel_router_8_ip_2,
 
-input [0:69]   channel_router_0_ip_3,
-input [0:69]   channel_router_1_ip_3,
-input [0:69]   channel_router_2_ip_3,
-input [0:69]   channel_router_3_ip_3,
-input [0:69]   channel_router_4_ip_3,
-input [0:69]   channel_router_5_ip_3,
-input [0:69]   channel_router_6_ip_3,
-input [0:69]   channel_router_7_ip_3,
-input [0:69]   channel_router_8_ip_3,
+input [0:68]   channel_router_0_ip_3,
+input [0:68]   channel_router_1_ip_3,
+input [0:68]   channel_router_2_ip_3,
+input [0:68]   channel_router_3_ip_3,
+input [0:68]   channel_router_4_ip_3,
+input [0:68]   channel_router_5_ip_3,
+input [0:68]   channel_router_6_ip_3,
+input [0:68]   channel_router_7_ip_3,
+input [0:68]   channel_router_8_ip_3,
 
-input [0:69]   channel_router_0_ip_4,
-input [0:69]   channel_router_1_ip_4,
-input [0:69]   channel_router_2_ip_4,
-input [0:69]   channel_router_3_ip_4,
-input [0:69]   channel_router_4_ip_4,
-input [0:69]   channel_router_5_ip_4,
-input [0:69]   channel_router_6_ip_4,
-input [0:69]   channel_router_7_ip_4,
-input [0:69]   channel_router_8_ip_4,
+input [0:68]   channel_router_0_ip_4,
+input [0:68]   channel_router_1_ip_4,
+input [0:68]   channel_router_2_ip_4,
+input [0:68]   channel_router_3_ip_4,
+input [0:68]   channel_router_4_ip_4,
+input [0:68]   channel_router_5_ip_4,
+input [0:68]   channel_router_6_ip_4,
+input [0:68]   channel_router_7_ip_4,
+input [0:68]   channel_router_8_ip_4,
 
 
 input [0:2]    flow_ctrl_router_0_ip_0,
@@ -104,55 +104,55 @@ input [0:2]    flow_ctrl_router_6_ip_4,
 input [0:2]    flow_ctrl_router_7_ip_4,
 input [0:2]    flow_ctrl_router_8_ip_4,
 
-output [0:69]  channel_router_0_op_0,
-output [0:69]  channel_router_1_op_0,
-output [0:69]  channel_router_2_op_0,
-output [0:69]  channel_router_3_op_0,
-output [0:69]  channel_router_4_op_0,
-output [0:69]  channel_router_5_op_0,
-output [0:69]  channel_router_6_op_0,
-output [0:69]  channel_router_7_op_0,
-output [0:69]  channel_router_8_op_0,
+output [0:68]  channel_router_0_op_0,
+output [0:68]  channel_router_1_op_0,
+output [0:68]  channel_router_2_op_0,
+output [0:68]  channel_router_3_op_0,
+output [0:68]  channel_router_4_op_0,
+output [0:68]  channel_router_5_op_0,
+output [0:68]  channel_router_6_op_0,
+output [0:68]  channel_router_7_op_0,
+output [0:68]  channel_router_8_op_0,
 
-output [0:69]  channel_router_0_op_1,
-output [0:69]  channel_router_1_op_1,
-output [0:69]  channel_router_2_op_1,
-output [0:69]  channel_router_3_op_1,
-output [0:69]  channel_router_4_op_1,
-output [0:69]  channel_router_5_op_1,
-output [0:69]  channel_router_6_op_1,
-output [0:69]  channel_router_7_op_1,
-output [0:69]  channel_router_8_op_1,
+output [0:68]  channel_router_0_op_1,
+output [0:68]  channel_router_1_op_1,
+output [0:68]  channel_router_2_op_1,
+output [0:68]  channel_router_3_op_1,
+output [0:68]  channel_router_4_op_1,
+output [0:68]  channel_router_5_op_1,
+output [0:68]  channel_router_6_op_1,
+output [0:68]  channel_router_7_op_1,
+output [0:68]  channel_router_8_op_1,
 
-output [0:69]  channel_router_0_op_2,
-output [0:69]  channel_router_1_op_2,
-output [0:69]  channel_router_2_op_2,
-output [0:69]  channel_router_3_op_2,
-output [0:69]  channel_router_4_op_2,
-output [0:69]  channel_router_5_op_2,
-output [0:69]  channel_router_6_op_2,
-output [0:69]  channel_router_7_op_2,
-output [0:69]  channel_router_8_op_2,
+output [0:68]  channel_router_0_op_2,
+output [0:68]  channel_router_1_op_2,
+output [0:68]  channel_router_2_op_2,
+output [0:68]  channel_router_3_op_2,
+output [0:68]  channel_router_4_op_2,
+output [0:68]  channel_router_5_op_2,
+output [0:68]  channel_router_6_op_2,
+output [0:68]  channel_router_7_op_2,
+output [0:68]  channel_router_8_op_2,
 
-output [0:69]  channel_router_0_op_3,
-output [0:69]  channel_router_1_op_3,
-output [0:69]  channel_router_2_op_3,
-output [0:69]  channel_router_3_op_3,
-output [0:69]  channel_router_4_op_3,
-output [0:69]  channel_router_5_op_3,
-output [0:69]  channel_router_6_op_3,
-output [0:69]  channel_router_7_op_3,
-output [0:69]  channel_router_8_op_3,
+output [0:68]  channel_router_0_op_3,
+output [0:68]  channel_router_1_op_3,
+output [0:68]  channel_router_2_op_3,
+output [0:68]  channel_router_3_op_3,
+output [0:68]  channel_router_4_op_3,
+output [0:68]  channel_router_5_op_3,
+output [0:68]  channel_router_6_op_3,
+output [0:68]  channel_router_7_op_3,
+output [0:68]  channel_router_8_op_3,
 
-output [0:69]  channel_router_0_op_4,
-output [0:69]  channel_router_1_op_4,
-output [0:69]  channel_router_2_op_4,
-output [0:69]  channel_router_3_op_4,
-output [0:69]  channel_router_4_op_4,
-output [0:69]  channel_router_5_op_4,
-output [0:69]  channel_router_6_op_4,
-output [0:69]  channel_router_7_op_4,
-output [0:69]  channel_router_8_op_4,
+output [0:68]  channel_router_0_op_4,
+output [0:68]  channel_router_1_op_4,
+output [0:68]  channel_router_2_op_4,
+output [0:68]  channel_router_3_op_4,
+output [0:68]  channel_router_4_op_4,
+output [0:68]  channel_router_5_op_4,
+output [0:68]  channel_router_6_op_4,
+output [0:68]  channel_router_7_op_4,
+output [0:68]  channel_router_8_op_4,
 
 output [0:2]    flow_ctrl_router_0_op_0,
 output [0:2]    flow_ctrl_router_1_op_0,
@@ -205,7 +205,7 @@ output [0:2]    flow_ctrl_router_7_op_4,
 output [0:2]    flow_ctrl_router_8_op_4
 );
    
-   router_slice   rtr_0 (
+   router_desc   rtr_0 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b0000),
@@ -215,7 +215,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_0_op_0, flow_ctrl_router_0_op_1, flow_ctrl_router_0_op_2, flow_ctrl_router_0_op_3, flow_ctrl_router_0_op_4 }),
       .error(rtr_error[0]));
 		
-   router_slice   rtr_1 (
+   router_desc   rtr_1 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b0100),
@@ -226,7 +226,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .error(rtr_error[1]));
 		
 
-   router_slice   rtr_2 (
+   router_desc   rtr_2 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b1000),
@@ -236,7 +236,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_2_op_0, flow_ctrl_router_2_op_1, flow_ctrl_router_2_op_2, flow_ctrl_router_2_op_3, flow_ctrl_router_2_op_4 }),
       .error(rtr_error[2]));
 		
-   router_slice   rtr_3 (
+   router_desc   rtr_3 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b0001),
@@ -246,7 +246,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_3_op_0, flow_ctrl_router_3_op_1, flow_ctrl_router_3_op_2, flow_ctrl_router_3_op_3, flow_ctrl_router_3_op_4 }),
       .error(rtr_error[3]));
 		
-   router_slice   rtr_4 (
+   router_desc   rtr_4 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b0101),
@@ -256,7 +256,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_4_op_0, flow_ctrl_router_4_op_1, flow_ctrl_router_4_op_2, flow_ctrl_router_4_op_3, flow_ctrl_router_4_op_4 }),
       .error(rtr_error[4]));
 		
-   router_slice   rtr_5 (
+   router_desc   rtr_5 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b1001),
@@ -266,7 +266,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_5_op_0, flow_ctrl_router_5_op_1, flow_ctrl_router_5_op_2, flow_ctrl_router_5_op_3, flow_ctrl_router_5_op_4 }),
       .error(rtr_error[5]));
 		
-   router_slice   rtr_6 (
+   router_desc   rtr_6 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b0010),
@@ -276,7 +276,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_6_op_0, flow_ctrl_router_6_op_1, flow_ctrl_router_6_op_2, flow_ctrl_router_6_op_3, flow_ctrl_router_6_op_4 }),
       .error(rtr_error[6]));
 		
-   router_slice   rtr_7 (
+   router_desc   rtr_7 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b0110),
@@ -286,7 +286,7 @@ output [0:2]    flow_ctrl_router_8_op_4
       .flow_ctrl_in_op({ flow_ctrl_router_7_op_0, flow_ctrl_router_7_op_1, flow_ctrl_router_7_op_2, flow_ctrl_router_7_op_3, flow_ctrl_router_7_op_4 }),
       .error(rtr_error[7]));
 		
-   router_slice   rtr_8 (
+   router_desc   rtr_8 (
       .clk(clk),
       .reset(reset),
       .router_address(4'b1010),
