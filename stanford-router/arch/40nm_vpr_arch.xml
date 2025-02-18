@@ -12,7 +12,7 @@
     Height = 6, found on every (8n+2)th column
   - Multiplier modes: one 36x36, two 18x18, each 18x18 can also operate as two 9x9.  
     Height = 4, found on every (8n+6)th column
-  - Routing architecture: L = 4, fc_in = 0.15, Fc_out = 0.1
+  - Routing architecture: L = 4,  = 0.15, Fc_out = 0.1
 
   Details on Modelling:
 
@@ -293,14 +293,14 @@
         <input name="we2" num_pins="1"/>
         <output name="out" num_pins="64"/>
         <clock name="clk" num_pins="1"/>
-        <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10"/>
+        <fc in_type="frac" in_val="0.5" out_type="frac" out_val="0.5"/>
         <!--  Highly recommand to customize pin location when direct connection is used!!! -->
         <!--pinlocations pattern="spread"/-->
         <pinlocations pattern="custom">
           <loc side="left"/>
           <loc side="top">memory.clk</loc>
           <loc side="right">memory.addr1[0:14] memory.data[0:31] memory.we1 memory.out[0:31]</loc>
-          <loc side="bottom">memory.addr2[0:14] memory.data[32:63] memory.we2 memory.out[32:63]</loc>
+          <loc side="bottom">memory.addr2[0:14] memory.data[32:63] memory.we2 memory.out[32:63]</loc> 
         </pinlocations>
       </sub_tile>
     </tile>
@@ -328,7 +328,8 @@
   </tiles>
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
-  <layout tileable="true" through_channel="false">
+<!--  <layout tileable="true" through_channel="false">-->
+  <layout>
     <auto_layout aspect_ratio="1.0">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
@@ -357,8 +358,8 @@
       
       <!--Column of 'memory' with 'EMPTY' blocks wherever a 'memory' does not fit.
           Vertical offset by 1 for perimeter.-->
-      <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
-      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
+     <!-- <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
+      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/> COMMENTED 15:40 17/2 MALIF--> 
       
       <!--Router layout-->
       <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>

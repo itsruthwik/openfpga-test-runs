@@ -23,6 +23,8 @@ input a,
 input b,
 output c
 );
+
+   
    (* keep *)
    router_asc rtr_0 (
       .clk(clk),

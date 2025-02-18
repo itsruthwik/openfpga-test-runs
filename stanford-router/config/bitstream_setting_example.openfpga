@@ -1,6 +1,6 @@
 # Run VPR for the 'and' design
 #--write_rr_graph example_rr_graph.xml
-vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling route --circuit_format ${OPENFPGA_VPR_CIRCUIT_FORMAT} --device vtr_extra_large --echo_file on --pack_verbosity 5 --clustering_pin_feasibility_filter off 
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling route --circuit_format ${OPENFPGA_VPR_CIRCUIT_FORMAT} --device vtr_extra_large 
 
 #VPR DEBUG OPTIONS  --echo_file on --pack_verbosity 5 --clustering_pin_feasibility_filter off 
 
