@@ -80,7 +80,7 @@
   a channel width of 300.
 
   Sanity checks employed:
-    1.  We confirmed the routing buffer delay is ~1/3rd of total routing delay at L = 4. This matches 
+    1.  We confirmed the routing buffer delay is ~16rd of total routing delay at L = 4. This matches 
         common electrical design.
 
 
@@ -301,6 +301,7 @@
           <loc side="top">memory.clk</loc>
           <loc side="right">memory.addr1[0:14] memory.data[0:31] memory.we1 memory.out[0:31]</loc>
           <loc side="bottom">memory.addr2[0:14] memory.data[32:63] memory.we2 memory.out[32:63]</loc> 
+
         </pinlocations>
       </sub_tile>
     </tile>
@@ -328,7 +329,7 @@
   </tiles>
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
-<layout tileable="true" through_channel="false">
+<layout tileable="true" through_channel="true">
   <!--layout-->
     <auto_layout aspect_ratio="1.0">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
@@ -343,7 +344,7 @@
       <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
       <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
     </auto_layout>
-    <fixed_layout name="vtr_extra_large" width="105" height="105">
+    <fixed_layout name="vtr_extra_large" width="15" height="15">
   <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
@@ -358,21 +359,21 @@
       
       <!--Column of 'memory' with 'EMPTY' blocks wherever a 'memory' does not fit.
           Vertical offset by 1 for perimeter.-->
-     <!-- <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
-      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/> COMMENTED 15:40 17/2 MALIF--> 
+      <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
+      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/> <!--COMMENTED 15:40 17/2 MALIF--> 
       
       <!--Router layout-->
-      <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
-      <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
-      <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((1*W)/6)" y="((1*H)/6)" priority="50"/>
+      <single type="router" x="((3*W)/6)" y="((1*H)/6)" priority="50"/>
+      <single type="router" x="((5*W)/6)" y="((1*H)/6)" priority="50"/>
 
-      <single type="router" x="((1*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
-      <single type="router" x="((2*W-3)/3)" y="((2*H-3)/3)" priority="50"/>
-      <single type="router" x="((5*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((1*W)/6)" y="((3*H)/6)" priority="50"/>
+      <single type="router" x="((3*W)/6)" y="((3*H)/6)" priority="50"/>
+      <single type="router" x="((5*W)/6)" y="((3*H)/6)" priority="50"/>
 
-      <single type="router" x="((1*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
-      <single type="router" x="((2*W-3)/3)" y="((5*H-3)/6)" priority="50"/>
-      <single type="router" x="((5*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((1*W)/6)" y="((5*H)/6)" priority="50"/>
+      <single type="router" x="((3*W)/6)" y="((5*H)/6)" priority="50"/>
+      <single type="router" x="((5*W)/6)" y="((5*H)/6)" priority="50"/>
     </fixed_layout>
   </layout>
   <device>
@@ -1839,4 +1840,20 @@
 
     <!-- Define fracturable memory end -->
   </complexblocklist>
+
+  <noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router">
+    <topology>
+        <router id="0" positionx="2" positiony="2" connections="1 3"/>
+        <router id="1" positionx="2" positiony="7" connections="0 2 4"/>
+        <router id="2" positionx="2" positiony="12" connections="1 5"/>
+        
+        <router id="3" positionx="7" positiony="2" connections="0 4 6"/>
+        <router id="4" positionx="7" positiony="7" connections="1 3 5 7"/>
+        <router id="5" positionx="7" positiony="12" connections="2 4 8"/>
+        
+        <router id="6" positionx="12" positiony="2" connections="3 7"/>
+        <router id="7" positionx="12" positiony="7" connections="4 8 6"/>
+        <router id="8" positionx="12" positiony="12" connections="7 5"/>
+        </topology>
+    </noc>
 </architecture>

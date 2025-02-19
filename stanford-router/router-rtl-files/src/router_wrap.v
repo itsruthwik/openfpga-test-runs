@@ -34,11 +34,11 @@ module router_wrap
   (mode_dim_order, clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
    flow_ctrl_in_op, error);
    
-`include "c_functions.v"   
-`include "c_constants.v"
-`include "rtr_constants.v"
-`include "vcr_constants.v"
-`include "parameters.v"
+`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/router-rtl-files/src/clib/c_functions.v"   
+`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/router-rtl-files/src/clib/c_constants.v"
+`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/router-rtl-files/src/rtr_constants.v"
+`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/router-rtl-files/src/vcr_constants.v"
+`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/stanford-router/router-rtl-files/src/parameters.v"
    
    
    // total number of packet classes
