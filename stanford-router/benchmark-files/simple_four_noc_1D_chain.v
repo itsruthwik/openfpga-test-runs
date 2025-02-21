@@ -142,6 +142,7 @@ axi_to_packet_converter axi_to_packet_converter_one(
     .flow_ctrl_out_ip(axi_to_packet_one_flow_ctrl_out_ip)
 );
 
+(*keep*)
 router_slice router_slice_one(
     .clk(clk),
     .reset(reset),
@@ -161,7 +162,7 @@ router_slice router_slice_one(
     4) traffic processor passes the processed data to master interface
     5) master interface passes the data back to the second NoC adapter
 */
-
+(*keep*)
 router_slice router_slice_two(
     .clk(clk),
     .reset(reset),
@@ -257,7 +258,7 @@ axi_to_packet_converter axi_to_packet_converter_two(
     4) traffic processor passes the processed data to master interface
     5) master interface passes the data back to the third NoC adapter
 */
-
+(*keep*)
 router_slice router_slice_three(
     .clk(clk),
     .reset(reset),
@@ -352,7 +353,7 @@ axi_to_packet_converter axi_to_packet_converter_three(
     3) slave_interface passes data to traffic processor
     4) traffic processor passes the processed data to the top module output
 */
-
+(*keep*)
 router_slice router_slice_four(
     .clk(clk),
     .reset(reset),
