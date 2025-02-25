@@ -1,0 +1,5 @@
+<traffic_flows>
+	<single_flow src=".*mi_1_ready*" dst=".*si_2_data_in.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*si_2_data_in.*" dst=".*si_3_data_in.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*si_3_data_in.*" dst=".*si_4_data_in.*" bandwidth="4e5" latency_cons="3e-9" />
+</traffic_flows>
