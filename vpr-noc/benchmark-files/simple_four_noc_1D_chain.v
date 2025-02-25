@@ -98,6 +98,7 @@ master_interface mi_1 (
 	.tlast()
 );
 
+(*keep*)
 noc_router_adapter_block noc_router_adapter_block_one(
 	.clk(clk),
     .reset(reset),
@@ -131,7 +132,7 @@ noc_router_adapter_block noc_router_adapter_block_one(
     4) traffic processor passes the processed data to master interface
     5) master interface passes the data back to the second NoC adapter
 */
-
+(*keep*)
 noc_router_adapter_block noc_router_adapter_block_two(
 	.clk(clk),
     .reset(reset),
@@ -207,7 +208,7 @@ master_interface mi_2 (
     4) traffic processor passes the processed data to master interface
     5) master interface passes the data back to the third NoC adapter
 */
-
+(*keep*)
 noc_router_adapter_block noc_router_adapter_block_three(
 	.clk(clk),
     .reset(reset),
@@ -281,7 +282,7 @@ master_interface mi_3 (
     3) slave_interface passes data to traffic processor
     4) traffic processor passes the processed data to the top module output
 */
-
+(*keep*)
 noc_router_adapter_block noc_router_adapter_block_four(
 	.clk(clk),
     .reset(reset),

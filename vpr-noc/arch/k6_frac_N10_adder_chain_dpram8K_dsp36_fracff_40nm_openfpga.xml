@@ -251,6 +251,8 @@
       <port type="output" prefix="flow_ctrl_out_ip" lib_name="flow_ctrl_out_ip"  size="12"/> 
 
       <port type="clock" prefix="clk" size="1" is_global="true" default_val="0" is_clock="true"/>
+    
+      <port type="input" prefix="router_address" lib_name="router_address" size="4"/>
     </circuit_model>
   </circuit_library>
   <configuration_protocol>
@@ -377,4 +379,12 @@
    <pb_type name="noc_router_adapter" physical_mode_name="noc_router_adapter_basic" idle_mode_name="noc_router_adapter_basic"/>
    <pb_type name="noc_router_adapter[noc_router_adapter_basic].noc_router_adapter_basic" circuit_model_name="noc_router_adapter_basic"/>
   </pb_type_annotations>
+  <noc_annotation noc_router_tile_name="noc_router_adapter">
+    <noc_links link_type="hard" circuit_model="direct_interc">
+      <noc_port side="left"   input_pins="channel_in_ip[69:0]    flow_ctrl_in_op[2:0]"  output_pins="channel_out_op[69:0]    flow_ctrl_out_ip[2:0]"/>
+      <noc_port side="right"  input_pins="channel_in_ip[139:70]  flow_ctrl_in_op[5:3]"  output_pins="channel_out_op[139:70]  flow_ctrl_out_ip[5:3]"/>
+      <noc_port side="top"    input_pins="channel_in_ip[209:140] flow_ctrl_in_op[8:6]"  output_pins="channel_out_op[209:140] flow_ctrl_out_ip[8:6]"/>
+      <noc_port side="bottom" input_pins="channel_in_ip[279:210] flow_ctrl_in_op[11:9]" output_pins="channel_out_op[279:210] flow_ctrl_out_ip[11:9]"/>
+    </noc_links>
+  </noc_annotation>
 </openfpga_architecture>

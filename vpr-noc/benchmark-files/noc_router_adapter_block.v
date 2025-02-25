@@ -20,6 +20,7 @@ module noc_router_adapter_block(
     slave_tdest,
     slave_tuser,
     slave_tlast,
+    router_address
 );
 
 parameter noc_dw = 32; //NoC Data Width
@@ -30,6 +31,7 @@ parameter byte_dw = 8;
 /*control signal*/
 input wire clk;
 input wire reset;
+input wire [3:0] router_address;
 
 /*Master*/
 input wire master_tready;

@@ -223,6 +223,8 @@
         <port name="slave_tdest" clock="clk"/>
         <port name="slave_tuser" clock="clk"/>
         <port name="slave_tlast" clock="clk"/>
+
+        <port name="router_address" clock="clk"/>
         <!-- clk signal-->
         <port name="clk" is_clock="1"/>
         <!-- reset signal-->
@@ -366,6 +368,8 @@
         <output name="master_tlast" num_pins="1"/>
         <!-- Slave Interface-->
         <output name="slave_tready" num_pins="1"/>
+        <!-- router address-->
+        <input name="router_address" num_pins="4"/>
         <!-- router-to-router connections -->
         <input name="channel_in_ip"  num_pins="280"/>  
         <input name="flow_ctrl_in_op"  num_pins="12"/>   
@@ -403,7 +407,7 @@
           <loc side="left" xoffset="0" yoffset="0"> noc_router_adapter.master_tready noc_router_adapter.master_tvalid noc_router_adapter.master_tdata[511:0] noc_router_adapter.clk noc_router_adapter.reset</loc>
           <loc side="left" xoffset="0" yoffset="1"> noc_router_adapter.master_tstrb[63:0] noc_router_adapter.master_tkeep[63:0] noc_router_adapter.master_tid[7:0] noc_router_adapter.master_tdest[7:0] noc_router_adapter.master_tuser[31:0] noc_router_adapter.master_tlast</loc>
           <loc side="bottom" xoffset="0" yoffset="0"> noc_router_adapter.slave_tready noc_router_adapter.slave_tvalid noc_router_adapter.slave_tdata[511:0]</loc>
-          <loc side="bottom" xoffset="1" yoffset="0"> noc_router_adapter.slave_tstrb[63:0] noc_router_adapter.slave_tkeep[63:0] noc_router_adapter.slave_tid[7:0] noc_router_adapter.slave_tdest[7:0] noc_router_adapter.slave_tuser[31:0] noc_router_adapter.slave_tlast</loc>
+          <loc side="bottom" xoffset="1" yoffset="0"> noc_router_adapter.slave_tstrb[63:0] noc_router_adapter.slave_tkeep[63:0] noc_router_adapter.slave_tid[7:0] noc_router_adapter.slave_tdest[7:0] noc_router_adapter.slave_tuser[31:0] noc_router_adapter.slave_tlast noc_router_adapter.router_address</loc>
           
           <loc side="top"    xoffset="4" yoffset="0"> noc_router_adapter.channel_in_ip[69:0]    noc_router_adapter.flow_ctrl_in_op[2:0]  noc_router_adapter.channel_out_op[69:0]    noc_router_adapter.flow_ctrl_out_ip[2:0] </loc>
           <loc side="right"  xoffset="0" yoffset="4"> noc_router_adapter.channel_in_ip[139:70]  noc_router_adapter.flow_ctrl_in_op[5:3]  noc_router_adapter.channel_out_op[139:70]  noc_router_adapter.flow_ctrl_out_ip[5:3] </loc>
@@ -439,6 +443,7 @@
       <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
     </fixed_layout>
     <fixed_layout name="large" width="70" height="70">
+    <!-- <layer die="0"> -->
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
@@ -447,7 +452,8 @@
       <!--Column of 'memory' with 'EMPTY' blocks wherever a 'memory' does not fit. Vertical offset by 1 for perimeter.-->
       <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
       <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
-
+    <!-- </layer> -->
+    <!-- <layer die="-1"> -->
       <single type="noc_router_adapter" x="10" y="10" priority="50"/>
       <single type="noc_router_adapter" x="10" y="25" priority="50"/>
       <single type="noc_router_adapter" x="10" y="40" priority="50"/>
@@ -467,6 +473,7 @@
       <single type="noc_router_adapter" x="55" y="25" priority="50"/>
       <single type="noc_router_adapter" x="55" y="40" priority="50"/>
       <single type="noc_router_adapter" x="55" y="55" priority="50"/>
+    <!-- </layer> -->
     </fixed_layout>
   </layout>
   <device>
@@ -1411,6 +1418,7 @@
       <!-- Slave Interface-->
       <output name="slave_tready" num_pins="1"/>
 
+      <input name="router_address" num_pins="4"/>
       <!-- router-to-router connections -->
       <input name="channel_in_ip"  num_pins="280"/>  
       <input name="flow_ctrl_in_op"  num_pins="12"/>   
@@ -1446,8 +1454,11 @@
 		  <output name="master_tlast" num_pins="1"/>
 		  <!-- Slave Interface-->
 		  <output name="slave_tready" num_pins="1"/>
+
+      <input name="router_address" num_pins="4"/>
           <!-- Defining some timing constrains of the router (for now we are going to mimic the dffeas block) -->
 		      <T_setup value="66e-12" port="noc_router_adapter_basic.reset" clock="clk"/>
+          <T_setup value="66e-12" port="noc_router_adapter_basic.router_address" clock="clk"/>
           <T_setup value="66e-12" port="noc_router_adapter_basic.master_tready" clock="clk"/>
           <T_setup value="66e-12" port="noc_router_adapter_basic.slave_tvalid" clock="clk"/>
           <T_setup value="66e-12" port="noc_router_adapter_basic.slave_tdata" clock="clk"/>
@@ -1459,6 +1470,7 @@
           <T_setup value="66e-12" port="noc_router_adapter_basic.slave_tlast" clock="clk"/>
           
           <T_hold value="37e-12" port="noc_router_adapter_basic.reset" clock="clk"/>
+          <T_hold value="37e-12" port="noc_router_adapter_basic.router_address" clock="clk"/>
           <T_hold value="37e-12" port="noc_router_adapter_basic.master_tready" clock="clk"/>
           <T_hold value="37e-12" port="noc_router_adapter_basic.slave_tvalid" clock="clk"/>
           <T_hold value="37e-12" port="noc_router_adapter_basic.slave_tdata" clock="clk"/>
@@ -1482,6 +1494,8 @@
         <interconnect>
           <!-- Not adding any wire delay for now-->
           <direct name="master_reset_connection" input="noc_router_adapter.reset" output="noc_router_adapter_basic.reset">
+          </direct>
+          <direct name="master_addr_connection" input="noc_router_adapter.router_address" output="noc_router_adapter_basic.router_address">
           </direct>
           <direct name="master_tready_connection" input="noc_router_adapter.master_tready" output="noc_router_adapter_basic.master_tready">
           </direct>
