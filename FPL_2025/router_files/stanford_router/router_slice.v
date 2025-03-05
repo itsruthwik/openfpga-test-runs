@@ -1,4 +1,3 @@
-`include "/mnt/vault0/rsunketa/openfpga-test-runs/stanford-router/router-rtl-files/src/router_wrap.v"
 
 module router_slice(
         input clk,
