@@ -1,4 +1,4 @@
-
+`include "router_wrap.v"
 module router_slice(
         input clk,
         input reset,
