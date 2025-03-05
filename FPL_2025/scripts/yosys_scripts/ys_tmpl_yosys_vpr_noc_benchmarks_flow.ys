@@ -1,0 +1,56 @@
+# Yosys synthesis script for ${TOP_MODULE}
+# Read verilog files
+#read_verilog -sv  /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/noc-benchmarks/Synthetic_Designs/simple_8_noc_1D_chain/verilog/*v
+#read_verilog -sv  /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/noc-benchmarks/Synthetic_Designs/shared_verilog/*v
+
+read_verilog -sv ${VERILOG_FILES}
+read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
+read_verilog -sv  /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/noc-benchmarks/Synthetic_Designs/shared_verilog/*v
+
+
+read_verilog -lib -specify /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_cell_sim.v
+
+# Technology mapping
+hierarchy -top ${TOP_MODULE}
+flatten
+proc
+techmap -D NO_LUT -map /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_dff_map.v
+
+check
+opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+opt_merge -share_all
+opt_dff -nodffe -nosdff -keepdc -sat
+
+#memory -nomap
+
+#opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+#opt_merge -share_all
+#opt_dff -nodffe -nosdff -keepdc -sat
+
+memory_map
+
+opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+opt_merge -share_all
+opt_dff -nodffe -nosdff -keepdc -sat
+
+techmap
+
+opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+opt_merge -share_all
+opt_dff -nodffe -nosdff -keepdc -sat
+
+
+# LUT mapping
+abc -lut ${LUT_SIZE}
+
+# FF mapping
+
+techmap -D NO_LUT -map /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_dff_map.v
+
+
+# Check
+synth -run check
+
+# Clean and output blif
+#opt_clean -purge
+write_blif ${OUTPUT_BLIF}
