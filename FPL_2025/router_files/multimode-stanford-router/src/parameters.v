@@ -45,10 +45,10 @@ parameter num_message_classes = 2;
 parameter num_resource_classes = 1;
 
 // number of VCs per class
-parameter num_vcs_per_class = 1;
+parameter num_vcs_per_class = 2;
 
 // total number of nodes
-parameter num_nodes = 9;
+parameter num_nodes = 16;
 
 // number of dimensions in network
 parameter num_dimensions = 2;
@@ -78,7 +78,7 @@ parameter router_type = `ROUTER_TYPE_VC;
 parameter enable_link_pm = 1;
 
 // width of flit payload data
-parameter flit_data_width = 65;
+parameter flit_data_width = 32;
 
 // configure error checking logic
 parameter error_capture_mode = `ERROR_CAPTURE_MODE_NO_HOLD;
