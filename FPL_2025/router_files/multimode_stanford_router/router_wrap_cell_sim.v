@@ -1,5 +1,4 @@
-`include "router_slice_multi_mode.v"
-
+(* whitebox *)
 module router_desc(
     input clk,
     input reset,
@@ -24,6 +23,7 @@ module router_desc(
 
 endmodule
 
+(* whitebox *)
 module router_asc(
   input clk,
   input reset,
@@ -48,7 +48,7 @@ module router_asc(
 
 endmodule
 
-
+(* whitebox *)
 module router_class(
   input clk,
   input reset,
