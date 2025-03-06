@@ -1,0 +1,66 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : axis_router
+Version: T-2022.03-SP5-5
+Date   : Wed Mar  5 17:32:23 2025
+****************************************
+
+
+  Startpoint: noc_sync/output_registers_gen_reset_sync_reg_reg_0_
+               (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/clk_gate_mem_reg_2_/latch
+               (rising clock gating-check end-point clocked by ideal_clock)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                          0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  noc_sync/output_registers_gen_reset_sync_reg_reg_0_/CK (DFF_X1)
+                                                         0.000      0.000 r
+  noc_sync/output_registers_gen_reset_sync_reg_reg_0_/Q (DFF_X1)
+                                                         0.098 &    0.098 f
+  FE_OFC1_rst_noc_sync/Z (CLKBUF_X1)                     0.117 &    0.215 f
+  FE_OFC3_rst_noc_sync/Z (CLKBUF_X1)                     0.101 &    0.316 f
+  U5/ZN (INV_X1)                                         0.071 &    0.387 r
+  FE_OFC95_n7/Z (CLKBUF_X1)                              0.090 &    0.477 r
+  FE_OFC100_n7/Z (CLKBUF_X1)                             0.114 &    0.591 r
+  FE_OFC104_n7/Z (CLKBUF_X1)                             0.118 &    0.709 r
+  FE_OFC110_n7/Z (CLKBUF_X1)                             0.138 &    0.847 r
+  FE_OFC112_n7/Z (CLKBUF_X1)                             0.121 &    0.968 r
+  FE_OFC113_n7/Z (CLKBUF_X1)                             0.100 &    1.067 r
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/U9/ZN (NAND2_X1)
+                                                         0.059 &    1.127 f
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/U6/ZN (INV_X1)
+                                                         0.059 &    1.185 r
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/FE_OFC132_n137/Z (CLKBUF_X1)
+                                                         0.129 &    1.315 r
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/U34/ZN (NAND4_X1)
+                                                         0.072 &    1.387 f
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/U36/ZN (NOR3_X1)
+                                                         0.067 &    1.454 r
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/clk_gate_mem_reg_2_/latch/E (CLKGATETST_X4)
+                                                         0.000 &    1.454 r
+  data arrival time                                                 1.454
+
+  clock ideal_clock (rise edge)                          2.000      2.000
+  clock network delay (ideal)                            0.000      2.000
+  clock reconvergence pessimism                          0.000      2.000
+  clock uncertainty                                     -0.020      1.980
+  for_inputs_2__shim_in/cross_clock_gen_shim_inst/single_factor_gen_data_buffer/dcfifo_component/clk_gate_mem_reg_2_/latch/CK (CLKGATETST_X4)
+                                                                    1.980 r
+  clock gating setup time                               -0.143      1.837
+  data required time                                                1.837
+  ------------------------------------------------------------------------------
+  data required time                                                1.837
+  data arrival time                                                -1.454
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.383
+
+
+1
