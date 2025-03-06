@@ -1,19 +1,19 @@
-`include "router_wrap.v"
-module router_slice(
+`include "router_slice.v"
+module router_wrap(
         input clk,
         input reset,
         input [0:3] router_address,
-        input [0:349] channel_in_ip,
+        input [0:189] channel_in_ip,      
         input [0:14] flow_ctrl_out_ip,
-        output [0:349] channel_out_op,
+        output [0:189] channel_out_op,     
         output [0:14] flow_ctrl_in_op,
         output error
     );
 
 
-   router_wrap
+   router_slice
      #(.topology(0),
-       .buffer_size(64),
+       .buffer_size(32),                 
        .num_message_classes(1),
        .num_resource_classes(1),
        .num_vcs_per_class(4),
@@ -27,7 +27,7 @@ module router_slice(
        .min_payload_length(0),
        .router_type(1),
        .enable_link_pm(1),
-       .flit_data_width(64),
+       .flit_data_width(32),             
        .error_capture_mode(1),
        .restrict_turns(1),
        .predecode_lar_info(1),
@@ -60,8 +60,6 @@ module router_slice(
       .channel_out_op(channel_out_op),
       .flow_ctrl_in_op(flow_ctrl_in_op),
       .error(error) );
-		
+        
 
 endmodule
-
-		
