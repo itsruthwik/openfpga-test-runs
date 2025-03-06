@@ -434,8 +434,8 @@
     <direct name="1_to_3_odata_1_32" from_pin="router.odata_1[32:32]" to_pin="router.idata_3[32:32]" x_offset="2" y_offset="0" z_offset="0"/>
     <direct name="1_to_3_odata_1_33" from_pin="router.odata_1[33:33]" to_pin="router.idata_3[33:33]" x_offset="2" y_offset="0" z_offset="0"/>
     <direct name="1_to_3_odata_1_34" from_pin="router.odata_1[34:34]" to_pin="router.idata_3[34:34]" x_offset="2" y_offset="0" z_offset="0"/>
-    <direct name="1_to_3_ovalid_1"  from_pin="router.ovalid_1"  to_pin="router.ivalid_3"   x_offset="2" y_offset="0" z_offset="0"/>
-    <direct name="1_to_3_ovch_1"  from_pin="router.ovch_1"  to_pin="router.ivch_3"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_ovalid_1"   from_pin="router.ovalid_1"  to_pin="router.ivalid_3"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_ovch_1"     from_pin="router.ovch_1"  to_pin="router.ivch_3"   x_offset="2" y_offset="0" z_offset="0"/>
     <direct name="1_to_3_oack_0_0"  from_pin="router.oack_1[0:0]"  to_pin="router.iack_3[0:0]"   x_offset="2" y_offset="0" z_offset="0"/>
     <direct name="1_to_3_oack_0_1"  from_pin="router.oack_1[1:1]"  to_pin="router.iack_3[1:1]"   x_offset="2" y_offset="0" z_offset="0"/>
     <direct name="1_to_3_olck_0_0"  from_pin="router.olck_1[0:0]"  to_pin="router.ilck_3[0:0]"   x_offset="2" y_offset="0" z_offset="0"/>

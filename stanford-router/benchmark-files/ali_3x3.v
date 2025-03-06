@@ -9,7 +9,8 @@ localparam channel_width = 69;
 localparam flow_ctrl_width = 2;
 localparam num_routers = 9;
 
-input clk, reset, a, b, c;
+input clk, reset, a, b;
+output c;
 
 
 input [0:channel_width-1] injection_channels;

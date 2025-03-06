@@ -38,6 +38,7 @@ module router_wrap
 `include "c_constants.v"
 `include "rtr_constants.v"
 `include "vcr_constants.v"
+`include "combined_includes.v"
 `include "parameters.v"
    
    
