@@ -224,7 +224,7 @@
       <port type="sram" prefix="mode" size="4" mode_select="true" circuit_model_name="DFFR" default_val="1"/>
     </circuit_model>
 
-    <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" spice_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/base-router/router-rtl-files/src/router_wrap.v">
+    <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" spice_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga_flow/openfpga_cell_library/spice/router_wrap.sp" verilog_netlist="/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/router_slice.v">
         <design_technology type="cmos"/>
         <input_buffer exist="true" circuit_model_name="INVTX1"/>
         <output_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -450,7 +450,7 @@
     </pb_type>
 
     <!--ROUTER Bindings-->
-    <pb_type name="router_wrap[router_wrap].router" physical_mode_name="router_wrap" circuit_model_name="router_wrap"/>
-        <!-- END physical pb_type binding in complex block memory -->
+      <pb_type name="router" physical_mode_name="router_wrap" idle_mode_name="router_wrap"/>
+        <pb_type name="router[router_wrap].router_wrap" circuit_model_name="router_wrap"/>          <!-- END physical pb_type binding in complex block memory -->
   </pb_type_annotations>
 </openfpga_architecture>
