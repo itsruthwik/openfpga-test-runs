@@ -1,0 +1,3 @@
+total area = 26690.440 um^2 
+total delay = 1.454 ns 
+total power = 0.006031 W 
