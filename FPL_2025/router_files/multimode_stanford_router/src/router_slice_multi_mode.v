@@ -31,7 +31,7 @@
 // selected network topology, etc.)
 //==============================================================================
 
-module router_wrap
+module router_slice_multi_mode
   (mode, clk, reset, router_address, channel_in_ip, flow_ctrl_out_ip, channel_out_op, 
    flow_ctrl_in_op, error);
    
