@@ -69,24 +69,24 @@ wire si_4_ready;
 //Converter wires
 wire [69:0] axi_to_packet_one_channel_in_ip;
 wire [2:0] axi_to_packet_one_flow_ctrl_out_ip;
-wire router_slice_one_error;
+wire router_wrap_one_error;
 wire [69:0] axi_to_packet_two_channel_in_ip;
 wire [2:0] axi_to_packet_two_flow_ctrl_out_ip;
-wire router_slice_two_error;
+wire router_wrap_two_error;
 wire [69:0] packet_to_axi_two_channel_out_op;
 wire [2:0] packet_to_axi_two_flow_ctrl_in_op;
 wire packet_to_axi_two_tlast;
 wire packet_to_axi_two_error_out;
 wire [69:0] axi_to_packet_three_channel_in_ip;
 wire [2:0] axi_to_packet_three_flow_ctrl_out_ip;
-wire router_slice_three_error;
+wire router_wrap_three_error;
 wire [69:0] packet_to_axi_three_channel_out_op;
 wire [2:0] packet_to_axi_three_flow_ctrl_in_op;
 wire packet_to_axi_three_tlast;
 wire packet_to_axi_three_error_out;
 wire [69:0] axi_to_packet_four_channel_in_ip;
 wire [2:0] axi_to_packet_four_flow_ctrl_out_ip;
-wire router_slice_four_error;
+wire router_wrap_four_error;
 wire [69:0] packet_to_axi_four_channel_out_op;
 wire [2:0] packet_to_axi_four_flow_ctrl_in_op;
 wire packet_to_axi_four_tlast;
@@ -143,7 +143,7 @@ axi_to_packet_converter axi_to_packet_converter_one(
 );
 
 (*keep*)
-router_slice router_slice_one(
+router_wrap router_wrap_one(
     .clk(clk),
     .reset(reset),
     .router_address(4'b0001),
@@ -151,7 +151,7 @@ router_slice router_slice_one(
     .flow_ctrl_out_ip(axi_to_packet_one_flow_ctrl_out_ip),
     .channel_out_op(),
     .flow_ctrl_in_op(),
-    .error(router_slice_one_error)
+    .error(router_wrap_one_error)
 );
 
 /*
@@ -163,7 +163,7 @@ router_slice router_slice_one(
     5) master interface passes the data back to the second NoC adapter
 */
 (*keep*)
-router_slice router_slice_two(
+router_wrap router_wrap_two(
     .clk(clk),
     .reset(reset),
     .router_address(4'b0010),
@@ -171,7 +171,7 @@ router_slice router_slice_two(
     .flow_ctrl_out_ip(axi_to_packet_two_flow_ctrl_out_ip),
     .channel_out_op(packet_to_axi_two_channel_out_op),
     .flow_ctrl_in_op(packet_to_axi_two_flow_ctrl_in_op),
-    .error(router_slice_two_error)
+    .error(router_wrap_two_error)
 );
 
 packet_to_axi_converter packet_to_axi_converter_two (
@@ -179,7 +179,7 @@ packet_to_axi_converter packet_to_axi_converter_two (
     .reset(reset),
     .channel_out_op(packet_to_axi_two_channel_out_op),
     .flow_ctrl_in_op(packet_to_axi_two_flow_ctrl_in_op),
-    .error_in(router_slice_two_error),
+    .error_in(router_wrap_two_error),
     .tdata_out(si_2_data_in),
     .tvalid_out(si_2_valid_in),
     .tready(si_2_ready),
@@ -259,7 +259,7 @@ axi_to_packet_converter axi_to_packet_converter_two(
     5) master interface passes the data back to the third NoC adapter
 */
 (*keep*)
-router_slice router_slice_three(
+router_wrap router_wrap_three(
     .clk(clk),
     .reset(reset),
     .router_address(4'b0011),
@@ -267,7 +267,7 @@ router_slice router_slice_three(
     .flow_ctrl_out_ip(axi_to_packet_three_flow_ctrl_out_ip),
     .channel_out_op(packet_to_axi_three_channel_out_op),
     .flow_ctrl_in_op(packet_to_axi_three_flow_ctrl_in_op),
-    .error(router_slice_three_error)
+    .error(router_wrap_three_error)
 );
 
 packet_to_axi_converter packet_to_axi_converter_three (
@@ -275,7 +275,7 @@ packet_to_axi_converter packet_to_axi_converter_three (
     .reset(reset),
     .channel_out_op(packet_to_axi_three_channel_out_op),
     .flow_ctrl_in_op(packet_to_axi_three_flow_ctrl_in_op),
-    .error_in(router_slice_three_error),
+    .error_in(router_wrap_three_error),
     .tdata_out(si_3_data_in),
     .tvalid_out(si_3_valid_in),
     .tready(si_3_ready),
@@ -354,7 +354,7 @@ axi_to_packet_converter axi_to_packet_converter_three(
     4) traffic processor passes the processed data to the top module output
 */
 (*keep*)
-router_slice router_slice_four(
+router_wrap router_wrap_four(
     .clk(clk),
     .reset(reset),
     .router_address(4'b0100),
@@ -362,7 +362,7 @@ router_slice router_slice_four(
     .flow_ctrl_out_ip(axi_to_packet_four_flow_ctrl_out_ip),
     .channel_out_op(packet_to_axi_four_channel_out_op),
     .flow_ctrl_in_op(),
-    .error(router_slice_four_error)
+    .error(router_wrap_four_error)
 );
 
 packet_to_axi_converter packet_to_axi_converter_four (
@@ -370,7 +370,7 @@ packet_to_axi_converter packet_to_axi_converter_four (
     .reset(reset),
     .channel_out_op(packet_to_axi_four_channel_out_op),
     .flow_ctrl_in_op(),
-    .error_in(router_slice_four_error),
+    .error_in(router_wrap_four_error),
     .tdata_out(si_4_data_in),
     .tvalid_out(si_4_valid_in),
     .tready(si_4_ready),
