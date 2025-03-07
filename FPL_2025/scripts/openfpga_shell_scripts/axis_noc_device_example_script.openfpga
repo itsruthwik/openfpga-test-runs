@@ -2,16 +2,16 @@
 
 vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
     --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
-    --constant_net_method route  --echo_file on --disp on \
-    --noc on --noc_flows_file /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/vpr-noc/benchmark-files/complex_4_noc_1D_chain-renamed.flows
+    --constant_net_method route  --echo_file on  \
+    --noc on --noc_flows_file /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/benchmarks/synthetic_mlp_benchmarks/simple_four_noc_1D_chain_axis.flows
 #--fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-router/benchmark-files/router_2_bench.place 
 
-ext_exec --command "python3 /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/scripts/noc_bitstream_generator.py \
-    --vpr_arch ${VPR_ARCH_FILE} \
-    --vpr_tile noc_router_adapter \
-    --bench_top ${TOP_MODULE} \
-    --address_port router_address \
-    --run_dir ./ "
+#ext_exec --command "python3 /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/scripts/noc_bitstream_generator.py \
+#    --vpr_arch ${VPR_ARCH_FILE} \
+#    --vpr_tile router_wrap_tile \
+#    --bench_top ${TOP_MODULE} \
+#    --address_port router_address \
+#    --run_dir ./ "
 
 # Read OpenFPGA architecture definition
 read_openfpga_arch -f ${OPENFPGA_ARCH_FILE}

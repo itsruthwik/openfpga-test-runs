@@ -118,7 +118,7 @@ assign router1_channel_in[64] = packet_valid_reg;           // Valid bit
 assign router1_channel_in[65:189] = 125'b0;                 // Unused bits
 
 // Flow control signals - all zeros for simplicity
-assign router1_flow_ctrl_out = 15'b0;
+assign router1_flow_ctrl_in = 15'b0;
 
 // Router 1
 router_wrap router1(
@@ -131,10 +131,6 @@ router_wrap router1(
     .flow_ctrl_in_op(router1_flow_ctrl_in),
     .error(router1_error)
 );
-
-// Connect Router 1 output to Router 2 input
-assign router2_channel_in = router1_channel_out;
-assign router2_flow_ctrl_out = router1_flow_ctrl_in;
 
 // Router 2
 router_wrap router2(
@@ -178,8 +174,6 @@ traffic_processor tp_2(
     .tvalid_out(tp_2_valid)
 );
 
-// Create packet for router 3
-// Format for Router 2->3: [header(32) | payload(32) | tail(1)]
 // Create packet format for router 2 -> router 3
 assign router3_channel_in[0:31] = {4'b0011, 28'h0};      // Header with destination = router 3
 assign router3_channel_in[32:63] = tp_2_data;            // Payload from processor
@@ -187,7 +181,7 @@ assign router3_channel_in[64] = tp_2_valid;              // Valid bit
 assign router3_channel_in[65:189] = 125'b0;              // Unused bits
 
 // Flow control signals - all zeros for simplicity
-assign router3_flow_ctrl_out = 15'b0;
+assign router3_flow_ctrl_in = 15'b0;
 
 // Router 3
 router_wrap router3(
@@ -231,14 +225,14 @@ traffic_processor tp_3(
     .tvalid_out(tp_3_valid)
 );
 
-// Create packet for router 4
+// Create packet format for router 3 -> router 4
 assign router4_channel_in[0:31] = {4'b0100, 28'h0};      // Header with destination = router 4
 assign router4_channel_in[32:63] = tp_3_data;            // Payload from processor
 assign router4_channel_in[64] = tp_3_valid;              // Valid bit
 assign router4_channel_in[65:189] = 125'b0;              // Unused bits
 
 // Flow control signals - all zeros for simplicity
-assign router4_flow_ctrl_out = 15'b0;
+assign router4_flow_ctrl_in = 15'b0;
 
 // Router 4
 router_wrap router4(
@@ -309,7 +303,6 @@ output reg tvalid;
 //a simple counter to test functionality
 always @ (posedge clk, posedge reset)
 begin
-
     if(reset == 1'b1) begin
         tdata <= 0;
         tvalid <= 1'b0;
@@ -368,7 +361,6 @@ begin
     if (reset)begin
             sum_reg <= 0;
             valid_reg <= 1'b0;
-
         end
     else begin
             if (tvalid_in == 1'b1) begin
@@ -383,3 +375,63 @@ assign tdata_out = sum_reg;
 assign tvalid_out = valid_reg;
 
 endmodule
+
+// /* This is the slave interface module for router communication */
+// module slave_interface(
+//     clk,
+//     reset,
+//     tvalid_in,
+//     tdata_in,
+//     tready,
+//     tdata_out,
+//     tvalid_out,
+//     tstrb,
+//     tkeep,
+//     tid,
+//     tdest,
+//     tuser,
+//     tlast
+// );
+
+// parameter noc_dw = 32;
+// parameter byte_dw = 8;
+
+// // Inputs
+// input wire clk;
+// input wire reset;
+// input wire tvalid_in;
+// input wire [noc_dw-1:0] tdata_in;
+// input wire [byte_dw-1:0] tstrb;
+// input wire [byte_dw-1:0] tkeep;
+// input wire [byte_dw-1:0] tid;
+// input wire [byte_dw-1:0] tdest;
+// input wire [byte_dw-1:0] tuser;
+// input wire tlast;
+
+// // Outputs
+// output wire tready;
+// output wire [noc_dw-1:0] tdata_out;
+// output wire tvalid_out;
+
+// // Internal registers
+// reg [noc_dw-1:0] data_reg;
+// reg valid_reg;
+
+// // Simple passthrough for this example
+// always @(posedge clk or posedge reset) begin
+//     if (reset) begin
+//         data_reg <= 0;
+//         valid_reg <= 0;
+//     end
+//     else begin
+//         data_reg <= tdata_in;
+//         valid_reg <= tvalid_in;
+//     end
+// end
+
+// // Always ready to receive data
+// assign tready = 1'b1;
+// assign tdata_out = data_reg;
+// assign tvalid_out = valid_reg;
+
+// endmodule
