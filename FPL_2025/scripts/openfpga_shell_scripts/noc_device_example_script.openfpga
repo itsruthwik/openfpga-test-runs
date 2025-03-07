@@ -2,7 +2,8 @@
 
 vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
     --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
-    --constant_net_method route  --echo_file on --disp on \
+    --constant_net_method route  --echo_file on  --pack_verbosity 5 \
+#     --disp on \
     --noc on --noc_flows_file /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/vpr-noc/benchmark-files/complex_4_noc_1D_chain-renamed.flows
 #--fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-router/benchmark-files/router_2_bench.place 
 

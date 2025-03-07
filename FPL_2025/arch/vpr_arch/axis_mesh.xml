@@ -324,7 +324,7 @@
   </tiles>
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
-<layout tileable="false" through_channel="false">
+<layout tileable="true" through_channel="true">
   <!--layout-->
     <auto_layout aspect_ratio="1.0">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
@@ -339,7 +339,7 @@
       <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
       <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
     </auto_layout>
-    <fixed_layout name="vtr_extra_large" width="24" height="24">
+    <fixed_layout name="large" width="24" height="24">
   <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
@@ -1749,6 +1749,44 @@
       <output name="axis_out_tdest" num_pins="20"/>
       
       <clock name="clk" num_pins="1"/>
+        <T_setup value="66e-12" port="axis_in_tvalid" clock="clk"/>
+        <T_setup value="66e-12" port="axis_in_tready" clock="clk"/>
+        <T_setup value="66e-12" port="axis_in_tdata" clock="clk"/>
+        <T_setup value="66e-12" port="axis_in_tlast" clock="clk"/>
+        <T_setup value="66e-12" port="axis_in_tid" clock="clk"/>
+        <T_setup value="66e-12" port="axis_in_tdest" clock="clk"/>
+
+        <T_setup value="66e-12" port="axis_out_tvalid" clock="clk"/>
+        <T_setup value="66e-12" port="axis_out_tready" clock="clk"/>
+        <T_setup value="66e-12" port="axis_out_tdata" clock="clk"/>
+        <T_setup value="66e-12" port="axis_out_tlast" clock="clk"/>
+        <T_setup value="66e-12" port="axis_out_tid" clock="clk"/>
+        <T_setup value="66e-12" port="axis_out_tdest" clock="clk"/>
+
+        <T_clock_to_Q max="124e-12" port="axis_in_tvalid" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_in_tready" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_in_tdata" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_in_tlast" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_in_tid" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_in_tdest" clock="clk"/>
+
+        <T_clock_to_Q max="124e-12" port="axis_out_tvalid" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_out_tready" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_out_tdata" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_out_tlast" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_out_tid" clock="clk"/>
+        <T_clock_to_Q max="124e-12" port="axis_out_tdest" clock="clk"/>
+
+        <T_setup value="66e-12" port="rst_n" clock="clk"/>
+<T_clock_to_Q max="124e-12" port="rst_n" clock="clk"/>
+
+<T_setup value="66e-12" port="clk_noc" clock="clk"/>
+<T_setup value="66e-12" port="clk_usr" clock="clk"/>
+
+<T_clock_to_Q max="124e-12" port="clk_noc" clock="clk"/>
+<T_clock_to_Q max="124e-12" port="clk_usr" clock="clk"/>
+
+
     </pb_type>
     <interconnect>
       <direct name="clk_noc2clk_noc" input="router_wrap.clk_noc" output="router.clk_noc"/>
@@ -1763,7 +1801,7 @@
       <direct name="in_tdest2in_tdest" input="router_wrap.axis_in_tdest" output="router.axis_in_tdest"/>
       
       <direct name="out_tvalid2out_tvalid" input="router.axis_out_tvalid" output="router_wrap.axis_out_tvalid"/>
-      <direct name="out_tready2out_tready" input="router_wrap.axis_out_tready" output="router.axis_out_tready"/>
+      <direct name="out_tready2out_tready" output="router_wrap.axis_out_tready" input="router.axis_out_tready"/>
       <direct name="out_tdata2out_tdata" input="router.axis_out_tdata" output="router_wrap.axis_out_tdata"/>
       <direct name="out_tlast2out_tlast" input="router.axis_out_tlast" output="router_wrap.axis_out_tlast"/>
       <direct name="out_tid2out_tid" input="router.axis_out_tid" output="router_wrap.axis_out_tid"/>
