@@ -3,7 +3,7 @@
 vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
     --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
     --constant_net_method route  --echo_file on  \
-    --noc on --noc_flows_file /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/benchmarks/synthetic_mlp_benchmarks/simple_four_noc_1D_chain_stanford.flows
+   --noc on --noc_flows_file /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/benchmarks/synthetic_mlp_benchmarks/simple_four_noc_1D_chain_stanford.flows
 #--fix_clusters /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/nocgen-router/benchmark-files/router_2_bench.place 
 
 ext_exec --command "python3 /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/scripts/noc_bitstream_generator.py \

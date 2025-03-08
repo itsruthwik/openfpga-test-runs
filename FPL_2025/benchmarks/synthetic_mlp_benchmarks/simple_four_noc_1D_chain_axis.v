@@ -152,6 +152,7 @@ assign router1_in_tdest = {16'b0, 4'b0010};  // Destination: Router 2
 assign mi_1_ready = router1_in_tready[0];
 
 // Router 1 (First NoC Router)
+(*keep*)
 router_wrap router1 (
     .clk_noc(clk),
     .clk_usr(clk),
@@ -244,6 +245,7 @@ assign router2_in_tid[9:4] = 6'b000000;
 assign router2_in_tdest[19:8] = 12'b000000000000;
 
 // Router 2 (Second NoC Router)
+(*keep*)
 router_wrap router2 (
     .clk_noc(clk),
     .clk_usr(clk),
@@ -335,6 +337,7 @@ assign router3_in_tid[9:4] = 6'b000000;
 assign router3_in_tdest[19:8] = 12'b000000000000;
 
 // Router 3 (Third NoC Router)
+(*keep*)
 router_wrap router3 (
     .clk_noc(clk),
     .clk_usr(clk),
@@ -371,6 +374,7 @@ assign router4_in_tid[9:2] = 8'b00000000;
 assign router4_in_tdest[19:4] = 16'b0000000000000000;
 
 // Router 4 (Fourth NoC Router)
+(*keep*)
 router_wrap router4 (
     .clk_noc(clk),
     .clk_usr(clk),
