@@ -4,7 +4,7 @@
 #read_verilog -sv  /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/noc-benchmarks/Synthetic_Designs/shared_verilog/*v
 
 read_verilog -sv ${VERILOG_FILES}
-read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
+read_verilog -sv -lib -specify ${YOSYS_CELL_SIM_VERILOG}
 read_verilog -sv  /mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/noc-benchmarks/Synthetic_Designs/shared_verilog/*v
 
 
