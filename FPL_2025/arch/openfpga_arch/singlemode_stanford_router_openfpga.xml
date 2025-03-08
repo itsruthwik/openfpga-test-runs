@@ -218,7 +218,7 @@
       <!-- As a fracturable multiplier, it requires 2 configuration bits to operate in 4 different modes -->
       <port type="sram" prefix="mode" size="2" mode_select="true" circuit_model_name="DFFR" default_val="1"/>
     </circuit_model>
-  <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="true" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/singlemode_stanford_router/router_wrap_cell_sim.v" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/singlemode_stanford_router/router_wrap_cell_sim.v">
+  <circuit_model type="hard_logic" name="router_wrap" prefix="router_wrap" is_default="false" spice_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/router_wrap_cell_sim.v" verilog_netlist="/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/router_wrap_cell_sim.v">
          <design_technology type="cmos"/>
          <input_buffer exist="true" circuit_model_name="INVTX1"/>
          <output_buffer exist="true" circuit_model_name="INVTX1"/>
@@ -226,9 +226,9 @@
          <port type="input" prefix="reset" lib_name="reset" size="1"/>
          <port type="input" prefix="router_address" lib_name="router_address" size="4"/>
          <port type="input" prefix="channel_in_ip" lib_name="channel_in_ip" size="190"/>
-         <port type="input" prefix="flow_ctrl_out_ip" lib_name="flow_ctrl_out_ip" size="15"/>
+         <port type="input" prefix="flow_ctrl_in_op" lib_name="flow_ctrl_in_op" size="15"/>
+         <port type="output" prefix="flow_ctrl_out_ip" lib_name="flow_ctrl_out_ip" size="15"/>
          <port type="output" prefix="channel_out_op" lib_name="channel_out_op" size="190"/>
-         <port type="output" prefix="flow_ctrl_in_op" lib_name="flow_ctrl_in_op" size="15"/>
          <port type="output" prefix="error" lib_name="error" size="1"/>
          </circuit_model>
       </circuit_library>
@@ -344,23 +344,11 @@
    <pb_type name="router_wrap_tile[router_wrap].router_wrap" circuit_model_name="router_wrap"/>
    </pb_type_annotations>
   <noc_annotation noc_router_tile_name="router_wrap_tile">
-    <!-- <noc_links link_type="hard" circuit_model="direct_interc"> -->
-    <noc_links link_type="soft">
-      <!-- <noc_port side="left"   input_pins="channel_in_ip[69:0]    flow_ctrl_in_op[2:0]"  output_pins="channel_out_op[69:0]    flow_ctrl_out_ip[2:0]"/> -->
-      <!-- <noc_port side="right"  input_pins="channel_in_ip[139:70]  flow_ctrl_in_op[5:3]"  output_pins="channel_out_op[139:70]  flow_ctrl_out_ip[5:3]"/> -->
-      <!-- <noc_port side="top"    input_pins="channel_in_ip[209:140] flow_ctrl_in_op[8:6]"  output_pins="channel_out_op[209:140] flow_ctrl_out_ip[8:6]"/> -->
-      <!-- <noc_port side="bottom" input_pins="channel_in_ip[279:210] flow_ctrl_in_op[11:9]" output_pins="channel_out_op[279:210] flow_ctrl_out_ip[11:9]"/> -->
+    <noc_links link_type="hard" circuit_model="direct_interc">
+      <noc_port side="left"   input_pins="channel_in_ip[37:0]    flow_ctrl_in_op[2:0]"  output_pins="channel_out_op[37:0]    flow_ctrl_out_ip[2:0]"/>
+      <noc_port side="right"  input_pins="channel_in_ip[75:38]  flow_ctrl_in_op[5:3]"  output_pins="channel_out_op[75:38]  flow_ctrl_out_ip[5:3]"/>
+      <noc_port side="top"    input_pins="channel_in_ip[113:76] flow_ctrl_in_op[8:6]"  output_pins="channel_out_op[113:76] flow_ctrl_out_ip[8:6]"/>
+      <noc_port side="bottom" input_pins="channel_in_ip[151:114] flow_ctrl_in_op[11:9]" output_pins="channel_out_op[151:114] flow_ctrl_out_ip[11:9]"/>
     </noc_links>
   </noc_annotation>
 </openfpga_architecture>
-
-
-<!-- <noc_annotation noc_router_tile_name="router_wrap_tile">
-  <noc_links link_type="hard" circuit_model="direct_interc">
-    <noc_port side="left"   input_pins="channel_in_ip[37:0]     flow_ctrl_in_op[2:0]"  output_pins="channel_out_op[37:0]     flow_ctrl_out_ip[2:0]"/>
-    <noc_port side="right"  input_pins="channel_in_ip[75:38]    flow_ctrl_in_op[5:3]"  output_pins="channel_out_op[75:38]    flow_ctrl_out_ip[5:3]"/>
-    <noc_port side="top"    input_pins="channel_in_ip[113:76]   flow_ctrl_in_op[8:6]"  output_pins="channel_out_op[113:76]   flow_ctrl_out_ip[8:6]"/>
-    <noc_port side="bottom" input_pins="channel_in_ip[151:114]  flow_ctrl_in_op[11:9]" output_pins="channel_out_op[151:114]  flow_ctrl_out_ip[11:9]"/>
-    <noc_port side="local"  input_pins="channel_in_ip[189:152]  flow_ctrl_in_op[14:12]" output_pins="channel_out_op[189:152] flow_ctrl_out_ip[14:12]"/>
-  </noc_links>
-</noc_annotation> -->

@@ -213,11 +213,11 @@
             <port name="reset" clock="clk"/>
             <port name="router_address" clock="clk"/>
             <port name="channel_in_ip" clock="clk"/>
-            <port name="flow_ctrl_out_ip" clock="clk"/>
+            <port name="flow_ctrl_in_op" clock="clk"/>
             </input_ports>
          <output_ports>
+            <port name="flow_ctrl_out_ip" clock="clk"/>
             <port name="channel_out_op" clock="clk"/>
-            <port name="flow_ctrl_in_op" clock="clk"/>
             <port name="error" clock="clk"/>
             </output_ports>
          </model>
@@ -311,7 +311,7 @@
         </pinlocations>
       </sub_tile>
     </tile>
-  <tile name="router_wrap_tile" width="1" height="1" area="1">
+  <tile name="router_wrap_tile" width="5" height="5">
          <sub_tile name="router_wrap_tile">
             <equivalent_sites>
                <site pb_type="router_wrap_tile"/>
@@ -320,18 +320,58 @@
             <input name="reset" num_pins="1"/>
             <input name="router_address" num_pins="4"/>
             <input name="channel_in_ip" num_pins="190"/>
-            <input name="flow_ctrl_out_ip" num_pins="15"/>
+            <input name="flow_ctrl_in_op" num_pins="15"/>
+            <output name="flow_ctrl_out_ip" num_pins="15"/>
             <output name="channel_out_op" num_pins="190"/>
-            <output name="flow_ctrl_in_op" num_pins="15"/>
             <output name="error" num_pins="1"/>
-            <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10"/>
-            <pinlocations pattern="spread"/>
+<fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
+  <!-- left -->
+  <!-- <fc_override port_name="channel_in_ip[37:0]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_in_op[2:0]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="channel_out_op[37:0]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_out_ip[2:0]" fc_type="frac" fc_val="0"/> -->
+  <!-- right -->
+  <!-- <fc_override port_name="channel_in_ip[75:38]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_in_op[5:3]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="channel_out_op[75:38]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_out_ip[5:3]" fc_type="frac" fc_val="0"/> -->
+  <!-- top -->
+  <!-- <fc_override port_name="channel_in_ip[113:76]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_in_op[8:6]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="channel_out_op[113:76]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_out_ip[8:6]" fc_type="frac" fc_val="0"/> -->
+  <!-- bottom -->
+  <!-- <fc_override port_name="channel_in_ip[151:114]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_in_op[11:9]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="channel_out_op[151:114]" fc_type="frac" fc_val="0"/> -->
+  <!-- <fc_override port_name="flow_ctrl_out_ip[11:9]" fc_type="frac" fc_val="0"/> -->
+</fc>
+            
+<pinlocations pattern="custom">
+  <!-- West links - Left side with offset -->
+  <loc side="left" xoffset="0" yoffset="4">router_wrap_tile.channel_in_ip[37:0] router_wrap_tile.flow_ctrl_in_op[2:0] router_wrap_tile.channel_out_op[37:0] router_wrap_tile.flow_ctrl_out_ip[2:0]</loc>
+  <!-- North links - Top side with offset -->
+  <loc side="top" xoffset="4" yoffset="0">router_wrap_tile.channel_in_ip[113:76] router_wrap_tile.flow_ctrl_in_op[8:6] router_wrap_tile.channel_out_op[113:76] router_wrap_tile.flow_ctrl_out_ip[8:6]</loc>
+  <!-- East links - Right side with offset -->
+  <loc side="right" xoffset="0" yoffset="4">router_wrap_tile.channel_in_ip[75:38] router_wrap_tile.flow_ctrl_in_op[5:3] router_wrap_tile.channel_out_op[75:38] router_wrap_tile.flow_ctrl_out_ip[5:3]</loc>
+  <!-- South links - Bottom side with offset -->
+  <loc side="bottom" xoffset="4" yoffset="0">router_wrap_tile.channel_in_ip[151:114] router_wrap_tile.flow_ctrl_in_op[11:9] router_wrap_tile.channel_out_op[151:114] router_wrap_tile.flow_ctrl_out_ip[11:9]</loc>
+  <!-- Clock, reset, error - Left side control signals -->
+  <loc side="left" xoffset="0" yoffset="0">router_wrap_tile.clk router_wrap_tile.reset router_wrap_tile.error</loc>
+  <!-- Router address - Bottom left -->
+  <loc side="bottom" xoffset="0" yoffset="0">router_wrap_tile.router_address</loc>
+  <!-- Local/Core connection split across locations -->
+  <loc side="bottom" xoffset="1" yoffset="0">router_wrap_tile.channel_in_ip[189:175]</loc>
+  <loc side="left" xoffset="0" yoffset="1">router_wrap_tile.channel_in_ip[174:152] router_wrap_tile.flow_ctrl_in_op[14:12]</loc>
+  <loc side="bottom" xoffset="2" yoffset="0">router_wrap_tile.channel_out_op[189:175]</loc>
+  <loc side="bottom" xoffset="3" yoffset="0">router_wrap_tile.channel_out_op[174:152] router_wrap_tile.flow_ctrl_out_ip[14:12]</loc>
+</pinlocations>
             </sub_tile>
          </tile>
       </tiles>
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
-  <layout tileable="true" through_channel="false" concat_pass_wire="true">
+  <layout tileable="true" through_channel="true" concat_pass_wire="true">
     <auto_layout aspect_ratio="1.0">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
@@ -1296,9 +1336,9 @@
       <input name="reset" num_pins="1"/>
       <input name="router_address" num_pins="4"/>
       <input name="channel_in_ip" num_pins="190"/>
-      <input name="flow_ctrl_out_ip" num_pins="15"/>
+      <input name="flow_ctrl_in_op" num_pins="15"/>
+      <output name="flow_ctrl_out_ip" num_pins="15"/>
       <output name="channel_out_op" num_pins="190"/>
-      <output name="flow_ctrl_in_op" num_pins="15"/>
       <output name="error" num_pins="1"/>
       <mode name="router_wrap">
          <pb_type name="router_wrap" blif_model=".subckt router_wrap" num_pb="1">
@@ -1306,9 +1346,9 @@
             <input name="reset" num_pins="1"/>
             <input name="router_address" num_pins="4"/>
             <input name="channel_in_ip" num_pins="190"/>
-            <input name="flow_ctrl_out_ip" num_pins="15"/>
+            <input name="flow_ctrl_in_op" num_pins="15"/>
+            <output name="flow_ctrl_out_ip" num_pins="15"/>
             <output name="channel_out_op" num_pins="190"/>
-            <output name="flow_ctrl_in_op" num_pins="15"/>
             <output name="error" num_pins="1"/>
             <T_setup value="66e-12" port="router_wrap.reset" clock="clk"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.reset" clock="clk"/>
@@ -1316,12 +1356,12 @@
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.router_address" clock="clk"/>
             <T_setup value="66e-12" port="router_wrap.channel_in_ip" clock="clk"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.channel_in_ip" clock="clk"/>
+            <T_setup value="66e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>
+            <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>
             <T_setup value="66e-12" port="router_wrap.flow_ctrl_out_ip" clock="clk"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.flow_ctrl_out_ip" clock="clk"/>
             <T_setup value="66e-12" port="router_wrap.channel_out_op" clock="clk"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.channel_out_op" clock="clk"/>
-            <T_setup value="66e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>
-            <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>
             <T_setup value="66e-12" port="router_wrap.error" clock="clk"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.error" clock="clk"/>
             </pb_type>
@@ -1330,9 +1370,9 @@
             <direct name="connection_reset" input="router_wrap_tile.reset" output="router_wrap.reset"/>
             <direct name="connection_router_address" input="router_wrap_tile.router_address" output="router_wrap.router_address"/>
             <direct name="connection_channel_in_ip" input="router_wrap_tile.channel_in_ip" output="router_wrap.channel_in_ip"/>
-            <direct name="connection_flow_ctrl_out_ip" input="router_wrap_tile.flow_ctrl_out_ip" output="router_wrap.flow_ctrl_out_ip"/>
+            <direct name="connection_flow_ctrl_in_op" input="router_wrap_tile.flow_ctrl_in_op" output="router_wrap.flow_ctrl_in_op"/>
+            <direct name="connection_flow_ctrl_out_ip" input="router_wrap.flow_ctrl_out_ip" output="router_wrap_tile.flow_ctrl_out_ip"/>
             <direct name="connection_channel_out_op" input="router_wrap.channel_out_op" output="router_wrap_tile.channel_out_op"/>
-            <direct name="connection_flow_ctrl_in_op" input="router_wrap.flow_ctrl_in_op" output="router_wrap_tile.flow_ctrl_in_op"/>
             <direct name="connection_error" input="router_wrap.error" output="router_wrap_tile.error"/>
             </interconnect>
          </mode>
