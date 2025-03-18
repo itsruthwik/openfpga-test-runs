@@ -5,8 +5,8 @@ module ali_3x3 (
  a,  b,  c
 );
 
-localparam channel_width = 69;
-localparam flow_ctrl_width = 2;
+localparam channel_width = 35;
+localparam flow_ctrl_width = 1;
 localparam num_routers = 9;
 
 input clk, reset, a, b;

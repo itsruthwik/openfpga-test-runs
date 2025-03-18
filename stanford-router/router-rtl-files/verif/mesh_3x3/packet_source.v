@@ -193,7 +193,7 @@ module packet_source
        -1;
    
    // total number of bits required for routing-related information
-   localparam route_info_width = lar_info_width + dest_info_width;
+   localparam route_info_width = lar_info_width + dest_info_width; //7 bits
    
    // total number of bits required for storing header information
    localparam header_info_width

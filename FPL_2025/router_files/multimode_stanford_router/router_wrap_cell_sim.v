@@ -13,8 +13,12 @@ module router_desc(
   always @(posedge clk) begin
     if (reset) begin
       error <= 0;
-      flow_ctrl_in_op <= 0;
+      flow_ctrl_out_ip <= 0;
       channel_out_op <= 0;  
+    end
+    else begin
+      channel_out_op <= channel_in_ip;
+      flow_ctrl_in_op <= flow_ctrl_out_ip;
     end
   end
 
@@ -36,6 +40,7 @@ module router_asc(
     if (reset) begin
       error <= 0;
       channel_out_op <= 0;  
+      flow_ctrl_out_ip <= 0;
     end
   end
 
