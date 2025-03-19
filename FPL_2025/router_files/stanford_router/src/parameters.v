@@ -39,13 +39,13 @@ parameter topology = `TOPOLOGY_MESH;
 parameter buffer_size = 16;
 
 // number of message classes (e.g. request, reply)
-parameter num_message_classes = 2;
+parameter num_message_classes = 1;
 
 // number of resource classes (e.g. minimal, adaptive)
 parameter num_resource_classes = 1;
 
 // number of VCs per class
-parameter num_vcs_per_class = 2;
+parameter num_vcs_per_class = 1;
 
 // total number of nodes
 parameter num_nodes = 16;

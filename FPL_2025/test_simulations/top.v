@@ -18,7 +18,8 @@ module axis_to_noc_adapter_tb;
   
   // Router Interface Signals
   wire [35:0] channel_router_0_ip_4;
-  wire flow_ctrl_router_0_op_4;
+  wire flow_ctrl_router_0_ip_4;
+  wire flow_ctrl_router_0_op_4
   
   // Other Router Ports (for monitoring)
   wire [35:0] channel_router_0_op_0, channel_router_0_op_1, channel_router_0_op_2, channel_router_0_op_3;
@@ -43,7 +44,7 @@ module axis_to_noc_adapter_tb;
     .reset(reset),
     .router_address(4'b0000),
     .channel_in_ip({36'b0, 36'b0, 36'b0, 36'b0, channel_router_0_ip_4}),
-    .flow_ctrl_out_ip({4'b0, flow_ctrl_router_0_op_4}),
+    .flow_ctrl_out_ip({4'b0, flow_ctrl_router_0_ip_4}),
     .channel_out_op({channel_router_0_op_0, channel_router_0_op_1, channel_router_0_op_2, channel_router_0_op_3, channel_router_0_op_4}),
     .flow_ctrl_in_op({4'b0, flow_ctrl_router_0_op_4}),
     .error()
