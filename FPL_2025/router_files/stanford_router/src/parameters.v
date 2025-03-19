@@ -57,7 +57,7 @@ parameter num_dimensions = 2;
 parameter num_nodes_per_router = 1;
 
 // select packet format
-parameter packet_format = `PACKET_FORMAT_EXPLICIT_LENGTH;
+parameter packet_format = `PACKET_FORMAT_HEAD_TAIL;
 
 // select type of flow control
 parameter flow_ctrl_type = `FLOW_CTRL_TYPE_CREDIT;
