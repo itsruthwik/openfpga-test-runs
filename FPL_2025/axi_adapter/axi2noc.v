@@ -147,12 +147,14 @@ module fifo #(
   reg [$clog2(DEPTH)-1:0] rd_ptr;
   reg [$clog2(DEPTH):0] count;
 
+  integer  i;
+
   always @(posedge clk or posedge rst) begin
     if (rst) begin
       wr_ptr <= 0;
       rd_ptr <= 0;
       count <= 0;
-      for (integer i = 0; i < DEPTH; i = i + 1)
+      for (i = 0; i < DEPTH; i = i + 1)
         mem[i] <= 0;
     end else begin
       if (wr_en && !full) begin

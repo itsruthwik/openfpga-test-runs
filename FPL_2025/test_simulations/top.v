@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
-`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src/router_slice.v"
-`include "/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/axi_adapter/axi2noc.v"
+`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src/router_slice.v"
+`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/axi_adapter/axi2noc.v"
 
 module axis_to_noc_adapter_tb;
 
@@ -19,10 +19,10 @@ module axis_to_noc_adapter_tb;
   // Router Interface Signals
   wire [35:0] channel_router_0_ip_4;
   wire flow_ctrl_router_0_ip_4;
-  wire flow_ctrl_router_0_op_4
+  wire flow_ctrl_router_0_op_4;
   
   // Other Router Ports (for monitoring)
-  wire [35:0] channel_router_0_op_0, channel_router_0_op_1, channel_router_0_op_2, channel_router_0_op_3;
+  wire [35:0] channel_router_0_op_0, channel_router_0_op_1, channel_router_0_op_2, channel_router_0_op_3, channel_router_0_op_4;
   wire [35:0] channel_router_0_ip_0 = 0, channel_router_0_ip_1 = 0, channel_router_0_ip_2 = 0, channel_router_0_ip_3 = 0;
   wire flow_ctrl_router_0_op_0, flow_ctrl_router_0_op_1, flow_ctrl_router_0_op_2, flow_ctrl_router_0_op_3;
 

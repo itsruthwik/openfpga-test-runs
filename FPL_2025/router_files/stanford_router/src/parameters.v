@@ -96,7 +96,7 @@ parameter predecode_lar_info = 1;
 parameter routing_type = `ROUTING_TYPE_PHASED_DOR;
 
 // select order of dimension traversal
-//parameter dim_order = `DIM_ORDER_ASCENDING;
+parameter dim_order = `DIM_ORDER_ASCENDING;
 
 // use input register as part of the flit buffer (wormhole router only)
 parameter input_stage_can_hold = 0;
