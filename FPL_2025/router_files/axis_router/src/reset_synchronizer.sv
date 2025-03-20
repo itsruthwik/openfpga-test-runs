@@ -14,8 +14,9 @@ module reset_synchronizer #(
         reset_async_reg2 <= reset_async_reg;
     end
 
-    generate
+    generate begin
         if (NUM_EXTEND_CYCLES > 0) begin
+            genvar i;
             logic [NUM_EXTEND_CYCLES - 1 : 0] reset_extend;
 
             always_ff @(posedge sync_clk) begin
@@ -23,39 +24,33 @@ module reset_synchronizer #(
                     reset_extend[NUM_EXTEND_CYCLES - 1 : 1] <= reset_extend[NUM_EXTEND_CYCLES - 2 : 0];
                 reset_extend[0] <= reset_async_reg2;
             end
-            
-            logic reset_sync_tmp;
+
             always_comb begin
-                reset_sync_tmp = reset_async_reg2;
-                for (int i = 0; i < NUM_EXTEND_CYCLES; i = i + 1) begin
-                    reset_sync_tmp = reset_sync_tmp | reset_extend[i];
+                reset_sync_int = reset_async_reg2;
+                for (int i = 0; i < NUM_EXTEND_CYCLES; i++) begin
+                    reset_sync_int = reset_sync_int | reset_extend[i];
                 end
-                reset_sync_int = reset_sync_tmp;
             end
-        end 
-        else begin: no_extend_cycles
+        end else begin
             assign reset_sync_int = reset_async_reg2;
         end
+    end
     endgenerate
 
-    generate
-        if (NUM_OUTPUT_REGISTERS > 0) begin: output_registers_gen
-            logic [NUM_OUTPUT_REGISTERS-1:0] reset_sync_reg;
+    generate begin: output_registers_gen
+        if (NUM_OUTPUT_REGISTERS > 0) begin
+            logic reset_sync_reg[NUM_OUTPUT_REGISTERS];
 
             always_ff @(posedge sync_clk) begin
                 reset_sync_reg[0] <= reset_sync_int;
-                if (NUM_OUTPUT_REGISTERS > 1) begin
-                    for (int i = 1; i < NUM_OUTPUT_REGISTERS; i = i + 1) begin
-                        reset_sync_reg[i] <= reset_sync_reg[i - 1];
-                    end
+                for (int i = 1; i < NUM_OUTPUT_REGISTERS; i++) begin
+                    reset_sync_reg[i] <= reset_sync_reg[i - 1];
                 end
             end
 
             assign reset_sync = reset_sync_reg[NUM_OUTPUT_REGISTERS - 1];
         end
-        else begin: no_output_registers
-            assign reset_sync = reset_sync_int;
-        end
+    end
     endgenerate
 
-endmodule
+endmodule: reset_synchronizer

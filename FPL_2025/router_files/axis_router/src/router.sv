@@ -38,6 +38,8 @@ module router #(
     output  logic                           send_out    [NUM_OUTPUTS],
     input   wire                            credit_in   [NUM_OUTPUTS],
 
+    input logic [$clog2(NUM_OUTPUTS) - 1 : 0]  route_table[NOC_NUM_ENDPOINTS],
+
     input   bit                             DISABLE_TURNS [NUM_INPUTS][NUM_OUTPUTS]
 );
     /**************************************************************************/
@@ -45,7 +47,7 @@ module router #(
     /**************************************************************************/
 
     // Routing Tables
-    logic [$clog2(NUM_OUTPUTS) - 1 : 0]         route_table         [NOC_NUM_ENDPOINTS];  // Replicated for each input
+    // logic [$clog2(NUM_OUTPUTS) - 1 : 0]         route_table         [NOC_NUM_ENDPOINTS];  // Replicated for each input
     logic [$clog2(NUM_OUTPUTS) - 1 : 0]         route_table_out     [NUM_INPUTS];
     logic [$clog2(NUM_OUTPUTS) - 1 : 0]         route_sa_reg        [NUM_INPUTS];
     logic [$clog2(NOC_NUM_ENDPOINTS) - 1 : 0]   route_table_select  [NUM_INPUTS];
@@ -115,24 +117,23 @@ module router #(
     /**************************************************************************/
 
     // Read the routing table into the ROM
-    initial begin
-        // Make explicit one routing table for all inputs
-        // Use generate statements to create multiple inital blocks/
-        // for Quartus to do the right thing (otherwise it only runs the
-        // first iteration of the for loop inside the initial statement
-        // and all other routing tables are empty...)
-        $readmemh(ROUTING_TABLE_HEX, route_table);
-    end
+    // initial begin
+    //     // Make explicit one routing table for all inputs
+    //     // Use generate statements to create multiple inital blocks/
+    //     // for Quartus to do the right thing (otherwise it only runs the
+    //     // first iteration of the for loop inside the initial statement
+    //     // and all other routing tables are empty...)
+    //     $readmemh(ROUTING_TABLE_HEX, route_table);
+    // end
 
     /**************************************************************************/
     /********************************** Logic *********************************/
     /**************************************************************************/
 
     // Input generate
-    // generate begin: input_assign_gen
-    generate
+    generate begin: input_assign_gen
         genvar i, j;
-        for (i = 0; i < NUM_INPUTS; i++) begin: input_assign_loop
+        for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
             // Read flit buffer when the pipeline is free
             assign tail_buffer_rdreq[i] = ~tail_buffer_empty[i] & (rc_pipeline_enable[i] | ~tail_buffer_valid[i]);
 
@@ -149,13 +150,13 @@ module router #(
             assign sa_pipeline_enable[i] = (rc_reg_credit_proxy[i] > (PIPELINE_ARBITER ? 1 : 0)) & grant_input[i];
         end
 
-        for (i = 0; i < NUM_OUTPUTS; i++) begin: output_assign_loop
+        for (i = 0; i < NUM_OUTPUTS; i++) begin: for_outputs
             // Unpack the crossbar output
             assign {data_out[i], dest_out[i], is_tail_out[i]} = (PIPELINE_OUTPUT == 0) ?
                 {data_out_flit[i], data_out_dest[i], data_out_is_tail[i]} :
                 {data_out_reg_flit[i], data_out_reg_dest[i], data_out_reg_is_tail[i]};
         end
-    // end
+    end
     endgenerate
 
     // grant_input is a combined signal which indicates whether the input
@@ -318,10 +319,9 @@ module router #(
     /**************************************************************************/
 
     // Flit buffer FIFOs
-    // generate begin: flit_buffer_gen
-    generate
+    generate begin: flit_buffer_gen
         genvar i;
-        for (i = 0; i < NUM_INPUTS; i++) begin: flit_buffer_loop
+        for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
             fifo_agilex7 #(
                 .WIDTH      (FLIT_WIDTH),
                 .DEPTH      (FLIT_BUFFER_DEPTH),
@@ -337,14 +337,13 @@ module router #(
                 .q      (flit_buffer_out[i])
             );
         end
-    // end
+    end
     endgenerate
 
     // Tail buffer FIFOs
-    // generate begin: tail_buffer_gen
-    generate
+    generate begin: tail_buffer_gen
         genvar i;
-        for (i = 0; i < NUM_INPUTS; i++) begin: tail_buffer_loop
+        for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
             fifo_agilex7 #(
                 .WIDTH      (1),
                 .DEPTH      (FLIT_BUFFER_DEPTH))
@@ -360,14 +359,13 @@ module router #(
                 .q      (tail_buffer_out[i])
             );
         end
-    // end
+    end
     endgenerate
 
     // Destination FIFO
-    // generate begin: dest_buffer_gen
-    generate
+    generate begin: dest_buffer_gen
         genvar i;
-        for (i = 0; i < NUM_INPUTS; i++) begin: dest_buffer_loop
+        for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
             fifo_agilex7 #(
                 .WIDTH      (DEST_WIDTH),
                 .DEPTH      (FLIT_BUFFER_DEPTH),
@@ -383,14 +381,13 @@ module router #(
                 .q      (dest_buffer_out[i])
             );
         end
-    // end
+    end
     endgenerate
 
     // Output Arbiters
-    // generate begin: arbiter_gen
-    generate
+    generate begin: arbiter_gen
         genvar i;
-        for (i = 0; i < NUM_OUTPUTS; i++) begin: arbiter_loop
+        for (i = 0; i < NUM_OUTPUTS; i++) begin: for_outputs
             arbiter_matrix #(
                 .NUM_INPUTS(NUM_INPUTS)
             ) arbiter_inst (
@@ -402,14 +399,13 @@ module router #(
                 .grant      (grant[i])
             );
         end
-    // end
+    end
     endgenerate
 
     // Route Compute Pipeline
-    // generate begin: route_compute_pipeline_gen
-    generate
+    generate begin: route_compute_pipeline_gen
         genvar i;
-        for (i = 0; i < NUM_INPUTS; i++) begin: route_compute_loop
+        for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
             rc_pipeline #(
                 .DATA_WIDTH         (FLIT_WIDTH),
                 .DEST_WIDTH         (DEST_WIDTH),
@@ -437,7 +433,7 @@ module router #(
                 .enable_in          (sa_pipeline_enable[i])
             );
         end
-    // end
+    end
     endgenerate
 
     // Arbiter Pipeline
@@ -454,10 +450,9 @@ module router #(
         end
     end
 
-    // generate begin: arbiter_pipeline_gen
-    generate
+    generate begin: arbiter_pipeline_gen
         genvar i;
-        for (i = 0; i < NUM_INPUTS; i++) begin: arbiter_pipeline_loop
+        for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
             sa_pipeline #(
                 .DATA_WIDTH         (FLIT_WIDTH),
                 .DEST_WIDTH         (DEST_WIDTH),
@@ -486,7 +481,7 @@ module router #(
                 .enable_in          (sa_pipeline_enable[i])
             );
         end
-    // end
+    end
     endgenerate
 
     // Crossbar
@@ -643,8 +638,7 @@ module crossbar_onehot #(
     input   wire    [NUM_INPUTS - 1 : 0]    select      [NUM_OUTPUTS]
 );
 
-    // generate begin: crossbar
-    generate
+    generate begin: crossbar
         if (MODE == "BINARY") begin
             logic [$clog2(NUM_INPUTS) - 1 : 0] select_binary [NUM_OUTPUTS];
             genvar i;
@@ -723,7 +717,7 @@ module crossbar_onehot #(
                 end
             end
         end
-    // end
+    end
     endgenerate
 
 endmodule: crossbar_onehot
@@ -755,8 +749,7 @@ module rc_pipeline #(
     input   wire                                            enable_in
 );
 
-    // generate begin: enable_gen
-    generate
+    generate begin: enable_gen
         if (ENABLE == 1) begin
             always_ff @(posedge clk) begin
                 if (rst_n == 1'b0) begin
@@ -786,9 +779,8 @@ module rc_pipeline #(
             assign credit_count_out = credit_count_in[route_in];
 
             assign enable_out = enable_in;
-        end else
-            $fatal(0, "Invalid ENABLE parameter");
-    // end
+        end
+    end
     endgenerate
 
 endmodule: rc_pipeline
@@ -823,8 +815,7 @@ module sa_pipeline #(
 );
     logic [NUM_OUTPUTS - 1 : 0] grant_reg;
 
-    // generate begin: enable_gen
-    generate
+    generate begin: enable_gen
         if (ENABLE == 1) begin
             always_ff @(posedge clk) begin
                 if (rst_n == 1'b0) begin
@@ -850,9 +841,8 @@ module sa_pipeline #(
             assign grant_out = grant_in;
             assign route_out = route_in;
             assign valid_out = valid_in;
-        end else
-            $fatal(0, "Invalid ENABLE parameter");
-    // end
+        end
+    end
     endgenerate
 
 endmodule: sa_pipeline
