@@ -58,40 +58,41 @@ module  dcfifo_mixed_width_agilex7 #(
     wire  rdempty = sub_wire1;
     wire  wrfull = sub_wire2;
 
-    dcfifo_mixed_widths #(
-        .lpm_width(WIDTH_IN),
-        .lpm_width_r(WIDTH_OUT),
-        .lpm_numwords(DEPTH),
-        .lpm_showahead(SHOWAHEAD),
-        .lpm_widthu($clog2(DEPTH) + 1),
-        .lpm_widthu_r($clog2(DEPTH * WIDTH_IN / WIDTH_OUT) + 1),
-        .add_usedw_msb_bit("ON"),
-        .enable_ecc("FALSE"),
-        .intended_device_family("Agilex 7"),
-        .lpm_hint("DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT=TRUE"),
-        .overflow_checking("OFF"),
-        .underflow_checking("OFF"),
-        .use_eab("ON"),
-        .write_aclr_synch("ON"),
-        .read_aclr_synch("ON"),
-        .wrsync_delaypipe(4 + EXTRA_SYNC_STAGES),
-        .rdsync_delaypipe(4 + EXTRA_SYNC_STAGES)
-    ) dcfifo_mixed_widths_component (
-        .aclr(aclr),
-        .data(data),
-        .rdclk(rdclk),
-        .rdreq(rdreq),
-        .wrclk(wrclk),
-        .wrreq(wrreq),
-        .q(sub_wire0),
-        .rdempty(sub_wire1),
-        .wrfull(sub_wire2),
-        .eccstatus(),
-        .rdfull(),
-        .rdusedw(),
-        .wrempty(),
-        .wrusedw(wrusedw)
-    );
+    dcfifo_mixed_widths  dcfifo_mixed_widths_component (
+                .aclr (aclr),
+                .data (data),
+                .rdclk (rdclk),
+                .rdreq (rdreq),
+                .wrclk (wrclk),
+                .wrreq (wrreq),
+                .q (sub_wire0),
+                .rdempty (sub_wire1),
+                .wrfull (sub_wire2),
+                .eccstatus (),
+                .rdfull (),
+                .rdusedw (),
+                .wrempty (),
+                .wrusedw (wrusedw));
+    defparam
+        dcfifo_mixed_widths_component.add_usedw_msb_bit  = "ON",
+        dcfifo_mixed_widths_component.enable_ecc  = "FALSE",
+        dcfifo_mixed_widths_component.intended_device_family  = "Agilex 7",
+        dcfifo_mixed_widths_component.lpm_hint  = "DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT=TRUE",
+        dcfifo_mixed_widths_component.lpm_numwords  = DEPTH,
+        dcfifo_mixed_widths_component.lpm_showahead  = SHOWAHEAD,
+        dcfifo_mixed_widths_component.lpm_type  = "dcfifo_mixed_widths",
+        dcfifo_mixed_widths_component.lpm_width  = WIDTH_IN,
+        dcfifo_mixed_widths_component.lpm_widthu  = $clog2(DEPTH) + 1,
+        dcfifo_mixed_widths_component.lpm_widthu_r  = $clog2(DEPTH * WIDTH_IN / WIDTH_OUT) + 1,
+        dcfifo_mixed_widths_component.lpm_width_r  = WIDTH_OUT,
+        dcfifo_mixed_widths_component.overflow_checking  = "OFF",
+        dcfifo_mixed_widths_component.rdsync_delaypipe  = 4 + EXTRA_SYNC_STAGES,
+        dcfifo_mixed_widths_component.read_aclr_synch  = "ON",
+        dcfifo_mixed_widths_component.underflow_checking  = "OFF",
+        dcfifo_mixed_widths_component.use_eab  = "ON",
+        dcfifo_mixed_widths_component.write_aclr_synch  = "ON",
+        dcfifo_mixed_widths_component.wrsync_delaypipe  = 4 + EXTRA_SYNC_STAGES;
+
 
 endmodule
 
