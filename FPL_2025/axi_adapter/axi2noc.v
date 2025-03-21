@@ -13,7 +13,7 @@ module axis_to_noc_adapter #(
     input  wire [DEST_WIDTH-1:0] axis_tdest,
     
     // NoC Interface
-    output reg  [35:0]  router_out_port,  // [35] valid, [34:32] ctrl, [31:0] data
+    output reg  [35:0]  router_out_port,  // [35] link valid, [34:32] ctrl, [31:0] data
     input  wire         flow_ctrl_in_op
 );
 
@@ -173,3 +173,4 @@ module fifo #(
   assign dout = mem[rd_ptr];
 
 endmodule
+

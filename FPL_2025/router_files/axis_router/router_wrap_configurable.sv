@@ -39,10 +39,11 @@ module router_wrap #(
     input   wire    clk_usr,
     input   wire    rst_n,
 
-    //  NORTH = 1;
-    //  SOUTH = 2;
-    //  EAST = 3;
-    //  WEST = 4;
+
+//  NORTH = 1;
+//  SOUTH = 2;
+//  EAST = 3;
+//  WEST = 4;
     // rtr-to-rtr ports
     input   wire    [FLIT_WIDTH - 1 : 0]    data_in     [NUM_PORTS - 1],
     input   wire    [DEST_WIDTH - 1 : 0]    dest_in     [NUM_PORTS - 1],
@@ -56,6 +57,8 @@ module router_wrap #(
     output  logic                           send_out    [NUM_PORTS - 1],
     input   wire                            credit_in   [NUM_PORTS - 1],
     input   bit                             DISABLE_TURNS [NUM_PORTS][NUM_PORTS],
+
+
 
     // injection port
     input   wire                            axis_in_tvalid,
@@ -71,8 +74,7 @@ module router_wrap #(
     output  logic   [TID_WIDTH - 1 : 0]     axis_out_tid,
     output  logic   [TDEST_WIDTH - 1 : 0]   axis_out_tdest,
 
-    input  wire     [RTR_ADDR_WIDTH-1 : 0]  router_address,
-    input  wire     [TDEST_WIDTH*NOC_NUM_ENDPOINTS : 0] input_bits  // Configuration vector (mode + logical addresses)
+    input  wire     [RTR_ADDR_WIDTH-1 : 0] router_address
 );
 
 
@@ -85,8 +87,6 @@ module router_wrap #(
     logic   local_axis_in_tlast;
     logic   [TID_WIDTH - 1 : 0] local_axis_in_tid;
     logic   [TDEST_WIDTH - 1 : 0] local_axis_in_tdest;
-    logic [TDEST_WIDTH-1:0] axi_in_translated_tdest;
-    logic mode;
 
     logic   local_axis_out_tvalid;
     logic   local_axis_out_tready;
@@ -94,7 +94,6 @@ module router_wrap #(
     logic   local_axis_out_tlast;
     logic   [TID_WIDTH - 1 : 0] local_axis_out_tid;
     logic   [TDEST_WIDTH - 1 : 0] local_axis_out_tdest;
-    logic [TDEST_WIDTH-1:0] axi_out_translated_tdest;
 
     logic   [FLIT_WIDTH - 1 : 0]    local_data_in;
     logic   [DEST_WIDTH  - 1 : 0]   local_dest_in;
@@ -111,8 +110,6 @@ module router_wrap #(
     assign rst_n_noc_sync = ~rst_noc_sync;
     assign rst_n_usr_sync = ~rst_usr_sync;
 
-    assign axis_out_tdest = axi_out_translated_tdest;
-    
     reset_synchronizer #(
         .NUM_EXTEND_CYCLES(RESET_SYNC_EXTEND_CYCLES),
         .NUM_OUTPUT_REGISTERS(RESET_NUM_OUTPUT_REGISTERS)
@@ -131,19 +128,6 @@ module router_wrap #(
         .reset_sync     (rst_noc_sync)
     );
 
-
-    //address translation:
-
-
-    logic2phys #(
-        .addr_width(TDEST_WIDTH),
-        .num_routers(NOC_NUM_ENDPOINTS)
-    ) axi_in_l2p (
-        .curr_addr(axis_in_tdest),
-        .input_bits(input_bits),
-        .translated_addrs(axi_in_translated_tdest),
-        .mode(mode) // Mode unused here
-    );
     // AXI shims
     axis_serializer_shim_in #(
         .TDEST_WIDTH            (DEST_WIDTH),
@@ -164,7 +148,7 @@ module router_wrap #(
         .axis_tready    (axis_in_tready),
         .axis_tdata     (axis_in_tdata),
         .axis_tlast     (axis_in_tlast),
-        .axis_tdest     ({axis_in_tid, axi_in_translated_tdest}),
+        .axis_tdest     ({axis_in_tid, axis_in_tdest}),
         .data_out       (local_data_in),
         .dest_out       (local_dest_in),
         .is_tail_out    (local_is_tail_in),
@@ -172,15 +156,6 @@ module router_wrap #(
         .credit_in      (local_credit_out)
     );
 
-
-    phys2logic #(
-        .addr_width(TDEST_WIDTH),
-        .num_routers(NOC_NUM_ENDPOINTS)
-    ) axi_out_p2l (
-        .curr_addr(local_axis_out_tdest), // Physical TDEST from router
-        .input_bits(input_bits),
-        .translated_addrs(axi_out_translated_tdest)
-    );
     axis_deserializer_shim_out #(
         .TDEST_WIDTH            (DEST_WIDTH),
         .TDATA_WIDTH            (TDATA_WIDTH),

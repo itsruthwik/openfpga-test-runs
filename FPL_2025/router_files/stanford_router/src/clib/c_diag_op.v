@@ -31,7 +31,7 @@
 
 module c_diag_op
   (data_in, data_out);
-   
+   `include "c_constants.v"
    // input width
    parameter width = 1;
    

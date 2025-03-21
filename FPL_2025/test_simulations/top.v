@@ -1,8 +1,5 @@
 `timescale 1ns / 1ps
 
-`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src/router_slice.v"
-`include "/mnt/vault1/rsunketa/OpenFPGA/openfpga-test-runs/FPL_2025/axi_adapter/axi2noc.v"
-
 module axis_to_noc_adapter_tb;
 
   // Parameters
@@ -15,16 +12,16 @@ module axis_to_noc_adapter_tb;
   reg [DEST_WIDTH-1:0] axis_tdest;
   reg axis_tvalid;
   wire axis_tready;
+  wire error;
   
   // Router Interface Signals
   wire [35:0] channel_router_0_ip_4;
-  wire flow_ctrl_router_0_ip_4;
-  wire flow_ctrl_router_0_op_4;
+  wire [4:0] flow_ctrl_router_0_ip;
+  wire [4:0] flow_ctrl_router_0_op;
   
-  // Other Router Ports (for monitoring)
-  wire [35:0] channel_router_0_op_0, channel_router_0_op_1, channel_router_0_op_2, channel_router_0_op_3, channel_router_0_op_4;
-  wire [35:0] channel_router_0_ip_0 = 0, channel_router_0_ip_1 = 0, channel_router_0_ip_2 = 0, channel_router_0_ip_3 = 0;
-  wire flow_ctrl_router_0_op_0, flow_ctrl_router_0_op_1, flow_ctrl_router_0_op_2, flow_ctrl_router_0_op_3;
+  // Other Router Ports
+  wire [35:0] channel_router_0_op_0, channel_router_0_op_1, 
+             channel_router_0_op_2, channel_router_0_op_3, channel_router_0_op_4;
 
   // Clock Generation
   initial begin
@@ -44,13 +41,14 @@ module axis_to_noc_adapter_tb;
     .reset(reset),
     .router_address(4'b0000),
     .channel_in_ip({36'b0, 36'b0, 36'b0, 36'b0, channel_router_0_ip_4}),
-    .flow_ctrl_out_ip({4'b0, flow_ctrl_router_0_ip_4}),
-    .channel_out_op({channel_router_0_op_0, channel_router_0_op_1, channel_router_0_op_2, channel_router_0_op_3, channel_router_0_op_4}),
-    .flow_ctrl_in_op({4'b0, flow_ctrl_router_0_op_4}),
+    .flow_ctrl_out_ip(flow_ctrl_router_0_ip),
+    .channel_out_op({channel_router_0_op_0, channel_router_0_op_1, 
+                    channel_router_0_op_2, channel_router_0_op_3, channel_router_0_op_4}),
+    .flow_ctrl_in_op(flow_ctrl_router_0_op),
     .error()
   );
 
-  // Instantiate AXI-to-NoC Adapter (connected to port 4)
+  // Instantiate AXI-to-NoC Adapter
   axis_to_noc_adapter #(
     .DEST_WIDTH(DEST_WIDTH),
     .AXIW(32),
@@ -63,7 +61,7 @@ module axis_to_noc_adapter_tb;
     .axis_tdata(axis_tdata),
     .axis_tdest(axis_tdest),
     .router_out_port(channel_router_0_ip_4),
-    .flow_ctrl_in_op(flow_ctrl_router_0_op_4)
+    .flow_ctrl_in_op(flow_ctrl_router_0_op[0])
   );
 
   // Test Sequence
@@ -75,30 +73,26 @@ module axis_to_noc_adapter_tb;
     axis_tvalid = 0;
     axis_tdata = 0;
     axis_tdest = 0;
-    
-    // Wait for reset
+    reset = 1;
     #200;
+    reset = 0;
     
-    // Test 1: Send single packet
+    // Test Cases
     send_packet(4'h5, 32'hAABBCCDD);
     #100;
-    
-    // Test 2: Send back-to-back packets
     send_packet(4'h2, 32'h11223344);
     send_packet(4'h8, 32'h55667788);
     
-    // Test 3: Backpressure simulation
     #200;
-    force flow_ctrl_router_0_op_4 = 0;  // Simulate NoC congestion
+    force flow_ctrl_router_0_ip[4] = 0;
     send_packet(4'hF, 32'hDEADBEEF);
     #200;
-    release flow_ctrl_router_0_op_4;
+    release flow_ctrl_router_0_ip[4];
     
     #500;
     $finish;
   end
 
-  // Task to send packets
   task send_packet;
     input [DEST_WIDTH-1:0] dest;
     input [31:0] data;
@@ -110,24 +104,18 @@ module axis_to_noc_adapter_tb;
       wait(axis_tready);
       @(posedge clk);
       axis_tvalid = 0;
-      #10;
+      #50;
     end
   endtask
 
-  // Monitor NoC outputs
+  // Monitoring
   always @(posedge clk) begin
     if(channel_router_0_op_4[35]) begin
-      $display("NoC Output: Time=%t Port4: Valid=%b Ctrl=%b Data=%h",
-               $time, channel_router_0_op_4[35],
+      $display("Time=%t PORT4: Valid=%b Ctrl=%b Data=%h",
+               $time, channel_router_0_ip_4[35],
                channel_router_0_op_4[34:32],
                channel_router_0_op_4[31:0]);
     end
-  end
-
-  // Monitor FIFO status
-  always @(posedge clk) begin
-    $display("FIFO Status: empty=%b full=%b",
-             uut.data_fifo_empty, uut.data_fifo_full);
   end
 
 endmodule
