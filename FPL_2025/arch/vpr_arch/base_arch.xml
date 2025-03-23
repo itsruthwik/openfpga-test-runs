@@ -311,29 +311,27 @@
       <fill type="clb" priority="10"/>
       <!--Column of 'memory' with 'EMPTY' blocks wherever a 'memory' does not fit. Vertical offset by 1 for perimeter.-->
       <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
+      <col type="EMPTY"  startx="2"  starty="1" repeatx="8" priority="19"/>
+
       <!--Column of 'mult_36' with 'EMPTY' blocks wherever a 'mult_36' does not fit. Vertical offset by 1 for perimeter.-->
       <col type="mult_36" startx="6" starty="1" repeatx="8" priority="20"/>
-      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
+      <col type="EMPTY"   startx="6" starty="1" repeatx="8" priority="19"/>
+
     </auto_layout>
-    <fixed_layout name="3x2" width="5" height="4">
+    <fixed_layout name="xlarge" width="30" height="30">
       <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
       <!--Fill with 'clb'-->
       <fill type="clb" priority="10"/>
+      
       <!--Column of 'memory' with 'EMPTY' blocks wherever a 'memory' does not fit. Vertical offset by 1 for perimeter.-->
-      <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
-      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
-    </fixed_layout>
-    <fixed_layout name="48x48" width="50" height="50">
-      <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
-      <perimeter type="io" priority="100"/>
-      <corners type="EMPTY" priority="101"/>
-      <!--Fill with 'clb'-->
-      <fill type="clb" priority="10"/>
-      <!--Column of 'memory' with 'EMPTY' blocks wherever a 'memory' does not fit. Vertical offset by 1 for perimeter.-->
-      <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
-      <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
+      <col type="memory" startx="2" starty="1" repeatx="6" priority="20"/>
+      <col type="EMPTY"  startx="2"  starty="1" repeatx="6" priority="19"/>
+
+      <!--Column of 'mult_36' with 'EMPTY' blocks wherever a 'mult_36' does not fit. Vertical offset by 1 for perimeter.-->
+      <col type="mult_36" startx="6" starty="1" repeatx="6" priority="20"/>
+      <col type="EMPTY"   startx="6" starty="1" repeatx="6" priority="19"/>
     </fixed_layout>
   </layout>
   <device>

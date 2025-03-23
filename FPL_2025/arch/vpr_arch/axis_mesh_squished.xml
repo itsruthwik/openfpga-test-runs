@@ -1831,7 +1831,7 @@
     <topology>
         <router id="0" positionx="10" positiony="20" connections="1 8"/>
         <router id="1" positionx="10" positiony="30" connections="0 5 2"/>
-        <router id="2" positionx="10" positiony="40" connections="1 2 6"/>
+        <router id="2" positionx="10" positiony="40" connections="1 3 6"/>
         <router id="3" positionx="10" positiony="60" connections="2 11"/>
 
         <router id="4" positionx="20" positiony="10" connections="5 12"/>

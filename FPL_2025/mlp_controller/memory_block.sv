@@ -19,10 +19,10 @@ module memory_block # (
     localparam logic [DATAW-1:0] MEM_INIT_1_VALUE = 128'h00010001000100010001000100010001; // mem 1_0
     
 //
-    logic init_done = 1'b0;
-    logic [9:0] init_addr = '0;
-    logic [3:0] init_state = '0;
-    logic init_wen;
+    // logic init_done = 1'b0;
+    // logic [9:0] init_addr = '0;
+    // logic [3:0] init_state = '0;
+    // logic init_wen;
     
     // addr 
     wire [9:0] dpram_waddr;
@@ -53,51 +53,51 @@ module memory_block # (
         end
     endgenerate
     
-    logic [DATAW-1:0] init_value;
+    // logic [DATAW-1:0] init_value;
     
     // initialize weights
-    always_comb begin
-        if (WEIGHTS_INIT_SEL == 0)
-            init_value = MEM_INIT_0_VALUE;
-        else if (WEIGHTS_INIT_SEL == 1)
-            init_value = MEM_INIT_1_VALUE;
-        else
-            init_value = '0;
-    end
+    // always_comb begin
+    //     if (WEIGHTS_INIT_SEL == 0)
+    //         init_value = MEM_INIT_0_VALUE;
+    //     else if (WEIGHTS_INIT_SEL == 1)
+    //         init_value = MEM_INIT_1_VALUE;
+    //     else
+    //         init_value = '0;
+    // end
     
-    always_ff @(posedge clk) begin
-        if (rst) begin
-            init_done <= 1'b0;
-            init_addr <= '0;
-            init_state <= '0;
-            init_wen <= 1'b0;
-        end
-        else if (!init_done && WEIGHTS_INIT_SEL >= 0) begin
-            case (init_state)
-                4'd0: begin
-                    init_wen <= 1'b1;
-                    init_state <= 4'd1;
-                end
-                4'd1: begin
-                    if (init_addr < DEPTH) begin
-                        init_addr <= init_addr + 1'b1;
-                    end
-                    else begin
-                        init_wen <= 1'b0;
-                        init_done <= 1'b1;
-                        init_state <= 4'd2;
-                    end
-                end
-                default: begin
-                end
-            endcase
-        end
-    end
+    // always_ff @(posedge clk) begin
+    //     if (rst) begin
+    //         init_done <= 1'b0;
+    //         init_addr <= '0;
+    //         init_state <= '0;
+    //         init_wen <= 1'b0;
+    //     end
+    //     else if (!init_done && WEIGHTS_INIT_SEL >= 0) begin
+    //         case (init_state)
+    //             4'd0: begin
+    //                 init_wen <= 1'b1;
+    //                 init_state <= 4'd1;
+    //             end
+    //             4'd1: begin
+    //                 if (init_addr < DEPTH) begin
+    //                     init_addr <= init_addr + 1'b1;
+    //                 end
+    //                 else begin
+    //                     init_wen <= 1'b0;
+    //                     init_done <= 1'b1;
+    //                     init_state <= 4'd2;
+    //                 end
+    //             end
+    //             default: begin
+    //             end
+    //         endcase
+    //     end
+    // end
     
-    //  initialization
-    wire effective_wen = init_done ? wen : init_wen;
-    wire [9:0] effective_waddr = init_done ? dpram_waddr : init_addr;
-    wire [DATAW-1:0] effective_wdata = init_done ? wdata : init_value;
+    // //  initialization
+    // wire effective_wen = init_done ? wen : init_wen;
+    // wire [9:0] effective_waddr = init_done ? dpram_waddr : init_addr;
+    // wire [DATAW-1:0] effective_wdata = init_done ? wdata : init_value;
     
 endmodule
 
@@ -140,7 +140,7 @@ endmodule
 //         end
 //         // no iniyt for  WEIGHTS_INIT_SEL = -1
 //     endgenerate
-
+// altera and xilinx both have docs where they show code for correct inference. need to learn.
 //     // synchronous read and write
 //     always_ff @(posedge clk) begin
 //         if (rst) begin

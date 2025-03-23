@@ -7,7 +7,7 @@ localparam int LFSR_DW      = 7;
 localparam int LFSR_DEFAULT = 8'h01;
 
 // MVM localparams
-localparam int DATAW = 128;
+localparam int DATAW = 32;
 localparam int BYTEW = 8;
 localparam int IDW = 4;
 localparam int DESTW = 12;
@@ -42,10 +42,10 @@ localparam int TDESTW       = 12;
 localparam int NUM_PACKETS  = 1;
 
 // Directories
-localparam string ROUTING_TABLES_DIR = 
+/*localparam string ROUTING_TABLES_DIR = 
     (ROWS == 2 && COLUMNS == 2) ? "/mnt/vault1/rsunketa/mlp_accelerator/routing_tables/mesh_2x2/" :
     (ROWS == 3 && COLUMNS == 3) ? "/mnt/vault1/rsunketa/mlp_accelerator/routing_tables/mesh_3x3/" :
     (ROWS == 4 && COLUMNS == 4) ? "/mnt/vault1/rsunketa/mlp_accelerator/routing_tables/mesh_4x4/" :
-    "../routing_tables/default/"; // Default this should be an error
+    "../routing_tables/default/"; // Default this should be an error*/
 
 `endif // localparamS_SV

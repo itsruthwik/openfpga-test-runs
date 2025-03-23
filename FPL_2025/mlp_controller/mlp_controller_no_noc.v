@@ -10,7 +10,7 @@ module mlp_controller (
     output [9:0] led_out,
     output reg [31:0] readdata
 );
-    parameter DATAW = 128;
+    parameter DATAW = 32;
     parameter IDW = 4;
     parameter DESTW = 12;
     parameter USERW = 75;
