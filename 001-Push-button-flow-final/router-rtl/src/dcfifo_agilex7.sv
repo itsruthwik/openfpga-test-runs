@@ -58,6 +58,39 @@ module  dcfifo_agilex7 #(
     wire  rdempty = sub_wire1;
     wire  wrfull = sub_wire2;
 
+    // dcfifo  dcfifo_component (
+    //     .aclr (aclr),
+    //     .data (data),
+    //     .rdclk (rdclk),
+    //     .rdreq (rdreq),
+    //     .wrclk (wrclk),
+    //     .wrreq (wrreq),
+    //     .q (sub_wire0),
+    //     .rdempty (sub_wire1),
+    //     .wrfull (sub_wire2),
+    //     .wrusedw (wrusedw),
+    //     .eccstatus (),
+    //     .rdfull (),
+    //     .wrempty ());
+    // defparam
+    //     dcfifo_component.add_usedw_msb_bit  = "ON",
+    //     dcfifo_component.enable_ecc  = "FALSE",
+    //     dcfifo_component.intended_device_family  = "Agilex 7",
+    //     dcfifo_component.lpm_hint  = (FORCE_MLAB == 1) ? "DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT=TRUE,RAM_BLOCK_TYPE=MLAB" : "DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT=TRUE",
+    //     dcfifo_component.lpm_numwords  = DEPTH,
+    //     dcfifo_component.lpm_showahead  = SHOWAHEAD,
+    //     dcfifo_component.lpm_type  = "dcfifo",
+    //     dcfifo_component.lpm_width  = WIDTH,
+    //     dcfifo_component.lpm_widthu  = $clog2(DEPTH) + 1,
+    //     dcfifo_component.overflow_checking  = "OFF",
+    //     dcfifo_component.rdsync_delaypipe  = 4 + EXTRA_SYNC_STAGES,
+    //     dcfifo_component.read_aclr_synch  = "ON",
+    //     dcfifo_component.underflow_checking  = "OFF",
+    //     dcfifo_component.use_eab  = "ON",
+    //     dcfifo_component.write_aclr_synch  = "ON",
+    //     dcfifo_component.wrsync_delaypipe  = 4 + EXTRA_SYNC_STAGES;
+
+
     dcfifo #(
         .WIDTH(WIDTH),
         .DEPTH(DEPTH),
