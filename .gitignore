@@ -11,7 +11,7 @@
 **/*.wlf
 **/3x3*/
 **/test-run-files/*
-**/900-scripts/test/*
+**/900-misc-scripts/test/*
 **/mlp_1.blif
 **/*.bkp
 **/*bkp/*
