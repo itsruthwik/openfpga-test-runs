@@ -1,5 +1,0 @@
-<traffic_flows>
-	<single_flow src=".*router_one_to_two_channel.*" dst=".*packet_to_axi_converter_two.*" bandwidth="4e5" latency_cons="3e-9" />
-    <single_flow src=".*packet_to_axi_converter_two.*" dst=".*packet_to_axi_converter_three.*" bandwidth="4e5" latency_cons="3e-9" />
-    <single_flow src=".*packet_to_axi_converter_three.*" dst=".*packet_to_axi_converter_four.*" bandwidth="4e5" latency_cons="3e-9" />
-</traffic_flows>

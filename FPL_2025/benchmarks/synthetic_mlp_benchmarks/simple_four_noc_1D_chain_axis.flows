@@ -1,5 +1,0 @@
-<traffic_flows>
-	<single_flow src=".*router1.*" dst=".*router2.*" bandwidth="4e5" latency_cons="3e-9" />
-    <single_flow src=".*router2.*" dst=".*router3.*" bandwidth="4e5" latency_cons="3e-9" />
-    <single_flow src=".*router3.*" dst=".*mi_1.*" bandwidth="4e5" latency_cons="3e-9" />
-</traffic_flows>
