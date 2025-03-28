@@ -1,0 +1,47 @@
+module axi_to_packet_converter(
+    input clk,
+    input reset,
+    input [31:0] axi_data,
+    input axi_valid,
+    output reg [69:0] channel_in_ip, // Adjusted to 70 bits (0 to 69)
+    output reg [2:0] flow_ctrl_out_ip, // Adjusted to 3 bits (0 to 2)
+    input reg error
+);
+
+parameter packet_format = `PACKET_FORMAT_EXPLICIT_LENGTH;
+parameter flit_data_width = 64;
+parameter header_info_width = 32; // Adjust based on your header info width
+parameter payload_length_width = 4; // Adjust based on your payload length width
+
+reg [flit_data_width-1:0] flit_data;
+reg [header_info_width-1:0] header_info;
+reg [payload_length_width-1:0] payload_length;
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        channel_in_ip <= 0;
+        flow_ctrl_out_ip <= 0;
+        error <= 0;
+    end else if (axi_valid) begin
+        // Convert AXI data to packet format
+        // Assuming the first 32 bits of AXI data are the payload
+        flit_data[31:0] <= axi_data[31:0];
+        flit_data[flit_data_width-1:32] <= 0; // Fill the rest with zeros or other data as needed
+
+        // Assuming the header info is generated here
+        header_info <= { /* header fields */ };
+
+        // Assuming the payload length is generated here
+        payload_length <= 4'b0010; // Example payload length
+
+        // Combine header info and payload length into the channel_in_ip
+        channel_in_ip[31:0] <= {header_info, payload_length};
+        channel_in_ip[69:32] <= flit_data[flit_data_width-1:32];
+
+        // Example flow control signals
+        flow_ctrl_out_ip <= 3'b000;
+        error <= 0;
+    end
+end
+
+endmodule

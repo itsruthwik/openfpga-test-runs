@@ -1,0 +1,571 @@
+<?xml version="1.0" ?>
+<architecture>
+   <models>
+      <model name="io">
+         <input_ports>
+            <port name="outpad"/>
+         </input_ports>
+         <output_ports>
+            <port name="inpad"/>
+         </output_ports>
+      </model>
+      <model name="router_slice">
+        <input_ports>
+          <port name="clk" is_clock="1"/>
+          <port name="reset"  clock="clk"/> 
+          <port name="router_address" clock="clk"/>
+          <port name="channel_in_ip" clock="clk"/>
+          <port name="flow_ctrl_in_op" clock="clk"/>
+        </input_ports>
+        <output_ports>
+          <port name="error" clock="clk"/> 
+          <port name="channel_out_op" clock="clk"/> 
+          <port name="flow_ctrl_out_ip" clock="clk"/> 
+        </output_ports>
+      </model>
+   </models>
+   <tiles>
+      <tile name="io" area="0">
+         <sub_tile name="io" capacity="8">
+            <equivalent_sites>
+               <site pb_type="io"/>
+            </equivalent_sites>
+            <input name="outpad" num_pins="1"/>
+            <output name="inpad" num_pins="1"/>
+            <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10"/>
+            <pinlocations pattern="custom">
+               <loc side="left">io.outpad io.inpad</loc>
+               <loc side="top">io.outpad io.inpad</loc>
+               <loc side="right">io.outpad io.inpad</loc>
+               <loc side="bottom">io.outpad io.inpad</loc>
+            </pinlocations>
+         </sub_tile>
+      </tile>
+      <tile name="clb" area="53894">
+         <sub_tile name="clb">
+            <equivalent_sites>
+               <site pb_type="clb"/>
+            </equivalent_sites>
+            <input name="I" num_pins="40" equivalent="full"/>
+            <output name="O" num_pins="20" equivalent="none"/>
+            <clock name="clk" num_pins="1"/>
+            <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10"/>
+            <pinlocations pattern="spread"/>
+         </sub_tile>
+      </tile>
+      <tile name="router" height="1" area="1">
+        <sub_tile name="router">
+          <equivalent_sites>
+            <site pb_type="router" pin_mapping="direct"/>
+          </equivalent_sites>
+          <clock name="clk" num_pins="1"/>
+          <input name="reset"  num_pins="1"/>  
+          <input name="router_address"  num_pins="4"/>  
+          <input name="channel_in_ip"  num_pins="350"/>  
+          <input name="flow_ctrl_in_op"  num_pins="15"/>   
+          <output name="error"  num_pins="1"/>  
+          <output name="channel_out_op"  num_pins="350"/>  
+          <output name="flow_ctrl_out_ip"  num_pins="15"/>  
+          <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
+            <!-- <fc_override port_name="odata_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovalid_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="ovch_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="oack_3" fc_type="frac" fc_val="0"/>
+            <fc_override port_name="olck_3" fc_type="frac" fc_val="0"/> -->
+          </fc>
+          <pinlocations pattern="spread">
+          <!-- <pinlocations pattern="custom"> -->
+            <!-- <loc side="left">router.idata_3[34:0] router.ivalid_3[0:0] router.ivch_3[0:0] router.iack_3[1:0] router.ilck_3[1:0] router.odata_3[34:0] router.ovalid_3[0:0] router.ovch_3[0:0] router.oack_3[1:0] router.ordy_3[1:0] router.olck_3[1:0] router.odata_4[34:0] router.ovalid_4[0:0] router.ovch_4[0:0] router.oack_4[1:0] router.ordy_4[1:0] router.olck_4[1:0]</loc> -->
+            <!-- <loc side="top">router.idata_2[34:0] router.ivalid_2[0:0] router.ivch_2[0:0] router.iack_2[1:0] router.ilck_2[1:0] router.odata_2[34:0] router.ovalid_2[0:0] router.ovch_2[0:0] router.oack_2[1:0] router.ordy_2[1:0] router.olck_2[1:0] router.idata_4[34:0] router.ivalid_4[0:0] router.ivch_4[0:0] router.iack_4[1:0] router.ilck_4[1:0]</loc> -->
+            <!-- <loc side="right">router.clk[0:0] router.rst_[0:0] router.idata_1[34:0] router.ivalid_1[0:0] router.ivch_1[0:0] router.iack_1[1:0] router.ilck_1[1:0] router.odata_1[34:0] router.ovalid_1[0:0] router.ovch_1[0:0] router.oack_1[1:0] router.ordy_1[1:0] router.olck_1[1:0]</loc> -->
+            <!-- <loc side="bottom">router.my_xpos[1:0] router.my_ypos[1:0] router.idata_0[34:0] router.ivalid_0[0:0] router.ivch_0[0:0] router.iack_0[1:0] router.ilck_0[1:0] router.odata_0[34:0] router.ovalid_0[0:0] router.ovch_0[0:0] router.oack_0[1:0] router.ordy_0[1:0] router.olck_0[1:0]</loc> -->
+          </pinlocations>
+        </sub_tile>
+      </tile>
+   </tiles>
+   <!-- Physical descriptions begin -->
+   <!-- <layout tileable="true"> -->
+   <layout>
+    <auto_layout aspect_ratio="1.0">
+         <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
+         <perimeter type="io" priority="100"/>
+         <corners type="EMPTY" priority="101"/>
+         <!--Fill with 'clb'-->
+         <!-- <fill type="io" priority="10"/> -->
+      <row type="clb" starty="((H/2) - (H/4))" priority="30"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
+
+    </auto_layout>
+
+    <fixed_layout name="large" width="30" height="30">
+      <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
+      <perimeter type="io" priority="100"/>
+      <corners type="EMPTY" priority="101"/>
+
+      <fill type="clb" priority="10"/>
+      <!-- <row type="clb" starty="5" priority="30"/> -->
+
+      <single type="router" x="2" y="2" priority="50"/>
+      <single type="router" x="2" y="4" priority="50"/>
+      <single type="router" x="2" y="6" priority="50"/>
+      <!-- <single type="router" x="2" y="8" priority="50"/> -->
+
+      <single type="router" x="4" y="2" priority="50"/>
+      <single type="router" x="4" y="4" priority="50"/>
+      <single type="router" x="4" y="6" priority="50"/>
+      <!-- <single type="router" x="4" y="8" priority="50"/> -->
+
+      <single type="router" x="6" y="2" priority="50"/>
+      <single type="router" x="6" y="4" priority="50"/>
+      <single type="router" x="6" y="6" priority="50"/>
+      <!-- <single type="router" x="6" y="8" priority="50"/> -->
+
+      <!-- <single type="router" x="8" y="2" priority="50"/> -->
+      <!-- <single type="router" x="8" y="4" priority="50"/> -->
+      <!-- <single type="router" x="8" y="6" priority="50"/> -->
+      <!-- <single type="router" x="8" y="8" priority="50"/> -->
+
+      <!-- <single type="router" x="((1*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((1*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((1*H-3)/6)" priority="50"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((2*H-3)/3)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((2*H-3)/3)" priority="50"/>
+
+      <single type="router" x="((1*W-3)/6)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((2*W-3)/3)" y="((5*H-3)/6)" priority="50"/>
+      <single type="router" x="((5*W-3)/6)" y="((5*H-3)/6)" priority="50"/> -->
+    </fixed_layout>
+   </layout>
+   <device>
+      <sizing R_minW_nmos="8926" R_minW_pmos="16067"/>
+      <area grid_logic_tile_area="0"/>
+      <chan_width_distr>
+         <x distr="uniform" peak="1.000000"/>
+         <y distr="uniform" peak="1.000000"/>
+      </chan_width_distr>
+      <switch_block type="wilton" fs="3"/>
+      <connection_block input_switch_name="ipin_cblock"/>
+   </device>
+   <switchlist>
+      <switch type="mux" name="0" R="551" Cin=".77e-15" Cout="4e-15" Tdel="58e-12" mux_trans_size="2.630740" buf_size="27.645901"/>
+      <switch type="mux" name="ipin_cblock" R="2231.5" Cout="0." Cin="1.47e-15" Tdel="7.247000e-11" mux_trans_size="1.222260" buf_size="auto"/>
+   </switchlist>
+   <segmentlist>
+      <segment name="L4" freq="1.000000" length="4" type="unidir" Rmetal="101" Cmetal="22.5e-15">
+         <mux name="0"/>
+         <sb type="pattern">1 1 1 1 1</sb>
+         <cb type="pattern">1 1 1 1</cb>
+      </segment>
+   </segmentlist>
+  <!-- <directlist> 
+    <direct name="2_to_0_odata_0_0"  from_pin="router.odata_2[0:0]"  to_pin="router.idata_0[0:0]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_1"  from_pin="router.odata_2[1:1]"  to_pin="router.idata_0[1:1]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_2"  from_pin="router.odata_2[2:2]"  to_pin="router.idata_0[2:2]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_3"  from_pin="router.odata_2[3:3]"  to_pin="router.idata_0[3:3]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_4"  from_pin="router.odata_2[4:4]"  to_pin="router.idata_0[4:4]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_5"  from_pin="router.odata_2[5:5]"  to_pin="router.idata_0[5:5]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_6"  from_pin="router.odata_2[6:6]"  to_pin="router.idata_0[6:6]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_7"  from_pin="router.odata_2[7:7]"  to_pin="router.idata_0[7:7]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_8"  from_pin="router.odata_2[8:8]"  to_pin="router.idata_0[8:8]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_9"  from_pin="router.odata_2[9:9]"  to_pin="router.idata_0[9:9]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_10" from_pin="router.odata_2[10:10]" to_pin="router.idata_0[10:10]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_11" from_pin="router.odata_2[11:11]" to_pin="router.idata_0[11:11]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_12" from_pin="router.odata_2[12:12]" to_pin="router.idata_0[12:12]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_13" from_pin="router.odata_2[13:13]" to_pin="router.idata_0[13:13]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_14" from_pin="router.odata_2[14:14]" to_pin="router.idata_0[14:14]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_15" from_pin="router.odata_2[15:15]" to_pin="router.idata_0[15:15]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_16" from_pin="router.odata_2[16:16]" to_pin="router.idata_0[16:16]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_17" from_pin="router.odata_2[17:17]" to_pin="router.idata_0[17:17]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_18" from_pin="router.odata_2[18:18]" to_pin="router.idata_0[18:18]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_19" from_pin="router.odata_2[19:19]" to_pin="router.idata_0[19:19]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_20" from_pin="router.odata_2[20:20]" to_pin="router.idata_0[20:20]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_21" from_pin="router.odata_2[21:21]" to_pin="router.idata_0[21:21]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_22" from_pin="router.odata_2[22:22]" to_pin="router.idata_0[22:22]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_23" from_pin="router.odata_2[23:23]" to_pin="router.idata_0[23:23]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_24" from_pin="router.odata_2[24:24]" to_pin="router.idata_0[24:24]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_25" from_pin="router.odata_2[25:25]" to_pin="router.idata_0[25:25]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_26" from_pin="router.odata_2[26:26]" to_pin="router.idata_0[26:26]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_27" from_pin="router.odata_2[27:27]" to_pin="router.idata_0[27:27]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_28" from_pin="router.odata_2[28:28]" to_pin="router.idata_0[28:28]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_29" from_pin="router.odata_2[29:29]" to_pin="router.idata_0[29:29]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_30" from_pin="router.odata_2[30:30]" to_pin="router.idata_0[30:30]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_31" from_pin="router.odata_2[31:31]" to_pin="router.idata_0[31:31]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_32" from_pin="router.odata_2[32:32]" to_pin="router.idata_0[32:32]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_33" from_pin="router.odata_2[33:33]" to_pin="router.idata_0[33:33]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_odata_0_34" from_pin="router.odata_2[34:34]" to_pin="router.idata_0[34:34]" x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_ovalid_2"  from_pin="router.ovalid_2"  to_pin="router.ivalid_0"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_ovch_2"  from_pin="router.ovch_2"  to_pin="router.ivch_0"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_oack_0_0"  from_pin="router.oack_2[0:0]"  to_pin="router.iack_0[0:0]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_oack_0_1"  from_pin="router.oack_2[1:1]"  to_pin="router.iack_0[1:1]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_olck_0_0"  from_pin="router.olck_2[0:0]"  to_pin="router.ilck_0[0:0]"   x_offset="0" y_offset="2" z_offset="0"/>
+    <direct name="2_to_0_olck_0_1"  from_pin="router.olck_2[1:1]"  to_pin="router.ilck_0[1:1]"   x_offset="0" y_offset="2" z_offset="0"/>
+
+    <direct name="0_to_2_odata_0_0"  from_pin="router.odata_0[0:0]"  to_pin="router.idata_2[0:0]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_1"  from_pin="router.odata_0[1:1]"  to_pin="router.idata_2[1:1]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_2"  from_pin="router.odata_0[2:2]"  to_pin="router.idata_2[2:2]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_3"  from_pin="router.odata_0[3:3]"  to_pin="router.idata_2[3:3]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_4"  from_pin="router.odata_0[4:4]"  to_pin="router.idata_2[4:4]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_5"  from_pin="router.odata_0[5:5]"  to_pin="router.idata_2[5:5]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_6"  from_pin="router.odata_0[6:6]"  to_pin="router.idata_2[6:6]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_7"  from_pin="router.odata_0[7:7]"  to_pin="router.idata_2[7:7]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_8"  from_pin="router.odata_0[8:8]"  to_pin="router.idata_2[8:8]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_9"  from_pin="router.odata_0[9:9]"  to_pin="router.idata_2[9:9]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_10" from_pin="router.odata_0[10:10]" to_pin="router.idata_2[10:10]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_11" from_pin="router.odata_0[11:11]" to_pin="router.idata_2[11:11]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_12" from_pin="router.odata_0[12:12]" to_pin="router.idata_2[12:12]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_13" from_pin="router.odata_0[13:13]" to_pin="router.idata_2[13:13]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_14" from_pin="router.odata_0[14:14]" to_pin="router.idata_2[14:14]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_15" from_pin="router.odata_0[15:15]" to_pin="router.idata_2[15:15]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_16" from_pin="router.odata_0[16:16]" to_pin="router.idata_2[16:16]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_17" from_pin="router.odata_0[17:17]" to_pin="router.idata_2[17:17]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_18" from_pin="router.odata_0[18:18]" to_pin="router.idata_2[18:18]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_19" from_pin="router.odata_0[19:19]" to_pin="router.idata_2[19:19]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_20" from_pin="router.odata_0[20:20]" to_pin="router.idata_2[20:20]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_21" from_pin="router.odata_0[21:21]" to_pin="router.idata_2[21:21]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_22" from_pin="router.odata_0[22:22]" to_pin="router.idata_2[22:22]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_23" from_pin="router.odata_0[23:23]" to_pin="router.idata_2[23:23]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_24" from_pin="router.odata_0[24:24]" to_pin="router.idata_2[24:24]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_25" from_pin="router.odata_0[25:25]" to_pin="router.idata_2[25:25]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_26" from_pin="router.odata_0[26:26]" to_pin="router.idata_2[26:26]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_27" from_pin="router.odata_0[27:27]" to_pin="router.idata_2[27:27]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_28" from_pin="router.odata_0[28:28]" to_pin="router.idata_2[28:28]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_29" from_pin="router.odata_0[29:29]" to_pin="router.idata_2[29:29]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_30" from_pin="router.odata_0[30:30]" to_pin="router.idata_2[30:30]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_31" from_pin="router.odata_0[31:31]" to_pin="router.idata_2[31:31]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_32" from_pin="router.odata_0[32:32]" to_pin="router.idata_2[32:32]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_33" from_pin="router.odata_0[33:33]" to_pin="router.idata_2[33:33]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_odata_0_34" from_pin="router.odata_0[34:34]" to_pin="router.idata_2[34:34]" x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_ovalid_0"  from_pin="router.ovalid_0"  to_pin="router.ivalid_2"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_ovch_0"  from_pin="router.ovch_0"  to_pin="router.ivch_2"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_oack_0_0"  from_pin="router.oack_0[0:0]"  to_pin="router.iack_2[0:0]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_oack_0_1"  from_pin="router.oack_0[1:1]"  to_pin="router.iack_2[1:1]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_olck_0_0"  from_pin="router.olck_0[0:0]"  to_pin="router.ilck_2[0:0]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    <direct name="0_to_2_olck_0_1"  from_pin="router.olck_0[1:1]"  to_pin="router.ilck_2[1:1]"   x_offset="0" y_offset="-2" z_offset="0"/>
+    
+    <direct name="1_to_3_odata_1_0"  from_pin="router.odata_1[0:0]"  to_pin="router.idata_3[0:0]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_1"  from_pin="router.odata_1[1:1]"  to_pin="router.idata_3[1:1]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_2"  from_pin="router.odata_1[2:2]"  to_pin="router.idata_3[2:2]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_3"  from_pin="router.odata_1[3:3]"  to_pin="router.idata_3[3:3]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_4"  from_pin="router.odata_1[4:4]"  to_pin="router.idata_3[4:4]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_5"  from_pin="router.odata_1[5:5]"  to_pin="router.idata_3[5:5]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_6"  from_pin="router.odata_1[6:6]"  to_pin="router.idata_3[6:6]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_7"  from_pin="router.odata_1[7:7]"  to_pin="router.idata_3[7:7]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_8"  from_pin="router.odata_1[8:8]"  to_pin="router.idata_3[8:8]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_9"  from_pin="router.odata_1[9:9]"  to_pin="router.idata_3[9:9]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_10" from_pin="router.odata_1[10:10]" to_pin="router.idata_3[10:10]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_11" from_pin="router.odata_1[11:11]" to_pin="router.idata_3[11:11]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_12" from_pin="router.odata_1[12:12]" to_pin="router.idata_3[12:12]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_13" from_pin="router.odata_1[13:13]" to_pin="router.idata_3[13:13]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_14" from_pin="router.odata_1[14:14]" to_pin="router.idata_3[14:14]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_15" from_pin="router.odata_1[15:15]" to_pin="router.idata_3[15:15]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_16" from_pin="router.odata_1[16:16]" to_pin="router.idata_3[16:16]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_17" from_pin="router.odata_1[17:17]" to_pin="router.idata_3[17:17]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_18" from_pin="router.odata_1[18:18]" to_pin="router.idata_3[18:18]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_19" from_pin="router.odata_1[19:19]" to_pin="router.idata_3[19:19]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_20" from_pin="router.odata_1[20:20]" to_pin="router.idata_3[20:20]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_21" from_pin="router.odata_1[21:21]" to_pin="router.idata_3[21:21]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_22" from_pin="router.odata_1[22:22]" to_pin="router.idata_3[22:22]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_23" from_pin="router.odata_1[23:23]" to_pin="router.idata_3[23:23]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_24" from_pin="router.odata_1[24:24]" to_pin="router.idata_3[24:24]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_25" from_pin="router.odata_1[25:25]" to_pin="router.idata_3[25:25]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_26" from_pin="router.odata_1[26:26]" to_pin="router.idata_3[26:26]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_27" from_pin="router.odata_1[27:27]" to_pin="router.idata_3[27:27]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_28" from_pin="router.odata_1[28:28]" to_pin="router.idata_3[28:28]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_29" from_pin="router.odata_1[29:29]" to_pin="router.idata_3[29:29]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_30" from_pin="router.odata_1[30:30]" to_pin="router.idata_3[30:30]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_31" from_pin="router.odata_1[31:31]" to_pin="router.idata_3[31:31]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_32" from_pin="router.odata_1[32:32]" to_pin="router.idata_3[32:32]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_33" from_pin="router.odata_1[33:33]" to_pin="router.idata_3[33:33]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_odata_1_34" from_pin="router.odata_1[34:34]" to_pin="router.idata_3[34:34]" x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_ovalid_1"  from_pin="router.ovalid_1"  to_pin="router.ivalid_3"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_ovch_1"  from_pin="router.ovch_1"  to_pin="router.ivch_3"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_oack_0_0"  from_pin="router.oack_1[0:0]"  to_pin="router.iack_3[0:0]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_oack_0_1"  from_pin="router.oack_1[1:1]"  to_pin="router.iack_3[1:1]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_olck_0_0"  from_pin="router.olck_1[0:0]"  to_pin="router.ilck_3[0:0]"   x_offset="2" y_offset="0" z_offset="0"/>
+    <direct name="1_to_3_olck_0_1"  from_pin="router.olck_1[1:1]"  to_pin="router.ilck_3[1:1]"   x_offset="2" y_offset="0" z_offset="0"/>
+
+    <direct name="3_to_1_odata_0_0"  from_pin="router.odata_3[0:0]"  to_pin="router.idata_1[0:0]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_1"  from_pin="router.odata_3[1:1]"  to_pin="router.idata_1[1:1]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_2"  from_pin="router.odata_3[2:2]"  to_pin="router.idata_1[2:2]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_3"  from_pin="router.odata_3[3:3]"  to_pin="router.idata_1[3:3]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_4"  from_pin="router.odata_3[4:4]"  to_pin="router.idata_1[4:4]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_5"  from_pin="router.odata_3[5:5]"  to_pin="router.idata_1[5:5]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_6"  from_pin="router.odata_3[6:6]"  to_pin="router.idata_1[6:6]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_7"  from_pin="router.odata_3[7:7]"  to_pin="router.idata_1[7:7]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_8"  from_pin="router.odata_3[8:8]"  to_pin="router.idata_1[8:8]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_9"  from_pin="router.odata_3[9:9]"  to_pin="router.idata_1[9:9]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_10" from_pin="router.odata_3[10:10]" to_pin="router.idata_1[10:10]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_11" from_pin="router.odata_3[11:11]" to_pin="router.idata_1[11:11]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_12" from_pin="router.odata_3[12:12]" to_pin="router.idata_1[12:12]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_13" from_pin="router.odata_3[13:13]" to_pin="router.idata_1[13:13]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_14" from_pin="router.odata_3[14:14]" to_pin="router.idata_1[14:14]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_15" from_pin="router.odata_3[15:15]" to_pin="router.idata_1[15:15]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_16" from_pin="router.odata_3[16:16]" to_pin="router.idata_1[16:16]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_17" from_pin="router.odata_3[17:17]" to_pin="router.idata_1[17:17]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_18" from_pin="router.odata_3[18:18]" to_pin="router.idata_1[18:18]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_19" from_pin="router.odata_3[19:19]" to_pin="router.idata_1[19:19]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_20" from_pin="router.odata_3[20:20]" to_pin="router.idata_1[20:20]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_21" from_pin="router.odata_3[21:21]" to_pin="router.idata_1[21:21]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_22" from_pin="router.odata_3[22:22]" to_pin="router.idata_1[22:22]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_23" from_pin="router.odata_3[23:23]" to_pin="router.idata_1[23:23]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_24" from_pin="router.odata_3[24:24]" to_pin="router.idata_1[24:24]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_25" from_pin="router.odata_3[25:25]" to_pin="router.idata_1[25:25]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_26" from_pin="router.odata_3[26:26]" to_pin="router.idata_1[26:26]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_27" from_pin="router.odata_3[27:27]" to_pin="router.idata_1[27:27]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_28" from_pin="router.odata_3[28:28]" to_pin="router.idata_1[28:28]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_29" from_pin="router.odata_3[29:29]" to_pin="router.idata_1[29:29]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_30" from_pin="router.odata_3[30:30]" to_pin="router.idata_1[30:30]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_31" from_pin="router.odata_3[31:31]" to_pin="router.idata_1[31:31]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_32" from_pin="router.odata_3[32:32]" to_pin="router.idata_1[32:32]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_33" from_pin="router.odata_3[33:33]" to_pin="router.idata_1[33:33]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_odata_0_34" from_pin="router.odata_3[34:34]" to_pin="router.idata_1[34:34]" x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_ovalid_3"  from_pin="router.ovalid_3"  to_pin="router.ivalid_1"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_ovch_3"  from_pin="router.ovch_3"  to_pin="router.ivch_1"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_oack_0_0"  from_pin="router.oack_3[0:0]"  to_pin="router.iack_1[0:0]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_oack_0_1"  from_pin="router.oack_3[1:1]"  to_pin="router.iack_1[1:1]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_olck_0_0"  from_pin="router.olck_3[0:0]"  to_pin="router.ilck_1[0:0]"   x_offset="-2" y_offset="0" z_offset="0"/>
+    <direct name="3_to_1_olck_0_1"  from_pin="router.olck_3[1:1]"  to_pin="router.ilck_1[1:1]"   x_offset="-2" y_offset="0" z_offset="0"/>
+  </directlist> -->
+   <complexblocklist>
+      <pb_type name="io">
+         <input name="outpad" num_pins="1"/>
+         <output name="inpad" num_pins="1"/>
+         <mode name="physical" disable_packing="true">
+            <pb_type name="iopad" blif_model=".subckt io" num_pb="1">
+               <input name="outpad" num_pins="1"/>
+               <output name="inpad" num_pins="1"/>
+            </pb_type>
+            <interconnect>
+               <direct name="outpad" input="io.outpad" output="iopad.outpad">
+                  <delay_constant max="1.394e-11" in_port="io.outpad" out_port="iopad.outpad"/>
+               </direct>
+               <direct name="inpad" input="iopad.inpad" output="io.inpad">
+                  <delay_constant max="4.243e-11" in_port="iopad.inpad" out_port="io.inpad"/>
+               </direct>
+            </interconnect>
+         </mode>
+         <mode name="inpad">
+            <pb_type name="inpad" blif_model=".input" num_pb="1">
+               <output name="inpad" num_pins="1"/>
+            </pb_type>
+            <interconnect>
+               <direct name="inpad" input="inpad.inpad" output="io.inpad">
+                  <delay_constant max="4.243e-11" in_port="inpad.inpad" out_port="io.inpad"/>
+               </direct>
+            </interconnect>
+         </mode>
+         <mode name="outpad">
+            <pb_type name="outpad" blif_model=".output" num_pb="1">
+               <input name="outpad" num_pins="1"/>
+            </pb_type>
+            <interconnect>
+               <direct name="outpad" input="io.outpad" output="outpad.outpad">
+                  <delay_constant max="1.394e-11" in_port="io.outpad" out_port="outpad.outpad"/>
+               </direct>
+            </interconnect>
+         </mode>
+         <power method="ignore"/>
+      </pb_type>
+      <pb_type name="clb">
+         <input name="I" num_pins="40" equivalent="full"/>
+         <output name="O" num_pins="20" equivalent="none"/>
+         <clock name="clk" num_pins="1"/>
+         <pb_type name="fle" num_pb="10">
+            <input name="in" num_pins="6"/>
+            <output name="out" num_pins="1"/>
+            <clock name="clk" num_pins="1"/>
+             <!-- physical mode -->
+            <mode name="physical" disable_packing="true">
+               <!-- Define 6-LUT mode -->
+               <pb_type name="ble6" num_pb="1">
+                  <input name="in" num_pins="6"/>
+                  <output name="out" num_pins="1"/>
+                  <clock name="clk" num_pins="1"/>
+                  <!-- Define LUT -->
+                  <pb_type name="lut6" blif_model=".names" num_pb="1" class="lut">
+                     <input name="in" num_pins="6" port_class="lut_in"/>
+                     <output name="out" num_pins="1" port_class="lut_out"/>
+                     <delay_matrix type="max" in_port="lut6.in" out_port="lut6.out">
+                  261e-12
+                  261e-12
+                  261e-12
+                  261e-12
+                  261e-12
+                  261e-12
+                     </delay_matrix>
+                  </pb_type>
+                  <pb_type name="ff" blif_model=".latch" num_pb="1" class="flipflop">
+                     <input name="D" num_pins="1" port_class="D"/>
+                     <output name="Q" num_pins="1" port_class="Q"/>
+                     <clock name="clk" num_pins="1" port_class="clock"/>
+                     <T_setup value="66e-12" port="ff.D" clock="clk"/>
+                     <T_clock_to_Q max="124e-12" port="ff.Q" clock="clk"/>
+                  </pb_type>
+                  <interconnect>
+                     <direct name="direct1" input="ble6.in" output="lut6[0:0].in"/>
+                     <direct name="direct2" input="lut6.out" output="ff.D">
+                        <pack_pattern name="ble6" in_port="lut6.out" out_port="ff.D"/>
+                     </direct>
+                     <direct name="direct3" input="ble6.clk" output="ff.clk"/>
+                     <mux name="mux1" input="ff.Q lut6.out" output="ble6.out">
+                        <delay_constant max="25e-12" in_port="lut6.out" out_port="ble6.out"/>
+                        <delay_constant max="45e-12" in_port="ff.Q" out_port="ble6.out"/>
+                     </mux>
+                  </interconnect>
+               </pb_type>
+               <interconnect>
+                  <direct name="direct1" input="fle.in[5:0]" output="ble6.in"/>
+                  <direct name="direct2" input="ble6.out" output="fle.out[0:0]"/>
+                  <direct name="direct3" input="fle.clk" output="ble6.clk"/>
+               </interconnect>
+            </mode>
+            <!-- end of physical mode -->
+            <!-- 6-LUT mode definition begin -->
+            <mode name="n1_lut6">
+               <!-- Define 6-LUT mode -->
+               <pb_type name="ble6" num_pb="1">
+                  <input name="in" num_pins="6"/>
+                  <output name="out" num_pins="1"/>
+                  <clock name="clk" num_pins="1"/>
+                  <!-- Define LUT -->
+                  <pb_type name="lut6" blif_model=".names" num_pb="1" class="lut">
+                     <input name="in" num_pins="6" port_class="lut_in"/>
+                     <output name="out" num_pins="1" port_class="lut_out"/>
+                     <delay_matrix type="max" in_port="lut6.in" out_port="lut6.out">
+                  261e-12
+                  261e-12
+                  261e-12
+                  261e-12
+                  261e-12
+                  261e-12
+                     </delay_matrix>
+                  </pb_type>
+                  <pb_type name="ff" blif_model=".latch" num_pb="1" class="flipflop">
+                     <input name="D" num_pins="1" port_class="D"/>
+                     <output name="Q" num_pins="1" port_class="Q"/>
+                     <clock name="clk" num_pins="1" port_class="clock"/>
+                     <T_setup value="66e-12" port="ff.D" clock="clk"/>
+                     <T_clock_to_Q max="124e-12" port="ff.Q" clock="clk"/>
+                  </pb_type>
+                  <interconnect>
+                     <direct name="direct1" input="ble6.in" output="lut6[0:0].in"/>
+                     <direct name="direct2" input="lut6.out" output="ff.D">
+                        <pack_pattern name="ble6" in_port="lut6.out" out_port="ff.D"/>
+                     </direct>
+                     <direct name="direct3" input="ble6.clk" output="ff.clk"/>
+                     <mux name="mux1" input="ff.Q lut6.out" output="ble6.out">
+                        <delay_constant max="25e-12" in_port="lut6.out" out_port="ble6.out"/>
+                        <delay_constant max="45e-12" in_port="ff.Q" out_port="ble6.out"/>
+                     </mux>
+                  </interconnect>
+               </pb_type>
+               <interconnect>
+                  <direct name="direct1" input="fle.in[5:0]" output="ble6.in"/>
+                  <direct name="direct2" input="ble6.out" output="fle.out[0:0]"/>
+                  <direct name="direct3" input="fle.clk" output="ble6.clk"/>
+               </interconnect>
+            </mode>
+            <!-- n1_lut6 -->
+         </pb_type>
+         <interconnect>
+            <complete name="crossbar" input="clb.I fle[9:0].out" output="fle[9:0].in">
+               <delay_constant max="95e-12" in_port="clb.I" out_port="fle[9:0].in"/>
+               <delay_constant max="75e-12" in_port="fle[9:0].out" out_port="fle[9:0].in"/>
+            </complete>
+            <complete name="clks" input="clb.clk" output="fle[9:0].clk">
+            </complete>
+            <direct name="clbouts1" input="fle[9:0].out" output="clb.O[9:0]"/>
+         </interconnect>
+      </pb_type>
+
+    <pb_type name="router">
+      <!-- input output ports start   -->
+         <clock name="clk" num_pins="1"/>
+         <input name="reset"  num_pins="1"/>  
+         <input name="router_address"  num_pins="4"/>  
+         <input name="channel_in_ip"  num_pins="350"/>  
+         <input name="flow_ctrl_in_op"  num_pins="15"/>   
+         
+         <output name="error"  num_pins="1"/>  
+         <output name="channel_out_op"  num_pins="350"/>  
+         <output name="flow_ctrl_out_ip"  num_pins="15"/>  
+      <!-- input output ports end  -->
+      <mode name="router_wrap">
+         <pb_type name="router_wrap" blif_model=".subckt router_slice" num_pb="1">
+            <!-- input output ports  start   -->
+               <clock name="clk" num_pins="1"/>
+               <input name="reset"  num_pins="1"/>  
+               <input name="router_address"  num_pins="4"/>  
+               <input name="channel_in_ip"  num_pins="350"/>  
+               <input name="flow_ctrl_in_op"  num_pins="15"/>   
+
+               <output name="error"  num_pins="1"/>  
+               <output name="channel_out_op"  num_pins="350"/>  
+               <output name="flow_ctrl_out_ip"  num_pins="15"/>  
+            <!-- input output ports  end   -->
+            <!-- seq delay start -->
+              <T_setup value="66e-12" port="router_wrap.reset" clock="clk"/>  
+              <T_setup value="66e-12" port="router_wrap.router_address" clock="clk"/>  
+              <T_setup value="66e-12" port="router_wrap.channel_in_ip" clock="clk"/>  
+              <T_setup value="66e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>   
+
+              <T_setup value="66e-12" port="router_wrap.error" clock="clk"/>  
+              <T_setup value="66e-12" port="router_wrap.channel_out_op" clock="clk"/>  
+              <T_setup value="66e-12" port="router_wrap.flow_ctrl_out_ip" clock="clk"/>  
+
+              <T_clock_to_Q max="124e-12" port="router_wrap.reset" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_wrap.router_address" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_wrap.channel_in_ip" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_wrap.flow_ctrl_in_op" clock="clk"/>
+
+              
+              <T_clock_to_Q max="124e-12" port="router_wrap.error" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_wrap.channel_out_op" clock="clk"/>
+              <T_clock_to_Q max="124e-12" port="router_wrap.flow_ctrl_out_ip" clock="clk"/>
+            <!-- Seq delay end -->
+         </pb_type>
+        <interconnect>
+          <direct name="rst_2rst_" input="router.reset" output="router_wrap.reset"/>
+          <direct name="my_xpos2my_xpos" input="router.router_address" output="router_wrap.router_address"/>
+          <direct name="my_ypos2my_ypos" input="router.channel_in_ip" output="router_wrap.channel_in_ip"/>
+          <direct name="idata_02idata_0" input="router.flow_ctrl_in_op" output="router_wrap.flow_ctrl_in_op"/>
+          
+          <direct name="odata_22odata_2" input="router_wrap.error" output="router.error"/>
+          <direct name="odata_32odata_3" input="router_wrap.channel_out_op" output="router.channel_out_op"/>
+          <direct name="odata_42odata_4" input="router_wrap.flow_ctrl_out_ip" output="router.flow_ctrl_out_ip"/>
+          <direct name="clk" input="router.clk" output="router_wrap.clk"/>
+        </interconnect>
+      </mode>
+      <power method="sum-of-children"/>
+    </pb_type>
+    
+   </complexblocklist>
+
+  <!-- The NoC routers were added to the FPGA device in the fixed layout section-->
+  <!-- <noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router">
+    <topology>
+      <router id="0" positionx="2" positiony="2" connections="1 3"/>
+      <router id="1" positionx="4" positiony="2" connections="0 2 4"/>
+      <router id="2" positionx="6" positiony="2" connections="1 5"/>
+      <router id="3" positionx="2" positiony="4" connections="0 4 6"/>
+	   <router id="4" positionx="4" positiony="4" connections="1 3 5 7"/>
+      <router id="5" positionx="6" positiony="4" connections="2 4 8"/>
+      <router id="6" positionx="2" positiony="6" connections="3 7"/>
+      <router id="7" positionx="4" positiony="6" connections="4 6 8"/>
+      <router id="8" positionx="6" positiony="6" connections="5 7"/>
+    </topology>
+  </noc> -->
+</architecture>
