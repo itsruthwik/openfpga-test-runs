@@ -1,0 +1,100 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : router_wrap
+Version: T-2022.03-SP5-5
+Date   : Wed Mar  5 18:07:58 2025
+****************************************
+
+
+  Startpoint: genblk1_vcr/ips_1__ipc/chi/genblk2_genblk1_flit_ctrlq/q_reg_0_
+               (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/genblk1_emptyq/q_reg_0_
+               (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                          0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  genblk1_vcr/ips_1__ipc/chi/genblk2_genblk1_flit_ctrlq/q_reg_0_/CK (DFF_X1)
+                                                         0.000      0.000 r
+  genblk1_vcr/ips_1__ipc/chi/genblk2_genblk1_flit_ctrlq/q_reg_0_/Q (DFF_X1)
+                                                         0.104 &    0.104 f
+  genblk1_vcr/ips_1__ipc/chi/genblk2_genblk2_flit_sel_out_ivc_dec/U8/ZN (NOR2_X1)
+                                                         0.111 &    0.215 r
+  genblk1_vcr/ips_1__ipc/ivcs_0__ivcc/U13/ZN (NAND2_X1)
+                                                         0.055 &    0.270 f
+  genblk1_vcr/ips_1__ipc/ivcs_0__ivcc/U15/ZN (NOR3_X2)
+                                                         0.100 &    0.370 r
+  genblk1_vcr/ips_1__ipc/ivcs_0__ivcc/U18/Z (MUX2_X2)    0.125 &    0.495 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ips_1__ircs_0__icvcs_0__elig_ovc_sel/U7/ZN (AOI22_X1)
+                                                         0.087 &    0.582 r
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ips_1__ircs_0__icvcs_0__elig_ovc_sel/U9/ZN (NAND2_X1)
+                                                         0.030 &    0.612 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ips_1__ircs_0__icvcs_0__orcs_0__gnt_ocvc_arb/genblk1_genblk1_rr_arb/prios_0__gnt_ab/U1/ZN (AND2_X1)
+                                                         0.040 &    0.652 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ips_1__ircs_0__icvcs_0__orcs_0__gnt_ocvc_arb/genblk1_genblk1_rr_arb/prios_0__gnt_ab/U4/ZN (NOR3_X1)
+                                                         0.079 &    0.731 r
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ips_1__ircs_0__icvcs_0__orcs_0__gnt_ocvc_arb/genblk1_genblk1_rr_arb/prios_0__gnt_ab/U7/Z (MUX2_X1)
+                                                         0.064 &    0.795 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/U390/ZN (NAND2_X1)
+                                                         0.038 &    0.833 r
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/U406/ZN (NOR2_X1)
+                                                         0.025 &    0.857 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ops_4__orcs_0__ocvcs_3__req_out_ip_rb/ps_1__bop/U1/ZN (OR4_X2)
+                                                         0.092 &    0.950 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ops_4__orcs_0__ocvcs_3__gnt_out_ip_arb/genblk1_genblk1_rr_arb/prios_0__gnt_ab/U1/ZN (AND2_X1)
+                                                         0.045 &    0.995 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ops_4__orcs_0__ocvcs_3__gnt_out_ip_arb/genblk1_genblk1_rr_arb/prios_0__gnt_ab/U4/ZN (NOR3_X2)
+                                                         0.054 &    1.049 r
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ops_4__orcs_0__ocvcs_3__gnt_out_ip_arb/genblk1_genblk1_rr_arb/prios_0__gnt_ab/U9/Z (MUX2_X1)
+                                                         0.100 &    1.149 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/U275/ZN (AND2_X1)
+                                                         0.040 &    1.189 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/mcs_0__ips_1__ircs_0__icvcs_0__gnt_out_orc_ocvc_or/U1/ZN (OR4_X1)
+                                                         0.140 &    1.329 f
+  genblk1_vcr/alo/genblk1_vc_core_sep_if/U196/ZN (OR4_X2)
+                                                         0.129 &    1.458 f
+  genblk1_vcr/ips_1__ipc/U21/ZN (OR2_X1)                 0.061 &    1.519 f
+  genblk1_vcr/ips_1__ipc/genblk1_spec_mask_sel/U1/ZN (AOI22_X1)
+                                                         0.038 &    1.557 r
+  genblk1_vcr/ips_1__ipc/genblk1_spec_mask_sel/U3/ZN (NAND2_X1)
+                                                         0.021 &    1.579 f
+  genblk1_vcr/ips_1__ipc/U4/ZN (AND2_X4)                 0.036 &    1.614 f
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/U4/ZN (AND2_X1)
+                                                         0.046 &    1.660 f
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/FE_OFC3074_queues_2__pop/ZN (INV_X4)
+                                                         0.022 &    1.682 r
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/FE_OFC3075_queues_2__pop/ZN (INV_X2)
+                                                         0.016 &    1.698 f
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/U18/ZN (OAI21_X1)
+                                                         0.028 &    1.726 r
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/U19/ZN (OAI21_X1)
+                                                         0.019 &    1.746 f
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/genblk1_emptyq/U3/Z (MUX2_X1)
+                                                         0.059 &    1.805 f
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/genblk1_emptyq/q_reg_0_/D (DFFS_X1)
+                                                         0.000 &    1.805 f
+  data arrival time                                                 1.805
+
+  clock ideal_clock (rise edge)                          2.000      2.000
+  clock network delay (ideal)                            0.000      2.000
+  clock reconvergence pessimism                          0.000      2.000
+  clock uncertainty                                     -0.020      1.980
+  genblk1_vcr/ips_1__ipc/fb/genblk2_samqc/queues_2__fc/genblk1_emptyq/q_reg_0_/CK (DFFS_X1)
+                                                                    1.980 r
+  library setup time                                    -0.040      1.940
+  data required time                                                1.940
+  ------------------------------------------------------------------------------
+  data required time                                                1.940
+  data arrival time                                                -1.805
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.135
+
+
+1

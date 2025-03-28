@@ -1,0 +1,3 @@
+vlog ./top.v  +libext+.v+.sv -y /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src   -y /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src/clib  +incdir+/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src +incdir+/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/router_files/stanford_router/src/clib -incr
+
+vsim axis_to_noc_adapter_tb -voptargs="+acc"

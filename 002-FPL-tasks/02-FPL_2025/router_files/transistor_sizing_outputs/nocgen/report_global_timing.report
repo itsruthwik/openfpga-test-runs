@@ -1,0 +1,12 @@
+****************************************
+Report : global_timing
+	-format { narrow }
+Design : router_wrap
+Version: T-2022.03-SP5-5
+Date   : Wed Mar  5 13:28:44 2025
+****************************************
+
+No setup violations found.
+
+No hold violations found.
+1

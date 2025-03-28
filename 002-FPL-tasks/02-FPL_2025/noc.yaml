@@ -1,0 +1,67 @@
+Arch:
+    vpr: 
+    openfpga: 
+    
+noc:
+# Size of mesh
+    mesh:
+        X: 4
+        Y: 4
+    MESH_Y: 4
+    interface: axis
+
+router:
+# RESET_SYNC_EXTEND_CYCLES	Specifies the number of cycles to extend the synchronized reset for (may be beneficial to debounce or depending on how the reset is generated)
+    RESET_SYNC_EXTEND_CYCLES : 7
+# RESET_NUM_OUTPUT_REGISTERS	Specifies the number of output registers to help timing (NoC is not immediately ready after reset release)
+    RESET_NUM_OUTPUT_REGISTERS : 1
+# TID_WIDTH	Width of AXI-Stream tid signal
+    TID_WIDTH : 2
+# TDEST_WIDTH	Width of AXI-Stream tdest signal
+    TDEST_WIDTH : 4
+# TDATA_WIDTH	Width of AXI-Stream tdata signal
+    TDATA_WIDTH : 32
+# SERIALIZATION_FACTOR	Factor to serialize in the user clock domain (doesn't use memory bits)
+    SERIALIZATION_FACTOR : 1
+# CLKCROSS_FACTOR	Factor to serialize while crossing from the user to the NoC clock domain (uses mixed-width DC FIFO)
+    CLKCROSS_FACTOR : 1
+# SINGLE_CLOCK	(0 / 1) Specfies whether the NoC and user clock are the same (uses single-clock FIFO instead of dual-clock FIFO)
+    SINGLE_CLOCK : 0
+# SERDES_IN_BUFFER_DEPTH	Serializer buffer depth (in units of TDATA_WIDTH words)
+    SERDES_IN_BUFFER_DEPTH : 4
+# SERDES_OUT_BUFFER_DEPTH	Deserializer buffer depth (in units of TDATA_WIDTH words)
+    SERDES_OUT_BUFFER_DEPTH : 4
+# SERDES_EXTRA_SYNC_STAGES	Asynchronous FIFO extra metastability synchronization stages (-2 disables synchronization and may be used for synchronized clocks)
+    SERDES_EXTRA_SYNC_STAGES : 0
+# SERDES_FORCE_MLAB	Forces the buffers in the serdes modules to use MLABs (LUTRAM) instead of M20Ks (BRAM) if possible (mixed-width dual-clock FIFO does not support this)
+    SERDES_FORCE_MLAB : 0
+# FLIT_BUFFER_DEPTH	Input flit buffer depth
+    FLIT_BUFFER_DEPTH : 4
+# ROUTING_TABLE_PREFIX	See NoC
+    ROUTING_TABLE_PREFIX : "/"
+# PIPELINE_ROUTE_COMPUTE	Splits route computation into a separate pipeline stage
+    ROUTER_PIPELINE_ROUTE_COMPUTE : 1
+# PIPELINE_ARBITER	Splits the abitration and switch traversal into separate pipeline stages
+    ROUTER_PIPELINE_ARBITER : 0
+# ROUTER_PIPELINE_OUTPUT	Adds an extra pipeline stage at the output of the router
+    ROUTER_PIPELINE_OUTPUT : 1
+# ROUTER_FORCE_MLAB	Forces the flit buffers to use MLABs (LUTRAM) instead of M20Ks (BRAM) (Advanced)
+    ROUTER_FORCE_MLAB : 0
+
+
+
+
+
+
+# NOC_NUM_ENDPOINTS	Number of endpoints in the NoC the router is a part of
+    # NOC_NUM_ENDPOINTS: 4
+
+
+# NUM_INPUTS	Number of inputs of the router
+    # NUM_INPUTS : 5
+# NUM_OUTPUTS	Number of outputs of the router
+    # NUM_OUTPUTS : 5
+
+
+
+

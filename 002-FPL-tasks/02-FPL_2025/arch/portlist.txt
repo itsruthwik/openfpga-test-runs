@@ -1,0 +1,21 @@
+module router_wrap
+input [0:0] clk
+input [0:0] reset
+input [0:0] master_tready
+output [511:0] master_tdata
+output [0:0] master_tvalid
+output [63:0] master_tstrb
+output [63:0] master_tkeep
+output [7:0] master_tid
+output [7:0] master_tdest
+output [31:0] master_tuser
+output [0:0] master_tlast
+input [0:0] slave_tvalid
+output [0:0] slave_tready
+input [511:0] slave_tdata
+input [63:0] slave_tstrb
+input [63:0] slave_tkeep
+input [7:0] slave_tid
+input [7:0] slave_tdest
+input [31:0] slave_tuser
+input [0:0] slave_tlast

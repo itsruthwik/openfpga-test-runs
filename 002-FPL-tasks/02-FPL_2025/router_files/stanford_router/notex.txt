@@ -1,0 +1,75 @@
+packet format parameter:
+  PACKET_FORMAT_HEAD_TAIL:
+    head flit , data, tail flit
+ PACKET_FORMAT_TAIL_ONLY
+    data, tail flit
+ PACKET_FORMAT_EXPLICIT_LENGTH
+    
+
+From rtr_channel_input.v:
+
+   localparam channel_width
+     = link_ctrl_width + flit_ctrl_width + flit_data_width;
+
+
+So, the channel_in or cannel_out has : {link_ctrl, flit_ctrl, flit_data}
+
+link_ctrl exists only if enable_link_pm is 1; otherwise 0
+     LINK_CTRL[0] = 1 = LINK IS active
+                  = 0 - INACTIVE/ LOW POWER MODE
+
+    flit_valid = flit_ctrl[0] (1 bit)
+    
+    wire [0:vc_idx_width-1] flit_vc_q;
+	assign flit_vc_q = flit_ctrl_q[1:1+vc_idx_width-1];
+
+     `PACKET_FORMAT_HEAD_TAIL:
+        flit_valid = flit_ctrl[0] (1 bit)
+        vc id = flit_ctrl[1:1+vc_idx_width-1]
+        FLIT_HEAD = flit_ctrl[1+vc_idx_width]
+        flit-tail = flit_ctrl[1+vc_idx_width+1]
+    flit_head and flit_tail are 1 bit each.
+
+So, flit_ctrl = {flit_tail, flit_head , vc_id , flit_valid}
+
+    PACKET_FORMAT_TAIL_ONLY
+        flit_valid = flit_ctrl[0] (1 bit)
+        vc id = flit_ctrl[1:1+vc_idx_width-1]
+        flit-tail = flit_ctrl[1+vc_idx_width]
+so, flit_ctrl = {flit_tail, vc_id, flit_valid}
+
+    PACKET_FORMAT_EXPLICIT_LENGTH
+        flit_valid = flit_ctrl[0] (1 bit)
+        vc id = flit_ctrl[1:1+vc_idx_width-1]
+        flit-head = flit_ctrl[1+vc_idx_width]
+so, flit_ctrl = {flit_head, vc_id, flit_valid}
+  
+
+flow_ctrl: 
+    FLOW_CTRL_TYPE_CREDIT
+        CREDIT_VALID = flow_ctrl[0]   1 bit
+        VC_ID = flow_ctrl[1:1+vc_idx_width-1]
+
+
+
+    line 205:    assign header_info_q = flit_data_q[0:header_info_width-1];
+                chi_route_info = chi_header_info[0:route_info_width-1];
+                chi_lar_info = chi_route_info[0:lar_info_width-1];
+                 chi_dest_info = chi_route_info[lar_info_width:
+					 lar_info_width+dest_info_width-1];
+
+                 route_info = { dest_info  ,lar_info}
+    flit_data[0:lar_info_width-1]    - info about look ahead rt // it seems this will be set by the router in rtr_ip_ctrl_mac.v 
+    flit_data[lar_info_width:route_info_width-1]  = destination 
+            this destinatio is {resource_class, dest address}
+
+
+Foe head flit:
+    assign header_info_q = flit_data_q[0:header_info_width-1];
+        assign chi_route_info = chi_header_info[0:route_info_width-1];
+            assign chi_lar_info = chi_route_info[0:lar_info_width-1];
+            assign chi_dest_info = chi_route_info[lar_info_width: lar_info_width+dest_info_width-1];
+        PACKET_FORMAT_EXPLICIT_LENGTH, there is also payload length here.
+
+
+for data flit, entire flit is data

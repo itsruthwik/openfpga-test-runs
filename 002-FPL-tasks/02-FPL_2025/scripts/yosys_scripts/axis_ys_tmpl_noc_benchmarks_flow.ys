@@ -1,0 +1,60 @@
+# Yosys synthesis script for ${TOP_MODULE}
+# Read verilog files
+
+#read_verilog -sv ${VERILOG_FILES}
+# router_wrap_cell_sim file
+#read_verilog -sv -lib -specify ${YOSYS_CELL_SIM_VERILOG}
+
+# dpram_cell_sim
+read_verilog -lib -specify /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_cell_sim.v
+
+
+
+# Technology mapping
+#hierarchy -top ${TOP_MODULE}
+flatten
+proc
+techmap -D NO_LUT -map /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_dff_map.v
+
+check
+opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+opt_merge -share_all
+opt_dff -nodffe -nosdff -keepdc  
+#opt_dff -nodffe -nosdff -keepdc -sat
+
+#memory -nomap
+
+#opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+#opt_merge -share_all
+#opt_dff -nodffe -nosdff -keepdc -sat
+
+memory_map
+
+opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+opt_merge -share_all
+opt_dff -nodffe -nosdff -keepdc  
+#opt_dff -nodffe -nosdff -keepdc -sat
+
+techmap
+techmap -D NO_LUT -map /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_dff_map.v
+
+opt_expr -mux_undef -mux_bool -undriven -noclkinv -fine -full -keepdc
+opt_merge -share_all
+opt_dff -nodffe -nosdff -keepdc  
+#opt_dff -nodffe -nosdff -keepdc -sat
+
+
+# LUT mapping
+abc -lut 6
+
+# FF mapping
+
+techmap -D NO_LUT -map /mnt/vault1/rsunketa/OpenFPGA/openfpga_flow/openfpga_yosys_techlib/k6_frac_N10_tileable_adder_chain_dpram8K_dsp36_fracff_40nm_dff_map.v
+
+
+# Check
+synth -run check
+
+# Clean and output blif
+#opt_clean -purge
+#write_blif ${OUTPUT_BLIF}

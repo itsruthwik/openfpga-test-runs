@@ -1,0 +1,46 @@
+noc:
+  type: ['2d']
+  num_nocs: 1
+  payload_width: [166] #stanford rtr has max_payload_length & min_payload_length
+  # stanford router supports
+  # 1. mesh
+  # 2. torus
+  # 3. flattened butterfly
+  topology: ['mesh'] 
+  dim_x: [4]
+  dim_y: [4] 
+  # stanford rtr has: dimension-order routing (using multiple phases if num_resource_classes > 1)
+  routing_func: ['dim_order']
+  vcs: [5]
+  vc_buffer_size: [8]
+  output_buffer_size: [8]
+  num_packet_types: [5]
+  # stanford rtr has:
+  # 1. wormhole
+  # 2. virtual channel type
+  # 3. combined VC and switch allocation
+  router_uarch: ['iq']
+  vc_allocator: ['islip']
+  sw_allocator:  ['islip']
+  credit_delay: [1]
+  routing_delay: [1]
+  vc_alloc_delay: [1]
+  sw_alloc_delay: [1]
+
+noc_adapters:
+  fifo_size: [16]
+  obuff_size: [2]
+  # stanford rtr has:
+  # 1. round-robin arbiter with binary-encoded state
+  # 2. round-robin arbiter with one-hot encoded state
+  # 3. prefix arbiter with binary-encoded state
+  # 4. prefix arbiter with one-hot encoded state
+  # 5. matrix arbiter
+  in_arbiter: ['fixed_rr']   
+  out_arbiter: ['priority_rr']
+
+  vc_mapping: ['direct']
+
+FPGA:
+  VPR:
+  OpenFPGA: 
