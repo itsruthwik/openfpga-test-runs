@@ -1,25 +1,25 @@
 module rtl_mvm # (
-    parameter DATAW,
-    parameter BYTEW,
-    parameter IDW,
-    parameter DESTW,
-    parameter USERW,
-    parameter IPRECISION,
-    parameter OPRECISION,
-    parameter LANES,
-    parameter DPES,
-    parameter NODES,
-    parameter NODESW,
-    parameter RFDEPTH,
-    parameter RFADDRW,
-    parameter INSTW,
-    parameter INSTD,
-    parameter INSTADDRW,
-    parameter AXIS_OPS,
-    parameter AXIS_OPSW,
-    parameter FIFOD,
-    parameter USE_RELU,
-    parameter DATAPATH_DELAY
+    parameter DATAW = 32,                   // Bitwidth of axi-s tdata
+    parameter BYTEW = 8,                    // Bitwidth of axi-s tkeep, tstrb
+    parameter IDW = 32,                     // Bitwidth of axi-s tid
+    parameter DESTW = 6,                    // Bitwidth of axi-s tdest
+    parameter USERW = 32,                   // Bitwidth of axi-s tuser
+    parameter IPRECISION = 8,               // Input precision in bits
+    parameter OPRECISION = 8,               // Output precision in bits
+    parameter LANES = 4,                    // Number of dot-product INT8 lanes
+    parameter DPES = 4,                     // Number of dot-product engines
+    parameter NODES = 16,                   // Max number of nodes in each NoC
+    parameter NODESW = 4,                   // Bitwidth of store node ID
+    parameter RFDEPTH = 64,                 // Depth of register files (RFs)
+    parameter RFADDRW = 6,                  // Bitwidth of RF address
+    parameter INSTW = 32,                   // Instruction bitwidth
+    parameter INSTD = 64,                   // Depth of instruction FIFO
+    parameter INSTADDRW = 6,                // Bitwidth of instruction memory address
+    parameter AXIS_OPS = 4,                 // Number of AXI-S operations
+    parameter AXIS_OPSW = 2,                // AXI-S operations width
+    parameter FIFOD = 64,                   // Depth of input, accumulation, and output FIFOs
+    parameter USE_RELU = 1,                 // Use ReLU activation
+    parameter DATAPATH_DELAY = 10
 )(
     input  clk,
     input  rst,
@@ -157,7 +157,7 @@ assign tuser_rf_en = {{(DPES){1'b0}}, axis_rx_tuser[14:11]};
 fifo # (
     .DATAW(DATAW),
     .DEPTH(FIFOD),
-	.ADDRW($clog2(FIFOD)),
+	.ADDRW(INSTADDRW),
 	.ALMOST_FULL_DEPTH(FIFOD)
 ) input_fifo (
     .clk(clk),
@@ -175,7 +175,7 @@ fifo # (
 fifo # (
     .DATAW(DATAW),
     .DEPTH(FIFOD),
-	.ADDRW($clog2(FIFOD)),
+	.ADDRW(INSTADDRW),
 	.ALMOST_FULL_DEPTH(FIFOD)
 ) reduction_fifo (
     .clk(clk),
@@ -521,7 +521,7 @@ fifo # (
     .DATAW(1 + NODESW + DATAW + 1),
     .DEPTH(FIFOD),
     .ALMOST_FULL_DEPTH(FIFOD-13),
-	.ADDRW($clog2(FIFOD))
+	.ADDRW(INSTADDRW)
 ) output_data_fifo (
     .clk(clk),
     .rst(rst),

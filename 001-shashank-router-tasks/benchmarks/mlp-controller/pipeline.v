@@ -14,8 +14,8 @@ data_out: The data after the pipelined delay
 **/
 
 module pipeline # (
-    parameter DELAY, // = 1,
-    parameter WIDTH, // = 32
+    parameter DELAY = 1,
+    parameter WIDTH = 32
 )(
     input  clk,
     input  rst,

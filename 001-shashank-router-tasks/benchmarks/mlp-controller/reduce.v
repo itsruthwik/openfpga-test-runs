@@ -17,8 +17,8 @@ o_valid: Valid signal for output result
 o_result: Result
 **/
 module reduce # (
-	parameter IPREC, // = 8,
-	parameter OPREC, // = 32
+	parameter IPREC = 8,
+	parameter OPREC = 32
 )(
 	input              clk,
 	input              rst,

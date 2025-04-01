@@ -62,6 +62,20 @@ module mvm_noc #(
     parameter FLIT_WIDTH = DATAW / SERIALIZATION_FACTOR / CLKCROSS_FACTOR;
     parameter DEST_WIDTH = TDESTW + TIDW;
 
+    // 2 mvms
+    wire [1:0] mvm_in_tvalid;
+    wire [1*DATAW-1:0] mvm_in_tdata;
+    wire [1*DESTW-1:0] mvm_in_tdest;
+    wire [1*USERW-1:0] mvm_in_tuser;
+    wire [1:0] mvm_in_tlast;
+    wire [1:0] mvm_in_tready;
+    wire [1:0] mvm_out_tvalid;
+    wire [1*DATAW-1:0] mvm_out_tdata;
+    wire [1*DESTW-1:0] mvm_out_tdest;
+    wire [1*USERW-1:0] mvm_out_tuser;
+    wire [1:0] mvm_out_tlast;
+    wire [1:0] mvm_out_tready;
+
 // 3routers    
     wire [2:0] axis_in_tvalid;
     wire [2:0] axis_in_tready;
@@ -81,78 +95,25 @@ module mvm_noc #(
     wire [3*TDATAW-1:0] mesh_out_tdata;
     wire [3*RTR_ADDR_WIDTH-1:0] router_address;
 
-    assign mesh_in_tdata[0*TDATAW +: TDATAW] = {
-        axis_in_tuser[0*USERW +: USERW], 
-        axis_in_tdata[0*DATAW +: DATAW]
-    };
-    assign axis_out_tdata[0*DATAW +: DATAW] = mesh_out_tdata[0*TDATAW +: DATAW];
-    assign axis_out_tuser[0*USERW +: USERW] = mesh_out_tdata[0*TDATAW + DATAW +: USERW];
+    wire [2:0] temp_data_in;
+    wire [2:0] temp_dest_in;
+    wire [2:0] temp_is_tail_in;
+    wire [2:0] temp_send_in;
+    wire [2:0] temp_credit_out;
+    wire [2:0] temp_data_out;
+    wire [2:0] temp_dest_out;
+    wire [2:0] temp_is_tail_out;
+    wire [2:0] temp_send_out;
+    wire [2:0] temp_credit_in;
+
     assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 0;
     assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
 
-    assign mesh_in_tdata[1*TDATAW +: TDATAW] = {
-        axis_in_tuser[1*USERW +: USERW], 
-        axis_in_tdata[1*DATAW +: DATAW]
-    };
-    assign axis_out_tdata[1*DATAW +: DATAW] = mesh_out_tdata[1*TDATAW +: DATAW];
-    assign axis_out_tuser[1*USERW +: USERW] = mesh_out_tdata[1*TDATAW + DATAW +: USERW];
     assign router_address[1*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
     assign router_address[1*RTR_ADDR_WIDTH +: COL_WIDTH] = 0;
 
-    assign mesh_in_tdata[2*TDATAW +: TDATAW] = {
-        axis_in_tuser[2*USERW +: USERW], 
-        axis_in_tdata[2*DATAW +: DATAW]
-    };
-    assign axis_out_tdata[2*DATAW +: DATAW] = mesh_out_tdata[2*TDATAW +: DATAW];
-    assign axis_out_tuser[2*USERW +: USERW] = mesh_out_tdata[2*TDATAW + DATAW +: USERW];
     assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
     assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
-
-    // input
-    axis_passthrough #(
-        .DATAW(DATAW),
-        .IDW(IDW),
-        .USERW(USERW),
-        .DESTW(DESTW)
-    ) axis_passthrough_inst (
-        .CLK(CLK),
-        .RST_N(RST_N),
-        .AXIS_S_TVALID(AXIS_S_TVALID),
-        .AXIS_S_TREADY(AXIS_S_TREADY),
-        .AXIS_S_TDATA(AXIS_S_TDATA),
-        .AXIS_S_TLAST(AXIS_S_TLAST),
-        // .AXIS_S_TUSER(AXIS_S_TUSER),
-        .AXIS_S_TDEST(AXIS_S_TDEST),
-        .AXIS_M_TVALID(axis_in_tvalid[2]),
-        .AXIS_M_TREADY(axis_in_tready[2]),
-        .AXIS_M_TDATA(axis_in_tdata[2*DATAW +: DATAW]),
-        .AXIS_M_TLAST(axis_in_tlast[2]),
-        // .AXIS_M_TUSER(axis_in_tuser[2*USERW +: USERW]),
-        .AXIS_M_TDEST(axis_in_tdest[2*DESTW +: DESTW])
-    );
-
-    // output
-    axis_passthrough #(
-        .DATAW(DATAW),
-        .IDW(IDW),
-        .USERW(USERW),
-        .DESTW(DESTW)
-    ) axis_passthrough_inst2 (
-        .CLK(CLK),
-        .RST_N(RST_N),
-        .AXIS_S_TVALID(axis_out_tvalid[2]),
-        .AXIS_S_TREADY(axis_out_tready[2]),
-        .AXIS_S_TDATA (axis_out_tdata[2*DATAW +: DATAW]),
-        .AXIS_S_TLAST (axis_out_tlast[2]),
-        // .AXIS_S_TUSER (axis_out_tuser[2*USERW +: USERW]),
-        .AXIS_S_TDEST (axis_out_tdest[2*DESTW +: DESTW]),
-        .AXIS_M_TVALID(AXIS_M_TVALID),
-        .AXIS_M_TREADY(AXIS_M_TREADY),
-        .AXIS_M_TDATA (AXIS_M_TDATA),
-        .AXIS_M_TLAST (AXIS_M_TLAST),
-        // .AXIS_M_TUSER (AXIS_M_TUSER),
-        .AXIS_M_TDEST (AXIS_M_TDEST)
-    );
 
     // rtr 0 - mvm1
     rtl_mvm #(
@@ -180,18 +141,18 @@ module mvm_noc #(
     ) mvm_inst_0 (
         .clk(CLK),
         .rst(RST_N),
-        .axis_rx_tvalid(axis_out_tvalid[0]),
-        .axis_rx_tdata(axis_out_tdata[0*DATAW +: DATAW]),
-        .axis_rx_tdest(axis_out_tdest[0*DESTW +: DESTW]),
-        .axis_rx_tuser(axis_out_tuser[0*USERW +: USERW]),
-        .axis_rx_tlast(axis_out_tlast[0]),
-        .axis_rx_tready(axis_out_tready[0]),
-        .axis_tx_tvalid(axis_in_tvalid[0]),
-        .axis_tx_tdata(axis_in_tdata[0*DATAW +: DATAW]),
-        .axis_tx_tdest(axis_in_tdest[0*DESTW +: DESTW]),
-        .axis_tx_tuser(axis_in_tuser[0*USERW +: USERW]),
-        .axis_tx_tlast(axis_in_tlast[0]),
-        .axis_tx_tready(axis_in_tready[0])
+        .axis_rx_tvalid(mvm_in_tvalid[0]),
+        .axis_rx_tdata(mvm_in_tdata[0*DATAW +: DATAW]),
+        .axis_rx_tdest(mvm_in_tdest[0*DESTW +: DESTW]),
+        .axis_rx_tuser(mvm_in_tuser[0*USERW +: USERW]),
+        .axis_rx_tlast(mvm_in_tlast[0]),
+        .axis_rx_tready(mvm_in_tready[0]),
+        .axis_tx_tvalid(mvm_out_tvalid[0]),
+        .axis_tx_tdata(mvm_out_tdata[0*DATAW +: DATAW]),
+        .axis_tx_tdest(mvm_out_tdest[0*DESTW +: DESTW]),
+        .axis_tx_tuser(mvm_out_tuser[0*USERW +: USERW]),
+        .axis_tx_tlast(mvm_out_tlast[0]),
+        .axis_tx_tready(mvm_out_tready[0])
     );
 
     // rtr 1 -mvm 2
@@ -220,27 +181,27 @@ module mvm_noc #(
     ) mvm_inst_1 (
         .clk(CLK),
         .rst(RST_N),
-        .axis_rx_tvalid(axis_out_tvalid[1]),
-        .axis_rx_tdata(axis_out_tdata[1*DATAW +: DATAW]),
-        .axis_rx_tdest(axis_out_tdest[1*DESTW +: DESTW]),
-        .axis_rx_tuser(axis_out_tuser[1*USERW +: USERW]),
-        .axis_rx_tlast(axis_out_tlast[1]),
-        .axis_rx_tready(axis_out_tready[1]),
-        .axis_tx_tvalid(axis_in_tvalid[1]),
-        .axis_tx_tdata(axis_in_tdata[1*DATAW +: DATAW]),
-        .axis_tx_tdest(axis_in_tdest[1*DESTW +: DESTW]),
-        .axis_tx_tuser(axis_in_tuser[1*USERW +: USERW]),
-        .axis_tx_tlast(axis_in_tlast[1]),
-        .axis_tx_tready(axis_in_tready[1])
+        .axis_rx_tvalid(mvm_in_tvalid[1]),
+        .axis_rx_tdata(mvm_in_tdata[1*DATAW +: DATAW]),
+        .axis_rx_tdest(mvm_in_tdest[1*DESTW +: DESTW]),
+        .axis_rx_tuser(mvm_in_tuser[1*USERW +: USERW]),
+        .axis_rx_tlast(mvm_in_tlast[1]),
+        .axis_rx_tready(mvm_in_tready[1]),
+        .axis_tx_tvalid(mvm_out_tvalid[1]),
+        .axis_tx_tdata(mvm_out_tdata[1*DATAW +: DATAW]),
+        .axis_tx_tdest(mvm_out_tdest[1*DESTW +: DESTW]),
+        .axis_tx_tuser(mvm_out_tuser[1*USERW +: USERW]),
+        .axis_tx_tlast(mvm_out_tlast[1]),
+        .axis_tx_tready(mvm_out_tready[1])
     );
 
     // rtr 0
-    (* keep *)
+    // (* keep *)
     router_wrap #(
         .NUM_PORTS(NUM_PORTS),
         .TID_WIDTH(TIDW),
         .TDEST_WIDTH(TDESTW),
-        // .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(TDATAW),
         .TDATA_WIDTH(DATAW),
         .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
         .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
@@ -255,28 +216,36 @@ module mvm_noc #(
         .rst_n(RST_N),
         .axis_in_tvalid(axis_in_tvalid[0]),
         .axis_in_tready(axis_in_tready[0]),
-        // .axis_in_tdata(mesh_in_tdata[0*TDATAW +: TDATAW]),
         .axis_in_tdata(axis_in_tdata[0*DATAW +: DATAW]),
         .axis_in_tlast(axis_in_tlast[0]),
         .axis_in_tdest(axis_in_tdest[0*DESTW +: DESTW]),
-
         .axis_out_tvalid(axis_out_tvalid[0]),
         .axis_out_tready(axis_out_tready[0]),
-        // .axis_out_tdata(mesh_out_tdata[0*TDATAW +: TDATAW]),
         .axis_out_tdata(axis_out_tdata[0*DATAW +: DATAW]),
         .axis_out_tlast(axis_out_tlast[0]),
         .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
+
+        .data_in(temp_data_in[0]),
+        .dest_in(temp_dest_in[0]),
+        .is_tail_in(temp_is_tail_in[0]),
+        .send_in(temp_send_in[0]),
+        .credit_out(temp_credit_out[0]),
+        .data_out(temp_data_out[0]),
+        .dest_out(temp_dest_out[0]),
+        .is_tail_out(temp_is_tail_out[0]),
+        .send_out(temp_send_out[0]),
+        .credit_in(temp_credit_in[0]),
         
         .router_address(router_address[0*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
     // rtr 1
-    (* keep *)
+    // (* keep *)
     router_wrap #(
         .NUM_PORTS(NUM_PORTS),
         .TID_WIDTH(TIDW),
         .TDEST_WIDTH(TDESTW),
-        // .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(TDATAW),
         .TDATA_WIDTH(DATAW),
         .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
         .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
@@ -291,23 +260,32 @@ module mvm_noc #(
         .rst_n(RST_N),
         .axis_in_tvalid(axis_in_tvalid[1]),
         .axis_in_tready(axis_in_tready[1]),
-        // .axis_in_tdata(mesh_in_tdata[1*TDATAW +: TDATAW]),
         .axis_in_tdata(axis_in_tdata[1*DATAW +: DATAW]),
         .axis_in_tlast(axis_in_tlast[1]),
         .axis_in_tdest(axis_in_tdest[1*DESTW +: DESTW]),
-
         .axis_out_tvalid(axis_out_tvalid[1]),
         .axis_out_tready(axis_out_tready[1]),
-        // .axis_out_tdata(mesh_out_tdata[1*TDATAW +: TDATAW]),
         .axis_out_tdata(axis_out_tdata[1*DATAW +: DATAW]),
         .axis_out_tlast(axis_out_tlast[1]),
         .axis_out_tdest(axis_out_tdest[1*DESTW +: DESTW]),
+
+        .data_in(temp_data_in[1]),
+        .dest_in(temp_dest_in[1]),
+        .is_tail_in(temp_is_tail_in[1]),
+        .send_in(temp_send_in[1]),
+        .credit_out(temp_credit_out[1]),
+        .data_out(temp_data_out[1]),
+        .dest_out(temp_dest_out[1]),
+        .is_tail_out(temp_is_tail_out[1]),
+        .send_out(temp_send_out[1]),
+        .credit_in(temp_credit_in[1]),
+
 
         .router_address(router_address[1*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
     // rtr 2
-    (* keep *)
+    // (* keep *)
     router_wrap #(
         .NUM_PORTS(NUM_PORTS),
         .TID_WIDTH(TIDW),
@@ -328,19 +306,71 @@ module mvm_noc #(
 
         .axis_in_tvalid(axis_in_tvalid[2]),
         .axis_in_tready(axis_in_tready[2]),
-        // .axis_in_tdata(mesh_in_tdata[2*TDATAW +: TDATAW]),
         .axis_in_tdata(axis_in_tdata[2*DATAW +: DATAW]),
         .axis_in_tlast(axis_in_tlast[2]),
         .axis_in_tdest(axis_in_tdest[2*DESTW +: DESTW]),
-
         .axis_out_tvalid(axis_out_tvalid[2]),
         .axis_out_tready(axis_out_tready[2]),
-        // .axis_out_tdata(mesh_out_tdata[2*TDATAW +: TDATAW]),
         .axis_out_tdata(axis_out_tdata[2*DATAW +: DATAW]),
         .axis_out_tlast(axis_out_tlast[2]),
         .axis_out_tdest(axis_out_tdest[2*DESTW +: DESTW]),
 
+        .data_in(temp_data_in[2]),
+        .dest_in(temp_dest_in[2]),
+        .is_tail_in(temp_is_tail_in[2]),
+        .send_in(temp_send_in[2]),
+        .credit_out(temp_credit_out[2]),
+        .data_out(temp_data_out[2]),
+        .dest_out(temp_dest_out[2]),
+        .is_tail_out(temp_is_tail_out[2]),
+        .send_out(temp_send_out[2]),
+        .credit_in(temp_credit_in[2]),
+
         .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
+
+    // router to router
+    assign temp_data_in[0]  = temp_data_out[1]; 
+    assign temp_dest_in[0]  = temp_dest_out[1]; 
+    assign temp_is_tail_in[0]  = temp_is_tail_out[1]; 
+    assign temp_send_in[0]  = temp_send_out[1]; 
+
+    assign temp_data_in[1]  = temp_data_out[2]; 
+    assign temp_dest_in[1]  = temp_dest_out[2]; 
+    assign temp_is_tail_in[1]  = temp_is_tail_out[2]; 
+    assign temp_send_in[1]  = temp_send_out[2]; 
+
+    assign temp_credit_in[2] = temp_credit_out[1];
+    assign temp_credit_in[1] = temp_credit_out[0];
+
+    // mvm to router 
+    assign mvm_in_tvalid[1] = axis_out_tvalid[1];
+    assign mvm_in_tdata[1*DATAW +: DATAW] = axis_out_tdata[1*DATAW +: DATAW];
+    assign mvm_in_tdest[1*DESTW +: DESTW] = axis_out_tdest[1*DESTW +: DESTW];
+    assign mvm_in_tuser[1*USERW +: USERW] = AXIS_S_TUSER;
+    assign mvm_in_tlast[1] = axis_out_tlast[1];
+    assign mvm_in_tready[1] = axis_out_tready[1];
+
+    assign axis_in_tvalid[1] = mvm_out_tvalid[1];
+    assign axis_in_tdata[1*DATAW +: DATAW] = mvm_out_tdata[1*DATAW +: DATAW];
+    assign axis_in_tdest[1*DESTW +: DESTW] = mvm_out_tdest[1*DESTW +: DESTW];
+    assign AXIS_M_TUSER = mvm_out_tuser[USERW-1:0] + mvm_out_tuser[2*USERW-1:0];
+    assign axis_in_tlast[1] = mvm_out_tlast[1];
+    assign axis_in_tready[1] = mvm_out_tready[1];
+
+
+    assign mvm_in_tvalid[0] = axis_out_tvalid[0];
+    assign mvm_in_tdata[0*DATAW +: DATAW] = axis_out_tdata[0*DATAW +: DATAW];
+    assign mvm_in_tdest[0*DESTW +: DESTW] = axis_out_tdest[0*DESTW +: DESTW];
+    assign mvm_in_tuser[0*USERW +: USERW] = AXIS_S_TUSER;
+    assign mvm_in_tlast[0] = axis_out_tlast[0];
+    assign mvm_in_tready[0] = axis_out_tready[0];
+
+    assign axis_in_tvalid[0] = mvm_out_tvalid[0];
+    assign axis_in_tdata[0*DATAW +: DATAW] = mvm_out_tdata[0*DATAW +: DATAW];
+    assign axis_in_tdest[0*DESTW +: DESTW] = mvm_out_tdest[0*DESTW +: DESTW];
+    // assign AXIS_M_TUSER = mvm_out_tuser[0];
+    assign axis_in_tlast[0] = mvm_out_tlast[0];
+    assign axis_in_tready[0] = mvm_out_tready[0];
 
 endmodule

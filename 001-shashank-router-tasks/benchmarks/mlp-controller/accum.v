@@ -14,9 +14,9 @@ o_result: The result
 **/
 
 module accum # (
-	parameter DATAW, // = 32,
-	parameter DEPTH, // = 512,
-	parameter ADDRW // = $clog2(DEPTH)
+	parameter DATAW   = 32,
+	parameter DEPTH   = 64,
+	parameter ADDRW   = 6
 )(
 	input              clk,
 	input              rst,

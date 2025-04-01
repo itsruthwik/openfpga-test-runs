@@ -1,10 +1,10 @@
 module dpe # (
-    parameter LANES, // = 4,
-    parameter DATAW, // = 32,
-    parameter IPREC, // = 8,
-    parameter MPREC, // = 2 * IPREC,
-    parameter OPREC, // = 32,
-    parameter ADDER_STAGES // = 2
+    parameter LANES = 4,
+    parameter DATAW = 32,
+    parameter IPREC = 8,
+    parameter MPREC = 16,
+    parameter OPREC = 32,
+    parameter ADDER_STAGES = 2
 )(
     input              clk,
     input              rst,

@@ -25,12 +25,12 @@ o_valid: Valid signal for output result
 o_result: Result
 **/
 module datapath # (
-	parameter LANES, // = 64,
-	parameter DATAW, // = 512,
-	parameter IPREC, // = 8,
-	parameter OPREC, // = 32,
-	parameter MEM_DEPTH, // = 512,
-	parameter ADDRW, // = $clog2(MEM_DEPTH)
+	parameter LANES = 4,
+	parameter DATAW = 32,
+	parameter IPREC = 8,
+	parameter OPREC = 32,
+	parameter MEM_DEPTH = 64,
+	parameter ADDRW = 6
 )(
 	input              	clk,
 	input              	rst,

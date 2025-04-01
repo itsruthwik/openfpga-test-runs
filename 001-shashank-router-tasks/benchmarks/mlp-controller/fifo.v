@@ -20,10 +20,10 @@ full: Signal asserted when FIFO is full
 almost_full: Signal asserted when FIFO is almost full defined by ALMOST_FULL_DEPTH
 **/
 module fifo # (
-    parameter DATAW, // = 64,
-    parameter DEPTH, // = 128,
-    parameter ADDRW, // = $clog2(DEPTH),
-    parameter ALMOST_FULL_DEPTH, // = DEPTH
+    parameter DATAW = 32,
+    parameter DEPTH = 64,
+    parameter ADDRW = 6,
+    parameter ALMOST_FULL_DEPTH =51
 )(
     input  clk,
     input  rst,
