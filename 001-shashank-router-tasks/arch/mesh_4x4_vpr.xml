@@ -398,7 +398,7 @@
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
   <layout tileable="true" through_channel="false" concat_pass_wire="true">
-  <fixed_layout name="large" width="70" height="70">
+  <fixed_layout name="large" width="100" height="100">
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
 

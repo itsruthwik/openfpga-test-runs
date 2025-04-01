@@ -276,14 +276,14 @@ module router_wrap #(
     logic [NOC_NUM_ENDPOINTS - 1:0][ROUTE_WIDTH - 1 : 0] routing_table ;
 
 routing_table_4x4 #(
-    .NUM_ROWS(2),  
-    .NUM_COLS(2),  
-    .NUM_OUTPUTS(NUM_PORTS), 
+    // .NUM_ROWS(2),  
+    // .NUM_COLS(2),  
+    // .NUM_OUTPUTS(NUM_PORTS), 
     .ROUTE_WIDTH(ROUTE_WIDTH),
-    .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
+    // .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
 ) rtr_table (
     .router_address(router_address),
-    .routing_table(routing_table) 
+    .routing_table_flat(routing_table) 
 );
 
     router #(
