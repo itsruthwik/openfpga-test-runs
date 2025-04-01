@@ -1,7 +1,7 @@
 module memory_block # (
     parameter DATAW = 32,
     parameter DEPTH = 64,
-    parameter ADDRW = 6
+    parameter ADDRW = 6   
 )(
     input                      clk,
     input                      rst,
@@ -11,13 +11,12 @@ module memory_block # (
     input      [ADDRW-1:0]     raddr,
     output reg [DATAW-1:0]     rdata
 );
-    reg [DATAW*DEPTH-1:0] mem_flat;
+    reg [DATAW-1:0] mem [DEPTH-1:0];
     
     always @(posedge clk) begin
-        rdata <= mem_flat[raddr*DATAW +: DATAW];
-        
+        rdata <= mem[raddr];
         if (wen) begin
-            mem_flat[waddr*DATAW +: DATAW] <= wdata;
+            mem[waddr] <= wdata;
         end
     end
 
