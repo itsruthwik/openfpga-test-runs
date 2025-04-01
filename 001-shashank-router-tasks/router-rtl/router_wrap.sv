@@ -275,7 +275,7 @@ module router_wrap #(
 
     logic [NOC_NUM_ENDPOINTS - 1:0][ROUTE_WIDTH - 1 : 0] routing_table ;
 
-routing_table #(
+routing_table_4x4 #(
     .NUM_ROWS(2),  
     .NUM_COLS(2),  
     .NUM_OUTPUTS(NUM_PORTS), 
