@@ -64,15 +64,15 @@ module mvm_noc #(
 
     // 2 mvms
     wire [1:0] mvm_in_tvalid;
-    wire [1*DATAW-1:0] mvm_in_tdata;
-    wire [1*DESTW-1:0] mvm_in_tdest;
-    wire [1*USERW-1:0] mvm_in_tuser;
+    wire [2*DATAW-1:0] mvm_in_tdata;
+    wire [2*DESTW-1:0] mvm_in_tdest;
+    wire [2*USERW-1:0] mvm_in_tuser;
     wire [1:0] mvm_in_tlast;
     wire [1:0] mvm_in_tready;
     wire [1:0] mvm_out_tvalid;
-    wire [1*DATAW-1:0] mvm_out_tdata;
-    wire [1*DESTW-1:0] mvm_out_tdest;
-    wire [1*USERW-1:0] mvm_out_tuser;
+    wire [2*DATAW-1:0] mvm_out_tdata;
+    wire [2*DESTW-1:0] mvm_out_tdest;
+    wire [2*USERW-1:0] mvm_out_tuser;
     wire [1:0] mvm_out_tlast;
     wire [1:0] mvm_out_tready;
 
