@@ -1,4 +1,4 @@
-module mvm_noc #(
+module mvm_noc_hard #(
     parameter DATAW = 32,                   
     parameter BYTEW = 8,                  
     parameter IDW = 32,      
@@ -46,7 +46,18 @@ module mvm_noc #(
     output                 AXIS_M_TLAST,
     output   [IDW-1:0]     AXIS_M_TID,
     output   [USERW-1:0]   AXIS_M_TUSER,
-    output   [DESTW-1:0]   AXIS_M_TDEST
+    output   [DESTW-1:0]   AXIS_M_TDEST,
+
+    input     [0:NUM_PORTS-2][0:NUM_PORTS-1]           DISABLE_TURNS_0 ,
+    input     [0:NUM_PORTS-2][0:NUM_PORTS-1]           DISABLE_TURNS_1 ,
+    input     [0:NUM_PORTS-2][0:NUM_PORTS-1]           DISABLE_TURNS_2 ,
+
+    output                      dummy_axis_out_tlast_0,
+    output                      dummy_axis_out_tlast_1,
+    output                      dummy_axis_out_tlast_2
+
+
+
 );
     // NoC parameters
     // rows = 2 , cols=2  but consider 4x4 mesh for sizes 
@@ -95,16 +106,16 @@ module mvm_noc #(
     wire [3*TDATAW-1:0] mesh_out_tdata;
     wire [3*RTR_ADDR_WIDTH-1:0] router_address;
 
-    wire [2:0] temp_data_in;
-    wire [2:0] temp_dest_in;
-    wire [2:0] temp_is_tail_in;
-    wire [2:0] temp_send_in;
-    wire [2:0] temp_credit_out;
-    wire [2:0] temp_data_out;
-    wire [2:0] temp_dest_out;
-    wire [2:0] temp_is_tail_out;
-    wire [2:0] temp_send_out;
-    wire [2:0] temp_credit_in;
+    // wire [2:0] temp_data_in;
+    // wire [2:0] temp_dest_in;
+    // wire [2:0] temp_is_tail_in;
+    // wire [2:0] temp_send_in;
+    // wire [2:0] temp_credit_out;
+    // wire [2:0] temp_data_out;
+    // wire [2:0] temp_dest_out;
+    // wire [2:0] temp_is_tail_out;
+    // wire [2:0] temp_send_out;
+    // wire [2:0] temp_credit_in;
 
     assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 0;
     assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
@@ -225,16 +236,18 @@ module mvm_noc #(
         .axis_out_tlast(axis_out_tlast[0]),
         .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
 
-        .data_in(temp_data_in[0]),
-        .dest_in(temp_dest_in[0]),
-        .is_tail_in(temp_is_tail_in[0]),
-        .send_in(temp_send_in[0]),
-        .credit_out(temp_credit_out[0]),
-        .data_out(temp_data_out[0]),
-        .dest_out(temp_dest_out[0]),
-        .is_tail_out(temp_is_tail_out[0]),
-        .send_out(temp_send_out[0]),
-        .credit_in(temp_credit_in[0]),
+        // .data_in(temp_data_in[0]),
+        // .dest_in(temp_dest_in[0]),
+        // .is_tail_in(temp_is_tail_in[0]),
+        // .send_in(temp_send_in[0]),
+        // .credit_out(temp_credit_out[0]),
+        // .data_out(temp_data_out[0]),
+        // .dest_out(temp_dest_out[0]),
+        // .is_tail_out(temp_is_tail_out[0]),
+        // .send_out(temp_send_out[0]),
+        // .credit_in(temp_credit_in[0]),
+
+        .DISABLE_TURNS(DISABLE_TURNS_0),
         
         .router_address(router_address[0*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
@@ -269,16 +282,18 @@ module mvm_noc #(
         .axis_out_tlast(axis_out_tlast[1]),
         .axis_out_tdest(axis_out_tdest[1*DESTW +: DESTW]),
 
-        .data_in(temp_data_in[1]),
-        .dest_in(temp_dest_in[1]),
-        .is_tail_in(temp_is_tail_in[1]),
-        .send_in(temp_send_in[1]),
-        .credit_out(temp_credit_out[1]),
-        .data_out(temp_data_out[1]),
-        .dest_out(temp_dest_out[1]),
-        .is_tail_out(temp_is_tail_out[1]),
-        .send_out(temp_send_out[1]),
-        .credit_in(temp_credit_in[1]),
+        // .data_in(temp_data_in[1]),
+        // .dest_in(temp_dest_in[1]),
+        // .is_tail_in(temp_is_tail_in[1]),
+        // .send_in(temp_send_in[1]),
+        // .credit_out(temp_credit_out[1]),
+        // .data_out(temp_data_out[1]),
+        // .dest_out(temp_dest_out[1]),
+        // .is_tail_out(temp_is_tail_out[1]),
+        // .send_out(temp_send_out[1]),
+        // .credit_in(temp_credit_in[1]),
+
+        .DISABLE_TURNS(DISABLE_TURNS_1),
 
 
         .router_address(router_address[1*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
@@ -315,33 +330,36 @@ module mvm_noc #(
         .axis_out_tlast(axis_out_tlast[2]),
         .axis_out_tdest(axis_out_tdest[2*DESTW +: DESTW]),
 
-        .data_in(temp_data_in[2]),
-        .dest_in(temp_dest_in[2]),
-        .is_tail_in(temp_is_tail_in[2]),
-        .send_in(temp_send_in[2]),
-        .credit_out(temp_credit_out[2]),
-        .data_out(temp_data_out[2]),
-        .dest_out(temp_dest_out[2]),
-        .is_tail_out(temp_is_tail_out[2]),
-        .send_out(temp_send_out[2]),
-        .credit_in(temp_credit_in[2]),
+        // .data_in(temp_data_in[2]),
+        // .dest_in(temp_dest_in[2]),
+        // .is_tail_in(temp_is_tail_in[2]),
+        // .send_in(temp_send_in[2]),
+        // .credit_out(temp_credit_out[2]),
+        // .data_out(temp_data_out[2]),
+        // .dest_out(temp_dest_out[2]),
+        // .is_tail_out(temp_is_tail_out[2]),
+        // .send_out(temp_send_out[2]),
+        // .credit_in(temp_credit_in[2]),
+
+        .DISABLE_TURNS(DISABLE_TURNS_2),
+
 
         .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
     // router to router
-    assign temp_data_in[0]  = temp_data_out[1]; 
-    assign temp_dest_in[0]  = temp_dest_out[1]; 
-    assign temp_is_tail_in[0]  = temp_is_tail_out[1]; 
-    assign temp_send_in[0]  = temp_send_out[1]; 
+    // assign temp_data_in[0]  = temp_data_out[1]; 
+    // assign temp_dest_in[0]  = temp_dest_out[1]; 
+    // assign temp_is_tail_in[0]  = temp_is_tail_out[1]; 
+    // assign temp_send_in[0]  = temp_send_out[1]; 
 
-    assign temp_data_in[1]  = temp_data_out[2]; 
-    assign temp_dest_in[1]  = temp_dest_out[2]; 
-    assign temp_is_tail_in[1]  = temp_is_tail_out[2]; 
-    assign temp_send_in[1]  = temp_send_out[2]; 
+    // assign temp_data_in[1]  = temp_data_out[2]; 
+    // assign temp_dest_in[1]  = temp_dest_out[2]; 
+    // assign temp_is_tail_in[1]  = temp_is_tail_out[2]; 
+    // assign temp_send_in[1]  = temp_send_out[2]; 
 
-    assign temp_credit_in[2] = temp_credit_out[1];
-    assign temp_credit_in[1] = temp_credit_out[0];
+    // assign temp_credit_in[2] = temp_credit_out[1];
+    // assign temp_credit_in[1] = temp_credit_out[0];
 
     // mvm to router 
     assign mvm_in_tvalid[1] = axis_out_tvalid[1];
@@ -372,5 +390,25 @@ module mvm_noc #(
     // assign AXIS_M_TUSER = mvm_out_tuser[0];
     assign axis_in_tlast[0] = mvm_out_tlast[0];
     assign axis_in_tready[0] = mvm_out_tready[0];
+
+    assign dummy_axis_out_tlast_0 = axis_out_tlast[0];
+    assign dummy_axis_out_tlast_1 = axis_out_tlast[1];
+    assign dummy_axis_out_tlast_2 = axis_out_tlast[2];
+    
+
+    assign axis_in_tvalid[2] = AXIS_S_TVALID ;
+    assign axis_in_tdata[2*DATAW +: DATAW] = AXIS_S_TDATA ;;
+    assign axis_in_tlast[2] = AXIS_S_TLAST ;
+    assign axis_in_tdest[2*DESTW +: DESTW] = AXIS_S_TDEST ;
+
+    assign AXIS_S_TREADY = axis_in_tready[2] ;
+    
+    assign AXIS_M_TVALID = axis_out_tvalid[2] ;
+    assign axis_out_tready[2] =  AXIS_M_TREADY ;
+    assign AXIS_M_TDATA = axis_out_tdata[2*DATAW +: DATAW] ; 
+    assign AXIS_M_TLAST = axis_out_tlast[2] ;
+    // assign AXIS_M_TID =
+    assign AXIS_M_TUSER = axis_out_tuser[2*USERW +: USERW] ;
+    assign AXIS_M_TDEST = axis_out_tdest[2*DESTW +: DESTW] ;
 
 endmodule
