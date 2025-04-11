@@ -12,7 +12,7 @@
 
 module router #(
     parameter NOC_NUM_ENDPOINTS = 5,
-    parameter ROUTING_TABLE_HEX = "routing_tables/router_tb_5x5.hex",
+    // parameter ROUTING_TABLE_HEX = "routing_tables/router_tb_5x5.hex",
     parameter NUM_INPUTS = 5,
     parameter NUM_OUTPUTS = 5,
     parameter DEST_WIDTH = 3,
@@ -38,7 +38,7 @@ module router #(
     output  logic   [0:NUM_OUTPUTS-1]                        send_out   ,
     input   wire    [0:NUM_OUTPUTS-1]                        credit_in  ,
 
-    input logic [0:NOC_NUM_ENDPOINTS-1][$clog2(NUM_OUTPUTS) - 1 : 0]  route_table,
+    input wire [0:NOC_NUM_ENDPOINTS-1][$clog2(NUM_OUTPUTS) - 1 : 0]  route_table,
 
     input   bit    [0:NUM_INPUTS-1][0:NUM_OUTPUTS-1]                         DISABLE_TURNS 
 );
@@ -322,7 +322,7 @@ module router #(
     generate begin: flit_buffer_gen
         genvar i;
         for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
-           scfifo #(
+            fifo_agilex7 #(
                 .WIDTH      (FLIT_WIDTH),
                 .DEPTH      (FLIT_BUFFER_DEPTH),
                 .FORCE_MLAB (FORCE_MLAB))
@@ -344,7 +344,7 @@ module router #(
     generate begin: tail_buffer_gen
         genvar i;
         for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
-           scfifo #(
+            fifo_agilex7 #(
                 .WIDTH      (1),
                 .DEPTH      (FLIT_BUFFER_DEPTH))
                 // .FORCE_MLAB (FORCE_MLAB))
@@ -366,7 +366,7 @@ module router #(
     generate begin: dest_buffer_gen
         genvar i;
         for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
-           scfifo #(
+            fifo_agilex7 #(
                 .WIDTH      (DEST_WIDTH),
                 .DEPTH      (FLIT_BUFFER_DEPTH),
                 .FORCE_MLAB (FORCE_MLAB))
@@ -511,3 +511,337 @@ module router #(
     );
 
 endmodule: router
+
+module arbiter_matrix #(
+    parameter NUM_INPUTS = 4
+) (
+    input   wire                            clk,
+    input   wire                            rst_n,
+
+    input   wire    [NUM_INPUTS - 1 : 0]    request,
+    input   wire    [NUM_INPUTS - 1 : 0]    hold,
+    output  logic   [NUM_INPUTS - 1 : 0]    grant
+);
+    logic matrix [NUM_INPUTS][NUM_INPUTS];
+
+    // Hold input is expected to high from when the request is made
+    // till before the last cycle of the required grant but to keep
+    // the grants stable during a hold, we need to latch the grants
+    // after the first cycle of the hold and keep them stable till
+    // after the last cycle of the hold while the new grant is generated
+    // This is done by using a delay on the hold signal which is used to
+    // combinationally affect the grant and hold circuit
+    logic [NUM_INPUTS - 1 : 0] hold_delay;
+    logic anyhold;
+    logic [NUM_INPUTS - 1 : 0] grant_int, grant_prev;
+
+    logic deactivate [NUM_INPUTS];
+
+    // Generate instantaneous grant logic combinationally
+    always_comb begin
+        for (int i = 0; i < NUM_INPUTS; i++) begin
+            grant_int[i] = request[i] & ~deactivate[i];
+        end
+    end
+
+    // Latch grant and hold logic
+    always_ff @(posedge clk) begin
+        // This should not depend on request since request is only dependent on
+        // data being valid but hold must act to hold the request for when it is
+        // low. Hold is later gated by whether grant is high or not which
+        // accounts for the case when the request is low to start and the
+        // request has not been granted yet so as to not hold a no-grant
+        hold_delay <= hold;
+        if (rst_n == 1'b0) begin
+            grant_prev <= '0;
+        end else begin
+            grant_prev <= grant;
+        end
+    end
+
+    // Generate anyhold signal
+    always_comb begin
+        anyhold = 1'b0;
+        for (int i = 0; i < NUM_INPUTS; i++) begin
+            anyhold = anyhold | (hold_delay[i] & grant_prev[i]);
+        end
+    end
+
+    // Generate grant logic
+    always_comb begin
+        for (int i = 0; i < NUM_INPUTS; i++) begin
+            grant[i] = (hold_delay[i] & grant_prev[i]) ? grant_prev[i] : (grant_int[i] & ~anyhold);
+        end
+    end
+
+    // Generate deactivate signals
+    always_comb begin
+        for (int i = 0; i < NUM_INPUTS; i++) begin
+            deactivate[i] = 1'b0;
+            for (int j = 0; j < NUM_INPUTS; j++) begin
+                deactivate[i] = deactivate[i] | (matrix[j][i] & request[j]);
+            end
+        end
+    end
+
+    // Matrix update logic
+    always_ff @(posedge clk) begin
+        if (rst_n == 1'b0) begin
+            for (int i = 0; i < NUM_INPUTS; i++) begin
+                for (int j = i + 1; j < NUM_INPUTS; j++) begin
+                    matrix[i][j] <= 1'b1;
+                    matrix[j][i] <= 1'b0;
+                end
+            end
+            for (int i = 0; i < NUM_INPUTS; i++) begin
+                matrix[i][i] <= 1'b0;
+            end
+        end else begin
+            // Matrix can always be updated because grants are held with holds
+            for (int i = 1; i < NUM_INPUTS; i++) begin
+                for (int j = 0; j < i; j++) begin
+                    matrix[i][j] <= (matrix[i][j] & ~grant[i]) | grant[j];
+                    matrix[j][i] <= (matrix[j][i] & ~grant[j]) | grant[i];
+                end
+            end
+        end
+    end
+
+endmodule: arbiter_matrix
+
+module onehot_to_binary #(
+    parameter WIDTH = 4
+) (
+    input   wire    [WIDTH - 1 : 0]         onehot,
+    output  logic   [$clog2(WIDTH) - 1 : 0] binary
+);
+    always_comb begin
+        binary = '0;
+        for (int i = 0; i < WIDTH; i++) begin
+            binary |= onehot[i] ? i : '0;
+        end
+    end
+endmodule: onehot_to_binary
+
+module crossbar_onehot #(
+    parameter DATA_WIDTH = 32,
+    parameter NUM_INPUTS = 2,
+    parameter NUM_OUTPUTS = 2,
+    parameter MODE = "ONEHOT"       // BINARY, ONEHOT, EXPLICIT (supports upto 5x5)
+) (
+    input   wire    [0:NUM_INPUTS-1][DATA_WIDTH - 1 : 0]    data_in    ,
+    input   wire    [0:NUM_INPUTS-1]                        valid_in   ,
+
+    output  logic   [0:NUM_OUTPUTS-1][DATA_WIDTH - 1 : 0]    data_out    ,
+    output  logic   [0:NUM_OUTPUTS-1]                        valid_out   ,
+    input   wire    [0:NUM_OUTPUTS-1][NUM_INPUTS - 1 : 0]    select      
+);
+
+    generate begin: crossbar
+        if (MODE == "BINARY") begin
+            logic [$clog2(NUM_INPUTS) - 1 : 0] select_binary [NUM_OUTPUTS];
+            genvar i;
+            for (i = 0; i < NUM_OUTPUTS; i++) begin: for_outputs
+                onehot_to_binary #(
+                    .WIDTH (NUM_INPUTS)
+                ) onehot_to_binary_inst (
+                    .onehot (select[i]),
+                    .binary (select_binary[i])
+                );
+
+                assign data_out[i] = ((select[i] == '0) || data_in[select_binary[i]]);
+                assign valid_out[i] = (select[i] == '0) ? 1'b0 : valid_in[select_binary[i]];
+            end
+        end else if (MODE == "ONEHOT") begin
+            always_comb begin
+                for (int i = 0; i < NUM_OUTPUTS; i++) begin
+                    data_out[i] = '0;
+                    valid_out[i] = '0;
+                    for (int j = 0; j < NUM_INPUTS; j++) begin
+                        if (select[i][j]) begin
+                            data_out[i] |= data_in[j];
+                            valid_out[i] |= valid_in[j];
+                        end
+                    end
+                end
+            end
+        end else if (MODE == "EXPLICIT") begin
+            logic [4 : 0] select_expanded [NUM_OUTPUTS];
+
+            logic [DATA_WIDTH - 1 : 0] data_in_expanded[5];
+            logic valid_in_expanded[5];
+
+            genvar i;
+            for (i = 0; i < NUM_INPUTS; i++) begin: for_inputs
+                assign data_in_expanded[i] = data_in[i];
+                assign valid_in_expanded[i] = valid_in[i];
+            end
+
+            for (i = 0; i < NUM_OUTPUTS; i++) begin: for_outputs
+                assign select_expanded[i] = {'0, select[i]};
+
+                always_comb begin
+                    data_out[i] = 'x;
+                    valid_out[i] = 'x;
+                    case (select_expanded[i])
+                        5'b00000: begin
+                            data_out[i] = 'x;
+                            valid_out[i] = '0;
+                        end
+                        5'b00001: begin
+                            data_out[i] = data_in_expanded[0];
+                            valid_out[i] = valid_in_expanded[0];
+                        end
+                        5'b00010: begin
+                            data_out[i] = data_in_expanded[1];
+                            valid_out[i] = valid_in_expanded[1];
+                        end
+                        5'b00100: begin
+                            data_out[i] = data_in_expanded[2];
+                            valid_out[i] = valid_in_expanded[2];
+                        end
+                        5'b01000: begin
+                            data_out[i] = data_in_expanded[3];
+                            valid_out[i] = valid_in_expanded[3];
+                        end
+                        5'b10000: begin
+                            data_out[i] = data_in_expanded[4];
+                            valid_out[i] = valid_in_expanded[4];
+                        end
+                        default: begin
+                            data_out[i] = 'x;
+                            valid_out[i] = 1'bx;
+                        end
+                    endcase
+                end
+            end
+        end
+    end
+    endgenerate
+
+endmodule: crossbar_onehot
+
+module rc_pipeline #(
+    parameter DATA_WIDTH = 32,
+    parameter DEST_WIDTH = 4,
+    parameter NUM_OUTPUTS = 2,
+    parameter FLIT_BUFFER_DEPTH = 2,
+    parameter bit ENABLE = 1
+) (
+    input wire clk,
+    input wire rst_n,
+
+    // input   wire    [DATA_WIDTH - 1 : 0]                    data_in,
+    input   wire    [DEST_WIDTH - 1 : 0]                    dest_in,
+    input   wire                                            is_tail_in,
+    input   wire    [$clog2(NUM_OUTPUTS) - 1 : 0]           route_in,
+    input   wire    [0:NUM_OUTPUTS-1][$clog2(FLIT_BUFFER_DEPTH + 2) - 1 : 0] credit_count_in,
+    input   wire                                            valid_in,
+    output  logic                                           enable_out,
+
+    // output  logic   [DATA_WIDTH - 1 : 0]                    data_out,
+    output  logic   [DEST_WIDTH - 1 : 0]                    dest_out,
+    output  logic                                           is_tail_out,
+    output  logic   [$clog2(NUM_OUTPUTS) - 1 : 0]           route_out,
+    output  logic   [$clog2(FLIT_BUFFER_DEPTH + 2) - 1: 0]  credit_count_out,
+    output  logic                                           valid_out,
+    input   wire                                            enable_in
+);
+
+    generate begin: enable_gen
+        if (ENABLE == 1) begin
+            always_ff @(posedge clk) begin
+                if (rst_n == 1'b0) begin
+                    valid_out <= '0;
+                end else begin
+                    if (enable_in) valid_out <= 1'b0;
+                    if (valid_in) valid_out <= 1'b1;
+                end
+
+                if (~valid_out | enable_in) begin
+                    // data_out <= data_in;
+                    dest_out <= dest_in;
+                    is_tail_out <= is_tail_in;
+                    route_out <= route_in;
+                    credit_count_out <= credit_count_in[route_in];
+                end else begin
+                    credit_count_out <= credit_count_in[route_out];
+                end
+            end
+            assign enable_out = enable_in | ~valid_out;
+        end else if (ENABLE == 0) begin
+            // assign data_out = data_in;
+            assign dest_out = dest_in;
+            assign is_tail_out = is_tail_in;
+            assign route_out = route_in;
+            assign valid_out = valid_in;
+            assign credit_count_out = credit_count_in[route_in];
+
+            assign enable_out = enable_in;
+        end
+    end
+    endgenerate
+
+endmodule: rc_pipeline
+
+module sa_pipeline #(
+    parameter DATA_WIDTH = 32,
+    parameter DEST_WIDTH = 4,
+    parameter NUM_OUTPUTS = 2,
+    parameter FLIT_BUFFER_DEPTH = 2,
+    parameter bit ENABLE = 1
+) (
+    input   wire    clk,
+    input   wire    rst_n,
+
+    input   wire                                            grant,
+
+    // input   wire    [DATA_WIDTH - 1 : 0]                    data_in,
+    input   wire    [DEST_WIDTH - 1 : 0]                    dest_in,
+    input   wire                                            is_tail_in,
+    input   wire    [NUM_OUTPUTS - 1 : 0]                   grant_in,
+    input   wire    [$clog2(NUM_OUTPUTS) - 1 : 0]           route_in,
+    input   wire                                            valid_in,
+
+    // output  logic   [DATA_WIDTH - 1 : 0]                    data_out,
+    output  logic   [DEST_WIDTH - 1 : 0]                    dest_out,
+    output  logic                                           is_tail_out,
+    output  logic   [NUM_OUTPUTS - 1 : 0]                   grant_out,
+    output  logic   [$clog2(NUM_OUTPUTS) - 1 : 0]           route_out,
+    output  logic                                           valid_out,
+
+    input   wire                                            enable_in
+);
+    logic [NUM_OUTPUTS - 1 : 0] grant_reg;
+
+    generate begin: enable_gen
+        if (ENABLE == 1) begin
+            always_ff @(posedge clk) begin
+                if (rst_n == 1'b0) begin
+                    valid_out <= '0;
+                end else begin
+                    if (valid_in & grant & enable_in) valid_out <= 1'b1;
+                    else valid_out <= 1'b0;
+                end
+
+                if (enable_in) begin
+                    // data_out <= data_in;
+                    dest_out <= dest_in;
+                    is_tail_out <= is_tail_in;
+                    grant_reg <= grant_in;
+                    route_out <= route_in;
+                end
+            end
+            assign grant_out = valid_out ? grant_reg : '0;
+        end else if (ENABLE == 0) begin
+            // assign data_out = data_in;
+            assign dest_out = dest_in;
+            assign is_tail_out = is_tail_in;
+            assign grant_out = grant_in;
+            assign route_out = route_in;
+            assign valid_out = valid_in;
+        end
+    end
+    endgenerate
+
+endmodule: sa_pipeline

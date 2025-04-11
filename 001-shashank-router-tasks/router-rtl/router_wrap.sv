@@ -1,3 +1,4 @@
+// (* whitebox *)
 module router_wrap #(
     parameter RESET_SYNC_EXTEND_CYCLES = 2,
     parameter RESET_NUM_OUTPUT_REGISTERS = 1,
@@ -10,15 +11,15 @@ module router_wrap #(
     parameter TDEST_WIDTH = 4,
     parameter TDATA_WIDTH = 32,
     
-    parameter SERIALIZATION_FACTOR = 1,
-    parameter CLKCROSS_FACTOR = 1,
-    parameter bit SINGLE_CLOCK = 1,
-    parameter SERDES_IN_BUFFER_DEPTH = 256,
-    parameter SERDES_OUT_BUFFER_DEPTH = 256,
+    parameter SERIALIZATION_FACTOR =1,
+    parameter CLKCROSS_FACTOR =1,
+    parameter bit SINGLE_CLOCK =1,
+    parameter SERDES_IN_BUFFER_DEPTH = 4,
+    parameter SERDES_OUT_BUFFER_DEPTH = 4,
     parameter SERDES_EXTRA_SYNC_STAGES = 0,
     parameter SERDES_FORCE_MLAB = 0,
 
-    parameter FLIT_BUFFER_DEPTH = 256,
+    parameter FLIT_BUFFER_DEPTH = 4,
     // parameter ROUTING_TABLE_HEX = "routing_tables/router_4x4/",
 
     parameter bit ROUTER_PIPELINE_ROUTE_COMPUTE = 1,
@@ -29,8 +30,8 @@ module router_wrap #(
     parameter FLIT_WIDTH = TDATA_WIDTH / SERIALIZATION_FACTOR / CLKCROSS_FACTOR,
     parameter DEST_WIDTH = TDEST_WIDTH + TID_WIDTH,
 
-    parameter RTR_ADDR_WIDTH=4,
-    parameter ROUTE_WIDTH=4,
+    parameter RTR_ADDR_WIDTH = 6,
+    parameter ROUTE_WIDTH = 3,
 
     parameter NUM_PIPELINE = 0
 ) (
@@ -44,18 +45,18 @@ module router_wrap #(
 //  EAST = 3;
 //  WEST = 4;
     // rtr-to-rtr ports
-    input   wire    [0:NUM_PORTS - 2][FLIT_WIDTH - 1 : 0]    data_in,
-    input   wire    [0:NUM_PORTS - 2][DEST_WIDTH - 1 : 0]    dest_in     ,
-    input   wire    [0:NUM_PORTS - 2]                        is_tail_in  ,
-    input   wire    [0:NUM_PORTS - 2]                        send_in     ,
-    output  logic   [0:NUM_PORTS - 2]                        credit_out  ,
+    input   wire    [0:NUM_PORTS -2][FLIT_WIDTH - 1 : 0]    data_in     ,
+    input   wire    [0:NUM_PORTS -2][DEST_WIDTH - 1 : 0]    dest_in     ,
+    input   wire    [0:NUM_PORTS -2]                        is_tail_in  ,
+    input   wire    [0:NUM_PORTS -2]                        send_in     ,
+    output  logic   [0:NUM_PORTS -2]                        credit_out  ,
 
     output  logic   [0:NUM_PORTS - 2][FLIT_WIDTH - 1 : 0]    data_out    ,
     output  logic   [0:NUM_PORTS - 2][DEST_WIDTH - 1 : 0]    dest_out    ,
     output  logic   [0:NUM_PORTS - 2]                        is_tail_out ,
     output  logic   [0:NUM_PORTS - 2]                        send_out    ,
     input   wire    [0:NUM_PORTS - 2]                        credit_in   ,
-    input   bit     [0:NUM_PORTS-1][0:NUM_PORTS-1]           DISABLE_TURNS ,
+    input   bit     [0:NUM_PORTS-2][0:NUM_PORTS-1]           DISABLE_TURNS ,
 
 
 
@@ -205,11 +206,11 @@ module router_wrap #(
     //     end
     // end
 
-    logic [0:NUM_PORTS-1][FLIT_WIDTH - 1 : 0] data_in_combined;
-    logic [0:NUM_PORTS-1][DEST_WIDTH - 1 : 0] dest_in_combined;
-    logic [0:NUM_PORTS-1]is_tail_in_combined;
-    logic [0:NUM_PORTS-1]send_in_combined;
-    logic [0:NUM_PORTS-1]credit_out_combined;
+    logic [0:NUM_PORTS-1][FLIT_WIDTH - 1 : 0] data_in_combined ;
+    logic [0:NUM_PORTS-1][DEST_WIDTH - 1 : 0] dest_in_combined ;
+    logic [0:NUM_PORTS-1]  is_tail_in_combined ;
+    logic [0:NUM_PORTS-1]  send_in_combined ;
+    logic [0:NUM_PORTS-1]  credit_out_combined ;
 
     generate
         genvar k;
@@ -229,62 +230,96 @@ module router_wrap #(
         // assign credit_out_combined[NUM_PORTS - 1] = local_credit_out;
     endgenerate
 
-    logic [0:NUM_PORTS-1][FLIT_WIDTH - 1 : 0] data_out_combined;
-    logic [0:NUM_PORTS-1][DEST_WIDTH - 1 : 0] dest_out_combined;
-    logic [0:NUM_PORTS-1]is_tail_out_combined;
-    logic [0:NUM_PORTS-1]send_out_combined;
-    logic [0:NUM_PORTS-1]credit_in_combined;
+    logic [0:NUM_PORTS-1][FLIT_WIDTH - 1 : 0] data_out_combined ;
+    logic [0:NUM_PORTS-1][DEST_WIDTH - 1 : 0] dest_out_combined ;
+    logic [0:NUM_PORTS-1] is_tail_out_combined;
+    logic [0:NUM_PORTS-1] send_out_combined;
+    logic [0:NUM_PORTS-1] credit_in_combined;
 
-    // noc pipeline links
-    generate
-        genvar m;
-        for (m = 0; m < NUM_PORTS - 1; m++) begin: noc_links
-            // noc_pipeline_link #(
-            //     .NUM_PIPELINE(NUM_PIPELINE),
-            //     .FLIT_WIDTH(FLIT_WIDTH),
-            //     .DEST_WIDTH(DEST_WIDTH)
-            // ) noc_link (
-            //     .clk(clk_noc ),
-            //     .data_in(data_out_combined[m+1]),
-            //     .dest_in(dest_out_combined[m+1]),
-            //     .is_tail_in(is_tail_out_combined[m+1]),
-            //     .send_in(send_out_combined[m+1]),
-            //     .credit_out(credit_in[m]),
-            //     .data_out(data_out[m]),
-            //     .dest_out(dest_out[m]),
-            //     .is_tail_out(is_tail_out[m]),
-            //     .send_out(send_out[m]),
-            //     .credit_in(credit_in_combined[m+1])
-            // );
+    // // noc pipeline links
+    // generate
+    //     genvar m;
+    //     for (m = 0; m < NUM_PORTS - 1; m++) begin: noc_links
+    //         // noc_pipeline_link #(
+    //         //     .NUM_PIPELINE(NUM_PIPELINE),
+    //         //     .FLIT_WIDTH(FLIT_WIDTH),
+    //         //     .DEST_WIDTH(DEST_WIDTH)
+    //         // ) noc_link (
+    //         //     .clk(clk_noc ),
+    //         //     .data_in(data_out_combined[m+1]),
+    //         //     .dest_in(dest_out_combined[m+1]),
+    //         //     .is_tail_in(is_tail_out_combined[m+1]),
+    //         //     .send_in(send_out_combined[m+1]),
+    //         //     .credit_out(credit_in[m]),
+    //         //     .data_out(data_out[m]),
+    //         //     .dest_out(dest_out[m]),
+    //         //     .is_tail_out(is_tail_out[m]),
+    //         //     .send_out(send_out[m]),
+    //         //     .credit_in(credit_in_combined[m+1])
+    //         // );
 
-            assign data_out[m] = data_out_combined[m+1];
-            assign dest_out[m] = dest_out_combined[m+1];
-            assign is_tail_out[m] = is_tail_out_combined[m+1];
-            assign send_out[m] = send_out_combined[m+1];
-            // assign credit_in[m] = credit_in_combined[m+1];
-            assign credit_in_combined[m+1] = credit_in[m];
-        end
+    //         assign data_out[m] = data_out_combined[m+1];
+    //         assign dest_out[m] = dest_out_combined[m+1];
+    //         assign is_tail_out[m] = is_tail_out_combined[m+1];
+    //         assign send_out[m] = send_out_combined[m+1];
+    //         // assign credit_in[m] = credit_in_combined[m+1];
+    //         assign credit_in_combined[m+1] = credit_in[m];
+    //     end
 
-        assign local_data_out  = data_out_combined[0];
-        assign local_dest_out  = dest_out_combined[0];
-        assign local_is_tail_out  =  is_tail_out_combined[0];
-        assign local_send_out  = send_out_combined[0];
-        assign credit_in_combined[0] = local_credit_in;
-        // assign local_credit_in  =  credit_out_combined[NUM_PORTS - 1];
-    endgenerate
+    //     assign local_data_out  = data_out_combined[0];
+    //     assign local_dest_out  = dest_out_combined[0];
+    //     assign local_is_tail_out  =  is_tail_out_combined[0];
+    //     assign local_send_out  = send_out_combined[0];
+    //     assign credit_in_combined[0] = local_credit_in;
+    //     // assign local_credit_in  =  credit_out_combined[NUM_PORTS - 1];
+    // endgenerate
 
-    logic [NOC_NUM_ENDPOINTS - 1:0][ROUTE_WIDTH - 1 : 0] routing_table ;
+    assign data_out[0] = data_out_combined[1];
+    assign dest_out[0] = dest_out_combined[1];
+    assign is_tail_out[0] = is_tail_out_combined[1];
+    assign send_out[0] = send_out_combined[1];
+    assign credit_in_combined[1] = credit_in[0];
 
-routing_table_4x4 #(
-    // .NUM_ROWS(2),  
-    // .NUM_COLS(2),  
-    // .NUM_OUTPUTS(NUM_PORTS), 
-    .ROUTE_WIDTH(ROUTE_WIDTH),
-    // .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
-) rtr_table (
-    .router_address(router_address),
-    .routing_table_flat(routing_table) 
-);
+    assign data_out[1] = data_out_combined[2];
+    assign dest_out[1] = dest_out_combined[2];
+    assign is_tail_out[1] = is_tail_out_combined[2];
+    assign send_out[1] = send_out_combined[2];
+    assign credit_in_combined[2] = credit_in[1];
+
+    assign data_out[2] = data_out_combined[3];
+    assign dest_out[2] = dest_out_combined[3];
+    assign is_tail_out[2] = is_tail_out_combined[3];
+    assign send_out[2] = send_out_combined[3];
+    assign credit_in_combined[3] = credit_in[2];
+
+    assign data_out[3] = data_out_combined[4];
+    assign dest_out[3] = dest_out_combined[4];
+    assign is_tail_out[3] = is_tail_out_combined[4];
+    assign send_out[3] = send_out_combined[4];
+    assign credit_in_combined[4] = credit_in[3];
+
+    assign local_data_out  = data_out_combined[0];
+    assign local_dest_out  = dest_out_combined[0];
+    assign local_is_tail_out  =  is_tail_out_combined[0];
+    assign local_send_out  = send_out_combined[0];
+    assign credit_in_combined[0] = local_credit_in;
+
+    logic [NOC_NUM_ENDPOINTS - 1:0][ROUTE_WIDTH - 1 : 0] routing_table  ;
+
+// routing_table #(
+//     .NUM_ROWS(2),  
+//     .NUM_COLS(2),  
+//     .NUM_OUTPUTS(NUM_PORTS), 
+//     .ROUTE_WIDTH(ROUTE_WIDTH),
+//     .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
+// ) rtr_table (
+//     .router_address(router_address),
+//     .routing_table(routing_table) 
+// );
+    assign routing_table[0] = 4;
+    assign routing_table[1] = 0;
+    assign routing_table[2] = 4;
+    assign routing_table[3] = 2;
 
     router #(
         .NOC_NUM_ENDPOINTS      (NOC_NUM_ENDPOINTS),
@@ -320,8 +355,3 @@ routing_table_4x4 #(
     );
 
 endmodule: router_wrap
-
-
-
-
-
