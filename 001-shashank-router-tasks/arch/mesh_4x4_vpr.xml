@@ -212,18 +212,20 @@
             <port name="clk_noc" clock="clk_usr"/>
             <port name="clk_usr" is_clock="1"/>
             <port name="rst_n" clock="clk_usr"/>
+
             <port name="data_in" clock="clk_usr"/>
             <port name="dest_in" clock="clk_usr"/>
             <port name="is_tail_in" clock="clk_usr"/>
             <port name="send_in" clock="clk_usr"/>
             <port name="credit_in" clock="clk_usr"/>
-            <port name="DISABLE_TURNS" clock="clk_usr"/>
+
             <port name="axis_in_tvalid" clock="clk_usr"/>
             <port name="axis_in_tdata" clock="clk_usr"/>
             <port name="axis_in_tlast" clock="clk_usr"/>
             <port name="axis_in_tid" clock="clk_usr"/>
             <port name="axis_in_tdest" clock="clk_usr"/>
             <port name="axis_out_tready" clock="clk_usr"/>
+            
             <port name="router_address" clock="clk_usr"/>
             </input_ports>
          <output_ports>
@@ -232,6 +234,7 @@
             <port name="dest_out" clock="clk_usr"/>
             <port name="is_tail_out" clock="clk_usr"/>
             <port name="send_out" clock="clk_usr"/>
+            
             <port name="axis_in_tready" clock="clk_usr"/>
             <port name="axis_out_tvalid" clock="clk_usr"/>
             <port name="axis_out_tdata" clock="clk_usr"/>
@@ -246,7 +249,7 @@
       <sub_tile name="io" capacity="8">
         <equivalent_sites>
           <site pb_type="io"/>
-        </equivalent_sites>
+        </equivalent_sites>          
         <input name="outpad" num_pins="1"/>
         <output name="inpad" num_pins="1"/>
         <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10"/>
@@ -306,7 +309,9 @@
         <pinlocations pattern="custom">
           <loc side="left">memory.clk</loc>
           <loc side="top"/>
-          <loc side="right">memory.waddr[4:0] memory.raddr[4:0] memory.data_in[3:0] memory.wen memory.data_out[3:0]</loc>
+          <loc side="right" xoffset="0" yoffset="0">memory.waddr[4:0] memory.raddr[4:0]</loc>
+          <loc side="right" xoffset="0" yoffset="1">memory.data_in[3:0] memory.wen memory.data_out[3:0]</loc>
+         
           <loc side="bottom">memory.waddr[9:5] memory.raddr[9:5] memory.data_in[7:4] memory.ren memory.data_out[7:4]</loc>
         </pinlocations>
       </sub_tile>
@@ -330,7 +335,8 @@
         </pinlocations>
       </sub_tile>
     </tile>
-  <tile name="router_wrap_tile" width="5" height="5">
+  <!-- Tile height is an approximation based on CLB. router tile has 137 outputs on injection port. Considering CLB as a standard tile, in this arch, CLB has 20 outputs. So, router needs 137/20 = 6.85 ~= 7 tiles. -->
+  <tile name="router_wrap_tile" height="7" area="396000">
          <sub_tile name="router_wrap_tile">
             <equivalent_sites>
                <site pb_type="router_wrap_tile"/>
@@ -340,22 +346,21 @@
             <input name="rst_n" num_pins="1"/>
             
             <output name="credit_out" num_pins="4"/>
-            <input name="data_in" num_pins="128"/>
-            <input name="dest_in" num_pins="24"/>
+            <input name="data_in" num_pins="256"/>
+            <input name="dest_in" num_pins="16"/>
             <input name="is_tail_in" num_pins="4"/>
             <input name="send_in" num_pins="4"/>
 
             <input name="credit_in" num_pins="4"/>
-            <output name="data_out" num_pins="128"/>
-            <output name="dest_out" num_pins="24"/>
+            <output name="data_out" num_pins="256"/>
+            <output name="dest_out" num_pins="16"/>
             <output name="is_tail_out" num_pins="4"/>
             <output name="send_out" num_pins="4"/>
 
-            <input name="DISABLE_TURNS" num_pins="25"/>
             <input name="router_address" num_pins="4"/>
 
             <input name="axis_in_tvalid" num_pins="1"/>
-            <input name="axis_in_tdata" num_pins="32"/>
+            <input name="axis_in_tdata" num_pins="128"/>
             <input name="axis_in_tlast" num_pins="1"/>
             <input name="axis_in_tid" num_pins="2"/>
             <input name="axis_in_tdest" num_pins="4"/>
@@ -363,11 +368,12 @@
 
             <output name="axis_in_tready" num_pins="1"/>
             <output name="axis_out_tvalid" num_pins="1"/>
-            <output name="axis_out_tdata" num_pins="32"/>
+            <output name="axis_out_tdata" num_pins="128"/>
             <output name="axis_out_tlast" num_pins="1"/>
             <output name="axis_out_tid" num_pins="2"/>
             <output name="axis_out_tdest" num_pins="4"/>
-            <fc in_type="frac" in_val="0.055" out_type="frac" out_val="0.075">
+
+            <fc in_type="frac" in_val="0.15" out_type="frac" out_val="0.10">
             <!-- fc =0 for router to router ports -->
                 <fc_override port_name="data_in" fc_type="frac" fc_val="0"/>
                 <fc_override port_name="dest_in" fc_type="frac" fc_val="0"/>
@@ -382,15 +388,15 @@
             </fc>
                <!-- <pinlocations pattern="spread"> </pinlocations> -->
             <pinlocations pattern="custom">
-              <loc side="top" xoffset="4" yoffset="0"> router_wrap_tile.data_in[0:31]  router_wrap_tile.dest_in[0:5]  router_wrap_tile.data_out[0:31]  router_wrap_tile.dest_out[0:5]  router_wrap_tile.is_tail_in[0:0]  router_wrap_tile.send_in[0:0]  router_wrap_tile.credit_out[0:0]  router_wrap_tile.is_tail_out[0:0]  router_wrap_tile.send_out[0:0]  router_wrap_tile.credit_in[0:0]</loc>
-              <loc side="right" xoffset="0" yoffset="4"> router_wrap_tile.data_in[64:95] router_wrap_tile.dest_in[6:11] router_wrap_tile.data_out[64:95] router_wrap_tile.dest_out[6:11] router_wrap_tile.is_tail_in[2:2] router_wrap_tile.send_in[2:2] router_wrap_tile.credit_out[2:2] router_wrap_tile.is_tail_out[2:2] router_wrap_tile.send_out[2:2] router_wrap_tile.credit_in[2:2]</loc>
-              <loc side="bottom" xoffset="4" yoffset="0"> router_wrap_tile.data_in[32:63] router_wrap_tile.dest_in[12:17] router_wrap_tile.data_out[32:63] router_wrap_tile.dest_out[12:17] router_wrap_tile.is_tail_in[1:1] router_wrap_tile.send_in[1:1] router_wrap_tile.credit_out[1:1] router_wrap_tile.is_tail_out[1:1] router_wrap_tile.send_out[1:1] router_wrap_tile.credit_in[1:1]</loc>
-              <loc side="left" xoffset="0" yoffset="4"> router_wrap_tile.data_in[96:127] router_wrap_tile.dest_in[18:23] router_wrap_tile.data_out[96:127] router_wrap_tile.dest_out[13:23] router_wrap_tile.is_tail_in[3:3] router_wrap_tile.send_in[3:3] router_wrap_tile.credit_out[3:3] router_wrap_tile.is_tail_out[3:3] router_wrap_tile.send_out[3:3] router_wrap_tile.credit_in[3:3]</loc>
+              <loc side="top">                           router_wrap_tile.data_in[0:63]  router_wrap_tile.dest_in[0:3]  router_wrap_tile.data_out[0:63]  router_wrap_tile.dest_out[0:3]  router_wrap_tile.is_tail_in[0:0]  router_wrap_tile.send_in[0:0]  router_wrap_tile.credit_out[0:0]  router_wrap_tile.is_tail_out[0:0]  router_wrap_tile.send_out[0:0]  router_wrap_tile.credit_in[0:0]</loc>
+              <loc side="bottom">                        router_wrap_tile.data_in[64:127] router_wrap_tile.dest_in[8:11] router_wrap_tile.data_out[64:127] router_wrap_tile.dest_out[8:11] router_wrap_tile.is_tail_in[1:1] router_wrap_tile.send_in[1:1] router_wrap_tile.credit_out[1:1] router_wrap_tile.is_tail_out[1:1] router_wrap_tile.send_out[1:1] router_wrap_tile.credit_in[1:1]</loc>
+              <loc side="right" xoffset="0" yoffset="3"> router_wrap_tile.data_in[128:191] router_wrap_tile.dest_in[4:7] router_wrap_tile.data_out[128:191] router_wrap_tile.dest_out[4:7] router_wrap_tile.is_tail_in[2:2] router_wrap_tile.send_in[2:2] router_wrap_tile.credit_out[2:2] router_wrap_tile.is_tail_out[2:2] router_wrap_tile.send_out[2:2] router_wrap_tile.credit_in[2:2]</loc>
+              <loc side="left"  xoffset="0" yoffset="3"> router_wrap_tile.data_in[192:255] router_wrap_tile.dest_in[12:15] router_wrap_tile.data_out[192:255] router_wrap_tile.dest_out[12:15] router_wrap_tile.is_tail_in[3:3] router_wrap_tile.send_in[3:3] router_wrap_tile.credit_out[3:3] router_wrap_tile.is_tail_out[3:3] router_wrap_tile.send_out[3:3] router_wrap_tile.credit_in[3:3]</loc>
 
-              <loc side="left" xoffset="0" yoffset="0">router_wrap_tile.clk_noc router_wrap_tile.clk_usr router_wrap_tile.rst_n router_wrap_tile.router_address router_wrap_tile.DISABLE_TURNS</loc>
-              <loc side="left" xoffset="0" yoffset="1">router_wrap_tile.axis_in_tvalid router_wrap_tile.axis_in_tdata router_wrap_tile.axis_in_tlast router_wrap_tile.axis_in_tid</loc>
-              <loc side="bottom" xoffset="0" yoffset="0">router_wrap_tile.axis_in_tdest router_wrap_tile.axis_out_tready router_wrap_tile.axis_out_tvalid router_wrap_tile.axis_out_tdata[15:0]</loc>
-              <loc side="bottom" xoffset="1" yoffset="0">router_wrap_tile.axis_out_tdata[31:16] router_wrap_tile.axis_out_tlast router_wrap_tile.axis_out_tid router_wrap_tile.axis_out_tdest router_wrap_tile.axis_in_tready</loc>
+              <loc side="left"  xoffset="0" yoffset="0"> router_wrap_tile.clk_noc router_wrap_tile.clk_usr router_wrap_tile.rst_n router_wrap_tile.router_address </loc>
+              <loc side="left"  xoffset="0" yoffset="1"> router_wrap_tile.axis_in_tvalid router_wrap_tile.axis_in_tdata router_wrap_tile.axis_in_tlast router_wrap_tile.axis_in_tid</loc>
+              <loc side="right" xoffset="0" yoffset="1"> router_wrap_tile.axis_in_tdest router_wrap_tile.axis_out_tready router_wrap_tile.axis_out_tvalid router_wrap_tile.axis_out_tdata</loc>
+              <loc side="right" xoffset="0" yoffset="0"> router_wrap_tile.axis_out_tlast router_wrap_tile.axis_out_tid router_wrap_tile.axis_out_tdest router_wrap_tile.axis_in_tready</loc>
             </pinlocations>
             </sub_tile>
          </tile>
@@ -398,7 +404,7 @@
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
   <layout tileable="true" through_channel="false" concat_pass_wire="true">
-  <fixed_layout name="large" width="100" height="100">
+  <fixed_layout name="large" width="10" height="10">
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
 
@@ -1335,23 +1341,23 @@
       <clock name="clk_usr" num_pins="1"/>
       <input name="rst_n" num_pins="1"/>
 
-      <input name="data_in" num_pins="128"/>
-      <input name="dest_in" num_pins="24"/>
+      <input name="data_in" num_pins="256"/>
+      <input name="dest_in" num_pins="16"/>
       <input name="is_tail_in" num_pins="4"/>
       <input name="send_in" num_pins="4"/>
       <input name="credit_in" num_pins="4"/>
 
       <output name="credit_out" num_pins="4"/>
-      <output name="data_out" num_pins="128"/>
-      <output name="dest_out" num_pins="24"/>
+      <output name="data_out" num_pins="256"/>
+      <output name="dest_out" num_pins="16"/>
       <output name="is_tail_out" num_pins="4"/>
       <output name="send_out" num_pins="4"/>
 
-      <input name="DISABLE_TURNS" num_pins="25"/>
+      <!-- <input name="DISABLE_TURNS" num_pins="25"/> -->
       <input name="router_address" num_pins="4"/>
       
       <input name="axis_in_tvalid" num_pins="1"/>
-      <input name="axis_in_tdata" num_pins="32"/>
+      <input name="axis_in_tdata" num_pins="128"/>
       <input name="axis_in_tlast" num_pins="1"/>
       <input name="axis_in_tid" num_pins="2"/>
       <input name="axis_in_tdest" num_pins="4"/>
@@ -1359,7 +1365,7 @@
                   
       <output name="axis_in_tready" num_pins="1"/>
       <output name="axis_out_tvalid" num_pins="1"/>
-      <output name="axis_out_tdata" num_pins="32"/>
+      <output name="axis_out_tdata" num_pins="128"/>
       <output name="axis_out_tlast" num_pins="1"/>
       <output name="axis_out_tid" num_pins="2"/>
       <output name="axis_out_tdest" num_pins="4"/>
@@ -1369,23 +1375,23 @@
       <clock name="clk_usr" num_pins="1"/>
       <input name="rst_n" num_pins="1"/>
 
-      <input name="data_in" num_pins="128"/>
-      <input name="dest_in" num_pins="24"/>
+      <input name="data_in" num_pins="256"/>
+      <input name="dest_in" num_pins="16"/>
       <input name="is_tail_in" num_pins="4"/>
       <input name="send_in" num_pins="4"/>
       <input name="credit_in" num_pins="4"/>
 
       <output name="credit_out" num_pins="4"/>
-      <output name="data_out" num_pins="128"/>
-      <output name="dest_out" num_pins="24"/>
+      <output name="data_out" num_pins="256"/>
+      <output name="dest_out" num_pins="16"/>
       <output name="is_tail_out" num_pins="4"/>
       <output name="send_out" num_pins="4"/>
 
-      <input name="DISABLE_TURNS" num_pins="25"/>
+      <!-- <input name="DISABLE_TURNS" num_pins="25"/> -->
       <input name="router_address" num_pins="4"/>
       
       <input name="axis_in_tvalid" num_pins="1"/>
-      <input name="axis_in_tdata" num_pins="32"/>
+      <input name="axis_in_tdata" num_pins="128"/>
       <input name="axis_in_tlast" num_pins="1"/>
       <input name="axis_in_tid" num_pins="2"/>
       <input name="axis_in_tdest" num_pins="4"/>
@@ -1393,7 +1399,7 @@
                   
       <output name="axis_in_tready" num_pins="1"/>
       <output name="axis_out_tvalid" num_pins="1"/>
-      <output name="axis_out_tdata" num_pins="32"/>
+      <output name="axis_out_tdata" num_pins="128"/>
       <output name="axis_out_tlast" num_pins="1"/>
       <output name="axis_out_tid" num_pins="2"/>
       <output name="axis_out_tdest" num_pins="4"/>
@@ -1412,8 +1418,8 @@
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.send_in" clock="clk_usr"/>
             <T_setup value="66e-12" port="router_wrap.credit_in" clock="clk_usr"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.credit_in" clock="clk_usr"/>
-            <T_setup value="66e-12" port="router_wrap.DISABLE_TURNS" clock="clk_usr"/>
-            <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.DISABLE_TURNS" clock="clk_usr"/>
+            <!-- <T_setup value="66e-12" port="router_wrap.DISABLE_TURNS" clock="clk_usr"/> -->
+            <!-- <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.DISABLE_TURNS" clock="clk_usr"/> -->
             <T_setup value="66e-12" port="router_wrap.axis_in_tvalid" clock="clk_usr"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.axis_in_tvalid" clock="clk_usr"/>
             <T_setup value="66e-12" port="router_wrap.axis_in_tdata" clock="clk_usr"/>
@@ -1460,7 +1466,7 @@
             <direct name="connection_is_tail_in" input="router_wrap_tile.is_tail_in" output="router_wrap.is_tail_in"/>
             <direct name="connection_send_in" input="router_wrap_tile.send_in" output="router_wrap.send_in"/>
             <direct name="connection_credit_in" input="router_wrap_tile.credit_in" output="router_wrap.credit_in"/>
-            <direct name="connection_DISABLE_TURNS" input="router_wrap_tile.DISABLE_TURNS" output="router_wrap.DISABLE_TURNS"/>
+            <!-- <direct name="connection_DISABLE_TURNS" input="router_wrap_tile.DISABLE_TURNS" output="router_wrap.DISABLE_TURNS"/> -->
             <direct name="connection_axis_in_tvalid" input="router_wrap_tile.axis_in_tvalid" output="router_wrap.axis_in_tvalid"/>
             <direct name="connection_axis_in_tdata" input="router_wrap_tile.axis_in_tdata" output="router_wrap.axis_in_tdata"/>
             <direct name="connection_axis_in_tlast" input="router_wrap_tile.axis_in_tlast" output="router_wrap.axis_in_tlast"/>

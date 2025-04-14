@@ -228,20 +228,20 @@
 
       <port type="input" prefix="rst_n" lib_name="rst_n" size="1"/>
       
-      <port type="input" prefix="data_in" lib_name="data_in" size="128"/>
-      <port type="input" prefix="dest_in" lib_name="dest_in" size="24"/>
+      <port type="input" prefix="data_in" lib_name="data_in" size="256"/>
+      <port type="input" prefix="dest_in" lib_name="dest_in" size="16"/>
       <port type="input" prefix="is_tail_in" lib_name="is_tail_in" size="4"/>
       <port type="input" prefix="send_in" lib_name="send_in" size="4"/>
       <port type="input" prefix="credit_in" lib_name="credit_in" size="4"/>
 
       <port type="output" prefix="credit_out" lib_name="credit_out" size="4"/>
-      <port type="output" prefix="data_out" lib_name="data_out" size="128"/>
-      <port type="output" prefix="dest_out" lib_name="dest_out" size="24"/>
+      <port type="output" prefix="data_out" lib_name="data_out" size="256"/>
+      <port type="output" prefix="dest_out" lib_name="dest_out" size="16"/>
       <port type="output" prefix="is_tail_out" lib_name="is_tail_out" size="4"/>
       <port type="output" prefix="send_out" lib_name="send_out" size="4"/>
       
       <port type="input" prefix="axis_in_tvalid" lib_name="axis_in_tvalid" size="1"/>
-      <port type="input" prefix="axis_in_tdata" lib_name="axis_in_tdata" size="32"/>
+      <port type="input" prefix="axis_in_tdata" lib_name="axis_in_tdata" size="128"/>
       <port type="input" prefix="axis_in_tlast" lib_name="axis_in_tlast" size="1"/>
       <port type="input" prefix="axis_in_tid" lib_name="axis_in_tid" size="2"/>
       <port type="input" prefix="axis_in_tdest" lib_name="axis_in_tdest" size="4"/>
@@ -249,14 +249,17 @@
       
       <port type="output" prefix="axis_in_tready" lib_name="axis_in_tready" size="1"/>
       <port type="output" prefix="axis_out_tvalid" lib_name="axis_out_tvalid" size="1"/>
-      <port type="output" prefix="axis_out_tdata" lib_name="axis_out_tdata" size="32"/>
+      <port type="output" prefix="axis_out_tdata" lib_name="axis_out_tdata" size="128"/>
       <port type="output" prefix="axis_out_tlast" lib_name="axis_out_tlast" size="1"/>
       <port type="output" prefix="axis_out_tid" lib_name="axis_out_tid" size="2"/>
       <port type="output" prefix="axis_out_tdest" lib_name="axis_out_tdest" size="4"/>
 
       <port type="input" prefix="router_address" lib_name="router_address" size="4"/>
-      <port type="input" prefix="DISABLE_TURNS" lib_name="DISABLE_TURNS" size="25"/>
 
+      <port type="input" prefix="DISABLE_TURNS" lib_name="DISABLE_TURNS" size="25"/>
+      
+      <port type="sram" prefix="routing_table" size="48" mode_select="true" circuit_model_name="DFFR" default_val="1"/>
+      <port type="sram" prefix="noc_config" size="64" mode_select="true" circuit_model_name="DFFR" default_val="1"/>
     </circuit_model>
   </circuit_library>
   <configuration_protocol>
