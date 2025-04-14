@@ -2,7 +2,7 @@ module noc_loaded #(
     parameter DATAW = 128,                   
     parameter BYTEW = 8,                  
     parameter IDW = 32,      
-    parameter DESTW = 32,    
+    parameter DESTW = ,    
     parameter USERW = 32,
     parameter IPRECISION = 8,         
     parameter OPRECISION = 8,      
@@ -26,7 +26,7 @@ module noc_loaded #(
     parameter NUM_PACKETS = 1,
     parameter HARD_LINK = 1
 ) (
-   input                  CLK,
+    input                  CLK,
     input                  CLK_NOC,
     input                  RST_N,
 
@@ -46,23 +46,7 @@ module noc_loaded #(
     output                 AXIS_M_TLAST,
     output   [IDW-1:0]     AXIS_M_TID,
     output   [USERW-1:0]   AXIS_M_TUSER,
-    output   [DESTW-1:0]   AXIS_M_TDEST,
-
-    // Debug/observation ports
-    output [DATAW-1:0]    DEBUG_RTR0_IN_TDATA,
-    output                DEBUG_RTR0_IN_TVALID,
-    output                DEBUG_RTR0_IN_TREADY,
-    output [DESTW-1:0]    DEBUG_RTR0_IN_TDEST,
-    
-    output [DATAW-1:0]    DEBUG_RTR0_OUT_TDATA,
-    output                DEBUG_RTR0_OUT_TVALID,
-    output                DEBUG_RTR0_OUT_TREADY,
-    output [DESTW-1:0]    DEBUG_RTR0_OUT_TDEST,
-    
-    output [3:0][FLIT_WIDTH-1:0] DEBUG_RTR0_TO_NEIGHBOR_DATA,
-    output [3:0]                 DEBUG_RTR0_TO_NEIGHBOR_SEND,
-    output [3:0]                 DEBUG_RTR0_CREDIT_IN
-    
+    output   [DESTW-1:0]   AXIS_M_TDEST
 );
     // NoC parameters
     // rows = 2 , cols=2  but consider 4x4 mesh for sizes 
@@ -79,6 +63,7 @@ module noc_loaded #(
     parameter DEST_WIDTH = TDESTW + TIDW;
 
 
+// 5routers    
     wire [4:0] axis_in_tvalid;
     wire [4:0] axis_in_tready;
     wire [5*DATAW-1:0] axis_in_tdata;
@@ -89,7 +74,7 @@ module noc_loaded #(
     wire [4:0] axis_out_tvalid;
     wire [4:0] axis_out_tready;
     wire [5*DATAW-1:0] axis_out_tdata;
-    wire [4:0] axis_out_tlast;
+    wire [:0] axis_out_tlast;
     wire [5*USERW-1:0] axis_out_tuser;
     wire [5*DESTW-1:0] axis_out_tdest;
 
@@ -97,16 +82,21 @@ module noc_loaded #(
     wire [5*TDATAW-1:0] mesh_out_tdata;
     wire [5*RTR_ADDR_WIDTH-1:0] router_address;
 
-    wire [4:0] temp_data_in;
-    wire [4:0] temp_dest_in;
-    wire [4:0] temp_is_tail_in;
-    wire [4:0] temp_send_in;
-    wire [4:0] temp_credit_out;
-    wire [4:0] temp_data_out;
-    wire [4:0] temp_dest_out;
-    wire [4:0] temp_is_tail_out;
-    wire [4:0] temp_send_out;
-    wire [4:0] temp_credit_in;
+// Define connection parameters
+localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
+
+// Create connection wires between routers
+wire [NUM_CONNECTIONS-1:0][FLIT_WIDTH-1:0] rtr0_to_neighbor_data;
+wire [NUM_CONNECTIONS-1:0][DEST_WIDTH-1:0] rtr0_to_neighbor_dest;
+wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_is_tail;
+wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_send;
+wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_credit;
+
+wire [NUM_CONNECTIONS-1:0][FLIT_WIDTH-1:0] neighbor_to_rtr0_data;
+wire [NUM_CONNECTIONS-1:0][DEST_WIDTH-1:0] neighbor_to_rtr0_dest;
+wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_is_tail;
+wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_send;
+wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_credit;
 
     assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 0;
     assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
@@ -117,36 +107,6 @@ module noc_loaded #(
     assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
     assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
 
-    assign DEBUG_RTR0_IN_TDATA = axis_in_tdata[0*DATAW +: DATAW];
-    assign DEBUG_RTR0_IN_TVALID = axis_in_tvalid[0];
-    assign DEBUG_RTR0_IN_TREADY = axis_in_tready[0];
-    assign DEBUG_RTR0_IN_TDEST = axis_in_tdest[0*DESTW +: DESTW];
-    
-    assign DEBUG_RTR0_OUT_TDATA = axis_out_tdata[0*DATAW +: DATAW];
-    assign DEBUG_RTR0_OUT_TVALID = axis_out_tvalid[0];
-    assign DEBUG_RTR0_OUT_TREADY = axis_out_tready[0];
-    assign DEBUG_RTR0_OUT_TDEST = axis_out_tdest[0*DESTW +: DESTW];
-    
-    assign DEBUG_RTR0_TO_NEIGHBOR_DATA = rtr0_to_neighbor_data;
-    assign DEBUG_RTR0_TO_NEIGHBOR_SEND = rtr0_to_neighbor_send;
-    assign DEBUG_RTR0_CREDIT_IN = rtr0_to_neighbor_credit;
-
-    // Connect AXI interfaces to Router 0
-    assign axis_in_tvalid[0] = AXIS_S_TVALID;
-    assign AXIS_S_TREADY = axis_in_tready[0];
-    assign axis_in_tdata[0*DATAW +: DATAW] = AXIS_S_TDATA;
-    assign axis_in_tlast[0] = AXIS_S_TLAST;
-    assign axis_in_tdest[0*DESTW +: DESTW] = AXIS_S_TDEST;
-    // Note: TID and TUSER not connected unless needed
-    
-    assign AXIS_M_TVALID = axis_out_tvalid[0];
-    assign axis_out_tready[0] = AXIS_M_TREADY;
-    assign AXIS_M_TDATA = axis_out_tdata[0*DATAW +: DATAW];
-    assign AXIS_M_TLAST = axis_out_tlast[0];
-    assign AXIS_M_TDEST = axis_out_tdest[0*DESTW +: DESTW];
-   
-
-//master module
 master_module master_inst (
     .clk(CLK),                    // Connect to system clock
     .reset(~RST_N),               // Active-high reset (invert router's active-low reset)
@@ -268,6 +228,20 @@ wrapper_pe pe_inst_4 (
     .axis_out_tdata(axis_out_tdata[0*DATAW +: DATAW]),
     .axis_out_tlast(),                       // Unused
     .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
+
+    .data_in     (neighbor_to_rtr0_data),
+    .dest_in     (neighbor_to_rtr0_dest),
+    .is_tail_in  (neighbor_to_rtr0_is_tail),
+    .send_in     (neighbor_to_rtr0_send),
+    .credit_out  (neighbor_to_rtr0_credit),
+    
+    .data_out    (rtr0_to_neighbor_data),
+    .dest_out    (rtr0_to_neighbor_dest),
+    .is_tail_out (rtr0_to_neighbor_is_tail),
+    .send_out    (rtr0_to_neighbor_send),
+    .credit_in   (rtr0_to_neighbor_credit),
+    
+    .DISABLE_TURNS ({4{'{default:0}}}),
         
         .router_address(router_address[0*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
@@ -302,6 +276,21 @@ wrapper_pe pe_inst_4 (
         .axis_out_tlast(axis_out_tlast[1]),
         .axis_out_tdest(axis_out_tdest[1*DESTW +: DESTW]),
 
+    .data_in     ({3'b0, rtr0_to_neighbor_data[0]}),
+    .dest_in     ({3'b0, rtr0_to_neighbor_dest[0]}),
+    .is_tail_in  ({3'b0, rtr0_to_neighbor_is_tail[0]}),
+    .send_in     ({3'b0, rtr0_to_neighbor_send[0]}),
+    .credit_out  ({3'b0, rtr0_to_neighbor_credit[0]}),
+    
+    .data_out    ({/*W,E,S*/, neighbor_to_rtr0_data[0]}),
+    .dest_out    ({/*W,E,S*/, neighbor_to_rtr0_dest[0]}),
+    .is_tail_out ({/*W,E,S*/, neighbor_to_rtr0_is_tail[0]}),
+    .send_out    ({/*W,E,S*/, neighbor_to_rtr0_send[0]}),
+    .credit_in   ({/*W,E,S*/, neighbor_to_rtr0_credit[0]}),
+    
+    .DISABLE_TURNS ({4{'{default:0}}})
+
+
         .router_address(router_address[1*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
@@ -311,6 +300,7 @@ wrapper_pe pe_inst_4 (
         .NUM_PORTS(NUM_PORTS),
         .TID_WIDTH(TIDW),
         .TDEST_WIDTH(TDESTW),
+        // .TDATA_WIDTH(TDATAW),
         .TDATA_WIDTH(DATAW),
         .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
         .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
@@ -319,7 +309,7 @@ wrapper_pe pe_inst_4 (
         .DEST_WIDTH(DEST_WIDTH),
         .ROUTE_WIDTH(ROUTE_WIDTH),
         .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
-    ) router_inst_2 (
+    ) router_inst_3 (
         .clk_noc(CLK_NOC),
         .clk_usr(CLK),
         .rst_n(RST_N),
@@ -335,48 +325,30 @@ wrapper_pe pe_inst_4 (
         .axis_out_tlast(axis_out_tlast[2]),
         .axis_out_tdest(axis_out_tdest[2*DESTW +: DESTW]),
 
+    .data_in     ({2'b0, rtr0_to_neighbor_data[1], 1'b0}),
+    .dest_in     ({2'b0, rtr0_to_neighbor_dest[1], 1'b0}),
+    .is_tail_in  ({2'b0, rtr0_to_neighbor_is_tail[1], 1'b0}),
+    .send_in     ({2'b0, rtr0_to_neighbor_send[1], 1'b0}),
+    .credit_out  ({2'b0, rtr0_to_neighbor_credit[1], 1'b0}),
+    
+    .data_out    ({/*E,W*/, neighbor_to_rtr0_data[1], /*N*/}),
+    .dest_out    ({/*E,W*/, neighbor_to_rtr0_dest[1], /*N*/}),
+    .is_tail_out ({/*E,W*/, neighbor_to_rtr0_is_tail[1], /*N*/}),
+    .send_out    ({/*E,W*/, neighbor_to_rtr0_send[1], /*N*/}),
+    .credit_in   ({/*E,W*/, neighbor_to_rtr0_credit[1], /*N*/}),
+    
+    .DISABLE_TURNS ({4{'{default:0}}})
+
         .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
-    // rtr 3
+        // rtr 4
     // (* keep *)
     router_wrap #(
         .NUM_PORTS(NUM_PORTS),
         .TID_WIDTH(TIDW),
         .TDEST_WIDTH(TDESTW),
-        .TDATA_WIDTH(DATAW),
-        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
-        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
-        .SINGLE_CLOCK(SINGLE_CLOCK),
-        .FLIT_WIDTH(FLIT_WIDTH),
-        .DEST_WIDTH(DEST_WIDTH),
-        .ROUTE_WIDTH(ROUTE_WIDTH),
-        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
-    ) router_inst_3 (
-        .clk_noc(CLK_NOC),
-        .clk_usr(CLK),
-        .rst_n(RST_N),
-
-        .axis_in_tvalid(axis_in_tvalid[3]),
-        .axis_in_tready(axis_in_tready[3]),
-        .axis_in_tdata(axis_in_tdata[3*DATAW +: DATAW]),
-        .axis_in_tlast(axis_in_tlast[3]),
-        .axis_in_tdest(axis_in_tdest[3*DESTW +: DESTW]),
-        .axis_out_tvalid(axis_out_tvalid[3]),
-        .axis_out_tready(axis_out_tready[3]),
-        .axis_out_tdata(axis_out_tdata[3*DATAW +: DATAW]),
-        .axis_out_tlast(axis_out_tlast[3]),
-        .axis_out_tdest(axis_out_tdest[3*DESTW +: DESTW]),
-
-        .router_address(router_address[3*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
-    );
-
-    // rtr 4
-    // (* keep *)
-    router_wrap #(
-        .NUM_PORTS(NUM_PORTS),
-        .TID_WIDTH(TIDW),
-        .TDEST_WIDTH(TDESTW),
+        // .TDATA_WIDTH(TDATAW),
         .TDATA_WIDTH(DATAW),
         .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
         .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
@@ -390,20 +362,34 @@ wrapper_pe pe_inst_4 (
         .clk_usr(CLK),
         .rst_n(RST_N),
 
-        .axis_in_tvalid(axis_in_tvalid[4]),
-        .axis_in_tready(axis_in_tready[4]),
-        .axis_in_tdata(axis_in_tdata[4*DATAW +: DATAW]),
-        .axis_in_tlast(axis_in_tlast[4]),
-        .axis_in_tdest(axis_in_tdest[4*DESTW +: DESTW]),
-        .axis_out_tvalid(axis_out_tvalid[4]),
-        .axis_out_tready(axis_out_tready[4]),
-        .axis_out_tdata(axis_out_tdata[4*DATAW +: DATAW]),
-        .axis_out_tlast(axis_out_tlast[4]),
-        .axis_out_tdest(axis_out_tdest[4*DESTW +: DESTW]),
+        .axis_in_tvalid(axis_in_tvalid[2]),
+        .axis_in_tready(axis_in_tready[2]),
+        .axis_in_tdata(axis_in_tdata[2*DATAW +: DATAW]),
+        .axis_in_tlast(axis_in_tlast[2]),
+        .axis_in_tdest(axis_in_tdest[2*DESTW +: DESTW]),
+        .axis_out_tvalid(axis_out_tvalid[2]),
+        .axis_out_tready(axis_out_tready[2]),
+        .axis_out_tdata(axis_out_tdata[2*DATAW +: DATAW]),
+        .axis_out_tlast(axis_out_tlast[2]),
+        .axis_out_tdest(axis_out_tdest[2*DESTW +: DESTW]),
 
-        .router_address(router_address[4*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+    // Connect only WEST port to Router 0
+    .data_in     ({1'b0, rtr0_to_neighbor_data[2], 2'b0}),
+    .dest_in     ({1'b0, rtr0_to_neighbor_dest[2], 2'b0}),
+    .is_tail_in  ({1'b0, rtr0_to_neighbor_is_tail[2], 2'b0}),
+    .send_in     ({1'b0, rtr0_to_neighbor_send[2], 2'b0}),
+    .credit_out  ({1'b0, rtr0_to_neighbor_credit[2], 2'b0}),
+    
+    .data_out    ({/*N*/, neighbor_to_rtr0_data[2], /*S,W*/}),
+    .dest_out    ({/*N*/, neighbor_to_rtr0_dest[2], /*S,W*/}),
+    .is_tail_out ({/*N*/, neighbor_to_rtr0_is_tail[2], /*S,W*/}),
+    .send_out    ({/*N*/, neighbor_to_rtr0_send[2], /*S,W*/}),
+    .credit_in   ({/*N*/, neighbor_to_rtr0_credit[2], /*S,W*/}),
+    
+    .DISABLE_TURNS ({4{'{default:0}}})
+
+        .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
-
 
 
 endmodule
