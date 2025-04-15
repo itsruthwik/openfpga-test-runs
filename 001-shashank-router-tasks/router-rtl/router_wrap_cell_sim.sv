@@ -2,37 +2,31 @@
 module router_wrap #(
     parameter RESET_SYNC_EXTEND_CYCLES = 2,
     parameter RESET_NUM_OUTPUT_REGISTERS = 1,
-
-    parameter NUM_PORTS = 5,
-    parameter NOC_NUM_ENDPOINTS = 4, // rows * cols
-
-    // parameter FLIT_WIDTH = 32,
-    parameter TID_WIDTH = 2,
-    parameter TDEST_WIDTH = 4,
-    parameter TDATA_WIDTH = 32,
     
-    parameter SERIALIZATION_FACTOR = 1,
+    parameter NUM_PORTS = 5,
+    parameter NOC_NUM_ENDPOINTS = 4,
+    
+    // Critical matching parameters
+    parameter TID_WIDTH = 2,     // From axis_*_tid pins
+    parameter TDEST_WIDTH = 4,   // From axis_*_tdest pins
+    parameter TDATA_WIDTH = 128, // From axis_*_tdata pins
+    
+    parameter SERIALIZATION_FACTOR = 2, // TDATA_WIDTH/(FLIT_WIDTH*CLKCROSS_FACTOR)
     parameter CLKCROSS_FACTOR = 1,
     parameter bit SINGLE_CLOCK = 1,
+    
+    // Derived parameters
+    parameter FLIT_WIDTH = TDATA_WIDTH/(SERIALIZATION_FACTOR*CLKCROSS_FACTOR), // =64
+    parameter DEST_WIDTH = TDEST_WIDTH + TID_WIDTH, // =6 (but must force to 4)
+    
+    // Buffer parameters
     parameter SERDES_IN_BUFFER_DEPTH = 256,
     parameter SERDES_OUT_BUFFER_DEPTH = 256,
-    parameter SERDES_EXTRA_SYNC_STAGES = 0,
-    parameter SERDES_FORCE_MLAB = 0,
-
     parameter FLIT_BUFFER_DEPTH = 256,
-    // parameter ROUTING_TABLE_HEX = "routing_tables/router_4x4/",
-
-    parameter bit ROUTER_PIPELINE_ROUTE_COMPUTE = 1,
-    parameter bit ROUTER_PIPELINE_ARBITER = 0,
-    parameter bit ROUTER_PIPELINE_OUTPUT = 0,
-    parameter bit ROUTER_FORCE_MLAB = 0,
-
-    parameter FLIT_WIDTH = TDATA_WIDTH / SERIALIZATION_FACTOR / CLKCROSS_FACTOR,
-    parameter DEST_WIDTH = TDEST_WIDTH + TID_WIDTH,
-
-    parameter RTR_ADDR_WIDTH=4,
-    parameter ROUTE_WIDTH=4,
-
+    
+    // Physical implementation
+    parameter RTR_ADDR_WIDTH = 4,  // From router_address pins
+    parameter ROUTE_WIDTH = 4,     // From dest_in/dest_out pin math
     parameter NUM_PIPELINE = 0
 ) (
     input   wire    clk_noc,

@@ -2,7 +2,7 @@ module noc_loaded #(
     parameter DATAW = 128,                   
     parameter BYTEW = 8,                  
     parameter IDW = 32,      
-    parameter DESTW = ,    
+    parameter DESTW = 32,    
     parameter USERW = 32,
     parameter IPRECISION = 8,         
     parameter OPRECISION = 8,      
@@ -20,7 +20,7 @@ module noc_loaded #(
     parameter FIFOD = 64,                  
     parameter USE_RELU = 1, 
     parameter DATAPATH_DELAY = 10,
-    parameter TDATAW = DATAW + USERW,
+    parameter TDATAW = 128,
     parameter TIDW = 2,
     parameter TDESTW = 4,
     parameter NUM_PACKETS = 1,
@@ -74,7 +74,7 @@ module noc_loaded #(
     wire [4:0] axis_out_tvalid;
     wire [4:0] axis_out_tready;
     wire [5*DATAW-1:0] axis_out_tdata;
-    wire [:0] axis_out_tlast;
+    wire [4:0] axis_out_tlast;
     wire [5*USERW-1:0] axis_out_tuser;
     wire [5*DESTW-1:0] axis_out_tdest;
 
