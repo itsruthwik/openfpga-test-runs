@@ -366,7 +366,7 @@
         </pinlocations>
       </sub_tile>
     </tile>
-  <tile name="router_wrap_tile" width="5" height="5">
+  <tile name="router_wrap_tile" width="3" height="3">
          <sub_tile name="router_wrap_tile">
             <equivalent_sites>
                <site pb_type="router_wrap_tile"/>
@@ -492,10 +492,10 @@
             </fc>
             <!-- <pinlocations pattern="spread"/>-->
             <pinlocations pattern="custom">
-              <loc side="top" xoffset="4" yoffset="0">router_wrap_tile.axis_in_tvalid_top router_wrap_tile.axis_in_tdata_top router_wrap_tile.axis_in_tlast_top router_wrap_tile.axis_in_tid_top router_wrap_tile.axis_in_tdest_top router_wrap_tile.axis_out_tready_top router_wrap_tile.axis_in_tready_top router_wrap_tile.axis_out_tvalid_top router_wrap_tile.axis_out_tdata_top router_wrap_tile.axis_out_tlast_top router_wrap_tile.axis_out_tid_top router_wrap_tile.axis_out_tdest_top</loc>
-              <loc side="right" xoffset="0" yoffset="4">router_wrap_tile.axis_in_tvalid_right router_wrap_tile.axis_in_tdata_right router_wrap_tile.axis_in_tlast_right router_wrap_tile.axis_in_tid_right router_wrap_tile.axis_in_tdest_right router_wrap_tile.axis_out_tready_right router_wrap_tile.axis_in_tready_right router_wrap_tile.axis_out_tvalid_right router_wrap_tile.axis_out_tdata_right router_wrap_tile.axis_out_tlast_right router_wrap_tile.axis_out_tid_right router_wrap_tile.axis_out_tdest_right</loc>
-              <loc side="bottom" xoffset="4" yoffset="0">router_wrap_tile.axis_in_tvalid_bottom router_wrap_tile.axis_in_tdata_bottom router_wrap_tile.axis_in_tlast_bottom router_wrap_tile.axis_in_tid_bottom router_wrap_tile.axis_in_tdest_bottom router_wrap_tile.axis_out_tready_bottom router_wrap_tile.axis_in_tready_bottom router_wrap_tile.axis_out_tvalid_bottom router_wrap_tile.axis_out_tdata_bottom router_wrap_tile.axis_out_tlast_bottom router_wrap_tile.axis_out_tid_bottom router_wrap_tile.axis_out_tdest_bottom</loc>
-              <loc side="left" xoffset="0" yoffset="4">router_wrap_tile.axis_in_tvalid_left router_wrap_tile.axis_in_tdata_left router_wrap_tile.axis_in_tlast_left router_wrap_tile.axis_in_tid_left router_wrap_tile.axis_in_tdest_left router_wrap_tile.axis_out_tready_left router_wrap_tile.axis_in_tready_left router_wrap_tile.axis_out_tvalid_left router_wrap_tile.axis_out_tdata_left router_wrap_tile.axis_out_tlast_left router_wrap_tile.axis_out_tid_left router_wrap_tile.axis_out_tdest_left</loc>
+              <loc side="top" xoffset="2" yoffset="0">router_wrap_tile.axis_in_tvalid_top router_wrap_tile.axis_in_tdata_top router_wrap_tile.axis_in_tlast_top router_wrap_tile.axis_in_tid_top router_wrap_tile.axis_in_tdest_top router_wrap_tile.axis_out_tready_top router_wrap_tile.axis_in_tready_top router_wrap_tile.axis_out_tvalid_top router_wrap_tile.axis_out_tdata_top router_wrap_tile.axis_out_tlast_top router_wrap_tile.axis_out_tid_top router_wrap_tile.axis_out_tdest_top</loc>
+              <loc side="right" xoffset="0" yoffset="2">router_wrap_tile.axis_in_tvalid_right router_wrap_tile.axis_in_tdata_right router_wrap_tile.axis_in_tlast_right router_wrap_tile.axis_in_tid_right router_wrap_tile.axis_in_tdest_right router_wrap_tile.axis_out_tready_right router_wrap_tile.axis_in_tready_right router_wrap_tile.axis_out_tvalid_right router_wrap_tile.axis_out_tdata_right router_wrap_tile.axis_out_tlast_right router_wrap_tile.axis_out_tid_right router_wrap_tile.axis_out_tdest_right</loc>
+              <loc side="bottom" xoffset="2" yoffset="0">router_wrap_tile.axis_in_tvalid_bottom router_wrap_tile.axis_in_tdata_bottom router_wrap_tile.axis_in_tlast_bottom router_wrap_tile.axis_in_tid_bottom router_wrap_tile.axis_in_tdest_bottom router_wrap_tile.axis_out_tready_bottom router_wrap_tile.axis_in_tready_bottom router_wrap_tile.axis_out_tvalid_bottom router_wrap_tile.axis_out_tdata_bottom router_wrap_tile.axis_out_tlast_bottom router_wrap_tile.axis_out_tid_bottom router_wrap_tile.axis_out_tdest_bottom</loc>
+              <loc side="left" xoffset="0" yoffset="2">router_wrap_tile.axis_in_tvalid_left router_wrap_tile.axis_in_tdata_left router_wrap_tile.axis_in_tlast_left router_wrap_tile.axis_in_tid_left router_wrap_tile.axis_in_tdest_left router_wrap_tile.axis_out_tready_left router_wrap_tile.axis_in_tready_left router_wrap_tile.axis_out_tvalid_left router_wrap_tile.axis_out_tdata_left router_wrap_tile.axis_out_tlast_left router_wrap_tile.axis_out_tid_left router_wrap_tile.axis_out_tdest_left</loc>
               <!-- Local/Core port and clocking -->
               <loc side="left" xoffset="0" yoffset="0">router_wrap_tile.clk_noc router_wrap_tile.clk_usr router_wrap_tile.rst_n</loc>
               <loc side="left" xoffset="0" yoffset="1">router_wrap_tile.axis_in_tvalid router_wrap_tile.axis_in_tdata router_wrap_tile.axis_in_tlast router_wrap_tile.axis_in_tid</loc>
@@ -540,7 +540,7 @@
       <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
       <col type="EMPTY" startx="2" repeatx="8" starty="1" priority="19"/>
     </fixed_layout>
-    <fixed_layout name="large" width="100" height="700">
+    <fixed_layout name="large" width="102" height="102">
   <!--Perimeter of 'io' blocks with 'EMPTY' blocks at corners-->
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
@@ -559,35 +559,51 @@
       <col type="EMPTY" startx="2" repeatx="20" starty="1" priority="19"/> <!--COMMENTED 15:40 17/2 MALIF--> 
       
       <!--Router layout-->
-      <single type="router_wrap_tile" x="10" y="20" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="60" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="90" priority="50"/>
+      <!-- Left set -->
+<single type="router_wrap_tile" x="3" y="17" priority="50"/>
+<single type="router_wrap_tile" x="3" y="40" priority="50"/>
+<single type="router_wrap_tile" x="3" y="47" priority="50"/>
+<single type="router_wrap_tile" x="3" y="53" priority="50"/>
+<single type="router_wrap_tile" x="3" y="60" priority="50"/>
+<single type="router_wrap_tile" x="3" y="87" priority="50"/>
 
-      <single type="router_wrap_tile" x="20" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="20" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="20" y="60" priority="50"/>
-      <single type="router_wrap_tile" x="20" y="80" priority="50"/>
+<single type="router_wrap_tile" x="7" y="20" priority="50"/>
+<single type="router_wrap_tile" x="7" y="40" priority="50"/>
+<single type="router_wrap_tile" x="7" y="47" priority="50"/>
+<single type="router_wrap_tile" x="7" y="53" priority="50"/>
+<single type="router_wrap_tile" x="7" y="60" priority="50"/>
+<single type="router_wrap_tile" x="7" y="90" priority="50"/>
 
-      <single type="router_wrap_tile" x="45" y="20" priority="50"/>
-      <single type="router_wrap_tile" x="45" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="45" y="60" priority="50"/>
-      <single type="router_wrap_tile" x="45" y="90" priority="50"/>
+<!-- Center set -->
+<single type="router_wrap_tile" x="48" y="17" priority="50"/>
+<single type="router_wrap_tile" x="48" y="40" priority="50"/>
+<single type="router_wrap_tile" x="48" y="47" priority="50"/>
+<single type="router_wrap_tile" x="48" y="53" priority="50"/>
+<single type="router_wrap_tile" x="48" y="60" priority="50"/>
+<single type="router_wrap_tile" x="48" y="87" priority="50"/>
 
-      <single type="router_wrap_tile" x="55" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="60" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="80" priority="50"/>
+<single type="router_wrap_tile" x="52" y="20" priority="50"/>
+<single type="router_wrap_tile" x="52" y="40" priority="50"/>
+<single type="router_wrap_tile" x="52" y="47" priority="50"/>
+<single type="router_wrap_tile" x="52" y="53" priority="50"/>
+<single type="router_wrap_tile" x="52" y="60" priority="50"/>
+<single type="router_wrap_tile" x="52" y="90" priority="50"/>
 
-      <single type="router_wrap_tile" x="80" y="20" priority="50"/>
-      <single type="router_wrap_tile" x="80" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="80" y="60" priority="50"/>
-      <single type="router_wrap_tile" x="80" y="90" priority="50"/>
+<!-- Right set -->
+<single type="router_wrap_tile" x="93" y="17" priority="50"/>
+<single type="router_wrap_tile" x="93" y="40" priority="50"/>
+<single type="router_wrap_tile" x="93" y="47" priority="50"/>
+<single type="router_wrap_tile" x="93" y="53" priority="50"/>
+<single type="router_wrap_tile" x="93" y="60" priority="50"/>
+<single type="router_wrap_tile" x="93" y="87" priority="50"/>
 
-      <single type="router_wrap_tile" x="90" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="90" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="90" y="60" priority="50"/>
-      <single type="router_wrap_tile" x="90" y="80" priority="50"/>
+<single type="router_wrap_tile" x="97" y="20" priority="50"/>
+<single type="router_wrap_tile" x="97" y="40" priority="50"/>
+<single type="router_wrap_tile" x="97" y="47" priority="50"/>
+<single type="router_wrap_tile" x="97" y="53" priority="50"/>
+<single type="router_wrap_tile" x="97" y="60" priority="50"/>
+<single type="router_wrap_tile" x="97" y="90" priority="50"/>
+
 
     </fixed_layout>
    </layout>
@@ -1813,37 +1829,53 @@
       </pb_type>
    </complexblocklist>
 <noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router_wrap_tile">
-    <topology>
-        <router id="0" positionx="10" positiony="20" connections="1 4"/>
-        <router id="1" positionx="10" positiony="40" connections="0 2 5"/>
-        <router id="2" positionx="10" positiony="60" connections="1 3 6"/>
-        <router id="3" positionx="10" positiony="90" connections="2 7"/>
+  <topology>
+    <!-- Left set -->
+    <router id="0"  positionx="3"  positiony="17"  connections="1 12"/>
+    <router id="1"  positionx="3"  positiony="40"  connections="0 2 7"/>
+    <router id="2"  positionx="3"  positiony="47"  connections="1 3 8"/>
+    <router id="3"  positionx="3"  positiony="53"  connections="2 4 9"/>
+    <router id="4"  positionx="3"  positiony="60"  connections="3 5 10"/>
+    <router id="5"  positionx="3"  positiony="87"  connections="4 17"/>
 
-        <router id="4" positionx="20" positiony="10" connections="0 5 8"/>
-        <router id="5" positionx="20" positiony="40" connections="4 1 6 9"/>
-        <router id="6" positionx="20" positiony="60" connections="5 2 7 10"/>
-        <router id="7" positionx="20" positiony="80" connections="6 3 11"/>
+    <router id="6"  positionx="7"  positiony="20"  connections="7 18"/>
+    <router id="7"  positionx="7"  positiony="40"  connections="1 6 8"/>
+    <router id="8"  positionx="7"  positiony="47"  connections="2 7 9"/>
+    <router id="9"  positionx="7"  positiony="53"  connections="3 8 10"/>
+    <router id="10" positionx="7"  positiony="60"  connections="4 9 11"/>
+    <router id="11" positionx="7"  positiony="90"  connections="10 23"/>
 
-        <router id="8" positionx="45" positiony="20" connections="4 9 12"/>
-        <router id="9" positionx="45" positiony="40" connections="8 5 10 13"/>
-        <router id="10" positionx="45" positiony="60" connections="9 6 11 14"/>
-        <router id="11" positionx="45" positiony="90" connections="10 7 15"/>
+    <!-- Center set -->
+    <router id="12" positionx="48" positiony="17"  connections="0 13 24"/>
+    <router id="13" positionx="48" positiony="40"  connections="12 14 19"/>
+    <router id="14" positionx="48" positiony="47"  connections="13 15 20"/>
+    <router id="15" positionx="48" positiony="53"  connections="14 16 21"/>
+    <router id="16" positionx="48" positiony="60"  connections="15 17 22"/>
+    <router id="17" positionx="48" positiony="87"  connections="16 29 5"/>
 
-        <router id="12" positionx="55" positiony="10" connections="8 13 16"/>
-        <router id="13" positionx="55" positiony="40" connections="12 9 14 17"/>
-        <router id="14" positionx="55" positiony="60" connections="13 10 15 18"/>
-        <router id="15" positionx="55" positiony="80" connections="14 11 19"/>
+    <router id="18" positionx="52" positiony="20"  connections="6 19 30"/>
+    <router id="19" positionx="52" positiony="40"  connections="13 18 20"/>
+    <router id="20" positionx="52" positiony="47"  connections="14 19 21"/>
+    <router id="21" positionx="52" positiony="53"  connections="15 20 22"/>
+    <router id="22" positionx="52" positiony="60"  connections="16 21 23"/>
+    <router id="23" positionx="52" positiony="90"  connections="11 22 35"/>
 
-        <router id="16" positionx="80" positiony="20" connections="12 17 20"/>
-        <router id="17" positionx="80" positiony="40" connections="16 13 18 21"/>
-        <router id="18" positionx="80" positiony="60" connections="17 14 19 22"/>
-        <router id="19" positionx="80" positiony="90" connections="18 15 23"/>
+    <!-- Right set -->
+    <router id="24" positionx="93" positiony="17"  connections="12 25"/>
+    <router id="25" positionx="93" positiony="40"  connections="24 26 31"/>
+    <router id="26" positionx="93" positiony="47"  connections="25 27 32"/>
+    <router id="27" positionx="93" positiony="53"  connections="26 28 33"/>
+    <router id="28" positionx="93" positiony="60"  connections="27 29 34"/>
+    <router id="29" positionx="93" positiony="87"  connections="28 17"/>
 
-        <router id="20" positionx="90" positiony="10" connections="16 21"/>
-        <router id="21" positionx="90" positiony="40" connections="20 17 22"/>
-        <router id="22" positionx="90" positiony="60" connections="21 18 23"/>
-        <router id="23" positionx="90" positiony="80" connections="22 19"/>
-    </topology>
+    <router id="30" positionx="97" positiony="20"  connections="18 31"/>
+    <router id="31" positionx="97" positiony="40"  connections="25 30 32"/>
+    <router id="32" positionx="97" positiony="47"  connections="26 31 33"/>
+    <router id="33" positionx="97" positiony="53"  connections="27 32 34"/>
+    <router id="34" positionx="97" positiony="60"  connections="28 33 35"/>
+    <router id="35" positionx="97" positiony="90"  connections="23 34"/>
+  </topology>
 </noc>
+
 
 </architecture>

@@ -280,7 +280,7 @@
         </pinlocations>
       </sub_tile>
     </tile>
-    <tile name="mult_36" height="6" area="396000">
+    <tile name="mult_36" height="4" area="396000">
       <sub_tile name="mult_36">
         <equivalent_sites>
           <site pb_type="mult_36" pin_mapping="direct"/>

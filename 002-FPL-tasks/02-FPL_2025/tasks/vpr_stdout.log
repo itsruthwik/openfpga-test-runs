@@ -1,0 +1,24 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+ff559e0b9
+Revision: ff559e0b9
+Compiled: 2025-03-10T17:17:15
+Compiler: GNU 11.4.0 on Linux-6.8.0-49-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/mnt/vault1/mfaroo19/OpenFPGA/build/vtr-verilog-to-routing/vpr/vpr --disp on /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/tasks/squished_mesh_xilinx_style/run004/axis_router_vpr/simple_four_noc_1D_chain/MIN_ROUTE_CHAN_WIDTH/arch/axis_router_vpr.xml simple_four_noc_1D_chain.blif --device large --constant_net_method route --echo_file on --noc on --noc_flows_file /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/002-FPL-tasks/02-FPL_2025/benchmarks/synthetic_mlp_benchmarks/simple_four_noc_1D_chain_axis.flows
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/tasks/squished_mesh_xilinx_style/run004/axis_router_vpr/simple_four_noc_1D_chain/MIN_ROUTE_CHAN_WIDTH/arch/axis_router_vpr.xml
+Circuit name: simple_four_noc_1D_chain
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.00 seconds (max_rss 17.5 MiB, delta_rss +1.0 MiB)
+Error 1: /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/FPL_2025/tasks/squished_mesh_xilinx_style/run004/axis_router_vpr/simple_four_noc_1D_chain/MIN_ROUTE_CHAN_WIDTH/arch/axis_router_vpr.xml:-1 Failed to open file
+The entire flow of VPR took 0.00 seconds (max_rss 17.5 MiB)
