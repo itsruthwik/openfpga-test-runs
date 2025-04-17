@@ -86,7 +86,7 @@ module PE_stream_axis_switch #(
 
     // 4 slave PEs
 
-    wrapper_pe pe0 (
+    pe_axis pe0 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_0),
@@ -100,7 +100,7 @@ module PE_stream_axis_switch #(
     );
 
 
-    wrapper_pe pe1 (
+    pe_axis pe1 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_1),
@@ -112,7 +112,7 @@ module PE_stream_axis_switch #(
         .axis_out_tdest(pe_out_tdest_1),
         .axis_out_tready(pe_out_tready_1)
     );
-    wrapper_pe pe2 (
+    pe_axis pe2 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_2),
@@ -124,7 +124,7 @@ module PE_stream_axis_switch #(
         .axis_out_tdest(pe_out_tdest_2),
         .axis_out_tready(pe_out_tready_2)
     );
-    wrapper_pe pe3 (
+    pe_axis pe3 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_3),
