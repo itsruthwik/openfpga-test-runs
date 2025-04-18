@@ -557,52 +557,79 @@
           Vertical offset by 1 for perimeter.-->
       <col type="memory" startx="2" starty="1" repeatx="8" priority="20"/>
       <col type="EMPTY" startx="2" repeatx="20" starty="1" priority="19"/> <!--COMMENTED 15:40 17/2 MALIF--> 
-      
-      <!--Router layout-->
-      <!-- Left set -->
-<single type="router_wrap_tile" x="3" y="17" priority="50"/>
-<single type="router_wrap_tile" x="3" y="40" priority="50"/>
-<single type="router_wrap_tile" x="3" y="47" priority="50"/>
-<single type="router_wrap_tile" x="3" y="53" priority="50"/>
-<single type="router_wrap_tile" x="3" y="60" priority="50"/>
-<single type="router_wrap_tile" x="3" y="87" priority="50"/>
+     <!--Top Row-->
+<single type="router_wrap_tile" x="05" y="20" priority="50"/>
+<single type="router_wrap_tile" x="15" y="10" priority="50"/>
 
-<single type="router_wrap_tile" x="7" y="20" priority="50"/>
-<single type="router_wrap_tile" x="7" y="40" priority="50"/>
-<single type="router_wrap_tile" x="7" y="47" priority="50"/>
-<single type="router_wrap_tile" x="7" y="53" priority="50"/>
-<single type="router_wrap_tile" x="7" y="60" priority="50"/>
-<single type="router_wrap_tile" x="7" y="90" priority="50"/>
+<single type="router_wrap_tile" x="25" y="20" priority="50"/>
+<single type="router_wrap_tile" x="35" y="10" priority="50"/>
 
-<!-- Center set -->
-<single type="router_wrap_tile" x="48" y="17" priority="50"/>
-<single type="router_wrap_tile" x="48" y="40" priority="50"/>
-<single type="router_wrap_tile" x="48" y="47" priority="50"/>
-<single type="router_wrap_tile" x="48" y="53" priority="50"/>
-<single type="router_wrap_tile" x="48" y="60" priority="50"/>
-<single type="router_wrap_tile" x="48" y="87" priority="50"/>
+<single type="router_wrap_tile" x="45" y="20" priority="50"/>
+<single type="router_wrap_tile" x="55" y="10" priority="50"/>
 
-<single type="router_wrap_tile" x="52" y="20" priority="50"/>
-<single type="router_wrap_tile" x="52" y="40" priority="50"/>
-<single type="router_wrap_tile" x="52" y="47" priority="50"/>
-<single type="router_wrap_tile" x="52" y="53" priority="50"/>
-<single type="router_wrap_tile" x="52" y="60" priority="50"/>
-<single type="router_wrap_tile" x="52" y="90" priority="50"/>
+<single type="router_wrap_tile" x="65" y="20" priority="50"/>
+<single type="router_wrap_tile" x="75" y="10" priority="50"/>
 
-<!-- Right set -->
-<single type="router_wrap_tile" x="93" y="17" priority="50"/>
-<single type="router_wrap_tile" x="93" y="40" priority="50"/>
-<single type="router_wrap_tile" x="93" y="47" priority="50"/>
-<single type="router_wrap_tile" x="93" y="53" priority="50"/>
-<single type="router_wrap_tile" x="93" y="60" priority="50"/>
-<single type="router_wrap_tile" x="93" y="87" priority="50"/>
+<single type="router_wrap_tile" x="85" y="20" priority="50"/>
+<single type="router_wrap_tile" x="95" y="10" priority="50"/>
 
-<single type="router_wrap_tile" x="97" y="20" priority="50"/>
-<single type="router_wrap_tile" x="97" y="40" priority="50"/>
-<single type="router_wrap_tile" x="97" y="47" priority="50"/>
-<single type="router_wrap_tile" x="97" y="53" priority="50"/>
-<single type="router_wrap_tile" x="97" y="60" priority="50"/>
-<single type="router_wrap_tile" x="97" y="90" priority="50"/>
+
+<!--Col 1-->
+<single type="router_wrap_tile" x="05" y="30" priority="50"/>
+<single type="router_wrap_tile" x="15" y="30" priority="50"/>
+<single type="router_wrap_tile" x="05" y="40" priority="50"/>
+<single type="router_wrap_tile" x="15" y="40" priority="50"/>
+<single type="router_wrap_tile" x="05" y="50" priority="50"/>
+<single type="router_wrap_tile" x="15" y="50" priority="50"/>
+<single type="router_wrap_tile" x="05" y="60" priority="50"/>
+<single type="router_wrap_tile" x="15" y="60" priority="50"/>
+
+<!--Col 2-->
+<single type="router_wrap_tile" x="45" y="30" priority="50"/>
+<single type="router_wrap_tile" x="55" y="30" priority="50"/>
+<single type="router_wrap_tile" x="45" y="40" priority="50"/>
+<single type="router_wrap_tile" x="55" y="40" priority="50"/>
+<single type="router_wrap_tile" x="45" y="50" priority="50"/>
+<single type="router_wrap_tile" x="55" y="50" priority="50"/>
+<single type="router_wrap_tile" x="45" y="60" priority="50"/>
+<single type="router_wrap_tile" x="55" y="60" priority="50"/>
+
+<!--Col 3-->
+<single type="router_wrap_tile" x="85" y="30" priority="50"/>
+<single type="router_wrap_tile" x="95" y="30" priority="50"/>
+<single type="router_wrap_tile" x="85" y="40" priority="50"/>
+<single type="router_wrap_tile" x="95" y="40" priority="50"/>
+<single type="router_wrap_tile" x="85" y="50" priority="50"/>
+<single type="router_wrap_tile" x="95" y="50" priority="50"/>
+<single type="router_wrap_tile" x="85" y="60" priority="50"/>
+<single type="router_wrap_tile" x="95" y="60" priority="50"/>
+
+<!-- Bottom Row -->
+<single type="router_wrap_tile" x="02" y="95" priority="50"/>
+<single type="router_wrap_tile" x="05" y="90" priority="50"/>
+<single type="router_wrap_tile" x="15" y="85" priority="50"/>
+<single type="router_wrap_tile" x="18" y="80" priority="50"/>
+
+<single type="router_wrap_tile" x="22" y="95" priority="50"/>
+<single type="router_wrap_tile" x="25" y="90" priority="50"/>
+<single type="router_wrap_tile" x="35" y="85" priority="50"/>
+<single type="router_wrap_tile" x="38" y="80" priority="50"/>
+
+<single type="router_wrap_tile" x="42" y="95" priority="50"/>
+<single type="router_wrap_tile" x="45" y="90" priority="50"/>
+<single type="router_wrap_tile" x="55" y="85" priority="50"/>
+<single type="router_wrap_tile" x="58" y="80" priority="50"/>
+
+<single type="router_wrap_tile" x="62" y="95" priority="50"/>
+<single type="router_wrap_tile" x="65" y="90" priority="50"/>
+<single type="router_wrap_tile" x="75" y="85" priority="50"/>
+<single type="router_wrap_tile" x="78" y="80" priority="50"/>
+
+<single type="router_wrap_tile" x="82" y="95" priority="50"/>
+<single type="router_wrap_tile" x="85" y="90" priority="50"/>
+<single type="router_wrap_tile" x="95" y="85" priority="50"/>
+<single type="router_wrap_tile" x="98" y="80" priority="50"/>
+
 
 
     </fixed_layout>
@@ -1828,54 +1855,82 @@
          </mode>
       </pb_type>
    </complexblocklist>
-<noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router_wrap_tile">
-  <topology>
-    <!-- Left set -->
-    <router id="0"  positionx="3"  positiony="17"  connections="1 12"/>
-    <router id="1"  positionx="3"  positiony="40"  connections="0 2 7"/>
-    <router id="2"  positionx="3"  positiony="47"  connections="1 3 8"/>
-    <router id="3"  positionx="3"  positiony="53"  connections="2 4 9"/>
-    <router id="4"  positionx="3"  positiony="60"  connections="3 5 10"/>
-    <router id="5"  positionx="3"  positiony="87"  connections="4 17"/>
 
-    <router id="6"  positionx="7"  positiony="20"  connections="7 18"/>
-    <router id="7"  positionx="7"  positiony="40"  connections="1 6 8"/>
-    <router id="8"  positionx="7"  positiony="47"  connections="2 7 9"/>
-    <router id="9"  positionx="7"  positiony="53"  connections="3 8 10"/>
-    <router id="10" positionx="7"  positiony="60"  connections="4 9 11"/>
-    <router id="11" positionx="7"  positiony="90"  connections="10 23"/>
 
-    <!-- Center set -->
-    <router id="12" positionx="48" positiony="17"  connections="0 13 24"/>
-    <router id="13" positionx="48" positiony="40"  connections="12 14 19"/>
-    <router id="14" positionx="48" positiony="47"  connections="13 15 20"/>
-    <router id="15" positionx="48" positiony="53"  connections="14 16 21"/>
-    <router id="16" positionx="48" positiony="60"  connections="15 17 22"/>
-    <router id="17" positionx="48" positiony="87"  connections="16 29 5"/>
+<noc link_latency="5" router_latency="7.7" link_bandwidth="10" noc_router_tile_name="router_wrap_tile"> 
+    <topology>
+        <!-- Top Row Connections -->
+        <router id="0" positionx="05" positiony="20" connections="2 10"/>
+        <router id="2" positionx="25" positiony="20" connections="0 4"/> 
+        <router id="4" positionx="45" positiony="20" connections="2 6"/> 
+        <router id="6" positionx="65" positiony="20" connections="4 8"/>
+        <router id="8" positionx="85" positiony="20" connections="6"/>
+        <router id="1" positionx="15" positiony="10" connections="3 11"/>
+        <router id="3" positionx="35" positiony="10" connections="1 5"/>
+        <router id="5" positionx="55" positiony="10" connections="3 7"/>
+        <router id="7" positionx="75" positiony="10" connections="5 9"/>
+        <router id="9" positionx="95" positiony="10" connections="7"/>
 
-    <router id="18" positionx="52" positiony="20"  connections="6 19 30"/>
-    <router id="19" positionx="52" positiony="40"  connections="13 18 20"/>
-    <router id="20" positionx="52" positiony="47"  connections="14 19 21"/>
-    <router id="21" positionx="52" positiony="53"  connections="15 20 22"/>
-    <router id="22" positionx="52" positiony="60"  connections="16 21 23"/>
-    <router id="23" positionx="52" positiony="90"  connections="11 22 35"/>
+        <!-- Column 1 -->
+        <router id="10" positionx="05" positiony="30" connections="11 12 0"/>
+        <router id="11" positionx="15" positiony="30" connections="10 13 1"/>
+        <router id="12" positionx="05" positiony="40" connections="10 13 14"/>
+        <router id="13" positionx="15" positiony="40" connections="11 12 15"/>
+        <router id="14" positionx="05" positiony="50" connections="12 15 16"/>
+        <router id="15" positionx="15" positiony="50" connections="13 14 17"/>
+        <router id="16" positionx="05" positiony="60" connections="14 17 35 34"/>
+        <router id="17" positionx="15" positiony="60" connections="15 16 36 37"/>
 
-    <!-- Right set -->
-    <router id="24" positionx="93" positiony="17"  connections="12 25"/>
-    <router id="25" positionx="93" positiony="40"  connections="24 26 31"/>
-    <router id="26" positionx="93" positiony="47"  connections="25 27 32"/>
-    <router id="27" positionx="93" positiony="53"  connections="26 28 33"/>
-    <router id="28" positionx="93" positiony="60"  connections="27 29 34"/>
-    <router id="29" positionx="93" positiony="87"  connections="28 17"/>
+        <!-- Column 2 -->
+        <router id="18" positionx="45" positiony="30" connections="19 20 4"/>
+        <router id="19" positionx="55" positiony="30" connections="18 21 5"/>
+        <router id="20" positionx="45" positiony="40" connections="18 21 22"/>
+        <router id="21" positionx="55" positiony="40" connections="19 20 23"/>
+        <router id="22" positionx="45" positiony="50" connections="20 23 24"/>
+        <router id="23" positionx="55" positiony="50" connections="21 22 25"/>
+        <router id="24" positionx="45" positiony="60" connections="22 25 43 42"/>
+        <router id="25" positionx="55" positiony="60" connections="23 24 44 45"/>
 
-    <router id="30" positionx="97" positiony="20"  connections="18 31"/>
-    <router id="31" positionx="97" positiony="40"  connections="25 30 32"/>
-    <router id="32" positionx="97" positiony="47"  connections="26 31 33"/>
-    <router id="33" positionx="97" positiony="53"  connections="27 32 34"/>
-    <router id="34" positionx="97" positiony="60"  connections="28 33 35"/>
-    <router id="35" positionx="97" positiony="90"  connections="23 34"/>
-  </topology>
-</noc>
+        <!-- Column 3 -->
+        <router id="26" positionx="85" positiony="30" connections="27 28 8"/>
+        <router id="27" positionx="95" positiony="30" connections="26 29 9"/>
+        <router id="28" positionx="85" positiony="40" connections="26 29 30"/>
+        <router id="29" positionx="95" positiony="40" connections="27 28 31"/>
+        <router id="30" positionx="85" positiony="50" connections="28 31 32"/>
+        <router id="31" positionx="95" positiony="50" connections="29 30 33"/>
+        <router id="32" positionx="85" positiony="60" connections="30 33 51 50"/>
+        <router id="33" positionx="95" positiony="60" connections="31 32 52 53"/>
+
+        <!-- Bottom Row Connections -->
+        <!-- y=95 Line -->
+        <router id="34" positionx="02" positiony="95" connections="38"/>
+        <router id="38" positionx="22" positiony="95" connections="34 42"/>
+        <router id="42" positionx="42" positiony="95" connections="38 46"/>
+        <router id="46" positionx="62" positiony="95" connections="42 50"/>
+        <router id="50" positionx="82" positiony="95" connections="46"/>
+
+        <!-- y=90 Line -->
+        <router id="35" positionx="05" positiony="90" connections="39"/>
+        <router id="39" positionx="25" positiony="90" connections="35 43"/>
+        <router id="43" positionx="45" positiony="90" connections="39 47"/>
+        <router id="47" positionx="65" positiony="90" connections="43 51"/>
+        <router id="51" positionx="85" positiony="90" connections="47"/>
+
+        <!-- y=85 Line -->
+        <router id="36" positionx="15" positiony="85" connections="40"/>
+        <router id="40" positionx="35" positiony="85" connections="36 44"/>
+        <router id="44" positionx="55" positiony="85" connections="40 48"/>
+        <router id="48" positionx="75" positiony="85" connections="44 52"/>
+        <router id="52" positionx="95" positiony="85" connections="48"/>
+
+        <!-- y=80 Line -->
+        <router id="37" positionx="18" positiony="80" connections="41"/>
+        <router id="41" positionx="38" positiony="80" connections="37 45"/>
+        <router id="45" positionx="58" positiony="80" connections="41 49"/>
+        <router id="49" positionx="78" positiony="80" connections="45 53"/>
+        <router id="53" positionx="98" positiony="80" connections="49"/>
+    </topology>
+ </noc>
 
 
 </architecture>
