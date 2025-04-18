@@ -89,6 +89,12 @@ module noc_loaded #(
     assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
     assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
 
+
+
+    assign AXIS_M_TVALID = axis_out_tvalid[0];
+    assign AXIS_M_TDATA = axis_out_tdata[0*DATAW +: DATAW];
+    assign AXIS_M_TDEST = axis_out_tdest[0*DESTW +: DESTW];
+
     // Master module
     master_module master_inst (
         .clk(CLK),

@@ -84,9 +84,13 @@ module PE_stream_axis_switch #(
     wire [3:0] pe_out_tdest_3;
 
 
+assign AXIS_M_TVALID = m_in_tvalid;
+assign AXIS_M_TDATA = m_in_tdata;
+assign AXIS_M_TDEST = m_in_tdest;
+
     // 4 slave PEs
 
-    pe_axis pe0 (
+    axis_pe pe0 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_0),
@@ -100,7 +104,7 @@ module PE_stream_axis_switch #(
     );
 
 
-    pe_axis pe1 (
+    axis_pe pe1 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_1),
@@ -112,7 +116,7 @@ module PE_stream_axis_switch #(
         .axis_out_tdest(pe_out_tdest_1),
         .axis_out_tready(pe_out_tready_1)
     );
-    pe_axis pe2 (
+    axis_pe pe2 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_2),
@@ -124,7 +128,7 @@ module PE_stream_axis_switch #(
         .axis_out_tdest(pe_out_tdest_2),
         .axis_out_tready(pe_out_tready_2)
     );
-    pe_axis pe3 (
+    axis_pe pe3 (
         .clk(clk),
         .reset(reset),
         .axis_in_tvalid(pe_in_tvalid_3),
@@ -206,14 +210,14 @@ module PE_stream_axis_switch #(
         // .s04_axis_tuser(),
 
 
-        .s05_axis_tdata(AXIS_S_TDATA),
-        // .s05_axis_tkeep(),
-        .s05_axis_tvalid(AXIS_S_TVALID),
-        .s05_axis_tready(AXIS_S_TREADY),
-        .s05_axis_tlast(AXIS_S_TLAST),
-        // .s05_axis_tid(),
-        .s05_axis_tdest(AXIS_S_TDEST),
-        // .s05_axis_tuser(),
+        // .s05_axis_tdata(AXIS_S_TDATA),
+        // // .s05_axis_tkeep(),
+        // .s05_axis_tvalid(AXIS_S_TVALID),
+        // .s05_axis_tready(AXIS_S_TREADY),
+        // .s05_axis_tlast(AXIS_S_TLAST),
+        // // .s05_axis_tid(),
+        // .s05_axis_tdest(AXIS_S_TDEST),
+        // // .s05_axis_tuser(),
 
 
     
@@ -265,14 +269,14 @@ module PE_stream_axis_switch #(
         .m04_axis_tdest(pe_in_tdest_3),
         // .m04_axis_tuser(),
 
-        .m05_axis_tdata(AXIS_M_TDATA),
-        // .m05_axis_tkeep(),
-        .m05_axis_tvalid(AXIS_M_TVALID),
-        .m05_axis_tready(AXIS_M_TREADY),
-        .m05_axis_tlast(AXIS_M_TLAST),
-        // .m05_axis_tid(),
-        .m05_axis_tdest(AXIS_M_TDEST)
-        // .m05_axis_tuser(),
-    );
+    //     .m05_axis_tdata(AXIS_M_TDATA),
+    //     // .m05_axis_tkeep(),
+    //     .m05_axis_tvalid(AXIS_M_TVALID),
+    //     .m05_axis_tready(AXIS_M_TREADY),
+    //     .m05_axis_tlast(AXIS_M_TLAST),
+    //     // .m05_axis_tid(),
+    //     .m05_axis_tdest(AXIS_M_TDEST)
+    //     // .m05_axis_tuser(),
+    // );
 
 endmodule

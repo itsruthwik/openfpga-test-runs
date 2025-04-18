@@ -4,10 +4,10 @@
 # Parse input files
 #########################
 # Read verilog files
-read_verilog ${READ_VERILOG_OPTIONS} ${VERILOG_FILES}
+read_verilog -sv ${READ_VERILOG_OPTIONS} ${VERILOG_FILES}
 # Read technology library
-read_verilog -lib -specify ${YOSYS_CELL_SIM_VERILOG}
-read_verilog -sv -lib -specify /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/router-rtl/router_wrap_cell_sim.sv
+read_verilog -lib -sv -specify ${YOSYS_CELL_SIM_VERILOG}
+#read_verilog -sv -lib -specify /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/router-rtl/router_wrap.sv,/mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/router-rtl/src/*.sv
 #read_verilog -sv -lib -specify ${ROUTER_BLACKBOX_VERILOG}
 
 #########################
