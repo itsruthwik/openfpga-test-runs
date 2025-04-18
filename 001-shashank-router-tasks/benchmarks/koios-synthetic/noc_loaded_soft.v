@@ -2,7 +2,7 @@ module noc_loaded #(
     parameter DATAW = 128,                   
     parameter BYTEW = 8,                  
     parameter IDW = 32,      
-    parameter DESTW = 32,    
+    parameter DESTW = 4,    
     parameter USERW = 32,
     parameter IPRECISION = 8,         
     parameter OPRECISION = 8,      
@@ -20,11 +20,11 @@ module noc_loaded #(
     parameter FIFOD = 64,                  
     parameter USE_RELU = 1, 
     parameter DATAPATH_DELAY = 10,
-    parameter TDATAW = DATAW + USERW,
+    parameter TDATAW = 128,
     parameter TIDW = 2,
     parameter TDESTW = 4,
     parameter NUM_PACKETS = 1,
-    parameter HARD_LINK = 1
+    parameter HARD_LINK = 0
 ) (
     input                  CLK,
     input                  CLK_NOC,
@@ -55,12 +55,12 @@ module noc_loaded #(
     parameter SINGLE_CLOCK = 1;
     parameter NUM_PORTS = 5;
     parameter ROUTE_WIDTH = 3;      // $clog2(NUM_PORTS)
-    parameter ROW_WIDTH = 3;        // $clog2(ROWS)
-    parameter COL_WIDTH = 3;        // $clog2(COLUMNS)
-    parameter RTR_ADDR_WIDTH = 6;   // ROW_WIDTH + COL_WIDTH
+    parameter ROW_WIDTH = 2;        // $clog2(ROWS)
+    parameter COL_WIDTH = 2;        // $clog2(COLUMNS)
+    parameter RTR_ADDR_WIDTH = 4;   // ROW_WIDTH + COL_WIDTH
 
-    parameter FLIT_WIDTH = DATAW / SERIALIZATION_FACTOR / CLKCROSS_FACTOR;
-    parameter DEST_WIDTH = TDESTW + TIDW;
+    parameter FLIT_WIDTH = 64;
+    parameter DEST_WIDTH = 4;
 
 
 // 5routers    
@@ -98,15 +98,20 @@ wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_is_tail;
 wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_send;
 wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_credit;
 
-    assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 0;
-    assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
+    assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
 
-    assign router_address[1*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
-    assign router_address[1*RTR_ADDR_WIDTH +: COL_WIDTH] = 0;
+    assign router_address[1*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 01;
+    assign router_address[1*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
 
-    assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
-    assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
+    assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 01;
 
+    assign router_address[3*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 10;
+    assign router_address[3*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
+
+    assign router_address[4*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[4*RTR_ADDR_WIDTH +: COL_WIDTH] = 10;
 
 
     assign AXIS_M_TVALID = axis_in_tvalid[0];          // Master's TX valid

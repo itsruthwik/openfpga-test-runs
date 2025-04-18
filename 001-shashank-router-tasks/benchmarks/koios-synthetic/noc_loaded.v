@@ -48,21 +48,22 @@ module noc_loaded #(
     output   [USERW-1:0]   AXIS_M_TUSER,
     output   [DESTW-1:0]   AXIS_M_TDEST
 );
-
     // NoC parameters
+    // rows = 2 , cols=2  but consider 4x4 mesh for sizes 
     parameter SERIALIZATION_FACTOR = 1;
     parameter CLKCROSS_FACTOR = 1;
     parameter SINGLE_CLOCK = 1;
     parameter NUM_PORTS = 5;
-    parameter ROUTE_WIDTH = 3;
-    parameter ROW_WIDTH = 3;
-    parameter COL_WIDTH = 3;
-    parameter RTR_ADDR_WIDTH = 6;
+    parameter ROUTE_WIDTH = 3;      // $clog2(NUM_PORTS)
+    parameter ROW_WIDTH = 2;        // $clog2(ROWS)
+    parameter COL_WIDTH = 2;        // $clog2(COLUMNS)
+    parameter RTR_ADDR_WIDTH = 4;   // ROW_WIDTH + COL_WIDTH
 
-    parameter FLIT_WIDTH = 64;  // DATAW/SERIALIZATION_FACTOR/CLKCROSS_FACTOR
-    parameter DEST_WIDTH = 4;   // Matches physical pin definition
+    parameter FLIT_WIDTH = 64;
+    parameter DEST_WIDTH = 4;
 
-    // AXI Stream signals
+
+// 5routers    
     wire [4:0] axis_in_tvalid;
     wire [4:0] axis_in_tready;
     wire [5*DATAW-1:0] axis_in_tdata;
@@ -77,128 +78,196 @@ module noc_loaded #(
     wire [5*USERW-1:0] axis_out_tuser;
     wire [5*DESTW-1:0] axis_out_tdest;
 
+    wire [5*TDATAW-1:0] mesh_in_tdata;
+    wire [5*TDATAW-1:0] mesh_out_tdata;
     wire [5*RTR_ADDR_WIDTH-1:0] router_address;
 
-    // Router address assignments
-    assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 0;
-    assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
+// Define connection parameters
+localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
 
-    assign router_address[1*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
-    assign router_address[1*RTR_ADDR_WIDTH +: COL_WIDTH] = 0;
+// Create connection wires between routers
+wire [NUM_CONNECTIONS-1:0][FLIT_WIDTH-1:0] rtr0_to_neighbor_data;
+wire [NUM_CONNECTIONS-1:0][DEST_WIDTH-1:0] rtr0_to_neighbor_dest;
+wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_is_tail;
+wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_send;
+wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_credit;
 
-    assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 1;
-    assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 1;
+wire [NUM_CONNECTIONS-1:0][FLIT_WIDTH-1:0] neighbor_to_rtr0_data;
+wire [NUM_CONNECTIONS-1:0][DEST_WIDTH-1:0] neighbor_to_rtr0_dest;
+wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_is_tail;
+wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_send;
+wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_credit;
+
+    assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
+
+    assign router_address[1*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 01;
+    assign router_address[1*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
+
+    assign router_address[2*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[2*RTR_ADDR_WIDTH +: COL_WIDTH] = 01;
+
+    assign router_address[3*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 10;
+    assign router_address[3*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
+
+    assign router_address[4*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[4*RTR_ADDR_WIDTH +: COL_WIDTH] = 10;
+
+
+    assign AXIS_M_TVALID = axis_in_tvalid[0];          // Master's TX valid
+    assign AXIS_M_TDATA = axis_in_tdata[0*DATAW +: DATAW]; // Master's TX data
+    assign AXIS_M_TDEST = axis_in_tdest[0*DESTW +: DESTW]; // Master's TX dest
+    assign AXIS_M_TLAST = 1'b0;                        // Not used by master
+    assign AXIS_M_TID = {IDW{1'b0}};                   // Zero out unused
+    assign AXIS_M_TUSER = {USERW{1'b0}};               // Zero out unused
 
 
 
-    assign AXIS_M_TVALID = axis_out_tvalid[0];
-    assign AXIS_M_TDATA = axis_out_tdata[0*DATAW +: DATAW];
-    assign AXIS_M_TDEST = axis_out_tdest[0*DESTW +: DESTW];
+    // Connect slave ready to constant (since master drives traffic)
+    assign AXIS_S_TREADY = 1'b1;     
+master_module master_inst (
+    .clk(CLK),                    // Connect to system clock
+    .reset(~RST_N),               // Active-high reset (invert router's active-low reset)
+    
+    // TX Interface (Master -> Router 0)
+    .axis_tx_tvalid(axis_in_tvalid[0]),
+    .axis_tx_tdata(axis_in_tdata[0*DATAW +: DATAW]),
+    .axis_tx_tdest(axis_in_tdest[0*DESTW +: DESTW]),
+    .axis_tx_tready(axis_in_tready[0]),
+    
+    // RX Interface (Router 0 -> Master, left unconnected)
+    .axis_rx_tvalid(axis_out_tvalid[0]),
+    .axis_rx_tdata(axis_out_tdata[0*DATAW +: DATAW]),
+    .axis_rx_tdest(axis_out_tdest[0*DESTW +: DESTW]),
+    .axis_rx_tready()             // Left unconnected as master ignores RX
+);
 
-    // Master module
-    master_module master_inst (
-        .clk(CLK),
-        .reset(~RST_N),
-        .axis_tx_tvalid(axis_in_tvalid[0]),
-        .axis_tx_tdata(axis_in_tdata[0*DATAW +: DATAW]),
-        .axis_tx_tdest(axis_in_tdest[0*DESTW +: DESTW]),
-        .axis_tx_tready(axis_in_tready[0]),
-        .axis_rx_tvalid(axis_out_tvalid[0]),
-        .axis_rx_tdata(axis_out_tdata[0*DATAW +: DATAW]),
-        .axis_rx_tdest(axis_out_tdest[0*DESTW +: DESTW]),
-        .axis_rx_tready()
-    );
+//------------------------------------------
+// Connect wrapper_pe to Router 1
+//------------------------------------------
+wrapper_pe pe_inst_1 (
+    .clk      (CLK),
+    .reset    (~RST_N),
+    
+    // Input from router
+    .in_tvalid (axis_out_tvalid[1]),
+    .in_tdata  (axis_out_tdata[1*DATAW +: DATAW]),
+    .in_tready (axis_out_tready[1]),
+    
+    // Output to router
+    .out_tvalid (axis_in_tvalid[1]),
+    .out_tdata  (axis_in_tdata[1*DATAW +: DATAW]),
+    .out_tready (axis_in_tready[1]),
+    
+    .done     ()  // Optional: connect if needed
+);
 
-    // Processing elements
-    wrapper_pe pe_inst_1 (
-        .clk(CLK),
-        .reset(~RST_N),
-        .in_tvalid(axis_out_tvalid[1]),
-        .in_tdata(axis_out_tdata[1*DATAW +: DATAW]),
-        .in_tready(axis_out_tready[1]),
-        .out_tvalid(axis_in_tvalid[1]),
-        .out_tdata(axis_in_tdata[1*DATAW +: DATAW]),
-        .out_tready(axis_in_tready[1]),
-        .done()
-    );
-    (*keep*)
-    wrapper_pe pe_inst_2 (
-        .clk(CLK),
-        .reset(~RST_N),
-        .in_tvalid(axis_out_tvalid[2]),
-        .in_tdata(axis_out_tdata[2*DATAW +: DATAW]),
-        .in_tready(axis_out_tready[2]),
-        .out_tvalid(axis_in_tvalid[2]),
-        .out_tdata(axis_in_tdata[2*DATAW +: DATAW]),
-        .out_tready(axis_in_tready[2]),
-        .done()
-    );
-    (*keep*)
+//------------------------------------------
+// Connect wrapper_pe to Router 2
+//------------------------------------------
+wrapper_pe pe_inst_2 (
+    .clk      (CLK),
+    .reset    (~RST_N),
+    
+    .in_tvalid (axis_out_tvalid[2]),
+    .in_tdata  (axis_out_tdata[2*DATAW +: DATAW]),
+    .in_tready (axis_out_tready[2]),
+    
+    .out_tvalid (axis_in_tvalid[2]),
+    .out_tdata  (axis_in_tdata[2*DATAW +: DATAW]),
+    .out_tready (axis_in_tready[2]),
+    
+    .done     ()
+);
 
-    wrapper_pe pe_inst_3 (
-        .clk(CLK),
-        .reset(~RST_N),
-        .in_tvalid(axis_out_tvalid[3]),
-        .in_tdata(axis_out_tdata[3*DATAW +: DATAW]),
-        .in_tready(axis_out_tready[3]),
-        .out_tvalid(axis_in_tvalid[3]),
-        .out_tdata(axis_in_tdata[3*DATAW +: DATAW]),
-        .out_tready(axis_in_tready[3]),
-        .done()
-    );
-    (*keep*)
+//------------------------------------------
+// Connect wrapper_pe to Router 3
+//------------------------------------------
+wrapper_pe pe_inst_3 (
+    .clk      (CLK),
+    .reset    (~RST_N),
+    
+    .in_tvalid (axis_out_tvalid[3]),
+    .in_tdata  (axis_out_tdata[3*DATAW +: DATAW]),
+    .in_tready (axis_out_tready[3]),
+    
+    .out_tvalid (axis_in_tvalid[3]),
+    .out_tdata  (axis_in_tdata[3*DATAW +: DATAW]),
+    .out_tready (axis_in_tready[3]),
+    
+    .done     ()
+);
 
-    wrapper_pe pe_inst_4 (
-        .clk(CLK),
-        .reset(~RST_N),
-        .in_tvalid(axis_out_tvalid[4]),
-        .in_tdata(axis_out_tdata[4*DATAW +: DATAW]),
-        .in_tready(axis_out_tready[4]),
-        .out_tvalid(axis_in_tvalid[4]),
-        .out_tdata(axis_in_tdata[4*DATAW +: DATAW]),
-        .out_tready(axis_in_tready[4]),
-        .done()
-    );
+//------------------------------------------
+// Connect wrapper_pe to Router 4
+//------------------------------------------
+wrapper_pe pe_inst_4 (
+    .clk      (CLK),
+    .reset    (~RST_N),
+    
+    .in_tvalid (axis_out_tvalid[4]),
+    .in_tdata  (axis_out_tdata[4*DATAW +: DATAW]),
+    .in_tready (axis_out_tready[4]),
+    
+    .out_tvalid (axis_in_tvalid[4]),
+    .out_tdata  (axis_in_tdata[4*DATAW +: DATAW]),
+    .out_tready (axis_in_tready[4]),
+    
+    .done     ()
+);
 
-    // Router instantiations with consistent parameters
-
-    (*keep*)
+    // rtr 0
+    (* keep *)
     router_wrap #(
-        .TDATA_WIDTH(128),
-        .TID_WIDTH(2),
-        .TDEST_WIDTH(4),
-        .FLIT_WIDTH(64),
-        .DEST_WIDTH(4),
-        .NUM_PORTS(5),
-        .RTR_ADDR_WIDTH(4)
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
     ) router_inst_0 (
         .clk_noc(CLK_NOC),
         .clk_usr(CLK),
         .rst_n(RST_N),
-        .axis_in_tvalid(axis_in_tvalid[0]),
-        .axis_in_tready(axis_in_tready[0]),
-        .axis_in_tdata(axis_in_tdata[0*DATAW +: DATAW]),
-        .axis_in_tlast(1'b0),
-        .axis_in_tid(2'b0),
-        .axis_in_tdest(axis_in_tdest[0*DESTW +: DESTW]),
-        .axis_out_tvalid(axis_out_tvalid[0]),
-        .axis_out_tready(1'b1),
-        .axis_out_tdata(axis_out_tdata[0*DATAW +: DATAW]),
-        .axis_out_tlast(),
-        .axis_out_tid(),
-        .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
+    .axis_in_tvalid(axis_in_tvalid[0]),
+    .axis_in_tready(axis_in_tready[0]),
+    .axis_in_tdata(axis_in_tdata[0*DATAW +: DATAW]),
+    .axis_in_tlast(1'b0),                    // Master doesn't use tlast
+    .axis_in_tdest(axis_in_tdest[0*DESTW +: DESTW]),
+    
+    .axis_out_tvalid(axis_out_tvalid[0]),
+    .axis_out_tready(1'b1),                  // Master ignores RX, always ready
+    .axis_out_tdata(axis_out_tdata[0*DATAW +: DATAW]),
+    .axis_out_tlast(),                       // Unused
+    .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
+
+    
+   // .DISABLE_TURNS ({4{'{default:0}}}),
+        
         .router_address(router_address[0*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
-    (*keep*)
+    // rtr 1
+    (* keep *)
     router_wrap #(
-        .TDATA_WIDTH(128),
-        .TID_WIDTH(2),
-        .TDEST_WIDTH(4),
-        .FLIT_WIDTH(64),
-        .DEST_WIDTH(4),
-        .NUM_PORTS(5),
-        .RTR_ADDR_WIDTH(4)
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
     ) router_inst_1 (
         .clk_noc(CLK_NOC),
         .clk_usr(CLK),
@@ -206,100 +275,124 @@ module noc_loaded #(
         .axis_in_tvalid(axis_in_tvalid[1]),
         .axis_in_tready(axis_in_tready[1]),
         .axis_in_tdata(axis_in_tdata[1*DATAW +: DATAW]),
-        .axis_in_tlast(1'b0),
-        .axis_in_tid(2'b0),
+        .axis_in_tlast(axis_in_tlast[1]),
         .axis_in_tdest(axis_in_tdest[1*DESTW +: DESTW]),
         .axis_out_tvalid(axis_out_tvalid[1]),
-        .axis_out_tready(1'b1),
+        .axis_out_tready(axis_out_tready[1]),
         .axis_out_tdata(axis_out_tdata[1*DATAW +: DATAW]),
-        .axis_out_tlast(),
-        .axis_out_tid(),
+        .axis_out_tlast(axis_out_tlast[1]),
         .axis_out_tdest(axis_out_tdest[1*DESTW +: DESTW]),
+    
+    //.DISABLE_TURNS ({4{'{default:0}}})
+
+
         .router_address(router_address[1*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
-    (*keep*)
+    // rtr 2
+    (* keep *)
     router_wrap #(
-        .TDATA_WIDTH(128),
-        .TID_WIDTH(2),
-        .TDEST_WIDTH(4),
-        .FLIT_WIDTH(64),
-        .DEST_WIDTH(4),
-        .NUM_PORTS(5),
-        .RTR_ADDR_WIDTH(4)
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        // .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
     ) router_inst_2 (
         .clk_noc(CLK_NOC),
         .clk_usr(CLK),
         .rst_n(RST_N),
+
         .axis_in_tvalid(axis_in_tvalid[2]),
         .axis_in_tready(axis_in_tready[2]),
         .axis_in_tdata(axis_in_tdata[2*DATAW +: DATAW]),
-        .axis_in_tlast(1'b0),
-        .axis_in_tid(2'b0),
+        .axis_in_tlast(axis_in_tlast[2]),
         .axis_in_tdest(axis_in_tdest[2*DESTW +: DESTW]),
         .axis_out_tvalid(axis_out_tvalid[2]),
-        .axis_out_tready(1'b1),
+        .axis_out_tready(axis_out_tready[2]),
         .axis_out_tdata(axis_out_tdata[2*DATAW +: DATAW]),
-        .axis_out_tlast(),
-        .axis_out_tid(),
+        .axis_out_tlast(axis_out_tlast[2]),
         .axis_out_tdest(axis_out_tdest[2*DESTW +: DESTW]),
+
+   // .DISABLE_TURNS ({4{'{default:0}}})
+
         .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
-    (*keep*)
+ // rtr 3
+    (* keep *)
     router_wrap #(
-        .TDATA_WIDTH(128),
-        .TID_WIDTH(2),
-        .TDEST_WIDTH(4),
-        .FLIT_WIDTH(64),
-        .DEST_WIDTH(4),
-        .NUM_PORTS(5),
-        .RTR_ADDR_WIDTH(4)
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
     ) router_inst_3 (
         .clk_noc(CLK_NOC),
         .clk_usr(CLK),
         .rst_n(RST_N),
+
         .axis_in_tvalid(axis_in_tvalid[3]),
         .axis_in_tready(axis_in_tready[3]),
         .axis_in_tdata(axis_in_tdata[3*DATAW +: DATAW]),
-        .axis_in_tlast(1'b0),
-        .axis_in_tid(2'b0),
+        .axis_in_tlast(axis_in_tlast[3]),
         .axis_in_tdest(axis_in_tdest[3*DESTW +: DESTW]),
         .axis_out_tvalid(axis_out_tvalid[3]),
-        .axis_out_tready(1'b1),
+        .axis_out_tready(axis_out_tready[3]),
         .axis_out_tdata(axis_out_tdata[3*DATAW +: DATAW]),
-        .axis_out_tlast(),
-        .axis_out_tid(),
+        .axis_out_tlast(axis_out_tlast[3]),
         .axis_out_tdest(axis_out_tdest[3*DESTW +: DESTW]),
         .router_address(router_address[3*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
 
-    (*keep*)
+        // rtr 4
+    (* keep *)
     router_wrap #(
-        .TDATA_WIDTH(128),
-        .TID_WIDTH(2),
-        .TDEST_WIDTH(4),
-        .FLIT_WIDTH(64),
-        .DEST_WIDTH(4),
-        .NUM_PORTS(5),
-        .RTR_ADDR_WIDTH(4)
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        // .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
     ) router_inst_4 (
         .clk_noc(CLK_NOC),
         .clk_usr(CLK),
         .rst_n(RST_N),
+
         .axis_in_tvalid(axis_in_tvalid[4]),
         .axis_in_tready(axis_in_tready[4]),
         .axis_in_tdata(axis_in_tdata[4*DATAW +: DATAW]),
-        .axis_in_tlast(1'b0),
-        .axis_in_tid(2'b0),
+        .axis_in_tlast(axis_in_tlast[4]),
         .axis_in_tdest(axis_in_tdest[4*DESTW +: DESTW]),
         .axis_out_tvalid(axis_out_tvalid[4]),
-        .axis_out_tready(1'b1),
+        .axis_out_tready(axis_out_tready[4]),
         .axis_out_tdata(axis_out_tdata[4*DATAW +: DATAW]),
-        .axis_out_tlast(),
-        .axis_out_tid(),
+        .axis_out_tlast(axis_out_tlast[4]),
         .axis_out_tdest(axis_out_tdest[4*DESTW +: DESTW]),
-        .router_address(router_address[4*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+
+    // Connect only WEST port to Router 0
+    //.DISABLE_TURNS ({4{'{default:0}}})
+
+        .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
     );
+
 
 endmodule
