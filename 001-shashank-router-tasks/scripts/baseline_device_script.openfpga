@@ -4,8 +4,8 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
     --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
     --constant_net_method route  --echo_file on \
     --timing_report_detail aggregated \
-    --sdc_file /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/scripts/clk_file.sdc
-
+    --sdc_file /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/scripts/clk_file.sdc \
+    --route_chan_width 600
 
 # Read OpenFPGA architecture definition
 read_openfpga_arch -f ${OPENFPGA_ARCH_FILE}

@@ -880,12 +880,15 @@ output [31:0] chainout, result;
 reg [15:0] top_a_reg,top_b_reg,bot_a_reg,bot_b_reg; 
 reg [31:0] chainin_reg; 
 wire [31:0] r1,r2,r3; 
+reg [31:0] r1_new, r2_new;
 always@(posedge clk) begin 
 if(reset) begin 
 top_a_reg<= 16'b0; 
 top_b_reg<= 16'b0; 
 bot_a_reg<= 16'b0; 
 bot_b_reg<= 16'b0;
+r1_new<=32'b0;
+r2_new<=32'b0;
 //result<=32'b0;
 //chainout<=32'b0;
 chainin_reg<=32'b0;   
@@ -895,6 +898,8 @@ top_a_reg<=top_a;
 top_b_reg<=top_b; 
 bot_a_reg<=bot_a;
 bot_b_reg<=bot_b;
+r1_new<=r1;
+r2_new<=r2;
 //chainout<=result;
 chainin_reg<=chainin; 
 end
@@ -904,7 +909,7 @@ wire [4:0] flags1,flags2,flags3,flags4;
 
 FPMult_16_dspchain inst1(.clk(clk),.rst(reset),.a(top_a_reg),.b(top_b_reg),.flags(flags1),.result(r1)); 
 FPMult_16_dspchain inst2(.clk(clk),.rst(reset),.a(bot_a_reg),.b(bot_b_reg),.flags(flags2),.result(r2));
-FPAddSub_single_dspchain inst3(.clk(clk),.rst(reset),.a(r1),.b(r2),.flags(flags3),.operation(1'b1),.result(r3));
+FPAddSub_single_dspchain inst3(.clk(clk),.rst(reset),.a(r1_new),.b(r2_new),.flags(flags3),.operation(1'b1),.result(r3));
 FPAddSub_single_dspchain inst4(.clk(clk),.rst(reset),.a(r3),.b(chainin),.flags(flags4),.operation(1'b1),.result(result));
 assign chainout = result; 
 endmodule
@@ -998,20 +1003,20 @@ module FPMult_16_dspchain(
 
 
 //adding always@ (*) instead of posedge clock to make design combinational
-	always @ (*) begin	
+	always @ (posedge clk) begin	
 		if(rst) begin
-			pipe_0 = 0;
-			pipe_1 = 0;
-			pipe_2 = 0; 
-			pipe_3 = 0;
-			pipe_4 = 0;
+			pipe_0 <= 0;
+			pipe_1 <= 0;
+			pipe_2 <= 0; 
+			pipe_3 <= 0;
+			pipe_4 <= 0;
 		end 
 		else begin		
 			/* PIPE 0
 				[2*16-1:16] A
 				[16-1:0] B
 			*/
-                       pipe_0 = {a, b} ;
+                       pipe_0 <= {a, b} ;
 
 
 			/* PIPE 1
@@ -1025,7 +1030,7 @@ module FPMult_16_dspchain(
 				[4:0] InputExc
 			*/
 			//pipe_1 <= {pipe_0[16+10-1:16], pipe_0[10_MUL_SPLIT_LSB-1:0], Sa, Sb, Ea[5-1:0], Eb[5-1:0], Mp[2*10-1:0], InputExc[4:0]} ;
-			pipe_1 = {pipe_0[16+10-1:16], pipe_0[8:0], Sa, Sb, Ea[5-1:0], Eb[5-1:0], Mp[2*10+1:0], InputExc[4:0]} ;
+			pipe_1 <= {pipe_0[16+10-1:16], pipe_0[8:0], Sa, Sb, Ea[5-1:0], Eb[5-1:0], Mp[2*10+1:0], InputExc[4:0]} ;
 			
 			/* PIPE 2
 				[8 + 23 + 7:8 + 23 + 3] InputExc
@@ -1034,7 +1039,7 @@ module FPMult_16_dspchain(
 				[8 + 23:23] NormE
 				[23-1:0] NormM
 			*/
-			pipe_2 = {pipe_1[4:0], GRS, Sp, NormE[8:0], NormM[23-1:0]} ;
+			pipe_2 <= {pipe_1[4:0], GRS, Sp, NormE[8:0], NormM[23-1:0]} ;
 			/* PIPE 3
 				[2*8+2*23+10:2*8+2*23+6] InputExc
 				[2*8+2*23+5] GRS
@@ -1044,12 +1049,12 @@ module FPMult_16_dspchain(
 				[2*23+1:23+1] RoundM
 				[23:0] RoundMP
 			*/
-			pipe_3 = {pipe_2[8 + 23 + 7:8 + 23 + 1], RoundE[8:0], RoundEP[8:0], RoundM[23:0], RoundMP[23:0]} ;
+			pipe_3 <= {pipe_2[8 + 23 + 7:8 + 23 + 1], RoundE[8:0], RoundEP[8:0], RoundM[23:0], RoundMP[23:0]} ;
 			/* PIPE 4
 				[16+4:5] Z
 				[4:0] Flags
 			*/				
-			pipe_4 = {Z_int[32-1:0], Flags_int[4:0]} ;
+			pipe_4 <= {Z_int[32-1:0], Flags_int[4:0]} ;
 		end
 	end
 		

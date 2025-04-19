@@ -387,8 +387,8 @@
                 <fc_override port_name="credit_in" fc_type="frac" fc_val="0"/>
             </fc>
                <!-- <pinlocations pattern="spread"> </pinlocations> -->
-            <pinlocations pattern="custom">
-              <!-- router to router ports -->
+            <!--<pinlocations pattern="custom">
+              
               <loc side="top">                           router_wrap_tile.data_in[0:63]  router_wrap_tile.dest_in[0:3]  router_wrap_tile.data_out[0:63]  router_wrap_tile.dest_out[0:3]  router_wrap_tile.is_tail_in[0:0]  router_wrap_tile.send_in[0:0]  router_wrap_tile.credit_out[0:0]  router_wrap_tile.is_tail_out[0:0]  router_wrap_tile.send_out[0:0]  router_wrap_tile.credit_in[0:0]</loc>
               <loc side="bottom">                        router_wrap_tile.data_in[64:127] router_wrap_tile.dest_in[8:11] router_wrap_tile.data_out[64:127] router_wrap_tile.dest_out[8:11] router_wrap_tile.is_tail_in[1:1] router_wrap_tile.send_in[1:1] router_wrap_tile.credit_out[1:1] router_wrap_tile.is_tail_out[1:1] router_wrap_tile.send_out[1:1] router_wrap_tile.credit_in[1:1]</loc>
               <loc side="right" xoffset="0" yoffset="3"> router_wrap_tile.dest_in[4:7] router_wrap_tile.data_out[128:191] router_wrap_tile.dest_out[4:7] router_wrap_tile.is_tail_in[2:2] router_wrap_tile.send_in[2:2] router_wrap_tile.credit_out[2:2] router_wrap_tile.is_tail_out[2:2] router_wrap_tile.send_out[2:2] router_wrap_tile.credit_in[2:2]</loc>
@@ -398,18 +398,19 @@
               <loc side="left"  xoffset="0" yoffset="4"> router_wrap_tile.data_in[192:223]</loc>
               <loc side="left"  xoffset="0" yoffset="5"> router_wrap_tile.data_in[224:255]</loc>
 
-              <!-- fabric port -->
+              
               <loc side="left"  xoffset="0" yoffset="0"> router_wrap_tile.clk_noc router_wrap_tile.clk_usr router_wrap_tile.rst_n router_wrap_tile.router_address </loc>
               <loc side="left"  xoffset="0" yoffset="1"> router_wrap_tile.axis_in_tvalid router_wrap_tile.axis_in_tdata router_wrap_tile.axis_in_tlast router_wrap_tile.axis_in_tid</loc>
               <loc side="right" xoffset="0" yoffset="1"> router_wrap_tile.axis_in_tdest router_wrap_tile.axis_out_tready router_wrap_tile.axis_out_tvalid router_wrap_tile.axis_out_tdata</loc>
               <loc side="right" xoffset="0" yoffset="0"> router_wrap_tile.axis_out_tlast router_wrap_tile.axis_out_tid router_wrap_tile.axis_out_tdest router_wrap_tile.axis_in_tready</loc>
-            </pinlocations>
+            </pinlocations> -->
+            <pinlocations pattern="spread"/>
             </sub_tile>
          </tile>
       </tiles>
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
-  <layout tileable="true" through_channel="false" concat_pass_wire="true">
+  <layout tileable="false">
   <fixed_layout name="large" width="100" height="100">
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
