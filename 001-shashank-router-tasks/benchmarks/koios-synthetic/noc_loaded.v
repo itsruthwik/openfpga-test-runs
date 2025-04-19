@@ -31,13 +31,13 @@ module noc_loaded #(
     input                  RST_N,
 
     // AXI-Stream Slave Interface
-    input                 AXIS_S_TVALID,
-    output                AXIS_S_TREADY,
-    input    [DATAW-1:0]  AXIS_S_TDATA,
-    input                 AXIS_S_TLAST,
-    input    [IDW-1:0]    AXIS_S_TID,
-    input    [USERW-1:0]  AXIS_S_TUSER,
-    input    [DESTW-1:0]  AXIS_S_TDEST,
+    // input                 AXIS_S_TVALID,
+    // output                AXIS_S_TREADY,
+    // input    [DATAW-1:0]  AXIS_S_TDATA,
+    // input                 AXIS_S_TLAST,
+    // input    [IDW-1:0]    AXIS_S_TID,
+    // input    [USERW-1:0]  AXIS_S_TUSER,
+    // input    [DESTW-1:0]  AXIS_S_TDEST,
 
     // AXI-Stream Master Interface
     output                 AXIS_M_TVALID,
@@ -85,18 +85,7 @@ module noc_loaded #(
 // Define connection parameters
 localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
 
-// Create connection wires between routers
-wire [NUM_CONNECTIONS-1:0][FLIT_WIDTH-1:0] rtr0_to_neighbor_data;
-wire [NUM_CONNECTIONS-1:0][DEST_WIDTH-1:0] rtr0_to_neighbor_dest;
-wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_is_tail;
-wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_send;
-wire [NUM_CONNECTIONS-1:0]                 rtr0_to_neighbor_credit;
 
-wire [NUM_CONNECTIONS-1:0][FLIT_WIDTH-1:0] neighbor_to_rtr0_data;
-wire [NUM_CONNECTIONS-1:0][DEST_WIDTH-1:0] neighbor_to_rtr0_dest;
-wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_is_tail;
-wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_send;
-wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_credit;
 
     assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
     assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
@@ -114,13 +103,12 @@ wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_credit;
     assign router_address[4*RTR_ADDR_WIDTH +: COL_WIDTH] = 10;
 
 
-    assign AXIS_M_TVALID = axis_in_tvalid[0];          // Master's TX valid
-    assign AXIS_M_TDATA = axis_in_tdata[0*DATAW +: DATAW]; // Master's TX data
-    assign AXIS_M_TDEST = axis_in_tdest[0*DESTW +: DESTW]; // Master's TX dest
+    assign AXIS_M_TVALID = axis_out_tvalid[0];          // Master's TX valid
+    assign AXIS_M_TDATA = axis_out_tdata[0*DATAW +: DATAW]; // Master's TX data
+    assign AXIS_M_TDEST = axis_out_tdest[0*DESTW +: DESTW]; // Master's TX dest
     assign AXIS_M_TLAST = 1'b0;                        // Not used by master
     assign AXIS_M_TID = {IDW{1'b0}};                   // Zero out unused
     assign AXIS_M_TUSER = {USERW{1'b0}};               // Zero out unused
-
 
 
     // Connect slave ready to constant (since master drives traffic)
@@ -238,19 +226,19 @@ wrapper_pe pe_inst_4 (
     .axis_in_tvalid(axis_in_tvalid[0]),
     .axis_in_tready(axis_in_tready[0]),
     .axis_in_tdata(axis_in_tdata[0*DATAW +: DATAW]),
-    .axis_in_tlast(1'b0),                    // Master doesn't use tlast
+    .axis_in_tlast(1'b0),                  
     .axis_in_tdest(axis_in_tdest[0*DESTW +: DESTW]),
     
     .axis_out_tvalid(axis_out_tvalid[0]),
-    .axis_out_tready(1'b1),                  // Master ignores RX, always ready
+    .axis_out_tready(AXIS_M_TREADY),                  
     .axis_out_tdata(axis_out_tdata[0*DATAW +: DATAW]),
-    .axis_out_tlast(),                       // Unused
+    .axis_out_tlast(),                     
     .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
 
     
    // .DISABLE_TURNS ({4{'{default:0}}}),
         
-        .router_address(router_address[0*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0000)
     );
 
     // rtr 1
@@ -286,7 +274,7 @@ wrapper_pe pe_inst_4 (
     //.DISABLE_TURNS ({4{'{default:0}}})
 
 
-        .router_address(router_address[1*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0001)
     );
 
     // rtr 2
@@ -322,7 +310,7 @@ wrapper_pe pe_inst_4 (
 
    // .DISABLE_TURNS ({4{'{default:0}}})
 
-        .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0010)
     );
 
  // rtr 3
@@ -354,7 +342,7 @@ wrapper_pe pe_inst_4 (
         .axis_out_tdata(axis_out_tdata[3*DATAW +: DATAW]),
         .axis_out_tlast(axis_out_tlast[3]),
         .axis_out_tdest(axis_out_tdest[3*DESTW +: DESTW]),
-        .router_address(router_address[3*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0011)
     );
 
         // rtr 4
@@ -391,7 +379,7 @@ wrapper_pe pe_inst_4 (
     // Connect only WEST port to Router 0
     //.DISABLE_TURNS ({4{'{default:0}}})
 
-        .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0100)
     );
 
 

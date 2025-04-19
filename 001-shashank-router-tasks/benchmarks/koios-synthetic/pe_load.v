@@ -29,7 +29,7 @@ wire [125:0] outp_interface_2;
 interface_2 inst_interface_2(.clk(clk),.reset(reset),.inp(inp_interface_2),.outp(outp_interface_2)); 
 
 assign inp_input_fifo = top_inp[125:0]; 
-assign top_outp[127:124] = {top_inp[127:126],top_inp[127:126]};
+assign top_outp[127:124] = {top_inp[127:126] ^ top_inp[127:126], top_inp[127:126] ^ top_inp[127:126]};
 assign inp_dsp_chain1 = outp_interface_1; 
 assign inp_interface_1 = {outp_input_fifo}; 
  

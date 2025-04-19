@@ -27,7 +27,7 @@ module noc_loaded #(
     parameter HARD_LINK = 0
 ) (
     input                  CLK,
-    input                  CLK_NOC,
+  //  input                  CLK_NOC,
     input                  RST_N,
 
     // AXI-Stream Slave Interface
@@ -50,7 +50,7 @@ module noc_loaded #(
 );
     // NoC parameters
     // rows = 2 , cols=2  but consider 4x4 mesh for sizes 
-    parameter SERIALIZATION_FACTOR = 1;
+    parameter SERIALIZATION_FACTOR = 2;
     parameter CLKCROSS_FACTOR = 1;
     parameter SINGLE_CLOCK = 1;
     parameter NUM_PORTS = 5;
@@ -81,7 +81,7 @@ module noc_loaded #(
     wire [5*TDATAW-1:0] mesh_in_tdata;
     wire [5*TDATAW-1:0] mesh_out_tdata;
     wire [5*RTR_ADDR_WIDTH-1:0] router_address;
-
+    wire CLK_NOC;
 // Define connection parameters
 localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
 
@@ -114,14 +114,16 @@ wire [NUM_CONNECTIONS-1:0]                 neighbor_to_rtr0_credit;
     assign router_address[4*RTR_ADDR_WIDTH +: COL_WIDTH] = 10;
 
 
-    assign AXIS_M_TVALID = axis_in_tvalid[0];          // Master's TX valid
-    assign AXIS_M_TDATA = axis_in_tdata[0*DATAW +: DATAW]; // Master's TX data
-    assign AXIS_M_TDEST = axis_in_tdest[0*DESTW +: DESTW]; // Master's TX dest
+    assign AXIS_M_TVALID = axis_out_tvalid[0];          // Master's TX valid
+    assign AXIS_M_TDATA = axis_out_tdata[0*DATAW +: DATAW]; // Master's TX data
+    assign AXIS_M_TDEST = axis_out_tdest[0*DESTW +: DESTW]; // Master's TX dest
     assign AXIS_M_TLAST = 1'b0;                        // Not used by master
     assign AXIS_M_TID = {IDW{1'b0}};                   // Zero out unused
     assign AXIS_M_TUSER = {USERW{1'b0}};               // Zero out unused
 
+            // Zero out unused
 
+    assign CLK_NOC = CLK;
 
 
 // ==================== Router 1 ====================
@@ -272,7 +274,7 @@ wrapper_pe pe_inst_4 (
     .axis_in_tdest(axis_in_tdest[0*DESTW +: DESTW]),
     
     .axis_out_tvalid(axis_out_tvalid[0]),
-    .axis_out_tready(1'b1),                  // Master ignores RX, always ready
+    .axis_out_tready(AXIS_M_TREADY),                  // Master ignores RX, always ready
     .axis_out_tdata(axis_out_tdata[0*DATAW +: DATAW]),
     .axis_out_tlast(),                       // Unused
     .axis_out_tdest(axis_out_tdest[0*DESTW +: DESTW]),
@@ -291,7 +293,7 @@ wrapper_pe pe_inst_4 (
     
    // .DISABLE_TURNS ({4{'{default:0}}}),
         
-        .router_address(router_address[0*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0000)
     );
 
     // rtr 1
@@ -339,7 +341,7 @@ wrapper_pe pe_inst_4 (
     //.DISABLE_TURNS ({4{'{default:0}}})
 
 
-        .router_address(router_address[1*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0001)
     );
 
     // rtr 2
@@ -387,7 +389,7 @@ wrapper_pe pe_inst_4 (
     
    // .DISABLE_TURNS ({4{'{default:0}}})
 
-        .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0010)
     );
 
  // rtr 3
@@ -432,8 +434,7 @@ wrapper_pe pe_inst_4 (
     .is_tail_out ({n3t_unused, s3t_unused, neighbor_to_rtr0_is_tail[2], w3t_unused}),
     .send_out    ({n3s_unused, s3s_unused, neighbor_to_rtr0_send[2], w3s_unused}),
     .credit_in   ({2'b0, neighbor_to_rtr0_credit[2], 1'b0}),
-        .router_address(router_address[3*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
-    );
+    .router_address(4'b0011)    );
 
         // rtr 4
     (* keep *)
@@ -481,7 +482,7 @@ wrapper_pe pe_inst_4 (
     
     //.DISABLE_TURNS ({4{'{default:0}}})
 
-        .router_address(router_address[2*RTR_ADDR_WIDTH +: RTR_ADDR_WIDTH])
+        .router_address(4'b0100)
     );
 
 
