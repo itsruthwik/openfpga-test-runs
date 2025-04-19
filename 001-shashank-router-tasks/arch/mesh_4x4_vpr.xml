@@ -335,6 +335,7 @@
         </pinlocations>
       </sub_tile>
     </tile>
+    
   <!-- Tile height is an approximation based on CLB. router tile has 137 outputs on injection port. Considering CLB as a standard tile, in this arch, CLB has 20 outputs. So, router needs 137/20 = 6.85 ~= 7 tiles. -->
   <tile name="router_wrap_tile" height="8" area="460000">
          <sub_tile name="router_wrap_tile">

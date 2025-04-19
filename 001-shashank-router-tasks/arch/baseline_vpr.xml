@@ -275,7 +275,9 @@
         <pinlocations pattern="custom">
           <loc side="left">memory.clk</loc>
           <loc side="top"/>
-          <loc side="right">memory.waddr[4:0] memory.raddr[4:0] memory.data_in[3:0] memory.wen memory.data_out[3:0]</loc>
+          <loc side="right" xoffset="0" yoffset="0">memory.waddr[4:0] memory.raddr[4:0]</loc>
+          <loc side="right" xoffset="0" yoffset="1">memory.data_in[3:0] memory.wen memory.data_out[3:0]</loc>
+         
           <loc side="bottom">memory.waddr[9:5] memory.raddr[9:5] memory.data_in[7:4] memory.ren memory.data_out[7:4]</loc>
         </pinlocations>
       </sub_tile>
