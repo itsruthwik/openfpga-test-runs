@@ -1,0 +1,11 @@
+<traffic_flows>
+	<single_flow src=".*master_inst.axis_tx_tready.*" dst=".*pe_inst_1.out_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*master_inst.axis_tx_tready.*" dst=".*pe_inst_2.out_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*master_inst.axis_tx_tready.*" dst=".*pe_inst_3.out_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*master_inst.axis_tx_tready.*" dst=".*pe_inst_4.out_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+
+	<single_flow src=".*pe_inst_1.out_tready.*" dst=".*master_inst.axis_tx_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*pe_inst_2.out_tready.*" dst=".*master_inst.axis_tx_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*pe_inst_3.out_tready.*" dst=".*master_inst.axis_tx_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+    <single_flow src=".*pe_inst_4.out_tready.*" dst=".*master_inst.axis_tx_tready.*" bandwidth="4e5" latency_cons="3e-9" />
+</traffic_flows>
