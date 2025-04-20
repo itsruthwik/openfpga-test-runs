@@ -209,24 +209,25 @@
     </model>
   <model name="router_wrap">
          <input_ports>
-            <port name="clk_noc" clock="clk_usr"/>
             <port name="clk_usr" is_clock="1"/>
-            <port name="rst_n" clock="clk_usr"/>
 
-            <port name="data_in" clock="clk_usr"/>
-            <port name="dest_in" clock="clk_usr"/>
-            <port name="is_tail_in" clock="clk_usr"/>
-            <port name="send_in" clock="clk_usr"/>
-            <port name="credit_in" clock="clk_usr"/>
+            <port name="clk_noc" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="rst_n" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
 
-            <port name="axis_in_tvalid" clock="clk_usr"/>
-            <port name="axis_in_tdata" clock="clk_usr"/>
-            <port name="axis_in_tlast" clock="clk_usr"/>
-            <port name="axis_in_tid" clock="clk_usr"/>
-            <port name="axis_in_tdest" clock="clk_usr"/>
-            <port name="axis_out_tready" clock="clk_usr"/>
+            <port name="data_in" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="dest_in" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="is_tail_in" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="send_in" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="credit_in" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+
+            <port name="axis_in_tvalid" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="axis_in_tdata" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="axis_in_tlast" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="axis_in_tid" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="axis_in_tdest" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
+            <port name="axis_out_tready" clock="clk_usr"   combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
             
-            <port name="router_address" clock="clk_usr"/>
+            <port name="router_address" clock="clk_usr"  combinational_sink_ports="axis_in_tready axis_out_tvalid axis_out_tdata axis_out_tlast axis_out_tid axis_out_tdest"/>
             </input_ports>
          <output_ports>
             <port name="credit_out" clock="clk_usr"/>
@@ -361,7 +362,7 @@
             <input name="router_address" num_pins="4"/>
 
             <input name="axis_in_tvalid" num_pins="1"/>
-            <input name="axis_in_tdata" num_pins="128"/>
+            <input name="axis_in_tdata" num_pins="128"  equivalent="full"/>
             <input name="axis_in_tlast" num_pins="1"/>
             <input name="axis_in_tid" num_pins="2"/>
             <input name="axis_in_tdest" num_pins="4"/>
@@ -369,7 +370,7 @@
 
             <output name="axis_in_tready" num_pins="1"/>
             <output name="axis_out_tvalid" num_pins="1"/>
-            <output name="axis_out_tdata" num_pins="128"/>
+            <output name="axis_out_tdata" num_pins="128" equivalent="full"/>
             <output name="axis_out_tlast" num_pins="1"/>
             <output name="axis_out_tid" num_pins="2"/>
             <output name="axis_out_tdest" num_pins="4"/>
@@ -1374,7 +1375,7 @@
       <input name="router_address" num_pins="4"/>
       
       <input name="axis_in_tvalid" num_pins="1"/>
-      <input name="axis_in_tdata" num_pins="128"/>
+      <input name="axis_in_tdata" num_pins="128"  equivalent="full"/>
       <input name="axis_in_tlast" num_pins="1"/>
       <input name="axis_in_tid" num_pins="2"/>
       <input name="axis_in_tdest" num_pins="4"/>
@@ -1382,7 +1383,7 @@
                   
       <output name="axis_in_tready" num_pins="1"/>
       <output name="axis_out_tvalid" num_pins="1"/>
-      <output name="axis_out_tdata" num_pins="128"/>
+      <output name="axis_out_tdata" num_pins="128"  equivalent="full"/>
       <output name="axis_out_tlast" num_pins="1"/>
       <output name="axis_out_tid" num_pins="2"/>
       <output name="axis_out_tdest" num_pins="4"/>
@@ -1473,6 +1474,96 @@
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.axis_out_tid" clock="clk_usr"/>
             <T_setup value="66e-12" port="router_wrap.axis_out_tdest" clock="clk_usr"/>
             <T_clock_to_Q max="42e-12" min="37e-12" port="router_wrap.axis_out_tdest" clock="clk_usr"/>
+
+            <delay_constant max="1211" in_port="router_wrap.clk_noc" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.rst_n" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.data_in" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.dest_in" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.is_tail_in" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.send_in" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.credit_in" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tvalid" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdata" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tlast" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tid" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdest" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_out_tready" out_port="router_wrap.axis_out_tdata"/>
+            <delay_constant max="1211" in_port="router_wrap.router_address" out_port="router_wrap.axis_out_tdata"/>
+
+            <delay_constant max="1211" in_port="router_wrap.clk_noc" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.rst_n" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.data_in" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.dest_in" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.is_tail_in" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.send_in" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.credit_in" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tvalid" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdata" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tlast" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tid" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdest" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_out_tready" out_port="router_wrap.axis_in_tready"/>
+            <delay_constant max="1211" in_port="router_wrap.router_address" out_port="router_wrap.axis_in_tready"/>
+
+            <delay_constant max="1211" in_port="router_wrap.clk_noc" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.rst_n" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.data_in" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.dest_in" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.is_tail_in" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.send_in" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.credit_in" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tvalid" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdata" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tlast" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tid" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdest" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_out_tready" out_port="router_wrap.axis_out_tvalid"/>
+            <delay_constant max="1211" in_port="router_wrap.router_address" out_port="router_wrap.axis_out_tvalid"/>
+
+            <delay_constant max="1211" in_port="router_wrap.clk_noc" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.rst_n" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.data_in" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.dest_in" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.is_tail_in" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.send_in" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.credit_in" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tvalid" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdata" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tlast" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tid" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdest" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_out_tready" out_port="router_wrap.axis_out_tlast"/>
+            <delay_constant max="1211" in_port="router_wrap.router_address" out_port="router_wrap.axis_out_tlast"/>
+
+            <delay_constant max="1211" in_port="router_wrap.clk_noc" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.rst_n" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.data_in" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.dest_in" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.is_tail_in" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.send_in" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.credit_in" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tvalid" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdata" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tlast" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tid" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdest" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_out_tready" out_port="router_wrap.axis_out_tid"/>
+            <delay_constant max="1211" in_port="router_wrap.router_address" out_port="router_wrap.axis_out_tid"/>
+
+            <delay_constant max="1211" in_port="router_wrap.clk_noc" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.rst_n" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.data_in" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.dest_in" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.is_tail_in" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.send_in" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.credit_in" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tvalid" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdata" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tlast" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tid" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_in_tdest" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.axis_out_tready" out_port="router_wrap.axis_out_tdest"/>
+            <delay_constant max="1211" in_port="router_wrap.router_address" out_port="router_wrap.axis_out_tdest"/>
             </pb_type>
          <interconnect>
             <direct name="connection_clk_noc" input="router_wrap_tile.clk_noc" output="router_wrap.clk_noc"/>
