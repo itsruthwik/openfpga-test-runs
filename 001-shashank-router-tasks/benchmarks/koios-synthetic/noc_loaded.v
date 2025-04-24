@@ -37,7 +37,7 @@ module noc_loaded #(
     // input                 AXIS_S_TLAST,
     // input    [IDW-1:0]    AXIS_S_TID,
     // input    [USERW-1:0]  AXIS_S_TUSER,
-    // input    [DESTW-1:0]  AXIS_S_TDEST,
+    input    [6*DESTW-1:0]  AXIS_S_TDEST,
 
     // AXI-Stream Master Interface
     output                 AXIS_M_TVALID,
@@ -63,29 +63,30 @@ module noc_loaded #(
     parameter DEST_WIDTH = 4;
 
 
-// 5routers    
-    wire [4:0] axis_in_tvalid;
-    wire [4:0] axis_in_tready;
-    wire [5*DATAW-1:0] axis_in_tdata;
-    wire [4:0] axis_in_tlast;
-    wire [5*USERW-1:0] axis_in_tuser;
-    wire [5*DESTW-1:0] axis_in_tdest;
+// 6routers    
+    wire [6:0] axis_in_tvalid;
+    wire [6:0] axis_in_tready;
+    wire [7*DATAW-1:0] axis_in_tdata;
+    wire [6:0] axis_in_tlast;
+    wire [7*USERW-1:0] axis_in_tuser;
+    wire [7*DESTW-1:0] axis_in_tdest;
 
-    wire [4:0] axis_out_tvalid;
-    wire [4:0] axis_out_tready;
-    wire [5*DATAW-1:0] axis_out_tdata;
-    wire [4:0] axis_out_tlast;
-    wire [5*USERW-1:0] axis_out_tuser;
-    wire [5*DESTW-1:0] axis_out_tdest;
+    wire [6:0] axis_out_tvalid;
+    wire [6:0] axis_out_tready;
+    wire [7*DATAW-1:0] axis_out_tdata;
+    wire [6:0] axis_out_tlast;
+    wire [7*USERW-1:0] axis_out_tuser;
+    wire [7*DESTW-1:0] axis_out_tdest;
 
-    wire [5*TDATAW-1:0] mesh_in_tdata;
-    wire [5*TDATAW-1:0] mesh_out_tdata;
-    wire [5*RTR_ADDR_WIDTH-1:0] router_address;
+    wire [7*TDATAW-1:0] mesh_in_tdata;
+    wire [7*TDATAW-1:0] mesh_out_tdata;
+    wire [7*RTR_ADDR_WIDTH-1:0] router_address;
 
 // Define connection parameters
 localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
 
 
+    //assign AXIS_S_TDEST = axis_in_tdest[7*DESTW-1 : DESTW];
 
     assign router_address[0*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
     assign router_address[0*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
@@ -99,8 +100,14 @@ localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
     assign router_address[3*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 10;
     assign router_address[3*RTR_ADDR_WIDTH +: COL_WIDTH] = 00;
 
-    assign router_address[4*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[4*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 10;
     assign router_address[4*RTR_ADDR_WIDTH +: COL_WIDTH] = 10;
+
+    assign router_address[5*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 00;
+    assign router_address[5*RTR_ADDR_WIDTH +: COL_WIDTH] = 11;
+
+    assign router_address[6*RTR_ADDR_WIDTH + COL_WIDTH +: ROW_WIDTH] = 01;
+    assign router_address[6*RTR_ADDR_WIDTH +: COL_WIDTH] = 11;
 
 
     assign AXIS_M_TVALID = axis_out_tvalid[0];          // Master's TX valid
@@ -112,8 +119,7 @@ localparam NUM_CONNECTIONS = 4;  // Router 0 connects to 4 neighbors
 
 
     // Connect slave ready to constant (since master drives traffic)
-    assign AXIS_S_TREADY = 1'b1;     
-master_module master_inst (
+    master_module master_inst (
     .clk(CLK),                    // Connect to system clock
     .reset(~RST_N),               // Active-high reset (invert router's active-low reset)
     
@@ -200,6 +206,43 @@ wrapper_pe pe_inst_4 (
     .out_tvalid (axis_in_tvalid[4]),
     .out_tdata  (axis_in_tdata[4*DATAW +: DATAW]),
     .out_tready (axis_in_tready[4]),
+    
+    .done     ()
+);
+
+//------------------------------------------
+// Connect wrapper_pe to Router 5
+//------------------------------------------
+wrapper_pe pe_inst_5 (
+    .clk      (CLK),
+    .reset    (~RST_N),
+    
+    .in_tvalid (axis_out_tvalid[5]),
+    .in_tdata  (axis_out_tdata[5*DATAW +: DATAW]),
+    .in_tready (axis_out_tready[5]),
+    
+    .out_tvalid (axis_in_tvalid[5]),
+    .out_tdata  (axis_in_tdata[5*DATAW +: DATAW]),
+    .out_tready (axis_in_tready[5]),
+    
+    .done     ()
+);
+
+
+//------------------------------------------
+// Connect wrapper_pe to Router 6
+//------------------------------------------
+wrapper_pe pe_inst_6 (
+    .clk      (CLK),
+    .reset    (~RST_N),
+    
+    .in_tvalid (axis_out_tvalid[6]),
+    .in_tdata  (axis_out_tdata[6*DATAW +: DATAW]),
+    .in_tready (axis_out_tready[6]),
+    
+    .out_tvalid (axis_in_tvalid[6]),
+    .out_tdata  (axis_in_tdata[6*DATAW +: DATAW]),
+    .out_tready (axis_in_tready[6]),
     
     .done     ()
 );
@@ -380,6 +423,81 @@ wrapper_pe pe_inst_4 (
     //.DISABLE_TURNS ({4{'{default:0}}})
 
         .router_address(4'b0100)
+    );
+
+            // rtr 5
+    (* keep *)
+    router_wrap #(
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        // .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
+    ) router_inst_5 (
+        .clk_noc(CLK_NOC),
+        .clk_usr(CLK),
+        .rst_n(RST_N),
+
+        .axis_in_tvalid(axis_in_tvalid[5]),
+        .axis_in_tready(axis_in_tready[5]),
+        .axis_in_tdata(axis_in_tdata[5*DATAW +: DATAW]),
+        .axis_in_tlast(axis_in_tlast[5]),
+        .axis_in_tdest(axis_in_tdest[5*DESTW +: DESTW]),
+        .axis_out_tvalid(axis_out_tvalid[5]),
+        .axis_out_tready(axis_out_tready[5]),
+        .axis_out_tdata(axis_out_tdata[5*DATAW +: DATAW]),
+        .axis_out_tlast(axis_out_tlast[5]),
+        .axis_out_tdest(axis_out_tdest[5*DESTW +: DESTW]),
+
+    // Connect only WEST port to Router 0
+    //.DISABLE_TURNS ({4{'{default:0}}})
+
+        .router_address(4'b0101)
+    );
+
+
+            // rtr 6
+    (* keep *)
+    router_wrap #(
+        .NUM_PORTS(NUM_PORTS),
+        .TID_WIDTH(TIDW),
+        .TDEST_WIDTH(TDESTW),
+        // .TDATA_WIDTH(TDATAW),
+        .TDATA_WIDTH(DATAW),
+        .SERIALIZATION_FACTOR(SERIALIZATION_FACTOR),
+        .CLKCROSS_FACTOR(CLKCROSS_FACTOR),
+        .SINGLE_CLOCK(SINGLE_CLOCK),
+        .FLIT_WIDTH(FLIT_WIDTH),
+        .DEST_WIDTH(DEST_WIDTH),
+        .ROUTE_WIDTH(ROUTE_WIDTH),
+        .RTR_ADDR_WIDTH(RTR_ADDR_WIDTH)
+    ) router_inst_6 (
+        .clk_noc(CLK_NOC),
+        .clk_usr(CLK),
+        .rst_n(RST_N),
+
+        .axis_in_tvalid(axis_in_tvalid[6]),
+        .axis_in_tready(axis_in_tready[6]),
+        .axis_in_tdata(axis_in_tdata[6*DATAW +: DATAW]),
+        .axis_in_tlast(axis_in_tlast[6]),
+        .axis_in_tdest(axis_in_tdest[6*DESTW +: DESTW]),
+        .axis_out_tvalid(axis_out_tvalid[6]),
+        .axis_out_tready(axis_out_tready[6]),
+        .axis_out_tdata(axis_out_tdata[6*DATAW +: DATAW]),
+        .axis_out_tlast(axis_out_tlast[6]),
+        .axis_out_tdest(axis_out_tdest[6*DESTW +: DESTW]),
+
+    // Connect only WEST port to Router 0
+    //.DISABLE_TURNS ({4{'{default:0}}})
+
+        .router_address(4'b0110)
     );
 
 
