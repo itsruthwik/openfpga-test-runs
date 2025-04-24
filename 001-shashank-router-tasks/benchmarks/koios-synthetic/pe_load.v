@@ -1296,22 +1296,43 @@ module FPAddSub_single_dspchain(
 	wire MaxAB;
 	wire [7:0] CExp;
 	wire [4:0] Shift;
+
+	reg [4:0] temp_Shift;
+
 	wire [22:0] Mmax;
+	reg [22:0] temp_Mmax;
+
 	wire [4:0] InputExc;
+	reg [4:0] temp_InputExc;
+
 	wire [23:0] Mmin_3;
+	reg [23:0] temp_Mmin_3;
 
 	wire [32:0] SumS_5 ;
-	wire [4:0] Shift_1;							
+	reg [32:0] temp_SumS_5;
+	
+	wire [4:0] Shift_1;		
+	reg [4:0] temp_Shift_1;
+	
+	
 	wire PSgn ;							
 	wire Opr ;	
 	
 	wire [22:0] NormM ;				// Normalized mantissa
+	reg [22:0] temp_NormM ;				
+
 	wire [8:0] NormE ;					// Adjusted exponent
+	reg [8:0] temp_NormE ;
+	
 	wire ZeroSum ;						// Zero flag
+	reg temp_ZeroSum ;
+
 	wire NegE ;							// Flag indicating negative exponent
 	wire R ;								// Round bit
 	wire S ;								// Final sticky bit
 	wire FG ;
+
+
 
 FPAddSub_a_dspchain M1(a,b,operation,Opout,Sa,Sb,MaxAB,CExp,Shift,Mmax,InputExc,Mmin_3);
 
@@ -1324,11 +1345,30 @@ FPAddSub_d_dspchain M4(pipe_3[13],pipe_3[22:14],pipe_3[45:23],pipe_3[11],pipe_3[
 
 always @ (posedge clk) begin	
 		if(rst) begin
+			temp_Mmin_3 <= 0;
+			temp_Shift <= 0;
+			temp_NormM <= 0;
+			temp_NormE <= 0;
+			temp_ZeroSum <= 0;
+			temp_SumS_5 <= 0;
+			temp_Shift_1 <= 0;
+			temp_Mmax <= 0;
+			temp_InputExc <= 0;
+
 			pipe_1 <= 0;
 			pipe_2 <= 0;
 			pipe_3 <= 0;
 		end 
 		else begin
+			temp_Mmin_3 <= Mmin_3;
+			temp_Shift <= Shift_1;
+			temp_NormM <= NormM;
+			temp_NormE <= NormE;
+			temp_ZeroSum <= ZeroSum;
+			temp_SumS_5 <= SumS_5;
+			temp_Shift_1 <= Shift_1;
+			temp_Mmax <= Mmax;
+			temp_InputExc <= InputExc;
 /*
 pipe_1:
 	[68] Opout;
@@ -1342,7 +1382,7 @@ pipe_1:
 	[23:0] Mmin_3;	
 */
 
-pipe_1 <= {Opout,Sa,Sb,MaxAB,CExp,Shift,Mmax,InputExc,Mmin_3};
+pipe_1 <= {Opout,Sa,Sb,MaxAB,CExp,temp_Shift,temp_Mmax,temp_InputExc,temp_Mmin_3};
 
 /*
 pipe_2:
@@ -1356,7 +1396,7 @@ pipe_2:
 	[4:0]InputExc
 */
 
-pipe_2 <= {SumS_5,Shift_1,pipe_1[64:57], pipe_1[67], pipe_1[66], pipe_1[68], pipe_1[65], pipe_1[28:24] };
+pipe_2 <= {temp_SumS_5,temp_Shift_1,pipe_1[64:57], pipe_1[67], pipe_1[66], pipe_1[68], pipe_1[65], pipe_1[28:24] };
 
 /*
 pipe_3:
@@ -1374,7 +1414,7 @@ pipe_3:
 	[4:0]InputExc
 */
 
-pipe_3 <= {NormM,NormE,ZeroSum,NegE,R,S,FG, pipe_2[8], pipe_2[7], pipe_2[6], pipe_2[5], pipe_2[4:0] };
+pipe_3 <= {temp_NormM,temp_NormE,temp_ZeroSum,NegE,R,S,FG, pipe_2[8], pipe_2[7], pipe_2[6], pipe_2[5], pipe_2[4:0] };
 
 end
 end
@@ -1414,6 +1454,8 @@ module FPAddSub_a_dspchain(
 	output [22:0] Mmax;
 	output [4:0] InputExc;
 	output [23:0] Mmin_3;	
+
+
 							
 	wire [9:0] ShiftDet ;							
 	wire [30:0] Aout ;
@@ -1760,8 +1802,8 @@ module FPAddSub_d_dspchain(
 	output [4:0] Flags ;				// Exception flags
 	
 	// 
-	wire [31:0] Z ;					// Final result
-	wire EOF ;
+	reg [31:0] Z ;					// Final result
+	reg EOF ;
 	
 	// Internal signals
 	wire [23:0] RoundUpM ;			// Rounded up sum with room for overflow
@@ -1786,11 +1828,15 @@ module FPAddSub_d_dspchain(
 	// If zero, need to determine sign according to rounding
 	assign FSgn = (ZeroSum & (Sa ^ Sb)) | (ZeroSum ? (Sa & Sb & ~Ctrl) : ((~MaxAB & Sa) | ((Ctrl ^ Sb) & (MaxAB | Sa)))) ;
 
+	always@(*) begin
+		Z = {FSgn, RoundE[8:0], RoundM[22:0]} ;
+		EOF = RoundE[8];
+	end
 	// Assign final result
-	assign Z = {FSgn, RoundE[7:0], RoundM[22:0]} ;
+	// assign Z = {FSgn, RoundE[7:0], RoundM[22:0]} ;
 	
 	// Indicate exponent overflow
-	assign EOF = RoundE[8];
+	// assign EOF = RoundE[8];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

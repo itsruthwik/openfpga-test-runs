@@ -1,4 +1,4 @@
-module noc_loaded #(
+module noc_loaded_SOFT #(
     parameter DATAW = 128,                   
     parameter BYTEW = 8,                  
     parameter IDW = 32,      
