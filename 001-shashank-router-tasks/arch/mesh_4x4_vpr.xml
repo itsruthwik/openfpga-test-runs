@@ -437,22 +437,22 @@
       <col type="EMPTY"   startx="6" starty="1" repeatx="8" priority="19"/>
       
       <!-- 16 routers as a 4x4 mesh -->
-      <single type="router_wrap_tile" x="10" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="55" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="55" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="55" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="55" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="4*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="4*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="4*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="4*H/5" priority="50"/>
       </fixed_layout>
    </layout>
   <device>
