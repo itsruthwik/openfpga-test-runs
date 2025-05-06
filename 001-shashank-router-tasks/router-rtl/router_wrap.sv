@@ -1,39 +1,75 @@
 // (* whitebox *)
 module router_wrap #(
-    parameter RESET_SYNC_EXTEND_CYCLES = 2,
-    parameter RESET_NUM_OUTPUT_REGISTERS = 1,
+    // parameters for sweep
+parameter NUM_PORTS = 5,
+parameter NOC_NUM_ENDPOINTS = 16, // rows * cols
+parameter FLIT_BUFFER_DEPTH = 8,
+parameter SERDES_BUFFER_DEPTH = 8,
 
-    parameter NUM_PORTS = 5,
-    parameter NOC_NUM_ENDPOINTS = 4, // rows * cols
+parameter TID_WIDTH = 2,
+parameter TDEST_WIDTH = 4,
+parameter TDATA_WIDTH = 128,
 
-    // parameter FLIT_WIDTH = 32,
-    parameter TID_WIDTH = 2,
-    parameter TDEST_WIDTH = 4,
-    parameter TDATA_WIDTH = 32,
+parameter SERIALIZATION_FACTOR = 2,
+parameter CLKCROSS_FACTOR = 1,
+parameter bit SINGLE_CLOCK = 1,
+
+// fixed parameters     
+parameter RESET_SYNC_EXTEND_CYCLES = 2,
+parameter RESET_NUM_OUTPUT_REGISTERS = 1,
+parameter SERDES_IN_BUFFER_DEPTH = SERDES_BUFFER_DEPTH,
+parameter SERDES_OUT_BUFFER_DEPTH = SERDES_BUFFER_DEPTH,
+parameter SERDES_EXTRA_SYNC_STAGES = 0,
+parameter SERDES_FORCE_MLAB = 0,
+
+// parameter ROUTING_TABLE_HEX = "routing_tables/router_4x4/",
+
+parameter bit ROUTER_PIPELINE_ROUTE_COMPUTE = 1,
+parameter bit ROUTER_PIPELINE_ARBITER = 1,
+parameter bit ROUTER_PIPELINE_OUTPUT = 1,
+parameter bit ROUTER_FORCE_MLAB = 0,
+
+parameter FLIT_WIDTH = TDATA_WIDTH / SERIALIZATION_FACTOR / CLKCROSS_FACTOR,
+parameter DEST_WIDTH = 4,
+
+parameter RTR_ADDR_WIDTH=4,
+parameter ROUTE_WIDTH=3,
+
+parameter NUM_PIPELINE = 0
+    // parameter RESET_SYNC_EXTEND_CYCLES = 2,
+    // parameter RESET_NUM_OUTPUT_REGISTERS = 1,
+
+    // parameter NUM_PORTS = 5,
+    // parameter NOC_NUM_ENDPOINTS = 16, // rows * cols
+
+    // // parameter FLIT_WIDTH = 32,
+    // parameter TID_WIDTH = 2,
+    // parameter TDEST_WIDTH = 4,
+    // parameter TDATA_WIDTH = 128,
     
-    parameter SERIALIZATION_FACTOR =1,
-    parameter CLKCROSS_FACTOR =1,
-    parameter bit SINGLE_CLOCK =1,
-    parameter SERDES_IN_BUFFER_DEPTH = 4,
-    parameter SERDES_OUT_BUFFER_DEPTH = 4,
-    parameter SERDES_EXTRA_SYNC_STAGES = 0,
-    parameter SERDES_FORCE_MLAB = 0,
+    // parameter SERIALIZATION_FACTOR =1,
+    // parameter CLKCROSS_FACTOR =2,
+    // parameter bit SINGLE_CLOCK =1,
+    // parameter SERDES_IN_BUFFER_DEPTH = 8,
+    // parameter SERDES_OUT_BUFFER_DEPTH = 8,
+    // parameter SERDES_EXTRA_SYNC_STAGES = 0,
+    // parameter SERDES_FORCE_MLAB = 0,
 
-    parameter FLIT_BUFFER_DEPTH = 4,
-    // parameter ROUTING_TABLE_HEX = "routing_tables/router_4x4/",
+    // parameter FLIT_BUFFER_DEPTH = 8,
+    // // parameter ROUTING_TABLE_HEX = "routing_tables/router_4x4/",
 
-    parameter bit ROUTER_PIPELINE_ROUTE_COMPUTE = 1,
-    parameter bit ROUTER_PIPELINE_ARBITER = 0,
-    parameter bit ROUTER_PIPELINE_OUTPUT = 0,
-    parameter bit ROUTER_FORCE_MLAB = 0,
+    // parameter bit ROUTER_PIPELINE_ROUTE_COMPUTE = 1,
+    // parameter bit ROUTER_PIPELINE_ARBITER = 1,
+    // parameter bit ROUTER_PIPELINE_OUTPUT = 1,
+    // parameter bit ROUTER_FORCE_MLAB = 0,
 
-    parameter FLIT_WIDTH = TDATA_WIDTH / SERIALIZATION_FACTOR / CLKCROSS_FACTOR,
-    parameter DEST_WIDTH = TDEST_WIDTH + TID_WIDTH,
+    // parameter FLIT_WIDTH = TDATA_WIDTH / SERIALIZATION_FACTOR / CLKCROSS_FACTOR,
+    // parameter DEST_WIDTH = TDEST_WIDTH + TID_WIDTH,
 
-    parameter RTR_ADDR_WIDTH = 6,
-    parameter ROUTE_WIDTH = 3,
+    // parameter RTR_ADDR_WIDTH = 6,
+    // parameter ROUTE_WIDTH = 3,
 
-    parameter NUM_PIPELINE = 0
+    // parameter NUM_PIPELINE = 0
 ) (
     input   wire    clk_noc,
     input   wire    clk_usr,
