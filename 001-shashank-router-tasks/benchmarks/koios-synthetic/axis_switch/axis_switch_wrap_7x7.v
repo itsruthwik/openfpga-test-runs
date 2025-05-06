@@ -115,7 +115,7 @@ module axis_switch_wrap_7x7 #
     parameter S_REG_TYPE = 0,
     // Output interface register type
     // 0 to bypass, 1 for simple buffer, 2 for skid buffer
-    parameter M_REG_TYPE = 2,
+    parameter M_REG_TYPE = 0,
     // select round robin arbitration
     parameter ARB_TYPE_ROUND_ROBIN = 1,
     // LSB priority selection

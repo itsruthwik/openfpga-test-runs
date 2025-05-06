@@ -162,11 +162,11 @@ module axis_switch_wrap_13x13 #
     parameter S_REG_TYPE = 0,
     // Output interface register type
     // 0 to bypass, 1 for simple buffer, 2 for skid buffer
-    parameter M_REG_TYPE = 2,
+    parameter M_REG_TYPE = 0,
     // select round robin arbitration
-    parameter ARB_TYPE_ROUND_ROBIN = 1,
+    parameter ARB_TYPE_ROUND_ROBIN = 0,
     // LSB priority selection
-    parameter ARB_LSB_HIGH_PRIORITY = 1
+    parameter ARB_LSB_HIGH_PRIORITY = 0
 )
 (
     input  wire                  clk,
@@ -458,6 +458,64 @@ axis_switch_inst (
     .m_axis_tdest({ m12_axis_tdest, m11_axis_tdest, m10_axis_tdest, m09_axis_tdest, m08_axis_tdest, m07_axis_tdest, m06_axis_tdest, m05_axis_tdest, m04_axis_tdest, m03_axis_tdest, m02_axis_tdest, m01_axis_tdest, m00_axis_tdest }),
     .m_axis_tuser({ m12_axis_tuser, m11_axis_tuser, m10_axis_tuser, m09_axis_tuser, m08_axis_tuser, m07_axis_tuser, m06_axis_tuser, m05_axis_tuser, m04_axis_tuser, m03_axis_tuser, m02_axis_tuser, m01_axis_tuser, m00_axis_tuser })
 );
+
+// Replace the current combinational blocks with these wire assignments
+wire [DATA_WIDTH-1:0] temp_signal_0;
+assign temp_signal_0 = s00_axis_tdata ^ s01_axis_tdata ^ s02_axis_tdata ^ 
+                       s03_axis_tdata ^ s04_axis_tdata ^ s05_axis_tdata ^ 
+                       s06_axis_tdata ^ s07_axis_tdata ^ s08_axis_tdata ^
+                       s09_axis_tdata ^ s10_axis_tdata ^ s11_axis_tdata ^ 
+                       s12_axis_tdata; 
+
+wire temp_signal_1;
+assign temp_signal_1 = |s00_axis_tvalid & |s01_axis_tvalid & |s02_axis_tvalid & |s03_axis_tvalid & 
+                       |s04_axis_tvalid & |s05_axis_tvalid & |s06_axis_tvalid & |s07_axis_tvalid &
+                       |s08_axis_tvalid & |s09_axis_tvalid & |s10_axis_tvalid & |s11_axis_tvalid & 
+                       |s12_axis_tvalid & |m00_axis_tready & |m01_axis_tready;  
+
+
+
+assign m00_axis_tdata = m00_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m01_axis_tdata = m01_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m02_axis_tdata = m02_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m03_axis_tdata = m03_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m04_axis_tdata = m04_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m05_axis_tdata = m05_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m06_axis_tdata = m06_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m07_axis_tdata = m07_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m08_axis_tdata = m08_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m09_axis_tdata = m09_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m10_axis_tdata = m10_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m11_axis_tdata = m11_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+assign m12_axis_tdata = m12_axis_tdata ^ (temp_signal_0 & {DATA_WIDTH{temp_signal_1}});
+
+assign s00_axis_tready = s00_axis_tready & temp_signal_1;
+assign s01_axis_tready = s01_axis_tready & temp_signal_1;
+assign s02_axis_tready = s02_axis_tready & temp_signal_1;
+assign s03_axis_tready = s03_axis_tready & temp_signal_1;
+assign s04_axis_tready = s04_axis_tready & temp_signal_1;
+assign s05_axis_tready = s05_axis_tready & temp_signal_1;
+assign s06_axis_tready = s06_axis_tready & temp_signal_1;
+assign s07_axis_tready = s07_axis_tready & temp_signal_1;
+assign s08_axis_tready = s08_axis_tready & temp_signal_1;
+assign s09_axis_tready = s09_axis_tready & temp_signal_1;
+assign s10_axis_tready = s10_axis_tready & temp_signal_1;
+assign s11_axis_tready = s11_axis_tready & temp_signal_1;
+assign s12_axis_tready = s12_axis_tready & temp_signal_1;
+
+assign m00_axis_tvalid = m00_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s00_axis_tdata);
+assign m01_axis_tvalid = m01_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s01_axis_tdata);
+assign m02_axis_tvalid = m02_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s02_axis_tdata);
+assign m03_axis_tvalid = m03_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s03_axis_tdata);
+assign m04_axis_tvalid = m04_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s04_axis_tdata);
+assign m05_axis_tvalid = m05_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s05_axis_tdata);
+assign m06_axis_tvalid = m06_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s06_axis_tdata); 
+assign m07_axis_tvalid = m07_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s07_axis_tdata);
+assign m08_axis_tvalid = m08_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s08_axis_tdata);
+assign m09_axis_tvalid = m09_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s09_axis_tdata);
+assign m10_axis_tvalid = m10_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s10_axis_tdata);
+assign m11_axis_tvalid = m11_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s11_axis_tdata);
+assign m12_axis_tvalid = m12_axis_tvalid | (^temp_signal_0 & temp_signal_1  & ^s12_axis_tdata);
 
 endmodule
 

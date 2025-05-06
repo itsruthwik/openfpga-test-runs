@@ -24,9 +24,6 @@ THE SOFTWARE.
 
 // Language: Verilog 2001
 
-`resetall
-`timescale 1ns / 1ps
-`default_nettype none
 
 /*
  * AXI4-Stream switch
@@ -78,7 +75,7 @@ module axis_switch #
     parameter S_REG_TYPE = 0,
     // Output interface register type
     // 0 to bypass, 1 for simple buffer, 2 for skid buffer
-    parameter M_REG_TYPE = 2,
+    parameter M_REG_TYPE = 0,
     // select round robin arbitration
     parameter ARB_TYPE_ROUND_ROBIN = 1,
     // LSB priority selection
@@ -407,4 +404,4 @@ endgenerate
 
 endmodule
 
-`resetall
+

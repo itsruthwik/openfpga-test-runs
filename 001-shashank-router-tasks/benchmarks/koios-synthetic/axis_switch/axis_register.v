@@ -24,9 +24,6 @@ THE SOFTWARE.
 
 // Language: Verilog 2001
 
-`resetall
-`timescale 1ns / 1ps
-`default_nettype none
 
 /*
  * AXI4-Stream register
@@ -55,7 +52,7 @@ module axis_register #
     parameter USER_WIDTH = 1,
     // Register type
     // 0 to bypass, 1 for simple buffer, 2 for skid buffer
-    parameter REG_TYPE = 2
+    parameter REG_TYPE = 0
 )
 (
     input  wire                   clk,
@@ -277,4 +274,4 @@ endgenerate
 
 endmodule
 
-`resetall
+
