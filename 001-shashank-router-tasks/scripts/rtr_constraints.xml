@@ -1,0 +1,75 @@
+<vpr_constraints tool_name="vpr">
+        <partition_list>
+                <!-- y = 0 -->
+                <partition name="rtr0">
+                        <add_atom name_pattern=".*rtr_inst0.*"/> 
+                        <add_region x_low="5" x_high="45" y_low="5" y_high="45"/>
+                </partition>
+                <partition name="rtr1">
+                        <add_atom name_pattern=".*rtr_inst1.*"/> 
+                        <add_region x_low="65" x_high="105" y_low="5" y_high="45"/>
+                </partition>
+                <partition name="rtr2">
+                        <add_atom name_pattern=".*rtr_inst2.*"/> 
+                        <add_region x_low="125" x_high="165" y_low="5" y_high="45"/>
+                </partition>
+                <partition name="rtr3">
+                        <add_atom name_pattern=".*rtr_inst3.*"/> 
+                        <add_region x_low="185" x_high="225" y_low="5" y_high="45"/>
+                </partition>
+                
+                <!-- y  1  -->
+                <partition name="rtr4">
+                        <add_atom name_pattern=".*rtr_inst4.*"/> 
+                        <add_region x_low="5" x_high="45" y_low="65" y_high="105"/>
+                </partition>
+                <partition name="rtr5">
+                        <add_atom name_pattern=".*rtr_inst5.*"/> 
+                        <add_region x_low="65" x_high="105" y_low="65" y_high="105"/>
+                </partition>
+                <partition name="rtr6">
+                        <add_atom name_pattern=".*rtr_inst6.*"/> 
+                        <add_region x_low="125" x_high="165" y_low="65" y_high="105"/>
+                </partition>
+                <partition name="rtr7">
+                        <add_atom name_pattern=".*rtr_inst7.*"/> 
+                        <add_region x_low="185" x_high="225" y_low="65" y_high="105"/>
+                </partition>
+                
+                <!-- y 2 -->
+                <partition name="rtr8">
+                        <add_atom name_pattern=".*rtr_inst8.*"/> 
+                        <add_region x_low="5" x_high="45" y_low="125" y_high="165"/>
+                </partition>
+                <partition name="rtr9">
+                        <add_atom name_pattern=".*rtr_inst9.*"/> 
+                        <add_region x_low="65" x_high="105" y_low="125" y_high="165"/>
+                </partition>
+                <partition name="rtr10">
+                        <add_atom name_pattern=".*rtr_inst10.*"/> 
+                        <add_region x_low="125" x_high="165" y_low="125" y_high="165"/>
+                </partition>
+                <partition name="rtr11">
+                        <add_atom name_pattern=".*rtr_inst11.*"/> 
+                        <add_region x_low="185" x_high="225" y_low="125" y_high="165"/>
+                </partition>
+                
+                <!-- y 3 -->
+                <partition name="rtr12">
+                        <add_atom name_pattern=".*rtr_inst12.*"/> 
+                        <add_region x_low="5" x_high="45" y_low="185" y_high="225"/>
+                </partition>
+                <!-- <partition name="rtr13">
+                        <add_atom name_pattern=".*rtr_inst13.*"/> 
+                        <add_region x_low="65" x_high="105" y_low="185" y_high="225"/>
+                </partition>
+                <partition name="rtr14">
+                        <add_atom name_pattern=".*rtr_inst14.*"/> 
+                        <add_region x_low="125" x_high="165" y_low="185" y_high="225"/>
+                </partition>
+                <partition name="rtr15">
+                        <add_atom name_pattern=".*rtr_inst15.*"/> 
+                        <add_region x_low="185" x_high="225" y_low="185" y_high="225"/>
+                </partition> -->
+        </partition_list>
+</vpr_constraints>
