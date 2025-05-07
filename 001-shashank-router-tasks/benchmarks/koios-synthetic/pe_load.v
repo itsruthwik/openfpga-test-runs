@@ -778,34 +778,34 @@ end
 
 endmodule
 
-`ifdef complex_dsp
-module int_sop_2_dspchain (mode_sigs,
-	clk,
-	reset,
-	ax,
-	ay,
-	bx,
-	by,
-	chainin,
-	resulta,
-	chainout);
-input [10:0] mode_sigs;
-input clk;
-input reset; 
-input [17:0] ax, bx;
-input [18:0] ay, by;
-input [36:0] chainin;
+// `ifdef complex_dsp
+// module int_sop_2_dspchain (mode_sigs,
+// 	clk,
+// 	reset,
+// 	ax,
+// 	ay,
+// 	bx,
+// 	by,
+// 	chainin,
+// 	resulta,
+// 	chainout);
+// input [10:0] mode_sigs;
+// input clk;
+// input reset; 
+// input [17:0] ax, bx;
+// input [18:0] ay, by;
+// input [36:0] chainin;
 
-output [36:0] resulta;
-output [36:0] chainout;
+// output [36:0] resulta;
+// output [36:0] chainout;
 
-wire [11:0] mode_sigs_int;
-assign mode_sigs_int = {1'b0, mode_sigs};
+// wire [11:0] mode_sigs_int;
+// assign mode_sigs_int = {1'b0, mode_sigs};
 
-int_sop_2 inst1(.clk(clk),.reset(reset),.ax(ax),.bx(bx),.ay(ay),.by(by),.mode_sigs(mode_sigs_int),.chainin(chainin),.result(resulta),.chainout(chainout)); 
+// int_sop_2 inst1(.clk(clk),.reset(reset),.ax(ax),.bx(bx),.ay(ay),.by(by),.mode_sigs(mode_sigs_int),.chainin(chainin),.result(resulta),.chainout(chainout)); 
 
-endmodule
-`else
+// endmodule
+// `else
 module int_sop_2_dspchain (mode_sigs,
 	clk,
 	reset,
@@ -853,22 +853,22 @@ end
 assign resulta = resulta_reg;
 assign chainout = resulta_reg;
 endmodule
-`endif
+// `endif
 
-`ifdef complex_dsp
-module fp16_sop2_mult_dspchain (clk,reset,top_a,top_b,bot_a,bot_b,fp32_in,mode_sigs,chainin,chainout,result);
-input clk; 
-input reset;
-input [10:0] mode_sigs; 
-input [15:0] top_a,top_b,bot_a,bot_b;
-input [31:0] chainin,fp32_in; 
-output [31:0] chainout, result;
+// `ifdef complex_dsp
+// module fp16_sop2_mult_dspchain (clk,reset,top_a,top_b,bot_a,bot_b,fp32_in,mode_sigs,chainin,chainout,result);
+// input clk; 
+// input reset;
+// input [10:0] mode_sigs; 
+// input [15:0] top_a,top_b,bot_a,bot_b;
+// input [31:0] chainin,fp32_in; 
+// output [31:0] chainout, result;
 
-fp16_sop2_mult inst1(.clk(clk),.reset(reset),.top_a(top_a),.top_b(top_b),.bot_a(bot_a),.bot_b(bot_b),.fp32_in(fp32_in),.mode_sigs(mode_sigs),.chainin(chainin),.chainout(chainout),.result(result)); 
+// fp16_sop2_mult inst1(.clk(clk),.reset(reset),.top_a(top_a),.top_b(top_b),.bot_a(bot_a),.bot_b(bot_b),.fp32_in(fp32_in),.mode_sigs(mode_sigs),.chainin(chainin),.chainout(chainout),.result(result)); 
 
-endmodule
+// endmodule
 
-`else
+// `else
 module fp16_sop2_mult_dspchain (clk,reset,top_a,top_b,bot_a,bot_b,fp32_in,mode_sigs,chainin,chainout,result);
 input clk; 
 input reset;
@@ -1334,13 +1334,13 @@ module FPAddSub_single_dspchain(
 
 
 
-FPAddSub_a_dspchain M1(a,b,operation,Opout,Sa,Sb,MaxAB,CExp,Shift,Mmax,InputExc,Mmin_3);
+FPAddSub_a_dspchain M1(clk, rst, a,b,operation,Opout,Sa,Sb,MaxAB,CExp,Shift,Mmax,InputExc,Mmin_3);
 
-FpAddSub_b_dspchain M2(pipe_1[51:29],pipe_1[23:0],pipe_1[67],pipe_1[66],pipe_1[65],pipe_1[68],SumS_5,Shift_1,PSgn,Opr);
+FpAddSub_b_dspchain M2(clk, rst, pipe_1[51:29],pipe_1[23:0],pipe_1[67],pipe_1[66],pipe_1[65],pipe_1[68],SumS_5,Shift_1,PSgn,Opr);
 
-FPAddSub_c_dspchain M3(pipe_2[54:22],pipe_2[21:17],pipe_2[16:9],NormM,NormE,ZeroSum,NegE,R,S,FG);
+FPAddSub_c_dspchain M3(clk, rst, pipe_2[54:22],pipe_2[21:17],pipe_2[16:9],NormM,NormE,ZeroSum,NegE,R,S,FG);
 
-FPAddSub_d_dspchain M4(pipe_3[13],pipe_3[22:14],pipe_3[45:23],pipe_3[11],pipe_3[10],pipe_3[9],pipe_3[8],pipe_3[7],pipe_3[6],pipe_3[5],pipe_3[12],pipe_3[4:0],result,flags );
+FPAddSub_d_dspchain M4(clk, rst, pipe_3[13],pipe_3[22:14],pipe_3[45:23],pipe_3[11],pipe_3[10],pipe_3[9],pipe_3[8],pipe_3[7],pipe_3[6],pipe_3[5],pipe_3[12],pipe_3[4:0],result,flags );
 
 
 always @ (posedge clk) begin	
@@ -1421,461 +1421,1138 @@ end
 
 endmodule
 
-// Prealign + Align + Shift 1 + Shift 2
+
 module FPAddSub_a_dspchain(
-		A,
-		B,
-		operation,
-		Opout,
-		Sa,
-		Sb,
-		MaxAB,
-		CExp,
-		Shift,
-		Mmax,
-		InputExc,
-		Mmin_3
+    clk,            // Added clock input
+    reset,          // Added reset input
+    A,
+    B,
+    operation,
+    Opout,
+    Sa,
+    Sb,
+    MaxAB,
+    CExp,
+    Shift,
+    Mmax,
+    InputExc,
+    Mmin_3
+);
+    
+    // Input ports
+    input clk, reset;              // Clock and reset inputs
+    input [31:0] A;                // Input A, a 32-bit floating point number
+    input [31:0] B;                // Input B, a 32-bit floating point number
+    input operation;               // Operation select signal
+    
+    // Output ports
+    output reg Opout;              // Effective operation
+    output reg Sa;                 // A's sign bit
+    output reg Sb;                 // B's sign bit
+    output reg MaxAB;              // Indicates the larger number (0/A, 1/B)
+    output reg [7:0] CExp;         // Common exponent
+    output reg [4:0] Shift;        // Shift amount
+    output reg [22:0] Mmax;        // The larger mantissa
+    output reg [4:0] InputExc;     // Input exceptions
+    output reg [23:0] Mmin_3;      // Smaller mantissa after alignment
+    
+    // Stage 1 - Input analysis and exception detection
+    reg [31:0] A_reg, B_reg;
+    reg operation_reg;
+    reg ANaN_reg, BNaN_reg, AInf_reg, BInf_reg;
+    reg [7:0] DAB_reg, DBA_reg;
+    reg Sa_stage1, Sb_stage1;
+    reg [9:0] ShiftDet_reg;
+    
+    // Stage 2 - Mantissa comparison and shift preparation
+    reg MaxAB_stage2;
+    reg [7:0] CExp_stage2;
+    reg [4:0] Shift_stage2;
+    reg [22:0] Mmax_stage2, Mmin_stage2;
+    reg [4:0] InputExc_stage2;
+    reg Sa_stage2, Sb_stage2, operation_stage2;
+    
+    // Stage 3 - Initial large shifts (16/12/8/4 bits)
+    reg [23:0] Mmin_1_stage3;
+    reg [4:0] Shift_stage3;
+    reg [23:0] Lvl1_stage3;
+    
+    // Stage 4 - Fine shifts (0/1/2/3 bits)
+    reg [23:0] Mmin_2_stage4;
+    reg [1:0] Shift_2_stage4;
+    
+    // Stage 1: Input analysis and exception detection
+    always @(posedge clk) begin
+        if (reset) begin
+            // Reset all stage 1 registers
+            A_reg <= 0;
+            B_reg <= 0;
+            operation_reg <= 0;
+            ANaN_reg <= 0;
+            BNaN_reg <= 0;
+            AInf_reg <= 0;
+            BInf_reg <= 0;
+            DAB_reg <= 0;
+            DBA_reg <= 0;
+            Sa_stage1 <= 0;
+            Sb_stage1 <= 0;
+            ShiftDet_reg <= 0;
+            InputExc_stage2 <= 0;
+        end else begin
+            // Register inputs
+            A_reg <= A;
+            B_reg <= B;
+            operation_reg <= operation;
+            
+            // Detect NaN and infinity conditions
+            ANaN_reg <= &(A[30:23]) & |(A[22:0]);   // All one exponent and not all zero mantissa - NaN
+            BNaN_reg <= &(B[30:23]) & |(B[22:0]);   // All one exponent and not all zero mantissa - NaN
+            AInf_reg <= &(A[30:23]) & ~|(A[22:0]);  // All one exponent and all zero mantissa - Infinity
+            BInf_reg <= &(B[30:23]) & ~|(B[22:0]);  // All one exponent and all zero mantissa - Infinity
+            
+            // Calculate exponent difference
+            DAB_reg <= (A[30:23] + ~B[30:23] + 1);  // ExpA - ExpB
+            DBA_reg <= (B[30:23] + ~A[30:23] + 1);  // ExpB - ExpA
+            
+            // Extract sign bits
+            Sa_stage1 <= A[31];
+            Sb_stage1 <= B[31];
+            
+            // Compute shift detection
+            ShiftDet_reg <= {DBA_reg[4:0], DAB_reg[4:0]};
+            
+            // Set up exception vector
+            InputExc_stage2 <= {(ANaN_reg | BNaN_reg | AInf_reg | BInf_reg), ANaN_reg, BNaN_reg, AInf_reg, BInf_reg};
+        end
+    end
+    
+    // Stage 2: Mantissa comparison and shift preparation
+    always @(posedge clk) begin
+        if (reset) begin
+            // Reset all stage 2 registers
+            MaxAB_stage2 <= 0;
+            CExp_stage2 <= 0;
+            Shift_stage2 <= 0;
+            Mmax_stage2 <= 0;
+            Mmin_stage2 <= 0;
+            Sa_stage2 <= 0;
+            Sb_stage2 <= 0;
+            operation_stage2 <= 0;
+        end else begin
+            // Determine which number is larger
+            MaxAB_stage2 <= (A_reg[30:0] < B_reg[30:0]);
+            
+            // Select common exponent
+            CExp_stage2 <= MaxAB_stage2 ? B_reg[30:23] : A_reg[30:23];
+            
+            // Calculate shift amount
+            Shift_stage2 <= MaxAB_stage2 ? ShiftDet_reg[9:5] : ShiftDet_reg[4:0];
+            
+            // Extract mantissas
+            Mmax_stage2 <= MaxAB_stage2 ? B_reg[22:0] : A_reg[22:0];
+            Mmin_stage2 <= MaxAB_stage2 ? A_reg[22:0] : B_reg[22:0];
+            
+            // Pass through sign bits and operation
+            Sa_stage2 <= Sa_stage1;
+            Sb_stage2 <= Sb_stage1;
+            operation_stage2 <= operation_reg;
+        end
+    end
+    
+    // Stage 3: Initial large shifts (16/12/8/4 bits)
+    always @(posedge clk) begin
+        if (reset) begin
+            // Reset all stage 3 registers
+            Mmin_1_stage3 <= 0;
+            Shift_stage3 <= 0;
+            Lvl1_stage3 <= 0;
+        end else begin
+            // Prepare for first level shift
+            Mmin_1_stage3 <= {1'b1, Mmin_stage2};  // Add implied '1' bit
+            Shift_stage3 <= Shift_stage2;
+            
+            // Perform large shift (0/16 bits)
+            Lvl1_stage3 <= Shift_stage2[4] ? {17'b0, Mmin_stage2[22:16]} : {1'b1, Mmin_stage2};
+        end
+    end
+    
+    // Stage 4: Medium shifts (0/4/8/12 bits)
+    reg [23:0] Lvl2_stage4;
+    always @(posedge clk) begin
+        if (reset) begin
+            // Reset stage 4 registers
+            Mmin_2_stage4 <= 0;
+            Shift_2_stage4 <= 0;
+            Lvl2_stage4 <= 0;
+        end else begin
+            // Extract bits for fine-grain shift
+            Shift_2_stage4 <= Shift_stage3[1:0];
+            
+            // Perform medium shifts (0/4/8/12 bits)
+            case (Shift_stage3[3:2])
+                2'b00: Lvl2_stage4 <= Lvl1_stage3;                       // No shift
+                2'b01: Lvl2_stage4 <= {Lvl1_stage3[19:0], 4'b0000};      // Shift by 4
+                2'b10: Lvl2_stage4 <= {Lvl1_stage3[15:0], 8'b00000000};  // Shift by 8
+                2'b11: Lvl2_stage4 <= {Lvl1_stage3[11:0], 12'b000000000000}; // Shift by 12
+            endcase
+            
+            // Store for next stage
+            Mmin_2_stage4 <= Lvl2_stage4;
+        end
+    end
+    
+    // Stage 5: Fine shifts (0/1/2/3 bits) and output
+    always @(posedge clk) begin
+        if (reset) begin
+            // Reset output registers
+            Opout <= 0;
+            Sa <= 0;
+            Sb <= 0;
+            MaxAB <= 0;
+            CExp <= 0;
+            Shift <= 0;
+            Mmax <= 0;
+            InputExc <= 0;
+            Mmin_3 <= 0;
+        end else begin
+            // Final fine-grain shift
+            case (Shift_2_stage4)
+                2'b00: Mmin_3 <= Mmin_2_stage4;                        // No shift
+                2'b01: Mmin_3 <= {Mmin_2_stage4[22:0], 1'b0};          // Shift by 1
+                2'b10: Mmin_3 <= {Mmin_2_stage4[21:0], 2'b00};         // Shift by 2
+                2'b11: Mmin_3 <= {Mmin_2_stage4[20:0], 3'b000};        // Shift by 3
+            endcase
+            
+            // Register all other outputs
+            Opout <= operation_stage2;
+            Sa <= Sa_stage2;
+            Sb <= Sb_stage2;
+            MaxAB <= MaxAB_stage2;
+            CExp <= CExp_stage2;
+            Shift <= Shift_stage3;
+            Mmax <= Mmax_stage2;
+            InputExc <= InputExc_stage2;
+        end
+    end
+    
+endmodule
+
+
+// Prealign + Align + Shift 1 + Shift 2
+// module FPAddSub_a_dspchain(
+// 		A,
+// 		B,
+// 		operation,
+// 		Opout,
+// 		Sa,
+// 		Sb,
+// 		MaxAB,
+// 		CExp,
+// 		Shift,
+// 		Mmax,
+// 		InputExc,
+// 		Mmin_3
 		
 		
-	);
+// 	);
 	
-	// Input ports
-	input [31:0] A ;										// Input A, a 32-bit floating point number
-	input [31:0] B ;										// Input B, a 32-bit floating point number
-	input operation ;
+// 	// Input ports
+// 	input [31:0] A ;										// Input A, a 32-bit floating point number
+// 	input [31:0] B ;										// Input B, a 32-bit floating point number
+// 	input operation ;
 	
-	//output ports
-	output Opout;
-	output Sa;
-	output Sb;
-	output MaxAB;
-	output [7:0] CExp;
-	output [4:0] Shift;
-	output [22:0] Mmax;
-	output [4:0] InputExc;
-	output [23:0] Mmin_3;	
+// 	//output ports
+// 	output Opout;
+// 	output Sa;
+// 	output Sb;
+// 	output MaxAB;
+// 	output [7:0] CExp;
+// 	output [4:0] Shift;
+// 	output [22:0] Mmax;
+// 	output [4:0] InputExc;
+// 	output [23:0] Mmin_3;	
 
 
 							
-	wire [9:0] ShiftDet ;							
-	wire [30:0] Aout ;
-	wire [30:0] Bout ;
+// 	wire [9:0] ShiftDet ;							
+// 	wire [30:0] Aout ;
+// 	wire [30:0] Bout ;
 	
 
-	// Internal signals									// If signal is high...
-	wire ANaN ;												// A is a NaN (Not-a-Number)
-	wire BNaN ;												// B is a NaN
-	wire AInf ;												// A is infinity
-	wire BInf ;												// B is infinity
-	wire [7:0] DAB ;										// ExpA - ExpB					
-	wire [7:0] DBA ;										// ExpB - ExpA	
+// 	// Internal signals									// If signal is high...
+// 	wire ANaN ;												// A is a NaN (Not-a-Number)
+// 	wire BNaN ;												// B is a NaN
+// 	wire AInf ;												// A is infinity
+// 	wire BInf ;												// B is infinity
+// 	wire [7:0] DAB ;										// ExpA - ExpB					
+// 	wire [7:0] DBA ;										// ExpB - ExpA	
 	
-	assign ANaN = &(A[30:23]) & |(A[22:0]) ;		// All one exponent and not all zero mantissa - NaN
-	assign BNaN = &(B[30:23]) & |(B[22:0]);		// All one exponent and not all zero mantissa - NaN
-	assign AInf = &(A[30:23]) & ~|(A[22:0]) ;	// All one exponent and all zero mantissa - Infinity
-	assign BInf = &(B[30:23]) & ~|(B[22:0]) ;	// All one exponent and all zero mantissa - Infinity
+// 	assign ANaN = &(A[30:23]) & |(A[22:0]) ;		// All one exponent and not all zero mantissa - NaN
+// 	assign BNaN = &(B[30:23]) & |(B[22:0]);		// All one exponent and not all zero mantissa - NaN
+// 	assign AInf = &(A[30:23]) & ~|(A[22:0]) ;	// All one exponent and all zero mantissa - Infinity
+// 	assign BInf = &(B[30:23]) & ~|(B[22:0]) ;	// All one exponent and all zero mantissa - Infinity
 	
-	// Put all flags into exception vector
-	assign InputExc = {(ANaN | BNaN | AInf | BInf), ANaN, BNaN, AInf, BInf} ;
+// 	// Put all flags into exception vector
+// 	assign InputExc = {(ANaN | BNaN | AInf | BInf), ANaN, BNaN, AInf, BInf} ;
 	
-	//assign DAB = (A[30:23] - B[30:23]) ;
-	//assign DBA = (B[30:23] - A[30:23]) ;
-  assign DAB = (A[30:23] + ~(B[30:23]) + 1) ;
-	assign DBA = (B[30:23] + ~(A[30:23]) + 1) ;
+// 	//assign DAB = (A[30:23] - B[30:23]) ;
+// 	//assign DBA = (B[30:23] - A[30:23]) ;
+//   assign DAB = (A[30:23] + ~(B[30:23]) + 1) ;
+// 	assign DBA = (B[30:23] + ~(A[30:23]) + 1) ;
 
-	assign Sa = A[31] ;									// A's sign bit
-	assign Sb = B[31] ;									// B's sign	bit
-	assign ShiftDet = {DBA[4:0], DAB[4:0]} ;		// Shift data
-	assign Opout = operation ;
-	assign Aout = A[30:0] ;
-	assign Bout = B[30:0] ;
+// 	assign Sa = A[31] ;									// A's sign bit
+// 	assign Sb = B[31] ;									// B's sign	bit
+// 	assign ShiftDet = {DBA[4:0], DAB[4:0]} ;		// Shift data
+// 	assign Opout = operation ;
+// 	assign Aout = A[30:0] ;
+// 	assign Bout = B[30:0] ;
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Output ports
-													// Number of steps to smaller mantissa shift right
-	wire [22:0] Mmin_1 ;							// Smaller mantissa 
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 	// Output ports
+// 													// Number of steps to smaller mantissa shift right
+// 	wire [22:0] Mmin_1 ;							// Smaller mantissa 
 	
-	// Internal signals
-	//wire BOF ;										// Check for shifting overflow if B is larger
-	//wire AOF ;										// Check for shifting overflow if A is larger
+// 	// Internal signals
+// 	//wire BOF ;										// Check for shifting overflow if B is larger
+// 	//wire AOF ;										// Check for shifting overflow if A is larger
 	
-	assign MaxAB = (Aout[30:0] < Bout[30:0]) ;	
-	//assign BOF = ShiftDet[9:5] < 25 ;		// Cannot shift more than 25 bits
-	//assign AOF = ShiftDet[4:0] < 25 ;		// Cannot shift more than 25 bits
+// 	assign MaxAB = (Aout[30:0] < Bout[30:0]) ;	
+// 	//assign BOF = ShiftDet[9:5] < 25 ;		// Cannot shift more than 25 bits
+// 	//assign AOF = ShiftDet[4:0] < 25 ;		// Cannot shift more than 25 bits
 	
-	// Determine final shift value
-	//assign Shift = MaxAB ? (BOF ? ShiftDet[9:5] : 5'b11001) : (AOF ? ShiftDet[4:0] : 5'b11001) ;
+// 	// Determine final shift value
+// 	//assign Shift = MaxAB ? (BOF ? ShiftDet[9:5] : 5'b11001) : (AOF ? ShiftDet[4:0] : 5'b11001) ;
 	
-	assign Shift = MaxAB ? ShiftDet[9:5] : ShiftDet[4:0] ;
+// 	assign Shift = MaxAB ? ShiftDet[9:5] : ShiftDet[4:0] ;
 	
-	// Take out smaller mantissa and append shift space
-	assign Mmin_1 = MaxAB ? Aout[22:0] : Bout[22:0] ; 
+// 	// Take out smaller mantissa and append shift space
+// 	assign Mmin_1 = MaxAB ? Aout[22:0] : Bout[22:0] ; 
 	
-	// Take out larger mantissa	
-	assign Mmax = MaxAB ? Bout[22:0]: Aout[22:0] ;	
+// 	// Take out larger mantissa	
+// 	assign Mmax = MaxAB ? Bout[22:0]: Aout[22:0] ;	
 	
-	// Common exponent
-	assign CExp = (MaxAB ? Bout[30:23] : Aout[30:23]) ;	
+// 	// Common exponent
+// 	assign CExp = (MaxAB ? Bout[30:23] : Aout[30:23]) ;	
 
-// Input ports
-					// Smaller mantissa after 16|12|8|4 shift
-	wire [2:0] Shift_1 ;						// Shift amount
+// // Input ports
+// 					// Smaller mantissa after 16|12|8|4 shift
+// 	wire [2:0] Shift_1 ;						// Shift amount
 	
-	assign Shift_1 = Shift [4:2];
+// 	assign Shift_1 = Shift [4:2];
 
-	wire [23:0] Mmin_2 ;						// The smaller mantissa
+// 	wire [23:0] Mmin_2 ;						// The smaller mantissa
 	
-	// Internal signals
-	reg	  [23:0]		Lvl1;
-	reg	  [23:0]		Lvl2;
-	wire    [47:0]    Stage1;	
-	integer           i;                // Loop variable
+// 	// Internal signals
+// 	reg	  [23:0]		Lvl1;
+// 	reg	  [23:0]		Lvl2;
+// 	wire    [47:0]    Stage1;	
+// 	integer           i;                // Loop variable
 	
-	always @(*) begin						
-		// Rotate by 16?
-		Lvl1 <= Shift_1[2] ? {17'b00000000000000001, Mmin_1[22:16]} : {1'b1, Mmin_1}; 
-	end
+// 	always @(*) begin						
+// 		// Rotate by 16?
+// 		Lvl1 <= Shift_1[2] ? {17'b00000000000000001, Mmin_1[22:16]} : {1'b1, Mmin_1}; 
+// 	end
 	
-	assign Stage1 = {Lvl1, Lvl1};
+// 	assign Stage1 = {Lvl1, Lvl1};
 	
-	always @(*) begin    					// Rotate {0 | 4 | 8 | 12} bits
-	  case (Shift_1[1:0])
-			// Rotate by 0	
-			2'b00:  Lvl2 <= Stage1[23:0];       			
-			// Rotate by 4	
-			2'b01:  begin for (i=0; i<=23; i=i+1) begin Lvl2[i] <= Stage1[i+4]; end Lvl2[23:19] <= 0; end
-			// Rotate by 8
-			2'b10:  begin for (i=0; i<=23; i=i+1) begin Lvl2[i] <= Stage1[i+8]; end Lvl2[23:15] <= 0; end
-			// Rotate by 12	
-			2'b11:  begin for (i=0; i<=23; i=i+1) begin Lvl2[i] <= Stage1[i+12]; end Lvl2[23:11] <= 0; end
-	  endcase
-	end
+// 	always @(*) begin    					// Rotate {0 | 4 | 8 | 12} bits
+// 	  case (Shift_1[1:0])
+// 			// Rotate by 0	
+// 			2'b00:  Lvl2 <= Stage1[23:0];       			
+// 			// Rotate by 4	
+// 			2'b01:  begin for (i=0; i<=23; i=i+1) begin Lvl2[i] <= Stage1[i+4]; end Lvl2[23:19] <= 0; end
+// 			// Rotate by 8
+// 			2'b10:  begin for (i=0; i<=23; i=i+1) begin Lvl2[i] <= Stage1[i+8]; end Lvl2[23:15] <= 0; end
+// 			// Rotate by 12	
+// 			2'b11:  begin for (i=0; i<=23; i=i+1) begin Lvl2[i] <= Stage1[i+12]; end Lvl2[23:11] <= 0; end
+// 	  endcase
+// 	end
 	
-	// Assign output to next shift stage
-	assign Mmin_2 = Lvl2;
-								// Smaller mantissa after 16|12|8|4 shift
-	wire [1:0] Shift_2 ;						// Shift amount
+// 	// Assign output to next shift stage
+// 	assign Mmin_2 = Lvl2;
+// 								// Smaller mantissa after 16|12|8|4 shift
+// 	wire [1:0] Shift_2 ;						// Shift amount
 	
-	assign Shift_2 =Shift  [1:0] ;
-					// The smaller mantissa
+// 	assign Shift_2 =Shift  [1:0] ;
+// 					// The smaller mantissa
 	
-	// Internal Signal
-	reg	  [23:0]		Lvl3;
-	wire    [47:0]    Stage2;	
-	integer           j;               // Loop variable
+// 	// Internal Signal
+// 	reg	  [23:0]		Lvl3;
+// 	wire    [47:0]    Stage2;	
+// 	integer           j;               // Loop variable
 	
-	assign Stage2 = {Mmin_2, Mmin_2};
+// 	assign Stage2 = {Mmin_2, Mmin_2};
 
-	always @(*) begin    // Rotate {0 | 1 | 2 | 3} bits
-	  case (Shift_2[1:0])
-			// Rotate by 0
-			2'b00:  Lvl3 <= Stage2[23:0];   
-			// Rotate by 1
-			2'b01:  begin for (j=0; j<=23; j=j+1)  begin Lvl3[j] <= Stage2[j+1]; end Lvl3[23] <= 0; end 
-			// Rotate by 2
-			2'b10:  begin for (j=0; j<=23; j=j+1)  begin Lvl3[j] <= Stage2[j+2]; end Lvl3[23:22] <= 0; end 
-			// Rotate by 3
-			2'b11:  begin for (j=0; j<=23; j=j+1)  begin Lvl3[j] <= Stage2[j+3]; end Lvl3[23:21] <= 0; end 	  
-	  endcase
-	end
+// 	always @(*) begin    // Rotate {0 | 1 | 2 | 3} bits
+// 	  case (Shift_2[1:0])
+// 			// Rotate by 0
+// 			2'b00:  Lvl3 <= Stage2[23:0];   
+// 			// Rotate by 1
+// 			2'b01:  begin for (j=0; j<=23; j=j+1)  begin Lvl3[j] <= Stage2[j+1]; end Lvl3[23] <= 0; end 
+// 			// Rotate by 2
+// 			2'b10:  begin for (j=0; j<=23; j=j+1)  begin Lvl3[j] <= Stage2[j+2]; end Lvl3[23:22] <= 0; end 
+// 			// Rotate by 3
+// 			2'b11:  begin for (j=0; j<=23; j=j+1)  begin Lvl3[j] <= Stage2[j+3]; end Lvl3[23:21] <= 0; end 	  
+// 	  endcase
+// 	end
 	
-	// Assign output
-	assign Mmin_3 = Lvl3;	
+// 	// Assign output
+// 	assign Mmin_3 = Lvl3;	
 
 	
-endmodule
+// endmodule
+
+// module FpAddSub_b_dspchain(
+// 		Mmax,
+// 		Mmin,
+// 		Sa,
+// 		Sb,
+// 		MaxAB,
+// 		OpMode,
+// 		SumS_5,
+// 		Shift,
+// 		PSgn,
+// 		Opr,
+// 		reset
+// );
+// 	input [22:0] Mmax ;					// The larger mantissa
+// 	input [23:0] Mmin ;					// The smaller mantissa
+// 	input Sa ;								// Sign bit of larger number
+// 	input Sb ;								// Sign bit of smaller number
+// 	input MaxAB ;							// Indicates the larger number (0/A, 1/B)
+// 	input OpMode ;							// Operation to be performed (0/Add, 1/Sub)
+// 	input reset ;
+	
+// 	// Output ports
+// 	wire [32:0] Sum_temp ;
+// 	reg [32:0] Sum ;						
+// 						// Output ports
+// 	output [32:0] SumS_5 ;					// Mantissa after 16|0 shift
+// 	wire [4:0] shift_temp ;
+// 	output [4:0] Shift ;					// Shift amount				// The result of the operation
+// 	wire PSgn_temp; 
+// 	output PSgn ;							// The sign for the result
+// 	output Opr ;							// The effective (performed) operation
+
+// 	assign Opr = (OpMode^Sa^Sb); 		// Resolve sign to determine operation
+
+// 	// Perform effective operation
+// 	assign Sum_temp = (OpMode^Sa^Sb) ? ({1'b1, Mmax, 8'b00000000} - {Mmin, 8'b00000000}) : ({1'b1, Mmax, 8'b00000000} + {Mmin, 8'b00000000}) ;
+// 	always @(*) begin
+// 		if reset
+// 			Sum <= 0;
+// 		else
+// 			sum <= Sum_temp ;
+// 	end
+	
+// 	// Assign result sign
+// 	always @(*) begin
+// 		if reset
+// 			PSgn_temp <= 0;
+// 		else
+// 			PSgn_temp <= (OpMode^Sa^Sb) ? Sa : Sb ;
+// 	end
+// 	assign PSgn = PSgn_temp;
+
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 	always @(*) begin
+// 		if reset begin
+// 			shift_temp <= 0;
+// 		end else begin
+// 		// Determine normalization shift amount by finding leading nought
+// 	shift_temp =  ( 
+// 		Sum[32] ? 5'b00000 :	 
+// 		Sum[31] ? 5'b00001 : 
+// 		Sum[30] ? 5'b00010 : 
+// 		Sum[29] ? 5'b00011 : 
+// 		Sum[28] ? 5'b00100 : 
+// 		Sum[27] ? 5'b00101 : 
+// 		Sum[26] ? 5'b00110 : 
+// 		Sum[25] ? 5'b00111 :
+// 		Sum[24] ? 5'b01000 :
+// 		Sum[23] ? 5'b01001 :
+// 		Sum[22] ? 5'b01010 :
+// 		Sum[21] ? 5'b01011 :
+// 		Sum[20] ? 5'b01100 :
+// 		Sum[19] ? 5'b01101 :
+// 		Sum[18] ? 5'b01110 :
+// 		Sum[17] ? 5'b01111 :
+// 		Sum[16] ? 5'b10000 :
+// 		Sum[15] ? 5'b10001 :
+// 		Sum[14] ? 5'b10010 :
+// 		Sum[13] ? 5'b10011 :
+// 		Sum[12] ? 5'b10100 :
+// 		Sum[11] ? 5'b10101 :
+// 		Sum[10] ? 5'b10110 :
+// 		Sum[9] ? 5'b10111 :
+// 		Sum[8] ? 5'b11000 :
+// 		Sum[7] ? 5'b11001 : 5'b11010
+// 	); 
+// 		end
+
+// 	end 
+
+// 	assign Shift = shift_temp ;		
+
+	
+// 	reg	  [32:0]		Lvl1;
+	
+// 	always @(*) begin
+// 		if reset 
+// 			Lvl1 <= 0;
+// 		else
+// 		// Rotate by 16?
+// 		Lvl1 <= Shift[4] ? {Sum[16:0], 16'b0000000000000000} : Sum; 
+// 	end
+	
+// 	// Assign outputs
+// 	assign SumS_5 = Lvl1;	
+
+// endmodule
 
 module FpAddSub_b_dspchain(
-		Mmax,
-		Mmin,
-		Sa,
-		Sb,
-		MaxAB,
-		OpMode,
-		SumS_5,
-		Shift,
-		PSgn,
-		Opr
+    clk,          // Added clock input
+    reset,        // Reset signal
+    Mmax,
+    Mmin,
+    Sa,
+    Sb,
+    MaxAB,
+    OpMode,
+    SumS_5,
+    Shift,
+    PSgn,
+    Opr
 );
-	input [22:0] Mmax ;					// The larger mantissa
-	input [23:0] Mmin ;					// The smaller mantissa
-	input Sa ;								// Sign bit of larger number
-	input Sb ;								// Sign bit of smaller number
-	input MaxAB ;							// Indicates the larger number (0/A, 1/B)
-	input OpMode ;							// Operation to be performed (0/Add, 1/Sub)
-	
-	// Output ports
-	wire [32:0] Sum ;	
-						// Output ports
-	output [32:0] SumS_5 ;					// Mantissa after 16|0 shift
-	output [4:0] Shift ;					// Shift amount				// The result of the operation
-	output PSgn ;							// The sign for the result
-	output Opr ;							// The effective (performed) operation
-
-	assign Opr = (OpMode^Sa^Sb); 		// Resolve sign to determine operation
-
-	// Perform effective operation
-	assign Sum = (OpMode^Sa^Sb) ? ({1'b1, Mmax, 8'b00000000} - {Mmin, 8'b00000000}) : ({1'b1, Mmax, 8'b00000000} + {Mmin, 8'b00000000}) ;
-	// Assign result sign
-	assign PSgn = (MaxAB ? Sb : Sa) ;
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		// Determine normalization shift amount by finding leading nought
-	assign Shift =  ( 
-		Sum[32] ? 5'b00000 :	 
-		Sum[31] ? 5'b00001 : 
-		Sum[30] ? 5'b00010 : 
-		Sum[29] ? 5'b00011 : 
-		Sum[28] ? 5'b00100 : 
-		Sum[27] ? 5'b00101 : 
-		Sum[26] ? 5'b00110 : 
-		Sum[25] ? 5'b00111 :
-		Sum[24] ? 5'b01000 :
-		Sum[23] ? 5'b01001 :
-		Sum[22] ? 5'b01010 :
-		Sum[21] ? 5'b01011 :
-		Sum[20] ? 5'b01100 :
-		Sum[19] ? 5'b01101 :
-		Sum[18] ? 5'b01110 :
-		Sum[17] ? 5'b01111 :
-		Sum[16] ? 5'b10000 :
-		Sum[15] ? 5'b10001 :
-		Sum[14] ? 5'b10010 :
-		Sum[13] ? 5'b10011 :
-		Sum[12] ? 5'b10100 :
-		Sum[11] ? 5'b10101 :
-		Sum[10] ? 5'b10110 :
-		Sum[9] ? 5'b10111 :
-		Sum[8] ? 5'b11000 :
-		Sum[7] ? 5'b11001 : 5'b11010
-	);
-	
-	reg	  [32:0]		Lvl1;
-	
-	always @(*) begin
-		// Rotate by 16?
-		Lvl1 <= Shift[4] ? {Sum[16:0], 16'b0000000000000000} : Sum; 
-	end
-	
-	// Assign outputs
-	assign SumS_5 = Lvl1;	
+    // Input ports
+    input clk, reset;              // Clock and reset inputs
+    input [22:0] Mmax;             // The larger mantissa
+    input [23:0] Mmin;             // The smaller mantissa
+    input Sa;                      // Sign bit of larger number
+    input Sb;                      // Sign bit of smaller number
+    input MaxAB;                   // Indicates the larger number (0/A, 1/B)
+    input OpMode;                  // Operation to be performed (0/Add, 1/Sub)
+    
+    // Output ports
+    output reg [32:0] SumS_5;      // Mantissa after shift
+    output reg [4:0] Shift;        // Shift amount
+    output reg PSgn;               // The sign for the result
+    output reg Opr;                // The effective operation
+    
+    // Stage 1: Operation determination and addition/subtraction
+    reg [32:0] Sum_stage1;
+    reg PSgn_stage1;
+    reg Opr_stage1;
+    wire op_resolved;
+    
+    // Stage 2: Leading zero detection
+    reg [32:0] Sum_stage2;
+    reg [4:0] shift_temp;
+    reg PSgn_stage2;
+    
+    // Stage 3: Initial shift by 16
+    reg [32:0] Lvl1;
+    
+    // Determine operation based on signs and operation mode
+    assign op_resolved = (OpMode^Sa^Sb);
+    
+    // Stage 1: Register inputs and perform addition/subtraction
+    always @(posedge clk) begin
+        if (reset) begin
+            Sum_stage1 <= 0;
+            PSgn_stage1 <= 0;
+            Opr_stage1 <= 0;
+        end else begin
+            // Calculate sum/difference
+            if (op_resolved)
+                Sum_stage1 <= {1'b1, Mmax, 8'b0} - {Mmin, 8'b0};
+            else
+                Sum_stage1 <= {1'b1, Mmax, 8'b0} + {Mmin, 8'b0};
+            
+            // Determine result sign
+            PSgn_stage1 <= (op_resolved) ? Sa : Sb;
+            
+            // Pass through operation signal
+            Opr_stage1 <= op_resolved;
+        end
+    end
+    
+    // Stage 2: Register sum and detect leading zeros
+    always @(posedge clk) begin
+        if (reset) begin
+            Sum_stage2 <= 0;
+            shift_temp <= 0;
+            PSgn_stage2 <= 0;
+        end else begin
+            Sum_stage2 <= Sum_stage1;
+            PSgn_stage2 <= PSgn_stage1;
+            
+            // Leading zero detection using binary search approach
+            if (Sum_stage1[32])
+                shift_temp <= 5'b00000;
+            else if (Sum_stage1[31])
+                shift_temp <= 5'b00001;
+            else if (Sum_stage1[30])
+                shift_temp <= 5'b00010;
+            else if (Sum_stage1[29])
+                shift_temp <= 5'b00011;
+            else if (Sum_stage1[28])
+                shift_temp <= 5'b00100;
+            else if (Sum_stage1[27])
+                shift_temp <= 5'b00101;
+            else if (Sum_stage1[26])
+                shift_temp <= 5'b00110;
+            else if (Sum_stage1[25])
+                shift_temp <= 5'b00111;
+            else if (Sum_stage1[24])
+                shift_temp <= 5'b01000;
+            else if (Sum_stage1[23])
+                shift_temp <= 5'b01001;
+            else if (Sum_stage1[22])
+                shift_temp <= 5'b01010;
+            else if (Sum_stage1[21])
+                shift_temp <= 5'b01011;
+            else if (Sum_stage1[20])
+                shift_temp <= 5'b01100;
+            else if (Sum_stage1[19])
+                shift_temp <= 5'b01101;
+            else if (Sum_stage1[18])
+                shift_temp <= 5'b01110;
+            else if (Sum_stage1[17])
+                shift_temp <= 5'b01111;
+            else if (Sum_stage1[16])
+                shift_temp <= 5'b10000;
+            else if (Sum_stage1[15])
+                shift_temp <= 5'b10001;
+            else if (Sum_stage1[14])
+                shift_temp <= 5'b10010;
+            else if (Sum_stage1[13])
+                shift_temp <= 5'b10011;
+            else if (Sum_stage1[12])
+                shift_temp <= 5'b10100;
+            else if (Sum_stage1[11])
+                shift_temp <= 5'b10101;
+            else if (Sum_stage1[10])
+                shift_temp <= 5'b10110;
+            else if (Sum_stage1[9])
+                shift_temp <= 5'b10111;
+            else if (Sum_stage1[8])
+                shift_temp <= 5'b11000;
+            else if (Sum_stage1[7])
+                shift_temp <= 5'b11001;
+            else
+                shift_temp <= 5'b11010;
+        end
+    end
+    
+    // Stage 3: Perform initial normalization shift and register outputs
+    always @(posedge clk) begin
+        if (reset) begin
+            SumS_5 <= 0;
+            Shift <= 0;
+            PSgn <= 0;
+            Opr <= 0;
+        end else begin
+            // Initial shift by 16 bits or no shift
+            SumS_5 <= shift_temp[4] ? {Sum_stage2[16:0], 16'b0} : Sum_stage2;
+            
+            // Register shift amount and sign
+            Shift <= shift_temp;
+            PSgn <= PSgn_stage2;
+            Opr <= Opr_stage1;
+        end
+    end
 
 endmodule
+
+// module FPAddSub_c_dspchain(
+// 		SumS_5,
+// 		Shift,
+// 		CExp,
+// 		NormM,
+// 		NormE,
+// 		ZeroSum,
+// 		NegE,
+// 		R,
+// 		S,
+// 		FG,
+// 		reset 
+// 	);
+// 	input reset ;
+// 	// Input ports
+// 	input [32:0] SumS_5 ;						// Smaller mantissa after 16|12|8|4 shift
+	
+// 	input [4:0] Shift ;						// Shift amount
+	
+// // Input ports
+	
+// 	input [7:0] CExp ;
+	
+
+// 	// Output ports
+// 	output [22:0] NormM ;				// Normalized mantissa
+// 	output [8:0] NormE ;					// Adjusted exponent
+// 	output ZeroSum ;						// Zero flag
+// 	output NegE ;							// Flag indicating negative exponent
+// 	output R ;								// Round bit
+// 	output S ;								// Final sticky bit
+// 	output FG ;
+
+
+// 	wire [3:0]Shift_1;
+// 	assign Shift_1 = Shift [3:0];
+// 	// Output ports
+// 	wire [32:0] SumS_7 ;						// The smaller mantissa
+	
+// 	reg	  [32:0]		Lvl2;
+// 	wire    [65:0]    Stage1;	
+// 	reg	  [32:0]		Lvl3;
+// 	wire    [65:0]    Stage2;	
+// 	integer           i;               	// Loop variable
+	
+// 	assign Stage1 = {SumS_5, SumS_5};
+
+// 	always @(*) begin    					// Rotate {0 | 4 | 8 | 12} bits
+// 	  case (Shift[3:2])
+// 			// Rotate by 0
+// 			2'b00: Lvl2 <= Stage1[32:0];       		
+// 			// Rotate by 4
+// 			2'b01: begin for (i=65; i>=33; i=i-1) begin Lvl2[i-33] <= Stage1[i-4]; end Lvl2[3:0] <= 0; end
+// 			// Rotate by 8
+// 			2'b10: begin for (i=65; i>=33; i=i-1) begin Lvl2[i-33] <= Stage1[i-8]; end Lvl2[7:0] <= 0; end
+// 			// Rotate by 12
+// 			2'b11: begin for (i=65; i>=33; i=i-1) begin Lvl2[i-33] <= Stage1[i-12]; end Lvl2[11:0] <= 0; end
+// 	  endcase
+// 	end
+	
+// 	assign Stage2 = {Lvl2, Lvl2};
+
+// 	always @(*) begin   				 		// Rotate {0 | 1 | 2 | 3} bits
+// 	  case (Shift_1[1:0])
+// 			// Rotate by 0
+// 			2'b00:  Lvl3 <= Stage2[32:0];
+// 			// Rotate by 1
+// 			2'b01: begin for (i=65; i>=33; i=i-1) begin Lvl3[i-33] <= Stage2[i-1]; end Lvl3[0] <= 0; end 
+// 			// Rotate by 2
+// 			2'b10: begin for (i=65; i>=33; i=i-1) begin Lvl3[i-33] <= Stage2[i-2]; end Lvl3[1:0] <= 0; end
+// 			// Rotate by 3
+// 			2'b11: begin for (i=65; i>=33; i=i-1) begin Lvl3[i-33] <= Stage2[i-3]; end Lvl3[2:0] <= 0; end
+// 	  endcase
+// 	end
+	
+// 	// Assign outputs
+// 	assign SumS_7 = Lvl3;						// Take out smaller mantissa
+
+
+
+	
+// 	// Internal signals
+// 	wire MSBShift ;						// Flag indicating that a second shift is needed
+// 	wire [8:0] ExpOF ;					// MSB set in sum indicates overflow
+// 	wire [8:0] ExpOK ;					// MSB not set, no adjustment
+	
+// 	// Calculate normalized exponent and mantissa, check for all-zero sum
+// 	assign MSBShift = SumS_7[32] ;		// Check MSB in unnormalized sum
+// 	assign ZeroSum = ~|SumS_7 ;			// Check for all zero sum
+// 	assign ExpOK = CExp - Shift ;		// Adjust exponent for new normalized mantissa
+// 	assign NegE = ExpOK[8] ;			// Check for exponent overflow
+// 	assign ExpOF = CExp - Shift + 1'b1 ;		// If MSB set, add one to exponent(x2)
+// 	assign NormE = MSBShift ? ExpOF : ExpOK ;			// Check for exponent overflow
+// 	assign NormM = SumS_7[31:9] ;		// The new, normalized mantissa
+	
+// 	// Also need to compute sticky and round bits for the rounding stage
+// 	assign FG = SumS_7[8] ; 
+// 	assign R = SumS_7[7] ;
+// 	assign S = |SumS_7[6:0] ;		
+	
+// endmodule
 
 module FPAddSub_c_dspchain(
-		SumS_5,
-		Shift,
-		CExp,
-		NormM,
-		NormE,
-		ZeroSum,
-		NegE,
-		R,
-		S,
-		FG
-	);
-	
-	// Input ports
-	input [32:0] SumS_5 ;						// Smaller mantissa after 16|12|8|4 shift
-	
-	input [4:0] Shift ;						// Shift amount
-	
-// Input ports
-	
-	input [7:0] CExp ;
-	
+    clk,           // Added clock input
+    reset,         // Reset signal
+    SumS_5,
+    Shift,
+    CExp,
+    NormM,
+    NormE,
+    ZeroSum,
+    NegE,
+    R,
+    S,
+    FG
+);
+    // Input ports
+    input clk, reset;
+    input [32:0] SumS_5;           // Smaller mantissa after 16|12|8|4 shift
+    input [4:0] Shift;             // Shift amount
+    input [7:0] CExp;              // Common exponent
+    
+    // Output ports
+    output reg [22:0] NormM;       // Normalized mantissa
+    output reg [8:0] NormE;        // Adjusted exponent
+    output reg ZeroSum;            // Zero flag
+    output reg NegE;               // Flag indicating negative exponent
+    output reg R;                  // Round bit
+    output reg S;                  // Final sticky bit
+    output reg FG;                 // Guard bit
 
-	// Output ports
-	output [22:0] NormM ;				// Normalized mantissa
-	output [8:0] NormE ;					// Adjusted exponent
-	output ZeroSum ;						// Zero flag
-	output NegE ;							// Flag indicating negative exponent
-	output R ;								// Round bit
-	output S ;								// Final sticky bit
-	output FG ;
+    // Stage 1: Input registers
+    reg [32:0] SumS_5_reg;
+    reg [4:0] Shift_reg;
+    reg [7:0] CExp_reg;
+    
+    // Stage 2: First shift level
+    reg [32:0] Lvl2_reg;
+    wire [65:0] Stage1;
+    
+    // Stage 3: Second shift level
+    reg [32:0] SumS_7_reg;
+    wire [65:0] Stage2;
+    
+    // Stage 4: Normalization calculations
+    reg MSBShift_reg;
+    reg [8:0] ExpOK_reg, ExpOF_reg;
+    
+    // Pipeline stage 1: Register inputs
+    always @(posedge clk) begin
+        if (reset) begin
+            SumS_5_reg <= 0;
+            Shift_reg <= 0;
+            CExp_reg <= 0;
+        end else begin
+            SumS_5_reg <= SumS_5;
+            Shift_reg <= Shift;
+            CExp_reg <= CExp;
+        end
+    end
+    
+    // Create duplicated input for first shift operation
+    assign Stage1 = {SumS_5_reg, SumS_5_reg};
+    
+    // Calculate first level shift (shifts by 0, 4, 8, or 12 bits)
+    reg [32:0] Lvl2;
+    always @(*) begin
+        case (Shift_reg[3:2])
+            2'b00: Lvl2 = Stage1[32:0];              // Shift by 0
+            2'b01: Lvl2 = {Stage1[61:33], 4'b0000};  // Shift by 4
+            2'b10: Lvl2 = {Stage1[57:33], 8'b0};     // Shift by 8
+            2'b11: Lvl2 = {Stage1[53:33], 12'b0};    // Shift by 12
+            default: Lvl2 = Stage1[32:0];
+        endcase
+    end
+    
+    // Pipeline stage 2: Register first shift result
+    always @(posedge clk) begin
+        if (reset)
+            Lvl2_reg <= 0;
+        else
+            Lvl2_reg <= Lvl2;
+    end
+    
+    // Create duplicated level 2 output for second shift level
+    assign Stage2 = {Lvl2_reg, Lvl2_reg};
+    
+    // Calculate second level shift (shifts by 0, 1, 2, or 3 bits)
+    reg [32:0] Lvl3;
+    always @(*) begin
+        case (Shift_reg[1:0])
+            2'b00: Lvl3 = Stage2[32:0];              // Shift by 0
+            2'b01: Lvl3 = {Stage2[64:33], 1'b0};     // Shift by 1
+            2'b10: Lvl3 = {Stage2[63:33], 2'b00};    // Shift by 2
+            2'b11: Lvl3 = {Stage2[62:33], 3'b000};   // Shift by 3
+            default: Lvl3 = Stage2[32:0];
+        endcase
+    end
+    
+    // Pipeline stage 3: Register second shift result
+    always @(posedge clk) begin
+        if (reset)
+            SumS_7_reg <= 0;
+        else
+            SumS_7_reg <= Lvl3;
+    end
+    
+    // Calculate normalization parameters
+    wire MSBShift = SumS_7_reg[32];
+    wire [8:0] ExpOK = CExp_reg - Shift_reg;
+    wire [8:0] ExpOF = CExp_reg - Shift_reg + 1'b1;
+    wire ZeroSum_wire = ~|SumS_7_reg;
+    
+    // Pipeline stage 4: Register outputs
+    always @(posedge clk) begin
+        if (reset) begin
+            NormM <= 0;
+            NormE <= 0;
+            ZeroSum <= 0;
+            NegE <= 0;
+            FG <= 0;
+            R <= 0;
+            S <= 0;
+            MSBShift_reg <= 0;
+            ExpOK_reg <= 0;
+            ExpOF_reg <= 0;
+        end else begin
+            // The normalized mantissa
+            NormM <= SumS_7_reg[31:9];
+            
+            // The normalized exponent (adjusted based on MSB)
+            NormE <= MSBShift ? ExpOF : ExpOK;
+            
+            // Zero sum flag
+            ZeroSum <= ZeroSum_wire;
+            
+            // Negative exponent flag
+            NegE <= ExpOK[8];
+            
+            // Round, guard, and sticky bits
+            FG <= SumS_7_reg[8];
+            R <= SumS_7_reg[7];
+            S <= |SumS_7_reg[6:0];
+            
+            // Save intermediate values
+            MSBShift_reg <= MSBShift;
+            ExpOK_reg <= ExpOK;
+            ExpOF_reg <= ExpOF;
+        end
+    end
 
-
-	wire [3:0]Shift_1;
-	assign Shift_1 = Shift [3:0];
-	// Output ports
-	wire [32:0] SumS_7 ;						// The smaller mantissa
-	
-	reg	  [32:0]		Lvl2;
-	wire    [65:0]    Stage1;	
-	reg	  [32:0]		Lvl3;
-	wire    [65:0]    Stage2;	
-	integer           i;               	// Loop variable
-	
-	assign Stage1 = {SumS_5, SumS_5};
-
-	always @(*) begin    					// Rotate {0 | 4 | 8 | 12} bits
-	  case (Shift[3:2])
-			// Rotate by 0
-			2'b00: Lvl2 <= Stage1[32:0];       		
-			// Rotate by 4
-			2'b01: begin for (i=65; i>=33; i=i-1) begin Lvl2[i-33] <= Stage1[i-4]; end Lvl2[3:0] <= 0; end
-			// Rotate by 8
-			2'b10: begin for (i=65; i>=33; i=i-1) begin Lvl2[i-33] <= Stage1[i-8]; end Lvl2[7:0] <= 0; end
-			// Rotate by 12
-			2'b11: begin for (i=65; i>=33; i=i-1) begin Lvl2[i-33] <= Stage1[i-12]; end Lvl2[11:0] <= 0; end
-	  endcase
-	end
-	
-	assign Stage2 = {Lvl2, Lvl2};
-
-	always @(*) begin   				 		// Rotate {0 | 1 | 2 | 3} bits
-	  case (Shift_1[1:0])
-			// Rotate by 0
-			2'b00:  Lvl3 <= Stage2[32:0];
-			// Rotate by 1
-			2'b01: begin for (i=65; i>=33; i=i-1) begin Lvl3[i-33] <= Stage2[i-1]; end Lvl3[0] <= 0; end 
-			// Rotate by 2
-			2'b10: begin for (i=65; i>=33; i=i-1) begin Lvl3[i-33] <= Stage2[i-2]; end Lvl3[1:0] <= 0; end
-			// Rotate by 3
-			2'b11: begin for (i=65; i>=33; i=i-1) begin Lvl3[i-33] <= Stage2[i-3]; end Lvl3[2:0] <= 0; end
-	  endcase
-	end
-	
-	// Assign outputs
-	assign SumS_7 = Lvl3;						// Take out smaller mantissa
-
-
-
-	
-	// Internal signals
-	wire MSBShift ;						// Flag indicating that a second shift is needed
-	wire [8:0] ExpOF ;					// MSB set in sum indicates overflow
-	wire [8:0] ExpOK ;					// MSB not set, no adjustment
-	
-	// Calculate normalized exponent and mantissa, check for all-zero sum
-	assign MSBShift = SumS_7[32] ;		// Check MSB in unnormalized sum
-	assign ZeroSum = ~|SumS_7 ;			// Check for all zero sum
-	assign ExpOK = CExp - Shift ;		// Adjust exponent for new normalized mantissa
-	assign NegE = ExpOK[8] ;			// Check for exponent overflow
-	assign ExpOF = CExp - Shift + 1'b1 ;		// If MSB set, add one to exponent(x2)
-	assign NormE = MSBShift ? ExpOF : ExpOK ;			// Check for exponent overflow
-	assign NormM = SumS_7[31:9] ;		// The new, normalized mantissa
-	
-	// Also need to compute sticky and round bits for the rounding stage
-	assign FG = SumS_7[8] ; 
-	assign R = SumS_7[7] ;
-	assign S = |SumS_7[6:0] ;		
-	
 endmodule
+
+// module FPAddSub_d_dspchain(
+// 		ZeroSum,
+// 		NormE,
+// 		NormM,
+// 		R,
+// 		S,
+// 		G,
+// 		Sa,
+// 		Sb,
+// 		Ctrl,
+// 		MaxAB,
+// 		NegE,
+// 		InputExc,
+// 		P,
+// 		Flags 
+//     );
+
+// 	// Input ports
+// 	input ZeroSum ;					// Sum is zero
+// 	input [8:0] NormE ;				// Normalized exponent
+// 	input [22:0] NormM ;				// Normalized mantissa
+// 	input R ;							// Round bit
+// 	input S ;							// Sticky bit
+// 	input G ;
+// 	input Sa ;							// A's sign bit
+// 	input Sb ;							// B's sign bit
+// 	input Ctrl ;						// Control bit (operation)
+// 	input MaxAB ;
+	
+
+// 	input NegE ;						// Negative exponent?
+// 	input [4:0] InputExc ;					// Exceptions in inputs A and B
+
+// 	// Output ports
+// 	output [31:0] P ;					// Final result
+// 	output [4:0] Flags ;				// Exception flags
+	
+// 	// 
+// 	reg [31:0] Z ;					// Final result
+// 	reg EOF ;
+	
+// 	// Internal signals
+// 	wire [23:0] RoundUpM ;			// Rounded up sum with room for overflow
+// 	wire [22:0] RoundM ;				// The final rounded sum
+// 	wire [8:0] RoundE ;				// Rounded exponent (note extra bit due to poential overflow	)
+// 	wire RoundUp ;						// Flag indicating that the sum should be rounded up
+// 	wire ExpAdd ;						// May have to add 1 to compensate for overflow 
+// 	wire RoundOF ;						// Rounding overflow
+// 	wire FSgn;
+// 	// The cases where we need to round upwards (= adding one) in Round to nearest, tie to even
+// 	assign RoundUp = (G & ((R | S) | NormM[0])) ;
+	
+// 	// Note that in the other cases (rounding down), the sum is already 'rounded'
+// 	assign RoundUpM = (NormM + 1) ;								// The sum, rounded up by 1
+// 	assign RoundM = (RoundUp ? RoundUpM[22:0] : NormM) ; 	// Compute final mantissa	
+// 	assign RoundOF = RoundUp & RoundUpM[23] ; 				// Check for overflow when rounding up
+
+// 	// Calculate post-rounding exponent
+// 	assign ExpAdd = (RoundOF ? 1'b1 : 1'b0) ; 				// Add 1 to exponent to compensate for overflow
+// 	assign RoundE = ZeroSum ? 8'b00000000 : (NormE + ExpAdd) ; 							// Final exponent
+
+// 	// If zero, need to determine sign according to rounding
+// 	assign FSgn = (ZeroSum & (Sa ^ Sb)) | (ZeroSum ? (Sa & Sb & ~Ctrl) : ((~MaxAB & Sa) | ((Ctrl ^ Sb) & (MaxAB | Sa)))) ;
+
+// 	always@(*) begin
+// 		Z = {FSgn, RoundE[8:0], RoundM[22:0]} ;
+// 		EOF = RoundE[8];
+// 	end
+// 	// Assign final result
+// 	// assign Z = {FSgn, RoundE[7:0], RoundM[22:0]} ;
+	
+// 	// Indicate exponent overflow
+// 	// assign EOF = RoundE[8];
+
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	
+// 	// Internal signals
+// 	wire Overflow ;					// Overflow flag
+// 	wire Underflow ;					// Underflow flag
+// 	wire DivideByZero ;				// Divide-by-Zero flag (always 0 in Add/Sub)
+// 	wire Invalid ;						// Invalid inputs or result
+// 	wire Inexact ;						// Result is inexact because of rounding
+	
+// 	// Exception flags
+	
+// 	// Result is too big to be represented
+// 	assign Overflow = EOF | InputExc[1] | InputExc[0] ;
+	
+// 	// Result is too small to be represented
+// 	assign Underflow = NegE & (R | S);
+	
+// 	// Infinite result computed exactly from finite operands
+// 	assign DivideByZero = &(Z[30:23]) & ~|(Z[30:23]) & ~InputExc[1] & ~InputExc[0];
+	
+// 	// Invalid inputs or operation
+// 	assign Invalid = |(InputExc[4:2]) ;
+	
+// 	// Inexact answer due to rounding, overflow or underflow
+// 	assign Inexact = (R | S) | Overflow | Underflow;
+	
+// 	// Put pieces together to form final result
+// 	assign P = Z ;
+	
+// 	// Collect exception flags	
+// 	assign Flags = {Overflow, Underflow, DivideByZero, Invalid, Inexact} ; 	
+	
+// endmodule
 
 module FPAddSub_d_dspchain(
-		ZeroSum,
-		NormE,
-		NormM,
-		R,
-		S,
-		G,
-		Sa,
-		Sb,
-		Ctrl,
-		MaxAB,
-		NegE,
-		InputExc,
-		P,
-		Flags 
-    );
+    clk,        // Add clock input for pipelining
+    rst,        // Add reset input
+    ZeroSum,
+    NormE,
+    NormM,
+    R,
+    S,
+    G,
+    Sa,
+    Sb,
+    Ctrl,
+    MaxAB,
+    NegE,
+    InputExc,
+    P,
+    Flags 
+);
 
-	// Input ports
-	input ZeroSum ;					// Sum is zero
-	input [8:0] NormE ;				// Normalized exponent
-	input [22:0] NormM ;				// Normalized mantissa
-	input R ;							// Round bit
-	input S ;							// Sticky bit
-	input G ;
-	input Sa ;							// A's sign bit
-	input Sb ;							// B's sign bit
-	input Ctrl ;						// Control bit (operation)
-	input MaxAB ;
-	
+    // Input ports
+    input clk, rst;                    // Clock and reset inputs
+    input ZeroSum;                     // Sum is zero
+    input [8:0] NormE;                 // Normalized exponent
+    input [22:0] NormM;                // Normalized mantissa
+    input R, S, G;                     // Round, Sticky, Guard bits
+    input Sa, Sb;                      // Sign bits
+    input Ctrl;                        // Control bit (operation)
+    input MaxAB;                       // Max(A,B) selector
+    input NegE;                        // Negative exponent flag
+    input [4:0] InputExc;              // Input exceptions
+    
+    // Output ports
+    output [31:0] P;                   // Final result
+    output [4:0] Flags;                // Exception flags
+    
+    // Stage 1: Rounding calculation
+    reg [23:0] RoundUpM_reg;
+    reg [22:0] RoundM_reg;
+    reg [8:0] RoundE_reg;
+    reg RoundUp_reg, FSgn_reg;
+    reg ZeroSum_pipe, NegE_pipe;
+    reg [4:0] InputExc_pipe;
+    reg R_pipe, S_pipe;
+    
+    // Stage 2: Exception flag generation
+    reg [31:0] Z_reg;
+    reg [4:0] Flags_reg;
+    reg EOF_reg;
+    
+    // Internal combinational signals
+    wire RoundUp = (G & ((R | S) | NormM[0]));
+    wire [23:0] RoundUpM = {1'b0, NormM} + 24'h000001;
+    wire [22:0] RoundM = RoundUp ? RoundUpM[22:0] : NormM;
+    wire RoundOF = RoundUp & RoundUpM[23];
+    wire ExpAdd = RoundOF ? 1'b1 : 1'b0;
+    wire [8:0] RoundE = ZeroSum ? 9'b000000000 : (NormE + ExpAdd);
+    wire FSgn = (ZeroSum & (Sa ^ Sb)) | 
+                (ZeroSum ? (Sa & Sb & ~Ctrl) : 
+                ((~MaxAB & Sa) | ((Ctrl ^ Sb) & (MaxAB | Sa))));
+    
+    // Pipeline Stage 1: Rounding logic
+    always @(posedge clk) begin
+        if (rst) begin
+            // Reset stage 1 registers
+            RoundUpM_reg <= 0;
+            RoundM_reg <= 0;
+            RoundE_reg <= 0;
+            RoundUp_reg <= 0;
+            FSgn_reg <= 0;
+            ZeroSum_pipe <= 0;
+            NegE_pipe <= 0;
+            InputExc_pipe <= 0;
+            R_pipe <= 0;
+            S_pipe <= 0;
+        end else begin
+            // Register rounding results
+            RoundUpM_reg <= RoundUpM;
+            RoundM_reg <= RoundM;
+            RoundE_reg <= RoundE;
+            RoundUp_reg <= RoundUp;
+            FSgn_reg <= FSgn;
+            ZeroSum_pipe <= ZeroSum;
+            NegE_pipe <= NegE;
+            InputExc_pipe <= InputExc;
+            R_pipe <= R;
+            S_pipe <= S;
+        end
+    end
+    
+    // Compute final result for next stage
+    wire [31:0] Z = {FSgn_reg, RoundE_reg[7:0], RoundM_reg};
+    wire EOF = RoundE_reg[8];
+    
+    // Exception flags calculation
+    wire Overflow = EOF | InputExc_pipe[1] | InputExc_pipe[0];
+    wire Underflow = NegE_pipe & (R_pipe | S_pipe);
+    wire DivideByZero = &(Z[30:23]) & ~|(Z[30:23]) & ~InputExc_pipe[1] & ~InputExc_pipe[0];
+    wire Invalid = |(InputExc_pipe[4:2]);
+    wire Inexact = (R_pipe | S_pipe) | Overflow | Underflow;
+    
+    // Pipeline Stage 2: Exception flags and final output
+    always @(posedge clk) begin
+        if (rst) begin
+            // Reset stage 2 registers
+            Z_reg <= 0;
+            Flags_reg <= 0;
+            EOF_reg <= 0;
+        end else begin
+            // Register final result and flags
+            Z_reg <= Z;
+            EOF_reg <= EOF;
+            Flags_reg <= {Overflow, Underflow, DivideByZero, Invalid, Inexact};
+        end
+    end
+    
+    // Assign outputs
+    assign P = Z_reg;
+    assign Flags = Flags_reg;
 
-	input NegE ;						// Negative exponent?
-	input [4:0] InputExc ;					// Exceptions in inputs A and B
-
-	// Output ports
-	output [31:0] P ;					// Final result
-	output [4:0] Flags ;				// Exception flags
-	
-	// 
-	reg [31:0] Z ;					// Final result
-	reg EOF ;
-	
-	// Internal signals
-	wire [23:0] RoundUpM ;			// Rounded up sum with room for overflow
-	wire [22:0] RoundM ;				// The final rounded sum
-	wire [8:0] RoundE ;				// Rounded exponent (note extra bit due to poential overflow	)
-	wire RoundUp ;						// Flag indicating that the sum should be rounded up
-	wire ExpAdd ;						// May have to add 1 to compensate for overflow 
-	wire RoundOF ;						// Rounding overflow
-	wire FSgn;
-	// The cases where we need to round upwards (= adding one) in Round to nearest, tie to even
-	assign RoundUp = (G & ((R | S) | NormM[0])) ;
-	
-	// Note that in the other cases (rounding down), the sum is already 'rounded'
-	assign RoundUpM = (NormM + 1) ;								// The sum, rounded up by 1
-	assign RoundM = (RoundUp ? RoundUpM[22:0] : NormM) ; 	// Compute final mantissa	
-	assign RoundOF = RoundUp & RoundUpM[23] ; 				// Check for overflow when rounding up
-
-	// Calculate post-rounding exponent
-	assign ExpAdd = (RoundOF ? 1'b1 : 1'b0) ; 				// Add 1 to exponent to compensate for overflow
-	assign RoundE = ZeroSum ? 8'b00000000 : (NormE + ExpAdd) ; 							// Final exponent
-
-	// If zero, need to determine sign according to rounding
-	assign FSgn = (ZeroSum & (Sa ^ Sb)) | (ZeroSum ? (Sa & Sb & ~Ctrl) : ((~MaxAB & Sa) | ((Ctrl ^ Sb) & (MaxAB | Sa)))) ;
-
-	always@(*) begin
-		Z = {FSgn, RoundE[8:0], RoundM[22:0]} ;
-		EOF = RoundE[8];
-	end
-	// Assign final result
-	// assign Z = {FSgn, RoundE[7:0], RoundM[22:0]} ;
-	
-	// Indicate exponent overflow
-	// assign EOF = RoundE[8];
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-	
-	// Internal signals
-	wire Overflow ;					// Overflow flag
-	wire Underflow ;					// Underflow flag
-	wire DivideByZero ;				// Divide-by-Zero flag (always 0 in Add/Sub)
-	wire Invalid ;						// Invalid inputs or result
-	wire Inexact ;						// Result is inexact because of rounding
-	
-	// Exception flags
-	
-	// Result is too big to be represented
-	assign Overflow = EOF | InputExc[1] | InputExc[0] ;
-	
-	// Result is too small to be represented
-	assign Underflow = NegE & (R | S);
-	
-	// Infinite result computed exactly from finite operands
-	assign DivideByZero = &(Z[30:23]) & ~|(Z[30:23]) & ~InputExc[1] & ~InputExc[0];
-	
-	// Invalid inputs or operation
-	assign Invalid = |(InputExc[4:2]) ;
-	
-	// Inexact answer due to rounding, overflow or underflow
-	assign Inexact = (R | S) | Overflow | Underflow;
-	
-	// Put pieces together to form final result
-	assign P = Z ;
-	
-	// Collect exception flags	
-	assign Flags = {Overflow, Underflow, DivideByZero, Invalid, Inexact} ; 	
-	
 endmodule
 
-`endif 
+
+// `endif 
 
 
 module fifo_512_60bit
