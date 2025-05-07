@@ -455,22 +455,22 @@
       <col type="EMPTY"   startx="6" starty="1" repeatx="8" priority="19"/>
       
       <!-- 16 routers as a 4x4 mesh -->
-      <single type="router_wrap_tile" x="10" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="10" y="55" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="25" y="55" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="40" y="55" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="10" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="25" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="40" priority="50"/>
-      <single type="router_wrap_tile" x="55" y="55" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="W/5" y="4*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="2*W/5" y="4*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="3*W/5" y="4*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="2*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="3*H/5" priority="50"/>
+      <single type="router_wrap_tile" x="4*W/5" y="4*H/5" priority="50"/>
       </fixed_layout>
    </layout>
   <device>
@@ -1616,23 +1616,23 @@
       </pb_type>
    </complexblocklist>
 <noc link_bandwidth="1e6" router_latency="1e-9" link_latency="1e-9" noc_router_tile_name="router_wrap_tile">
-   <topology>
-      <router id="0" positionx="10" positiony="10" connections="1 4"/>
-      <router id="1" positionx="25" positiony="10" connections="0 2 5"/>
-      <router id="2" positionx="40" positiony="10" connections="1 3 6"/>
-      <router id="3" positionx="55" positiony="10" connections="2 7"/>
-      <router id="4" positionx="10" positiony="25" connections="5 0 8"/>
-      <router id="5" positionx="25" positiony="25" connections="4 6 1 9"/>
-      <router id="6" positionx="40" positiony="25" connections="5 7 2 10"/>
-      <router id="7" positionx="55" positiony="25" connections="6 3 11"/>
-      <router id="8" positionx="10" positiony="40" connections="9 4 12"/>
-      <router id="9" positionx="25" positiony="40" connections="8 10 5 13"/>
-      <router id="10" positionx="40" positiony="40" connections="9 11 6 14"/>
-      <router id="11" positionx="55" positiony="40" connections="10 7 15"/>
-      <router id="12" positionx="10" positiony="55" connections="13 8"/>
-      <router id="13" positionx="25" positiony="55" connections="12 14 9"/>
-      <router id="14" positionx="40" positiony="55" connections="13 15 10"/>
-      <router id="15" positionx="55" positiony="55" connections="14 11"/>
-      </topology>
+ <topology>
+  <router id="0"  positionx="36"  positiony="36"  connections="1 4"/>
+  <router id="1"  positionx="72"  positiony="36"  connections="0 2 5"/>
+  <router id="2"  positionx="108" positiony="36"  connections="1 3 6"/>
+  <router id="3"  positionx="144" positiony="36"  connections="2 7"/>
+  <router id="4"  positionx="36"  positiony="72"  connections="5 0 8"/>
+  <router id="5"  positionx="72"  positiony="72"  connections="4 6 1 9"/>
+  <router id="6"  positionx="108" positiony="72"  connections="5 7 2 10"/>
+  <router id="7"  positionx="144" positiony="72"  connections="6 3 11"/>
+  <router id="8"  positionx="36"  positiony="108" connections="9 4 12"/>
+  <router id="9"  positionx="72"  positiony="108" connections="8 10 5 13"/>
+  <router id="10" positionx="108" positiony="108" connections="9 11 6 14"/>
+  <router id="11" positionx="144" positiony="108" connections="10 7 15"/>
+  <router id="12" positionx="36"  positiony="144" connections="13 8"/>
+  <router id="13" positionx="72"  positiony="144" connections="12 14 9"/>
+  <router id="14" positionx="108" positiony="144" connections="13 15 10"/>
+  <router id="15" positionx="144" positiony="144" connections="14 11"/>
+</topology>
    </noc>
 </architecture>
