@@ -12,11 +12,12 @@ module master_module(
     input [3:0] axis_rx_tdest,
     output axis_rx_tready
 );
-
+(* keep *)
 // Counter to track 25 cycles
 reg [7:0] cycle_counter; // 8-bit (0 to 24)
 
 // LFSR for random address (4-bit) and data (128-bit)
+(* keep *)
 reg [3:0] lfsr_dest;  // 4-bit LFSR for destination (1-15)
 reg [127:0] lfsr_data; // 128-bit LFSR for data
 
@@ -26,6 +27,7 @@ initial begin
     lfsr_data = 128'hA5A5A5A5A5A5A5A5A5A5A5A5A5A5A5A5;
 end
 
+(* keep *)
 // LFSR update logic (advance every cycle)
 always @(posedge clk) begin
     if (reset) begin
@@ -39,6 +41,7 @@ always @(posedge clk) begin
     end
 end
 
+(* keep *)
 // Counter logic (reset on successful transaction)
 always @(posedge clk or posedge reset) begin
     if (reset) begin

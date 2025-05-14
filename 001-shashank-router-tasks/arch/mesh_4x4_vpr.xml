@@ -440,7 +440,7 @@
   <!-- ODIN II specific config ends -->
   <!-- Physical descriptions begin -->
   <layout tileable="true" through_channel="false" concat_pass_wire="true">
-  <fixed_layout name="large" width="180" height="180">
+  <fixed_layout name="large" width="230" height="230">
       <perimeter type="io" priority="100"/>
       <corners type="EMPTY" priority="101"/>
 
@@ -1616,7 +1616,7 @@
       </pb_type>
    </complexblocklist>
 <noc link_bandwidth="1e6" router_latency="1e-9" link_latency="1e-9" noc_router_tile_name="router_wrap_tile">
- <topology>
+<topology>
   <router id="0"  positionx="36"  positiony="36"  connections="1 4"/>
   <router id="1"  positionx="72"  positiony="36"  connections="0 2 5"/>
   <router id="2"  positionx="108" positiony="36"  connections="1 3 6"/>
@@ -1634,5 +1634,7 @@
   <router id="14" positionx="108" positiony="144" connections="13 15 10"/>
   <router id="15" positionx="144" positiony="144" connections="14 11"/>
 </topology>
+
+
    </noc>
 </architecture>
