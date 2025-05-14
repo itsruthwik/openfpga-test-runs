@@ -6,6 +6,7 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
     --timing_report_detail aggregated \
     --sdc_file /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/scripts/clk_file.sdc \
     --route_chan_width 300 \
+    --read_vpr_constraints /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/scripts/rtr_constraints.xml \
     --seed 40
 
 # Read OpenFPGA architecture definition
