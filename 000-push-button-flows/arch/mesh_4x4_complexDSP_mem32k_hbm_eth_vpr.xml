@@ -4633,23 +4633,23 @@
     
    </complexblocklist>
 <noc link_bandwidth="1e6" router_latency="1e-9" link_latency="1e-9" noc_router_tile_name="router_wrap_tile">
- <topology>
-  <router id="0"  positionx="36"  positiony="36"  connections="1 4"/>
-  <router id="1"  positionx="72"  positiony="36"  connections="0 2 5"/>
-  <router id="2"  positionx="108" positiony="36"  connections="1 3 6"/>
-  <router id="3"  positionx="144" positiony="36"  connections="2 7"/>
-  <router id="4"  positionx="36"  positiony="72"  connections="5 0 8"/>
-  <router id="5"  positionx="72"  positiony="72"  connections="4 6 1 9"/>
-  <router id="6"  positionx="108" positiony="72"  connections="5 7 2 10"/>
-  <router id="7"  positionx="144" positiony="72"  connections="6 3 11"/>
-  <router id="8"  positionx="36"  positiony="108" connections="9 4 12"/>
-  <router id="9"  positionx="72"  positiony="108" connections="8 10 5 13"/>
-  <router id="10" positionx="108" positiony="108" connections="9 11 6 14"/>
-  <router id="11" positionx="144" positiony="108" connections="10 7 15"/>
-  <router id="12" positionx="36"  positiony="144" connections="13 8"/>
-  <router id="13" positionx="72"  positiony="144" connections="12 14 9"/>
-  <router id="14" positionx="108" positiony="144" connections="13 15 10"/>
-  <router id="15" positionx="144" positiony="144" connections="14 11"/>
+<topology>
+  <router id="0"  positionx="60"  positiony="60"  connections="1 4"/>
+  <router id="1"  positionx="120" positiony="60"  connections="0 2 5"/>
+  <router id="2"  positionx="180" positiony="60"  connections="1 3 6"/>
+  <router id="3"  positionx="240" positiony="60"  connections="2 7"/>
+  <router id="4"  positionx="60"  positiony="120" connections="5 0 8"/>
+  <router id="5"  positionx="120" positiony="120" connections="4 6 1 9"/>
+  <router id="6"  positionx="180" positiony="120" connections="5 7 2 10"/>
+  <router id="7"  positionx="240" positiony="120" connections="6 3 11"/>
+  <router id="8"  positionx="60"  positiony="180" connections="9 4 12"/>
+  <router id="9"  positionx="120" positiony="180" connections="8 10 5 13"/>
+  <router id="10" positionx="180" positiony="180" connections="9 11 6 14"/>
+  <router id="11" positionx="240" positiony="180" connections="10 7 15"/>
+  <router id="12" positionx="60"  positiony="240" connections="13 8"/>
+  <router id="13" positionx="120" positiony="240" connections="12 14 9"/>
+  <router id="14" positionx="180" positiony="240" connections="13 15 10"/>
+  <router id="15" positionx="240" positiony="240" connections="14 11"/>
 </topology>
    </noc>
 </architecture>
