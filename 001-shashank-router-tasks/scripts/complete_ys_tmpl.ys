@@ -7,8 +7,10 @@
 read_verilog -sv ${READ_VERILOG_OPTIONS} ${VERILOG_FILES}
 # Read technology library
 read_verilog -lib -sv -specify ${YOSYS_CELL_SIM_VERILOG}
-read_verilog -sv -lib -specify /mnt/vault1/mfaroo19/OpenFPGA/openfpga-test-runs/001-shashank-router-tasks/router-rtl/router_wrap_cell_sim.sv
-#read_verilog -sv -lib -specify ${ROUTER_BLACKBOX_VERILOG}
+read_verilog -sv -lib -specify /mnt/vault1/rsunketa/OpenFPGA/openfpga_noc/pbf_scripts/tt/collateral/router_models/router_wrap_blackbox.sv
+read_verilog -sv -lib -specify /mnt/vault1/rsunketa/OpenFPGA/openfpga_noc/results/arch/complex_dsp_model.v
+# read_verilog -sv -lib -specify /mnt/vault1/rsunketa/OpenFPGA/test_comp_mul.v
+# read_verilog -sv -lib -specify ${ROUTER_BLACKBOX_VERILOG}
 
 #########################
 # Prepare for synthesis
@@ -44,15 +46,15 @@ opt_clean
 # Inspired from synth_xilinx.cc
 #########################
 # Avoid merging any registers into DSP, reserve memory port registers first
-memory_dff
-wreduce t:$mul
-techmap -map +/mul2dsp.v -map ${YOSYS_DSP_MAP_VERILOG} ${YOSYS_DSP_MAP_PARAMETERS}
-select a:mul2dsp
-setattr -unset mul2dsp
-opt_expr -fine
-wreduce
-select -clear
-chtype -set $mul t:$__soft_mul# Extract arithmetic functions
+# memory_dff
+# wreduce t:$mul
+# techmap -map +/mul2dsp.v -map ${YOSYS_DSP_MAP_VERILOG} ${YOSYS_DSP_MAP_PARAMETERS}
+# select a:mul2dsp
+# setattr -unset mul2dsp
+# opt_expr -fine
+# wreduce
+# select -clear
+# chtype -set $mul t:$__soft_mul# Extract arithmetic functions
 
 #########################
 # Run coarse synthesis

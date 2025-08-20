@@ -1,0 +1,26 @@
+1 A. Design- Increase the number of PEs to 12 ; Arch:  No NoC     (Grid size required: 140x140;)
+1 B. Design- Increase the number of PEs to 12 ; Arch:  Hard NoC   (Grid size required: 140x140;)
+1 C. Design- Increase the number of PEs to 12 ; Arch:  Soft NoC   (Grid size required: 140x140;)   - Later
+
+2 A. Design- Increase PE to Switch interface width to 256 without increasing PE complexity (6 PE) ; Arch: No NoC   (Grid size required: 120x120 )
+2 B. Design- Increase PE to Switch interface width to 256 without increasing PE complexity (6 PE) ; Arch: Hard NoC
+2 C. Design- Increase PE to Switch interface width to 256 without increasing PE complexity (6 PE) ; Arch: Soft NoC
+
+
+3 A  Design- Increase complexity of communication,    Arch: No NoC     (Grid size required: 120X120)
+3 B  Design- 6PE with 1 master,                       Arch: Hard NoC   (Grid size required: 120X120)
+3 C  Design- 6PE with 1 master,                       Arch: Soft NoC   (Grid size required: 120X120)
+
+
+
+Ali:
+3 B  Design- 6PE with 1 master,                 Arch: Hard NoC    (Grid size required: 120X120)
+3 C  Design- 6PE with 1 master,                 Arch: Soft NoC    (Grid size required: 120X120)
+1 B. Design- Increase the number of PEs to 12 ; Arch:  Hard NoC   (Grid size required: 140x140;)
+
+
+Ruthwik:
+1 A. Design- Increase the number of PEs to 12 ; Arch:  No NoC     (Grid size required: 140x140;)
+3 A  Design- Increase complexity of communication,    Arch: No NoC     (Grid size required: 120X120)
+2 A. Design- Increase PE to Switch interface width to 256 without increasing PE complexity (6 PE) ; Arch: No NoC   (Grid size required: 120x120 )
+

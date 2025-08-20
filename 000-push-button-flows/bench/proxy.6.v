@@ -9200,9 +9200,9 @@ end
 
 endmodule
 
-`ifdef complex_dsp
+// `ifdef complex_dsp
 module int_sop_2_dspchain (mode_sigs,
-	clk,
+	clk,	
 	reset,
 	ax,
 	ay,
@@ -9225,59 +9225,59 @@ wire [11:0] mode_sigs_int;
 assign mode_sigs_int = {1'b0, mode_sigs};
 
 int_sop_2 inst1(.clk(clk),.reset(reset),.ax(ax),.bx(bx),.ay(ay),.by(by),.mode_sigs(mode_sigs_int),.chainin(chainin),.result(resulta),.chainout(chainout)); 
-
+// assign chainout = resulta;
 endmodule
-`else
-module int_sop_2_dspchain (mode_sigs,
-	clk,
-	reset,
-	ax,
-	ay,
-	bx,
-	by,
-	chainin,
-	resulta,
-	chainout);
-input [10:0] mode_sigs;
-input clk;
-input reset; 
-input [17:0] ax, bx;
-input [18:0] ay, by;
-input [36:0] chainin;
+// `else
+// module int_sop_2_dspchain (mode_sigs,
+// 	clk,
+// 	reset,
+// 	ax,
+// 	ay,
+// 	bx,
+// 	by,
+// 	chainin,
+// 	resulta,
+// 	chainout);
+// input [10:0] mode_sigs;
+// input clk;
+// input reset; 
+// input [17:0] ax, bx;
+// input [18:0] ay, by;
+// input [36:0] chainin;
 
-output [36:0] resulta;
-output [36:0] chainout;
-reg [17:0] ax_reg;
-reg [18:0] ay_reg;
-reg [17:0] bx_reg;
-reg [18:0] by_reg;
-reg [36:0] resulta_reg;
-reg [36:0] resultaxy_reg;
-reg [36:0] resultbxy_reg;
-always @(posedge clk) begin
-  if(reset) begin
-    resulta_reg <= 0;
-    ax_reg <= 0;
-    ay_reg <= 0;
-    bx_reg <= 0;
-    by_reg <= 0;
-  end
-  else begin
-    ax_reg <= ax;
-    ay_reg <= ay;
-    bx_reg <= bx;
-    by_reg <= by;
-    resultaxy_reg <= ax_reg * ay_reg;
-    resultbxy_reg <= bx_reg * by_reg;
-    resulta_reg <= resultaxy_reg + resultbxy_reg + chainin;
-  end
-end
-assign resulta = resulta_reg;
-assign chainout = resulta_reg;
-endmodule
-`endif
+// output [36:0] resulta;
+// output [36:0] chainout;
+// reg [17:0] ax_reg;
+// reg [18:0] ay_reg;
+// reg [17:0] bx_reg;
+// reg [18:0] by_reg;
+// reg [36:0] resulta_reg;
+// reg [36:0] resultaxy_reg;
+// reg [36:0] resultbxy_reg;
+// always @(posedge clk) begin
+//   if(reset) begin
+//     resulta_reg <= 0;
+//     ax_reg <= 0;
+//     ay_reg <= 0;
+//     bx_reg <= 0;
+//     by_reg <= 0;
+//   end
+//   else begin
+//     ax_reg <= ax;
+//     ay_reg <= ay;
+//     bx_reg <= bx;
+//     by_reg <= by;
+//     resultaxy_reg <= ax_reg * ay_reg;
+//     resultbxy_reg <= bx_reg * by_reg;
+//     resulta_reg <= resultaxy_reg + resultbxy_reg + chainin;
+//   end
+// end
+// assign resulta = resulta_reg;
+// assign chainout = resulta_reg;
+// endmodule
+// `endif
 
-`ifdef complex_dsp
+// `ifdef complex_dsp
 module fp16_sop2_mult_dspchain (clk,reset,top_a,top_b,bot_a,bot_b,fp32_in,mode_sigs,chainin,chainout,result);
 input clk; 
 input reset;
@@ -9287,49 +9287,49 @@ input [31:0] chainin,fp32_in;
 output [31:0] chainout, result;
 
 fp16_sop2_mult inst1(.clk(clk),.reset(reset),.top_a(top_a),.top_b(top_b),.bot_a(bot_a),.bot_b(bot_b),.fp32_in(fp32_in),.mode_sigs(mode_sigs),.chainin(chainin),.chainout(chainout),.result(result)); 
-
+// assign chainout = result;
 endmodule
 
-`else
-module fp16_sop2_mult_dspchain (clk,reset,top_a,top_b,bot_a,bot_b,fp32_in,mode_sigs,chainin,chainout,result);
-input clk; 
-input reset;
-input [10:0] mode_sigs; 
-input [15:0] top_a,top_b,bot_a,bot_b;
-input [31:0] chainin,fp32_in; 
-output [31:0] chainout, result; 
+// `else
+// module fp16_sop2_mult_dspchain (clk,reset,top_a,top_b,bot_a,bot_b,fp32_in,mode_sigs,chainin,chainout,result);
+// input clk; 
+// input reset;
+// input [10:0] mode_sigs; 
+// input [15:0] top_a,top_b,bot_a,bot_b;
+// input [31:0] chainin,fp32_in; 
+// output [31:0] chainout, result; 
 
-reg [15:0] top_a_reg,top_b_reg,bot_a_reg,bot_b_reg; 
-reg [31:0] chainin_reg; 
-wire [31:0] r1,r2,r3; 
-always@(posedge clk) begin 
-if(reset) begin 
-top_a_reg<= 16'b0; 
-top_b_reg<= 16'b0; 
-bot_a_reg<= 16'b0; 
-bot_b_reg<= 16'b0;
-//result<=32'b0;
-//chainout<=32'b0;
-chainin_reg<=32'b0;   
-end
-else begin 
-top_a_reg<=top_a; 
-top_b_reg<=top_b; 
-bot_a_reg<=bot_a;
-bot_b_reg<=bot_b;
-//chainout<=result;
-chainin_reg<=chainin; 
-end
-end
+// reg [15:0] top_a_reg,top_b_reg,bot_a_reg,bot_b_reg; 
+// reg [31:0] chainin_reg; 
+// wire [31:0] r1,r2,r3; 
+// always@(posedge clk) begin 
+// if(reset) begin 
+// top_a_reg<= 16'b0; 
+// top_b_reg<= 16'b0; 
+// bot_a_reg<= 16'b0; 
+// bot_b_reg<= 16'b0;
+// //result<=32'b0;
+// //chainout<=32'b0;
+// chainin_reg<=32'b0;   
+// end
+// else begin 
+// top_a_reg<=top_a; 
+// top_b_reg<=top_b; 
+// bot_a_reg<=bot_a;
+// bot_b_reg<=bot_b;
+// //chainout<=result;
+// chainin_reg<=chainin; 
+// end
+// end
 
-wire [4:0] flags1,flags2,flags3,flags4; 
+// wire [4:0] flags1,flags2,flags3,flags4; 
 
-FPMult_16_dspchain inst1(.clk(clk),.rst(reset),.a(top_a_reg),.b(top_b_reg),.flags(flags1),.result(r1)); 
-FPMult_16_dspchain inst2(.clk(clk),.rst(reset),.a(bot_a_reg),.b(bot_b_reg),.flags(flags2),.result(r2));
-FPAddSub_single_dspchain inst3(.clk(clk),.rst(reset),.a(r1),.b(r2),.flags(flags3),.operation(1'b1),.result(r3));
-FPAddSub_single_dspchain inst4(.clk(clk),.rst(reset),.a(r3),.b(chainin),.flags(flags4),.operation(1'b1),.result(result));
-assign chainout = result; 
-endmodule
+// FPMult_16_dspchain inst1(.clk(clk),.rst(reset),.a(top_a_reg),.b(top_b_reg),.flags(flags1),.result(r1)); 
+// FPMult_16_dspchain inst2(.clk(clk),.rst(reset),.a(bot_a_reg),.b(bot_b_reg),.flags(flags2),.result(r2));
+// FPAddSub_single_dspchain inst3(.clk(clk),.rst(reset),.a(r1),.b(r2),.flags(flags3),.operation(1'b1),.result(r3));
+// FPAddSub_single_dspchain inst4(.clk(clk),.rst(reset),.a(r3),.b(chainin),.flags(flags4),.operation(1'b1),.result(result));
+// assign chainout = result; 
+// endmodule
 //`endif
 
 //`timescale 1ns / 1ps
@@ -10246,7 +10246,7 @@ module FPAddSub_d_dspchain(
 	
 endmodule
 
-`endif 
+// `endif 
 
 
 module fifo_512_60bit
@@ -10368,7 +10368,7 @@ input [(DWIDTH-1):0] data_b;
 output [(DWIDTH-1):0] out_a;
 output [(DWIDTH-1):0] out_b;
 
-`ifndef hard_mem
+// `ifndef hard_mem
 
 	reg [DWIDTH-1:0] ram[NUM_WORDS-1:0];
   reg [(DWIDTH-1):0] out_a;
@@ -10392,24 +10392,24 @@ output [(DWIDTH-1):0] out_b;
 		end
 	end
 
-`else
+// `else
 
-defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
-defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
+// defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
+// defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
 
-	dual_port_ram u_dual_port_ram(
-	.addr1(address_a),
-	.we1(wren_a),
-	.data1(data_a),
-	.out1(out_a),
-	.addr2(address_b),
-	.we2(wren_b),
-	.data2(data_b),
-	.out2(out_b),
-	.clk(clk)
-	);
+// 	dual_port_ram u_dual_port_ram(
+// 	.addr1(address_a),
+// 	.we1(wren_a),
+// 	.data1(data_a),
+// 	.out1(out_a),
+// 	.addr2(address_b),
+// 	.we2(wren_b),
+// 	.data2(data_b),
+// 	.out2(out_b),
+// 	.clk(clk)
+// 	);
 
-`endif
+// `endif
 
 endmodule
 
@@ -10532,7 +10532,7 @@ input [(DWIDTH-1):0] data_b;
 output [(DWIDTH-1):0] out_a;
 output [(DWIDTH-1):0] out_b;
 
-`ifndef hard_mem
+// `ifndef hard_mem
 
 	reg [DWIDTH-1:0] ram[NUM_WORDS-1:0];
   reg [(DWIDTH-1):0] out_a;
@@ -10556,25 +10556,25 @@ output [(DWIDTH-1):0] out_b;
 		end
 	end
 
-`else
+// `else
 
-defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
-defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
+// defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
+// defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
 
 
-	dual_port_ram u_dual_port_ram(
-	.addr1(address_a),
-	.we1(wren_a),
-	.data1(data_a),
-	.out1(out_a),
-	.addr2(address_b),
-	.we2(wren_b),
-	.data2(data_b),
-	.out2(out_b),
-	.clk(clk)
-	);
+// 	dual_port_ram u_dual_port_ram(
+// 	.addr1(address_a),
+// 	.we1(wren_a),
+// 	.data1(data_a),
+// 	.out1(out_a),
+// 	.addr2(address_b),
+// 	.we2(wren_b),
+// 	.data2(data_b),
+// 	.out2(out_b),
+// 	.clk(clk)
+// 	);
 
-`endif
+// `endif
 
 endmodule
 
@@ -11056,7 +11056,7 @@ input [(DWIDTH-1):0] data_b;
 output [(DWIDTH-1):0] out_a;
 output [(DWIDTH-1):0] out_b;
 
-`ifndef hard_mem
+// `ifndef hard_mem
 
 	reg [DWIDTH-1:0] ram[NUM_WORDS-1:0];
   reg [(DWIDTH-1):0] out_a;
@@ -11080,23 +11080,23 @@ output [(DWIDTH-1):0] out_b;
 		end
 	end
 
-`else
-defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
-defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
+// `else
+// defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
+// defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
 
-	dual_port_ram u_dual_port_ram(
-	.addr1(address_a),
-	.we1(wren_a),
-	.data1(data_a),
-	.out1(out_a),
-	.addr2(address_b),
-	.we2(wren_b),
-	.data2(data_b),
-	.out2(out_b),
-	.clk(clk)
-	);
+// 	dual_port_ram u_dual_port_ram(
+// 	.addr1(address_a),
+// 	.we1(wren_a),
+// 	.data1(data_a),
+// 	.out1(out_a),
+// 	.addr2(address_b),
+// 	.we2(wren_b),
+// 	.data2(data_b),
+// 	.out2(out_b),
+// 	.clk(clk)
+// 	);
 
-`endif
+// `endif
 
 endmodule
 
@@ -11219,7 +11219,7 @@ input [(DWIDTH-1):0] data_b;
 output [(DWIDTH-1):0] out_a;
 output [(DWIDTH-1):0] out_b;
 
-`ifndef hard_mem
+// `ifndef hard_mem
 
 	reg [DWIDTH-1:0] ram[NUM_WORDS-1:0];
   reg [(DWIDTH-1):0] out_a;
@@ -11243,23 +11243,23 @@ output [(DWIDTH-1):0] out_b;
 		end
 	end
 
-`else
-defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
-defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
+// `else
+// defparam u_dual_port_ram.ADDR_WIDTH = AWIDTH;
+// defparam u_dual_port_ram.DATA_WIDTH = DWIDTH;
 
-	dual_port_ram u_dual_port_ram(
-	.addr1(address_a),
-	.we1(wren_a),
-	.data1(data_a),
-	.out1(out_a),
-	.addr2(address_b),
-	.we2(wren_b),
-	.data2(data_b),
-	.out2(out_b),
-	.clk(clk)
-	);
+// 	dual_port_ram u_dual_port_ram(
+// 	.addr1(address_a),
+// 	.we1(wren_a),
+// 	.data1(data_a),
+// 	.out1(out_a),
+// 	.addr2(address_b),
+// 	.we2(wren_b),
+// 	.data2(data_b),
+// 	.out2(out_b),
+// 	.clk(clk)
+// 	);
 
-`endif
+// `endif
 
 endmodule
 

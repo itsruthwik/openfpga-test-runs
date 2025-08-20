@@ -6,12 +6,11 @@ module router_wrap #(
     parameter NUM_PORTS = 5,
     parameter NOC_NUM_ENDPOINTS = 4,
     
-    // Critical matching parameters
     parameter TID_WIDTH = 2,     // From axis_*_tid pins
     parameter TDEST_WIDTH = 4,   // From axis_*_tdest pins
-    parameter TDATA_WIDTH = 128, // From axis_*_tdata pins
+    parameter TDATA_WIDTH = 32, // From axis_*_tdata pins
     
-    parameter SERIALIZATION_FACTOR = 2, // TDATA_WIDTH/(FLIT_WIDTH*CLKCROSS_FACTOR)
+    parameter SERIALIZATION_FACTOR = 1, // TDATA_WIDTH/(FLIT_WIDTH*CLKCROSS_FACTOR)
     parameter CLKCROSS_FACTOR = 1,
     parameter bit SINGLE_CLOCK = 1,
     
